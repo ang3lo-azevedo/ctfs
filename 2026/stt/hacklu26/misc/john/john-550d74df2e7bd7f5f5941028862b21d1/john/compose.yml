@@ -1,0 +1,28 @@
+services:
+  john:
+    image: flu.xxx/john
+    build: .
+    pull_policy: never
+    container_name: john
+    hostname: john
+    restart: unless-stopped
+    cpus: 0.25
+    init: true
+    networks:
+      default:
+        ipv4_address: 10.244.0.1
+    tmpfs:
+      - /var/www/.john:mode=700,uid=33,gid=33
+      - /var/www/jobs:mode=700,uid=33,gid=33
+      - /tmp:mode=1777
+
+networks:
+  default:
+    name: john
+    ipam:
+      config:
+        - subnet: 10.244.0.0/16
+          ip_range: 10.244.0.0/24
+          gateway: 10.244.1.2
+
+

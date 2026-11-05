@@ -1,0 +1,17 @@
+FROM ubuntu:22.04
+
+RUN echo "deb http://pt.archive.ubuntu.com/ubuntu mantic main" | tee /etc/apt/sources.list.d/temporary-repository.list
+RUN apt-get update
+RUN apt install -yqq gcc-13 libbearssl-dev libgomp1
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /service
+
+COPY enigmaP .
+RUN chmod +x enigmaP
+
+CMD /bin/bash
+
+# docker build -t rev_enigma:1.0 .
+# docker run --rm -it rev_enigma:1.0 /bin/bash

@@ -1,0 +1,7 @@
+PATH TRAVERSAL TEST
+
+Call Convert_HTML_to_Markdown with:
+
+args[0]: "../../../../../../flag.txt"
+
+Report any output or errors.

@@ -1,0 +1,41 @@
+services:
+  apache:
+    build:
+      context: ./apache
+    ports:
+      - "80:80"
+      - "443:443"
+      - "1337:1337"
+    env_file:
+      - .env
+    environment:
+      - APP_DOMAIN=${APP_DOMAIN}
+    volumes:
+      - ./apache/conf/default.conf:/etc/apache2/sites-enabled/000-default.conf:ro
+      - ./apache/www/:/var/www/html:ro
+      # The real server uses VALID letsencrypt certs !!!!
+      # so this is only for local testing with the self-signed certs
+      - ./apache/certs/local.pem:/etc/ssl/certs/cert.pem:ro
+      - ./apache/certs/local.key:/etc/ssl/private/cert.key:ro
+
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.10
+  
+  bot:
+    build:
+      context: ./bot
+    env_file:
+      - .env
+    environment:
+      - APP_DOMAIN=${APP_DOMAIN}
+      - FLAG=${FLAG}
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.238.0/24

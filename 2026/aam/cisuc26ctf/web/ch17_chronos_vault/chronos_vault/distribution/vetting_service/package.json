@@ -1,0 +1,24 @@
+{
+  "name": "chronos-artifact-service",
+  "version": "1.0.0",
+  "description": "Artifact evaluation service for Chronos Vault CTF challenge - Phase 2",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "artifact",
+    "redos",
+    "yaml",
+    "ctf"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.0",
+    "jsonwebtoken": "^9.0.2",
+    "cookie-parser": "^1.4.6",
+    "js-yaml": "^4.1.0"
+  }
+}

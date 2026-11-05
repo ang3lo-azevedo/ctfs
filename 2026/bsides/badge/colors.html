@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Color Board</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#000;font-family:system-ui,sans-serif}
+  #fill{position:fixed;inset:0;transition:background .05s linear}
+  #hud{position:fixed;left:10px;top:8px;color:#fff;mix-blend-mode:difference;
+       font-size:14px;line-height:1.5;user-select:none;max-width:48ch}
+  kbd{background:#0003;border:1px solid #fff5;border-radius:4px;padding:0 4px}
+</style>
+</head>
+<body>
+<div id="fill"></div>
+<div id="hud"></div>
+<script>
+// Saturated primaries first (what an RGBW sensor separates cleanly), then rainbow steps.
+const C = [
+  ["red",      "#ff0000"], ["green",   "#00ff00"], ["blue",    "#0000ff"],
+  ["white",    "#ffffff"], ["black",   "#000000"],
+  ["orange",   "#ff7f00"], ["yellow",  "#ffff00"], ["cyan",    "#00ffff"],
+  ["magenta",  "#ff00ff"], ["violet",  "#8b00ff"],
+];
+let i = 0, auto = false, hz = 1, t = null;
+const fill = document.getElementById("fill"), hud = document.getElementById("hud");
+function show(){
+  const [name,hex] = C[i];
+  fill.style.background = hex;
+  hud.innerHTML = `<b>${name}</b> ${hex} &nbsp;(${i+1}/${C.length})<br>`+
+    `keys <kbd>1</kbd>–<kbd>0</kbd> pick · <kbd>←</kbd><kbd>→</kbd> step · `+
+    `<kbd>space</kbd> auto-rainbow (${auto?'ON '+hz+'Hz':'off'}) · <kbd>+</kbd><kbd>-</kbd> speed · <kbd>F11</kbd> fullscreen`;
+}
+function step(d){ i=(i+C.length+d)%C.length; show(); }
+function setAuto(on){
+  auto=on; if(t){clearInterval(t);t=null;}
+  if(auto){ t=setInterval(()=>step(1), 1000/hz); }
+  show();
+}
+addEventListener("keydown", e=>{
+  if(e.key>="1"&&e.key<="9"){ i=(+e.key)-1; setAuto(false); }
+  else if(e.key==="0"){ i=9; setAuto(false); }
+  else if(e.key==="ArrowRight"){ setAuto(false); step(1); }
+  else if(e.key==="ArrowLeft"){ setAuto(false); step(-1); }
+  else if(e.key===" "){ e.preventDefault(); setAuto(!auto); }
+  else if(e.key==="+"||e.key==="="){ hz=Math.min(10,hz+1); if(auto)setAuto(true); else show(); }
+  else if(e.key==="-"){ hz=Math.max(1,hz-1); if(auto)setAuto(true); else show(); }
+});
+show();
+</script>
+</body>
+</html>

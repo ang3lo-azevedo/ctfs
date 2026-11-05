@@ -1,0 +1,40 @@
+Return-Path: <jsilva@hr-system.lab>
+X-Original-To: ecavalcanti@cosmetics-corp.local
+Delivered-To: ecavalcanti@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=hr-system.lab
+Authentication-Results: mail.cosmetics-corp.local;
+	dkim=pass (2048-bit key; unprotected) header.d=hr-system.lab header.i=@hr-system.lab header.a=rsa-sha256 header.s=mail header.b=KVAIfYrp;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=jsilva@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id 6FF11260656
+	for <ecavalcanti@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=hr-system.lab;
+	s=mail; t=1771942746;
+	bh=/TRA8X6PicA8qj57sUxfE3d6dIvAkOqRNDORWwUI48Y=;
+	h=Date:To:From:Subject:From;
+	b=KVAIfYrpmDmJSV0ZYAv+J4sW0Z2QpUkcvw3qyxflzI4YW3BJBDO9C4w5Fs6P6npL8
+	 FAEFJ90jAZjEJuQ97ejVuJonWzVxY3jS2y1XTUKvS08PaYOnxl2IkmhShIG+whGHuQ
+	 gnsAxdhULSVyNDsUjKo2MCHNhX8Of4tTlYhs4CMlA0o1l93xoqPIGSlwUPNqvDYbfT
+	 afQEKMDmdMOQ/1zaU14XLZ7vYgzzzUZnqvDNvhSAyzYww6QHj3APStpNR+ty6IiUe8
+	 RZ1S0IbepC/pNKQaAfwBhu1bMmzlNd/gm7LoAFCfCEt+5RtT+xk9Ke+Tsy1oRQcjHC
+	 Fi13k4UW82Yrw==
+X-Comment: SPF check N/A for local connections - client-ip=127.0.0.1; helo=mail.hr-system.local; envelope-from=jsilva@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.local (localhost [127.0.0.1])
+	by mail.hr-system.lab (Postfix) with ESMTP id 61935260719
+	for <ecavalcanti@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:19:06 +0000
+To: ecavalcanti@cosmetics-corp.local
+From: jsilva@hr-system.lab
+Subject: Atualização cadastral - Dados bancários
+Message-Id: <20260224141906.005930@mail.hr-system.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados,
+
+Informamos que houve alteração em nossa conta bancária para recebimento de pagamentos. Os novos dados serão encaminhados por canal seguro em breve.
+
+Solicitamos atualização em seus registros para os próximos pagamentos e pedimos que não realizem transferências até a confirmação oficial.
+
+Financeiro.
+

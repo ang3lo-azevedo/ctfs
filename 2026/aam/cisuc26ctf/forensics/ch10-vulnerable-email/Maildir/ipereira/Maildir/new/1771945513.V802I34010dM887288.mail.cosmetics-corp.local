@@ -1,0 +1,25 @@
+Return-Path: <nrocha@cosmetics-corp.local>
+X-Original-To: ipereira@cosmetics-corp.local
+Delivered-To: ipereira@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=nrocha@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id D6975260656
+	for <ipereira@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:13 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:13 +0000
+To: ipereira@cosmetics-corp.local
+From: nrocha@cosmetics-corp.local
+Subject: Procedimento para emissão de nota fiscal de serviços
+Message-Id: <20260224150513.005986@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Boa tarde,
+
+Lembramos o procedimento para emissão de nota fiscal de prestadores de serviço: o documento deve ser enviado para nf@empresa.com com mínimo de 5 dias úteis de antecedência ao pagamento.
+
+Notas recebidas fora do prazo podem ter o pagamento postergado.
+
+Financeiro – Contas a Pagar.
+

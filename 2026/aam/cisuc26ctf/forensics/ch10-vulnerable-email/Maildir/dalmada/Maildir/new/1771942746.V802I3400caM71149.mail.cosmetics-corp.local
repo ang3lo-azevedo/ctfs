@@ -1,0 +1,40 @@
+Return-Path: <foliveira@hr-system.lab>
+X-Original-To: dalmada@cosmetics-corp.local
+Delivered-To: dalmada@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=hr-system.lab
+Authentication-Results: mail.cosmetics-corp.local;
+	dkim=pass (2048-bit key; unprotected) header.d=hr-system.lab header.i=@hr-system.lab header.a=rsa-sha256 header.s=mail header.b=ek7y5UM+;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=foliveira@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id 0F63F260656
+	for <dalmada@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=hr-system.lab;
+	s=mail; t=1771942746;
+	bh=mhFVqY1pdLa1d1bjDe255qY7hjJ4AeoPBqhmUUmH7w0=;
+	h=Date:To:From:Subject:From;
+	b=ek7y5UM+h52CWv+lj3gU87S+0bBXlMFgAQ8HTeY+Q/DE8Dg7G5J3EKM9zT99CRdFy
+	 nsQnfDuTYiMsiTf4YONPuSWJoqfZhCbrg6Olw2HoI65u0nolqtS62wxSyQjoU5ZUIg
+	 UhQXGnXhdLStibKTXvZ1EQzcj8g0ZDa0Edc1FM2mQDpvpjdNuDc5MQ2PSu6dqFcAgk
+	 mJu0kf9ypl3iPPFlax7lg3Mbp6AOXLADKKgLRme3B/e/LzIJWW5M0kXHJ/PSBC4iOw
+	 HPnUT7vGeFNcUOJ6ZVr2cl9iqsiRVDYNOYnVcYhaUTRxIRk0gZbpYkNXT4ZqQSaCEK
+	 V+1fbyPSnIRSg==
+X-Comment: SPF check N/A for local connections - client-ip=127.0.0.1; helo=mail.hr-system.local; envelope-from=foliveira@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.local (localhost [127.0.0.1])
+	by mail.hr-system.lab (Postfix) with ESMTP id 01134260719
+	for <dalmada@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:19:06 +0000
+To: dalmada@cosmetics-corp.local
+From: foliveira@hr-system.lab
+Subject: RE: Atraso na entrega - Pedido #20489
+Message-Id: <20260224141906.005845@mail.hr-system.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Boa tarde,
+
+Recebemos a informação sobre o atraso. Gostaríamos de entender se haverá impacto em outros pedidos em aberto e se é possível priorizar a entrega dos itens críticos listados na ordem de compra.
+
+Aguardamos posicionamento.
+
+Compras.
+

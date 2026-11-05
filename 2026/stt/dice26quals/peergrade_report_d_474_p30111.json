@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-03-26T13:46:32.496943+00:00",
+  "forum_url": "https://pcm.rnl.tecnico.ulisboa.pt/moodle/mod/peerforum/discuss.php?d=474#p30111",
+  "target_key": "d=474#p30111",
+  "awards_page_id": 726,
+  "match_window_seconds": 21600,
+  "expected_delay_minutes": 20.0,
+  "peergrade_reviews": [
+    {
+      "grader_id": 38340,
+      "raw_time": "Thursday, 26 March 2026, 1:19 PM",
+      "timestamp": 1774531140,
+      "peer_grade": 3,
+      "feedback": "Overall good composition for me it just needed a bit more of depth Maximum rating: - Permalink Show parent Reply In reply to Daniel Gon\u00e7alves Re: Muzak by In\u00eas Falcato - Thursday, 26 March 2026, 12:49 PM Hello! For this skill I used SignalMIDI to create my Muzak. I don\u2019t really know much about music theory so I wasn\u2019t sure of what to do. My idea was to create something R&B/Trap/Hip-Hop inspired (which, in the end, I don\u2019t think translated that much). It was a very experimental process. I started by thinking about the drums, because I thought that was the thing that would resemble more the vibe I wanted to go for. I created something very simple inspired by those genres using the snare, hat and kick from the standard drum kit. Then, I created a simple and repeating pattern with the electric piano, using some chords I researched. I duplicated those with a warm pad layer to make it sound more full. Then, taking those chords into consideration, I added a bass layer and tried to make it sound good and match that piano and pad pattern. Finally, I worked on the melody through trial and error until I reached something that I thought made sense and wasn\u2019t just repeating the same 4 bars over and over again. I wasn\u2019t sure what instrument to choose for the melody so I tried most of them and ended up choosing the whistle because I thought it was the most \u201cneutral\u201d sounding one, and it also didn\u2019t feel too distracting. Initially, I made the muzak with 16 bars, but it was too long so I reduced it by 4 bars. I also played around with the bpm value because I started with a lower one but came to the conclusion that I wanted the muzak to be a little faster. The final result is in the attachments. Thank you! muzakversaofinal.mid Peer grade: Time left to peergrade: 23 hours 2 mins Select a grade: Peer grade... 0 1 2 3 4 5 Your Feedback: Peer grade Your peergrade to this post is anonymous. Maximum rating: - Permalink Show parent Reply <div c"
+    }
+  ],
+  "time_based_resolution": {
+    "38340": [
+      {
+        "user_id": 1800,
+        "name": "Denilson Fragoso da Silva Santos",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1800",
+        "delta_seconds": 66,
+        "delta_minutes": 1.1,
+        "delta_from_expected_minutes": 18.9,
+        "review_timestamp": 1774531140,
+        "awards_timestamp": 1774531206
+      }
+    ]
+  },
+  "fallback_candidates": {},
+  "time_match_window_seconds_effective": 21600
+}

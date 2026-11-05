@@ -1,0 +1,2 @@
+stream 130 > output.png
+stream 131 >> output.png

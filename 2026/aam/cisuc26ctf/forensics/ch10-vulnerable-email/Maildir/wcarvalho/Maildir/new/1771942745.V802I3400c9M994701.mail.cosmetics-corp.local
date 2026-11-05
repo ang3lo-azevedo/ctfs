@@ -1,0 +1,40 @@
+Return-Path: <tmoreira@hr-system.lab>
+X-Original-To: wcarvalho@cosmetics-corp.local
+Delivered-To: wcarvalho@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=hr-system.lab
+Authentication-Results: mail.cosmetics-corp.local;
+	dkim=pass (2048-bit key; unprotected) header.d=hr-system.lab header.i=@hr-system.lab header.a=rsa-sha256 header.s=mail header.b=U4puaaFt;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=tmoreira@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id F08E1260656
+	for <wcarvalho@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=hr-system.lab;
+	s=mail; t=1771942745;
+	bh=N9MeAsiN+OxVn3xVABQ6P5nrrln/eyuSFezLjKijsBA=;
+	h=Date:To:From:Subject:From;
+	b=U4puaaFtJtjiNJTQAqYzVX8JouWfcnQIi1gGyn17cFK5mcmArqH9QoeLVE6/27Gjr
+	 yWS+45UavAa3rzVg/2qQ2UV54Y5G7eIOfn31/uR/V4a4HgCv+NnI5n3u7gi1A3vPmF
+	 oeTjzgg9zhnw2vAPhKrjlmCiB/94Qd8JgnECx+WUH4DkR9cCklvOqncZgGYYyYHrjS
+	 vH4JThgSGTrA8xHHTaqHhfG/837v4ZkD+EZ2J8bxuycHeGPfJVmj/yNWjI1rnIfH2C
+	 oOf51K542nYkfKu0j6sqhWV9YAtP+Cq5AlE3HSVnJKZ/mrFa41fYL/TZLFZMhvrloQ
+	 FxrFOYnlnrFbQ==
+X-Comment: SPF check N/A for local connections - client-ip=127.0.0.1; helo=mail.hr-system.local; envelope-from=tmoreira@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.local (localhost [127.0.0.1])
+	by mail.hr-system.lab (Postfix) with ESMTP id DF603260719
+	for <wcarvalho@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:05 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:19:05 +0000
+To: wcarvalho@cosmetics-corp.local
+From: tmoreira@hr-system.lab
+Subject: Atraso na entrega - Pedido #20489
+Message-Id: <20260224141905.005828@mail.hr-system.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados,
+
+Gostaríamos de comunicar que o pedido #20489, com entrega prevista para 10/11, sofrerá um atraso de aproximadamente 5 dias úteis devido a um imprevisto na cadeia de suprimentos.
+
+Nova previsão: 17/11. Pedimos desculpas pelo transtorno e nos colocamos à disposição para esclarecimentos.
+
+Logística.
+

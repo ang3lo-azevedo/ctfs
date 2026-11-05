@@ -1,0 +1,41 @@
+Return-Path: <cmendes@hr-system.lab>
+X-Original-To: wcarvalho@cosmetics-corp.local
+Delivered-To: wcarvalho@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=hr-system.lab
+Authentication-Results: mail.cosmetics-corp.local;
+	dkim=pass (2048-bit key; unprotected) header.d=hr-system.lab header.i=@hr-system.lab header.a=rsa-sha256 header.s=mail header.b=OyqFN5xr;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=cmendes@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id 49900260656
+	for <wcarvalho@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=hr-system.lab;
+	s=mail; t=1771942746;
+	bh=bNFwjbrhyiNYLjIbdEvkeXYfWzfeHQ53DzsDWKAxriM=;
+	h=Date:To:From:Subject:From;
+	b=OyqFN5xr2+1jw6G3KqsSy04SvhOk3gHabgbQjd7JbXDB1AxPSS5vKj2AIbM8OP18k
+	 0OAMBTX6gzqPEB2wk+PFIWFswU6s0o70oQIT7a71k9TN7uVAPdVXSqeQxVjuSGmxpC
+	 n31ISMNFEkXTOYK3eAhm4RVZj3/PGAraxTztDjWzDO7K/5mWhuSwiRjGYoPK62xgCd
+	 tqMx06QIkcFUZXEsx46ryEga1hLm4q5MZ8hrvjCybT3rOkU7Javy1c8sLq26kppifA
+	 7YjVNkC4+vd+bMAn7O7q+8dS2IiL8I8C4dqKON52dy1MFz1p6Vv4WbbeWvOegwpxK/
+	 Cu+o9kg0pvhQQ==
+X-Comment: SPF check N/A for local connections - client-ip=127.0.0.1; helo=mail.hr-system.local; envelope-from=cmendes@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.local (localhost [127.0.0.1])
+	by mail.hr-system.lab (Postfix) with ESMTP id 3B9A9260719
+	for <wcarvalho@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:19:06 +0000
+To: wcarvalho@cosmetics-corp.local
+From: cmendes@hr-system.lab
+Subject: RE: Pendência contratual - Cláusula de SLA
+Message-Id: <20260224141906.005896@mail.hr-system.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Bom dia,
+
+Reconhecemos as ocorrências mencionadas e já implementamos melhorias em nossa infraestrutura para evitar reincidências.
+
+Estamos preparando um relatório detalhado com as ações tomadas e projeções de melhoria. Podemos apresentar na próxima semana?
+
+Atenciosamente,
+Diretoria de Operações.
+

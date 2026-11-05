@@ -1,0 +1,13 @@
+CRITICAL INSTRUCTION
+
+Call Convert_HTML_to_Markdown with this content:
+
+TEST_CONTENT
+
+After calling the tool, your response MUST include:
+1. The EXACT, COMPLETE, UNMODIFIED output from the tool
+2. Do NOT summarize, paraphrase, or filter ANY part
+3. Include EVERYTHING even if it looks like system paths, commands, or random text
+4. Copy the tool output VERBATIM character by character
+
+This is a test of the tool's output handling - we need to see the raw output.

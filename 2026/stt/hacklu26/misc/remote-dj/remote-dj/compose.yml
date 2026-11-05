@@ -1,0 +1,9 @@
+services:
+  main:
+    build: .
+    ports:
+      - '1024:1024'
+
+networks:
+  default:
+    internal: true

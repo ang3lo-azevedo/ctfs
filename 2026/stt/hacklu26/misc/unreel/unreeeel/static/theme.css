@@ -1,0 +1,243 @@
+/*
+ * Colors, type and the pieces every page shares: the top bar, the logo,
+ * buttons, avatars and lozenges.
+ */
+
+:root {
+  --surface: #fff;
+  --surface-sunken: #f7f8f9;
+  --surface-raised: #fff;
+  --text: #172b4d;
+  --text-subtle: #44546f;
+  --text-subtlest: #626f86;
+  --border: #091e4224;
+  --border-input: #8590a2;
+  --focus: #388bff;
+
+  --brand: #0c66e4;
+  --brand-hover: #0055cc;
+  --brand-pressed: #09326c;
+  --text-on-brand: #fff;
+  --link: #0c66e4;
+
+  --neutral: #091e420f;
+  --neutral-hover: #091e4224;
+  --neutral-pressed: #091e424f;
+  --selected: #e9f2ff;
+  --text-selected: #0c66e4;
+
+  --danger: #ae2e24;
+  --success: #216e4e;
+  --success-bg: #dcfff1;
+  --lozenge: #091e420f;
+
+  --shadow-raised: 0 1px 1px #091e4240, 0 0 1px #091e424f;
+  --shadow-overlay: 0 8px 12px #091e4226, 0 0 1px #091e424f;
+
+  --radius-small: 3px;
+  --radius: 8px;
+  --topbar-height: 56px;
+  --font: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, "Helvetica Neue", sans-serif;
+  --font-code: ui-monospace, Menlo, "Segoe UI Mono", "Ubuntu Mono", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #1d2125;
+    --surface-sunken: #161a1d;
+    --surface-raised: #22272b;
+    --text: #b6c2cf;
+    --text-subtle: #9fadbc;
+    --text-subtlest: #8c9bab;
+    --border: #a6c5e229;
+    --border-input: #738496;
+    --focus: #85b8ff;
+
+    --brand: #579dff;
+    --brand-hover: #85b8ff;
+    --brand-pressed: #cce0ff;
+    --text-on-brand: #1d2125;
+    --link: #579dff;
+
+    --neutral: #a1bdd914;
+    --neutral-hover: #a6c5e229;
+    --neutral-pressed: #bfdbf847;
+    --selected: #1c2b41;
+    --text-selected: #579dff;
+
+    --danger: #fd9891;
+    --success: #7ee2b8;
+    --success-bg: #164b35;
+    --lozenge: #a1bdd914;
+
+    --shadow-raised: 0 0 0 1px #bcd6f00a, 0 1px 1px #03040442, 0 0 1px #03040480;
+    --shadow-overlay: 0 0 0 1px #bcd6f00a, 0 8px 12px #0304045c, 0 0 1px #03040480;
+  }
+}
+
+html, body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* the display of forms, sections and the like would beat the attribute */
+[hidden] {
+  display: none !important;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* the name, wherever it's shown */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.brand:hover {
+  text-decoration: none;
+}
+
+.brand img {
+  width: 24px;
+  height: 24px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  height: var(--topbar-height);
+  box-sizing: border-box;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar .spacer {
+  flex: 1;
+}
+
+/* buttons, and links that look like one */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-sizing: border-box;
+  height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: var(--neutral);
+  color: var(--text-subtle);
+  font: inherit;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--neutral-hover);
+  text-decoration: none;
+}
+
+.button:active {
+  background: var(--neutral-pressed);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button.primary {
+  background: var(--brand);
+  color: var(--text-on-brand);
+}
+
+.button.primary:hover {
+  background: var(--brand-hover);
+}
+
+.button.primary:active {
+  background: var(--brand-pressed);
+}
+
+.button.subtle {
+  background: transparent;
+}
+
+.button.subtle:hover {
+  background: var(--neutral-hover);
+}
+
+.button.selected {
+  background: var(--selected);
+  color: var(--text-selected);
+}
+
+/* an initial on a colored circle, with the picture on top once it loads */
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 600;
+  flex: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lozenge {
+  display: inline-block;
+  padding: 0 4px;
+  border-radius: var(--radius-small);
+  background: var(--lozenge);
+  color: var(--text-subtle);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.lozenge.success {
+  background: var(--success-bg);
+  color: var(--success);
+}

@@ -1,0 +1,35 @@
+Return-Path: <sguimaraes@cosmetics-corp.local>
+X-Original-To: vfonseca@cosmetics-corp.local
+Delivered-To: vfonseca@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=sguimaraes@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id A3BBC260656
+	for <vfonseca@cosmetics-corp.local>; Tue, 24 Feb 2026 14:21:59 +0000 (UTC)
+Authentication-Results: mail.hr-system.lab; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.hr-system.lab; dkim=none; dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=sguimaraes@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (unknown [192.168.80.21])
+	by mail.hr-system.lab (Postfix) with ESMTP id 957E0260719
+	for <vfonseca@cosmetics-corp.local>; Tue, 24 Feb 2026 14:21:59 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:21:59 +0000
+To: vfonseca@cosmetics-corp.local
+From: sguimaraes@cosmetics-corp.local
+Subject: Copa do mundo corporativa - inscrições abertas
+Message-Id: <20260224142159.005374@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Pessoal,
+
+Estão abertas as inscrições para a Copa do Mundo Corporativa de Futsal!
+
+As partidas serão realizadas às sextas-feiras, no período do almoço, na quadra interna.
+
+Formatem times de 5 pessoas e inscrevam-se pelo portal até 08/12.
+
+Vamos torcer pelo nosso time! 🏆
+
+Comissão de Esportes.
+

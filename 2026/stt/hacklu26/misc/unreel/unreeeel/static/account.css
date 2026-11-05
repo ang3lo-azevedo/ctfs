@@ -1,0 +1,205 @@
+/* Forms, and the pages built from them. Needs theme.css first. */
+
+body {
+  min-height: 100vh;
+  background: var(--surface-sunken);
+}
+
+/* log in, register and the password popup: one card in the middle */
+.auth-page {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  padding: 24px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding: 32px 40px;
+  background: var(--surface-raised);
+  border-radius: var(--radius-small);
+  box-shadow: var(--shadow-overlay);
+}
+
+.auth-page .brand {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 22px;
+}
+
+.auth-page .brand img {
+  width: 32px;
+  height: 32px;
+}
+
+.auth-page h1 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* admin and the like: the top bar over a page of content */
+.app-page main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 40px;
+}
+
+.breadcrumbs {
+  display: flex;
+  gap: 8px;
+  color: var(--text-subtlest);
+}
+
+.breadcrumbs a {
+  color: inherit;
+}
+
+.breadcrumbs a::after {
+  content: "/";
+  margin-left: 8px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.app-page h1 {
+  margin: 8px 0 24px;
+}
+
+h2 {
+  margin: 24px 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--text-subtle);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+input, textarea {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-small);
+  padding: 8px 6px;
+}
+
+input:hover, textarea:hover {
+  background: var(--surface-sunken);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--focus);
+  box-shadow: inset 0 0 0 1px var(--focus);
+}
+
+input[type=file] {
+  padding: 6px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* the one action of a form */
+button[type=submit] {
+  height: 40px;
+  border: 0;
+  border-radius: var(--radius-small);
+  background: var(--brand);
+  color: var(--text-on-brand);
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button[type=submit]:hover {
+  background: var(--brand-hover);
+}
+
+button[type=submit]:active {
+  background: var(--brand-pressed);
+}
+
+button[type=submit]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 12px;
+  line-height: 16px;
+  min-height: 16px;
+  margin: 0;
+}
+
+.alt {
+  color: var(--text-subtle);
+  margin: 0;
+}
+
+.auth-page .alt {
+  text-align: center;
+}
+
+.pfp-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pfp-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.pfp-preview {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--neutral) center / cover;
+}
+
+pre {
+  margin: 0;
+  padding: 8px 12px;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  font-family: var(--font-code);
+  font-size: 12px;
+  line-height: 20px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.token {
+  user-select: all;
+}

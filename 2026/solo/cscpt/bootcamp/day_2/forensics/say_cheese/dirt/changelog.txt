@@ -1,0 +1,7 @@
+Digital Image Resizer Toy Changelog
+=======================================
+
+September 2007
+--------------
+
+DIRT released.

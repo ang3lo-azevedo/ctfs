@@ -1,0 +1,40 @@
+Return-Path: <lsantos@hr-system.lab>
+X-Original-To: bmarques@cosmetics-corp.local
+Delivered-To: bmarques@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=hr-system.lab
+Authentication-Results: mail.cosmetics-corp.local;
+	dkim=pass (2048-bit key; unprotected) header.d=hr-system.lab header.i=@hr-system.lab header.a=rsa-sha256 header.s=mail header.b=PfGnF+UV;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=lsantos@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id 62F74260656
+	for <bmarques@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=hr-system.lab;
+	s=mail; t=1771942747;
+	bh=mgXTORWeyd1pqgmlNwq4LZcdTPHhWLq0rNYwjXYpef8=;
+	h=Date:To:From:Subject:From;
+	b=PfGnF+UVpFZlNTNu2UvmBtzIqrdx9EqEOP9A5STjC7eH/TyOAgKGkeaztpHdjHBub
+	 vy2RkHk/6KRFvzO83p3ULZDweCgMo0WI3izBEA4Y35eZCv07nuEFFkK8OtMd8NVn8i
+	 BDKNEP6yukQLLPbnqIKfdeafjWiDSor9JdI9Z7nIIwFw72r5ioV1tyr++CPL+SF0tb
+	 0iNlcLXLKHBXI55rzaBhjgWzyx6nCIyM5nUEAF1oabtWIsMgcU0d1G9dO3OZvNPCap
+	 7GE2+dbTAuslXDInJNXK3l/95eQldoMlQDyi5flN5HsVpfmnX/AqNnNMnPQbCnrYBX
+	 MOvtvR7gV3BKQ==
+X-Comment: SPF check N/A for local connections - client-ip=127.0.0.1; helo=mail.hr-system.local; envelope-from=lsantos@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.local (localhost [127.0.0.1])
+	by mail.hr-system.lab (Postfix) with ESMTP id 55035260719
+	for <bmarques@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:07 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:19:07 +0000
+To: bmarques@cosmetics-corp.local
+From: lsantos@hr-system.lab
+Subject: Encerramento de parceria - Comunicado oficial
+Message-Id: <20260224141907.006134@mail.hr-system.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados,
+
+Informamos formalmente que, conforme cláusula rescisória do contrato, optamos por não renovar o acordo comercial com vencimento em 31/12/2024.
+
+Agradecemos pela parceria ao longo desses anos e nos colocamos à disposição para uma transição organizada das atividades até o encerramento do contrato.
+
+Diretoria Executiva.
+

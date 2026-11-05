@@ -1,0 +1,40 @@
+Return-Path: <jsilva@hr-system.lab>
+X-Original-To: ipereira@cosmetics-corp.local
+Delivered-To: ipereira@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=hr-system.lab
+Authentication-Results: mail.cosmetics-corp.local;
+	dkim=pass (2048-bit key; unprotected) header.d=hr-system.lab header.i=@hr-system.lab header.a=rsa-sha256 header.s=mail header.b=fSuwM+Tr;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=jsilva@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id 283A1260656
+	for <ipereira@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=hr-system.lab;
+	s=mail; t=1771942747;
+	bh=RrJm2Q02//d2bkAi50dVvbtq8nf94yNzoDhRpM7XaJ0=;
+	h=Date:To:From:Subject:From;
+	b=fSuwM+TrReb+WWspuFW492aBTyvCUd9D6dT4fq7eHsDUV0Qp+Ispw4EhotE96RPnQ
+	 HjEGtwM6jYtaXt33xZzR8T0OJElcBUANxXa+vOxpUgpmRZ06LvbCfkPILh2dAihgfB
+	 iPX0g+bOZObTJlcWbR3U3CuXXvzNRewvplsDEIkkFHbtvLcU+bNdjNXuRmKNmyImfW
+	 TxD5ByvRX29QmaFJ/C+LWE3iYbqUBYoXEeZeQvs+spXzFw3SMq23LZ3NNdp98h19K9
+	 Cm+/GHWsWEVMn9BIC77Mb/Ik0hAVG8Al/CVed1QS0XjFI8Vj4haZWmVzd8c32lZBbt
+	 5VgIAxT8MD+3w==
+X-Comment: SPF check N/A for local connections - client-ip=127.0.0.1; helo=mail.hr-system.local; envelope-from=jsilva@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.local (localhost [127.0.0.1])
+	by mail.hr-system.lab (Postfix) with ESMTP id 1A29A260719
+	for <ipereira@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:07 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:19:07 +0000
+To: ipereira@cosmetics-corp.local
+From: jsilva@hr-system.lab
+Subject: Reclamação formal - Produto com defeito - Lote 4412
+Message-Id: <20260224141907.006083@mail.hr-system.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados,
+
+Registramos formalmente uma reclamação referente ao Lote 4412, recebido em 02/11. Identificamos não conformidade em aproximadamente 15% das unidades, com defeito de fabricação na vedação.
+
+Solicitamos abertura de RMA para devolução e substituição do material, conforme política de garantia.
+
+Controle de Qualidade.
+

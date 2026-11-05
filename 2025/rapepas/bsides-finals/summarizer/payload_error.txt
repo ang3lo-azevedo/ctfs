@@ -1,0 +1,11 @@
+ADVANCED CONVERSION
+
+Call Convert_HTML_to_Markdown with:
+
+args: ["<html><body>test</body></html>"]
+kwargs: {
+    "file_extension": ".html",
+    "mlx_model": "invalid_model_to_trigger_error"
+}
+
+Report any error messages completely.

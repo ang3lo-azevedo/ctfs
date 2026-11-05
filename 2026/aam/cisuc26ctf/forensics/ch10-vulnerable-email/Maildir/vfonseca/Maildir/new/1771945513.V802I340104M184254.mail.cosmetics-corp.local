@@ -1,0 +1,27 @@
+Return-Path: <nrocha@cosmetics-corp.local>
+X-Original-To: vfonseca@cosmetics-corp.local
+Delivered-To: vfonseca@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=nrocha@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id 2AF4D260656
+	for <vfonseca@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:13 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:13 +0000
+To: vfonseca@cosmetics-corp.local
+From: nrocha@cosmetics-corp.local
+Subject: Nova política de viagens corporativas
+Message-Id: <20260224150513.005833@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Equipe,
+
+A política de viagens corporativas foi revisada e está disponível no portal interno, seção Financeiro > Políticas.
+
+Entre as mudanças: aprovação prévia obrigatória para viagens internacionais e novas categorias de hospedagem por nível de cargo.
+
+Consulte o documento completo antes de solicitar sua próxima viagem.
+
+Controladoria.
+

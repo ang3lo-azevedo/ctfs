@@ -1,0 +1,16 @@
+FROM ubuntu:20.04 
+
+# Set environment variables to prevent interactive prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update package list and install apache2 and PHP
+RUN apt-get update && \
+    apt-get install -y apache2 libapache2-mod-php && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+
+# Enable the required Apache modules 
+RUN a2enmod ssl proxy proxy_http headers
+
+CMD ["apache2ctl", "-D", "FOREGROUND"]

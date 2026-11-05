@@ -1,0 +1,82 @@
+{
+    "SAM": {
+        "HBoot_key": "3b8b71f221c04c0faaf781740e15147b10101010101010101010101010101010",
+        "local_users": [
+            {
+                "lm_hash": "aad3b435b51404eeaad3b435b51404ee",
+                "nt_hash": "31d6cfe0d16ae931b73c59d7e0c089c0",
+                "rid": 500,
+                "username": "Administrator"
+            },
+            {
+                "lm_hash": "aad3b435b51404eeaad3b435b51404ee",
+                "nt_hash": "31d6cfe0d16ae931b73c59d7e0c089c0",
+                "rid": 501,
+                "username": "Guest"
+            },
+            {
+                "lm_hash": "aad3b435b51404eeaad3b435b51404ee",
+                "nt_hash": "31d6cfe0d16ae931b73c59d7e0c089c0",
+                "rid": 503,
+                "username": "DefaultAccount"
+            },
+            {
+                "lm_hash": "aad3b435b51404eeaad3b435b51404ee",
+                "nt_hash": "17c9bb6e7168ad5e10483392f3a81ca4",
+                "rid": 504,
+                "username": "WDAGUtilityAccount"
+            },
+            {
+                "lm_hash": "aad3b435b51404eeaad3b435b51404ee",
+                "nt_hash": "31d6cfe0d16ae931b73c59d7e0c089c0",
+                "rid": 1001,
+                "username": "Admin"
+            },
+            {
+                "lm_hash": "aad3b435b51404eeaad3b435b51404ee",
+                "nt_hash": "49efc2542d5ee42d8c68f552632fdbcd",
+                "rid": 1002,
+                "username": "CSCPT"
+            }
+        ]
+    },
+    "SECURITY": {
+        "NK$LM": "40000000000000000000000000000000fd029d93090be2c526d1660d2aadf65b3847f6612a8822390ae631b83c47410d5ebf7788a04b859a784d6de0eeaff3baf696f46ffc7936c4db7e1c97ea3f3d81f065befa02edb4ef4b495185e1b0b66a",
+        "cached_secrets": [
+            {
+                "history": false,
+                "key_name": "DPAPI_SYSTEM",
+                "machine_key": "f593a59bc5b1e4d583b4abd6219550e85df46d46",
+                "type": "LSASecretDPAPI",
+                "user_key": "08021a9f2298c72775bd5817d2ace9961fa6352e"
+            },
+            {
+                "history": true,
+                "key_name": "DPAPI_SYSTEM",
+                "machine_key": "7c41b70a5e7bf3393c486ba186669f7c997fdfe0",
+                "type": "LSASecretDPAPI",
+                "user_key": "fd37662945d680f6ac97ebaa879c64c487e770c8"
+            },
+            {
+                "history": false,
+                "key_name": "NL$KM",
+                "raw_secret": "fd029d93090be2c526d1660d2aadf65b3847f6612a8822390ae631b83c47410d5ebf7788a04b859a784d6de0eeaff3baf696f46ffc7936c4db7e1c97ea3f3d81",
+                "type": "LSASecret"
+            },
+            {
+                "history": true,
+                "key_name": "NL$KM",
+                "raw_secret": "fd029d93090be2c526d1660d2aadf65b3847f6612a8822390ae631b83c47410d5ebf7788a04b859a784d6de0eeaff3baf696f46ffc7936c4db7e1c97ea3f3d81",
+                "type": "LSASecret"
+            }
+        ],
+        "dcc": [],
+        "dcc_iteration_count": 10240,
+        "lsa_key": "547f714271b6c0444e2e64964708c038b2d5b9aeea99b68f352b44d168a8cc39",
+        "secrets_format": "VISTA"
+    },
+    "SYSTEM": {
+        "BootKey": "31b139c5e8826f84c61c98e4b2e315b5",
+        "CurrentControlSet": "ControlSet001"
+    }
+}

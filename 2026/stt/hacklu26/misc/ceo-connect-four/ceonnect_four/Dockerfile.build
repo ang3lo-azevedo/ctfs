@@ -1,0 +1,29 @@
+FROM debian:trixie-20260925-slim@sha256:a99cfc517144bc59b1978475ec53b46ecabec7e43635402ee5b77cc54cd1b20a AS builder
+
+# for reproducible build:
+# https://github.com/reproducible-containers/repro-sources-list.sh
+ENV DEBIAN_FRONTEND=noninteractive
+RUN \
+  --mount=type=cache,target=/var/cache/apt,sharing=locked \
+  --mount=type=cache,target=/var/lib/apt,sharing=locked \
+  --mount=type=bind,source=./repro-sources-list.sh,target=/usr/local/bin/repro-sources-list.sh \
+  repro-sources-list.sh && \
+  apt-get update && \
+  apt-get install -y gcc make libc6-dev && \
+  : "Clean up for improving reproducibility (optional)" && \
+  rm -rf /var/log/* /var/cache/ldconfig/aux-cache
+
+# build ynetd
+COPY ctf-ynetd-2024.12.31/ /ynetd
+WORKDIR /ynetd
+RUN make
+
+# build chal
+RUN mkdir /chal
+WORKDIR /chal
+COPY c4.c Makefile .
+RUN make
+
+
+FROM scratch
+COPY --from=builder /ynetd/ynetd /chal/c4 .

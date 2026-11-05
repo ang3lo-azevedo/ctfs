@@ -1,0 +1,120 @@
+{
+  "generated_at": "2026-03-09T02:11:24.029033+00:00",
+  "forum_url": "https://pcm.rnl.tecnico.ulisboa.pt/moodle/mod/peerforum/discuss.php?d=456#p27636",
+  "target_key": "d=456#p27636",
+  "awards_page_id": 726,
+  "match_window_seconds": 21600,
+  "expected_delay_minutes": 20.0,
+  "peergrade_reviews": [
+    {
+      "grader_id": 35367,
+      "raw_time": "Monday, 23 February 2026, 4:00 PM",
+      "timestamp": 1771862400,
+      "peer_grade": 4,
+      "feedback": "Hello, Angelo! This is the Peer evaluation of your poster. From my point of view, indeed your remaster of the poster was very good! The movie seems interesting! Positive aspects: The new poster really brings the \"found footage\" vibe with the VHS-style effect, enhacing the \"horror/suspense\" athmosfere (great genre adequacy). The distortion effect on the movie title made the poster very interesting, and the brighter colors of it indeed call the attention so we can see and read it very well. Also, the sillouete of the man as part of the key art ressembles the athmosfere of the game and complements the title. The billing block font and typing was well done, really looks like a usual billing block. Last, but not least, the aspect ratio seems perfect! Room for improvement: I belive the room for improvement relies on some specific points that, if changed, maybe could make a more integrated poster. First of all: In the top (and bottom) of the poster there are some black spaces that do not blend with the immage used on the bachground (the white closet). As they don't blend, that black spaces (mainly the one on top) seem a litle disconnected from the poster (as if the poster ended below/above them). Besides that, I belive that maybe, if you moved the man's sillouete a litle bit for the right, the poster would be more balanced (as his very dark figure really darkens the right side of the poster), and maybe the poster would look even scarier (the man would be \"peeking\" at the poster more misteriously, not appearing that much). The last thing I noticed was that the billing block seems to be distorced (like the title), but I am not sure if this is the best idea... I think that the title distorced by himserf would be more interesting (but I am not sure about the distorsion, so forgive me if I am not seing it right haha). I tried to make a critic evaluation but overall your poster is very nice!"
+    },
+    {
+      "grader_id": 35373,
+      "raw_time": "Monday, 23 February 2026, 8:53 PM",
+      "timestamp": 1771879980,
+      "peer_grade": 3,
+      "feedback": "The poster is immediately striking thanks to the bold color choices and the stark contrast they produce. It leads to a visually interesting result. Everything is really clear and legible, though perhaps a more fleshed out billing block with cast information would help, as right now it seems as though there is some pertinent information missing. Composition wise, the poster is pretty strong and well balanced, with a clear line to follow, though the way the figure is position in relation to both the scene and the viewer sparks a feeling of suspense in my view, and not so much of claustrophobia. It also strikes me as a bit right-heavy in terms of balance, but not so much that it stands out as a glaring issue. Though the film grain makes sense from a thematic standpoint, it simply doesn't read all that well, and probably wouldn't do so in print either, especially when it is applied wholesale to the image and text. It also seems to introduce some contrast issues around the white colored tagline in the poster. Overall, it is a very sound poster, if not a bit bland or understated. Maximum rating: 3 (1) Permalink Show parent Reply In reply to \u00c2ngelo Azevedo Re: Movie Poster by \u00c2ngelo Azevedo - Monday, 23 February 2026, 4:20 PM I send here the updated version of the poster with the improvements talked in the peer grading feedback (Thank you for the suggestions) Average of peer grades: 3.5 (2) Show peer grades"
+    },
+    {
+      "grader_id": 35376,
+      "raw_time": "Monday, 23 February 2026, 9:00 PM",
+      "timestamp": 1771880400,
+      "peer_grade": 3,
+      "feedback": "This version improves on some key areas, being noticeably more readable and even a little more punchy, a strong suit of the previous poster that does thematically align with traditional analogue horror roots and inspirations. The additional vignetting does help push the key art slightly more into that goal of claustrophobia, but it still doesn't come across like that primarily. Additionally, some not insignificant composition issues remain now that the key art has shifted rightwards, namely a small sense that the title section is just sorta strewn onto the poster. It reads nicely, but it doesn't seem too integrated. And though the billing block is now more readable, it still lacks some extra information that it or the poster overall could do with, even if subtly introduced in order to preserve the graphically minimal art that seems to be the goal here. As such, it does not move the needle all that much in relation to the previous version."
+    },
+    {
+      "grader_id": 35406,
+      "raw_time": "Tuesday, 24 February 2026, 10:08 AM",
+      "timestamp": 1771927680,
+      "peer_grade": 4,
+      "feedback": "Hello! Here is your Peer (again haha). It looks very nice in my oppinion, I like the modifications made. The poster seems to do the job well done! I would still remove the black space on top (litle black line), but the rest is very nice! Maximum rating: - Permalink Show parent <a"
+    }
+  ],
+  "time_based_resolution": {
+    "35367": [
+      {
+        "user_id": 1824,
+        "name": "Ana Liz Romano Faraco Gusm\u00e3o",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1824",
+        "delta_seconds": 603,
+        "delta_minutes": 10.05,
+        "delta_from_expected_minutes": 9.95,
+        "review_timestamp": 1771862400,
+        "awards_timestamp": 1771863003
+      },
+      {
+        "user_id": 1758,
+        "name": "Francisco Rodrigues Martins Gon\u00e7alves Fernandes",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1758",
+        "delta_seconds": 18605,
+        "delta_minutes": 310.08,
+        "delta_from_expected_minutes": 290.08,
+        "review_timestamp": 1771862400,
+        "awards_timestamp": 1771881005
+      }
+    ],
+    "35373": [
+      {
+        "user_id": 1758,
+        "name": "Francisco Rodrigues Martins Gon\u00e7alves Fernandes",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1758",
+        "delta_seconds": 1025,
+        "delta_minutes": 17.08,
+        "delta_from_expected_minutes": 2.92,
+        "review_timestamp": 1771879980,
+        "awards_timestamp": 1771881005
+      },
+      {
+        "user_id": 1824,
+        "name": "Ana Liz Romano Faraco Gusm\u00e3o",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1824",
+        "delta_seconds": 16977,
+        "delta_minutes": 282.95,
+        "delta_from_expected_minutes": 262.95,
+        "review_timestamp": 1771879980,
+        "awards_timestamp": 1771863003
+      }
+    ],
+    "35376": [
+      {
+        "user_id": 1758,
+        "name": "Francisco Rodrigues Martins Gon\u00e7alves Fernandes",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1758",
+        "delta_seconds": 605,
+        "delta_minutes": 10.08,
+        "delta_from_expected_minutes": 9.92,
+        "review_timestamp": 1771880400,
+        "awards_timestamp": 1771881005
+      },
+      {
+        "user_id": 1824,
+        "name": "Ana Liz Romano Faraco Gusm\u00e3o",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1824",
+        "delta_seconds": 17397,
+        "delta_minutes": 289.95,
+        "delta_from_expected_minutes": 269.95,
+        "review_timestamp": 1771880400,
+        "awards_timestamp": 1771863003
+      }
+    ],
+    "35406": [
+      {
+        "user_id": 1824,
+        "name": "Ana Liz Romano Faraco Gusm\u00e3o",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1824",
+        "delta_seconds": 472,
+        "delta_minutes": 7.87,
+        "delta_from_expected_minutes": 12.13,
+        "review_timestamp": 1771927680,
+        "awards_timestamp": 1771927208
+      }
+    ]
+  },
+  "fallback_candidates": {},
+  "time_match_window_seconds_effective": 21600
+}

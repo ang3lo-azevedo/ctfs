@@ -1,0 +1,216 @@
+<html>
+    <head>
+        <title>Fruit Market — Transaction Coordinator Panel</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+    </head>
+    <body>        
+        <div class="col-lg-8 mx-auto p-4 py-md-5">
+            <header class="d-flex align-items-center pb-3 mb-3 border-bottom">
+                <span class="fs-4">Transaction Coordinator Panel</span>
+            </header>
+            <main>
+                <div id="start">
+                    <p>
+                        Oh, hi — welcome to your new job.<br>
+                        As our ... ehh ... 'trade transaction coordinator', you take trade transactions from our customers, determine their order and run them on our custom blockchain. The entire trading is fully automated, so nothing to worry about. However, our customers have high expectations, so be sure to execute all transactions in a timely manner. And no worries, we are just trading fruits here: Apples (APL, 🍎), Bananas (BAN, 🍌) and Cherries (CHY, 🍒).<br><br>
+                        ... what? Salary? We don't do this here. But you can take these 10 🍎 from our fruit basket. If you want, you can also participate trading among our customers, but don't be intimidated by their transaction volumes. Even small trades can add up, right? For our most loyal employees, we offer a flag in exchange for 500 🍎.<br><br>
+                        Your predecessor left a <a href="/script.html">script here</a> if you don't want to use this web interface. They somehow managed to start their own business during market hours while achieving highest customer satisfaction. Quite remarkable, right?
+                    </p>
+                    <hr class="col-3 col-md-2 mb-3" />
+                    <h1 class="text-body-emphasis">Start Shift</h1>
+                    <p>To start you shift we need the address of your Ethereum account to transfer your 10 🍎 (APL) from our fruit basket.</p>
+                    <div class="mb-5">
+                        <div class="form-floating mb-2">
+                            <input type="text" class="form-control" placeholder="0x..." id="ethPublicAddress"></input>
+                            <label for="floatingTextarea">Ethereum Address</label>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="startShift()">Start Shift</button>
+                        <button type="button" class="btn btn-secondary" onclick="generateAccount()">Generate Account</button>
+                    </div>
+                </div>
+                <div id="shift" style="display: none;">
+                    <div class="alert alert-light" id="own-account">
+                        <div class="d-flex w-100 justify-content-between">
+                            <span>Your Balance:</span>
+                            <span><span class="APL">-</span> 🍎 | <span class="BAN">-</span> 🍌 | <span class="CHY">-</span> 🍒</span>
+                        </div>
+                        <a class="btn btn-primary" target="_blank" href="/flag" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="You need at least 500 🍎">Claim Flag</a>
+                    </div>
+                    <div class="card mb-2">
+                        <h5 class="card-header">Customers</h5>
+                        <div class="card-body" id="traders"></div>
+                    </div>
+
+                    <div class="card">
+                        <h5 class="card-header">Pending Transactions</h5>
+                        <div class="card-body">
+                            <div class="list-group" id="transactions"></div>  
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="bg-dark text-light py-3 mt-5">
+                <div class="container text-center">
+                    <p class="mb-0 small">
+                    Powered by
+                    <a href="https://getbootstrap.com/" class="text-light">Bootstrap</a>,
+                    <a href="https://socket.io/" class="text-light">Socket.IO</a>, and
+                    <a href="https://popper.js.org/" class="text-light">Popper</a>
+                    (MIT License) |
+                    <a href="https://github.com/web3/web3.js" class="text-light">Web3.js</a>
+                    (LGPL)
+                    </p>
+                </div>
+            </footer>
+        </div>
+        
+        <template id="template-trader">
+            <p>
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 address"></h5>
+                    <span><span class="APL"></span> 🍎 | <span class="BAN"></span> 🍌 | <span class="CHY"></span> 🍒</span>
+                </div>
+            </p>
+        </template>
+        <template id="template-transaction">
+            <span class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Trade</h5>
+                </div>
+                <p class="mb-1 hash">0x7c11fd88e3f6109b324dec5b3b9b45b57f45a3822f505b067f46145fb9c6acb6</p>
+                <button type="button" class="btn btn-success execute">📢 Execute</button>
+            </span>
+        </template>
+        
+        <script src="js/web3.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/socket-io.min.js"></script>
+        <script>
+            let web3 = new Web3(null);
+            const socket = io();
+
+            let pending_txs = [];
+            let own_address = undefined;
+
+            socket.on('new_trade', (data) => {
+                console.log(data);
+                pending_txs.push(data);
+                updateTransactions();
+            })
+
+            function generateAccount() {
+                const inputField = document.querySelector('#ethPublicAddress');
+                const account = web3.eth.accounts.create();
+                alert("This is your private key:\n" + account.privateKey);
+                inputField.value = account.address;
+            }
+
+            async function startShift() {
+                const address = document.querySelector('#ethPublicAddress').value;
+                if (/^(0x)?[0-9a-fA-F]{40}$/.test(address)) {
+                    // seems to be a valid address
+                    let formData = new FormData();
+                    formData.append('address', address);
+
+                    const registered = await fetch('/fruit-basket', {
+                        method: 'POST',
+                        body: formData
+                    }).then(res => {
+                        if (res.status == 200) {
+                            return true;
+                        } else if (res.status == 403) {
+                            alert("There is already a running shift ... please restart!");
+                            return false;
+                        }
+                    });
+                    
+                    if (registered) {
+                        document.querySelector('#start').style.display = 'none';
+                        document.querySelector('#shift').style.display = 'block';
+                        own_address = address;
+                        await fetch('/open');
+                        fetchOwnBalance();
+                    }
+                } else {
+                    alert("This is not an Ethereum address")
+                }
+            }
+
+            function fetchTraders() {
+                fetch('/balance').then(res => {
+                    return res.json()
+                }).then(data => {
+                    const traders = document.querySelector("#traders");
+                    traders.innerHTML = '';
+                    for (const [addr, balance] of Object.entries(data)) {
+                        const template = document.querySelector("#template-trader");
+
+                        const clone = document.importNode(template.content, true);
+                        clone.querySelector('.address').textContent = addr;
+                        clone.querySelector('.APL').textContent = balance['APL'];
+                        clone.querySelector('.BAN').textContent = balance['BAN'];
+                        clone.querySelector('.CHY').textContent = balance['CHY'];
+
+                        traders.appendChild(clone);
+                    }
+                })
+            }
+
+            function fetchOwnBalance() {
+                if (own_address == undefined) {
+                    return;
+                }
+                
+                fetch(`/balance/${own_address}`).then(res => {
+                    return res.json()
+                }).then(data => {
+                    const own = document.querySelector("#own-account");
+                    own.querySelector('.APL').textContent = data['APL'];
+                    own.querySelector('.BAN').textContent = data['BAN'];
+                    own.querySelector('.CHY').textContent = data['CHY'];
+                })
+            }
+
+            async function executeTransaction(data) {
+                let formDataApprove = new FormData();
+                formDataApprove.append('rawtx', data['approve']);
+                await fetch('/submit', {
+                    method: 'POST',
+                    body: formDataApprove
+                });
+
+                let formDataSwap = new FormData();
+                formDataSwap.append('rawtx', data['swap']);
+                await fetch('/submit', {
+                    method: 'POST',
+                    body: formDataSwap
+                });
+
+                pending_txs = pending_txs.filter(it => it !== data);
+                updateTransactions();
+                fetchTraders();
+            }
+
+            function updateTransactions() {
+                const transactions = document.querySelector("#transactions");
+                transactions.innerHTML = '';
+                pending_txs.forEach(it => {
+                    const template = document.querySelector("#template-transaction");
+
+                    const clone = document.importNode(template.content, true);
+                    clone.querySelector('.hash').textContent = it['swap_hash'];
+                    clone.querySelector('.execute').onclick = executeTransaction.bind(this, it);
+
+                    transactions.appendChild(clone);
+                })
+            }
+
+            fetchTraders()
+
+            // Bootstrap tooltips
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        </script>
+    </body>
+</html>

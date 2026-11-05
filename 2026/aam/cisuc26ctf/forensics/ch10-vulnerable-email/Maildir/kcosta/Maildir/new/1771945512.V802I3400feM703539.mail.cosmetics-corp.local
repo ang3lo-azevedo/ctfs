@@ -1,0 +1,25 @@
+Return-Path: <sbatista@cosmetics-corp.local>
+X-Original-To: kcosta@cosmetics-corp.local
+Delivered-To: kcosta@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=sbatista@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id A9AB9260656
+	for <kcosta@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:12 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:12 +0000
+To: kcosta@cosmetics-corp.local
+From: sbatista@cosmetics-corp.local
+Subject: Solicitação de acesso ao sistema ERP
+Message-Id: <20260224150512.005731@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Boa tarde,
+
+Para solicitar acesso ao sistema ERP, preencha o formulário disponível no portal de TI e envie com a aprovação do seu gestor.
+
+O prazo de liberação é de até 3 dias úteis após o recebimento da solicitação aprovada.
+
+TI - Suporte ao Usuário.
+

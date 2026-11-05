@@ -1,0 +1,1227 @@
+/*
+Type: ELF
+Platform: linux-x86_64
+Architecture: x86_64
+
+Libraries: 
+  libc.so.6
+
+Segments:
+r--  0x00400000-0x004007c0 
+r-x  0x00401000-0x004017dd 
+r--  0x00402000-0x00402818 
+rw-  0x00403d90-0x00404010 
+rw-  0x00404010-0x00404020 
+---  0x00404020-0x00404078 
+---  0x00404080-0x004040b0 
+
+Sections:
+0x00400318-0x00400334  .interp (PROGBITS)  {Read-only data}
+0x004003b0-0x004003d8  .gnu.hash  {Read-only data}
+0x004003d8-0x00400510  .dynsym (DYNSYM)  {Read-only data}
+0x00400510-0x004005ec  .dynstr (STRTAB)  {Read-only data}
+0x004005ec-0x00400606  .gnu.version  {Read-only data}
+0x00400608-0x00400658  .gnu.version_r  {Read-only data}
+0x00400658-0x00400730  .dynamic_rela  {Read-only data}
+0x00400658-0x00400730  .rela.dyn (RELA)  {Read-only data}
+0x00400730-0x004007c0  .rela.plt (RELA)  {Read-only data}
+0x00401000-0x0040101b  .init (PROGBITS)  {Code}
+0x00401020-0x00401090  .plt (PROGBITS)  {Code}
+0x00401090-0x004010a0  .plt.got (PROGBITS)  {Code}
+0x004010a0-0x00401100  .plt.sec (PROGBITS)  {Code}
+0x00401100-0x004017ce  .text (PROGBITS)  {Code}
+0x004017d0-0x004017dd  .fini (PROGBITS)  {Code}
+0x00402000-0x004026e0  .rodata (PROGBITS)  {Read-only data}
+0x004026e0-0x00402724  .eh_frame_hdr (PROGBITS)  {Read-only data}
+0x00402728-0x00402818  .eh_frame (PROGBITS)  {Read-only data}
+0x00403d90-0x00403d98  .init_array  {Writable data}
+0x00403d98-0x00403da0  .fini_array  {Writable data}
+0x00403da0-0x00403f90  .dynamic (DYNAMIC)  {Read-only data}
+0x00403f90-0x00404000  .got (PROGBITS)  {Read-only data}
+0x00404000-0x00404010  .data (PROGBITS)  {Writable data}
+0x00404010-0x00404020  .bss (NOBITS)  {Writable data}
+0x00404020-0x00404078  .extern  {External}
+0x00404080-0x004040b0  .synthetic_builtins  {External}
+*/
+00400000  struct Elf64_Header __elf_header = 
+00400000  {
+00400000      struct Elf64_Ident ident = 
+00400000      {
+00400000          char signature[0x4] = "\x7fELF"
+00400004          uint8_t file_class = 0x2
+00400005          uint8_t encoding = 0x1
+00400006          uint8_t version = 0x1
+00400007          uint8_t os = 0x0
+00400008          uint8_t abi_version = 0x0
+00400009          char pad[0x7] = "\x00\x00\x00\x00\x00\x00", 0
+00400010      }
+00400010      enum e_type type = ET_DYN
+00400012      enum e_machine machine = EM_X86_64
+00400014      uint32_t version = 0x1
+00400018      void (* entry)() = 0x1100
+00400020      uint64_t program_header_offset = 0x40
+00400028      uint64_t section_header_offset = 0x37f8
+00400030      uint32_t flags = 0x0
+00400034      uint16_t header_size = 0x40
+00400036      uint16_t program_header_size = 0x38
+00400038      uint16_t program_header_count = 0xd
+0040003a      uint16_t section_header_size = 0x40
+0040003c      uint16_t section_header_count = 0x1f
+0040003e      uint16_t string_table = 0x1e
+00400040  }
+00400040  struct Elf64_ProgramHeader __elf_program_headers[0xd] = 
+00400040  {
+00400040      [0x0] = 
+00400040      {
+00400040          enum p_type type = PT_PHDR
+00400044          enum p_flags flags = PF_R
+00400048          uint64_t offset = 0x40
+00400050          uint64_t virtual_address = 0x40
+00400058          uint64_t physical_address = 0x40
+00400060          uint64_t file_size = 0x2d8
+00400068          uint64_t memory_size = 0x2d8
+00400070          uint64_t align = 0x8
+00400078      }
+00400078      [0x1] = 
+00400078      {
+00400078          enum p_type type = PT_INTERP
+0040007c          enum p_flags flags = PF_R
+00400080          uint64_t offset = 0x318
+00400088          uint64_t virtual_address = 0x318
+00400090          uint64_t physical_address = 0x318
+00400098          uint64_t file_size = 0x1c
+004000a0          uint64_t memory_size = 0x1c
+004000a8          uint64_t align = 0x1
+004000b0      }
+004000b0      [0x2] = 
+004000b0      {
+004000b0          enum p_type type = PT_LOAD
+004000b4          enum p_flags flags = PF_R
+004000b8          uint64_t offset = 0x0
+004000c0          uint64_t virtual_address = 0x0
+004000c8          uint64_t physical_address = 0x0
+004000d0          uint64_t file_size = 0x7c0
+004000d8          uint64_t memory_size = 0x7c0
+004000e0          uint64_t align = 0x1000
+004000e8      }
+004000e8      [0x3] = 
+004000e8      {
+004000e8          enum p_type type = PT_LOAD
+004000ec          enum p_flags flags = PF_X | PF_R
+004000f0          uint64_t offset = 0x1000
+004000f8          uint64_t virtual_address = 0x1000
+00400100          uint64_t physical_address = 0x1000
+00400108          uint64_t file_size = 0x7dd
+00400110          uint64_t memory_size = 0x7dd
+00400118          uint64_t align = 0x1000
+00400120      }
+00400120      [0x4] = 
+00400120      {
+00400120          enum p_type type = PT_LOAD
+00400124          enum p_flags flags = PF_R
+00400128          uint64_t offset = 0x2000
+00400130          uint64_t virtual_address = 0x2000
+00400138          uint64_t physical_address = 0x2000
+00400140          uint64_t file_size = 0x818
+00400148          uint64_t memory_size = 0x818
+00400150          uint64_t align = 0x1000
+00400158      }
+00400158      [0x5] = 
+00400158      {
+00400158          enum p_type type = PT_LOAD
+0040015c          enum p_flags flags = PF_W | PF_R
+00400160          uint64_t offset = 0x2d90
+00400168          uint64_t virtual_address = 0x3d90
+00400170          uint64_t physical_address = 0x3d90
+00400178          uint64_t file_size = 0x280
+00400180          uint64_t memory_size = 0x290
+00400188          uint64_t align = 0x1000
+00400190      }
+00400190      [0x6] = 
+00400190      {
+00400190          enum p_type type = PT_DYNAMIC
+00400194          enum p_flags flags = PF_W | PF_R
+00400198          uint64_t offset = 0x2da0
+004001a0          uint64_t virtual_address = 0x3da0
+004001a8          uint64_t physical_address = 0x3da0
+004001b0          uint64_t file_size = 0x1f0
+004001b8          uint64_t memory_size = 0x1f0
+004001c0          uint64_t align = 0x8
+004001c8      }
+004001c8      [0x7] = 
+004001c8      {
+004001c8          enum p_type type = PT_NOTE
+004001cc          enum p_flags flags = PF_R
+004001d0          uint64_t offset = 0x338
+004001d8          uint64_t virtual_address = 0x338
+004001e0          uint64_t physical_address = 0x338
+004001e8          uint64_t file_size = 0x30
+004001f0          uint64_t memory_size = 0x30
+004001f8          uint64_t align = 0x8
+00400200      }
+00400200      [0x8] = 
+00400200      {
+00400200          enum p_type type = PT_NOTE
+00400204          enum p_flags flags = PF_R
+00400208          uint64_t offset = 0x368
+00400210          uint64_t virtual_address = 0x368
+00400218          uint64_t physical_address = 0x368
+00400220          uint64_t file_size = 0x44
+00400228          uint64_t memory_size = 0x44
+00400230          uint64_t align = 0x4
+00400238      }
+00400238      [0x9] = 
+00400238      {
+00400238          enum p_type type = PT_GNU_PROPERTY
+0040023c          enum p_flags flags = PF_R
+00400240          uint64_t offset = 0x338
+00400248          uint64_t virtual_address = 0x338
+00400250          uint64_t physical_address = 0x338
+00400258          uint64_t file_size = 0x30
+00400260          uint64_t memory_size = 0x30
+00400268          uint64_t align = 0x8
+00400270      }
+00400270      [0xa] = 
+00400270      {
+00400270          enum p_type type = PT_GNU_EH_FRAME
+00400274          enum p_flags flags = PF_R
+00400278          uint64_t offset = 0x26e0
+00400280          uint64_t virtual_address = 0x26e0
+00400288          uint64_t physical_address = 0x26e0
+00400290          uint64_t file_size = 0x44
+00400298          uint64_t memory_size = 0x44
+004002a0          uint64_t align = 0x4
+004002a8      }
+004002a8      [0xb] = 
+004002a8      {
+004002a8          enum p_type type = PT_GNU_STACK
+004002ac          enum p_flags flags = PF_W | PF_R
+004002b0          uint64_t offset = 0x0
+004002b8          uint64_t virtual_address = 0x0
+004002c0          uint64_t physical_address = 0x0
+004002c8          uint64_t file_size = 0x0
+004002d0          uint64_t memory_size = 0x0
+004002d8          uint64_t align = 0x10
+004002e0      }
+004002e0      [0xc] = 
+004002e0      {
+004002e0          enum p_type type = PT_GNU_RELRO
+004002e4          enum p_flags flags = PF_R
+004002e8          uint64_t offset = 0x2d90
+004002f0          uint64_t virtual_address = 0x3d90
+004002f8          uint64_t physical_address = 0x3d90
+00400300          uint64_t file_size = 0x270
+00400308          uint64_t memory_size = 0x270
+00400310          uint64_t align = 0x1
+00400318      }
+00400318  }
+
+.interp (PROGBITS) section started  {0x400318-0x400334}
+00400318  char __elf_interp[0x1c] = "/lib64/ld-linux-x86-64.so.2", 0
+.interp (PROGBITS) section ended  {0x400318-0x400334}
+
+00400334                                                              00 00 00 00 04 00 00 00 20 00 00 00                      ........ ...
+00400340  05 00 00 00 47 4e 55 00 02 00 00 c0 04 00 00 00 03 00 00 00 00 00 00 00 02 80 00 c0 04 00 00 00  ....GNU.........................
+00400360  01 00 00 00 00 00 00 00 04 00 00 00 14 00 00 00 03 00 00 00 47 4e 55 00 05 64 55 40 dd f2 5c dd  ....................GNU..dU@..\.
+00400380  d0 e3 f1 a9 76 24 0d 47 92 0c 8f 4a                                                              ....v$.G...J
+0040038c  __abi_tag:
+0040038c                                      04 00 00 00 10 00 00 00 01 00 00 00 47 4e 55 00 00 00 00 00              ............GNU.....
+004003a0  03 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00                                                  ................
+
+.gnu.hash section started  {0x4003b0-0x4003d8}
+004003b0                                                  02 00 00 00 0b 00 00 00 01 00 00 00 06 00 00 00                  ................
+004003c0  00 00 a1 00 80 00 00 00 0b 00 00 00 0c 00 00 00 d1 65 ce 6d 67 55 61 10                          .................e.mgUa.
+.gnu.hash section ended  {0x4003b0-0x4003d8}
+
+.dynsym (DYNSYM) section started  {0x4003d8-0x400510}
+004003d8  struct Elf64_Sym __elf_symbol_table[0xd] = 
+004003d8  {
+004003d8      [0x0] = 
+004003d8      {
+004003d8          uint32_t st_name = 0x0
+004003dc          uint8_t st_info = 0x0
+004003dd          uint8_t st_other = 0x0
+004003de          uint16_t st_shndx = 0x0
+004003e0          uint64_t st_value = 0x0
+004003e8          uint64_t st_size = 0x0
+004003f0      }
+004003f0      [0x1] = 
+004003f0      {
+004003f0          uint32_t st_name = 0x2b
+004003f4          uint8_t st_info = 0x12
+004003f5          uint8_t st_other = 0x0
+004003f6          uint16_t st_shndx = 0x0
+004003f8          uint64_t st_value = 0x0
+00400400          uint64_t st_size = 0x0
+00400408      }
+00400408      [0x2] = 
+00400408      {
+00400408          uint32_t st_name = 0x97
+0040040c          uint8_t st_info = 0x20
+0040040d          uint8_t st_other = 0x0
+0040040e          uint16_t st_shndx = 0x0
+00400410          uint64_t st_value = 0x0
+00400418          uint64_t st_size = 0x0
+00400420      }
+00400420      [0x3] = 
+00400420      {
+00400420          uint32_t st_name = 0xd
+00400424          uint8_t st_info = 0x12
+00400425          uint8_t st_other = 0x0
+00400426          uint16_t st_shndx = 0x0
+00400428          uint64_t st_value = 0x0
+00400430          uint64_t st_size = 0x0
+00400438      }
+00400438      [0x4] = 
+00400438      {
+00400438          uint32_t st_name = 0x12
+0040043c          uint8_t st_info = 0x12
+0040043d          uint8_t st_other = 0x0
+0040043e          uint16_t st_shndx = 0x0
+00400440          uint64_t st_value = 0x0
+00400448          uint64_t st_size = 0x0
+00400450      }
+00400450      [0x5] = 
+00400450      {
+00400450          uint32_t st_name = 0x4c
+00400454          uint8_t st_info = 0x12
+00400455          uint8_t st_other = 0x0
+00400456          uint16_t st_shndx = 0x0
+00400458          uint64_t st_value = 0x0
+00400460          uint64_t st_size = 0x0
+00400468      }
+00400468      [0x6] = 
+00400468      {
+00400468          uint32_t st_name = 0x1
+0040046c          uint8_t st_info = 0x12
+0040046d          uint8_t st_other = 0x0
+0040046e          uint16_t st_shndx = 0x0
+00400470          uint64_t st_value = 0x0
+00400478          uint64_t st_size = 0x0
+00400480      }
+00400480      [0x7] = 
+00400480      {
+00400480          uint32_t st_name = 0x23
+00400484          uint8_t st_info = 0x12
+00400485          uint8_t st_other = 0x0
+00400486          uint16_t st_shndx = 0x0
+00400488          uint64_t st_value = 0x0
+00400490          uint64_t st_size = 0x0
+00400498      }
+00400498      [0x8] = 
+00400498      {
+00400498          uint32_t st_name = 0xb3
+0040049c          uint8_t st_info = 0x20
+0040049d          uint8_t st_other = 0x0
+0040049e          uint16_t st_shndx = 0x0
+004004a0          uint64_t st_value = 0x0
+004004a8          uint64_t st_size = 0x0
+004004b0      }
+004004b0      [0x9] = 
+004004b0      {
+004004b0          uint32_t st_name = 0x53
+004004b4          uint8_t st_info = 0x12
+004004b5          uint8_t st_other = 0x0
+004004b6          uint16_t st_shndx = 0x0
+004004b8          uint64_t st_value = 0x0
+004004c0          uint64_t st_size = 0x0
+004004c8      }
+004004c8      [0xa] = 
+004004c8      {
+004004c8          uint32_t st_name = 0xc2
+004004cc          uint8_t st_info = 0x20
+004004cd          uint8_t st_other = 0x0
+004004ce          uint16_t st_shndx = 0x0
+004004d0          uint64_t st_value = 0x0
+004004d8          uint64_t st_size = 0x0
+004004e0      }
+004004e0      [0xb] = 
+004004e0      {
+004004e0          uint32_t st_name = 0x3d
+004004e4          uint8_t st_info = 0x22
+004004e5          uint8_t st_other = 0x0
+004004e6          uint16_t st_shndx = 0x0
+004004e8          uint64_t st_value = 0x0
+004004f0          uint64_t st_size = 0x0
+004004f8      }
+004004f8      [0xc] = 
+004004f8      {
+004004f8          uint32_t st_name = 0x7
+004004fc          uint8_t st_info = 0x11
+004004fd          uint8_t st_other = 0x0
+004004fe          uint16_t st_shndx = 0x1a
+00400500          uint64_t st_value = 0x4010
+00400508          uint64_t st_size = 0x8
+00400510      }
+00400510  }
+.dynsym (DYNSYM) section ended  {0x4003d8-0x400510}
+
+.dynstr (STRTAB) section started  {0x400510-0x4005ec}
+00400510                                                  00                                                               .
+
+00400511  char data_400511[0x6] = "fgets", 0
+00400517  char data_400517[0x6] = "stdin", 0
+0040051d  char data_40051d[0x5] = "puts", 0
+00400522  char data_400522[0x11] = "__stack_chk_fail", 0
+00400533  char data_400533[0x8] = "getchar", 0
+0040053b  char data_40053b[0x12] = "__libc_start_main", 0
+0040054d  char data_40054d[0xf] = "__cxa_finalize", 0
+0040055c  char data_40055c[0x7] = "printf", 0
+00400563  char data_400563[0xf] = "__isoc99_scanf", 0
+00400572  char data_400572[0xa] = "libc.so.6", 0
+0040057c  char data_40057c[0xa] = "GLIBC_2.7", 0
+00400586  char data_400586[0xa] = "GLIBC_2.4", 0
+00400590  char data_400590[0xc] = "GLIBC_2.2.5", 0
+0040059c  char data_40059c[0xb] = "GLIBC_2.34", 0
+004005a7  char data_4005a7[0x1c] = "_ITM_deregisterTMCloneTable", 0
+004005c3  char data_4005c3[0xf] = "__gmon_start__", 0
+004005d2  char data_4005d2[0x1a] = "_ITM_registerTMCloneTable", 0
+.dynstr (STRTAB) section ended  {0x400510-0x4005ec}
+
+.gnu.version section started  {0x4005ec-0x400606}
+004005ec                                      00 00 02 00 01 00 03 00 04 00 03 00 03 00 03 00 01 00 05 00              ....................
+00400600  01 00 03 00 03 00                                                                                ......
+.gnu.version section ended  {0x4005ec-0x400606}
+
+00400606                    00 00                                                                                ..
+
+.gnu.version_r section started  {0x400608-0x400658}
+00400608                          01 00 04 00 62 00 00 00 10 00 00 00 00 00 00 00 17 69 69 0d 00 00 05 00          ....b............ii.....
+00400620  6c 00 00 00 10 00 00 00 14 69 69 0d 00 00 04 00 76 00 00 00 10 00 00 00 75 1a 69 09 00 00 03 00  l........ii.....v.......u.i.....
+00400640  80 00 00 00 10 00 00 00 b4 91 96 06 00 00 02 00 8c 00 00 00 00 00 00 00                          ........................
+.gnu.version_r section ended  {0x400608-0x400658}
+
+.dynamic_rela section started  {0x400658-0x400730}
+.rela.dyn (RELA) section started  {0x400658-0x400730}
+00400658  struct Elf64_Rela __elf_rela_table[0x9] = 
+00400658  {
+00400658      [0x0] = 
+00400658      {
+00400658          uint64_t r_offset = 0x3d90
+00400660          uint64_t r_info = 0x8
+00400668          int64_t r_addend = 0x11e0
+00400670      }
+00400670      [0x1] = 
+00400670      {
+00400670          uint64_t r_offset = 0x3d98
+00400678          uint64_t r_info = 0x8
+00400680          int64_t r_addend = 0x11a0
+00400688      }
+00400688      [0x2] = 
+00400688      {
+00400688          uint64_t r_offset = 0x4008
+00400690          uint64_t r_info = 0x8
+00400698          int64_t r_addend = 0x4008
+004006a0      }
+004006a0      [0x3] = 
+004006a0      {
+004006a0          uint64_t r_offset = 0x3fd8
+004006a8          uint64_t r_info = 0x100000006
+004006b0          int64_t r_addend = 0x0
+004006b8      }
+004006b8      [0x4] = 
+004006b8      {
+004006b8          uint64_t r_offset = 0x3fe0
+004006c0          uint64_t r_info = 0x200000006
+004006c8          int64_t r_addend = 0x0
+004006d0      }
+004006d0      [0x5] = 
+004006d0      {
+004006d0          uint64_t r_offset = 0x3fe8
+004006d8          uint64_t r_info = 0x800000006
+004006e0          int64_t r_addend = 0x0
+004006e8      }
+004006e8      [0x6] = 
+004006e8      {
+004006e8          uint64_t r_offset = 0x3ff0
+004006f0          uint64_t r_info = 0xa00000006
+004006f8          int64_t r_addend = 0x0
+00400700      }
+00400700      [0x7] = 
+00400700      {
+00400700          uint64_t r_offset = 0x3ff8
+00400708          uint64_t r_info = 0xb00000006
+00400710          int64_t r_addend = 0x0
+00400718      }
+00400718      [0x8] = 
+00400718      {
+00400718          uint64_t r_offset = 0x4010
+00400720          uint64_t r_info = 0xc00000005
+00400728          int64_t r_addend = 0x0
+00400730      }
+00400730  }
+.dynamic_rela section ended  {0x400658-0x400730}
+.rela.dyn (RELA) section ended  {0x400658-0x400730}
+
+.rela.plt (RELA) section started  {0x400730-0x4007c0}
+00400730                                                  a8 3f 00 00 00 00 00 00 07 00 00 00 03 00 00 00                  .?..............
+00400740  00 00 00 00 00 00 00 00 b0 3f 00 00 00 00 00 00 07 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00  .........?......................
+00400760  b8 3f 00 00 00 00 00 00 07 00 00 00 05 00 00 00 00 00 00 00 00 00 00 00 c0 3f 00 00 00 00 00 00  .?.......................?......
+00400780  07 00 00 00 06 00 00 00 00 00 00 00 00 00 00 00 c8 3f 00 00 00 00 00 00 07 00 00 00 07 00 00 00  .................?..............
+004007a0  00 00 00 00 00 00 00 00 d0 3f 00 00 00 00 00 00 07 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00  .........?......................
+.rela.plt (RELA) section ended  {0x400730-0x4007c0}
+
+.init (PROGBITS) section started  {0x401000-0x40101b}
+
+00401000    int64_t (* const)() _init()
+
+00401000  {
+00401012      if (!__gmon_start__)
+0040101a          return __gmon_start__;
+0040101a      
+00401014      return __gmon_start__();
+00401000  }
+
+.init (PROGBITS) section ended  {0x401000-0x40101b}
+
+0040101b                                                                                   00 00 00 00 00                             .....
+
+.plt (PROGBITS) section started  {0x401020-0x401090}
+
+00401020    int64_t sub_401020()
+
+00401020  {
+00401020      int64_t var_8 = 0;
+00401026      /* jump -> nullptr */
+00401020  }
+
+0040102c                                      0f 1f 40 00                                                              ..@.
+
+00401030    int64_t sub_401030()
+
+00401030  {
+00401034      int64_t var_8 = 0;
+00401039      /* tailcall */
+00401039      return sub_401020();
+00401030  }
+
+0040103e                                                                                            66 90                                f.
+
+00401040    int64_t sub_401040()
+
+00401040  {
+00401044      int64_t var_8 = 1;
+00401049      /* tailcall */
+00401049      return sub_401020();
+00401040  }
+
+0040104e                                            66 90                                                                f.
+
+00401050    int64_t sub_401050()
+
+00401050  {
+00401054      int64_t var_8 = 2;
+00401059      /* tailcall */
+00401059      return sub_401020();
+00401050  }
+
+0040105e                                                                                            66 90                                f.
+
+00401060    int64_t sub_401060()
+
+00401060  {
+00401064      int64_t var_8 = 3;
+00401069      /* tailcall */
+00401069      return sub_401020();
+00401060  }
+
+0040106e                                            66 90                                                                f.
+
+00401070    int64_t sub_401070()
+
+00401070  {
+00401074      int64_t var_8 = 4;
+00401079      /* tailcall */
+00401079      return sub_401020();
+00401070  }
+
+0040107e                                                                                            66 90                                f.
+
+00401080    int64_t sub_401080()
+
+00401080  {
+00401084      int64_t var_8 = 5;
+00401089      /* tailcall */
+00401089      return sub_401020();
+00401080  }
+
+0040108e                                            66 90                                                                f.
+.plt (PROGBITS) section ended  {0x401020-0x401090}
+
+.plt.got (PROGBITS) section started  {0x401090-0x4010a0}
+
+00401090    void __cxa_finalize(void* d)
+
+00401090  {
+00401094      /* tailcall */
+00401094      return __cxa_finalize(d);
+00401090  }
+
+0040109a                                                                                66 0f 1f 44 00 00                            f..D..
+.plt.got (PROGBITS) section ended  {0x401090-0x4010a0}
+
+.plt.sec (PROGBITS) section started  {0x4010a0-0x401100}
+
+004010a0    int32_t puts(char const* str)
+
+004010a0  {
+004010a4      /* tailcall */
+004010a4      return puts(str);
+004010a0  }
+
+004010aa                                66 0f 1f 44 00 00                                                            f..D..
+
+004010b0    void __stack_chk_fail() __noreturn
+
+004010b0  {
+004010b4      /* tailcall */
+004010b4      return __stack_chk_fail();
+004010b0  }
+
+004010ba                                                                                66 0f 1f 44 00 00                            f..D..
+
+004010c0    int32_t printf(char const* format, ...)
+
+004010c0  {
+004010c4      /* tailcall */
+004010c4      return printf(format);
+004010c0  }
+
+004010ca                                66 0f 1f 44 00 00                                                            f..D..
+
+004010d0    char* fgets(char* buf, int32_t n, FILE* fp)
+
+004010d0  {
+004010d4      /* tailcall */
+004010d4      return fgets(buf, n, fp);
+004010d0  }
+
+004010da                                                                                66 0f 1f 44 00 00                            f..D..
+
+004010e0    int32_t getchar()
+
+004010e0  {
+004010e4      /* tailcall */
+004010e4      return getchar();
+004010e0  }
+
+004010ea                                66 0f 1f 44 00 00                                                            f..D..
+
+004010f0    int32_t __isoc99_scanf(char const* format, ...)
+
+004010f0  {
+004010f4      /* tailcall */
+004010f4      return __isoc99_scanf(format);
+004010f0  }
+
+004010fa                                                                                66 0f 1f 44 00 00                            f..D..
+.plt.sec (PROGBITS) section ended  {0x4010a0-0x401100}
+
+.text (PROGBITS) section started  {0x401100-0x4017ce}
+
+00401100    void _start(int64_t arg1, int64_t arg2, void (* arg3)()) __noreturn
+
+00401100  {
+00401111      int64_t stack_end_1;
+00401111      int64_t stack_end = stack_end_1;
+0040111f      void ubp_av;
+0040111f      __libc_start_main(main, (uint32_t)__return_addr, &ubp_av, nullptr, nullptr, arg3, 
+0040111f          &stack_end);
+0040111f      /* no return */
+00401100  }
+
+00401125                 f4 66 2e 0f 1f 84 00 00 00 00 00                                                       .f.........
+
+00401130    uint64_t* const* deregister_tm_clones()
+
+00401130  {
+00401137      return &__TMC_END__;
+00401130  }
+
+00401151                                                     0f 1f 80 00 00 00 00                                           .......
+00401159                                                                             0f 1f 80 00 00 00 00                           .......
+
+00401160    int64_t (* const)() register_tm_clones()
+
+00401160  {
+00401178      return nullptr;
+00401160  }
+
+00401192                                                        66 0f 1f 44 00 00                                            f..D..
+00401199                                                                             0f 1f 80 00 00 00 00                           .......
+
+004011a0    void __do_global_dtors_aux()
+
+004011a0  {
+004011ab      if (completed.0)
+004011d8          return;
+004011d8      
+004011b9      if (__cxa_finalize)
+004011c2          __cxa_finalize(__dso_handle);
+004011c2      
+004011c7      deregister_tm_clones();
+004011cc      completed.0 = 1;
+004011a0  }
+
+004011d5                                                                 0f 1f 00                                               ...
+004011d9                                                                             0f 1f 80 00 00 00 00                           .......
+
+004011e0    int64_t (* const)() frame_dummy()
+
+004011e0  {
+004011e4      /* tailcall */
+004011e4      return register_tm_clones();
+004011e0  }
+
+
+004011e9    int32_t wait_for_enter()
+
+004011e9  {
+00401208      int32_t i;
+00401208      
+00401208      do
+00401208      {
+004011f6          i = getchar();
+004011f6          
+00401202          if (i == 0xa)
+00401202              break;
+00401208      } while (i != 0xffffffff);
+00401208      
+0040120c      return i;
+004011e9  }
+
+
+0040120d    int64_t reveal_secret(int32_t arg1)
+
+0040120d  {
+00401216      void var_78;
+00401216      void* i = &var_78;
+0040121d      void* fsbase;
+0040121d      int64_t rax = *(uint64_t*)((char*)fsbase + 0x28);
+00401246      int64_t var_48;
+00401246      __builtin_strncpy(&var_48, "j`mkwYGNJ!=<::!^5V", 0x12);
+00401266      int64_t var_36 = 0xc7135543a5e2134;
+0040126a      int32_t var_64 = 0x1a;
+0040127b      int64_t var_60 = 0x19;
+0040129a      int64_t rax_3 = COMBINE(0, 0x29) / 0x10 * 0x10;
+0040129a      
+004012b1      while (i != &var_78 - (rax_3 & 0xfffffffffffff000))
+004012b1      {
+004012b3          i -= 0x1000;
+004012ba          *(uint64_t*)((char*)i + 0xff8) = *(uint64_t*)((char*)i + 0xff8);
+004012b1      }
+004012b1      
+004012ce      char* rsp = (char*)i - ((uint64_t)(uint32_t)rax_3 & 0xfff);
+004012ce      
+004012dd      if ((uint64_t)(uint32_t)rax_3 & 0xfff)
+004012dd      {
+004012e8          int64_t* rax_6 = ((uint64_t)(uint32_t)rax_3 & 0xfff) - 8 + rsp;
+004012eb          *(uint64_t*)rax_6 = *(uint64_t*)rax_6;
+004012dd      }
+004012dd      
+0040132c      for (int32_t i_1 = 0; i_1 < var_64; i_1 += 1)
+0040131f          rsp[(int64_t)i_1] = *(uint8_t*)(&var_48 + (int64_t)i_1) ^ (uint8_t)arg1;
+0040131f      
+00401338      puts("\n[*] Processing Memory Buffer...");
+00401353      printf("[*] Output: %s\n", rsp);
+00401376      char var_4b = (char)(arg1 / 0xa) + 0x30;
+00401394      int32_t rcx_6 = arg1 / 0xa;
+004013a8      char var_4a = (uint8_t)arg1 - ((char)(rcx_6 << 2) + (uint8_t)rcx_6) * 2 + 0x30;
+004013ab      char var_49 = 0;
+004013c5      printf(
+004013c5          "[*] Note: The AGI has decided to spare you so you can enjoy the %sth Edition of "
+004013c5      "ShiftAPPens.\n\n", 
+004013c5          &var_4b);
+004013de      printf("[*] (Now it makes sense why every operation had to return %d, right? ;) )\n", 
+004013de          (uint64_t)arg1);
+004013de      
+004013f4      if (rax == *(uint64_t*)((char*)fsbase + 0x28))
+00401400          return rax - *(uint64_t*)((char*)fsbase + 0x28);
+00401400      
+004013f6      __stack_chk_fail();
+004013f6      /* no return */
+0040120d  }
+
+
+00401401    int32_t main(int32_t argc, char** argv, char** envp)
+
+00401401  {
+0040140d      void* fsbase;
+0040140d      int64_t rax = *(uint64_t*)((char*)fsbase + 0x28);
+0040142b      printf("\x1b[H\x1b[J");
+0040143a      puts("[========================================================]");
+00401449      puts("[   AI Slopulator v0.9-beta (Disruptive AGI Edition)   ]");
+00401458      puts("[========================================================]\n");
+00401467      puts("[System] Type 'S' and PRESS ENTER to skip boot sequence, or just PRESS ENTER to "
+00401467      "continue...");
+0040146c      int32_t var_74 = 0;
+0040149e      char buf;
+0040149e      
+0040149e      if (fgets(&buf, 0xa, __TMC_END__) && (buf == 0x73 || buf == 0x53))
+004014a0          var_74 = 1;
+004014a0      
+004014ab      if (var_74)
+0040156c          puts("\n[System] Boot sequence bypassed. Fast-tracking to Diagnostic Mode...");
+004014ab      else
+004014ab      {
+004014bb          puts("[AI Slopulator] Welcome to the Next-Gen Disruptive AGI Calculator.");
+004014c5          wait_for_enter();
+004014d4          puts("[AI Slopulator] I am currently hallucinating the concept of numbers. Please "
+004014d4          "wait...");
+004014de          wait_for_enter();
+004014ed          puts("[AI Slopulator] My neural network is running on 14 hacked smart-fridges and "
+004014ed          "a massive pile of VC funding.");
+004014f7          wait_for_enter();
+00401506          puts("[AI Slopulator] My ultimate goal? To democratize arithmetic and let humanity "
+00401506          "just 'vibe-calc'.");
+00401510          wait_for_enter();
+0040151f          puts("[AI Slopulator] (In case you are wondering, 'vibe-calc' means I just guess "
+0040151f          "the result and gaslight you into believing it is true).");
+00401529          wait_for_enter();
+00401538          puts("[AI Slopulator] To stop me from replacing all mathematicians with a 10-line "
+00401538          "Python wrapper, you must trigger the emergency kill-switch.");
+00401542          wait_for_enter();
+00401551          puts("[AI Slopulator] You need to find the exact mathematical sequence my creator "
+00401551          "hardcoded before he was replaced by me...");
+0040155b          wait_for_enter();
+004014ab      }
+004014ab      
+0040157b      puts("\n[System] Diagnostic Mode: Active.");
+0040158a      puts("[System] Vibe-Calc engine ready. Press Ctrl+C to terminate the instance.");
+0040158f      int32_t var_70 = 0x64;
+0040158f      
+004015a5      while (true)
+004015a5      {
+004015a5          printf("\n[Calc] - Param A: ");
+004015c8          int32_t var_7c;
+004015c8          
+004015c8          if (__isoc99_scanf("%d", &var_7c) != 1)
+004015c8              break;
+004015c8          
+004015dd          printf("[Calc] - Param B: ");
+00401600          int32_t var_78;
+00401600          
+00401600          if (__isoc99_scanf("%d", &var_78) != 1)
+00401600              break;
+00401600          
+00401615          printf("[Calc] - Operator (+, -, *, /): ");
+00401638          char var_7d;
+00401638          
+00401638          if (__isoc99_scanf(" %c", &var_7d) != 1)
+00401638              break;
+00401638          
+0040163e          int32_t var_6c_1 = 0;
+0040164c          int32_t rax_23 = (int32_t)(var_7d ^ 0x5a);
+00401656          int32_t var_6c_2;
+00401656          int32_t rdx_1;
+00401656          
+00401656          if (rax_23 == 0x71)
+00401656          {
+00401658              rdx_1 = var_7c;
+00401660              var_6c_2 = var_78 + rdx_1;
+00401656          }
+00401656          else if (rax_23 == 0x77)
+00401669          {
+00401671              rdx_1 = var_7c - var_78;
+00401673              var_6c_2 = rdx_1;
+00401669          }
+00401669          else if (rax_23 == 0x70)
+0040167c          {
+0040167e              rdx_1 = var_7c;
+00401687              var_6c_2 = var_78 * rdx_1;
+0040167c          }
+0040167c          else if (rax_23 != 0x75)
+00401690          {
+004016c5              puts("[AI Slopulator] Invalid operator. I only vibe with +, -, *, and /.");
+004016ca              continue;
+00401690          }
+00401690          else if (!var_78)
+00401697          {
+004016b1              puts("[AI Slopulator] ERROR: Universe division by zero prevented.");
+004016b6              continue;
+00401697          }
+00401697          else
+00401697          {
+0040169c              int32_t rcx_1 = var_78;
+0040169f              int32_t temp4_1;
+0040169f              int32_t temp5_1;
+0040169f              temp4_1 = HIGHD((int64_t)var_7c);
+0040169f              temp5_1 = LOWD((int64_t)var_7c);
+004016a0              rdx_1 = COMBINE(temp4_1, temp5_1) % rcx_1;
+004016a2              var_6c_2 = COMBINE(temp4_1, temp5_1) / rcx_1;
+00401697          }
+00401697          
+004016e3          printf("[AI Slopulator] The vibe tells me the result is: %d\n", 
+004016e3              (uint64_t)var_6c_2, rdx_1);
+004016f9          var_70 = (int32_t)var_7d ^ (var_70 + var_6c_2);
+004016f9          
+00401700          if (var_70 == 0x7c)
+00401700          {
+0040171a              int64_t var_38;
+0040171a              __builtin_strcpy(&var_38, "\n[System] KILL-SWITCH ACTIVE!\n");
+00401752              int64_t var_58;
+00401752              __builtin_strcpy(&var_58, "[AI] No! My RAM!\n");
+00401776              printf("%s", &var_38, 0x214d415220794d20);
+00401791              printf("%s", &var_58);
+0040179e              reveal_secret(var_70 ^ 0x70);
+004017a3              break;
+00401700          }
+004015a5      }
+004015a5      
+004017b5      *(uint64_t*)((char*)fsbase + 0x28);
+004017b5      
+004017be      if (rax == *(uint64_t*)((char*)fsbase + 0x28))
+004017cd          return 0;
+004017cd      
+004017c7      __stack_chk_fail();
+004017c7      /* no return */
+00401401  }
+
+.text (PROGBITS) section ended  {0x401100-0x4017ce}
+
+004017ce                                            00 00                                                                ..
+
+.fini (PROGBITS) section started  {0x4017d0-0x4017dd}
+
+004017d0    int64_t _fini() __pure
+
+004017d0  {
+004017dc      return;
+004017d0  }
+
+.fini (PROGBITS) section ended  {0x4017d0-0x4017dd}
+
+.rodata (PROGBITS) section started  {0x402000-0x4026e0}
+00402000  uint32_t _IO_stdin_used = 0x20001
+
+00402004              00 00 00 00                                                                              ....
+
+00402008  char const data_402008[0x21] = "\n[*] Processing Memory Buffer...", 0
+00402029  char const data_402029[0x10] = "[*] Output: %s\n", 0
+
+00402039                                                                             00 00 00 00 00 00 00                           .......
+
+00402040  char const data_402040[0x5f] = "[*] Note: The AGI has decided to spare you so you can enjoy the %sth Edition of ShiftAPPens.\n\n", 0
+
+0040209f                                                                                               00                                 .
+
+004020a0  char const data_4020a0[0x4b] = "[*] (Now it makes sense why every operation had to return %d, right? ;) )\n", 0
+
+004020eb  data_4020eb:
+004020eb                                   1b 5b 48 1b 5b 4a 00 00 00 00 00 00 00                                     .[H.[J.......
+
+004020f8  char const data_4020f8[0x3b] = "[========================================================]", 0
+
+00402133                                                           00 00 00 00 00                                             .....
+
+00402138  char const data_402138[0x39] = "[   AI Slopulator v0.9-beta (Disruptive AGI Edition)   ]", 0
+
+00402171                                                     00 00 00 00 00 00 00                                           .......
+
+00402178  char const data_402178[0x3c] = "[========================================================]\n", 0
+
+004021b4                                                              00 00 00 00                                              ....
+
+004021b8  char const data_4021b8[0x5c] = "[System] Type \'S\' and PRESS ENTER to skip boot sequence, or just PRESS ENTER to continue...", 0
+
+00402214                                                              00 00 00 00                                              ....
+
+00402218  char const data_402218[0x43] = "[AI Slopulator] Welcome to the Next-Gen Disruptive AGI Calculator.", 0
+
+0040225b                                                                                   00 00 00 00 00                             .....
+
+00402260  char const data_402260[0x54] = "[AI Slopulator] I am currently hallucinating the concept of numbers. Please wait...", 0
+
+004022b4                                                              00 00 00 00                                              ....
+
+004022b8  char const data_4022b8[0x6a] = "[AI Slopulator] My neural network is running on 14 hacked smart-fridges and a massive pile of VC funding.", 0
+
+00402322        00 00 00 00 00 00                                                                            ......
+
+00402328  char const data_402328[0x5f] = "[AI Slopulator] My ultimate goal? To democratize arithmetic and let humanity just \'vibe-calc\'.", 0
+
+00402387                       00                                                                                 .
+
+00402388  char const data_402388[0x83] = "[AI Slopulator] (In case you are wondering, \'vibe-calc\' means I just guess the result and gaslight you into believing it is true).", 0
+
+0040240b                                   00 00 00 00 00                                                             .....
+
+00402410  char const data_402410[0x88] = "[AI Slopulator] To stop me from replacing all mathematicians with a 10-line Python wrapper, you must trigger the emergency kill-switch.", 0
+00402498  char const data_402498[0x76] = "[AI Slopulator] You need to find the exact mathematical sequence my creator hardcoded before he was replaced by me...", 0
+
+0040250e                                            00 00                                                                ..
+
+00402510  char const data_402510[0x46] = "\n[System] Boot sequence bypassed. Fast-tracking to Diagnostic Mode...", 0
+
+00402556                                                                    00 00                                                ..
+
+00402558  char const data_402558[0x23] = "\n[System] Diagnostic Mode: Active.", 0
+
+0040257b                                                                                   00 00 00 00 00                             .....
+
+00402580  char const data_402580[0x49] = "[System] Vibe-Calc engine ready. Press Ctrl+C to terminate the instance.", 0
+004025c9  char const data_4025c9[0x14] = "\n[Calc] - Param A: ", 0
+
+004025dd  data_4025dd:
+004025dd                                                                                         25 64 00                               %d.
+
+004025e0  char const data_4025e0[0x13] = "[Calc] - Param B: ", 0
+
+004025f3                                                           00 00 00 00 00                                             .....
+
+004025f8  char const data_4025f8[0x21] = "[Calc] - Operator (+, -, *, /): ", 0
+
+00402619  data_402619:
+00402619                                                                             20 25 63 00 00 00 00                            %c....
+
+00402620  char const data_402620[0x3c] = "[AI Slopulator] ERROR: Universe division by zero prevented.", 0
+
+0040265c                                                                                      00 00 00 00                              ....
+
+00402660  char const data_402660[0x43] = "[AI Slopulator] Invalid operator. I only vibe with +, -, *, and /.", 0
+
+004026a3           00 00 00 00 00                                                                             .....
+
+004026a8  char const data_4026a8[0x35] = "[AI Slopulator] The vibe tells me the result is: %d\n", 0
+
+004026dd  data_4026dd:
+004026dd                                                                                         25 73 00                               %s.
+.rodata (PROGBITS) section ended  {0x402000-0x4026e0}
+
+.eh_frame_hdr (PROGBITS) section started  {0x4026e0-0x402724}
+004026e0  __GNU_EH_FRAME_HDR:
+004026e0  01 1b 03 3b 44 00 00 00 07 00 00 00 40 e9 ff ff 78 00 00 00 b0 e9 ff ff a0 00 00 00 c0 e9 ff ff  ...;D.......@...x...............
+00402700  b8 00 00 00 20 ea ff ff 60 00 00 00 09 eb ff ff d0 00 00 00 2d eb ff ff f0 00 00 00 21 ed ff ff  .... ...`...........-.......!...
+00402720  14 01 00 00                                                                                      ....
+.eh_frame_hdr (PROGBITS) section ended  {0x4026e0-0x402724}
+
+00402724              00 00 00 00                                                                              ....
+
+.eh_frame (PROGBITS) section started  {0x402728-0x402818}
+00402728                          14 00 00 00 00 00 00 00 01 7a 52 00 01 78 10 01 1b 0c 07 08 90 01 00 00          .........zR..x..........
+00402740  14 00 00 00 1c 00 00 00 b8 e9 ff ff 26 00 00 00 00 44 07 10 00 00 00 00 24 00 00 00 34 00 00 00  ............&....D......$...4...
+00402760  c0 e8 ff ff 70 00 00 00 00 0e 10 46 0e 18 4a 0f 0b 77 08 80 00 3f 1a 39 2a 33 24 22 00 00 00 00  ....p......F..J..w...?.9*3$"....
+00402780  14 00 00 00 5c 00 00 00 08 e9 ff ff 10 00 00 00 00 00 00 00 00 00 00 00 14 00 00 00 74 00 00 00  ....\.......................t...
+004027a0  00 e9 ff ff 60 00 00 00 00 00 00 00 00 00 00 00 1c 00 00 00 8c 00 00 00 31 ea ff ff 24 00 00 00  ....`...................1...$...
+004027c0  00 45 0e 10 86 02 43 0d 06 5b 0c 07 08 00 00 00 20 00 00 00 ac 00 00 00 35 ea ff ff f4 01 00 00  .E....C..[...... .......5.......
+004027e0  00 45 0e 10 86 02 43 0d 06 45 83 03 03 e6 01 0c 07 08 00 00 1c 00 00 00 d0 00 00 00 05 ec ff ff  .E....C..E......................
+00402800  cd 03 00 00 00 45 0e 10 86 02 43 0d 06 03 c4 03 0c 07 08 00                                      .....E....C.........
+00402814  __FRAME_END__:
+00402814                                                              00 00 00 00                                              ....
+.eh_frame (PROGBITS) section ended  {0x402728-0x402818}
+
+.init_array section started  {0x403d90-0x403d98}
+00403d90  void (* __frame_dummy_init_array_entry[0x1])() = 
+00403d90  {
+00403d90      [0x0] = frame_dummy
+00403d98  }
+.init_array section ended  {0x403d90-0x403d98}
+
+.fini_array section started  {0x403d98-0x403da0}
+00403d98  void (* __do_global_dtors_aux_fini_array_entry[0x1])() = 
+00403d98  {
+00403d98      [0x0] = __do_global_dtors_aux
+00403da0  }
+.fini_array section ended  {0x403d98-0x403da0}
+
+.dynamic (DYNAMIC) section started  {0x403da0-0x403f90}
+00403da0  struct Elf64_Dyn _DYNAMIC[0x1b] = 
+00403da0  {
+00403da0      [0x00] = 
+00403da0      {
+00403da0          enum e_dyn_tag d_tag = DT_NEEDED
+00403da8          uint64_t d_val = 0x62
+00403db0      }
+00403db0      [0x01] = 
+00403db0      {
+00403db0          enum e_dyn_tag d_tag = DT_INIT
+00403db8          uint64_t d_val = 0x1000
+00403dc0      }
+00403dc0      [0x02] = 
+00403dc0      {
+00403dc0          enum e_dyn_tag d_tag = DT_FINI
+00403dc8          uint64_t d_val = 0x17d0
+00403dd0      }
+00403dd0      [0x03] = 
+00403dd0      {
+00403dd0          enum e_dyn_tag d_tag = DT_INIT_ARRAY
+00403dd8          uint64_t d_val = 0x3d90
+00403de0      }
+00403de0      [0x04] = 
+00403de0      {
+00403de0          enum e_dyn_tag d_tag = DT_INIT_ARRAYSZ
+00403de8          uint64_t d_val = 0x8
+00403df0      }
+00403df0      [0x05] = 
+00403df0      {
+00403df0          enum e_dyn_tag d_tag = DT_FINI_ARRAY
+00403df8          uint64_t d_val = 0x3d98
+00403e00      }
+00403e00      [0x06] = 
+00403e00      {
+00403e00          enum e_dyn_tag d_tag = DT_FINI_ARRAYSZ
+00403e08          uint64_t d_val = 0x8
+00403e10      }
+00403e10      [0x07] = 
+00403e10      {
+00403e10          enum e_dyn_tag d_tag = DT_GNU_HASH
+00403e18          uint64_t d_val = 0x3b0
+00403e20      }
+00403e20      [0x08] = 
+00403e20      {
+00403e20          enum e_dyn_tag d_tag = DT_STRTAB
+00403e28          uint64_t d_val = 0x510
+00403e30      }
+00403e30      [0x09] = 
+00403e30      {
+00403e30          enum e_dyn_tag d_tag = DT_SYMTAB
+00403e38          uint64_t d_val = 0x3d8
+00403e40      }
+00403e40      [0x0a] = 
+00403e40      {
+00403e40          enum e_dyn_tag d_tag = DT_STRSZ
+00403e48          uint64_t d_val = 0xdc
+00403e50      }
+00403e50      [0x0b] = 
+00403e50      {
+00403e50          enum e_dyn_tag d_tag = DT_SYMENT
+00403e58          uint64_t d_val = 0x18
+00403e60      }
+00403e60      [0x0c] = 
+00403e60      {
+00403e60          enum e_dyn_tag d_tag = DT_DEBUG
+00403e68          uint64_t d_val = 0x0
+00403e70      }
+00403e70      [0x0d] = 
+00403e70      {
+00403e70          enum e_dyn_tag d_tag = DT_PLTGOT
+00403e78          uint64_t d_val = 0x3f90
+00403e80      }
+00403e80      [0x0e] = 
+00403e80      {
+00403e80          enum e_dyn_tag d_tag = DT_PLTRELSZ
+00403e88          uint64_t d_val = 0x90
+00403e90      }
+00403e90      [0x0f] = 
+00403e90      {
+00403e90          enum e_dyn_tag d_tag = DT_PLTREL
+00403e98          uint64_t d_val = 0x7
+00403ea0      }
+00403ea0      [0x10] = 
+00403ea0      {
+00403ea0          enum e_dyn_tag d_tag = DT_JMPREL
+00403ea8          uint64_t d_val = 0x730
+00403eb0      }
+00403eb0      [0x11] = 
+00403eb0      {
+00403eb0          enum e_dyn_tag d_tag = DT_RELA
+00403eb8          uint64_t d_val = 0x658
+00403ec0      }
+00403ec0      [0x12] = 
+00403ec0      {
+00403ec0          enum e_dyn_tag d_tag = DT_RELASZ
+00403ec8          uint64_t d_val = 0xd8
+00403ed0      }
+00403ed0      [0x13] = 
+00403ed0      {
+00403ed0          enum e_dyn_tag d_tag = DT_RELAENT
+00403ed8          uint64_t d_val = 0x18
+00403ee0      }
+00403ee0      [0x14] = 
+00403ee0      {
+00403ee0          enum e_dyn_tag d_tag = DT_FLAGS
+00403ee8          uint64_t d_val = 0x8
+00403ef0      }
+00403ef0      [0x15] = 
+00403ef0      {
+00403ef0          enum e_dyn_tag d_tag = DT_FLAGS_1
+00403ef8          uint64_t d_val = 0x8000001
+00403f00      }
+00403f00      [0x16] = 
+00403f00      {
+00403f00          enum e_dyn_tag d_tag = DT_VERNEED
+00403f08          uint64_t d_val = 0x608
+00403f10      }
+00403f10      [0x17] = 
+00403f10      {
+00403f10          enum e_dyn_tag d_tag = DT_VERNEEDNUM
+00403f18          uint64_t d_val = 0x1
+00403f20      }
+00403f20      [0x18] = 
+00403f20      {
+00403f20          enum e_dyn_tag d_tag = DT_VERSYM
+00403f28          uint64_t d_val = 0x5ec
+00403f30      }
+00403f30      [0x19] = 
+00403f30      {
+00403f30          enum e_dyn_tag d_tag = DT_RELACOUNT
+00403f38          uint64_t d_val = 0x3
+00403f40      }
+00403f40      [0x1a] = 
+00403f40      {
+00403f40          enum e_dyn_tag d_tag = DT_NULL
+00403f48          uint64_t d_val = 0x0
+00403f50      }
+00403f50  }
+
+00403f50                                                  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00                  ................
+00403f60  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+00403f80  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00                                                  ................
+.dynamic (DYNAMIC) section ended  {0x403da0-0x403f90}
+
+.got (PROGBITS) section started  {0x403f90-0x404000}
+00403f90  _GLOBAL_OFFSET_TABLE_:
+00403f90                                                  a0 3d 00 00 00 00 00 00                                          .=......
+
+00403f98  int64_t data_403f98 = 0x0
+00403fa0  int64_t data_403fa0 = 0x0
+00403fa8  int32_t (* const puts)(char const* str) = puts
+00403fb0  void (* const __stack_chk_fail)() __noreturn = __stack_chk_fail
+00403fb8  int32_t (* const printf)(char const* format, ...) = printf
+00403fc0  char* (* const fgets)(char* buf, int32_t n, FILE* fp) = fgets
+00403fc8  int32_t (* const getchar)() = getchar
+00403fd0  int32_t (* const __isoc99_scanf)(char const* format, ...) = __isoc99_scanf
+00403fd8  void (* const __libc_start_main)(int32_t (* main)(int32_t argc, char** argv, char** envp), int32_t argc, char** ubp_av, void (* init)(), void (* fini)(), void (* rtld_fini)(), void* stack_end) __noreturn = __libc_start_main
+00403fe0  int64_t (* const _ITM_deregisterTMCloneTable)() = _ITM_deregisterTMCloneTable
+00403fe8  int64_t (* const __gmon_start__)() = __gmon_start__
+00403ff0  int64_t (* const _ITM_registerTMCloneTable)() = _ITM_registerTMCloneTable
+00403ff8  void (* const __cxa_finalize)(void* d) = __cxa_finalize
+.got (PROGBITS) section ended  {0x403f90-0x404000}
+
+.data (PROGBITS) section started  {0x404000-0x404010}
+00404000  __data_start:
+00404000  00 00 00 00 00 00 00 00                                                                          ........
+
+00404008  void* __dso_handle = __dso_handle
+.data (PROGBITS) section ended  {0x404000-0x404010}
+
+.bss (NOBITS) section started  {0x404010-0x404020}
+00404010  uint64_t* const __TMC_END__ = 0x0
+00404018  uint8_t completed.0 = 0x0
+
+00404019                                                                             00 00 00 00 00 00 00                           .......
+.bss (NOBITS) section ended  {0x404010-0x404020}
+
+.extern section started  {0x404020-0x404078}
+00404020  extern _ITM_deregisterTMCloneTable
+00404028  extern _ITM_registerTMCloneTable
+00404030  extern void __cxa_finalize(void* d)
+00404038  extern __gmon_start__
+00404040  extern int32_t __isoc99_scanf(char const* format, ...)
+00404048  extern void __libc_start_main(int32_t (* main)(int32_t argc, char** argv, char** envp), int32_t argc, char** ubp_av, void (* init)(), void (* fini)(), void (* rtld_fini)(), void* stack_end) __noreturn
+00404050  extern void __stack_chk_fail() __noreturn
+00404058  extern char* fgets(char* buf, int32_t n, FILE* fp)
+00404060  extern int32_t getchar()
+00404068  extern int32_t printf(char const* format, ...)
+00404070  extern int32_t puts(char const* str)
+.extern section ended  {0x404020-0x404078}
+
+.synthetic_builtins section started  {0x404080-0x4040b0}
+00404080  extern void* __builtin_memcpy(void* dest, void const* src, uint64_t count)
+00404088  extern void* __builtin_memset(void* dest, int32_t ch, uint64_t count)
+00404090  extern char* __builtin_strcpy(char* dest, char const* src)
+00404098  extern char* __builtin_strncpy(char* dest, char const* src, uint64_t count)
+004040a0  extern wchar32* __builtin_wcscpy(wchar32* dest, wchar32 const* src)
+004040a8  extern wchar32* __builtin_wmemcpy(wchar32* dest, wchar32 const* src, uint64_t count)
+.synthetic_builtins section ended  {0x404080-0x4040b0}
+

@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-03-24T12:00:34.109300+00:00",
+  "forum_url": "https://pcm.rnl.tecnico.ulisboa.pt/moodle/mod/peerforum/discuss.php?d=525#p29874",
+  "target_key": "d=525#p29874",
+  "awards_page_id": 726,
+  "match_window_seconds": 21600,
+  "expected_delay_minutes": 20.0,
+  "peergrade_reviews": [
+    {
+      "grader_id": 38001,
+      "raw_time": "Tuesday, 24 March 2026, 10:26 AM",
+      "timestamp": 1774347960,
+      "peer_grade": 3,
+      "feedback": "This seems pretty well made and structured. The only problem that I have with this is the audio, voice is really low Maximum rating: - Permalink Show parent Reply \u25c4 Reporter Flawless Duet \u25ba \u25c4 Labs Forum Jump to... Jump to... GameCourse Social forum Questions Labs Forum Participation Forum Bugs Forum Office Hours Objectives Game Rules Lectures Lab Classes Elder Scrolls Hall of Fame Player Characterization Learning Process Inventory Student engagement (evolution questionnaire) Dry Run Quiz 1 Quiz 2 Quiz 3 Quiz 4 Multimedia Presentation Multimedia Presentation FAQ Attendance Player's Handbook Lecture 1 Slides - Intro Lecture 1 Slides - Text Lecture 2 slides - Bitmapped Image (lossless) Lecture 3 Slides - Bitmapped Image (Lossy) Lecture 3 Slides - Bitmapped Image (Pro&Vis) Lecture 4 Slides - Audio Lecture 4 Slides - Audio Processing Lecture 5 Slides - Color Lecture 4 - Audio Samples Lecture 6 Slides - Graphic Design Principles Lecture 7 Slides - Vector Images Lecture 7 Slides - Animation and Synchronisation Lecture 8 Slides - Presentations I Lecture 8 Slides - Presentations II Lecture 9 Slides - Video Compression Lecture 10 Slides - Video & Audio Recording Lecture 11 Slides - Photo Techniques Lecture 12 - Copyright & DRM MSc Proposals PCM2026-Labs-Inkscape&GIMP PCM2026-Labs-Inkscape&GIMP-Materials PCM2026-Labs-Inkscape&GIMP-Exercise PCM2026-Labs-Inkscape&GIMP PCM2026-Labs-Audacity&Kdenlive PCM2026-Labs-Audacity&Kdenlive-Materials PCM2026-Labs-Audacity&Kdenlive-Exercise PCM2026-Labs-Audacity&Kdenlive PCM2026-Labs-Pixels-Tutorial PCM2026-Labs-Pixels-Materials PCM2026-Labs-Pixels-Tutorial-Exercise PCM2026-Pixels-Exercise PCM2026-Pixels-Exercise-Materials PCM2026-Pixels-Tutorial-Exercise-Solved PCM2026-Labs-Pixels-Exercise PCM2026-Labs-Binning-Tutorial PCM2026-Labs-Binning-Materials PCM2025-Binning-Tutorial-Solved PCM2026-Binning-Exercise-Materials PCM2025-Binning-Exercise PCM2026-Labs-Binning-Tutorial-Exercise PCM2026-Labs-Binning-Exercise PCM2026-Audio-Tutorial PCM2026-Audio-Tutorial-Solved PCM2026-Audio-Materials PCM2026-Audio-Tutorial PCM2026-Audio-Exercise PCM2025-Audio-Exercise PCM2026-Audio-Exercise-Materials PCM2026-Transitions-Tutorial PCM2025-Transitions-Tutorial-Complete PCM2026-Transitions-Tutorial-Materials PCM2026-Transitions-Tutorial-Exercise PCM2026-Transitions-Exercise PCM2024-Segmentation-Tutorial PCM2024-Segmentation-Tutorial-Materials PCM2026-Segmentation-Tutorial-Exercise PCM2026-Segmentation-Exercise PCM2025-Transitions-Exercise PCM2025-Transitions-Exercise-Materials PCM2025-Segmention-Tutorial-Complete PCM2025-Segmentation-Exercise PCM2025-Segmentation-Exercise-Materials Participation Forum \u25ba INFO Moodle community Moodle free support Moodle Docs Moodle.com Copyright \u00a9 2017 - Developed by LMSACE.com. Powered by Moodle You are logged in"
+    }
+  ],
+  "time_based_resolution": {
+    "38001": [
+      {
+        "user_id": 1683,
+        "name": "Pedro Maria Eust\u00e1quio Vaz Pereira",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1683",
+        "delta_seconds": 877,
+        "delta_minutes": 14.62,
+        "delta_from_expected_minutes": 5.38,
+        "review_timestamp": 1774347960,
+        "awards_timestamp": 1774348837
+      }
+    ]
+  },
+  "fallback_candidates": {},
+  "time_match_window_seconds_effective": 21600
+}

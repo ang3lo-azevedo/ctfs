@@ -1,0 +1,33 @@
+Return-Path: <wcarvalho@cosmetics-corp.local>
+X-Original-To: kcosta@cosmetics-corp.local
+Delivered-To: kcosta@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=wcarvalho@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id AAD8D260656
+	for <kcosta@cosmetics-corp.local>; Tue, 24 Feb 2026 14:21:58 +0000 (UTC)
+Authentication-Results: mail.hr-system.lab; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.hr-system.lab; dkim=none; dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=wcarvalho@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (unknown [192.168.80.21])
+	by mail.hr-system.lab (Postfix) with ESMTP id 9ABFE260719
+	for <kcosta@cosmetics-corp.local>; Tue, 24 Feb 2026 14:21:58 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:21:58 +0000
+To: kcosta@cosmetics-corp.local
+From: wcarvalho@cosmetics-corp.local
+Subject: Política de home office atualizada
+Message-Id: <20260224142158.005187@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados colaboradores,
+
+Informamos que a política de home office foi atualizada e já está disponível no portal interno, na seção de RH > Políticas.
+
+As principais mudanças incluem: limite de 2 dias por semana em regime remoto e necessidade de aprovação prévia do gestor.
+
+Dúvidas, entrem em contato com o RH.
+
+Atenciosamente, Diretoria de Pessoas.
+

@@ -1,0 +1,27 @@
+Return-Path: <vfonseca@cosmetics-corp.local>
+X-Original-To: ipereira@cosmetics-corp.local
+Delivered-To: ipereira@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=vfonseca@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id 3D865260656
+	for <ipereira@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:13 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:13 +0000
+To: ipereira@cosmetics-corp.local
+From: vfonseca@cosmetics-corp.local
+Subject: Convite: palestra com ex-aluno e executivo do mercado
+Message-Id: <20260224150513.005850@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Olá a todos,
+
+Temos o prazer de convidar para a palestra 'Trajetórias de Liderança', com Carlos Mendes, CEO da StartX e ex-colaborador da nossa empresa.
+
+Data: 27/11, às 18h30, no auditório principal. Entrada gratuita.
+
+Inscrições pelo portal de eventos.
+
+Comunicação Interna.
+

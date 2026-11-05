@@ -1,0 +1,33 @@
+Return-Path: <bmarques@cosmetics-corp.local>
+X-Original-To: sguimaraes@cosmetics-corp.local
+Delivered-To: sguimaraes@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=bmarques@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id 1EE85260656
+	for <sguimaraes@cosmetics-corp.local>; Tue, 24 Feb 2026 14:22:00 +0000 (UTC)
+Authentication-Results: mail.hr-system.lab; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.hr-system.lab; dkim=none; dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=bmarques@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (unknown [192.168.80.21])
+	by mail.hr-system.lab (Postfix) with ESMTP id 10E44260719
+	for <sguimaraes@cosmetics-corp.local>; Tue, 24 Feb 2026 14:22:00 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:22:00 +0000
+To: sguimaraes@cosmetics-corp.local
+From: bmarques@cosmetics-corp.local
+Subject: Curso gratuito disponível: Excel Avançado
+Message-Id: <20260224142200.005459@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados colaboradores,
+
+A empresa disponibilizou, através da plataforma EAD, um curso gratuito de Excel Avançado com carga horária de 20h.
+
+O curso abrange tabelas dinâmicas, fórmulas avançadas, dashboards e macros básicas.
+
+Acesse pelo portal de treinamentos e aproveite!
+
+Universidade Corporativa.
+

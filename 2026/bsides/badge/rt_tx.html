@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RT Transmitter</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#000;font-family:ui-monospace,monospace}
+  #fill{position:fixed;inset:0}
+  #hud{position:fixed;left:10px;top:8px;color:#fff;mix-blend-mode:difference;
+       font-size:13px;line-height:1.5;white-space:pre;user-select:none;max-width:70ch}
+  kbd{border:1px solid #fff6;border-radius:3px;padding:0 4px}
+</style>
+</head>
+<body>
+<div id="fill"></div>
+<div id="hud"></div>
+<script>
+const fill=document.getElementById('fill'), hud=document.getElementById('hud');
+// ---- byte -> RGB mapping (adjustable while calibrating) ----
+// default: split a byte 3-3-2 across R,G,B and scale each field to 0..255
+function byteToRGB(b){
+  const r=(b>>5)&7, g=(b>>2)&7, bl=b&3;
+  return [Math.round(r*255/7), Math.round(g*255/7), Math.round(bl*255/3)];
+}
+const hex=(n,w=2)=>n.toString(16).toUpperCase().padStart(w,'0');
+function css([r,g,b]){return `rgb(${r},${g},${b})`;}
+
+// ---- state ----
+let mode='idle';            // 'enum' | 'tx'
+let frameMs=400;            // how long each color is shown
+let gap=true;               // black gap between frames (framing)
+let reps=3;                 // repeats per frame (matches "3 packets")
+let enumByte=0;
+let codes=[];               // list of 32-bit words to transmit
+let codeIdx=0, step=null;
+
+function setColor(rgb){ fill.style.background=css(rgb); }
+function black(){ fill.style.background='#000'; }
+
+function draw(extra=''){
+  hud.textContent =
+`RT transmitter
+mode: ${mode}   frameMs: ${frameMs}   reps: ${reps}   gap: ${gap?'on':'off'}
+mapping: byteToRGB (3-3-2 default; edit in source to match badge)
+${extra}
+keys: [E] enumerate 00..FF   [T] transmit codes   [SPACE] stop
+      +/- frame speed   R/F reps +/-   G toggle gap
+to transmit: put hex words (e.g. 80986C26) in the prompt that opens with [T]`;
+}
+
+function stop(){ mode='idle'; if(step){clearInterval(step);clearTimeout(step);step=null;} black(); draw('(stopped)'); }
+
+// Enumerate every byte-color slowly, labeled, so you can read the badge's decode per color.
+function enumerate(){
+  stop(); mode='enum'; enumByte=0;
+  const tick=()=>{
+    if(mode!=='enum') return;
+    const rgb=byteToRGB(enumByte);
+    setColor(rgb);
+    draw(`ENUM byte 0x${hex(enumByte)}  rgb(${rgb.join(',')})  hex#${rgb.map(v=>hex(v)).join('')}\n`+
+         `-> watch miniterm: what word/byte does the badge decode for THIS color?`);
+    enumByte=(enumByte+1)&0xFF;
+    step=setTimeout(tick, frameMs*2);   // hold each color a bit longer for a clean read
+  };
+  tick();
+}
+
+// Transmit a list of 32-bit words as 4 color frames each, reps times, with optional black gaps.
+async function transmit(list){
+  stop(); mode='tx'; codes=list; codeIdx=0;
+  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+  while(mode==='tx' && codes.length){
+    const word=codes[codeIdx];
+    const bytes=[(word>>>24)&255,(word>>>16)&255,(word>>>8)&255,word&255];
+    draw(`TX ${hex(word,8)}  (${codeIdx+1}/${codes.length})  bytes ${bytes.map(b=>hex(b)).join(' ')}`);
+    for(let rep=0; rep<reps && mode==='tx'; rep++){
+      for(const b of bytes){
+        if(mode!=='tx') break;
+        setColor(byteToRGB(b)); await sleep(frameMs);
+        if(gap){ black(); await sleep(Math.max(40,frameMs*0.25)); }
+      }
+      black(); await sleep(frameMs); // word gap
+    }
+    codeIdx=(codeIdx+1)%codes.length;
+  }
+}
+
+addEventListener('keydown', e=>{
+  if(e.key==='e'||e.key==='E') enumerate();
+  else if(e.key==='t'||e.key==='T'){
+    const s=prompt('hex words to transmit (space/newline separated), e.g.\n80986C26 5E73E6FD\nor a range like 00000000..000000FF');
+    if(!s) return;
+    let list=[];
+    const m=s.trim().match(/^([0-9a-f]{1,8})\.\.([0-9a-f]{1,8})$/i);
+    if(m){ for(let i=parseInt(m[1],16); i<=parseInt(m[2],16); i++) list.push(i>>>0); }
+    else list=s.trim().split(/\s+/).map(x=>parseInt(x,16)>>>0).filter(n=>!isNaN(n));
+    if(list.length) transmit(list);
+  }
+  else if(e.key===' '){ e.preventDefault(); stop(); }
+  else if(e.key==='+'||e.key==='='){ frameMs=Math.max(60,frameMs-40); draw(); }
+  else if(e.key==='-'){ frameMs+=40; draw(); }
+  else if(e.key==='r'||e.key==='R'){ reps++; draw(); }
+  else if(e.key==='f'||e.key==='F'){ reps=Math.max(1,reps-1); draw(); }
+  else if(e.key==='g'||e.key==='G'){ gap=!gap; draw(); }
+});
+black(); draw('(idle) press E to enumerate colors, or T to transmit');
+</script>
+</body>
+</html>

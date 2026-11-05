@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    container_name: chronos-gateway
+    ports:
+      - "80:80"
+    depends_on:
+      - auth_service
+    networks:
+      - chronos-network
+    environment:
+      - NODE_ENV=development
+
+  auth_service:
+    build:
+      context: ./auth_service
+      dockerfile: Dockerfile
+    container_name: chronos-auth-service
+    expose:
+      - "3000"
+    networks:
+      - chronos-network
+    environment:
+      - NODE_ENV=development
+      - CHRONOS_SIGNING_ORACLE_KEY=secret_local_de_teste
+
+  vetting_service:
+    build:
+      context: ./vetting_service
+      dockerfile: Dockerfile
+    container_name: chronos-vetting-service
+    expose:
+      - "3001"
+    depends_on:
+      - auth_service
+    networks:
+      - chronos-network
+    environment:
+      - NODE_ENV=development
+      - CHRONOS_SIGNING_ORACLE_KEY=secret_local_de_teste
+      - CURATOR_APPROVAL_SIGN=vlt_local_test_key_123
+      - STAGE2_FLAG=CHRONOS{REDACTED_LOCAL}
+
+  report_service:
+    build:
+      context: ./report_service
+      dockerfile: Dockerfile
+    container_name: chronos-report-service
+    expose:
+      - "3002"
+    depends_on:
+      - auth_service
+    networks:
+      - chronos-network
+    environment:
+      - NODE_ENV=development
+      - CHRONOS_SIGNING_ORACLE_KEY=secret_local_de_teste
+      - CHRONOS_LEGACY_ORACLE_KEY=legacy_local_key
+      - STAGE3_FLAG=CHRONOS{REDACTED_LOCAL}
+
+  legacy_service:
+    build:
+      context: ./legacy_service
+      dockerfile: Dockerfile
+    container_name: chronos-legacy-service
+    expose:
+      - "3003"
+    networks:
+      - chronos-network
+    environment:
+      - NODE_ENV=development
+      - CHRONOS_LEGACY_ORACLE_KEY=legacy_local_key
+      - CHRONOS_ARCHIVE_INTEGRITY_KEY=CHRONOS{REDACTED_LOCAL}
+    ulimits:
+      nofile:
+        soft: 100
+        hard: 100
+
+networks:
+  chronos-network:
+    driver: bridge

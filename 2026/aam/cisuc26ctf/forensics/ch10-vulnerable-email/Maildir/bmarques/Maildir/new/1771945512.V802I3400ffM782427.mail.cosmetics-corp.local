@@ -1,0 +1,25 @@
+Return-Path: <ecavalcanti@cosmetics-corp.local>
+X-Original-To: bmarques@cosmetics-corp.local
+Delivered-To: bmarques@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=ecavalcanti@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id BCF23260656
+	for <bmarques@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:12 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:12 +0000
+To: bmarques@cosmetics-corp.local
+From: ecavalcanti@cosmetics-corp.local
+Subject: Workshop: comunicação assertiva no trabalho
+Message-Id: <20260224150512.005748@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados colaboradores,
+
+Convidamos a todos para o workshop de Comunicação Assertiva, que acontecerá no dia 22, das 14h às 17h, na sala de treinamentos.
+
+As vagas são limitadas. Inscreva-se pelo portal de treinamentos até o dia 18.
+
+Universidade Corporativa.
+

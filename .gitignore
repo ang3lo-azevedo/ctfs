@@ -1,0 +1,215 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.env
+.venv
+venv/
+ENV/
+
+# C/C++
+*.o
+*.obj
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Core dumps
+core
+core.*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Common CTF artifacts to ignore
+*.tar.gz
+*.zip
+*.7z
+*.rar
+*.pcap
+*.pcapng
+*.dmp
+*.bin
+*.img
+*.iso
+*.vmdk
+
+# Editor directories and files
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# Secrets and Keys (Do not commit these!)
+*.key
+*.pem
+*.cert
+*.crt
+id_rsa
+id_dsa
+id_ed25519
+id_ecdsa
+.aws/
+.gcp/
+.azure/
+secret*
+
+# Logs
+*.log
+
+# Unreadable forensic artifacts
+2026/solo/cylab/forensics/sleuthkit_series/etc/shadow
+2026/solo/cylab/forensics/sleuthkit_series/root/.ash_history
+
+# ECSC PDFs
+2026/ecsc/*.pdf
+
+# Keys
+2026/ecsc/keys/
+
+# Additional ignored files
+extractions/
+*.ovpn
+*.mp3
+*.wav
+*.aut
+*.db
+*.gb
+*.sav
+
+
+# ---------------------------------------------------------------------------
+# Public repository rules: writeups, solve scripts and small challenge files only.
+# Files over 5 MiB are rejected by the pre-commit hook (.githooks/pre-commit).
+# ---------------------------------------------------------------------------
+
+# Private and team material
+ecsc/
+autopsy/
+
+# Extracted filesystems, triage collections and tool output
+C/
+rootfs/
+*-rootfs/
+webroot/
+kape_output/
+Kape_Output/
+volatility_output/
+dump_files/
+final_triage/
+temp_extract_dir/
+recup_dir.*/
+TRIAGE_*/
+temoin_data/
+extracted/
+_*.extracted/
+*_carved/
+checkpoint/
+mame/
+2026/solo/cscpt/bootcamp/day_1/forensics/DeadWeight/output/
+2026/solo/cscpt/bootcamp/day_1/game/shibu/Shibiu/
+2026/solo/cscpt/bootcamp/day_1/game/shibu/Shibuya (sort of___)/
+
+# Third-party tools and other repositories cloned into challenge folders
+/r4ph3cks/
+/tools/ctf-dl/
+2026/aam/cisuc26ctf/forensics/ch11-star-signal/sstv/
+2026/solo/sinfo/forensics/sstv/
+2026/solo/cscpt/quals/ctfd-parser/
+2026/solo/cscpt/bootcamp/day_1/forensics/miletus/PowerDecode/
+2026/solo/cscpt/bootcamp/day_1/forensics/miletus/psdecode/
+2026/solo/cscpt/bootcamp/day_1/game/nbt2json/
+2026/solo/cscpt/bootcamp/day_2/forensics/say_cheese/stegreg/
+2026/solo/cscpt/bootcamp/day_2/forensics/say_cheese/stegcheck/
+2026/solo/cscpt/bootcamp/day_2/forensics/liars_archive/*/Zip-Password-Recovery/
+2026/stt/hacklu26/ad/ma/NetExec/
+
+# Files over 5 MiB (challenge handouts, images, wordlists, models)
+/2025/rapepas/bsides-finals/brain/fucked
+/2025/rapepas/bsides-finals/brain/something
+/2025/rapepas/bsides-finals/IR-2025-110029-A/rockyou.txt
+/2025/stt/backdoor25/fractonacci/challenge.png
+/2025/stt/backdoor25/sonic/final_solution.png
+/2025/stt/backdoor25/sonic/final_solution.tiff
+/2025/stt/glacier25/repo-viewer-revenge/repo-viewer-revenge/repo-viewer
+/2025/stt/glacier25/repo-viewer-revenge/repo-viewer-revenge/repo-viewer.i64
+/2025/stt/m0lecon2026teaser/the-rusty-shop/mqtt_shop
+/2025/stt/securinetsquals2025/forensics/silent_visitor/assets/SOFTWARE
+/2025/stt/securinetsquals2025/forensics/silent_visitor/assets/SYSTEM
+/2025/stt/securinetsquals2025/forensics/silent_visitor/assets/test.ad1
+/2025/stt/securinetsquals2025/forensics/silent_visitor/assets/test.E01
+/2026/aam/cisuc26ctf/forensics/ch11-star-signal/ram_dump.raw
+/2026/aam/cisuc26ctf/forensics/ch11-star-signal/sinal_recuperado.raw
+/2026/aam/cisuc26ctf/rev/ch4-rogue_roulette/roulette_pseudo_c.txt
+/2026/aam/cisuc26ctf/rev/ch5-fractured-redudancy/challenge/binB
+/2026/solo/augustalabs/ode.pt
+/2026/solo/cscpt/bootcamp/day_1/forensics/DeadWeight/DESKTOP-E0CHD27-20250604-195537.raw
+/2026/solo/cscpt/bootcamp/day_1/forensics/DeadWeight/MFTScan.txt
+/2026/solo/cscpt/bootcamp/day_1/revb/pusher/Pusher-handout/challenge
+/2026/solo/cscpt/bootcamp/day_2/forensics/out_of_control/22f0cee666faa3e5df4730cf002d2f8dbf89556250b2244d9cd7c17662f19007/archive/lorem.txt
+/2026/solo/cscpt/bootcamp/day_2/forensics/out_of_control/22f0cee666faa3e5df4730cf002d2f8dbf89556250b2244d9cd7c17662f19007/lorem.txt
+/2026/solo/cscpt/bootcamp/day_2/forensics/say_cheese/7335ccfe3c048b6780a85106279d1437328c1c5a9d97c28fab8681ca8beea5c1/rockyou.txt
+/2026/solo/cscpt/bootcamp/day_2/rockyou.txt
+/2026/solo/cscpt/bootcamp/day_2/rockyou.txt.gz
+/2026/solo/cscpt/bootcamp/day_2/writeup/nos4a2_writeup.pdf
+/2026/solo/cscpt/quals/forensics/Hidden_in_Plain_Stream/4840010456e212cebd111fef50f02c4ec720db7daaf9554044dc7306f1bd665b/cscpt26.dd
+/2026/solo/cscpt/quals/pwn/Galdurs_Bate/libc.so.6
+/2026/solo/cscpt/quals/pwn/Obj2ctm/libc.so.6
+/2026/solo/cscpt/quals/rev/Caravela_Cyber_Lusitana/html_extract/renpy.data
+/2026/solo/cscpt/quals/rev/Caravela_Cyber_Lusitana/html_extract/renpy.wasm
+/2026/solo/cscpt/quals/rev/License/lincense_c
+/2026/solo/cscpt/training/forensics/compromised_server_1/compromised-server-1-webroot/webroot.tar
+/2026/solo/cscpt/training/forensics/encrypted_filesystem/encfs/disk01.dd
+/2026/solo/cscpt/training/forensics/encrypted_filesystem/encfs/SYSTEM
+/2026/solo/cscpt/training/forensics/matryoshka/sdcard.dd
+/2026/solo/cscpt/training/forensics/notepad/WRK01-KANSA/PrefetchFiles/WRK01-PrefetchFiles.csv
+/2026/solo/cscpt/training/forensics/vid/evidence.rm
+/2026/solo/cscpt/training/forensics/vid/evidence.vid
+/2026/solo/cscpt/training/forensics/vid/fixed_final.rm
+/2026/solo/cscpt/training/pwn/static_noise/static_noise_pseudo_c.txt
+/2026/solo/cscpt/training/rev/odometer_1/public1/challenge1.txt
+/2026/solo/cscpt/training/rev/ransomware/public/BouncyCastle.Crypto.dll_pseudo_c.txt
+/2026/solo/training/root_me/forensics/ch39/usb.image
+/2026/stt/dice26quals/misc/leadgate/model.safetensors
+/2026/stt/gpn26/misc/food_inspector/food-inspector/frida/frida-portal
+/2026/stt/gpn26/misc/organized/organized/data
+/2026/stt/gpn26/misc/organized/organized/img1.ppm
+/2026/stt/gpn26/misc/organized/organized/img2.ppm
+/2026/stt/l3akctf26/forensics/you_scanned_how/scan2.sqlite
+/2026/stt/lactf26/misc/flag-irl/LA CTF 2026 - misc⧸flag-irl \[aKpsggYoVnc\].webm
+/2026/stt/pwnsec/spiny-trace-player/chromelevator
+/2026/stt/r3ctf26/funnygame/FunnyGame_Data/globalgamemanagers.assets.resS
+/2026/stt/r3ctf26/funnygame/FunnyGame_Data/il2cpp_data/Metadata/global-metadata.dat
+/2026/stt/r3ctf26/funnygame/FunnyGame_Data/Resources/unity default resources
+
+# VPN configs (contain private keys)
+wg*.conf
+*.ovpn

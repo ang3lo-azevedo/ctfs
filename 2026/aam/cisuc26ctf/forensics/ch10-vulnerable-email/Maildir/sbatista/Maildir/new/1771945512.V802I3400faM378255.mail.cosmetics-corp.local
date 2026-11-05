@@ -1,0 +1,27 @@
+Return-Path: <sguimaraes@cosmetics-corp.local>
+X-Original-To: sbatista@cosmetics-corp.local
+Delivered-To: sbatista@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=sguimaraes@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id 5A749260656
+	for <sbatista@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:12 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:12 +0000
+To: sbatista@cosmetics-corp.local
+From: sguimaraes@cosmetics-corp.local
+Subject: Manutenção de elevadores - Torre A
+Message-Id: <20260224150512.005663@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Atenção,
+
+Os elevadores da Torre A passarão por manutenção preventiva na quarta-feira, das 07h às 10h.
+
+Durante esse período, apenas o elevador de serviço estará disponível.
+
+Agradecemos a compreensão.
+
+Administração Predial.
+

@@ -1,0 +1,25 @@
+Return-Path: <nrocha@cosmetics-corp.local>
+X-Original-To: vfonseca@cosmetics-corp.local
+Delivered-To: vfonseca@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=nrocha@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id 96752260656
+	for <vfonseca@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:12 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:12 +0000
+To: vfonseca@cosmetics-corp.local
+From: nrocha@cosmetics-corp.local
+Subject: Wellbeing: semana de saúde e qualidade de vida
+Message-Id: <20260224150512.005714@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Olá time!
+
+Na semana do dia 18, realizaremos a Semana de Saúde e Qualidade de Vida com palestras, aulas de alongamento e medição de pressão gratuita.
+
+A programação completa será enviada em breve. Fiquem atentos!
+
+Comissão de Bem-Estar.
+

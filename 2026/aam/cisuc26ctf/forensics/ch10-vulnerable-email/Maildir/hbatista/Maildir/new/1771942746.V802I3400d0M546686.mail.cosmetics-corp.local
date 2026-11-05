@@ -1,0 +1,43 @@
+Return-Path: <tmoreira@hr-system.lab>
+X-Original-To: hbatista@cosmetics-corp.local
+Delivered-To: hbatista@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=hr-system.lab
+Authentication-Results: mail.cosmetics-corp.local;
+	dkim=pass (2048-bit key; unprotected) header.d=hr-system.lab header.i=@hr-system.lab header.a=rsa-sha256 header.s=mail header.b=t1bKcNy5;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=tmoreira@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id 832C5260656
+	for <hbatista@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=hr-system.lab;
+	s=mail; t=1771942746;
+	bh=diwtpx2CDRnSQwgYxpqYYydErwdB475qWNdpaH5nNGQ=;
+	h=Date:To:From:Subject:From;
+	b=t1bKcNy5WXFzNPFPOXUboXsRaElwweBSgha/YYg34Jf+1FAFkSqztjjtr9FfdkKhY
+	 68MZK5+y/h6t608EwJxydzLRCjpD3bq4fv4wC2X9gn3OGNbKlIUNPwY4xaqbs8xKwk
+	 kXNsjKXtV8bReHQnei2FlG5d4h0wCudDPw7GXzv0V8vCzBaNDMvydI2/wIQeb0FCxU
+	 fsngR7v47LZ8nw8nRqei4jkSnA4O+evJgQNJnvfaUQ9HbnIRHkSQgioxuFoY+35V8X
+	 ifUwW9bNkZGr/6RtyM23WKYf0ZZuZLzAVGjDQbChu6NllzU7NxszAkDcplFWnZWajF
+	 VzaooEhxsqygg==
+X-Comment: SPF check N/A for local connections - client-ip=127.0.0.1; helo=mail.hr-system.local; envelope-from=tmoreira@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.local (localhost [127.0.0.1])
+	by mail.hr-system.lab (Postfix) with ESMTP id 74D14260719
+	for <hbatista@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:19:06 +0000
+To: hbatista@cosmetics-corp.local
+From: tmoreira@hr-system.lab
+Subject: Pesquisa de satisfação - Avaliação de fornecedor
+Message-Id: <20260224141906.005947@mail.hr-system.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Olá,
+
+Anualmente realizamos uma avaliação de nossos fornecedores e gostaríamos de contar com sua participação.
+
+O formulário leva apenas 5 minutos para ser preenchido e será enviado separadamente.
+
+Sua avaliação é muito importante para o aprimoramento da nossa parceria.
+
+Obrigado,
+Gestão de Qualidade.
+

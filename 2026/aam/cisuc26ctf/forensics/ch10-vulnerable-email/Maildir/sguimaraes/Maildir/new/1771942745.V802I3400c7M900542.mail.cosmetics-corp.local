@@ -1,0 +1,41 @@
+Return-Path: <lsantos@hr-system.lab>
+X-Original-To: sguimaraes@cosmetics-corp.local
+Delivered-To: sguimaraes@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=hr-system.lab
+Authentication-Results: mail.cosmetics-corp.local;
+	dkim=pass (2048-bit key; unprotected) header.d=hr-system.lab header.i=@hr-system.lab header.a=rsa-sha256 header.s=mail header.b=sojNMmJD;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=lsantos@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id D992A260656
+	for <sguimaraes@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=hr-system.lab;
+	s=mail; t=1771942745;
+	bh=bYZ5ACSdIjuJdasEIsUAaw9af3focAwFLHlN/UEKbAI=;
+	h=Date:To:From:Subject:From;
+	b=sojNMmJDNu1cFYfXfMKVKPzLN63ODslZxH46HwaKEGVZnQC8pYIyKA2fZFcOQJkIT
+	 Isl8QSdA8p4HfMlkwukYFh4QaEu5VGssoI84onfW0z+b2J/TgPfLmSB+isFHSK/QNe
+	 CaNoUGHO+f0r/hvaseX9JzgypeS75LTC91cHC63OXCu2N3oxpZOwexgN7AB8tj2rbv
+	 aAippg1UtSpigE00Xgz0QEXV5wyxq/CyPBjeq/pyOpk0U/DjlSXUIA6sUF1btMhHXE
+	 /rEmXUgQqQrjwU041Y3MqLy0Mde9OtZGQZSjL+WPWkvQm0QumpuVknp94hOV4KYnCu
+	 RqfpIs7kiT4yg==
+X-Comment: SPF check N/A for local connections - client-ip=127.0.0.1; helo=mail.hr-system.local; envelope-from=lsantos@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.local (localhost [127.0.0.1])
+	by mail.hr-system.lab (Postfix) with ESMTP id B0AF726071C
+	for <sguimaraes@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:05 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:19:05 +0000
+To: sguimaraes@cosmetics-corp.local
+From: lsantos@hr-system.lab
+Subject: Solicitação de NF - Competência Outubro
+Message-Id: <20260224141905.005792@mail.hr-system.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Olá,
+
+Solicitamos o envio da nota fiscal referente aos serviços prestados no mês de outubro, conforme contrato vigente.
+
+Por gentileza, encaminhar para o e-mail fiscal@empresa.com até o dia 05/11 para garantir o pagamento dentro do prazo.
+
+Obrigado,
+Contas a Pagar.
+

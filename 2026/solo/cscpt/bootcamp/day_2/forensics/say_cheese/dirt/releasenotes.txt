@@ -1,0 +1,27 @@
+Digital Image Resizer Toy v1.0
+===============================
+
+
+Introduction
+------------
+
+This 'toy' is a program that implements the seam carving algorithms from
+"Seam Carving for Content-Aware Image Resizing".  The authors of this 
+paper, Shai Avidan and Ariel Shamir, are responsible for the algorithm
+design.  This program allows you to remove seams from an image step
+by step by using the left and up arrow keys, or add seams by using
+the right and down arrow keys.  You can also add areas of the image
+to preserve and remove, however this is not implemented as described
+in the paper.  You may also retarget the size of the image, or erase
+entire portions (i.e. not stepping through it yourself).  The algorithm
+to enlarge areas of the image (section 4.4 of the paper) is not
+implemented here.
+
+
+Release Detail
+--------------
+
+This version is a full gui release that will work on png, bmp and
+jpg images.  Small images sizes work a lot better than bigger ones,
+due to memory issues with Java.  This program will work on all 
+platforms.

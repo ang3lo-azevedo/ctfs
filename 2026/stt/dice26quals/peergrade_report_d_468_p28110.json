@@ -1,0 +1,150 @@
+{
+  "generated_at": "2026-03-09T01:29:24.261027+00:00",
+  "forum_url": "https://pcm.rnl.tecnico.ulisboa.pt/moodle/mod/peerforum/discuss.php?d=468#p28110",
+  "target_key": "d=468#p28110",
+  "awards_page_id": 726,
+  "match_window_seconds": 21600,
+  "expected_delay_minutes": 20.0,
+  "peergrade_reviews": [
+    {
+      "grader_id": 35790,
+      "raw_time": "Tuesday, 3 March 2026, 2:22 AM",
+      "timestamp": 1772504520,
+      "peer_grade": 4,
+      "feedback": "I really like this newspaper frontpage, great job! I particular, the animated newspaper was a great touch. The information hierarchy, readability and density are adequate and well done, maybe except for the information placed in the lower left corner (I think it's a bit harder to read without zooming in). The masthead is solid with clear branding, but I confess that I almost missed the \"P\" letter in \"PROPHET\" initially and read \"ROPHET\" instead (maybe slightly boosting the color would fix it). But overall, this is a really solid newspaper frontpage with good creative background!"
+    },
+    {
+      "grader_id": 35814,
+      "raw_time": "Tuesday, 3 March 2026, 1:39 PM",
+      "timestamp": 1772545140,
+      "peer_grade": 4,
+      "feedback": "Information Density and Readability: 4 Nice contrast and good information flow Information Hierarchy :4 Clear read flow from top to bottom and big to small Layout Design:3 Nice layout and nice spacing Masthead and Branding: 4 Good idea and theme Overal really nice fornt page capturing theme and integrating image in to the masthead"
+    },
+    {
+      "grader_id": 35817,
+      "raw_time": "Tuesday, 3 March 2026, 2:35 PM",
+      "timestamp": 1772548500,
+      "peer_grade": 3,
+      "feedback": "Overall, the work leaves a very positive visual impression. The space management is well executed: the pages appear structured and balanced, neither overcrowded nor empty, and the relationship between text and images is harmonious. This creates a pleasant and coherent reading flow. The selected illustrations fit the topic well and effectively support the atmosphere of the text. The choice of typography is appropriate and contributes positively to the overall aesthetic. The decision to use black ink on white paper is also commendable. This reflects a characteristic feature of traditional newspapers and enhances the visual concept. The strong contrast ensures good readability and creates a clear, reduced aesthetic. One minor suggestion for improvement concerns the \u201cMysterious Beast\u201d section. Using justified alignment would allow the text to align evenly along the right margin. This would give the layout a calmer and more formal appearance, making it more consistent with the otherwise structured design. In addition, the image sources are missing. These should be included to ensure formal correctness and academic integrity."
+    },
+    {
+      "grader_id": 35829,
+      "raw_time": "Tuesday, 3 March 2026, 3:14 PM",
+      "timestamp": 1772550840,
+      "peer_grade": 4,
+      "feedback": "Composition : 4. I love it, it is coherent and well thought, I love how you parted the space, the fonts are also coherent. Design Principles : 4. Everything is well aligned, the images fit in well with the background, it all look harmonious. Editing : 4. I especially love the moving images ! It fit well with the universe you have chosen. Maximum rating: 4 (1) Permalink Show parent Reply In reply to \u00c2ngelo Azevedo Re: Newspaper Front Page by Daniel Gon\u00e7alves - Tuesday, 3 March 2026, 11:06 AM Almost no notes, except for the \"golden P\" at the top, only because it is weird for a clearly B&W print to use color in just that one place (which would require a completely differnt printing process and very much increased printing costs). Still... magic, amirite? \ud83d\ude09 Maximum rating: - Permalink Show parent Reply"
+    }
+  ],
+  "time_based_resolution": {
+    "35790": [
+      {
+        "user_id": 1677,
+        "name": "Bibiana Maria Amaral Cereja Gambito Andr\u00e9",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1677",
+        "delta_seconds": 1085,
+        "delta_minutes": 18.08,
+        "delta_from_expected_minutes": 1.92,
+        "review_timestamp": 1772504520,
+        "awards_timestamp": 1772505605
+      }
+    ],
+    "35814": [
+      {
+        "user_id": 1713,
+        "name": "Ricardo Nascimento Francisco",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1713",
+        "delta_seconds": 667,
+        "delta_minutes": 11.12,
+        "delta_from_expected_minutes": 8.88,
+        "review_timestamp": 1772545140,
+        "awards_timestamp": 1772545807
+      },
+      {
+        "user_id": 1869,
+        "name": "Lena Katharina Darazdi",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1869",
+        "delta_seconds": 4270,
+        "delta_minutes": 71.17,
+        "delta_from_expected_minutes": 51.17,
+        "review_timestamp": 1772545140,
+        "awards_timestamp": 1772549410
+      },
+      {
+        "user_id": 1866,
+        "name": "Juliette Emma Bonnet",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1866",
+        "delta_seconds": 6671,
+        "delta_minutes": 111.18,
+        "delta_from_expected_minutes": 91.18,
+        "review_timestamp": 1772545140,
+        "awards_timestamp": 1772551811
+      }
+    ],
+    "35817": [
+      {
+        "user_id": 1869,
+        "name": "Lena Katharina Darazdi",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1869",
+        "delta_seconds": 910,
+        "delta_minutes": 15.17,
+        "delta_from_expected_minutes": 4.83,
+        "review_timestamp": 1772548500,
+        "awards_timestamp": 1772549410
+      },
+      {
+        "user_id": 1713,
+        "name": "Ricardo Nascimento Francisco",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1713",
+        "delta_seconds": 2693,
+        "delta_minutes": 44.88,
+        "delta_from_expected_minutes": 24.88,
+        "review_timestamp": 1772548500,
+        "awards_timestamp": 1772545807
+      },
+      {
+        "user_id": 1866,
+        "name": "Juliette Emma Bonnet",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1866",
+        "delta_seconds": 3311,
+        "delta_minutes": 55.18,
+        "delta_from_expected_minutes": 35.18,
+        "review_timestamp": 1772548500,
+        "awards_timestamp": 1772551811
+      }
+    ],
+    "35829": [
+      {
+        "user_id": 1866,
+        "name": "Juliette Emma Bonnet",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1866",
+        "delta_seconds": 971,
+        "delta_minutes": 16.18,
+        "delta_from_expected_minutes": 3.82,
+        "review_timestamp": 1772550840,
+        "awards_timestamp": 1772551811
+      },
+      {
+        "user_id": 1869,
+        "name": "Lena Katharina Darazdi",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1869",
+        "delta_seconds": 1430,
+        "delta_minutes": 23.83,
+        "delta_from_expected_minutes": 3.83,
+        "review_timestamp": 1772550840,
+        "awards_timestamp": 1772549410
+      },
+      {
+        "user_id": 1713,
+        "name": "Ricardo Nascimento Francisco",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1713",
+        "delta_seconds": 5033,
+        "delta_minutes": 83.88,
+        "delta_from_expected_minutes": 63.88,
+        "review_timestamp": 1772550840,
+        "awards_timestamp": 1772545807
+      }
+    ]
+  },
+  "fallback_candidates": {},
+  "time_match_window_seconds_effective": 21600
+}

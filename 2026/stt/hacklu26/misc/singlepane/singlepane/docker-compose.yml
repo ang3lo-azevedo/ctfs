@@ -1,0 +1,35 @@
+name: singlepane
+
+configs:
+  flag:
+    content: "flag{****************}\n"
+
+services:
+  gateway:
+    image: nginx:1.31.7@sha256:8632b3314d74c61f0e27f59055bab13f7793b988c94c090154d867bc29e0f39b
+    command: nginx -g "daemon off; error_log /var/log/ops/error.log;"
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - logs:/var/log/ops
+      - pub:/usr/share/nginx/html/pub:ro
+
+  ops:
+    build: ./admin
+    restart: unless-stopped
+    tty: true
+    mem_limit: 64m
+    memswap_limit: 64m
+    pids_limit: 256
+    configs:
+      - source: flag
+        target: /flag
+        mode: "0400"
+    volumes:
+      - logs:/var/log/ops:ro
+      - pub:/srv/pub
+
+volumes:
+  logs:
+  pub:

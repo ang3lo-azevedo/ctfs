@@ -1,0 +1,12 @@
+services:
+  chal:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "1024:1024"
+    #environment:
+    #  FLAG: "flag{1..2..3..4..:)}"
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor=unconfined

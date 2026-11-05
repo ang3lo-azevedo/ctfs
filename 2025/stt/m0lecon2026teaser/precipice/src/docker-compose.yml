@@ -1,0 +1,28 @@
+services:
+  precipice:
+    build: .
+    ports:
+      - "8000:1337"
+    restart: "unless-stopped"
+    init: true
+    privileged: true
+    volumes:
+      - "./cards.py:/home/user/cards.py:ro"
+      - "./game_state.py:/home/user/game_state.py:ro"
+      - "./precipice.py:/home/user/chall:ro"
+      - "./rendering.py:/home/user/rendering.py:ro"
+      - "./scoring.py:/home/user/scoring.py:ro"
+      - "./jokers/:/home/user/jokers/:ro"
+    environment:
+      - "BINDMOUNTS=/run/secrets/flag:/flag"
+      - "FORWARD_STDERR=false"
+      - "LOG_STDERR=true"
+      - "POW_BITS=26"
+      - 'POW_BYPASS_HASH=3589a652bf30430f1861c35b113343c3e5f3b56f'
+      - "TIMEOUT=300"
+    secrets:
+      - "flag"
+
+secrets:
+  flag:
+    file: "./flags.txt"

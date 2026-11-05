@@ -1,0 +1,6 @@
+services:
+  uushell:
+    build: .
+    restart: 'no'
+    ports:
+      - '3337:1337'

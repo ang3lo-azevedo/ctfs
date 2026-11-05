@@ -1,0 +1,21 @@
+{
+  "name": "chronos-legacy-service",
+  "version": "1.0.0",
+  "description": "Legacy service for Chronos Vault CTF challenge - Phase 4",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "legacy",
+    "fd",
+    "exhaustion",
+    "ctf"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.0"
+  }
+}

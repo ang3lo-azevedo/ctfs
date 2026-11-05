@@ -1,0 +1,33 @@
+Return-Path: <nrocha@cosmetics-corp.local>
+X-Original-To: ecavalcanti@cosmetics-corp.local
+Delivered-To: ecavalcanti@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=nrocha@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id 62737260657
+	for <ecavalcanti@cosmetics-corp.local>; Tue, 24 Feb 2026 14:21:58 +0000 (UTC)
+Authentication-Results: mail.hr-system.lab; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.hr-system.lab; dkim=none; dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=nrocha@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (unknown [192.168.80.21])
+	by mail.hr-system.lab (Postfix) with ESMTP id 222AF26071A
+	for <ecavalcanti@cosmetics-corp.local>; Tue, 24 Feb 2026 14:21:58 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:21:58 +0000
+To: ecavalcanti@cosmetics-corp.local
+From: nrocha@cosmetics-corp.local
+Subject: Atualização do sistema interno - manutenção programada
+Message-Id: <20260224142158.005110@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados,
+
+Informamos que o sistema interno passará por manutenção programada neste sábado, das 22h às 02h.
+
+Durante esse período, o acesso ao portal e ao e-mail corporativo poderá ficar indisponível.
+
+Planejamento suas atividades com antecedência.
+
+TI - Suporte.
+

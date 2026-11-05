@@ -1,0 +1,101 @@
+{
+  "generated_at": "2026-03-13T00:09:27.564574+00:00",
+  "forum_url": "https://pcm.rnl.tecnico.ulisboa.pt/moodle/mod/peerforum/discuss.php?d=459#p28770",
+  "target_key": "d=459#p28770",
+  "awards_page_id": 726,
+  "match_window_seconds": 21600,
+  "expected_delay_minutes": 20.0,
+  "peergrade_reviews": [
+    {
+      "grader_id": 36669,
+      "raw_time": "Thursday, 12 March 2026, 4:52 PM",
+      "timestamp": 1773334320,
+      "peer_grade": 4,
+      "feedback": "Loved the introduction, the music and sound effects did a good job. I enjoyed the song you used as well, it really brought the tech vibe. The editing of sound and voice seemed very good for me as well. If I had to point something for improvement it would be the sounds in the introduction: even tho I really like them, I feel they took a litle bit longer than I would put it. But the work is great!"
+    },
+    {
+      "grader_id": 36699,
+      "raw_time": "Thursday, 12 March 2026, 6:22 PM",
+      "timestamp": 1773339720,
+      "peer_grade": 4,
+      "feedback": "I enjoyed this submission a lot! All elements of the podcast are well integrated with eachother and fit perfectly with the chosen theme. The sound effects are well placed with a pleasant amount of volume that do not interfere with your speech, and the songs used perfectly capture the emotions you wanted to transmit, whether you were describing the process of social engineering or warning people to be more mindful of suspicious links. Your voice is perfectly audible, and the volume of the songs is adequate. I am by no means an audio/podcast expert, but I enjoyed this submission a lot! Please take all offered feedback with a grain of salt due to my inexperience in the audio/podcast field!"
+    },
+    {
+      "grader_id": 36720,
+      "raw_time": "Thursday, 12 March 2026, 8:19 PM",
+      "timestamp": 1773346740,
+      "peer_grade": 4,
+      "feedback": "Just by the description and the start, one can tell that it is a very interesting podcast. The sound effects and music set the tone, and the hook of putting the listener in a position and narrating in a second-person point of view constructs a strong context for understanding the not-so-known concept of social engineering. The low voice matches the intended effect perfectly at the beginning. The narrative line is nice, giving a problem-solution story, and a lesson for the audience. Great job :) Maximum rating: - Permalink Show parent Reply \u25c4 Foley Branding Identity \u25ba \u25c4 Labs Forum Jump to... Jump to... GameCourse Social forum Questions Labs Forum Participation Forum Bugs Forum Office Hours Objectives Game Rules Lectures Lab Classes Elder Scrolls Hall of Fame Player Characterization Learning Process Inventory Student engagement (evolution questionnaire) Dry Run Quiz 1 Quiz 2 Quiz 3 Multimedia Presentation Multimedia Presentation FAQ Attendance Player's Handbook Lecture 1 Slides - Intro Lecture 1 Slides - Text Lecture 2 slides - Bitmapped Image (lossless) Lecture 3 Slides - Bitmapped Image (Lossy) Lecture 3 Slides - Bitmapped Image (Pro&Vis) Lecture 4 Slides - Audio Lecture 4 Slides - Audio Processing Lecture 5 Slides - Color Lecture 4 - Audio Samples Lecture 6 Slides - Graphic Design Principles Lecture 7 Slides - Vector Images Lecture 7 Slides - Animation and Synchronisation Lecture 8 Slides - Presentations I Lecture 8 Slides - Presentations II Lecture 9 Slides - Video Compression Lecture 10 Slides - Video & Audio Recording Lecture 11 Slides - Photo Techniques Lecture 12 - Copyright & DRM MSc Proposals PCM2026-Labs-Inkscape&GIMP PCM2026-Labs-Inkscape&GIMP-Materials PCM2026-Labs-Inkscape&GIMP-Exercise PCM2026-Labs-Inkscape&GIMP PCM2026-Labs-Audacity&Kdenlive PCM2026-Labs-Audacity&Kdenlive-Materials PCM2026-Labs-Audacity&Kdenlive-Exercise PCM2026-Labs-Audacity&Kdenlive PCM2026-Labs-Pixels-Tutorial PCM2026-Labs-Pixels-Materials PCM2026-Labs-Pixels-Tutorial-Exercise PCM2026-Pixels-Exercise PCM2026-Pixels-Exercise-Materials PCM2026-Pixels-Tutorial-Exercise-Solved PCM2026-Labs-Pixels-Exercise PCM2026-Labs-Binning-Tutorial PCM2026-Labs-Binning-Materials PCM2025-Binning-Tutorial-Solved PCM2026-Binning-Exercise-Materials PCM2025-Binning-Exercise PCM2026-Labs-Binning-Tutorial-Exercise PCM2026-Labs-Binning-Exercise PCM2026-Audio-Tutorial PCM2025-Audio-Tutorial-Solved PCM2026-Audio-Materials PCM2026-Audio-Tutorial PCM2026-Audio-Exercise PCM2025-Audio-Exercise PCM2025-Audio-Exercise-Materials PCM2025-Transitions-Tutorial PCM2025-Transitions-Tutorial-Complete PCM2025-Transitions-Tutorial-Materials PCM2025-Transitions-Tutorial-Exercise PCM2025-Transitions-Exercise PCM2024-Segmentation-Tutorial PCM2024-Segmentation-Tutorial-Materials PCM2024-Segmentation-Tutorial-Exercise PCM2024-Segmentation-Exercise PCM2025-Transitions-Exercise PCM2025-Transitions-Exercise-Materials"
+    }
+  ],
+  "time_based_resolution": {
+    "36669": [
+      {
+        "user_id": 1824,
+        "name": "Ana Liz Romano Faraco Gusm\u00e3o",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1824",
+        "delta_seconds": 1088,
+        "delta_minutes": 18.13,
+        "delta_from_expected_minutes": 1.87,
+        "review_timestamp": 1773334320,
+        "awards_timestamp": 1773335408
+      },
+      {
+        "user_id": 1848,
+        "name": "Gon\u00e7alo dos Santos Semedo Alves",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1848",
+        "delta_seconds": 5892,
+        "delta_minutes": 98.2,
+        "delta_from_expected_minutes": 78.2,
+        "review_timestamp": 1773334320,
+        "awards_timestamp": 1773340212
+      }
+    ],
+    "36699": [
+      {
+        "user_id": 1848,
+        "name": "Gon\u00e7alo dos Santos Semedo Alves",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1848",
+        "delta_seconds": 492,
+        "delta_minutes": 8.2,
+        "delta_from_expected_minutes": 11.8,
+        "review_timestamp": 1773339720,
+        "awards_timestamp": 1773340212
+      },
+      {
+        "user_id": 1824,
+        "name": "Ana Liz Romano Faraco Gusm\u00e3o",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1824",
+        "delta_seconds": 2510,
+        "delta_minutes": 41.83,
+        "delta_from_expected_minutes": 21.83,
+        "review_timestamp": 1773339720,
+        "awards_timestamp": 1773337210
+      }
+    ],
+    "36720": [
+      {
+        "user_id": 1848,
+        "name": "Gon\u00e7alo dos Santos Semedo Alves",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1848",
+        "delta_seconds": 529,
+        "delta_minutes": 8.82,
+        "delta_from_expected_minutes": 11.18,
+        "review_timestamp": 1773346740,
+        "awards_timestamp": 1773346211
+      },
+      {
+        "user_id": 1824,
+        "name": "Ana Liz Romano Faraco Gusm\u00e3o",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1824",
+        "delta_seconds": 9530,
+        "delta_minutes": 158.83,
+        "delta_from_expected_minutes": 138.83,
+        "review_timestamp": 1773346740,
+        "awards_timestamp": 1773337210
+      }
+    ]
+  },
+  "fallback_candidates": {},
+  "time_match_window_seconds_effective": 21600
+}

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -euo pipefail
+
+echo "Welcome to the improved secure Repo Viewer (100% memory safe)!"
+echo "Submit a .tar to view its README"
+echo "(tar -czf - <directory> | base64; echo @) | wl-copy"
+echo "Confirm with extra newline after base64 data."
+echo "Input base64-encoded tar file:"
+read -d @ b64data
+
+ls
+
+if [ "$(printf %s "${b64data}" | base64 -d | tar -tvzf - | grep '^[lh]' | wc -l)" -gt 0 ]; then
+    echo "Symlink detected, aborting!"
+    exit 1
+fi
+
+printf %s "${b64data}" | base64 -d | /app/repo-viewer
+
+echo "Goodbye!"

@@ -1,0 +1,27 @@
+Return-Path: <vagrant@cosmetics-corp.local>
+X-Original-To: dalmada@cosmetics-corp.local
+Delivered-To: dalmada@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=vagrant@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id 329C3260656
+	for <dalmada@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:12 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:12 +0000
+To: dalmada@cosmetics-corp.local
+From: vagrant@cosmetics-corp.local
+Subject: Atualização do plano de saúde - novos benefícios
+Message-Id: <20260224150512.005622@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados colaboradores,
+
+Informamos que a partir do próximo mês, o plano de saúde passará a incluir cobertura odontológica e consultas de psicologia.
+
+As informações completas estão disponíveis no portal do colaborador, seção Benefícios.
+
+Dúvidas, entre em contato com o RH.
+
+Atenciosamente, Departamento de Pessoas.
+

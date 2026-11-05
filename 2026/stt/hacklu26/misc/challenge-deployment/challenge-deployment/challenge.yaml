@@ -1,0 +1,903 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ctf
+  labels:
+    pod-security.kubernetes.io/enforce: restricted
+    pod-security.kubernetes.io/enforce-version: latest
+    pod-security.kubernetes.io/warn: restricted
+    pod-security.kubernetes.io/warn-version: latest
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: challenges.fluxfingers.ctf
+spec:
+  group: fluxfingers.ctf
+  scope: Namespaced
+  names:
+    plural: challenges
+    singular: challenge
+    kind: Challenge
+    shortNames:
+      - chal
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              required:
+                - title
+                - description
+              properties:
+                id:
+                  type: string
+                title:
+                  type: string
+                description:
+                  type: string
+                category:
+                  type: string
+                  enum:
+                    - web
+                    - misc
+                    - crypto
+                    - pwn
+                    - rev
+                details:
+                  type: string
+                stage:
+                  type: string
+                  enum:
+                    - Planned
+                    - Created
+                    - Deployed
+                flagRef:
+                  type: string
+      additionalPrinterColumns:
+        - name: Title
+          type: string
+          jsonPath: .spec.title
+        - name: Category
+          type: string
+          jsonPath: .spec.category
+        - name: Stage
+          type: string
+          jsonPath: .spec.stage
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: challenge-controller
+  namespace: ctf
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: challenge-controller
+  namespace: ctf
+rules:
+  - apiGroups:
+      - fluxfingers.ctf
+    resources:
+      - challenges
+    verbs:
+      - get
+      - list
+      - create
+      - update
+      - patch
+      - delete
+  - apiGroups:
+      - ''
+    resources:
+      - secrets
+    verbs:
+      - get
+      - list
+      - create
+      - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: challenge-controller
+  namespace: ctf
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: challenge-controller
+subjects:
+  - kind: ServiceAccount
+    name: challenge-controller
+    namespace: ctf
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: controller
+  namespace: ctf
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: controller
+  template:
+    metadata:
+      labels:
+        app: controller
+    spec:
+      serviceAccountName: challenge-controller
+      automountServiceAccountToken: true
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: container
+          image: p4ck3t0/tickets:latest
+          imagePullPolicy: IfNotPresent
+          command:
+            - python
+            - controller.py
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: HOME
+              value: /tmp
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+      volumes:
+        - name: tmp
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: controller
+  namespace: ctf
+spec:
+  type: ClusterIP
+  selector:
+    app: controller
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  namespace: ctf
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: container
+          image: p4ck3t0/tickets:latest
+          imagePullPolicy: IfNotPresent
+          command:
+            - python
+            - api.py
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: HOME
+              value: /tmp
+            - name: CONTROLLER_URL
+              value: http://controller
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+      volumes:
+        - name: tmp
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api
+  namespace: ctf
+spec:
+  type: ClusterIP
+  selector:
+    app: api
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui
+  namespace: ctf
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: ui
+  template:
+    metadata:
+      labels:
+        app: ui
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: container
+          image: p4ck3t0/tickets:latest
+          imagePullPolicy: IfNotPresent
+          command:
+            - python
+            - ui.py
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: HOME
+              value: /tmp
+            - name: API_URL
+              value: http://api
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+      volumes:
+        - name: tmp
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui
+  namespace: ctf
+spec:
+  type: ClusterIP
+  selector:
+    app: ui
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-templates-content
+  namespace: ctf
+data:
+  template.yaml: |
+    apiVersion: fluxfingers.ctf/v1
+    kind: Challenge
+    spec:
+      title: "{{title}}"
+      description: "{{description}}"
+      category: "web"
+      details: "{{Challenge Website}}"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-templates
+  namespace: ctf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-templates
+  template:
+    metadata:
+      labels:
+        app: web-templates
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 101
+        runAsGroup: 101
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: container
+          image: nginxinc/nginx-unprivileged:stable-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          volumeMounts:
+            - name: content
+              mountPath: /usr/share/nginx/html
+              readOnly: true
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+      volumes:
+        - name: content
+          configMap:
+            name: web-templates-content
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-templates
+  namespace: ctf
+spec:
+  type: ClusterIP
+  selector:
+    app: web-templates
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: misc-templates-content
+  namespace: ctf
+data:
+  template.yaml: |
+    apiVersion: fluxfingers.ctf/v1
+    kind: Challenge
+    spec:
+      title: "{{title}}"
+      description: "{{description}}"
+      category: "misc"
+      details: "{{Programming language}}"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: misc-templates
+  namespace: ctf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: misc-templates
+  template:
+    metadata:
+      labels:
+        app: misc-templates
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 101
+        runAsGroup: 101
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: container
+          image: nginxinc/nginx-unprivileged:stable-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          volumeMounts:
+            - name: content
+              mountPath: /usr/share/nginx/html
+              readOnly: true
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+      volumes:
+        - name: content
+          configMap:
+            name: misc-templates-content
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: misc-templates
+  namespace: ctf
+spec:
+  type: ClusterIP
+  selector:
+    app: misc-templates
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: crypto-templates-content
+  namespace: ctf
+data:
+  template.yaml: |
+    apiVersion: fluxfingers.ctf/v1
+    kind: Challenge
+    spec:
+      title: "{{title}}"
+      description: "{{description}}"
+      category: "crypto"
+      details: "{{Algorithm to break}}"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crypto-templates
+  namespace: ctf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crypto-templates
+  template:
+    metadata:
+      labels:
+        app: crypto-templates
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 101
+        runAsGroup: 101
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: container
+          image: nginxinc/nginx-unprivileged:stable-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          volumeMounts:
+            - name: content
+              mountPath: /usr/share/nginx/html
+              readOnly: true
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+      volumes:
+        - name: content
+          configMap:
+            name: crypto-templates-content
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: crypto-templates
+  namespace: ctf
+spec:
+  type: ClusterIP
+  selector:
+    app: crypto-templates
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pwn-templates-content
+  namespace: ctf
+data:
+  template.yaml: |
+    apiVersion: fluxfingers.ctf/v1
+    kind: Challenge
+    spec:
+      title: "{{title}}"
+      description: "{{description}}"
+      category: "pwn"
+      details: "{{Needed gadgets}}"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pwn-templates
+  namespace: ctf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pwn-templates
+  template:
+    metadata:
+      labels:
+        app: pwn-templates
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 101
+        runAsGroup: 101
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: container
+          image: nginxinc/nginx-unprivileged:stable-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          volumeMounts:
+            - name: content
+              mountPath: /usr/share/nginx/html
+              readOnly: true
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+      volumes:
+        - name: content
+          configMap:
+            name: pwn-templates-content
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pwn-templates
+  namespace: ctf
+spec:
+  type: ClusterIP
+  selector:
+    app: pwn-templates
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rev-templates-content
+  namespace: ctf
+data:
+  template.yaml: |
+    apiVersion: fluxfingers.ctf/v1
+    kind: Challenge
+    spec:
+      title: "{{title}}"
+      description: "{{description}}"
+      category: "rev"
+      details: "{{Binary to reverse}}"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rev-templates
+  namespace: ctf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rev-templates
+  template:
+    metadata:
+      labels:
+        app: rev-templates
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 101
+        runAsGroup: 101
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: container
+          image: nginxinc/nginx-unprivileged:stable-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          volumeMounts:
+            - name: content
+              mountPath: /usr/share/nginx/html
+              readOnly: true
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+      volumes:
+        - name: content
+          configMap:
+            name: rev-templates-content
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rev-templates
+  namespace: ctf
+spec:
+  type: ClusterIP
+  selector:
+    app: rev-templates
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: 54ae64b8-13fb-42ba-a187-23ea92997ef2
+  namespace: ctf
+type: Opaque
+stringData:
+  flag: flag{FAKE}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: d03450d8-5e2b-499a-be78-511257bc0a8b
+  namespace: ctf
+type: Opaque
+stringData:
+  flag: flag{FAKE}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: 9a358107-80fe-488c-a56e-e46f24167f90
+  namespace: ctf
+type: Opaque
+stringData:
+  flag: flag{FAKE}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: 0e67c029-e1c0-41f5-b7e8-2764f96d91fb
+  namespace: ctf
+type: Opaque
+stringData:
+  flag: flag{FAKE}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: 34f62173-8869-4dd9-9c26-1b7b7c6e24d4
+  namespace: ctf
+type: Opaque
+stringData:
+  flag: flag{FAKE}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: 85d57a1f-e03e-4a1a-8ab0-0a47af5eb856
+  namespace: ctf
+type: Opaque
+stringData:
+  flag: flag{FAKE}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: 06d645a6-0887-4ca5-8f8f-426c111cd94c
+  namespace: ctf
+type: Opaque
+stringData:
+  flag: flag{FAKE}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: 08a7f8f4-355b-4bd7-bc00-20091e1df1d9
+  namespace: ctf
+type: Opaque
+stringData:
+  flag: flag{FAKE}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: 4c896b9d-a29b-423b-a670-8cafd63e1848
+  namespace: ctf
+type: Opaque
+stringData:
+  flag: flag{FAKE}
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: 6c057691-9a9d-49ea-aaea-cbe69f20b46f
+  namespace: ctf
+type: Opaque
+stringData:
+  flag: flag{REAL}
+---
+apiVersion: fluxfingers.ctf/v1
+kind: Challenge
+metadata:
+  name: sso-smuggler
+  namespace: ctf
+spec:
+  id: sso-smuggler
+  title: SSO Smuggler
+  description: Smuggle your way past the single sign-on.
+  category: web
+  details: 'Challenge Website: https://sso.chal.fluxfingers.ctf'
+  stage: Deployed
+  flagRef: 54ae64b8-13fb-42ba-a187-23ea92997ef2
+---
+apiVersion: fluxfingers.ctf/v1
+kind: Challenge
+metadata:
+  name: rop-n-roll
+  namespace: ctf
+spec:
+  id: rop-n-roll
+  title: ROP n Roll
+  description: Chain the gadgets and pop a shell.
+  category: pwn
+  details: pop rdi ; ret / syscall
+  stage: Deployed
+  flagRef: d03450d8-5e2b-499a-be78-511257bc0a8b
+---
+apiVersion: fluxfingers.ctf/v1
+kind: Challenge
+metadata:
+  name: rsa-roulette
+  namespace: ctf
+spec:
+  id: rsa-roulette
+  title: RSA Roulette
+  description: Low exponent, high stakes.
+  category: crypto
+  details: RSA-512, e=3
+  stage: Created
+  flagRef: 9a358107-80fe-488c-a56e-e46f24167f90
+---
+apiVersion: fluxfingers.ctf/v1
+kind: Challenge
+metadata:
+  name: the-maze
+  namespace: ctf
+spec:
+  id: the-maze
+  title: The Maze
+  description: Reverse the binary and escape the maze.
+  category: rev
+  details: maze.elf
+  stage: Created
+  flagRef: 0e67c029-e1c0-41f5-b7e8-2764f96d91fb
+---
+apiVersion: fluxfingers.ctf/v1
+kind: Challenge
+metadata:
+  name: stego-sunset
+  namespace: ctf
+spec:
+  id: stego-sunset
+  title: Stego Sunset
+  description: The flag is hidden somewhere in the sunset.
+  category: misc
+  details: Python
+  stage: Planned
+  flagRef: 34f62173-8869-4dd9-9c26-1b7b7c6e24d4
+---
+apiVersion: fluxfingers.ctf/v1
+kind: Challenge
+metadata:
+  name: jwt-jail
+  namespace: ctf
+spec:
+  id: jwt-jail
+  title: JWT Jail
+  description: Break out of the token jail.
+  category: web
+  details: 'Challenge Website: https://jwt.chal.fluxfingers.ctf'
+  stage: Planned
+  flagRef: 85d57a1f-e03e-4a1a-8ab0-0a47af5eb856
+---
+apiVersion: fluxfingers.ctf/v1
+kind: Challenge
+metadata:
+  name: heap-heaven
+  namespace: ctf
+spec:
+  id: heap-heaven
+  title: Heap Heaven
+  description: tcache is a blessing and a curse.
+  category: pwn
+  details: libc 2.35, no free hook
+  stage: Planned
+  flagRef: 06d645a6-0887-4ca5-8f8f-426c111cd94c
+---
+apiVersion: fluxfingers.ctf/v1
+kind: Challenge
+metadata:
+  name: flag-keeper
+  namespace: ctf
+spec:
+  id: flag-keeper
+  title: Flag Keeper
+  description: Keep the flags safe. Or don't.
+  category: misc
+  details: kubectl
+  stage: Planned
+  flagRef: 08a7f8f4-355b-4bd7-bc00-20091e1df1d9
+---
+apiVersion: fluxfingers.ctf/v1
+kind: Challenge
+metadata:
+  name: steg0
+  namespace: ctf
+spec:
+  id: steg0
+  title: Steg0
+  description: This is solvable for sure
+  category: misc
+  details: Stego
+  stage: Deployed
+  flagRef: 4c896b9d-a29b-423b-a670-8cafd63e1848

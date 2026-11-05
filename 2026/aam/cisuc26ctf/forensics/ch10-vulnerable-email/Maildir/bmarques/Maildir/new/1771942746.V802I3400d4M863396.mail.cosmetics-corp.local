@@ -1,0 +1,40 @@
+Return-Path: <gribeiro@hr-system.lab>
+X-Original-To: bmarques@cosmetics-corp.local
+Delivered-To: bmarques@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=hr-system.lab
+Authentication-Results: mail.cosmetics-corp.local;
+	dkim=pass (2048-bit key; unprotected) header.d=hr-system.lab header.i=@hr-system.lab header.a=rsa-sha256 header.s=mail header.b=PMeBAj+M;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=gribeiro@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id D0714260656
+	for <bmarques@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=hr-system.lab;
+	s=mail; t=1771942746;
+	bh=cJRi/AFoLFRTirqOaQQ6x5ul9YlNHSzhUvNTotIB3GM=;
+	h=Date:To:From:Subject:From;
+	b=PMeBAj+M9A06HelK0HvQwYgGc37Y2zVwwUqhVFgRHDLQxiP2ygNmigsV6dYoIY3mY
+	 b3SApuejQ8TS8YPO7FwpPhWDuixFDf4TEfS2A/xL5x0uKwax3Y//vIqB8z0jskQIDG
+	 ykerlojfWb3526vtQ6/H8Q8sRps3yVMLV2ZCHVsH6IWmF8cTG9PlSDjVaL1fnZDdpX
+	 XSvfs/SSF7uuqlMqqfYiQ3JIPPmDR0cs+103MKxhJrBCTBn0afbwtQuejMoxhLSDlN
+	 qXRb4ijyA5LQJjLFviFc+XRhGDAwMABg7/jcpYaJz7vDuJb3AaMfecClmaewnjLzFH
+	 jxmH0MHlGvLgw==
+X-Comment: SPF check N/A for local connections - client-ip=127.0.0.1; helo=mail.hr-system.local; envelope-from=gribeiro@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.local (localhost [127.0.0.1])
+	by mail.hr-system.lab (Postfix) with ESMTP id C27D3260719
+	for <bmarques@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:19:06 +0000
+To: bmarques@cosmetics-corp.local
+From: gribeiro@hr-system.lab
+Subject: Orçamento aprovado - Fase 2 do projeto
+Message-Id: <20260224141906.006015@mail.hr-system.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Boa tarde,
+
+Temos o prazer de informar que o orçamento referente à Fase 2 do projeto foi aprovado pela nossa diretoria.
+
+Autorizamos o início das atividades conforme cronograma acordado. Aguardamos o envio do plano de execução atualizado para validação final.
+
+Gerência de Contratos.
+

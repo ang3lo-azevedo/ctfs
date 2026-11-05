@@ -1,0 +1,1685 @@
+/*
+Type: ELF
+Platform: linux-x86_64
+Architecture: x86_64
+
+Libraries: 
+  libc.so.6
+
+Segments:
+r--  0x00400000-0x00400858 
+r-x  0x00401000-0x0040222d 
+r--  0x00403000-0x00403660 
+rw-  0x00404e10-0x00405090 
+rw-  0x00405090-0x00405610 
+---  0x00405610-0x00405688 
+---  0x00405690-0x004056c0 
+
+Sections:
+0x00400318-0x00400334  .interp (PROGBITS)  {Read-only data}
+0x004003b0-0x004003d8  .gnu.hash  {Read-only data}
+0x004003d8-0x00400588  .dynsym (DYNSYM)  {Read-only data}
+0x00400588-0x0040064b  .dynstr (STRTAB)  {Read-only data}
+0x0040064c-0x00400670  .gnu.version  {Read-only data}
+0x00400670-0x004006c0  .gnu.version_r  {Read-only data}
+0x004006c0-0x00400720  .dynamic_rela  {Read-only data}
+0x004006c0-0x00400720  .rela.dyn (RELA)  {Read-only data}
+0x00400720-0x00400858  .rela.plt (RELA)  {Read-only data}
+0x00401000-0x0040101b  .init (PROGBITS)  {Code}
+0x00401020-0x00401100  .plt (PROGBITS)  {Code}
+0x00401100-0x004011d0  .plt.sec (PROGBITS)  {Code}
+0x004011d0-0x00402220  .text (PROGBITS)  {Code}
+0x00402220-0x0040222d  .fini (PROGBITS)  {Code}
+0x00403000-0x0040344c  .rodata (PROGBITS)  {Read-only data}
+0x0040344c-0x004034c0  .eh_frame_hdr (PROGBITS)  {Read-only data}
+0x004034c0-0x00403660  .eh_frame (PROGBITS)  {Read-only data}
+0x00404e10-0x00404e18  .init_array  {Writable data}
+0x00404e18-0x00404e20  .fini_array  {Writable data}
+0x00404e20-0x00404ff0  .dynamic (DYNAMIC)  {Read-only data}
+0x00404ff0-0x00405000  .got (PROGBITS)  {Read-only data}
+0x00405000-0x00405080  .got.plt (PROGBITS)  {Writable data}
+0x00405080-0x00405090  .data (PROGBITS)  {Writable data}
+0x004050a0-0x00405610  .bss (NOBITS)  {Writable data}
+0x00405610-0x00405688  .extern  {External}
+0x00405690-0x004056c0  .synthetic_builtins  {External}
+*/
+00400000  struct Elf64_Header __elf_header = 
+00400000  {
+00400000      struct Elf64_Ident ident = 
+00400000      {
+00400000          char signature[0x4] = "\x7fELF"
+00400004          uint8_t file_class = 0x2
+00400005          uint8_t encoding = 0x1
+00400006          uint8_t version = 0x1
+00400007          uint8_t os = 0x0
+00400008          uint8_t abi_version = 0x0
+00400009          char pad[0x7] = "\x00\x00\x00\x00\x00\x00", 0
+00400010      }
+00400010      enum e_type type = ET_EXEC
+00400012      enum e_machine machine = EM_X86_64
+00400014      uint32_t version = 0x1
+00400018      void (* entry)() = _start
+00400020      uint64_t program_header_offset = 0x40
+00400028      uint64_t section_header_offset = 0x5f50
+00400030      uint32_t flags = 0x0
+00400034      uint16_t header_size = 0x40
+00400036      uint16_t program_header_size = 0x38
+00400038      uint16_t program_header_count = 0xd
+0040003a      uint16_t section_header_size = 0x40
+0040003c      uint16_t section_header_count = 0x25
+0040003e      uint16_t string_table = 0x24
+00400040  }
+00400040  struct Elf64_ProgramHeader __elf_program_headers[0xd] = 
+00400040  {
+00400040      [0x0] = 
+00400040      {
+00400040          enum p_type type = PT_PHDR
+00400044          enum p_flags flags = PF_R
+00400048          uint64_t offset = 0x40
+00400050          uint64_t virtual_address = 0x400040
+00400058          uint64_t physical_address = 0x400040
+00400060          uint64_t file_size = 0x2d8
+00400068          uint64_t memory_size = 0x2d8
+00400070          uint64_t align = 0x8
+00400078      }
+00400078      [0x1] = 
+00400078      {
+00400078          enum p_type type = PT_INTERP
+0040007c          enum p_flags flags = PF_R
+00400080          uint64_t offset = 0x318
+00400088          uint64_t virtual_address = 0x400318
+00400090          uint64_t physical_address = 0x400318
+00400098          uint64_t file_size = 0x1c
+004000a0          uint64_t memory_size = 0x1c
+004000a8          uint64_t align = 0x1
+004000b0      }
+004000b0      [0x2] = 
+004000b0      {
+004000b0          enum p_type type = PT_LOAD
+004000b4          enum p_flags flags = PF_R
+004000b8          uint64_t offset = 0x0
+004000c0          uint64_t virtual_address = 0x400000
+004000c8          uint64_t physical_address = 0x400000
+004000d0          uint64_t file_size = 0x858
+004000d8          uint64_t memory_size = 0x858
+004000e0          uint64_t align = 0x1000
+004000e8      }
+004000e8      [0x3] = 
+004000e8      {
+004000e8          enum p_type type = PT_LOAD
+004000ec          enum p_flags flags = PF_X | PF_R
+004000f0          uint64_t offset = 0x1000
+004000f8          uint64_t virtual_address = 0x401000
+00400100          uint64_t physical_address = 0x401000
+00400108          uint64_t file_size = 0x122d
+00400110          uint64_t memory_size = 0x122d
+00400118          uint64_t align = 0x1000
+00400120      }
+00400120      [0x4] = 
+00400120      {
+00400120          enum p_type type = PT_LOAD
+00400124          enum p_flags flags = PF_R
+00400128          uint64_t offset = 0x3000
+00400130          uint64_t virtual_address = 0x403000
+00400138          uint64_t physical_address = 0x403000
+00400140          uint64_t file_size = 0x660
+00400148          uint64_t memory_size = 0x660
+00400150          uint64_t align = 0x1000
+00400158      }
+00400158      [0x5] = 
+00400158      {
+00400158          enum p_type type = PT_LOAD
+0040015c          enum p_flags flags = PF_W | PF_R
+00400160          uint64_t offset = 0x3e10
+00400168          uint64_t virtual_address = 0x404e10
+00400170          uint64_t physical_address = 0x404e10
+00400178          uint64_t file_size = 0x280
+00400180          uint64_t memory_size = 0x800
+00400188          uint64_t align = 0x1000
+00400190      }
+00400190      [0x6] = 
+00400190      {
+00400190          enum p_type type = PT_DYNAMIC
+00400194          enum p_flags flags = PF_W | PF_R
+00400198          uint64_t offset = 0x3e20
+004001a0          uint64_t virtual_address = 0x404e20
+004001a8          uint64_t physical_address = 0x404e20
+004001b0          uint64_t file_size = 0x1d0
+004001b8          uint64_t memory_size = 0x1d0
+004001c0          uint64_t align = 0x8
+004001c8      }
+004001c8      [0x7] = 
+004001c8      {
+004001c8          enum p_type type = PT_NOTE
+004001cc          enum p_flags flags = PF_R
+004001d0          uint64_t offset = 0x338
+004001d8          uint64_t virtual_address = 0x400338
+004001e0          uint64_t physical_address = 0x400338
+004001e8          uint64_t file_size = 0x30
+004001f0          uint64_t memory_size = 0x30
+004001f8          uint64_t align = 0x8
+00400200      }
+00400200      [0x8] = 
+00400200      {
+00400200          enum p_type type = PT_NOTE
+00400204          enum p_flags flags = PF_R
+00400208          uint64_t offset = 0x368
+00400210          uint64_t virtual_address = 0x400368
+00400218          uint64_t physical_address = 0x400368
+00400220          uint64_t file_size = 0x44
+00400228          uint64_t memory_size = 0x44
+00400230          uint64_t align = 0x4
+00400238      }
+00400238      [0x9] = 
+00400238      {
+00400238          enum p_type type = PT_GNU_PROPERTY
+0040023c          enum p_flags flags = PF_R
+00400240          uint64_t offset = 0x338
+00400248          uint64_t virtual_address = 0x400338
+00400250          uint64_t physical_address = 0x400338
+00400258          uint64_t file_size = 0x30
+00400260          uint64_t memory_size = 0x30
+00400268          uint64_t align = 0x8
+00400270      }
+00400270      [0xa] = 
+00400270      {
+00400270          enum p_type type = PT_GNU_EH_FRAME
+00400274          enum p_flags flags = PF_R
+00400278          uint64_t offset = 0x344c
+00400280          uint64_t virtual_address = 0x40344c
+00400288          uint64_t physical_address = 0x40344c
+00400290          uint64_t file_size = 0x74
+00400298          uint64_t memory_size = 0x74
+004002a0          uint64_t align = 0x4
+004002a8      }
+004002a8      [0xb] = 
+004002a8      {
+004002a8          enum p_type type = PT_GNU_STACK
+004002ac          enum p_flags flags = PF_W | PF_R
+004002b0          uint64_t offset = 0x0
+004002b8          uint64_t virtual_address = 0x0
+004002c0          uint64_t physical_address = 0x0
+004002c8          uint64_t file_size = 0x0
+004002d0          uint64_t memory_size = 0x0
+004002d8          uint64_t align = 0x10
+004002e0      }
+004002e0      [0xc] = 
+004002e0      {
+004002e0          enum p_type type = PT_GNU_RELRO
+004002e4          enum p_flags flags = PF_R
+004002e8          uint64_t offset = 0x3e10
+004002f0          uint64_t virtual_address = 0x404e10
+004002f8          uint64_t physical_address = 0x404e10
+00400300          uint64_t file_size = 0x1f0
+00400308          uint64_t memory_size = 0x1f0
+00400310          uint64_t align = 0x1
+00400318      }
+00400318  }
+
+.interp (PROGBITS) section started  {0x400318-0x400334}
+00400318  char __elf_interp[0x1c] = "/lib64/ld-linux-x86-64.so.2", 0
+.interp (PROGBITS) section ended  {0x400318-0x400334}
+
+00400334                                                              00 00 00 00 04 00 00 00 20 00 00 00                      ........ ...
+00400340  05 00 00 00 47 4e 55 00 02 00 00 c0 04 00 00 00 03 00 00 00 00 00 00 00 02 80 00 c0 04 00 00 00  ....GNU.........................
+00400360  01 00 00 00 00 00 00 00 04 00 00 00 14 00 00 00 03 00 00 00 47 4e 55 00 cc ef fe ed 17 e6 5e 29  ....................GNU.......^)
+00400380  b2 e8 1b 8d 15 43 64 0d 24 9b 92 98                                                              .....Cd.$...
+0040038c  __abi_tag:
+0040038c                                      04 00 00 00 10 00 00 00 01 00 00 00 47 4e 55 00 00 00 00 00              ............GNU.....
+004003a0  03 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00                                                  ................
+
+.gnu.hash section started  {0x4003b0-0x4003d8}
+004003b0                                                  02 00 00 00 10 00 00 00 01 00 00 00 06 00 00 00                  ................
+004003c0  00 01 00 00 00 01 10 02 10 00 00 00 11 00 00 00 29 1d 8c 1c 39 f2 8b 1c                          ................)...9...
+.gnu.hash section ended  {0x4003b0-0x4003d8}
+
+.dynsym (DYNSYM) section started  {0x4003d8-0x400588}
+004003d8  struct Elf64_Sym __elf_symbol_table[0x12] = 
+004003d8  {
+004003d8      [0x00] = 
+004003d8      {
+004003d8          uint32_t st_name = 0x0
+004003dc          uint8_t st_info = 0x0
+004003dd          uint8_t st_other = 0x0
+004003de          uint16_t st_shndx = 0x0
+004003e0          uint64_t st_value = 0x0
+004003e8          uint64_t st_size = 0x0
+004003f0      }
+004003f0      [0x01] = 
+004003f0      {
+004003f0          uint32_t st_name = 0x6
+004003f4          uint8_t st_info = 0x12
+004003f5          uint8_t st_other = 0x0
+004003f6          uint16_t st_shndx = 0x0
+004003f8          uint64_t st_value = 0x0
+00400400          uint64_t st_size = 0x0
+00400408      }
+00400408      [0x02] = 
+00400408      {
+00400408          uint32_t st_name = 0x3f
+0040040c          uint8_t st_info = 0x12
+0040040d          uint8_t st_other = 0x0
+0040040e          uint16_t st_shndx = 0x0
+00400410          uint64_t st_value = 0x0
+00400418          uint64_t st_size = 0x0
+00400420      }
+00400420      [0x03] = 
+00400420      {
+00400420          uint32_t st_name = 0x3a
+00400424          uint8_t st_info = 0x12
+00400425          uint8_t st_other = 0x0
+00400426          uint16_t st_shndx = 0x0
+00400428          uint64_t st_value = 0x0
+00400430          uint64_t st_size = 0x0
+00400438      }
+00400438      [0x04] = 
+00400438      {
+00400438          uint32_t st_name = 0x62
+0040043c          uint8_t st_info = 0x12
+0040043d          uint8_t st_other = 0x0
+0040043e          uint16_t st_shndx = 0x0
+00400440          uint64_t st_value = 0x0
+00400448          uint64_t st_size = 0x0
+00400450      }
+00400450      [0x05] = 
+00400450      {
+00400450          uint32_t st_name = 0x73
+00400454          uint8_t st_info = 0x12
+00400455          uint8_t st_other = 0x0
+00400456          uint16_t st_shndx = 0x0
+00400458          uint64_t st_value = 0x0
+00400460          uint64_t st_size = 0x0
+00400468      }
+00400468      [0x06] = 
+00400468      {
+00400468          uint32_t st_name = 0x1
+0040046c          uint8_t st_info = 0x12
+0040046d          uint8_t st_other = 0x0
+0040046e          uint16_t st_shndx = 0x0
+00400470          uint64_t st_value = 0x0
+00400478          uint64_t st_size = 0x0
+00400480      }
+00400480      [0x07] = 
+00400480      {
+00400480          uint32_t st_name = 0x25
+00400484          uint8_t st_info = 0x12
+00400485          uint8_t st_other = 0x0
+00400486          uint16_t st_shndx = 0x0
+00400488          uint64_t st_value = 0x0
+00400490          uint64_t st_size = 0x0
+00400498      }
+00400498      [0x08] = 
+00400498      {
+00400498          uint32_t st_name = 0x1d
+0040049c          uint8_t st_info = 0x12
+0040049d          uint8_t st_other = 0x0
+0040049e          uint16_t st_shndx = 0x0
+004004a0          uint64_t st_value = 0x0
+004004a8          uint64_t st_size = 0x0
+004004b0      }
+004004b0      [0x09] = 
+004004b0      {
+004004b0          uint32_t st_name = 0xb4
+004004b4          uint8_t st_info = 0x20
+004004b5          uint8_t st_other = 0x0
+004004b6          uint16_t st_shndx = 0x0
+004004b8          uint64_t st_value = 0x0
+004004c0          uint64_t st_size = 0x0
+004004c8      }
+004004c8      [0x0a] = 
+004004c8      {
+004004c8          uint32_t st_name = 0x7a
+004004cc          uint8_t st_info = 0x12
+004004cd          uint8_t st_other = 0x0
+004004ce          uint16_t st_shndx = 0x0
+004004d0          uint64_t st_value = 0x0
+004004d8          uint64_t st_size = 0x0
+004004e0      }
+004004e0      [0x0b] = 
+004004e0      {
+004004e0          uint32_t st_name = 0x2b
+004004e4          uint8_t st_info = 0x12
+004004e5          uint8_t st_other = 0x0
+004004e6          uint16_t st_shndx = 0x0
+004004e8          uint64_t st_value = 0x0
+004004f0          uint64_t st_size = 0x0
+004004f8      }
+004004f8      [0x0c] = 
+004004f8      {
+004004f8          uint32_t st_name = 0x18
+004004fc          uint8_t st_info = 0x12
+004004fd          uint8_t st_other = 0x0
+004004fe          uint16_t st_shndx = 0x0
+00400500          uint64_t st_value = 0x0
+00400508          uint64_t st_size = 0x0
+00400510      }
+00400510      [0x0d] = 
+00400510      {
+00400510          uint32_t st_name = 0x47
+00400514          uint8_t st_info = 0x12
+00400515          uint8_t st_other = 0x0
+00400516          uint16_t st_shndx = 0x0
+00400518          uint64_t st_value = 0x0
+00400520          uint64_t st_size = 0x0
+00400528      }
+00400528      [0x0e] = 
+00400528      {
+00400528          uint32_t st_name = 0x5d
+0040052c          uint8_t st_info = 0x12
+0040052d          uint8_t st_other = 0x0
+0040052e          uint16_t st_shndx = 0x0
+00400530          uint64_t st_value = 0x0
+00400538          uint64_t st_size = 0x0
+00400540      }
+00400540      [0x0f] = 
+00400540      {
+00400540          uint32_t st_name = 0x26
+00400544          uint8_t st_info = 0x12
+00400545          uint8_t st_other = 0x0
+00400546          uint16_t st_shndx = 0x0
+00400548          uint64_t st_value = 0x0
+00400550          uint64_t st_size = 0x0
+00400558      }
+00400558      [0x10] = 
+00400558      {
+00400558          uint32_t st_name = 0x33
+0040055c          uint8_t st_info = 0x11
+0040055d          uint8_t st_other = 0x0
+0040055e          uint16_t st_shndx = 0x1a
+00400560          uint64_t st_value = 0x4050a0
+00400568          uint64_t st_size = 0x8
+00400570      }
+00400570      [0x11] = 
+00400570      {
+00400570          uint32_t st_name = 0x56
+00400574          uint8_t st_info = 0x11
+00400575          uint8_t st_other = 0x0
+00400576          uint16_t st_shndx = 0x1a
+00400578          uint64_t st_value = 0x4050c0
+00400580          uint64_t st_size = 0x8
+00400588      }
+00400588  }
+.dynsym (DYNSYM) section ended  {0x4003d8-0x400588}
+
+.dynstr (STRTAB) section started  {0x400588-0x40064b}
+00400588                          00                                                                               .
+
+00400589  char data_400589[0x5] = "read", 0
+0040058e  char data_40058e[0x12] = "__libc_start_main", 0
+004005a0  char data_4005a0[0x5] = "atoi", 0
+004005a5  char data_4005a5[0x8] = "getchar", 0
+004005ad  char data_4005ad[0x6] = "srand", 0
+004005b3  char data_4005b3[0x8] = "setvbuf", 0
+004005bb  char data_4005bb[0x7] = "stdout", 0
+004005c2  char data_4005c2[0x5] = "puts", 0
+004005c7  char data_4005c7[0x8] = "strncpy", 0
+004005cf  char data_4005cf[0xf] = "__isoc99_scanf", 0
+004005de  char data_4005de[0x7] = "stderr", 0
+004005e5  char data_4005e5[0x5] = "exit", 0
+004005ea  char data_4005ea[0x11] = "__stack_chk_fail", 0
+004005fb  char data_4005fb[0x7] = "printf", 0
+00400602  char data_400602[0x5] = "time", 0
+00400607  char data_400607[0xa] = "libc.so.6", 0
+00400611  char data_400611[0xa] = "GLIBC_2.7", 0
+0040061b  char data_40061b[0xa] = "GLIBC_2.4", 0
+00400625  char data_400625[0xc] = "GLIBC_2.2.5", 0
+00400631  char data_400631[0xb] = "GLIBC_2.34", 0
+0040063c  char data_40063c[0xf] = "__gmon_start__", 0
+.dynstr (STRTAB) section ended  {0x400588-0x40064b}
+
+0040064b                                   00                                                                         .
+
+.gnu.version section started  {0x40064c-0x400670}
+0040064c                                      00 00 02 00 03 00 03 00 04 00 03 00 03 00 03 00 03 00 01 00              ....................
+00400660  03 00 03 00 03 00 05 00 03 00 03 00 03 00 03 00                                                  ................
+.gnu.version section ended  {0x40064c-0x400670}
+
+.gnu.version_r section started  {0x400670-0x4006c0}
+00400670                                                  01 00 04 00 7f 00 00 00 10 00 00 00 00 00 00 00                  ................
+00400680  17 69 69 0d 00 00 05 00 89 00 00 00 10 00 00 00 14 69 69 0d 00 00 04 00 93 00 00 00 10 00 00 00  .ii..............ii.............
+004006a0  75 1a 69 09 00 00 03 00 9d 00 00 00 10 00 00 00 b4 91 96 06 00 00 02 00 a9 00 00 00 00 00 00 00  u.i.............................
+.gnu.version_r section ended  {0x400670-0x4006c0}
+
+.dynamic_rela section started  {0x4006c0-0x400720}
+.rela.dyn (RELA) section started  {0x4006c0-0x400720}
+004006c0  struct Elf64_Rela __elf_rela_table[0x4] = 
+004006c0  {
+004006c0      [0x0] = 
+004006c0      {
+004006c0          uint64_t r_offset = 0x404ff0
+004006c8          uint64_t r_info = 0x100000006
+004006d0          int64_t r_addend = 0x0
+004006d8      }
+004006d8      [0x1] = 
+004006d8      {
+004006d8          uint64_t r_offset = 0x404ff8
+004006e0          uint64_t r_info = 0x900000006
+004006e8          int64_t r_addend = 0x0
+004006f0      }
+004006f0      [0x2] = 
+004006f0      {
+004006f0          uint64_t r_offset = 0x4050a0
+004006f8          uint64_t r_info = 0x1000000005
+00400700          int64_t r_addend = 0x0
+00400708      }
+00400708      [0x3] = 
+00400708      {
+00400708          uint64_t r_offset = 0x4050c0
+00400710          uint64_t r_info = 0x1100000005
+00400718          int64_t r_addend = 0x0
+00400720      }
+00400720  }
+.dynamic_rela section ended  {0x4006c0-0x400720}
+.rela.dyn (RELA) section ended  {0x4006c0-0x400720}
+
+.rela.plt (RELA) section started  {0x400720-0x400858}
+00400720  void* data_400720 = strncpy
+
+00400728                          07 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00                                  ................
+
+00400738  void* data_400738 = puts
+
+00400740  07 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00                                                  ................
+
+00400750  void* data_400750 = __stack_chk_fail
+
+00400758                                                                          07 00 00 00 04 00 00 00                          ........
+00400760  00 00 00 00 00 00 00 00                                                                          ........
+
+00400768  void* data_400768 = printf
+
+00400770                                                  07 00 00 00 05 00 00 00 00 00 00 00 00 00 00 00                  ................
+
+00400780  void* data_400780 = read
+
+00400788                          07 00 00 00 06 00 00 00 00 00 00 00 00 00 00 00                                  ................
+
+00400798  void* data_400798 = srand
+
+004007a0  07 00 00 00 07 00 00 00 00 00 00 00 00 00 00 00                                                  ................
+
+004007b0  void* data_4007b0 = getchar
+
+004007b8                                                                          07 00 00 00 08 00 00 00                          ........
+004007c0  00 00 00 00 00 00 00 00                                                                          ........
+
+004007c8  void* data_4007c8 = time
+
+004007d0                                                  07 00 00 00 0a 00 00 00 00 00 00 00 00 00 00 00                  ................
+
+004007e0  void* data_4007e0 = setvbuf
+
+004007e8                          07 00 00 00 0b 00 00 00 00 00 00 00 00 00 00 00                                  ................
+
+004007f8  void* data_4007f8 = atoi
+
+00400800  07 00 00 00 0c 00 00 00 00 00 00 00 00 00 00 00                                                  ................
+
+00400810  void* data_400810 = __isoc99_scanf
+
+00400818                                                                          07 00 00 00 0d 00 00 00                          ........
+00400820  00 00 00 00 00 00 00 00                                                                          ........
+
+00400828  void* data_400828 = exit
+
+00400830                                                  07 00 00 00 0e 00 00 00 00 00 00 00 00 00 00 00                  ................
+
+00400840  void* data_400840 = rand
+
+00400848                          07 00 00 00 0f 00 00 00 00 00 00 00 00 00 00 00                                  ................
+.rela.plt (RELA) section ended  {0x400720-0x400858}
+
+.init (PROGBITS) section started  {0x401000-0x40101b}
+
+00401000    int64_t (* const)() _init()
+
+00401000  {
+00401012      if (!__gmon_start__)
+0040101a          return __gmon_start__;
+0040101a      
+00401014      return __gmon_start__();
+00401000  }
+
+.init (PROGBITS) section ended  {0x401000-0x40101b}
+
+0040101b                                                                                   00 00 00 00 00                             .....
+
+.plt (PROGBITS) section started  {0x401020-0x401100}
+
+00401020    int64_t sub_401020()
+
+00401020  {
+00401020      int64_t var_8 = data_405008;
+00401026      /* jump -> data_405010 */
+00401020  }
+
+0040102d                                         0f 1f 00                                                               ...
+
+00401030    int64_t sub_401030()
+
+00401030  {
+00401034      int64_t var_8 = 0;
+00401039      /* tailcall */
+00401039      return sub_401020();
+00401030  }
+
+0040103f                                                                                               90                                 .
+
+00401040    int64_t sub_401040()
+
+00401040  {
+00401044      int64_t var_8 = 1;
+00401049      /* tailcall */
+00401049      return sub_401020();
+00401040  }
+
+0040104f                                               90                                                                 .
+
+00401050    int64_t sub_401050()
+
+00401050  {
+00401054      int64_t var_8 = 2;
+00401059      /* tailcall */
+00401059      return sub_401020();
+00401050  }
+
+0040105f                                                                                               90                                 .
+
+00401060    int64_t sub_401060()
+
+00401060  {
+00401064      int64_t var_8 = 3;
+00401069      /* tailcall */
+00401069      return sub_401020();
+00401060  }
+
+0040106f                                               90                                                                 .
+
+00401070    int64_t sub_401070()
+
+00401070  {
+00401074      int64_t var_8 = 4;
+00401079      /* tailcall */
+00401079      return sub_401020();
+00401070  }
+
+0040107f                                                                                               90                                 .
+
+00401080    int64_t sub_401080()
+
+00401080  {
+00401084      int64_t var_8 = 5;
+00401089      /* tailcall */
+00401089      return sub_401020();
+00401080  }
+
+0040108f                                               90                                                                 .
+
+00401090    int64_t sub_401090()
+
+00401090  {
+00401094      int64_t var_8 = 6;
+00401099      /* tailcall */
+00401099      return sub_401020();
+00401090  }
+
+0040109f                                                                                               90                                 .
+
+004010a0    int64_t sub_4010a0()
+
+004010a0  {
+004010a4      int64_t var_8 = 7;
+004010a9      /* tailcall */
+004010a9      return sub_401020();
+004010a0  }
+
+004010af                                               90                                                                 .
+
+004010b0    int64_t sub_4010b0()
+
+004010b0  {
+004010b4      int64_t var_8 = 8;
+004010b9      /* tailcall */
+004010b9      return sub_401020();
+004010b0  }
+
+004010bf                                                                                               90                                 .
+
+004010c0    int64_t sub_4010c0()
+
+004010c0  {
+004010c4      int64_t var_8 = 9;
+004010c9      /* tailcall */
+004010c9      return sub_401020();
+004010c0  }
+
+004010cf                                               90                                                                 .
+
+004010d0    int64_t sub_4010d0()
+
+004010d0  {
+004010d4      int64_t var_8 = 0xa;
+004010d9      /* tailcall */
+004010d9      return sub_401020();
+004010d0  }
+
+004010df                                                                                               90                                 .
+
+004010e0    int64_t sub_4010e0()
+
+004010e0  {
+004010e4      int64_t var_8 = 0xb;
+004010e9      /* tailcall */
+004010e9      return sub_401020();
+004010e0  }
+
+004010ef                                               90                                                                 .
+
+004010f0    int64_t sub_4010f0()
+
+004010f0  {
+004010f4      int64_t var_8 = 0xc;
+004010f9      /* tailcall */
+004010f9      return sub_401020();
+004010f0  }
+
+004010ff                                                                                               90                                 .
+.plt (PROGBITS) section ended  {0x401020-0x401100}
+
+.plt.sec (PROGBITS) section started  {0x401100-0x4011d0}
+
+00401100    char* strncpy(char* arg1, char const* arg2, uint64_t arg3)
+
+00401100  {
+00401104      /* tailcall */
+00401104      return strncpy(arg1, arg2, arg3);
+00401100  }
+
+0040110b                                   0f 1f 44 00 00                                                             ..D..
+
+00401110    int32_t puts(char const* str)
+
+00401110  {
+00401114      /* tailcall */
+00401114      return puts(str);
+00401110  }
+
+0040111b                                                                                   0f 1f 44 00 00                             ..D..
+
+00401120    void __stack_chk_fail() __noreturn
+
+00401120  {
+00401124      /* tailcall */
+00401124      return __stack_chk_fail();
+00401120  }
+
+0040112b                                   0f 1f 44 00 00                                                             ..D..
+
+00401130    int32_t printf(char const* format, ...)
+
+00401130  {
+00401134      /* tailcall */
+00401134      return printf(format);
+00401130  }
+
+0040113b                                                                                   0f 1f 44 00 00                             ..D..
+
+00401140    ssize_t read(int32_t fd, void* buf, uint64_t nbytes)
+
+00401140  {
+00401144      /* tailcall */
+00401144      return read(fd, buf, nbytes);
+00401140  }
+
+0040114b                                   0f 1f 44 00 00                                                             ..D..
+
+00401150    void srand(uint32_t x)
+
+00401150  {
+00401154      /* tailcall */
+00401154      return srand(x);
+00401150  }
+
+0040115b                                                                                   0f 1f 44 00 00                             ..D..
+
+00401160    int32_t getchar()
+
+00401160  {
+00401164      /* tailcall */
+00401164      return getchar();
+00401160  }
+
+0040116b                                   0f 1f 44 00 00                                                             ..D..
+
+00401170    time_t time(time_t* arg1)
+
+00401170  {
+00401174      /* tailcall */
+00401174      return time(arg1);
+00401170  }
+
+0040117b                                                                                   0f 1f 44 00 00                             ..D..
+
+00401180    int32_t setvbuf(FILE* fp, char* buf, int32_t mode, uint64_t size)
+
+00401180  {
+00401184      /* tailcall */
+00401184      return setvbuf(fp, buf, mode, size);
+00401180  }
+
+0040118b                                   0f 1f 44 00 00                                                             ..D..
+
+00401190    int32_t atoi(char const* nptr)
+
+00401190  {
+00401194      /* tailcall */
+00401194      return atoi(nptr);
+00401190  }
+
+0040119b                                                                                   0f 1f 44 00 00                             ..D..
+
+004011a0    int32_t __isoc99_scanf(char const* format, ...)
+
+004011a0  {
+004011a4      /* tailcall */
+004011a4      return __isoc99_scanf(format);
+004011a0  }
+
+004011ab                                   0f 1f 44 00 00                                                             ..D..
+
+004011b0    void exit(int32_t status) __noreturn
+
+004011b0  {
+004011b4      /* tailcall */
+004011b4      return exit(status);
+004011b0  }
+
+004011bb                                                                                   0f 1f 44 00 00                             ..D..
+
+004011c0    int32_t rand()
+
+004011c0  {
+004011c4      /* tailcall */
+004011c4      return rand();
+004011c0  }
+
+004011cb                                   0f 1f 44 00 00                                                             ..D..
+.plt.sec (PROGBITS) section ended  {0x401100-0x4011d0}
+
+.text (PROGBITS) section started  {0x4011d0-0x402220}
+
+004011d0    void _start(int64_t arg1, int64_t arg2, void (* arg3)()) __noreturn
+
+004011d0  {
+004011e1      int64_t stack_end_1;
+004011e1      int64_t stack_end = stack_end_1;
+004011ef      void ubp_av;
+004011ef      __libc_start_main(main, (uint32_t)__return_addr, &ubp_av, nullptr, nullptr, arg3, 
+004011ef          &stack_end);
+004011ef      /* no return */
+004011d0  }
+
+004011f5                                                                 f4 66 2e 0f 1f 84 00 00 00 00 00                       .f.........
+
+00401200    int64_t _dl_relocate_static_pie() __pure
+
+00401200  {
+00401204      return;
+00401200  }
+
+00401205                 66 2e 0f 1f 84 00 00 00 00 00 90                                                       f..........
+
+00401210    void* deregister_tm_clones()
+
+00401210  {
+00401210      return &__TMC_END__;
+00401210  }
+
+0040122e                                            66 90                                                                f.
+00401231                                                     66 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00                   ff...........@.
+
+00401240    int64_t register_tm_clones()
+
+00401240  {
+00401270      return 0;
+00401240  }
+
+00401271                                                     66 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00                   ff...........@.
+
+00401280    void __do_global_dtors_aux()
+
+00401280  {
+0040128b      if (completed.0)
+004012a0          return;
+004012a0      
+00401291      deregister_tm_clones();
+00401296      completed.0 = 1;
+00401280  }
+
+0040129f                                                                                               90                                 .
+004012a1     66 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00                                                   ff...........@.
+
+004012b0    int64_t frame_dummy()
+
+004012b0  {
+004012b4      /* tailcall */
+004012b4      return register_tm_clones();
+004012b0  }
+
+
+004012b6    void sub_0x404120() __pure
+
+004012b6  {
+004012ba      int64_t rbp;
+004012ba      int64_t var_8 = rbp;
+004012b6  }
+
+
+004012c0    int64_t sub_4012c0() __pure
+
+004012c0  {
+004012c1      return;
+004012c0  }
+
+
+004012c2    int64_t sub_4012c2() __pure
+
+004012c2  {
+004012c5      return;
+004012c2  }
+
+004012c6                    90                                                                                   .
+
+004012c7    int64_t sub_4012c7() __pure
+
+004012c7  {
+004012c8      return;
+004012c7  }
+
+
+004012c9    int32_t clear_stdin()
+
+004012c9  {
+004012e8      int32_t i;
+004012e8      
+004012e8      do
+004012e8      {
+004012d6          i = getchar();
+004012d6          
+004012e2          if (i == 0xa)
+004012e2              break;
+004012e8      } while (i != 0xffffffff);
+004012e8      
+004012ec      return i;
+004012c9  }
+
+
+004012ed    struct Character* createCharacter(struct Character* character, char* name, uint64_t str, uint64_t dex, uint64_t cha)
+
+004012ed  {
+00401316      if (str)
+00401357          strncpy(name, str, 8);
+00401316      else
+00401316      {
+00401327          printf("Chracter name: ");
+0040133d          read(0, name, 8);
+00401316      }
+00401316      
+00401361      if (dex)
+004013a7          *(uint64_t*)(name + 8) = dex;
+00401361      else
+00401361      {
+00401379          printf("%s's strength (1-20): ", name);
+00401398          __isoc99_scanf("%ld", &name[8]);
+00401361      }
+00401361      
+004013b0      if (cha)
+004013f6          *(uint64_t*)(name + 0x10) = cha;
+004013b0      else
+004013b0      {
+004013c8          printf("%s's dexterity (1-20): ", name);
+004013e7          __isoc99_scanf("%ld", &name[0x10]);
+004013b0      }
+004013b0      
+004013ff      int64_t entry_r9;
+004013ff      
+004013ff      if (entry_r9)
+00401445          *(uint64_t*)(name + 0x18) = entry_r9;
+004013ff      else
+004013ff      {
+00401417          printf("%s's charisma (1-20): ", name);
+00401436          __isoc99_scanf("%ld", &name[0x18]);
+004013ff      }
+004013ff      
+0040144f      return character;
+004012ed  }
+
+
+00401450    int64_t customizePartyMember(struct Character* member)
+
+00401450  {
+00401476      printf("Enter strength for %s: ", member);
+00401495      __isoc99_scanf("%ld", &member->str);
+004014b0      printf("Enter dexterity for %s: ", member);
+004014cf      __isoc99_scanf("%ld", &member->dex);
+004014ea      printf("Enter dexterity for %s: ", member);
+00401510      return __isoc99_scanf("%ld", &member->cha);
+00401450  }
+
+
+00401511    void handleEncounter(struct Character* player, struct Character* partyMembers) __noreturn
+
+00401511  {
+00401515      int64_t rbp;
+00401515      int64_t var_8 = rbp;
+00401537      void* fsbase;
+00401537      int64_t var_10 = *(uint64_t*)((char*)fsbase + 0x28);
+00401547      puts("\nYou encounter a fierce enemy!");
+00401572      struct Character character;
+00401572      struct Character enemies[0x3];
+00401572      createCharacter(&character, &enemies, "Kobold", 0xc, 0x12);
+004015a1      createCharacter(&character, &enemies[1], "Gnoll", 0x12, 0xa);
+004015d0      createCharacter(&character, &enemies[2], "Owlbear", 0x19, 0xf);
+004015df      puts("\nYou encounter enemies. They attack you!");
+004015ee      puts("Enemies:");
+004015ee      
+00401680      for (int i = 0; i <= 2; i += 1)
+0040166d          printf("%s - Strength: %ld, Dexterity: %ld, Charisma: %ld\n", 
+0040166d              &enemies[(int64_t)i], *(uint64_t*)(&(&var_8)[(int64_t)i * 4] - 0x68), 
+0040166d              *(uint64_t*)(&(&var_8)[(int64_t)i * 4] - 0x60), 
+0040166d              *(uint64_t*)(&(&var_8)[(int64_t)i * 4] - 0x58));
+0040166d      
+00401686      int totalEnemyStrength = 0;
+00401690      int totalEnemyDexterity = 0;
+00401690      
+00401740      for (int i = 0; i <= 2; i += 1)
+00401740      {
+004016b6          int64_t rcx_5 = *(uint64_t*)(&(&var_8)[(int64_t)i * 4] - 0x68);
+004016e9          totalEnemyStrength += (uint32_t)rcx_5 - (int32_t)(rcx_5 / 0x14 * 0x14);
+004016ff          int64_t rcx_7 = *(uint64_t*)(&(&var_8)[(int64_t)i * 4] - 0x60);
+00401732          totalEnemyDexterity += (uint32_t)rcx_7 - (int32_t)(rcx_7 / 0x14 * 0x14);
+00401740      }
+00401740      
+00401751      uint32_t totalPartyStrength = (int32_t)player->str;
+0040175f      uint32_t totalPartyDexterity = (int32_t)player->dex;
+0040175f      
+0040180f      for (int i = 0; i < numPartyMembers; i += 1)
+0040180f      {
+00401784          int64_t str = partyMembers[(int64_t)i].str;
+004017b5          totalPartyStrength += (uint32_t)str - (int32_t)(str / 0x14 * 0x14);
+004017ce          int64_t dex = partyMembers[(int64_t)i].dex;
+004017ff          totalPartyDexterity += (uint32_t)dex - (int32_t)(dex / 0x14 * 0x14);
+0040180f      }
+0040180f      
+0040182d      if (totalPartyStrength + totalPartyDexterity
+0040182d              <= totalEnemyDexterity + totalEnemyStrength)
+0040184a          puts("You lose the battle!");
+0040182d      else
+00401839          puts("You win the battle!");
+00401839      
+00401854      exit(0);
+00401854      /* no return */
+00401511  }
+
+
+00401859    int64_t handleDialogue(struct Character* player, struct Character* partyMembers)
+
+00401859  {
+00401865      struct Character* player_1 = player;
+0040186d      void* fsbase;
+0040186d      int64_t rax = *(uint64_t*)((char*)fsbase + 0x28);
+00401881      int64_t rax_3 = (int64_t)rand();
+00401881      
+0040188f      if (!encountered)
+0040188f      {
+0040189f          puts("\nYou encounter a mysterious stranger.");
+004018ae          puts("\nThey are wearing a symbol, and you've seen it before...");
+004018bd          puts("It is the emblem of the church of Srand.");
+004018cc          puts("They must be a cleric!");
+004018db          puts("The stranger offers to join your party if you can answer a riddle.");
+004018ea          puts("Riddle: "What number am I thinking of?"\n");
+004018fe          printf("Enter your guess: ");
+00401919          uint64_t choice;
+00401919          __isoc99_scanf("%ld", &choice);
+00401919          
+00401926          if (rax_3 != choice)
+00401996              puts("Incorrect! The stranger disappears in the mist...");
+00401926          else
+00401926          {
+00401932              puts(""As prophesied, the day has come... You are the chosen one!"");
+00401941              puts("The stranger joins your party.");
+00401946              int numPartyMembers_1 = numPartyMembers;
+0040194f              numPartyMembers = numPartyMembers_1 + 1;
+00401985              struct Character character;
+00401985              createCharacter(&character, &partyMembers[(int64_t)numPartyMembers_1], 
+00401985                  "Menthara", 0, 0);
+00401926          }
+00401926          
+0040199b          encountered = 1;
+0040188f      }
+0040188f      
+004019b5      if (rax == *(uint64_t*)((char*)fsbase + 0x28))
+004019bd          return rax - *(uint64_t*)((char*)fsbase + 0x28);
+004019bd      
+004019b7      __stack_chk_fail();
+004019b7      /* no return */
+00401859  }
+
+
+004019be    int64_t read_opt()
+
+004019be  {
+004019ca      void* fsbase;
+004019ca      int64_t rax = *(uint64_t*)((char*)fsbase + 0x28);
+004019d9      char option[0x8];
+004019d9      __builtin_memset(&option, 0, 8);
+004019f2      read(0, &option, 8);
+00401a03      int64_t result = (int64_t)atoi(&option);
+00401a09      *(uint64_t*)((char*)fsbase + 0x28);
+00401a09      
+00401a12      if (rax == *(uint64_t*)((char*)fsbase + 0x28))
+00401a1a          return result;
+00401a1a      
+00401a14      __stack_chk_fail();
+00401a14      /* no return */
+004019be  }
+
+
+00401a1b    int64_t setup()
+
+00401a1b  {
+00401a3c      setvbuf(stdout, nullptr, 2, 0);
+00401a61      return setvbuf(stderr, nullptr, 2, 0);
+00401a1b  }
+
+
+00401a62    int32_t main()
+
+00401a62  {
+00401a71      void* fsbase;
+00401a71      int64_t rax = *(uint64_t*)((char*)fsbase + 0x28);
+00401a85      setup();
+00401a96      srand(time(nullptr));
+00401a9b      encountered = 0;
+00401aaf      puts("Welcome to the Galdurs Bate!");
+00401abe      puts("==== Character Creation ====");
+00401aea      struct Character character;
+00401aea      struct Character player;
+00401aea      createCharacter(&character, &player, 0, 0, 0);
+00401afe      printf("Character description: ");
+00401b17      read(0, &player_description, 0xc8);
+00401b42      struct Character partyMembers[0x3];
+00401b42      createCharacter(&character, &partyMembers, "Dale", 0xa, 0xc);
+00401b71      createCharacter(&character, &partyMembers[1], "Farlach", 0x14, 0xe);
+00401ba0      createCharacter(&character, &partyMembers[2], "Bae'zel", 0x14, 0x14);
+00401ba5      numPartyMembers = 3;
+00401bc8      printf("%s' party:\n", &player);
+00401bc8      
+00401c5f      for (int i = 0; i < numPartyMembers; i += 1)
+00401c5f      {
+00401c47          int64_t __saved_rbp;
+00401c47          printf("%s (%ld, %ld, %ld)\n", &partyMembers[(int64_t)i], 
+00401c47              *(uint64_t*)(&(&__saved_rbp)[(int64_t)i * 4] - 0x68), 
+00401c47              *(uint64_t*)(&(&__saved_rbp)[(int64_t)i * 4] - 0x60), 
+00401c47              *(uint64_t*)(&(&__saved_rbp)[(int64_t)i * 4] - 0x58));
+00401c5f      }
+00401c5f      
+00401c65      int currentScenario = 0;
+00401c83      __builtin_memcpy(&dungeon, "You enter the dark dungeon.", 0x1c);
+00401cac      dungeon[0].type = 0;
+00401cb6      dungeon[0].forward = 1;
+00401cc0      dungeon[0].backward = 0xffffffff;
+00401cca      dungeon[0].left = 0xffffffff;
+00401cd4      dungeon[0].right = 0xffffffff;
+00401cf2      dungeon[1].description[0] = 0x656d6f6320756f59;
+00401cf9      (*(uint1600_t*)dungeon[1].description)[8] = 0x2073736f72636120;
+00401d14      (*(uint1600_t*)dungeon[1].description)[0x10] = 0x69206b726f662061;
+00401d1b      (*(uint1600_t*)dungeon[1].description)[0x18] = 0x617020656874206e;
+00401d22      (*(uint1600_t*)dungeon[1].description)[0x20] = 0x2e6874;
+00401d2c      dungeon[1].type = 0;
+00401d36      dungeon[1].forward = 0xffffffff;
+00401d40      dungeon[1].backward = 0;
+00401d4a      dungeon[1].left = 2;
+00401d54      dungeon[1].right = 3;
+00401d72      dungeon[2].description[0] = 0x646e696620756f59;
+00401d79      (*(uint1600_t*)dungeon[2].description)[8] = 0x7361657274206120;
+00401d8a      (*(uint1600_t*)dungeon[2].description)[0x10] = 0x7365686320657275;
+00401d91      (*(uint1600_t*)dungeon[2].description)[0x18] = 0x2e74;
+00401d9a      (*(uint1600_t*)dungeon[2].description)[0x1a] = 0;
+00401da1      dungeon[2].type = 0;
+00401dab      dungeon[2].forward = 0xffffffff;
+00401db5      dungeon[2].backward = 1;
+00401dbf      dungeon[2].left = 0xffffffff;
+00401dc9      dungeon[2].right = 0xffffffff;
+00401de7      dungeon[3].description[0] = 0x65746e6520756f59;
+00401dee      (*(uint1600_t*)dungeon[3].description)[8] = 0x7473796d20612072;
+00401e09      (*(uint1600_t*)dungeon[3].description)[0x10] = 0x632073756f697265;
+00401e10      (*(uint1600_t*)dungeon[3].description)[0x18] = 0x2e7265626d6168;
+00401e17      dungeon[3].type = 2;
+00401e21      dungeon[3].forward = 4;
+00401e2b      dungeon[3].backward = 1;
+00401e35      dungeon[3].left = 0xffffffff;
+00401e3f      dungeon[3].right = 0xffffffff;
+00401e5d      dungeon[4].description[0] = 0x6361657220756f59;
+00401e64      (*(uint1600_t*)dungeon[4].description)[8] = 0x6e65206568742068;
+00401e7f      (*(uint1600_t*)dungeon[4].description)[0x10] = 0x65687420666f2064;
+00401e86      (*(uint1600_t*)dungeon[4].description)[0x18] = 0x6e6f65676e756420;
+00401e8d      (*(uint1600_t*)dungeon[4].description)[0x20] = 0x2e;
+00401e96      dungeon[4].type = 1;
+00401ea0      dungeon[4].forward = 0xffffffff;
+00401eaa      dungeon[4].backward = 3;
+00401eb4      dungeon[4].left = 0xffffffff;
+00401ebe      dungeon[4].right = 0xffffffff;
+00401ec8      uint32_t running = 1;
+00401ec8      
+004021ff      while (running)
+004021ff      {
+00401f02          printf("\n%s\n", &dungeon[(int64_t)currentScenario], &dungeon);
+00401f1d          int32_t type = dungeon[(int64_t)currentScenario].type;
+00401f1d          
+00401f23          if (type == 1)
+00401f23          {
+00401f3d              handleEncounter(&player, &partyMembers);
+00401f3d              /* no return */
+00401f23          }
+00401f23          
+00401f28          if (type == 2)
+00401f55              handleDialogue(&player, &partyMembers);
+00401f55          
+00401f65          puts("\nAvailable options:");
+00401f65          
+00401f86          if (dungeon[(int64_t)currentScenario].forward != 0xffffffff)
+00401f92              puts("1. Proceed forward");
+00401f92          
+00401fb3          if (dungeon[(int64_t)currentScenario].backward != 0xffffffff)
+00401fbf              puts("2. Go back");
+00401fbf          
+00401fe0          if (dungeon[(int64_t)currentScenario].left != 0xffffffff)
+00401fec              puts("3. Go left");
+00401fec          
+0040200d          if (dungeon[(int64_t)currentScenario].right != 0xffffffff)
+00402019              puts("4. Go right");
+00402019          
+00402028          puts("5. Quit");
+0040203c          printf("Enter your choice: ");
+0040203c          
+00402058          switch (read_opt())
+00402058          {
+004020a1              case 1:
+004020a1              {
+004020a1                  if (dungeon[(int64_t)currentScenario].forward == 0xffffffff)
+004020a1                  {
+004020d1                      puts("Invalid choice.");
+004020d6                      continue;
+004020a1                  }
+004020a1                  else
+004020a1                  {
+004020bc                      currentScenario = dungeon[(int64_t)currentScenario].forward;
+004020c2                      continue;
+004020a1                  }
+004020a1                  break;
+004020a1              }
+004020f7              case 2:
+004020f7              {
+004020f7                  if (dungeon[(int64_t)currentScenario].backward == 0xffffffff)
+004020f7                  {
+00402127                      puts("Invalid choice.");
+0040212c                      continue;
+004020f7                  }
+004020f7                  else
+004020f7                  {
+00402112                      currentScenario = dungeon[(int64_t)currentScenario].backward;
+00402118                      continue;
+004020f7                  }
+004020f7                  break;
+004020f7              }
+0040214d              case 3:
+0040214d              {
+0040214d                  if (dungeon[(int64_t)currentScenario].left == 0xffffffff)
+0040214d                  {
+0040217d                      puts("Invalid choice.");
+00402182                      continue;
+0040214d                  }
+0040214d                  else
+0040214d                  {
+00402168                      currentScenario = dungeon[(int64_t)currentScenario].left;
+0040216e                      continue;
+0040214d                  }
+0040214d                  break;
+0040214d              }
+004021a0              case 4:
+004021a0              {
+004021a0                  if (dungeon[(int64_t)currentScenario].right == 0xffffffff)
+004021a0                  {
+004021cd                      puts("Invalid choice.");
+004021d2                      continue;
+004021a0                  }
+004021a0                  else
+004021a0                  {
+004021bb                      currentScenario = dungeon[(int64_t)currentScenario].right;
+004021c1                      continue;
+004021a0                  }
+004021a0                  break;
+004021a0              }
+004021db              case 5:
+004021db              {
+004021db                  void* rax_53;
+004021db                  (uint8_t)rax_53 = !running;
+004021e1                  running = (uint32_t)(uint8_t)rax_53;
+004021e7                  continue;
+004021db              }
+00402058          }
+00402058          
+004021f3          puts("Invalid choice.");
+004021ff      }
+004021ff      
+0040220e      *(uint64_t*)((char*)fsbase + 0x28);
+0040220e      
+00402217      if (rax == *(uint64_t*)((char*)fsbase + 0x28))
+0040221f          return 0;
+0040221f      
+00402219      __stack_chk_fail();
+00402219      /* no return */
+00401a62  }
+
+00401f42        eb 17                                                                                        ..
+.text (PROGBITS) section ended  {0x4011d0-0x402220}
+
+.fini (PROGBITS) section started  {0x402220-0x40222d}
+
+00402220    int64_t _fini() __pure
+
+00402220  {
+0040222c      return;
+00402220  }
+
+.fini (PROGBITS) section ended  {0x402220-0x40222d}
+
+.rodata (PROGBITS) section started  {0x403000-0x40344c}
+00403000  uint32_t _IO_stdin_used = 0x20001
+
+00403004              00 00 00 00                                                                              ....
+
+00403008  char const data_403008[0x10] = "Chracter name: ", 0
+00403018  char const data_403018[0x17] = "%s\'s strength (1-20): ", 0
+
+0040302f  data_40302f:
+0040302f                                               25 6c 64 00                                                        %ld.
+
+00403033  char const data_403033[0x18] = "%s\'s dexterity (1-20): ", 0
+0040304b  char const data_40304b[0x17] = "%s\'s charisma (1-20): ", 0
+00403062  char const data_403062[0x18] = "Enter strength for %s: ", 0
+0040307a  char const data_40307a[0x19] = "Enter dexterity for %s: ", 0
+
+00403093                                                           00 00 00 00 00                                             .....
+
+00403098  char const data_403098[0x1f] = "\nYou encounter a fierce enemy!", 0
+004030b7  char const data_4030b7[0x7] = "Kobold", 0
+004030be  char const data_4030be[0x6] = "Gnoll", 0
+004030c4  char const data_4030c4[0x8] = "Owlbear", 0
+
+004030cc                                      00 00 00 00                                                              ....
+
+004030d0  char const data_4030d0[0x29] = "\nYou encounter enemies. They attack you!", 0
+004030f9  char const data_4030f9[0x9] = "Enemies:", 0
+
+00403102        00 00 00 00 00 00                                                                            ......
+
+00403108  char const data_403108[0x33] = "%s - Strength: %ld, Dexterity: %ld, Charisma: %ld\n", 0
+0040313b  char const data_40313b[0x14] = "You win the battle!", 0
+0040314f  char const data_40314f[0x15] = "You lose the battle!", 0
+
+00403164              00 00 00 00                                                                              ....
+
+00403168  char const data_403168[0x26] = "\nYou encounter a mysterious stranger.", 0
+
+0040318e                                            00 00                                                                ..
+
+00403190  char const data_403190[0x39] = "\nThey are wearing a symbol, and you\'ve seen it before...", 0
+
+004031c9                             00 00 00 00 00 00 00                                                           .......
+
+004031d0  char const data_4031d0[0x29] = "It is the emblem of the church of Srand.", 0
+004031f9  char const data_4031f9[0x17] = "They must be a cleric!", 0
+00403210  char const data_403210[0x43] = "The stranger offers to join your party if you can answer a riddle.", 0
+
+00403253                                                           00 00 00 00 00                                             .....
+
+00403258  char const data_403258[0x29] = "Riddle: \"What number am I thinking of?\"\n", 0
+00403281  char const data_403281[0x13] = "Enter your guess: ", 0
+
+00403294                                                              00 00 00 00                                              ....
+
+00403298  char const data_403298[0x3d] = "\"As prophesied, the day has come... You are the chosen one!\"", 0
+
+004032d5                                                                 00 00 00                                               ...
+
+004032d8  char const data_4032d8[0x1f] = "The stranger joins your party.", 0
+004032f7  char const data_4032f7[0x9] = "Menthara", 0
+00403300  char const data_403300[0x32] = "Incorrect! The stranger disappears in the mist...", 0
+00403332  char const data_403332[0x1d] = "Welcome to the Galdurs Bate!", 0
+0040334f  char const data_40334f[0x1d] = "==== Character Creation ====", 0
+0040336c  char const data_40336c[0x18] = "Character description: ", 0
+00403384  char const data_403384[0x5] = "Dale", 0
+00403389  char const data_403389[0x8] = "Farlach", 0
+00403391  char const data_403391[0x8] = "Bae\'zel", 0
+00403399  char const data_403399[0xc] = "%s\' party:\n", 0
+004033a5  char const data_4033a5[0x14] = "%s (%ld, %ld, %ld)\n", 0
+004033b9  char const data_4033b9[0x5] = "\n%s\n", 0
+004033be  char const data_4033be[0x14] = "\nAvailable options:", 0
+004033d2  char const data_4033d2[0x13] = "1. Proceed forward", 0
+004033e5  char const data_4033e5[0xb] = "2. Go back", 0
+004033f0  char const data_4033f0[0xb] = "3. Go left", 0
+004033fb  char const data_4033fb[0xc] = "4. Go right", 0
+00403407  char const data_403407[0x8] = "5. Quit", 0
+0040340f  char const data_40340f[0x14] = "Enter your choice: ", 0
+00403423  char const data_403423[0x10] = "Invalid choice.", 0
+
+00403433                                                           00                                                         .
+00403434  uint32_t jump_table_403434[0x6] = 
+00403434  {
+00403434      [0x0] = 0xffffedb5
+00403438      [0x1] = 0xffffec51
+0040343c      [0x2] = 0xffffeca7
+00403440      [0x3] = 0xffffecfd
+00403444      [0x4] = 0xffffed50
+00403448      [0x5] = 0xffffeda0
+0040344c  }
+.rodata (PROGBITS) section ended  {0x403000-0x40344c}
+
+.eh_frame_hdr (PROGBITS) section started  {0x40344c-0x4034c0}
+0040344c  __GNU_EH_FRAME_HDR:
+0040344c                                      01 1b 03 3b 70 00 00 00 0d 00 00 00 d4 db ff ff b4 00 00 00              ...;p...............
+00403460  b4 dc ff ff dc 00 00 00 84 dd ff ff 8c 00 00 00 b4 dd ff ff a0 00 00 00 6a de ff ff f4 00 00 00  ........................j.......
+00403480  7d de ff ff 14 01 00 00 a1 de ff ff 34 01 00 00 04 e0 ff ff 54 01 00 00 c5 e0 ff ff 74 01 00 00  }...........4.......T.......t...
+004034a0  0d e4 ff ff 90 01 00 00 72 e5 ff ff b0 01 00 00 cf e5 ff ff d0 01 00 00 16 e6 ff ff f0 01 00 00  ........r.......................
+.eh_frame_hdr (PROGBITS) section ended  {0x40344c-0x4034c0}
+
+.eh_frame (PROGBITS) section started  {0x4034c0-0x403660}
+004034c0  14 00 00 00 00 00 00 00 01 7a 52 00 01 78 10 01 1b 0c 07 08 90 01 00 00 10 00 00 00 1c 00 00 00  .........zR..x..................
+004034e0  f0 dc ff ff 26 00 00 00 00 44 07 10 10 00 00 00 30 00 00 00 0c dd ff ff 05 00 00 00 00 00 00 00  ....&....D......0...............
+00403500  24 00 00 00 44 00 00 00 18 db ff ff e0 00 00 00 00 0e 10 46 0e 18 4a 0f 0b 77 08 80 00 3f 1a 3a  $...D..............F..J..w...?.:
+00403520  2a 33 24 22 00 00 00 00 14 00 00 00 6c 00 00 00 d0 db ff ff d0 00 00 00 00 00 00 00 00 00 00 00  *3$"........l...................
+00403540  1c 00 00 00 84 00 00 00 6e dd ff ff 13 00 00 00 00 45 0e 10 86 02 43 0d 06 4a 0c 07 08 00 00 00  ........n........E....C..J......
+00403560  1c 00 00 00 a4 00 00 00 61 dd ff ff 24 00 00 00 00 45 0e 10 86 02 43 0d 06 5b 0c 07 08 00 00 00  ........a...$....E....C..[......
+00403580  1c 00 00 00 c4 00 00 00 65 dd ff ff 63 01 00 00 00 45 0e 10 86 02 43 0d 06 03 5a 01 0c 07 08 00  ........e...c....E....C...Z.....
+004035a0  1c 00 00 00 e4 00 00 00 a8 de ff ff c1 00 00 00 00 45 0e 10 86 02 43 0d 06 02 b8 0c 07 08 00 00  .................E....C.........
+004035c0  18 00 00 00 04 01 00 00 49 df ff ff 48 03 00 00 00 45 0e 10 86 02 43 0d 06 00 00 00 1c 00 00 00  ........I...H....E....C.........
+004035e0  20 01 00 00 75 e2 ff ff 65 01 00 00 00 45 0e 10 86 02 43 0d 06 03 5c 01 0c 07 08 00 1c 00 00 00   ...u...e....E....C...\.........
+00403600  40 01 00 00 ba e3 ff ff 5d 00 00 00 00 45 0e 10 86 02 43 0d 06 02 54 0c 07 08 00 00 1c 00 00 00  @.......]....E....C...T.........
+00403620  60 01 00 00 f7 e3 ff ff 47 00 00 00 00 45 0e 10 86 02 43 0d 06 7e 0c 07 08 00 00 00 1c 00 00 00  `.......G....E....C..~..........
+00403640  80 01 00 00 1e e4 ff ff be 07 00 00 00 45 0e 10 86 02 43 0d 06 03 b5 07 0c 07 08 00              .............E....C.........
+0040365c  __FRAME_END__:
+0040365c                                                                                      00 00 00 00                              ....
+.eh_frame (PROGBITS) section ended  {0x4034c0-0x403660}
+
+.init_array section started  {0x404e10-0x404e18}
+00404e10  void (* __frame_dummy_init_array_entry[0x1])() = 
+00404e10  {
+00404e10      [0x0] = frame_dummy
+00404e18  }
+.init_array section ended  {0x404e10-0x404e18}
+
+.fini_array section started  {0x404e18-0x404e20}
+00404e18  void (* __do_global_dtors_aux_fini_array_entry[0x1])() = 
+00404e18  {
+00404e18      [0x0] = __do_global_dtors_aux
+00404e20  }
+.fini_array section ended  {0x404e18-0x404e20}
+
+.dynamic (DYNAMIC) section started  {0x404e20-0x404ff0}
+00404e20  struct Elf64_Dyn _DYNAMIC[0x18] = 
+00404e20  {
+00404e20      [0x00] = 
+00404e20      {
+00404e20          enum e_dyn_tag d_tag = DT_NEEDED
+00404e28          uint64_t d_val = 0x7f
+00404e30      }
+00404e30      [0x01] = 
+00404e30      {
+00404e30          enum e_dyn_tag d_tag = DT_INIT
+00404e38          uint64_t d_val = 0x401000
+00404e40      }
+00404e40      [0x02] = 
+00404e40      {
+00404e40          enum e_dyn_tag d_tag = DT_FINI
+00404e48          uint64_t d_val = 0x402220
+00404e50      }
+00404e50      [0x03] = 
+00404e50      {
+00404e50          enum e_dyn_tag d_tag = DT_INIT_ARRAY
+00404e58          uint64_t d_val = 0x404e10
+00404e60      }
+00404e60      [0x04] = 
+00404e60      {
+00404e60          enum e_dyn_tag d_tag = DT_INIT_ARRAYSZ
+00404e68          uint64_t d_val = 0x8
+00404e70      }
+00404e70      [0x05] = 
+00404e70      {
+00404e70          enum e_dyn_tag d_tag = DT_FINI_ARRAY
+00404e78          uint64_t d_val = 0x404e18
+00404e80      }
+00404e80      [0x06] = 
+00404e80      {
+00404e80          enum e_dyn_tag d_tag = DT_FINI_ARRAYSZ
+00404e88          uint64_t d_val = 0x8
+00404e90      }
+00404e90      [0x07] = 
+00404e90      {
+00404e90          enum e_dyn_tag d_tag = DT_GNU_HASH
+00404e98          uint64_t d_val = 0x4003b0
+00404ea0      }
+00404ea0      [0x08] = 
+00404ea0      {
+00404ea0          enum e_dyn_tag d_tag = DT_STRTAB
+00404ea8          uint64_t d_val = 0x400588
+00404eb0      }
+00404eb0      [0x09] = 
+00404eb0      {
+00404eb0          enum e_dyn_tag d_tag = DT_SYMTAB
+00404eb8          uint64_t d_val = 0x4003d8
+00404ec0      }
+00404ec0      [0x0a] = 
+00404ec0      {
+00404ec0          enum e_dyn_tag d_tag = DT_STRSZ
+00404ec8          uint64_t d_val = 0xc3
+00404ed0      }
+00404ed0      [0x0b] = 
+00404ed0      {
+00404ed0          enum e_dyn_tag d_tag = DT_SYMENT
+00404ed8          uint64_t d_val = 0x18
+00404ee0      }
+00404ee0      [0x0c] = 
+00404ee0      {
+00404ee0          enum e_dyn_tag d_tag = DT_DEBUG
+00404ee8          uint64_t d_val = 0x0
+00404ef0      }
+00404ef0      [0x0d] = 
+00404ef0      {
+00404ef0          enum e_dyn_tag d_tag = DT_PLTGOT
+00404ef8          uint64_t d_val = 0x405000
+00404f00      }
+00404f00      [0x0e] = 
+00404f00      {
+00404f00          enum e_dyn_tag d_tag = DT_PLTRELSZ
+00404f08          uint64_t d_val = 0x138
+00404f10      }
+00404f10      [0x0f] = 
+00404f10      {
+00404f10          enum e_dyn_tag d_tag = DT_PLTREL
+00404f18          uint64_t d_val = 0x7
+00404f20      }
+00404f20      [0x10] = 
+00404f20      {
+00404f20          enum e_dyn_tag d_tag = DT_JMPREL
+00404f28          uint64_t d_val = 0x400720
+00404f30      }
+00404f30      [0x11] = 
+00404f30      {
+00404f30          enum e_dyn_tag d_tag = DT_RELA
+00404f38          uint64_t d_val = 0x4006c0
+00404f40      }
+00404f40      [0x12] = 
+00404f40      {
+00404f40          enum e_dyn_tag d_tag = DT_RELASZ
+00404f48          uint64_t d_val = 0x60
+00404f50      }
+00404f50      [0x13] = 
+00404f50      {
+00404f50          enum e_dyn_tag d_tag = DT_RELAENT
+00404f58          uint64_t d_val = 0x18
+00404f60      }
+00404f60      [0x14] = 
+00404f60      {
+00404f60          enum e_dyn_tag d_tag = DT_VERNEED
+00404f68          uint64_t d_val = 0x400670
+00404f70      }
+00404f70      [0x15] = 
+00404f70      {
+00404f70          enum e_dyn_tag d_tag = DT_VERNEEDNUM
+00404f78          uint64_t d_val = 0x1
+00404f80      }
+00404f80      [0x16] = 
+00404f80      {
+00404f80          enum e_dyn_tag d_tag = DT_VERSYM
+00404f88          uint64_t d_val = 0x40064c
+00404f90      }
+00404f90      [0x17] = 
+00404f90      {
+00404f90          enum e_dyn_tag d_tag = DT_NULL
+00404f98          uint64_t d_val = 0x0
+00404fa0      }
+00404fa0  }
+
+00404fa0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+00404fc0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+00404fe0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00                                                  ................
+.dynamic (DYNAMIC) section ended  {0x404e20-0x404ff0}
+
+.got (PROGBITS) section started  {0x404ff0-0x405000}
+00404ff0  void (* const __libc_start_main)(int32_t (* main)(int32_t argc, char** argv, char** envp), int32_t argc, char** ubp_av, void (* init)(), void (* fini)(), void (* rtld_fini)(), void* stack_end) __noreturn = __libc_start_main
+00404ff8  int64_t (* const __gmon_start__)() = __gmon_start__
+.got (PROGBITS) section ended  {0x404ff0-0x405000}
+
+.got.plt (PROGBITS) section started  {0x405000-0x405080}
+00405000  void* _GLOBAL_OFFSET_TABLE_ = _DYNAMIC
+00405008  int64_t data_405008 = 0x0
+00405010  int64_t data_405010 = 0x0
+00405018  char* (* const strncpy)(char*, char const*, uint64_t) = strncpy
+00405020  int32_t (* const puts)(char const* str) = puts
+00405028  void (* const __stack_chk_fail)() __noreturn = __stack_chk_fail
+00405030  int32_t (* const printf)(char const* format, ...) = printf
+00405038  ssize_t (* const read)(int32_t fd, void* buf, uint64_t nbytes) = read
+00405040  void (* const srand)(uint32_t x) = srand
+00405048  int32_t (* const getchar)() = getchar
+00405050  time_t (* const time)(time_t*) = time
+00405058  int32_t (* const setvbuf)(FILE* fp, char* buf, int32_t mode, uint64_t size) = setvbuf
+00405060  int32_t (* const atoi)(char const* nptr) = atoi
+00405068  int32_t (* const __isoc99_scanf)(char const* format, ...) = __isoc99_scanf
+00405070  void (* const exit)(int32_t status) __noreturn = exit
+00405078  int32_t (* const rand)() = rand
+.got.plt (PROGBITS) section ended  {0x405000-0x405080}
+
+.data (PROGBITS) section started  {0x405080-0x405090}
+00405080  __data_start:
+00405080  00 00 00 00 00 00 00 00                                                                          ........
+00405088  __dso_handle:
+00405088                          00 00 00 00 00 00 00 00                                                          ........
+.data (PROGBITS) section ended  {0x405080-0x405090}
+
+00405090  __TMC_END__:
+00405090                                                  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00                  ................
+
+.bss (NOBITS) section started  {0x4050a0-0x405610}
+004050a0  uint64_t* const stdout = 0x0
+
+004050a8                          00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00          ........................
+
+004050c0  uint64_t* const stderr = 0x0
+004050c8  uint8_t completed.0 = 0x0
+
+004050c9                             00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           .......................
+004050e0  struct Scenario dungeon[0x5] = 
+004050e0  {
+004050e0      [0x0] = 
+004050e0      {
+004050e0          char description[0xc8] = "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", 0
+004051a8          int type = 0x0
+004051ac          int forward = 0x0
+004051b0          int backward = 0x0
+004051b4          int right = 0x0
+004051b8          int left = 0x0
+004051bc      }
+004051bc      [0x1] = 
+004051bc      {
+004051bc          char description[0xc8] = "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", 0
+00405284          int type = 0x0
+00405288          int forward = 0x0
+0040528c          int backward = 0x0
+00405290          int right = 0x0
+00405294          int left = 0x0
+00405298      }
+00405298      [0x2] = 
+00405298      {
+00405298          char description[0xc8] = "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", 0
+00405360          int type = 0x0
+00405364          int forward = 0x0
+00405368          int backward = 0x0
+0040536c          int right = 0x0
+00405370          int left = 0x0
+00405374      }
+00405374      [0x3] = 
+00405374      {
+00405374          char description[0xc8] = "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", 0
+0040543c          int type = 0x0
+00405440          int forward = 0x0
+00405444          int backward = 0x0
+00405448          int right = 0x0
+0040544c          int left = 0x0
+00405450      }
+00405450      [0x4] = 
+00405450      {
+00405450          char description[0xc8] = "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", 0
+00405518          int type = 0x0
+0040551c          int forward = 0x0
+00405520          int backward = 0x0
+00405524          int right = 0x0
+00405528          int left = 0x0
+0040552c      }
+0040552c  }
+
+0040552c                                      00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00              ....................
+
+00405540  char player_description[0xc8] = "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", 0
+00405608  int encountered = 0x0
+0040560c  int numPartyMembers = 0x0
+.bss (NOBITS) section ended  {0x4050a0-0x405610}
+
+.extern section started  {0x405610-0x405688}
+00405610  extern __gmon_start__
+00405618  extern int32_t __isoc99_scanf(char const* format, ...)
+00405620  extern void __libc_start_main(int32_t (* main)(int32_t argc, char** argv, char** envp), int32_t argc, char** ubp_av, void (* init)(), void (* fini)(), void (* rtld_fini)(), void* stack_end) __noreturn
+00405628  extern void __stack_chk_fail() __noreturn
+00405630  extern int32_t atoi(char const* nptr)
+00405638  extern void exit(int32_t status) __noreturn
+00405640  extern int32_t getchar()
+00405648  extern int32_t printf(char const* format, ...)
+00405650  extern int32_t puts(char const* str)
+00405658  extern int32_t rand()
+00405660  extern ssize_t read(int32_t fd, void* buf, uint64_t nbytes)
+00405668  extern int32_t setvbuf(FILE* fp, char* buf, int32_t mode, uint64_t size)
+00405670  extern void srand(uint32_t x)
+00405678  extern char* strncpy(char*, char const*, uint64_t)
+00405680  extern time_t time(time_t*)
+.extern section ended  {0x405610-0x405688}
+
+.synthetic_builtins section started  {0x405690-0x4056c0}
+00405690  extern void* __builtin_memcpy(void* dest, void const* src, uint64_t count)
+00405698  extern void* __builtin_memset(void* dest, int32_t ch, uint64_t count)
+004056a0  extern char* __builtin_strcpy(char* dest, char const* src)
+004056a8  extern char* __builtin_strncpy(char* dest, char const* src, uint64_t count)
+004056b0  extern wchar32* __builtin_wcscpy(wchar32* dest, wchar32 const* src)
+004056b8  extern wchar32* __builtin_wmemcpy(wchar32* dest, wchar32 const* src, uint64_t count)
+.synthetic_builtins section ended  {0x405690-0x4056c0}
+

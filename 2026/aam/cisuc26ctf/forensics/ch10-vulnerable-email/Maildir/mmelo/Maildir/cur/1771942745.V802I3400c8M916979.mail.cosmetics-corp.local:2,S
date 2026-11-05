@@ -1,0 +1,42 @@
+Return-Path: <tmoreira@hr-system.lab>
+X-Original-To: mmelo@cosmetics-corp.local
+Delivered-To: mmelo@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=hr-system.lab
+Authentication-Results: mail.cosmetics-corp.local;
+	dkim=pass (2048-bit key; unprotected) header.d=hr-system.lab header.i=@hr-system.lab header.a=rsa-sha256 header.s=mail header.b=o/+MGpKe;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=tmoreira@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id DDF52260656
+	for <mmelo@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=hr-system.lab;
+	s=mail; t=1771942745;
+	bh=ZCoWy2srcvo2G2fRJdZDmkz3qFi8k2hVim02vW92UqU=;
+	h=Date:To:From:Subject:From;
+	b=o/+MGpKef7/SlLGFYlPz7CKpIS/fA0P1wYXYLGNvNg6CdXPF/r8RuDNkuvATKfJnV
+	 u+ti22SUI20VAvQQl8xSPAWAKF7cOsRv0rc1fiSQtDDNGzMMB7qQQJimp+IJ6cxZjU
+	 N0BKkoK+alxz5WNlKEmC2IDvgFDZE8LwD6l/PWYwoRGjeCy/fWbvwhl/0Qyo9gkCR7
+	 PktkICq4+HRZxBGq36W6UG34tk3i1AVTeS2qVe6K+k51jeeORDiyvMxF4u5WWZpaDD
+	 T2dnFUZZHfrl5A6LS4bFQuXyU6BW6oIeBkqxx4BEkNxQx0HwD2wRh3hhMmDAiBxSpK
+	 WLUo4TRKlbScA==
+X-Comment: SPF check N/A for local connections - client-ip=127.0.0.1; helo=mail.hr-system.local; envelope-from=tmoreira@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.local (localhost [127.0.0.1])
+	by mail.hr-system.lab (Postfix) with ESMTP id C928D26071D
+	for <mmelo@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:05 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:19:05 +0000
+To: mmelo@cosmetics-corp.local
+From: tmoreira@hr-system.lab
+Subject: Confirmação de recebimento - NF 004521
+Message-Id: <20260224141905.005810@mail.hr-system.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezado,
+
+Confirmamos o recebimento da Nota Fiscal nº 004521, no valor de R$ 18.750,00.
+
+O pagamento está programado para o próximo ciclo, conforme condições contratuais (D+30).
+
+Qualquer dúvida, estamos à disposição.
+
+Financeiro.
+

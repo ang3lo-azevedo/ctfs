@@ -1,0 +1,42 @@
+Return-Path: <gribeiro@hr-system.lab>
+X-Original-To: bmarques@cosmetics-corp.local
+Delivered-To: bmarques@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=hr-system.lab
+Authentication-Results: mail.cosmetics-corp.local;
+	dkim=pass (2048-bit key; unprotected) header.d=hr-system.lab header.i=@hr-system.lab header.a=rsa-sha256 header.s=mail header.b=hSXQmVYp;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=gribeiro@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id 1568B260656
+	for <bmarques@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=hr-system.lab;
+	s=mail; t=1771942747;
+	bh=RsBP6dx0uDq1W5IMmY4IUrXID73yONnqixlXK8U+Swg=;
+	h=Date:To:From:Subject:From;
+	b=hSXQmVYp1u2QW+bv/NI70pSJxR4Ar+8I3eSSVgLW5qPDIen3T8eOLfBzkrgiOsoI1
+	 nhsWj2irmgyjSfA//MP8c9EJQ2whLSTnzaDtwzppCgwD6aFwksJxE+IB+vi3Ki3AiL
+	 Jz6fMXrDeeZ0cAqm7WrpRUcwWAlLXQ+Gf60PhWy7IZSBw3zaSKkmtzpSA0NpjcCTto
+	 LsSlyEukL2FCZHlAFUTnwQxkmeQctqNagbd44NgQNdJ2WFe8xnqcIeeFOWwKnHXJzs
+	 SOCLByWIr5A1U0xf9GW3RKa9pxAsHXn/3vc+EuxHRkjH0XnL5t65zdIyT/ptmtOeTH
+	 /JMgjAtdEkd7g==
+X-Comment: SPF check N/A for local connections - client-ip=127.0.0.1; helo=mail.hr-system.local; envelope-from=gribeiro@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.local (localhost [127.0.0.1])
+	by mail.hr-system.lab (Postfix) with ESMTP id 07B3B260719
+	for <bmarques@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:07 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:19:07 +0000
+To: bmarques@cosmetics-corp.local
+From: gribeiro@hr-system.lab
+Subject: Alinhamento técnico - Migração de API
+Message-Id: <20260224141907.006066@mail.hr-system.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Olá,
+
+Como comunicado anteriormente, nossa API v1 será descontinuada em 31/01/2025.
+
+Solicitamos que a migração para a API v2 seja concluída até essa data para evitar interrupções na integração. A documentação técnica está disponível em nosso portal de desenvolvedores.
+
+Nossa equipe está disponível para suporte durante a transição.
+
+TI - Integrações.
+

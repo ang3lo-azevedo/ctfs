@@ -1,0 +1,33 @@
+Return-Path: <vfonseca@cosmetics-corp.local>
+X-Original-To: wcarvalho@cosmetics-corp.local
+Delivered-To: wcarvalho@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=vfonseca@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id 61CEB260656
+	for <wcarvalho@cosmetics-corp.local>; Tue, 24 Feb 2026 14:21:59 +0000 (UTC)
+Authentication-Results: mail.hr-system.lab; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.hr-system.lab; dkim=none; dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=vfonseca@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (unknown [192.168.80.21])
+	by mail.hr-system.lab (Postfix) with ESMTP id 53ECE260719
+	for <wcarvalho@cosmetics-corp.local>; Tue, 24 Feb 2026 14:21:59 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:21:59 +0000
+To: wcarvalho@cosmetics-corp.local
+From: vfonseca@cosmetics-corp.local
+Subject: Vaga interna: Analista de Marketing Sênior
+Message-Id: <20260224142159.005323@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados,
+
+Informamos que há uma oportunidade interna para a posição de Analista de Marketing Sênior.
+
+Pré-requisitos: 5+ anos de experiência, conhecimento em Google Ads e análise de dados.
+
+Interessados devem enviar currículo para rh@empresa.com até 05/12, com o assunto 'Vaga Interna - Mkt Sênior'.
+
+RH.
+

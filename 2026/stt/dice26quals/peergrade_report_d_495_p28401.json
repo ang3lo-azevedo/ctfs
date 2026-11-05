@@ -1,0 +1,101 @@
+{
+  "generated_at": "2026-03-09T00:52:25.751544+00:00",
+  "forum_url": "https://pcm.rnl.tecnico.ulisboa.pt/moodle/mod/peerforum/discuss.php?d=495#p28401",
+  "target_key": "d=495#p28401",
+  "awards_page_id": 726,
+  "match_window_seconds": 21600,
+  "expected_delay_minutes": 20.0,
+  "peergrade_reviews": [
+    {
+      "grader_id": 36138,
+      "raw_time": "Friday, 6 March 2026, 3:01 PM",
+      "timestamp": 1772809260,
+      "peer_grade": 4,
+      "feedback": "The transituions are smooth. The tempo seems good and synchronized. Seems perfectly blended"
+    },
+    {
+      "grader_id": 36153,
+      "raw_time": "Friday, 6 March 2026, 5:18 PM",
+      "timestamp": 1772817480,
+      "peer_grade": 2,
+      "feedback": "Original Tracks\u2019 Compatibility and Quality - 3: Like the previous 2 songs, these ones have a similar \"feel\", and it works well in your favor! Arrangements and Transitions - 2: Sadly, the song sounds overall a bit dissonant, especially towards the end, with a very odd-sounding pre-outro. Key and Tempo - 2: The vocals are still a bit off-beat (see 0:35-0:45, the last 30s and the chorus), showing the same problems as the first submission. Overall, it still shows the same problems as your earlier submission, so I'll have to give it the same grade."
+    },
+    {
+      "grader_id": 36186,
+      "raw_time": "Saturday, 7 March 2026, 11:00 AM",
+      "timestamp": 1772881200,
+      "peer_grade": 4,
+      "feedback": "Really solid all around. There were a couple of spots at the beginning that felt kind of iffy and off tempo, but by the time the chorus kicks in, it all just clicks and it works. It's clear the transitions got special attention here by how well they fit too. I also especially like the bridge. Still, the early part could do with some adjustments but it doesn't really take away from the whole. Maximum rating: - Permalink Show parent Reply In reply to Daniel Gon\u00e7alves Re: Music Mashup by Ant\u00f3nio Alves - Wednesday, 4 March 2026, 3:04 PM Hello! This is my submission for the Music Mashup Skill. For this iI decided to go with a more heavy music. So I chose the song Ratamahatta from Sepultura: Ratamahatta from Sepultura For the base song and two Limp Bizkit songs. Break Stuff as the main vocals and Hot Dog for some small details. Break Stuff Hot Dog The songs are similar in terms of BPM. Break Stuff has 109 BPM and Sepultura has 113 BPM. Their keys are different though, but I think they fit well. I build it mostly by hearing and doing a lot of cuts and delays on the Break Stuff vocals. I must admit that this was not easy, and the choice of songs were not the best. Although Sepultura song has a mixture of nu-metal, metal and progressive metal, Break Stuff is mainly nu-metal. With this I had to find the perfect times to put them together and amplify the vocals of Break Stuff. Also in some vocals i had to slightly increase the bpm so that it fits. I tried to do a more experimental part at the end of the song... I also found on youtube the vocals of Break Stuff and Hot Dog alone. For Sepultura I found the instrumental and the original song so that I could mix the vocals of the Sepultura song with Limp Bizkit. Break Stuff and Hot Dog vocals. Sepultura Instrumental. Sepultura instrumental . Hope this achieves what is requested for this skill. Just a notice :) https://pcm.rnl.tecnico.ulisboa.pt/moodle/pluginfile.php/40467/mod_peerforum/post/28242/mashup.mp3 All set! This peer grading has ended for you, thanks. Show peer grades by \u00c2ngelo Azevedo - Wednesday, 4 March 2026, 6:43 PM Peer grade: 5 Feedback: Great mashup! This blend of Sepultura and Limp Bizkit feels intentional rather than forced. The vocal arrangements are sophisticated, utilizing clever cuts and delays that integrate perfectly with the tribal percussion of the instrumental. The transitions are fluid, showing a keen ear for arrangement, especially in the way the vocals were layered and processed to sit within the dense instrumental. Really liked this, and could listened to it in the day to day basis. <span class=\"rating-aggregate-lab"
+    }
+  ],
+  "time_based_resolution": {
+    "36138": [
+      {
+        "user_id": 1689,
+        "name": "Rodrigo Miguel Bilro Rento",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1689",
+        "delta_seconds": 1146,
+        "delta_minutes": 19.1,
+        "delta_from_expected_minutes": 0.9,
+        "review_timestamp": 1772809260,
+        "awards_timestamp": 1772810406
+      },
+      {
+        "user_id": 1734,
+        "name": "Tiago Jo\u00e3o Gon\u00e7alves Santana",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1734",
+        "delta_seconds": 8948,
+        "delta_minutes": 149.13,
+        "delta_from_expected_minutes": 129.13,
+        "review_timestamp": 1772809260,
+        "awards_timestamp": 1772818208
+      }
+    ],
+    "36153": [
+      {
+        "user_id": 1734,
+        "name": "Tiago Jo\u00e3o Gon\u00e7alves Santana",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1734",
+        "delta_seconds": 728,
+        "delta_minutes": 12.13,
+        "delta_from_expected_minutes": 7.87,
+        "review_timestamp": 1772817480,
+        "awards_timestamp": 1772818208
+      },
+      {
+        "user_id": 1689,
+        "name": "Rodrigo Miguel Bilro Rento",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1689",
+        "delta_seconds": 5274,
+        "delta_minutes": 87.9,
+        "delta_from_expected_minutes": 67.9,
+        "review_timestamp": 1772817480,
+        "awards_timestamp": 1772812206
+      }
+    ],
+    "36186": [
+      {
+        "user_id": 1773,
+        "name": "Jo\u00e3o Bernardo Mota Martins",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1773",
+        "delta_seconds": 1205,
+        "delta_minutes": 20.08,
+        "delta_from_expected_minutes": 0.08,
+        "review_timestamp": 1772881200,
+        "awards_timestamp": 1772882405
+      },
+      {
+        "user_id": 1689,
+        "name": "Rodrigo Miguel Bilro Rento",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1689",
+        "delta_seconds": 14406,
+        "delta_minutes": 240.1,
+        "delta_from_expected_minutes": 220.1,
+        "review_timestamp": 1772881200,
+        "awards_timestamp": 1772895606
+      }
+    ]
+  },
+  "fallback_candidates": {},
+  "time_match_window_seconds_effective": 21600
+}

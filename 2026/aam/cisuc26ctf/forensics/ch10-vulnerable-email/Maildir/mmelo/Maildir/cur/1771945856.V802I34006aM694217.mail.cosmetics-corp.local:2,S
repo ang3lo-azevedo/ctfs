@@ -1,0 +1,89 @@
+Return-Path: <>
+X-Original-To: mmelo@cosmetics-corp.local
+Delivered-To: mmelo@cosmetics-corp.local
+Received: by mail.cosmetics-corp.local (Postfix)
+	id A6AA926066D; Tue, 24 Feb 2026 15:10:56 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:10:56 +0000 (UTC)
+From: Mail Delivery System <MAILER-DAEMON@cosmetics-corp.local>
+Subject: Undelivered Mail Returned to Sender
+To: mmelo@cosmetics-corp.local
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="87CC3260656.1771945856/mail.cosmetics-corp.local"
+Content-Transfer-Encoding: 8bit
+Message-Id: <20260224151056.A6AA926066D@mail.cosmetics-corp.local>
+
+This is a MIME-encapsulated message.
+
+--87CC3260656.1771945856/mail.cosmetics-corp.local
+Content-Description: Notification
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+This is the mail system at host mail.cosmetics-corp.local.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<ti@hr-system.lab>: host mail.hr-system.lab[192.168.80.20] said: 550 5.1.1
+    <ti@hr-system.lab>: Recipient address rejected: User unknown in local
+    recipient table (in reply to RCPT TO command)
+
+--87CC3260656.1771945856/mail.cosmetics-corp.local
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; mail.cosmetics-corp.local
+X-Postfix-Queue-ID: 87CC3260656
+X-Postfix-Sender: rfc822; mmelo@cosmetics-corp.local
+Arrival-Date: Tue, 24 Feb 2026 15:10:56 +0000 (UTC)
+
+Final-Recipient: rfc822; ti@hr-system.lab
+Original-Recipient: rfc822;ti@hr-system.lab
+Action: failed
+Status: 5.1.1
+Remote-MTA: dns; mail.hr-system.lab
+Diagnostic-Code: smtp; 550 5.1.1 <ti@hr-system.lab>: Recipient address
+    rejected: User unknown in local recipient table
+
+--87CC3260656.1771945856/mail.cosmetics-corp.local
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+Content-Transfer-Encoding: 8bit
+
+Return-Path: <mmelo@cosmetics-corp.local>
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.11; helo=[192.168.80.11]; envelope-from=mmelo@cosmetics-corp.local; receiver=hr-system.lab 
+Received: from [192.168.80.11] (unknown [192.168.80.11])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id 87CC3260656
+	for <ti@hr-system.lab>; Tue, 24 Feb 2026 15:10:56 +0000 (UTC)
+Message-ID: <323e5977-b954-4665-ac7c-ded8685e16cd@cosmetics-corp.local>
+Date: Tue, 24 Feb 2026 07:10:56 -0800
+MIME-Version: 1.0
+User-Agent: Mozilla Thunderbird
+Subject: Re: ATUALIZACAO URGENTE
+To: TI HR <ti@hr-system.lab>
+Content-Language: pt-BR
+From: Melo Cosmetics <mmelo@cosmetics-corp.local>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Fiz o update, não parece ter acontecido nada.
+
+Qualquer coisa me avisa que executo novamente.
+
+Em 24/02/2026 06:59, TI HR escreveu:
+> Ola Melo, o seu computador encontra-se desatualizado.
+> Por favor, execute o script em anexo.
+
+--87CC3260656.1771945856/mail.cosmetics-corp.local--

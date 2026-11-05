@@ -1,0 +1,25 @@
+Return-Path: <ecavalcanti@cosmetics-corp.local>
+X-Original-To: mmelo@cosmetics-corp.local
+Delivered-To: mmelo@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=ecavalcanti@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id C3954260656
+	for <mmelo@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:13 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:13 +0000
+To: mmelo@cosmetics-corp.local
+From: ecavalcanti@cosmetics-corp.local
+Subject: Resultado da campanha de doação de agasalhos
+Message-Id: <20260224150513.005969@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Olá time,
+
+A campanha de doação de agasalhos foi um sucesso! Arrecadamos mais de 800 peças, que serão doadas à ONG Lar Esperança.
+
+Muito obrigado a todos que participaram. Vocês fazem a diferença! 💙
+
+Comitê Social.
+

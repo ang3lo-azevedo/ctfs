@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in · UNRㅌㅌL</title>
+  <link rel="icon" href="/logo.svg">
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="stylesheet" href="/account.css">
+</head>
+<body class="auth-page">
+  <main class="card">
+    <a class="brand" href="/"><img src="/logo.svg" alt="">UNRㅌㅌL</a>
+    <form id="login">
+      <h1>Log in to continue</h1>
+      <label>Name
+        <input name="name" autocomplete="username" required>
+      </label>
+      <label>Password
+        <input name="password" type="password" autocomplete="current-password" required>
+      </label>
+      <p class="error" role="alert"></p>
+      <button type="submit">Log in</button>
+      <p class="alt">No account yet? <a href="/register">Register</a></p>
+    </form>
+  </main>
+
+  <script src="/account.js"></script>
+  <script>
+    account.bindForm(document.getElementById('login'), async ({ name, password }) => {
+      await account.login(name, password);
+      location.href = '/';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,5593 @@
+/*
+Type: ELF
+Platform: linux-x86_64
+Architecture: x86_64
+
+Libraries: 
+  libc.so.6
+
+Segments:
+r--  0x00400000-0x004005e8 
+r-x  0x00401000-0x0041ba05 
+r--  0x0041c000-0x0041c1a8 
+rw-  0x0041dde8-0x0041e020 
+rw-  0x0041e020-0x0041e0b0 
+---  0x0041e0b0-0x0041e0e0 
+---  0x0041e0e0-0x0041e110 
+
+Sections:
+0x004003ac-0x004003c8  .interp (PROGBITS)  {Read-only data}
+0x004003c8-0x004003e4  .gnu.hash  {Read-only data}
+0x004003e8-0x00400490  .dynsym (DYNSYM)  {Read-only data}
+0x00400490-0x00400516  .dynstr (STRTAB)  {Read-only data}
+0x00400516-0x00400524  .gnu.version  {Read-only data}
+0x00400528-0x00400558  .gnu.version_r  {Read-only data}
+0x00400558-0x004005b8  .dynamic_rela  {Read-only data}
+0x00400558-0x004005b8  .rela.dyn (RELA)  {Read-only data}
+0x004005b8-0x004005e8  .rela.plt (RELA)  {Read-only data}
+0x00401000-0x0040101b  .init (PROGBITS)  {Code}
+0x00401020-0x00401050  .plt (PROGBITS)  {Code}
+0x00401050-0x0041b9f6  .text (PROGBITS)  {Code}
+0x0041b9f8-0x0041ba05  .fini (PROGBITS)  {Code}
+0x0041c000-0x0041c016  .rodata (PROGBITS)  {Read-only data}
+0x0041c018-0x0041c03c  .eh_frame_hdr (PROGBITS)  {Read-only data}
+0x0041c040-0x0041c0a8  .eh_frame (PROGBITS)  {Read-only data}
+0x0041c0a8-0x0041c12c  .sframe  {Read-only data}
+0x0041dde8-0x0041ddf0  .init_array  {Writable data}
+0x0041ddf0-0x0041ddf8  .fini_array  {Writable data}
+0x0041ddf8-0x0041dfc8  .dynamic (DYNAMIC)  {Read-only data}
+0x0041dfc8-0x0041dfe8  .got (PROGBITS)  {Read-only data}
+0x0041dfe8-0x0041e010  .got.plt (PROGBITS)  {Writable data}
+0x0041e010-0x0041e020  .data (PROGBITS)  {Writable data}
+0x0041e020-0x0041e0b0  .bss (NOBITS)  {Writable data}
+0x0041e0b0-0x0041e0e0  .extern  {External}
+0x0041e0e0-0x0041e110  .synthetic_builtins  {External}
+*/
+00400000  struct Elf64_Header __elf_header = 
+00400000  {
+00400000      struct Elf64_Ident ident = 
+00400000      {
+00400000          char signature[0x4] = "\x7fELF"
+00400004          uint8_t file_class = 0x2
+00400005          uint8_t encoding = 0x1
+00400006          uint8_t version = 0x1
+00400007          uint8_t os = 0x0
+00400008          uint8_t abi_version = 0x0
+00400009          char pad[0x7] = "\x00\x00\x00\x00\x00\x00", 0
+00400010      }
+00400010      enum e_type type = ET_EXEC
+00400012      enum e_machine machine = EM_X86_64
+00400014      uint32_t version = 0x1
+00400018      void (* entry)() = _start
+00400020      uint64_t program_header_offset = 0x40
+00400028      uint64_t section_header_offset = 0x1d750
+00400030      uint32_t flags = 0x0
+00400034      uint16_t header_size = 0x40
+00400036      uint16_t program_header_size = 0x38
+00400038      uint16_t program_header_count = 0xf
+0040003a      uint16_t section_header_size = 0x40
+0040003c      uint16_t section_header_count = 0x1f
+0040003e      uint16_t string_table = 0x1e
+00400040  }
+00400040  struct Elf64_ProgramHeader __elf_program_headers[0xf] = 
+00400040  {
+00400040      [0x0] = 
+00400040      {
+00400040          enum p_type type = PT_PHDR
+00400044          enum p_flags flags = PF_R
+00400048          uint64_t offset = 0x40
+00400050          uint64_t virtual_address = 0x400040
+00400058          uint64_t physical_address = 0x400040
+00400060          uint64_t file_size = 0x348
+00400068          uint64_t memory_size = 0x348
+00400070          uint64_t align = 0x8
+00400078      }
+00400078      [0x1] = 
+00400078      {
+00400078          enum p_type type = PT_INTERP
+0040007c          enum p_flags flags = PF_R
+00400080          uint64_t offset = 0x3ac
+00400088          uint64_t virtual_address = 0x4003ac
+00400090          uint64_t physical_address = 0x4003ac
+00400098          uint64_t file_size = 0x1c
+004000a0          uint64_t memory_size = 0x1c
+004000a8          uint64_t align = 0x1
+004000b0      }
+004000b0      [0x2] = 
+004000b0      {
+004000b0          enum p_type type = PT_LOAD
+004000b4          enum p_flags flags = PF_R
+004000b8          uint64_t offset = 0x0
+004000c0          uint64_t virtual_address = 0x400000
+004000c8          uint64_t physical_address = 0x400000
+004000d0          uint64_t file_size = 0x5e8
+004000d8          uint64_t memory_size = 0x5e8
+004000e0          uint64_t align = 0x1000
+004000e8      }
+004000e8      [0x3] = 
+004000e8      {
+004000e8          enum p_type type = PT_LOAD
+004000ec          enum p_flags flags = PF_X | PF_R
+004000f0          uint64_t offset = 0x1000
+004000f8          uint64_t virtual_address = 0x401000
+00400100          uint64_t physical_address = 0x401000
+00400108          uint64_t file_size = 0x1aa05
+00400110          uint64_t memory_size = 0x1aa05
+00400118          uint64_t align = 0x1000
+00400120      }
+00400120      [0x4] = 
+00400120      {
+00400120          enum p_type type = PT_LOAD
+00400124          enum p_flags flags = PF_R
+00400128          uint64_t offset = 0x1c000
+00400130          uint64_t virtual_address = 0x41c000
+00400138          uint64_t physical_address = 0x41c000
+00400140          uint64_t file_size = 0x1a8
+00400148          uint64_t memory_size = 0x1a8
+00400150          uint64_t align = 0x1000
+00400158      }
+00400158      [0x5] = 
+00400158      {
+00400158          enum p_type type = PT_LOAD
+0040015c          enum p_flags flags = PF_W | PF_R
+00400160          uint64_t offset = 0x1cde8
+00400168          uint64_t virtual_address = 0x41dde8
+00400170          uint64_t physical_address = 0x41dde8
+00400178          uint64_t file_size = 0x238
+00400180          uint64_t memory_size = 0x2c8
+00400188          uint64_t align = 0x1000
+00400190      }
+00400190      [0x6] = 
+00400190      {
+00400190          enum p_type type = PT_DYNAMIC
+00400194          enum p_flags flags = PF_W | PF_R
+00400198          uint64_t offset = 0x1cdf8
+004001a0          uint64_t virtual_address = 0x41ddf8
+004001a8          uint64_t physical_address = 0x41ddf8
+004001b0          uint64_t file_size = 0x1d0
+004001b8          uint64_t memory_size = 0x1d0
+004001c0          uint64_t align = 0x8
+004001c8      }
+004001c8      [0x7] = 
+004001c8      {
+004001c8          enum p_type type = PT_NOTE
+004001cc          enum p_flags flags = PF_R
+004001d0          uint64_t offset = 0x388
+004001d8          uint64_t virtual_address = 0x400388
+004001e0          uint64_t physical_address = 0x400388
+004001e8          uint64_t file_size = 0x24
+004001f0          uint64_t memory_size = 0x24
+004001f8          uint64_t align = 0x4
+00400200      }
+00400200      [0x8] = 
+00400200      {
+00400200          enum p_type type = PT_NOTE
+00400204          enum p_flags flags = PF_R
+00400208          uint64_t offset = 0x1c148
+00400210          uint64_t virtual_address = 0x41c148
+00400218          uint64_t physical_address = 0x41c148
+00400220          uint64_t file_size = 0x40
+00400228          uint64_t memory_size = 0x40
+00400230          uint64_t align = 0x8
+00400238      }
+00400238      [0x9] = 
+00400238      {
+00400238          enum p_type type = PT_NOTE
+0040023c          enum p_flags flags = PF_R
+00400240          uint64_t offset = 0x1c188
+00400248          uint64_t virtual_address = 0x41c188
+00400250          uint64_t physical_address = 0x41c188
+00400258          uint64_t file_size = 0x20
+00400260          uint64_t memory_size = 0x20
+00400268          uint64_t align = 0x4
+00400270      }
+00400270      [0xa] = 
+00400270      {
+00400270          enum p_type type = PT_GNU_PROPERTY
+00400274          enum p_flags flags = PF_R
+00400278          uint64_t offset = 0x1c148
+00400280          uint64_t virtual_address = 0x41c148
+00400288          uint64_t physical_address = 0x41c148
+00400290          uint64_t file_size = 0x40
+00400298          uint64_t memory_size = 0x40
+004002a0          uint64_t align = 0x8
+004002a8      }
+004002a8      [0xb] = 
+004002a8      {
+004002a8          enum p_type type = PT_GNU_EH_FRAME
+004002ac          enum p_flags flags = PF_R
+004002b0          uint64_t offset = 0x1c018
+004002b8          uint64_t virtual_address = 0x41c018
+004002c0          uint64_t physical_address = 0x41c018
+004002c8          uint64_t file_size = 0x24
+004002d0          uint64_t memory_size = 0x24
+004002d8          uint64_t align = 0x4
+004002e0      }
+004002e0      [0xc] = 
+004002e0      {
+004002e0          enum p_type type = 0x6474e554
+004002e4          enum p_flags flags = PF_R
+004002e8          uint64_t offset = 0x1c0a8
+004002f0          uint64_t virtual_address = 0x41c0a8
+004002f8          uint64_t physical_address = 0x41c0a8
+00400300          uint64_t file_size = 0xa0
+00400308          uint64_t memory_size = 0xa0
+00400310          uint64_t align = 0x8
+00400318      }
+00400318      [0xd] = 
+00400318      {
+00400318          enum p_type type = PT_GNU_STACK
+0040031c          enum p_flags flags = PF_W | PF_R
+00400320          uint64_t offset = 0x0
+00400328          uint64_t virtual_address = 0x0
+00400330          uint64_t physical_address = 0x0
+00400338          uint64_t file_size = 0x0
+00400340          uint64_t memory_size = 0x0
+00400348          uint64_t align = 0x10
+00400350      }
+00400350      [0xe] = 
+00400350      {
+00400350          enum p_type type = PT_GNU_RELRO
+00400354          enum p_flags flags = PF_R
+00400358          uint64_t offset = 0x1cde8
+00400360          uint64_t virtual_address = 0x41dde8
+00400368          uint64_t physical_address = 0x41dde8
+00400370          uint64_t file_size = 0x218
+00400378          uint64_t memory_size = 0x218
+00400380          uint64_t align = 0x1
+00400388      }
+00400388  }
+
+00400388                          04 00 00 00 14 00 00 00 03 00 00 00 47 4e 55 00 b2 29 ac 8f fc b2 c1 b0          ............GNU..)......
+004003a0  34 f1 84 74 8b 95 d1 d3 38 1f 7e ba                                                              4..t....8.~.
+
+.interp (PROGBITS) section started  {0x4003ac-0x4003c8}
+004003ac  char __elf_interp[0x1c] = "/lib64/ld-linux-x86-64.so.2", 0
+.interp (PROGBITS) section ended  {0x4003ac-0x4003c8}
+
+.gnu.hash section started  {0x4003c8-0x4003e4}
+004003c8                          01 00 00 00 01 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00          ........................
+004003e0  00 00 00 00                                                                                      ....
+.gnu.hash section ended  {0x4003c8-0x4003e4}
+
+004003e4              00 00 00 00                                                                              ....
+
+.dynsym (DYNSYM) section started  {0x4003e8-0x400490}
+004003e8  struct Elf64_Sym __elf_symbol_table[0x7] = 
+004003e8  {
+004003e8      [0x0] = 
+004003e8      {
+004003e8          uint32_t st_name = 0x0
+004003ec          uint8_t st_info = 0x0
+004003ed          uint8_t st_other = 0x0
+004003ee          uint16_t st_shndx = 0x0
+004003f0          uint64_t st_value = 0x0
+004003f8          uint64_t st_size = 0x0
+00400400      }
+00400400      [0x1] = 
+00400400      {
+00400400          uint32_t st_name = 0x7
+00400404          uint8_t st_info = 0x12
+00400405          uint8_t st_other = 0x0
+00400406          uint16_t st_shndx = 0x0
+00400408          uint64_t st_value = 0x0
+00400410          uint64_t st_size = 0x0
+00400418      }
+00400418      [0x2] = 
+00400418      {
+00400418          uint32_t st_name = 0x41
+0040041c          uint8_t st_info = 0x20
+0040041d          uint8_t st_other = 0x0
+0040041e          uint16_t st_shndx = 0x0
+00400420          uint64_t st_value = 0x0
+00400428          uint64_t st_size = 0x0
+00400430      }
+00400430      [0x3] = 
+00400430      {
+00400430          uint32_t st_name = 0x19
+00400434          uint8_t st_info = 0x12
+00400435          uint8_t st_other = 0x0
+00400436          uint16_t st_shndx = 0x0
+00400438          uint64_t st_value = 0x0
+00400440          uint64_t st_size = 0x0
+00400448      }
+00400448      [0x4] = 
+00400448      {
+00400448          uint32_t st_name = 0x5d
+0040044c          uint8_t st_info = 0x20
+0040044d          uint8_t st_other = 0x0
+0040044e          uint16_t st_shndx = 0x0
+00400450          uint64_t st_value = 0x0
+00400458          uint64_t st_size = 0x0
+00400460      }
+00400460      [0x5] = 
+00400460      {
+00400460          uint32_t st_name = 0x1
+00400464          uint8_t st_info = 0x12
+00400465          uint8_t st_other = 0x0
+00400466          uint16_t st_shndx = 0x0
+00400468          uint64_t st_value = 0x0
+00400470          uint64_t st_size = 0x0
+00400478      }
+00400478      [0x6] = 
+00400478      {
+00400478          uint32_t st_name = 0x6c
+0040047c          uint8_t st_info = 0x20
+0040047d          uint8_t st_other = 0x0
+0040047e          uint16_t st_shndx = 0x0
+00400480          uint64_t st_value = 0x0
+00400488          uint64_t st_size = 0x0
+00400490      }
+00400490  }
+.dynsym (DYNSYM) section ended  {0x4003e8-0x400490}
+
+.dynstr (STRTAB) section started  {0x400490-0x400516}
+00400490                                                  00                                                               .
+
+00400491  char data_400491[0x6] = "scanf", 0
+00400497  char data_400497[0x12] = "__libc_start_main", 0
+004004a9  char data_4004a9[0x7] = "printf", 0
+004004b0  char data_4004b0[0xa] = "libc.so.6", 0
+004004ba  char data_4004ba[0xc] = "GLIBC_2.2.5", 0
+004004c6  char data_4004c6[0xb] = "GLIBC_2.34", 0
+004004d1  char data_4004d1[0x1c] = "_ITM_deregisterTMCloneTable", 0
+004004ed  char data_4004ed[0xf] = "__gmon_start__", 0
+004004fc  char data_4004fc[0x1a] = "_ITM_registerTMCloneTable", 0
+.dynstr (STRTAB) section ended  {0x400490-0x400516}
+
+.gnu.version section started  {0x400516-0x400524}
+00400516                                                                    00 00 02 00 00 00 03 00 00 00                        ..........
+00400520  03 00 00 00                                                                                      ....
+.gnu.version section ended  {0x400516-0x400524}
+
+00400524              00 00 00 00                                                                              ....
+
+.gnu.version_r section started  {0x400528-0x400558}
+00400528                          01 00 02 00 20 00 00 00 10 00 00 00 00 00 00 00 75 1a 69 09 00 00 03 00          .... ...........u.i.....
+00400540  2a 00 00 00 10 00 00 00 b4 91 96 06 00 00 02 00 36 00 00 00 00 00 00 00                          *...............6.......
+.gnu.version_r section ended  {0x400528-0x400558}
+
+.dynamic_rela section started  {0x400558-0x4005b8}
+.rela.dyn (RELA) section started  {0x400558-0x4005b8}
+00400558  struct Elf64_Rela __elf_rela_table[0x4] = 
+00400558  {
+00400558      [0x0] = 
+00400558      {
+00400558          uint64_t r_offset = 0x41dfc8
+00400560          uint64_t r_info = 0x100000006
+00400568          int64_t r_addend = 0x0
+00400570      }
+00400570      [0x1] = 
+00400570      {
+00400570          uint64_t r_offset = 0x41dfd0
+00400578          uint64_t r_info = 0x200000006
+00400580          int64_t r_addend = 0x0
+00400588      }
+00400588      [0x2] = 
+00400588      {
+00400588          uint64_t r_offset = 0x41dfd8
+00400590          uint64_t r_info = 0x400000006
+00400598          int64_t r_addend = 0x0
+004005a0      }
+004005a0      [0x3] = 
+004005a0      {
+004005a0          uint64_t r_offset = 0x41dfe0
+004005a8          uint64_t r_info = 0x600000006
+004005b0          int64_t r_addend = 0x0
+004005b8      }
+004005b8  }
+.dynamic_rela section ended  {0x400558-0x4005b8}
+.rela.dyn (RELA) section ended  {0x400558-0x4005b8}
+
+.rela.plt (RELA) section started  {0x4005b8-0x4005e8}
+004005b8  void* data_4005b8 = printf
+
+004005c0  07 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00                                                  ................
+
+004005d0  void* data_4005d0 = scanf
+
+004005d8                                                                          07 00 00 00 05 00 00 00                          ........
+004005e0  00 00 00 00 00 00 00 00                                                                          ........
+.rela.plt (RELA) section ended  {0x4005b8-0x4005e8}
+
+.init (PROGBITS) section started  {0x401000-0x40101b}
+
+00401000    int64_t (* const)() _init()
+
+00401000  {
+00401012      if (!__gmon_start__)
+0040101a          return __gmon_start__;
+0040101a      
+00401014      return __gmon_start__();
+00401000  }
+
+.init (PROGBITS) section ended  {0x401000-0x40101b}
+
+0040101b                                                                                   00 00 00 00 00                             .....
+
+.plt (PROGBITS) section started  {0x401020-0x401050}
+
+00401020    int64_t sub_401020()
+
+00401020  {
+00401020      int64_t var_8 = data_41dff0;
+00401026      /* jump -> data_41dff8 */
+00401020  }
+
+0040102c                                      0f 1f 40 00                                                              ..@.
+
+00401030    int32_t printf(char const* format, ...)
+
+00401030  {
+00401030      /* tailcall */
+00401030      return printf(format);
+00401030  }
+
+
+00401036    int64_t sub_401036()
+
+00401036  {
+00401036      int64_t var_8 = 0;
+0040103b      /* tailcall */
+0040103b      return sub_401020();
+00401036  }
+
+
+00401040    int32_t scanf(char const* format, ...)
+
+00401040  {
+00401040      /* tailcall */
+00401040      return scanf(format);
+00401040  }
+
+
+00401046    int64_t sub_401046()
+
+00401046  {
+00401046      int64_t var_8 = 1;
+0040104b      /* tailcall */
+0040104b      return sub_401020();
+00401046  }
+
+.plt (PROGBITS) section ended  {0x401020-0x401050}
+
+.text (PROGBITS) section started  {0x401050-0x41b9f6}
+
+00401050    void _start(int64_t arg1, int64_t arg2, void (* arg3)()) __noreturn
+
+00401050  {
+00401061      int64_t stack_end_1;
+00401061      int64_t stack_end = stack_end_1;
+0040106f      void ubp_av;
+0040106f      __libc_start_main(main, (uint32_t)__return_addr, &ubp_av, nullptr, nullptr, arg3, 
+0040106f          &stack_end);
+0040106f      /* no return */
+00401050  }
+
+00401075                                                                 f4 66 2e 0f 1f 84 00 00 00 00 00                       .f.........
+
+00401080    int64_t _dl_relocate_static_pie() __pure
+
+00401080  {
+00401084      return;
+00401080  }
+
+00401085                 66 2e 0f 1f 84 00 00 00 00 00 90                                                       f..........
+
+00401090    char* deregister_tm_clones()
+
+00401090  {
+00401090      return &__TMC_END__;
+00401090  }
+
+004010b1                                                     0f 1f 40 00 66 66 2e 0f 1f 84 00 00 00 00 00                   ..@.ff.........
+
+004010c0    int64_t (* const)() register_tm_clones()
+
+004010c0  {
+004010d3      return nullptr;
+004010c0  }
+
+004010f2                                                        66 0f 1f 44 00 00                                            f..D..
+004010f9                                                                             0f 1f 80 00 00 00 00                           .......
+
+00401100    void __do_global_dtors_aux()
+
+00401100  {
+0040110b      if (__TMC_END__)
+00401120          return;
+00401120      
+00401111      deregister_tm_clones();
+00401116      __TMC_END__ = 1;
+00401100  }
+
+0040111f                                                                                               90                                 .
+00401121     0f 1f 40 00 66 66 2e 0f 1f 84 00 00 00 00 00                                                   ..@.ff.........
+
+00401130    int64_t (* const)() frame_dummy()
+
+00401130  {
+00401134      /* tailcall */
+00401134      return register_tm_clones();
+00401130  }
+
+
+00401136    int32_t main(int32_t argc, char** argv, char** envp)
+
+00401136  {
+00401152      int32_t rcx;
+00401152      int32_t r8;
+00401152      int32_t r9;
+00401152      rcx = scanf("%127s", &input_buf);
+00401367      int32_t rax_9 = input_buf ^ 0xbcbb0d84;
+004013bf      int32_t rax_10 = 0xffffffff ^ (uint32_t)(uint8_t)rax_9;
+004013c1      uint32_t r10_1 = rax_9 >> 8;
+004013ca      uint32_t rax_11 = rax_10 >> 1;
+004013ca      
+004013d6      if (rax_10 & 1)
+004013d6          rax_11 ^= 0xedb88320;
+004013d6      
+00401417      uint32_t rax_12 = rax_11 >> 1;
+00401417      
+00401423      if (rax_11 & 1)
+00401423          rax_12 ^= 0xedb88320;
+00401423      
+00401470      uint32_t rax_13 = rax_12 >> 1;
+00401470      
+0040147d      if (rax_12 & 1)
+0040147d          rax_13 ^= 0xedb88320;
+0040147d      
+004014cf      uint32_t rax_14 = rax_13 >> 1;
+004014cf      
+004014dc      if ((rax_13 & 1) == 1)
+004014dc          rax_14 ^= 0xedb88320;
+004014dc      
+0040152e      uint32_t rax_15 = rax_14 >> 1;
+0040152e      
+0040153b      if ((rax_14 & 1) == 1)
+0040153b          rax_15 ^= 0xedb88320;
+0040153b      
+0040159a      uint32_t rax_16 = rax_15 >> 1;
+0040159a      
+004015a7      if (rax_15 & 1)
+004015a7          rax_16 ^= 0xedb88320;
+004015a7      
+004015ea      uint32_t rax_17 = rax_16 >> 1;
+004015ea      
+004015f7      if (rax_16 & 1)
+004015f7          rax_17 ^= 0xedb88320;
+004015f7      
+00401651      uint32_t rax_18 = rax_17 >> 1;
+00401651      
+0040165e      if (rax_17 & 1)
+0040165e          rax_18 ^= 0xedb88320;
+0040165e      
+004016a3      uint32_t rax_19 = rax_18 ^ (uint32_t)(uint8_t)r10_1;
+004016a5      uint32_t r10_2 = r10_1 >> 8;
+004016ae      uint32_t rax_20 = rax_19 >> 1;
+004016ae      
+004016bb      if ((rax_19 & 1) == 1)
+004016bb          rax_20 ^= 0xedb88320;
+004016bb      
+0040170a      uint32_t rax_21 = rax_20 >> 1;
+0040170a      
+00401716      if (rax_20 & 1)
+00401716          rax_21 ^= 0xedb88320;
+00401716      
+00401757      uint32_t rax_22 = rax_21 >> 1;
+00401757      
+00401764      if (rax_21 & 1)
+00401764          rax_22 ^= 0xedb88320;
+00401764      
+004017bb      uint32_t rax_23 = rax_22 >> 1;
+004017bb      
+004017c8      if ((rax_22 & 1) == 1)
+004017c8          rax_23 ^= 0xedb88320;
+004017c8      
+00401808      uint32_t rax_24 = rax_23 >> 1;
+00401808      
+00401814      if (rax_23 & 1)
+00401814          rax_24 ^= 0xedb88320;
+00401814      
+00401859      uint32_t rax_25 = rax_24 >> 1;
+00401859      
+00401865      if (rax_24 & 1)
+00401865          rax_25 ^= 0xedb88320;
+00401865      
+004018b5      uint32_t rax_26 = rax_25 >> 1;
+004018b5      
+004018c1      if (rax_25 & 1)
+004018c1          rax_26 ^= 0xedb88320;
+004018c1      
+0040191f      uint32_t rax_27 = rax_26 >> 1;
+0040191f      
+0040192c      if ((rax_26 & 1) == 1)
+0040192c          rax_27 ^= 0xedb88320;
+0040192c      
+0040197f      uint32_t rax_28 = rax_27 ^ (uint32_t)(uint8_t)r10_2;
+0040198a      uint32_t rax_29 = rax_28 >> 1;
+0040198a      
+00401996      if (rax_28 & 1)
+00401996          rax_29 ^= 0xedb88320;
+00401996      
+004019d9      uint32_t rax_30 = rax_29 >> 1;
+004019d9      
+004019e6      if ((rax_29 & 1) == 1)
+004019e6          rax_30 ^= 0xedb88320;
+004019e6      
+00401a3d      uint32_t rax_31 = rax_30 >> 1;
+00401a3d      
+00401a4a      if ((rax_30 & 1) == 1)
+00401a4a          rax_31 ^= 0xedb88320;
+00401a4a      
+00401aa3      uint32_t rax_32 = rax_31 >> 1;
+00401aa3      
+00401aaf      if (rax_31 & 1)
+00401aaf          rax_32 ^= 0xedb88320;
+00401aaf      
+00401b02      uint32_t rax_33 = rax_32 >> 1;
+00401b02      
+00401b0e      if (rax_32 & 1)
+00401b0e          rax_33 ^= 0xedb88320;
+00401b0e      
+00401b67      uint32_t rax_34 = rax_33 >> 1;
+00401b67      
+00401b73      if (rax_33 & 1)
+00401b73          rax_34 ^= 0xedb88320;
+00401b73      
+00401bbc      uint32_t rax_35 = rax_34 >> 1;
+00401bbc      
+00401bc9      if ((rax_34 & 1) == 1)
+00401bc9          rax_35 ^= 0xedb88320;
+00401bc9      
+00401c0b      uint32_t rax_36 = rax_35 >> 1;
+00401c0b      
+00401c18      if ((rax_35 & 1) == 1)
+00401c18          rax_36 ^= 0xedb88320;
+00401c18      
+00401c6b      uint32_t rax_37 = rax_36 ^ (uint32_t)(r10_2 >> 8);
+00401c76      uint32_t rax_38 = rax_37 >> 1;
+00401c76      
+00401c82      if (rax_37 & 1)
+00401c82          rax_38 ^= 0xedb88320;
+00401c82      
+00401ce0      uint32_t rax_39 = rax_38 >> 1;
+00401ce0      
+00401cec      if (rax_38 & 1)
+00401cec          rax_39 ^= 0xedb88320;
+00401cec      
+00401d37      uint32_t rax_40 = rax_39 >> 1;
+00401d37      
+00401d44      if (rax_39 & 1)
+00401d44          rax_40 ^= 0xedb88320;
+00401d44      
+00401d84      uint32_t rax_41 = rax_40 >> 1;
+00401d84      
+00401d90      if (rax_40 & 1)
+00401d90          rax_41 ^= 0xedb88320;
+00401d90      
+00401de3      uint32_t rax_42 = rax_41 >> 1;
+00401de3      
+00401df0      if ((rax_41 & 1) == 1)
+00401df0          rax_42 ^= 0xedb88320;
+00401df0      
+00401e3c      uint32_t rax_43 = rax_42 >> 1;
+00401e3c      
+00401e49      if ((rax_42 & 1) == 1)
+00401e49          rax_43 ^= 0xedb88320;
+00401e49      
+00401e89      uint32_t rax_44 = rax_43 >> 1;
+00401e89      
+00401e96      if (rax_43 & 1)
+00401e96          rax_44 ^= 0xedb88320;
+00401e96      
+00401ef4      uint32_t rax_45 = rax_44 >> 1;
+00401ef4      
+00401f01      if ((rax_44 & 1) == 1)
+00401f01          rax_45 ^= 0xedb88320;
+00401f01      
+004021da      int32_t rax_53 = rax_45 ^ 0x900dcf56;
+00402235      int32_t rax_54 = 0xffffffff ^ (uint32_t)(uint8_t)rax_53;
+00402237      uint32_t r10_6 = rax_53 >> 8;
+00402240      uint32_t rax_55 = rax_54 >> 1;
+00402240      
+0040224d      if ((rax_54 & 1) == 1)
+0040224d          rax_55 ^= 0xedb88320;
+0040224d      
+00402289      uint32_t rax_56 = rax_55 >> 1;
+00402289      
+00402296      if (rax_55 & 1)
+00402296          rax_56 ^= 0xedb88320;
+00402296      
+004022ea      uint32_t rax_57 = rax_56 >> 1;
+004022ea      
+004022f6      if (rax_56 & 1)
+004022f6          rax_57 ^= 0xedb88320;
+004022f6      
+0040233d      uint32_t rax_58 = rax_57 >> 1;
+0040233d      
+0040234a      if (rax_57 & 1)
+0040234a          rax_58 ^= 0xedb88320;
+0040234a      
+00402387      uint32_t rax_59 = rax_58 >> 1;
+00402387      
+00402393      if (rax_58 & 1)
+00402393          rax_59 ^= 0xedb88320;
+00402393      
+004023da      uint32_t rax_60 = rax_59 >> 1;
+004023da      
+004023e7      if (rax_59 & 1)
+004023e7          rax_60 ^= 0xedb88320;
+004023e7      
+0040243f      uint32_t rax_61 = rax_60 >> 1;
+0040243f      
+0040244b      if (rax_60 & 1)
+0040244b          rax_61 ^= 0xedb88320;
+0040244b      
+00402493      uint32_t rax_62 = rax_61 >> 1;
+00402493      
+004024a0      if (rax_61 & 1)
+004024a0          rax_62 ^= 0xedb88320;
+004024a0      
+00402501      uint32_t rax_63 = rax_62 ^ (uint32_t)(uint8_t)r10_6;
+00402503      uint32_t r10_7 = r10_6 >> 8;
+0040250c      uint32_t rax_64 = rax_63 >> 1;
+0040250c      
+00402519      if ((rax_63 & 1) == 1)
+00402519          rax_64 ^= 0xedb88320;
+00402519      
+00402566      uint32_t rax_65 = rax_64 >> 1;
+00402566      
+00402572      if (rax_64 & 1)
+00402572          rax_65 ^= 0xedb88320;
+00402572      
+004025cb      uint32_t rax_66 = rax_65 >> 1;
+004025cb      
+004025d8      if (rax_65 & 1)
+004025d8          rax_66 ^= 0xedb88320;
+004025d8      
+00402619      uint32_t rax_67 = rax_66 >> 1;
+00402619      
+00402626      if (rax_66 & 1)
+00402626          rax_67 ^= 0xedb88320;
+00402626      
+00402685      uint32_t rax_68 = rax_67 >> 1;
+00402685      
+00402691      if (rax_67 & 1)
+00402691          rax_68 ^= 0xedb88320;
+00402691      
+004026f0      uint32_t rax_69 = rax_68 >> 1;
+004026f0      
+004026fc      if (rax_68 & 1)
+004026fc          rax_69 ^= 0xedb88320;
+004026fc      
+0040273b      uint32_t rax_70 = rax_69 >> 1;
+0040273b      
+00402748      if ((rax_69 & 1) == 1)
+00402748          rax_70 ^= 0xedb88320;
+00402748      
+00402788      uint32_t rax_71 = rax_70 >> 1;
+00402788      
+00402794      if (rax_70 & 1)
+00402794          rax_71 ^= 0xedb88320;
+00402794      
+004027dc      uint32_t rax_72 = rax_71 ^ (uint32_t)(uint8_t)r10_7;
+004027e7      uint32_t rax_73 = rax_72 >> 1;
+004027e7      
+004027f4      if ((rax_72 & 1) == 1)
+004027f4          rax_73 ^= 0xedb88320;
+004027f4      
+00402841      uint32_t rax_74 = rax_73 >> 1;
+00402841      
+0040284e      if ((rax_73 & 1) == 1)
+0040284e          rax_74 ^= 0xedb88320;
+0040284e      
+00402894      uint32_t rax_75 = rax_74 >> 1;
+00402894      
+004028a1      if (rax_74 & 1)
+004028a1          rax_75 ^= 0xedb88320;
+004028a1      
+004028f6      uint32_t rax_76 = rax_75 >> 1;
+004028f6      
+00402902      if (rax_75 & 1)
+00402902          rax_76 ^= 0xedb88320;
+00402902      
+00402941      uint32_t rax_77 = rax_76 >> 1;
+00402941      
+0040294e      if (rax_76 & 1)
+0040294e          rax_77 ^= 0xedb88320;
+0040294e      
+00402995      uint32_t rax_78 = rax_77 >> 1;
+00402995      
+004029a2      if ((rax_77 & 1) == 1)
+004029a2          rax_78 ^= 0xedb88320;
+004029a2      
+004029e5      uint32_t rax_79 = rax_78 >> 1;
+004029e5      
+004029f1      if (rax_78 & 1)
+004029f1          rax_79 ^= 0xedb88320;
+004029f1      
+00402a42      uint32_t rax_80 = rax_79 >> 1;
+00402a42      
+00402a4f      if ((rax_79 & 1) == 1)
+00402a4f          rax_80 ^= 0xedb88320;
+00402a4f      
+00402aa7      uint32_t rax_81 = rax_80 ^ (uint32_t)(r10_7 >> 8);
+00402ab2      uint32_t rax_82 = rax_81 >> 1;
+00402ab2      
+00402abe      if (rax_81 & 1)
+00402abe          rax_82 ^= 0xedb88320;
+00402abe      
+00402b13      uint32_t rax_83 = rax_82 >> 1;
+00402b13      
+00402b20      if (rax_82 & 1)
+00402b20          rax_83 ^= 0xedb88320;
+00402b20      
+00402b5d      uint32_t rax_84 = rax_83 >> 1;
+00402b5d      
+00402b6a      if ((rax_83 & 1) == 1)
+00402b6a          rax_84 ^= 0xedb88320;
+00402b6a      
+00402bae      uint32_t rax_85 = rax_84 >> 1;
+00402bae      
+00402bbb      if (rax_84 & 1)
+00402bbb          rax_85 ^= 0xedb88320;
+00402bbb      
+00402c09      uint32_t rax_86 = rax_85 >> 1;
+00402c09      
+00402c16      if (rax_85 & 1)
+00402c16          rax_86 ^= 0xedb88320;
+00402c16      
+00402c71      uint32_t rax_87 = rax_86 >> 1;
+00402c71      
+00402c7e      if ((rax_86 & 1) == 1)
+00402c7e          rax_87 ^= 0xedb88320;
+00402c7e      
+00402cd7      uint32_t rax_88 = rax_87 >> 1;
+00402cd7      
+00402ce4      if ((rax_87 & 1) == 1)
+00402ce4          rax_88 ^= 0xedb88320;
+00402ce4      
+00402d3e      uint32_t rax_89 = rax_88 >> 1;
+00402d3e      
+00402d4a      if (rax_88 & 1)
+00402d4a          rax_89 ^= 0xedb88320;
+00402d4a      
+00402fb4      int32_t r8_7 = 0;
+00402fb4      
+00402fc5      if ((rax_89 ^ 0x12f3f0a1) == 0x70cdf1b0)
+00402fc5          r8_7 = 1;
+00402fc5      
+00402fcd      if (false)
+00402fcd          r8_7 = 0;
+00402fcd      
+004031bc      int32_t rax_95 = data_41e034 ^ 0xaa741885;
+00403209      int32_t rax_96 = 0xffffffff ^ (uint32_t)(uint8_t)rax_95;
+0040320b      uint32_t r10_11 = rax_95 >> 8;
+00403214      uint32_t rax_97 = rax_96 >> 1;
+00403214      
+00403220      if (rax_96 & 1)
+00403220          rax_97 ^= 0xedb88320;
+00403220      
+0040327e      uint32_t rax_98 = rax_97 >> 1;
+0040327e      
+0040328a      if (rax_97 & 1)
+0040328a          rax_98 ^= 0xedb88320;
+0040328a      
+004032cb      uint32_t rax_99 = rax_98 >> 1;
+004032cb      
+004032d8      if (rax_98 & 1)
+004032d8          rax_99 ^= 0xedb88320;
+004032d8      
+0040331e      uint32_t rax_100 = rax_99 >> 1;
+0040331e      
+0040332b      if ((rax_99 & 1) == 1)
+0040332b          rax_100 ^= 0xedb88320;
+0040332b      
+00403379      uint32_t rax_101 = rax_100 >> 1;
+00403379      
+00403386      if (rax_100 & 1)
+00403386          rax_101 ^= 0xedb88320;
+00403386      
+004033ce      uint32_t rax_102 = rax_101 >> 1;
+004033ce      
+004033da      if (rax_101 & 1)
+004033da          rax_102 ^= 0xedb88320;
+004033da      
+00403436      uint32_t rax_103 = rax_102 >> 1;
+00403436      
+00403442      if (rax_102 & 1)
+00403442          rax_103 ^= 0xedb88320;
+00403442      
+00403480      uint32_t rax_104 = rax_103 >> 1;
+00403480      
+0040348d      if ((rax_103 & 1) == 1)
+0040348d          rax_104 ^= 0xedb88320;
+0040348d      
+004034de      uint32_t rax_105 = rax_104 ^ (uint32_t)(uint8_t)r10_11;
+004034e0      uint32_t r10_12 = r10_11 >> 8;
+004034e9      uint32_t rax_106 = rax_105 >> 1;
+004034e9      
+004034f5      if (rax_105 & 1)
+004034f5          rax_106 ^= 0xedb88320;
+004034f5      
+00403545      uint32_t rax_107 = rax_106 >> 1;
+00403545      
+00403552      if ((rax_106 & 1) == 1)
+00403552          rax_107 ^= 0xedb88320;
+00403552      
+004035af      uint32_t rax_108 = rax_107 >> 1;
+004035af      
+004035bb      if (rax_107 & 1)
+004035bb          rax_108 ^= 0xedb88320;
+004035bb      
+00403617      uint32_t rax_109 = rax_108 >> 1;
+00403617      
+00403623      if (rax_108 & 1)
+00403623          rax_109 ^= 0xedb88320;
+00403623      
+00403680      uint32_t rax_110 = rax_109 >> 1;
+00403680      
+0040368d      if (rax_109 & 1)
+0040368d          rax_110 ^= 0xedb88320;
+0040368d      
+004036ea      uint32_t rax_111 = rax_110 >> 1;
+004036ea      
+004036f7      if (rax_110 & 1)
+004036f7          rax_111 ^= 0xedb88320;
+004036f7      
+0040373b      uint32_t rax_112 = rax_111 >> 1;
+0040373b      
+00403748      if (rax_111 & 1)
+00403748          rax_112 ^= 0xedb88320;
+00403748      
+00403795      uint32_t rax_113 = rax_112 >> 1;
+00403795      
+004037a2      if (rax_112 & 1)
+004037a2          rax_113 ^= 0xedb88320;
+004037a2      
+004037f9      uint32_t rax_114 = rax_113 ^ (uint32_t)(uint8_t)r10_12;
+00403804      uint32_t rax_115 = rax_114 >> 1;
+00403804      
+00403810      if (rax_114 & 1)
+00403810          rax_115 ^= 0xedb88320;
+00403810      
+00403864      uint32_t rax_116 = rax_115 >> 1;
+00403864      
+00403871      if (rax_115 & 1)
+00403871          rax_116 ^= 0xedb88320;
+00403871      
+004038b1      uint32_t rax_117 = rax_116 >> 1;
+004038b1      
+004038be      if ((rax_116 & 1) == 1)
+004038be          rax_117 ^= 0xedb88320;
+004038be      
+004038ff      uint32_t rax_118 = rax_117 >> 1;
+004038ff      
+0040390c      if ((rax_117 & 1) == 1)
+0040390c          rax_118 ^= 0xedb88320;
+0040390c      
+00403950      uint32_t rax_119 = rax_118 >> 1;
+00403950      
+0040395d      if ((rax_118 & 1) == 1)
+0040395d          rax_119 ^= 0xedb88320;
+0040395d      
+004039ba      uint32_t rax_120 = rax_119 >> 1;
+004039ba      
+004039c6      if (rax_119 & 1)
+004039c6          rax_120 ^= 0xedb88320;
+004039c6      
+00403a24      uint32_t rax_121 = rax_120 >> 1;
+00403a24      
+00403a31      if (rax_120 & 1)
+00403a31          rax_121 ^= 0xedb88320;
+00403a31      
+00403a85      uint32_t rax_122 = rax_121 >> 1;
+00403a85      
+00403a92      if (rax_121 & 1)
+00403a92          rax_122 ^= 0xedb88320;
+00403a92      
+00403add      uint32_t rax_123 = rax_122 ^ (uint32_t)(r10_12 >> 8);
+00403ae8      uint32_t rax_124 = rax_123 >> 1;
+00403ae8      
+00403af5      if (rax_123 & 1)
+00403af5          rax_124 ^= 0xedb88320;
+00403af5      
+00403b42      uint32_t rax_125 = rax_124 >> 1;
+00403b42      
+00403b4f      if ((rax_124 & 1) == 1)
+00403b4f          rax_125 ^= 0xedb88320;
+00403b4f      
+00403ba7      uint32_t rax_126 = rax_125 >> 1;
+00403ba7      
+00403bb3      if (rax_125 & 1)
+00403bb3          rax_126 ^= 0xedb88320;
+00403bb3      
+00403c0d      uint32_t rax_127 = rax_126 >> 1;
+00403c0d      
+00403c1a      if (rax_126 & 1)
+00403c1a          rax_127 ^= 0xedb88320;
+00403c1a      
+00403c62      uint32_t rax_128 = rax_127 >> 1;
+00403c62      
+00403c6e      if (rax_127 & 1)
+00403c6e          rax_128 ^= 0xedb88320;
+00403c6e      
+00403cc8      uint32_t rax_129 = rax_128 >> 1;
+00403cc8      
+00403cd5      if ((rax_128 & 1) == 1)
+00403cd5          rax_129 ^= 0xedb88320;
+00403cd5      
+00403d19      uint32_t rax_130 = rax_129 >> 1;
+00403d19      
+00403d25      if (rax_129 & 1)
+00403d25          rax_130 ^= 0xedb88320;
+00403d25      
+00403d7a      uint32_t rax_131 = rax_130 >> 1;
+00403d7a      
+00403d87      if (rax_130 & 1)
+00403d87          rax_131 ^= 0xedb88320;
+00403d87      
+004040ca      int32_t rax_138 = rax_131 ^ 0x29625398;
+00404115      int32_t rax_139 = 0xffffffff ^ (uint32_t)(uint8_t)rax_138;
+00404117      uint32_t r10_16 = rax_138 >> 8;
+00404120      uint32_t rax_140 = rax_139 >> 1;
+00404120      
+0040412d      if (rax_139 & 1)
+0040412d          rax_140 ^= 0xedb88320;
+0040412d      
+00404182      uint32_t rax_141 = rax_140 >> 1;
+00404182      
+0040418e      if (rax_140 & 1)
+0040418e          rax_141 ^= 0xedb88320;
+0040418e      
+004041d2      uint32_t rax_142 = rax_141 >> 1;
+004041d2      
+004041df      if ((rax_141 & 1) == 1)
+004041df          rax_142 ^= 0xedb88320;
+004041df      
+00404232      uint32_t rax_143 = rax_142 >> 1;
+00404232      
+0040423e      if (rax_142 & 1)
+0040423e          rax_143 ^= 0xedb88320;
+0040423e      
+00404284      uint32_t rax_144 = rax_143 >> 1;
+00404284      
+00404291      if ((rax_143 & 1) == 1)
+00404291          rax_144 ^= 0xedb88320;
+00404291      
+004042eb      uint32_t rax_145 = rax_144 >> 1;
+004042eb      
+004042f8      if ((rax_144 & 1) == 1)
+004042f8          rax_145 ^= 0xedb88320;
+004042f8      
+0040434d      uint32_t rax_146 = rax_145 >> 1;
+0040434d      
+00404359      if (rax_145 & 1)
+00404359          rax_146 ^= 0xedb88320;
+00404359      
+0040439d      uint32_t rax_147 = rax_146 >> 1;
+0040439d      
+004043aa      if (rax_146 & 1)
+004043aa          rax_147 ^= 0xedb88320;
+004043aa      
+00404400      uint32_t rax_148 = rax_147 ^ (uint32_t)(uint8_t)r10_16;
+00404402      uint32_t r10_17 = r10_16 >> 8;
+0040440b      uint32_t rax_149 = rax_148 >> 1;
+0040440b      
+00404417      if (rax_148 & 1)
+00404417          rax_149 ^= 0xedb88320;
+00404417      
+0040446a      uint32_t rax_150 = rax_149 >> 1;
+0040446a      
+00404476      if (rax_149 & 1)
+00404476          rax_150 ^= 0xedb88320;
+00404476      
+004044d1      uint32_t rax_151 = rax_150 >> 1;
+004044d1      
+004044dd      if (rax_150 & 1)
+004044dd          rax_151 ^= 0xedb88320;
+004044dd      
+00404525      uint32_t rax_152 = rax_151 >> 1;
+00404525      
+00404532      if ((rax_151 & 1) == 1)
+00404532          rax_152 ^= 0xedb88320;
+00404532      
+00404586      uint32_t rax_153 = rax_152 >> 1;
+00404586      
+00404593      if (rax_152 & 1)
+00404593          rax_153 ^= 0xedb88320;
+00404593      
+004045d2      uint32_t rax_154 = rax_153 >> 1;
+004045d2      
+004045df      if (rax_153 & 1)
+004045df          rax_154 ^= 0xedb88320;
+004045df      
+0040462f      uint32_t rax_155 = rax_154 >> 1;
+0040462f      
+0040463b      if (rax_154 & 1)
+0040463b          rax_155 ^= 0xedb88320;
+0040463b      
+00404687      uint32_t rax_156 = rax_155 >> 1;
+00404687      
+00404693      if (rax_155 & 1)
+00404693          rax_156 ^= 0xedb88320;
+00404693      
+004046da      uint32_t rax_157 = rax_156 ^ (uint32_t)(uint8_t)r10_17;
+004046e5      uint32_t rax_158 = rax_157 >> 1;
+004046e5      
+004046f2      if (rax_157 & 1)
+004046f2          rax_158 ^= 0xedb88320;
+004046f2      
+00404735      uint32_t rax_159 = rax_158 >> 1;
+00404735      
+00404742      if (rax_158 & 1)
+00404742          rax_159 ^= 0xedb88320;
+00404742      
+00404785      uint32_t rax_160 = rax_159 >> 1;
+00404785      
+00404791      if (rax_159 & 1)
+00404791          rax_160 ^= 0xedb88320;
+00404791      
+004047d5      uint32_t rax_161 = rax_160 >> 1;
+004047d5      
+004047e1      if (rax_160 & 1)
+004047e1          rax_161 ^= 0xedb88320;
+004047e1      
+00404833      uint32_t rax_162 = rax_161 >> 1;
+00404833      
+0040483f      if (rax_161 & 1)
+0040483f          rax_162 ^= 0xedb88320;
+0040483f      
+00404889      uint32_t rax_163 = rax_162 >> 1;
+00404889      
+00404896      if ((rax_162 & 1) == 1)
+00404896          rax_163 ^= 0xedb88320;
+00404896      
+004048e3      uint32_t rax_164 = rax_163 >> 1;
+004048e3      
+004048f0      if (rax_163 & 1)
+004048f0          rax_164 ^= 0xedb88320;
+004048f0      
+00404936      uint32_t rax_165 = rax_164 >> 1;
+00404936      
+00404943      if (rax_164 & 1)
+00404943          rax_165 ^= 0xedb88320;
+00404943      
+0040498d      uint32_t rax_166 = rax_165 ^ (uint32_t)(r10_17 >> 8);
+00404998      uint32_t rax_167 = rax_166 >> 1;
+00404998      
+004049a5      if ((rax_166 & 1) == 1)
+004049a5          rax_167 ^= 0xedb88320;
+004049a5      
+004049ec      uint32_t rax_168 = rax_167 >> 1;
+004049ec      
+004049f9      if (rax_167 & 1)
+004049f9          rax_168 ^= 0xedb88320;
+004049f9      
+00404a40      uint32_t rax_169 = rax_168 >> 1;
+00404a40      
+00404a4c      if (rax_168 & 1)
+00404a4c          rax_169 ^= 0xedb88320;
+00404a4c      
+00404aa5      uint32_t rax_170 = rax_169 >> 1;
+00404aa5      
+00404ab1      if (rax_169 & 1)
+00404ab1          rax_170 ^= 0xedb88320;
+00404ab1      
+00404af8      uint32_t rax_171 = rax_170 >> 1;
+00404af8      
+00404b04      if (rax_170 & 1)
+00404b04          rax_171 ^= 0xedb88320;
+00404b04      
+00404b43      uint32_t rax_172 = rax_171 >> 1;
+00404b43      
+00404b50      if (rax_171 & 1)
+00404b50          rax_172 ^= 0xedb88320;
+00404b50      
+00404ba2      uint32_t rax_173 = rax_172 >> 1;
+00404ba2      
+00404baf      if ((rax_172 & 1) == 1)
+00404baf          rax_173 ^= 0xedb88320;
+00404baf      
+00404bf5      uint32_t rax_174 = rax_173 >> 1;
+00404bf5      
+00404c02      if ((rax_173 & 1) == 1)
+00404c02          rax_174 ^= 0xedb88320;
+00404c02      
+00404e80      int32_t r8_11 = 0;
+00404e80      
+00404e91      if ((rax_174 ^ 0x34a89994) == 0x46b67718)
+00404e91          r8_11 = 1;
+00404e91      
+00404e99      if (r8_7 != 1)
+00404e99          r8_11 = 0;
+00404e99      
+00405063      int32_t rax_183 = data_41e038 ^ 0xfa895752;
+004050c9      int32_t rax_184 = 0xffffffff ^ (uint32_t)(uint8_t)rax_183;
+004050cb      uint32_t r10_21 = rax_183 >> 8;
+004050d4      uint32_t rax_185 = rax_184 >> 1;
+004050d4      
+004050e1      if (rax_184 & 1)
+004050e1          rax_185 ^= 0xedb88320;
+004050e1      
+0040512d      uint32_t rax_186 = rax_185 >> 1;
+0040512d      
+00405139      if (rax_185 & 1)
+00405139          rax_186 ^= 0xedb88320;
+00405139      
+00405197      uint32_t rax_187 = rax_186 >> 1;
+00405197      
+004051a4      if ((rax_186 & 1) == 1)
+004051a4          rax_187 ^= 0xedb88320;
+004051a4      
+004051ea      uint32_t rax_188 = rax_187 >> 1;
+004051ea      
+004051f7      if (rax_187 & 1)
+004051f7          rax_188 ^= 0xedb88320;
+004051f7      
+00405247      uint32_t rax_189 = rax_188 >> 1;
+00405247      
+00405254      if ((rax_188 & 1) == 1)
+00405254          rax_189 ^= 0xedb88320;
+00405254      
+00405293      uint32_t rax_190 = rax_189 >> 1;
+00405293      
+004052a0      if ((rax_189 & 1) == 1)
+004052a0          rax_190 ^= 0xedb88320;
+004052a0      
+004052e4      uint32_t rax_191 = rax_190 >> 1;
+004052e4      
+004052f1      if ((rax_190 & 1) == 1)
+004052f1          rax_191 ^= 0xedb88320;
+004052f1      
+00405335      uint32_t rax_192 = rax_191 >> 1;
+00405335      
+00405342      if ((rax_191 & 1) == 1)
+00405342          rax_192 ^= 0xedb88320;
+00405342      
+00405397      uint32_t rax_193 = rax_192 ^ (uint32_t)(uint8_t)r10_21;
+00405399      uint32_t r10_22 = r10_21 >> 8;
+004053a2      uint32_t rax_194 = rax_193 >> 1;
+004053a2      
+004053ae      if (rax_193 & 1)
+004053ae          rax_194 ^= 0xedb88320;
+004053ae      
+004053ee      uint32_t rax_195 = rax_194 >> 1;
+004053ee      
+004053fb      if (rax_194 & 1)
+004053fb          rax_195 ^= 0xedb88320;
+004053fb      
+00405456      uint32_t rax_196 = rax_195 >> 1;
+00405456      
+00405463      if ((rax_195 & 1) == 1)
+00405463          rax_196 ^= 0xedb88320;
+00405463      
+004054bb      uint32_t rax_197 = rax_196 >> 1;
+004054bb      
+004054c8      if ((rax_196 & 1) == 1)
+004054c8          rax_197 ^= 0xedb88320;
+004054c8      
+00405512      uint32_t rax_198 = rax_197 >> 1;
+00405512      
+0040551e      if (rax_197 & 1)
+0040551e          rax_198 ^= 0xedb88320;
+0040551e      
+00405571      uint32_t rax_199 = rax_198 >> 1;
+00405571      
+0040557d      if (rax_198 & 1)
+0040557d          rax_199 ^= 0xedb88320;
+0040557d      
+004055c6      uint32_t rax_200 = rax_199 >> 1;
+004055c6      
+004055d2      if (rax_199 & 1)
+004055d2          rax_200 ^= 0xedb88320;
+004055d2      
+00405623      uint32_t rax_201 = rax_200 >> 1;
+00405623      
+00405630      if ((rax_200 & 1) == 1)
+00405630          rax_201 ^= 0xedb88320;
+00405630      
+0040568b      uint32_t rax_202 = rax_201 ^ (uint32_t)(uint8_t)r10_22;
+00405696      uint32_t rax_203 = rax_202 >> 1;
+00405696      
+004056a3      if ((rax_202 & 1) == 1)
+004056a3          rax_203 ^= 0xedb88320;
+004056a3      
+004056ee      uint32_t rax_204 = rax_203 >> 1;
+004056ee      
+004056fa      if (rax_203 & 1)
+004056fa          rax_204 ^= 0xedb88320;
+004056fa      
+00405753      uint32_t rax_205 = rax_204 >> 1;
+00405753      
+0040575f      if (rax_204 & 1)
+0040575f          rax_205 ^= 0xedb88320;
+0040575f      
+004057a9      uint32_t rax_206 = rax_205 >> 1;
+004057a9      
+004057b6      if ((rax_205 & 1) == 1)
+004057b6          rax_206 ^= 0xedb88320;
+004057b6      
+0040580a      uint32_t rax_207 = rax_206 >> 1;
+0040580a      
+00405817      if (rax_206 & 1)
+00405817          rax_207 ^= 0xedb88320;
+00405817      
+00405865      uint32_t rax_208 = rax_207 >> 1;
+00405865      
+00405872      if (rax_207 & 1)
+00405872          rax_208 ^= 0xedb88320;
+00405872      
+004058d2      uint32_t rax_209 = rax_208 >> 1;
+004058d2      
+004058df      if ((rax_208 & 1) == 1)
+004058df          rax_209 ^= 0xedb88320;
+004058df      
+00405929      uint32_t rax_210 = rax_209 >> 1;
+00405929      
+00405936      if (rax_209 & 1)
+00405936          rax_210 ^= 0xedb88320;
+00405936      
+0040597f      uint32_t rax_211 = rax_210 ^ (uint32_t)(r10_22 >> 8);
+0040598a      uint32_t rax_212 = rax_211 >> 1;
+0040598a      
+00405996      if (rax_211 & 1)
+00405996          rax_212 ^= 0xedb88320;
+00405996      
+004059f0      uint32_t rax_213 = rax_212 >> 1;
+004059f0      
+004059fc      if (rax_212 & 1)
+004059fc          rax_213 ^= 0xedb88320;
+004059fc      
+00405a51      uint32_t rax_214 = rax_213 >> 1;
+00405a51      
+00405a5e      if ((rax_213 & 1) == 1)
+00405a5e          rax_214 ^= 0xedb88320;
+00405a5e      
+00405aa8      uint32_t rax_215 = rax_214 >> 1;
+00405aa8      
+00405ab5      if (rax_214 & 1)
+00405ab5          rax_215 ^= 0xedb88320;
+00405ab5      
+00405aff      uint32_t rax_216 = rax_215 >> 1;
+00405aff      
+00405b0c      if (rax_215 & 1)
+00405b0c          rax_216 ^= 0xedb88320;
+00405b0c      
+00405b5b      uint32_t rax_217 = rax_216 >> 1;
+00405b5b      
+00405b68      if (rax_216 & 1)
+00405b68          rax_217 ^= 0xedb88320;
+00405b68      
+00405baf      uint32_t rax_218 = rax_217 >> 1;
+00405baf      
+00405bbb      if (rax_217 & 1)
+00405bbb          rax_218 ^= 0xedb88320;
+00405bbb      
+00405c19      uint32_t rax_219 = rax_218 >> 1;
+00405c19      
+00405c26      if ((rax_218 & 1) == 1)
+00405c26          rax_219 ^= 0xedb88320;
+00405c26      
+00405e4a      int32_t rax_223 = rax_219 ^ 0xa7767286;
+00405eaf      int32_t rax_224 = 0xffffffff ^ (uint32_t)(uint8_t)rax_223;
+00405eb1      uint32_t r10_26 = rax_223 >> 8;
+00405eba      uint32_t rax_225 = rax_224 >> 1;
+00405eba      
+00405ec7      if ((rax_224 & 1) == 1)
+00405ec7          rax_225 ^= 0xedb88320;
+00405ec7      
+00405f15      uint32_t rax_226 = rax_225 >> 1;
+00405f15      
+00405f22      if (rax_225 & 1)
+00405f22          rax_226 ^= 0xedb88320;
+00405f22      
+00405f64      uint32_t rax_227 = rax_226 >> 1;
+00405f64      
+00405f71      if (rax_226 & 1)
+00405f71          rax_227 ^= 0xedb88320;
+00405f71      
+00405fb2      uint32_t rax_228 = rax_227 >> 1;
+00405fb2      
+00405fbe      if (rax_227 & 1)
+00405fbe          rax_228 ^= 0xedb88320;
+00405fbe      
+00406014      uint32_t rax_229 = rax_228 >> 1;
+00406014      
+00406021      if (rax_228 & 1)
+00406021          rax_229 ^= 0xedb88320;
+00406021      
+00406075      uint32_t rax_230 = rax_229 >> 1;
+00406075      
+00406082      if ((rax_229 & 1) == 1)
+00406082          rax_230 ^= 0xedb88320;
+00406082      
+004060c5      uint32_t rax_231 = rax_230 >> 1;
+004060c5      
+004060d2      if (rax_230 & 1)
+004060d2          rax_231 ^= 0xedb88320;
+004060d2      
+0040612f      uint32_t rax_232 = rax_231 >> 1;
+0040612f      
+0040613b      if (rax_231 & 1)
+0040613b          rax_232 ^= 0xedb88320;
+0040613b      
+0040617e      uint32_t rax_233 = rax_232 ^ (uint32_t)(uint8_t)r10_26;
+00406180      uint32_t r10_27 = r10_26 >> 8;
+00406189      uint32_t rax_234 = rax_233 >> 1;
+00406189      
+00406196      if (rax_233 & 1)
+00406196          rax_234 ^= 0xedb88320;
+00406196      
+004061df      uint32_t rax_235 = rax_234 >> 1;
+004061df      
+004061ec      if ((rax_234 & 1) == 1)
+004061ec          rax_235 ^= 0xedb88320;
+004061ec      
+00406230      uint32_t rax_236 = rax_235 >> 1;
+00406230      
+0040623d      if (rax_235 & 1)
+0040623d          rax_236 ^= 0xedb88320;
+0040623d      
+00406297      uint32_t rax_237 = rax_236 >> 1;
+00406297      
+004062a3      if (rax_236 & 1)
+004062a3          rax_237 ^= 0xedb88320;
+004062a3      
+004062e3      uint32_t rax_238 = rax_237 >> 1;
+004062e3      
+004062ef      if (rax_237 & 1)
+004062ef          rax_238 ^= 0xedb88320;
+004062ef      
+00406334      uint32_t rax_239 = rax_238 >> 1;
+00406334      
+00406340      if (rax_238 & 1)
+00406340          rax_239 ^= 0xedb88320;
+00406340      
+0040639a      uint32_t rax_240 = rax_239 >> 1;
+0040639a      
+004063a7      if ((rax_239 & 1) == 1)
+004063a7          rax_240 ^= 0xedb88320;
+004063a7      
+00406403      uint32_t rax_241 = rax_240 >> 1;
+00406403      
+00406410      if (rax_240 & 1)
+00406410          rax_241 ^= 0xedb88320;
+00406410      
+00406461      uint32_t rax_242 = rax_241 ^ (uint32_t)(uint8_t)r10_27;
+0040646c      uint32_t rax_243 = rax_242 >> 1;
+0040646c      
+00406479      if (rax_242 & 1)
+00406479          rax_243 ^= 0xedb88320;
+00406479      
+004064d1      uint32_t rax_244 = rax_243 >> 1;
+004064d1      
+004064dd      if (rax_243 & 1)
+004064dd          rax_244 ^= 0xedb88320;
+004064dd      
+00406532      uint32_t rax_245 = rax_244 >> 1;
+00406532      
+0040653e      if (rax_244 & 1)
+0040653e          rax_245 ^= 0xedb88320;
+0040653e      
+00406592      uint32_t rax_246 = rax_245 >> 1;
+00406592      
+0040659e      if (rax_245 & 1)
+0040659e          rax_246 ^= 0xedb88320;
+0040659e      
+004065e9      uint32_t rax_247 = rax_246 >> 1;
+004065e9      
+004065f6      if ((rax_246 & 1) == 1)
+004065f6          rax_247 ^= 0xedb88320;
+004065f6      
+00406640      uint32_t rax_248 = rax_247 >> 1;
+00406640      
+0040664d      if ((rax_247 & 1) == 1)
+0040664d          rax_248 ^= 0xedb88320;
+0040664d      
+004066a4      uint32_t rax_249 = rax_248 >> 1;
+004066a4      
+004066b0      if (rax_248 & 1)
+004066b0          rax_249 ^= 0xedb88320;
+004066b0      
+004066fd      uint32_t rax_250 = rax_249 >> 1;
+004066fd      
+0040670a      if (rax_249 & 1)
+0040670a          rax_250 ^= 0xedb88320;
+0040670a      
+0040674d      uint32_t rax_251 = rax_250 ^ (uint32_t)(r10_27 >> 8);
+00406758      uint32_t rax_252 = rax_251 >> 1;
+00406758      
+00406764      if (rax_251 & 1)
+00406764          rax_252 ^= 0xedb88320;
+00406764      
+004067b0      uint32_t rax_253 = rax_252 >> 1;
+004067b0      
+004067bd      if ((rax_252 & 1) == 1)
+004067bd          rax_253 ^= 0xedb88320;
+004067bd      
+004067fb      uint32_t rax_254 = rax_253 >> 1;
+004067fb      
+00406808      if ((rax_253 & 1) == 1)
+00406808          rax_254 ^= 0xedb88320;
+00406808      
+0040685f      uint32_t rax_255 = rax_254 >> 1;
+0040685f      
+0040686b      if (rax_254 & 1)
+0040686b          rax_255 ^= 0xedb88320;
+0040686b      
+004068ac      uint32_t rax_256 = rax_255 >> 1;
+004068ac      
+004068b9      if (rax_255 & 1)
+004068b9          rax_256 ^= 0xedb88320;
+004068b9      
+00406900      uint32_t rax_257 = rax_256 >> 1;
+00406900      
+0040690d      if (rax_256 & 1)
+0040690d          rax_257 ^= 0xedb88320;
+0040690d      
+00406954      uint32_t rax_258 = rax_257 >> 1;
+00406954      
+00406961      if ((rax_257 & 1) == 1)
+00406961          rax_258 ^= 0xedb88320;
+00406961      
+004069b3      uint32_t rax_259 = rax_258 >> 1;
+004069b3      
+004069c0      if ((rax_258 & 1) == 1)
+004069c0          rax_259 ^= 0xedb88320;
+004069c0      
+00406c61      int32_t r8_18 = 0;
+00406c61      
+00406c72      if ((rax_259 ^ 0xc942c080) == 0x8212ce01)
+00406c72          r8_18 = 1;
+00406c72      
+00406c7a      if (r8_11 != 1)
+00406c7a          r8_18 = 0;
+00406c7a      
+00406e6c      int32_t rax_267 = data_41e03c ^ 0x5b09b225;
+00406ec7      int32_t rax_268 = 0xffffffff ^ (uint32_t)(uint8_t)rax_267;
+00406ec9      uint32_t r10_31 = rax_267 >> 8;
+00406ed2      uint32_t rax_269 = rax_268 >> 1;
+00406ed2      
+00406edf      if ((rax_268 & 1) == 1)
+00406edf          rax_269 ^= 0xedb88320;
+00406edf      
+00406f20      uint32_t rax_270 = rax_269 >> 1;
+00406f20      
+00406f2d      if ((rax_269 & 1) == 1)
+00406f2d          rax_270 ^= 0xedb88320;
+00406f2d      
+00406f80      uint32_t rax_271 = rax_270 >> 1;
+00406f80      
+00406f8d      if (rax_270 & 1)
+00406f8d          rax_271 ^= 0xedb88320;
+00406f8d      
+00406fce      uint32_t rax_272 = rax_271 >> 1;
+00406fce      
+00406fda      if (rax_271 & 1)
+00406fda          rax_272 ^= 0xedb88320;
+00406fda      
+00407036      uint32_t rax_273 = rax_272 >> 1;
+00407036      
+00407043      if (rax_272 & 1)
+00407043          rax_273 ^= 0xedb88320;
+00407043      
+00407088      uint32_t rax_274 = rax_273 >> 1;
+00407088      
+00407094      if (rax_273 & 1)
+00407094          rax_274 ^= 0xedb88320;
+00407094      
+004070ed      uint32_t rax_275 = rax_274 >> 1;
+004070ed      
+004070fa      if ((rax_274 & 1) == 1)
+004070fa          rax_275 ^= 0xedb88320;
+004070fa      
+0040713e      uint32_t rax_276 = rax_275 >> 1;
+0040713e      
+0040714b      if (rax_275 & 1)
+0040714b          rax_276 ^= 0xedb88320;
+0040714b      
+00407198      uint32_t rax_277 = rax_276 ^ (uint32_t)(uint8_t)r10_31;
+0040719a      uint32_t r10_32 = r10_31 >> 8;
+004071a3      uint32_t rax_278 = rax_277 >> 1;
+004071a3      
+004071af      if (rax_277 & 1)
+004071af          rax_278 ^= 0xedb88320;
+004071af      
+004071fa      uint32_t rax_279 = rax_278 >> 1;
+004071fa      
+00407207      if ((rax_278 & 1) == 1)
+00407207          rax_279 ^= 0xedb88320;
+00407207      
+00407250      uint32_t rax_280 = rax_279 >> 1;
+00407250      
+0040725d      if (rax_279 & 1)
+0040725d          rax_280 ^= 0xedb88320;
+0040725d      
+004072a1      uint32_t rax_281 = rax_280 >> 1;
+004072a1      
+004072ae      if ((rax_280 & 1) == 1)
+004072ae          rax_281 ^= 0xedb88320;
+004072ae      
+0040730b      uint32_t rax_282 = rax_281 >> 1;
+0040730b      
+00407318      if (rax_281 & 1)
+00407318          rax_282 ^= 0xedb88320;
+00407318      
+00407372      uint32_t rax_283 = rax_282 >> 1;
+00407372      
+0040737e      if (rax_282 & 1)
+0040737e          rax_283 ^= 0xedb88320;
+0040737e      
+004073da      uint32_t rax_284 = rax_283 >> 1;
+004073da      
+004073e7      if ((rax_283 & 1) == 1)
+004073e7          rax_284 ^= 0xedb88320;
+004073e7      
+00407431      uint32_t rax_285 = rax_284 >> 1;
+00407431      
+0040743e      if (rax_284 & 1)
+0040743e          rax_285 ^= 0xedb88320;
+0040743e      
+0040749f      uint32_t rax_286 = rax_285 ^ (uint32_t)(uint8_t)r10_32;
+004074aa      uint32_t rax_287 = rax_286 >> 1;
+004074aa      
+004074b6      if (rax_286 & 1)
+004074b6          rax_287 ^= 0xedb88320;
+004074b6      
+00407507      uint32_t rax_288 = rax_287 >> 1;
+00407507      
+00407513      if (rax_287 & 1)
+00407513          rax_288 ^= 0xedb88320;
+00407513      
+00407558      uint32_t rax_289 = rax_288 >> 1;
+00407558      
+00407565      if (rax_288 & 1)
+00407565          rax_289 ^= 0xedb88320;
+00407565      
+004075b3      uint32_t rax_290 = rax_289 >> 1;
+004075b3      
+004075c0      if (rax_289 & 1)
+004075c0          rax_290 ^= 0xedb88320;
+004075c0      
+004075fd      uint32_t rax_291 = rax_290 >> 1;
+004075fd      
+00407609      if (rax_290 & 1)
+00407609          rax_291 ^= 0xedb88320;
+00407609      
+0040764f      uint32_t rax_292 = rax_291 >> 1;
+0040764f      
+0040765b      if (rax_291 & 1)
+0040765b          rax_292 ^= 0xedb88320;
+0040765b      
+00407697      uint32_t rax_293 = rax_292 >> 1;
+00407697      
+004076a4      if (rax_292 & 1)
+004076a4          rax_293 ^= 0xedb88320;
+004076a4      
+004076f7      uint32_t rax_294 = rax_293 >> 1;
+004076f7      
+00407704      if (rax_293 & 1)
+00407704          rax_294 ^= 0xedb88320;
+00407704      
+00407749      uint32_t rax_295 = rax_294 ^ (uint32_t)(r10_32 >> 8);
+00407754      uint32_t rax_296 = rax_295 >> 1;
+00407754      
+00407761      if (rax_295 & 1)
+00407761          rax_296 ^= 0xedb88320;
+00407761      
+004077ba      uint32_t rax_297 = rax_296 >> 1;
+004077ba      
+004077c7      if ((rax_296 & 1) == 1)
+004077c7          rax_297 ^= 0xedb88320;
+004077c7      
+00407813      uint32_t rax_298 = rax_297 >> 1;
+00407813      
+00407820      if ((rax_297 & 1) == 1)
+00407820          rax_298 ^= 0xedb88320;
+00407820      
+00407862      uint32_t rax_299 = rax_298 >> 1;
+00407862      
+0040786f      if ((rax_298 & 1) == 1)
+0040786f          rax_299 ^= 0xedb88320;
+0040786f      
+004078c3      uint32_t rax_300 = rax_299 >> 1;
+004078c3      
+004078d0      if ((rax_299 & 1) == 1)
+004078d0          rax_300 ^= 0xedb88320;
+004078d0      
+0040790f      uint32_t rax_301 = rax_300 >> 1;
+0040790f      
+0040791c      if (rax_300 & 1)
+0040791c          rax_301 ^= 0xedb88320;
+0040791c      
+00407972      uint32_t rax_302 = rax_301 >> 1;
+00407972      
+0040797f      if (rax_301 & 1)
+0040797f          rax_302 ^= 0xedb88320;
+0040797f      
+004079cd      uint32_t rax_303 = rax_302 >> 1;
+004079cd      
+004079d9      if (rax_302 & 1)
+004079d9          rax_303 ^= 0xedb88320;
+004079d9      
+00407c45      int32_t rax_311 = rax_303 ^ 0x453436e6;
+00407ca2      int32_t rax_312 = 0xffffffff ^ (uint32_t)(uint8_t)rax_311;
+00407ca4      uint32_t r10_36 = rax_311 >> 8;
+00407cad      uint32_t rax_313 = rax_312 >> 1;
+00407cad      
+00407cba      if (rax_312 & 1)
+00407cba          rax_313 ^= 0xedb88320;
+00407cba      
+00407d1b      uint32_t rax_314 = rax_313 >> 1;
+00407d1b      
+00407d27      if (rax_313 & 1)
+00407d27          rax_314 ^= 0xedb88320;
+00407d27      
+00407d71      uint32_t rax_315 = rax_314 >> 1;
+00407d71      
+00407d7e      if (rax_314 & 1)
+00407d7e          rax_315 ^= 0xedb88320;
+00407d7e      
+00407dbe      uint32_t rax_316 = rax_315 >> 1;
+00407dbe      
+00407dca      if (rax_315 & 1)
+00407dca          rax_316 ^= 0xedb88320;
+00407dca      
+00407e14      uint32_t rax_317 = rax_316 >> 1;
+00407e14      
+00407e20      if (rax_316 & 1)
+00407e20          rax_317 ^= 0xedb88320;
+00407e20      
+00407e6f      uint32_t rax_318 = rax_317 >> 1;
+00407e6f      
+00407e7c      if ((rax_317 & 1) == 1)
+00407e7c          rax_318 ^= 0xedb88320;
+00407e7c      
+00407ed6      uint32_t rax_319 = rax_318 >> 1;
+00407ed6      
+00407ee3      if (rax_318 & 1)
+00407ee3          rax_319 ^= 0xedb88320;
+00407ee3      
+00407f33      uint32_t rax_320 = rax_319 >> 1;
+00407f33      
+00407f3f      if (rax_319 & 1)
+00407f3f          rax_320 ^= 0xedb88320;
+00407f3f      
+00407fa3      uint32_t rax_321 = rax_320 ^ (uint32_t)(uint8_t)r10_36;
+00407fa5      uint32_t r10_37 = r10_36 >> 8;
+00407fae      uint32_t rax_322 = rax_321 >> 1;
+00407fae      
+00407fbb      if (rax_321 & 1)
+00407fbb          rax_322 ^= 0xedb88320;
+00407fbb      
+00407ffb      uint32_t rax_323 = rax_322 >> 1;
+00407ffb      
+00408007      if (rax_322 & 1)
+00408007          rax_323 ^= 0xedb88320;
+00408007      
+00408058      uint32_t rax_324 = rax_323 >> 1;
+00408058      
+00408065      if ((rax_323 & 1) == 1)
+00408065          rax_324 ^= 0xedb88320;
+00408065      
+004080bc      uint32_t rax_325 = rax_324 >> 1;
+004080bc      
+004080c8      if (rax_324 & 1)
+004080c8          rax_325 ^= 0xedb88320;
+004080c8      
+0040810b      uint32_t rax_326 = rax_325 >> 1;
+0040810b      
+00408117      if (rax_325 & 1)
+00408117          rax_326 ^= 0xedb88320;
+00408117      
+00408163      uint32_t rax_327 = rax_326 >> 1;
+00408163      
+00408170      if (rax_326 & 1)
+00408170          rax_327 ^= 0xedb88320;
+00408170      
+004081cd      uint32_t rax_328 = rax_327 >> 1;
+004081cd      
+004081da      if (rax_327 & 1)
+004081da          rax_328 ^= 0xedb88320;
+004081da      
+00408224      uint32_t rax_329 = rax_328 >> 1;
+00408224      
+00408230      if (rax_328 & 1)
+00408230          rax_329 ^= 0xedb88320;
+00408230      
+00408290      uint32_t rax_330 = rax_329 ^ (uint32_t)(uint8_t)r10_37;
+0040829b      uint32_t rax_331 = rax_330 >> 1;
+0040829b      
+004082a8      if ((rax_330 & 1) == 1)
+004082a8          rax_331 ^= 0xedb88320;
+004082a8      
+004082ea      uint32_t rax_332 = rax_331 >> 1;
+004082ea      
+004082f6      if (rax_331 & 1)
+004082f6          rax_332 ^= 0xedb88320;
+004082f6      
+00408348      uint32_t rax_333 = rax_332 >> 1;
+00408348      
+00408355      if ((rax_332 & 1) == 1)
+00408355          rax_333 ^= 0xedb88320;
+00408355      
+00408399      uint32_t rax_334 = rax_333 >> 1;
+00408399      
+004083a6      if ((rax_333 & 1) == 1)
+004083a6          rax_334 ^= 0xedb88320;
+004083a6      
+004083ee      uint32_t rax_335 = rax_334 >> 1;
+004083ee      
+004083fa      if (rax_334 & 1)
+004083fa          rax_335 ^= 0xedb88320;
+004083fa      
+0040844e      uint32_t rax_336 = rax_335 >> 1;
+0040844e      
+0040845b      if ((rax_335 & 1) == 1)
+0040845b          rax_336 ^= 0xedb88320;
+0040845b      
+0040849d      uint32_t rax_337 = rax_336 >> 1;
+0040849d      
+004084aa      if (rax_336 & 1)
+004084aa          rax_337 ^= 0xedb88320;
+004084aa      
+004084f0      uint32_t rax_338 = rax_337 >> 1;
+004084f0      
+004084fd      if ((rax_337 & 1) == 1)
+004084fd          rax_338 ^= 0xedb88320;
+004084fd      
+0040853f      uint32_t rax_339 = rax_338 ^ (uint32_t)(r10_37 >> 8);
+0040854a      uint32_t rax_340 = rax_339 >> 1;
+0040854a      
+00408557      if (rax_339 & 1)
+00408557          rax_340 ^= 0xedb88320;
+00408557      
+0040859f      uint32_t rax_341 = rax_340 >> 1;
+0040859f      
+004085ac      if (rax_340 & 1)
+004085ac          rax_341 ^= 0xedb88320;
+004085ac      
+004085ef      uint32_t rax_342 = rax_341 >> 1;
+004085ef      
+004085fc      if ((rax_341 & 1) == 1)
+004085fc          rax_342 ^= 0xedb88320;
+004085fc      
+00408659      uint32_t rax_343 = rax_342 >> 1;
+00408659      
+00408665      if (rax_342 & 1)
+00408665          rax_343 ^= 0xedb88320;
+00408665      
+004086a6      uint32_t rax_344 = rax_343 >> 1;
+004086a6      
+004086b3      if ((rax_343 & 1) == 1)
+004086b3          rax_344 ^= 0xedb88320;
+004086b3      
+00408701      uint32_t rax_345 = rax_344 >> 1;
+00408701      
+0040870e      if ((rax_344 & 1) == 1)
+0040870e          rax_345 ^= 0xedb88320;
+0040870e      
+0040874f      uint32_t rax_346 = rax_345 >> 1;
+0040874f      
+0040875b      if (rax_345 & 1)
+0040875b          rax_346 ^= 0xedb88320;
+0040875b      
+004087b6      uint32_t rax_347 = rax_346 >> 1;
+004087b6      
+004087c2      if (rax_346 & 1)
+004087c2          rax_347 ^= 0xedb88320;
+004087c2      
+004089ef      int32_t r8_23 = 0;
+004089ef      
+00408a00      if ((rax_347 ^ 0xc6759811) == 0xb6a61439)
+00408a00          r8_23 = 1;
+00408a00      
+00408a08      if (r8_18 != 1)
+00408a08          r8_23 = 0;
+00408a08      
+00408b50      int32_t rax_355 = data_41e040 ^ 0x3e111007;
+00408bb7      int32_t rax_356 = 0xffffffff ^ (uint32_t)(uint8_t)rax_355;
+00408bb9      uint32_t r10_41 = rax_355 >> 8;
+00408bc2      uint32_t rax_357 = rax_356 >> 1;
+00408bc2      
+00408bce      if (rax_356 & 1)
+00408bce          rax_357 ^= 0xedb88320;
+00408bce      
+00408c18      uint32_t rax_358 = rax_357 >> 1;
+00408c18      
+00408c25      if (rax_357 & 1)
+00408c25          rax_358 ^= 0xedb88320;
+00408c25      
+00408c71      uint32_t rax_359 = rax_358 >> 1;
+00408c71      
+00408c7e      if ((rax_358 & 1) == 1)
+00408c7e          rax_359 ^= 0xedb88320;
+00408c7e      
+00408cd7      uint32_t rax_360 = rax_359 >> 1;
+00408cd7      
+00408ce4      if ((rax_359 & 1) == 1)
+00408ce4          rax_360 ^= 0xedb88320;
+00408ce4      
+00408d3e      uint32_t rax_361 = rax_360 >> 1;
+00408d3e      
+00408d4a      if (rax_360 & 1)
+00408d4a          rax_361 ^= 0xedb88320;
+00408d4a      
+00408da6      uint32_t rax_362 = rax_361 >> 1;
+00408da6      
+00408db3      if ((rax_361 & 1) == 1)
+00408db3          rax_362 ^= 0xedb88320;
+00408db3      
+00408e02      uint32_t rax_363 = rax_362 >> 1;
+00408e02      
+00408e0f      if (rax_362 & 1)
+00408e0f          rax_363 ^= 0xedb88320;
+00408e0f      
+00408e67      uint32_t rax_364 = rax_363 >> 1;
+00408e67      
+00408e74      if (rax_363 & 1)
+00408e74          rax_364 ^= 0xedb88320;
+00408e74      
+00408ec8      uint32_t rax_365 = rax_364 ^ (uint32_t)(uint8_t)r10_41;
+00408eca      uint32_t r10_42 = r10_41 >> 8;
+00408ed3      uint32_t rax_366 = rax_365 >> 1;
+00408ed3      
+00408edf      if (rax_365 & 1)
+00408edf          rax_366 ^= 0xedb88320;
+00408edf      
+00408f25      uint32_t rax_367 = rax_366 >> 1;
+00408f25      
+00408f32      if (rax_366 & 1)
+00408f32          rax_367 ^= 0xedb88320;
+00408f32      
+00408f90      uint32_t rax_368 = rax_367 >> 1;
+00408f90      
+00408f9d      if (rax_367 & 1)
+00408f9d          rax_368 ^= 0xedb88320;
+00408f9d      
+00408ff2      uint32_t rax_369 = rax_368 >> 1;
+00408ff2      
+00408fff      if (rax_368 & 1)
+00408fff          rax_369 ^= 0xedb88320;
+00408fff      
+00409050      uint32_t rax_370 = rax_369 >> 1;
+00409050      
+0040905c      if (rax_369 & 1)
+0040905c          rax_370 ^= 0xedb88320;
+0040905c      
+004090b4      uint32_t rax_371 = rax_370 >> 1;
+004090b4      
+004090c1      if ((rax_370 & 1) == 1)
+004090c1          rax_371 ^= 0xedb88320;
+004090c1      
+00409119      uint32_t rax_372 = rax_371 >> 1;
+00409119      
+00409126      if (rax_371 & 1)
+00409126          rax_372 ^= 0xedb88320;
+00409126      
+00409174      uint32_t rax_373 = rax_372 >> 1;
+00409174      
+00409181      if (rax_372 & 1)
+00409181          rax_373 ^= 0xedb88320;
+00409181      
+004091c4      uint32_t rax_374 = rax_373 ^ (uint32_t)(uint8_t)r10_42;
+004091cf      uint32_t rax_375 = rax_374 >> 1;
+004091cf      
+004091db      if (rax_374 & 1)
+004091db          rax_375 ^= 0xedb88320;
+004091db      
+00409235      uint32_t rax_376 = rax_375 >> 1;
+00409235      
+00409242      if (rax_375 & 1)
+00409242          rax_376 ^= 0xedb88320;
+00409242      
+00409282      uint32_t rax_377 = rax_376 >> 1;
+00409282      
+0040928f      if (rax_376 & 1)
+0040928f          rax_377 ^= 0xedb88320;
+0040928f      
+004092ee      uint32_t rax_378 = rax_377 >> 1;
+004092ee      
+004092fa      if (rax_377 & 1)
+004092fa          rax_378 ^= 0xedb88320;
+004092fa      
+00409356      uint32_t rax_379 = rax_378 >> 1;
+00409356      
+00409363      if ((rax_378 & 1) == 1)
+00409363          rax_379 ^= 0xedb88320;
+00409363      
+004093ab      uint32_t rax_380 = rax_379 >> 1;
+004093ab      
+004093b8      if (rax_379 & 1)
+004093b8          rax_380 ^= 0xedb88320;
+004093b8      
+004093fc      uint32_t rax_381 = rax_380 >> 1;
+004093fc      
+00409408      if (rax_380 & 1)
+00409408          rax_381 ^= 0xedb88320;
+00409408      
+00409461      uint32_t rax_382 = rax_381 >> 1;
+00409461      
+0040946e      if ((rax_381 & 1) == 1)
+0040946e          rax_382 ^= 0xedb88320;
+0040946e      
+004094be      uint32_t rax_383 = rax_382 ^ (uint32_t)(r10_42 >> 8);
+004094c9      uint32_t rax_384 = rax_383 >> 1;
+004094c9      
+004094d6      if (rax_383 & 1)
+004094d6          rax_384 ^= 0xedb88320;
+004094d6      
+00409522      uint32_t rax_385 = rax_384 >> 1;
+00409522      
+0040952f      if (rax_384 & 1)
+0040952f          rax_385 ^= 0xedb88320;
+0040952f      
+00409581      uint32_t rax_386 = rax_385 >> 1;
+00409581      
+0040958e      if (rax_385 & 1)
+0040958e          rax_386 ^= 0xedb88320;
+0040958e      
+004095d8      uint32_t rax_387 = rax_386 >> 1;
+004095d8      
+004095e4      if (rax_386 & 1)
+004095e4          rax_387 ^= 0xedb88320;
+004095e4      
+0040962d      uint32_t rax_388 = rax_387 >> 1;
+0040962d      
+0040963a      if (rax_387 & 1)
+0040963a          rax_388 ^= 0xedb88320;
+0040963a      
+00409697      uint32_t rax_389 = rax_388 >> 1;
+00409697      
+004096a4      if (rax_388 & 1)
+004096a4          rax_389 ^= 0xedb88320;
+004096a4      
+004096eb      uint32_t rax_390 = rax_389 >> 1;
+004096eb      
+004096f8      if (rax_389 & 1)
+004096f8          rax_390 ^= 0xedb88320;
+004096f8      
+0040974d      uint32_t rax_391 = rax_390 >> 1;
+0040974d      
+00409759      if (rax_390 & 1)
+00409759          rax_391 ^= 0xedb88320;
+00409759      
+004099d2      int32_t rax_399 = rax_391 ^ 0x96002ba3;
+00409a36      int32_t rax_400 = 0xffffffff ^ (uint32_t)(uint8_t)rax_399;
+00409a38      uint32_t r10_46 = rax_399 >> 8;
+00409a41      uint32_t rax_401 = rax_400 >> 1;
+00409a41      
+00409a4e      if (rax_400 & 1)
+00409a4e          rax_401 ^= 0xedb88320;
+00409a4e      
+00409aa1      uint32_t rax_402 = rax_401 >> 1;
+00409aa1      
+00409aae      if ((rax_401 & 1) == 1)
+00409aae          rax_402 ^= 0xedb88320;
+00409aae      
+00409af7      uint32_t rax_403 = rax_402 >> 1;
+00409af7      
+00409b03      if (rax_402 & 1)
+00409b03          rax_403 ^= 0xedb88320;
+00409b03      
+00409b57      uint32_t rax_404 = rax_403 >> 1;
+00409b57      
+00409b64      if (rax_403 & 1)
+00409b64          rax_404 ^= 0xedb88320;
+00409b64      
+00409bbd      uint32_t rax_405 = rax_404 >> 1;
+00409bbd      
+00409bca      if (rax_404 & 1)
+00409bca          rax_405 ^= 0xedb88320;
+00409bca      
+00409c13      uint32_t rax_406 = rax_405 >> 1;
+00409c13      
+00409c1f      if (rax_405 & 1)
+00409c1f          rax_406 ^= 0xedb88320;
+00409c1f      
+00409c71      uint32_t rax_407 = rax_406 >> 1;
+00409c71      
+00409c7e      if (rax_406 & 1)
+00409c7e          rax_407 ^= 0xedb88320;
+00409c7e      
+00409ccb      uint32_t rax_408 = rax_407 >> 1;
+00409ccb      
+00409cd8      if (rax_407 & 1)
+00409cd8          rax_408 ^= 0xedb88320;
+00409cd8      
+00409d39      uint32_t rax_409 = rax_408 ^ (uint32_t)(uint8_t)r10_46;
+00409d3b      uint32_t r10_47 = r10_46 >> 8;
+00409d44      uint32_t rax_410 = rax_409 >> 1;
+00409d44      
+00409d51      if (rax_409 & 1)
+00409d51          rax_410 ^= 0xedb88320;
+00409d51      
+00409d91      uint32_t rax_411 = rax_410 >> 1;
+00409d91      
+00409d9e      if (rax_410 & 1)
+00409d9e          rax_411 ^= 0xedb88320;
+00409d9e      
+00409dec      uint32_t rax_412 = rax_411 >> 1;
+00409dec      
+00409df9      if (rax_411 & 1)
+00409df9          rax_412 ^= 0xedb88320;
+00409df9      
+00409e51      uint32_t rax_413 = rax_412 >> 1;
+00409e51      
+00409e5e      if (rax_412 & 1)
+00409e5e          rax_413 ^= 0xedb88320;
+00409e5e      
+00409ea2      uint32_t rax_414 = rax_413 >> 1;
+00409ea2      
+00409eae      if (rax_413 & 1)
+00409eae          rax_414 ^= 0xedb88320;
+00409eae      
+00409efb      uint32_t rax_415 = rax_414 >> 1;
+00409efb      
+00409f07      if (rax_414 & 1)
+00409f07          rax_415 ^= 0xedb88320;
+00409f07      
+00409f66      uint32_t rax_416 = rax_415 >> 1;
+00409f66      
+00409f73      if (rax_415 & 1)
+00409f73          rax_416 ^= 0xedb88320;
+00409f73      
+00409fb9      uint32_t rax_417 = rax_416 >> 1;
+00409fb9      
+00409fc5      if (rax_416 & 1)
+00409fc5          rax_417 ^= 0xedb88320;
+00409fc5      
+0040a01e      uint32_t rax_418 = rax_417 ^ (uint32_t)(uint8_t)r10_47;
+0040a029      uint32_t rax_419 = rax_418 >> 1;
+0040a029      
+0040a036      if (rax_418 & 1)
+0040a036          rax_419 ^= 0xedb88320;
+0040a036      
+0040a08c      uint32_t rax_420 = rax_419 >> 1;
+0040a08c      
+0040a099      if ((rax_419 & 1) == 1)
+0040a099          rax_420 ^= 0xedb88320;
+0040a099      
+0040a0f6      uint32_t rax_421 = rax_420 >> 1;
+0040a0f6      
+0040a102      if (rax_420 & 1)
+0040a102          rax_421 ^= 0xedb88320;
+0040a102      
+0040a159      uint32_t rax_422 = rax_421 >> 1;
+0040a159      
+0040a166      if ((rax_421 & 1) == 1)
+0040a166          rax_422 ^= 0xedb88320;
+0040a166      
+0040a1b3      uint32_t rax_423 = rax_422 >> 1;
+0040a1b3      
+0040a1c0      if (rax_422 & 1)
+0040a1c0          rax_423 ^= 0xedb88320;
+0040a1c0      
+0040a208      uint32_t rax_424 = rax_423 >> 1;
+0040a208      
+0040a214      if (rax_423 & 1)
+0040a214          rax_424 ^= 0xedb88320;
+0040a214      
+0040a260      uint32_t rax_425 = rax_424 >> 1;
+0040a260      
+0040a26c      if (rax_424 & 1)
+0040a26c          rax_425 ^= 0xedb88320;
+0040a26c      
+0040a2ba      uint32_t rax_426 = rax_425 >> 1;
+0040a2ba      
+0040a2c7      if ((rax_425 & 1) == 1)
+0040a2c7          rax_426 ^= 0xedb88320;
+0040a2c7      
+0040a324      uint32_t rax_427 = rax_426 ^ (uint32_t)(r10_47 >> 8);
+0040a32f      uint32_t rax_428 = rax_427 >> 1;
+0040a32f      
+0040a33b      if (rax_427 & 1)
+0040a33b          rax_428 ^= 0xedb88320;
+0040a33b      
+0040a394      uint32_t rax_429 = rax_428 >> 1;
+0040a394      
+0040a3a1      if (rax_428 & 1)
+0040a3a1          rax_429 ^= 0xedb88320;
+0040a3a1      
+0040a3f8      uint32_t rax_430 = rax_429 >> 1;
+0040a3f8      
+0040a405      if (rax_429 & 1)
+0040a405          rax_430 ^= 0xedb88320;
+0040a405      
+0040a462      uint32_t rax_431 = rax_430 >> 1;
+0040a462      
+0040a46f      if (rax_430 & 1)
+0040a46f          rax_431 ^= 0xedb88320;
+0040a46f      
+0040a4b0      uint32_t rax_432 = rax_431 >> 1;
+0040a4b0      
+0040a4bd      if (rax_431 & 1)
+0040a4bd          rax_432 ^= 0xedb88320;
+0040a4bd      
+0040a515      uint32_t rax_433 = rax_432 >> 1;
+0040a515      
+0040a522      if (rax_432 & 1)
+0040a522          rax_433 ^= 0xedb88320;
+0040a522      
+0040a57b      uint32_t rax_434 = rax_433 >> 1;
+0040a57b      
+0040a588      if ((rax_433 & 1) == 1)
+0040a588          rax_434 ^= 0xedb88320;
+0040a588      
+0040a5d8      uint32_t rax_435 = rax_434 >> 1;
+0040a5d8      
+0040a5e5      if ((rax_434 & 1) == 1)
+0040a5e5          rax_435 ^= 0xedb88320;
+0040a5e5      
+0040a7e4      int32_t r8_30 = 0;
+0040a7e4      
+0040a7f5      if ((rax_435 ^ 0xa77775c4) == 0x42ddc1fa)
+0040a7f5          r8_30 = 1;
+0040a7f5      
+0040a7fd      if (r8_23 != 1)
+0040a7fd          r8_30 = 0;
+0040a7fd      
+0040a9b8      int32_t rax_443 = data_41e044 ^ 0x9b8a4ac0;
+0040aa23      int32_t rax_444 = 0xffffffff ^ (uint32_t)(uint8_t)rax_443;
+0040aa25      uint32_t r10_51 = rax_443 >> 8;
+0040aa2e      uint32_t rax_445 = rax_444 >> 1;
+0040aa2e      
+0040aa3b      if ((rax_444 & 1) == 1)
+0040aa3b          rax_445 ^= 0xedb88320;
+0040aa3b      
+0040aa89      uint32_t rax_446 = rax_445 >> 1;
+0040aa89      
+0040aa96      if ((rax_445 & 1) == 1)
+0040aa96          rax_446 ^= 0xedb88320;
+0040aa96      
+0040aadf      uint32_t rax_447 = rax_446 >> 1;
+0040aadf      
+0040aaec      if ((rax_446 & 1) == 1)
+0040aaec          rax_447 ^= 0xedb88320;
+0040aaec      
+0040ab48      uint32_t rax_448 = rax_447 >> 1;
+0040ab48      
+0040ab55      if (rax_447 & 1)
+0040ab55          rax_448 ^= 0xedb88320;
+0040ab55      
+0040ab9e      uint32_t rax_449 = rax_448 >> 1;
+0040ab9e      
+0040abab      if ((rax_448 & 1) == 1)
+0040abab          rax_449 ^= 0xedb88320;
+0040abab      
+0040abf1      uint32_t rax_450 = rax_449 >> 1;
+0040abf1      
+0040abfe      if ((rax_449 & 1) == 1)
+0040abfe          rax_450 ^= 0xedb88320;
+0040abfe      
+0040ac57      uint32_t rax_451 = rax_450 >> 1;
+0040ac57      
+0040ac64      if ((rax_450 & 1) == 1)
+0040ac64          rax_451 ^= 0xedb88320;
+0040ac64      
+0040acae      uint32_t rax_452 = rax_451 >> 1;
+0040acae      
+0040acbb      if ((rax_451 & 1) == 1)
+0040acbb          rax_452 ^= 0xedb88320;
+0040acbb      
+0040ad03      uint32_t rax_453 = rax_452 ^ (uint32_t)(uint8_t)r10_51;
+0040ad05      uint32_t r10_52 = r10_51 >> 8;
+0040ad0e      uint32_t rax_454 = rax_453 >> 1;
+0040ad0e      
+0040ad1b      if (rax_453 & 1)
+0040ad1b          rax_454 ^= 0xedb88320;
+0040ad1b      
+0040ad70      uint32_t rax_455 = rax_454 >> 1;
+0040ad70      
+0040ad7d      if (rax_454 & 1)
+0040ad7d          rax_455 ^= 0xedb88320;
+0040ad7d      
+0040add1      uint32_t rax_456 = rax_455 >> 1;
+0040add1      
+0040addd      if (rax_455 & 1)
+0040addd          rax_456 ^= 0xedb88320;
+0040addd      
+0040ae1b      uint32_t rax_457 = rax_456 >> 1;
+0040ae1b      
+0040ae27      if (rax_456 & 1)
+0040ae27          rax_457 ^= 0xedb88320;
+0040ae27      
+0040ae7a      uint32_t rax_458 = rax_457 >> 1;
+0040ae7a      
+0040ae87      if ((rax_457 & 1) == 1)
+0040ae87          rax_458 ^= 0xedb88320;
+0040ae87      
+0040aedb      uint32_t rax_459 = rax_458 >> 1;
+0040aedb      
+0040aee7      if (rax_458 & 1)
+0040aee7          rax_459 ^= 0xedb88320;
+0040aee7      
+0040af29      uint32_t rax_460 = rax_459 >> 1;
+0040af29      
+0040af36      if (rax_459 & 1)
+0040af36          rax_460 ^= 0xedb88320;
+0040af36      
+0040af89      uint32_t rax_461 = rax_460 >> 1;
+0040af89      
+0040af96      if (rax_460 & 1)
+0040af96          rax_461 ^= 0xedb88320;
+0040af96      
+0040afee      uint32_t rax_462 = rax_461 ^ (uint32_t)(uint8_t)r10_52;
+0040aff9      uint32_t rax_463 = rax_462 >> 1;
+0040aff9      
+0040b005      if (rax_462 & 1)
+0040b005          rax_463 ^= 0xedb88320;
+0040b005      
+0040b048      uint32_t rax_464 = rax_463 >> 1;
+0040b048      
+0040b055      if (rax_463 & 1)
+0040b055          rax_464 ^= 0xedb88320;
+0040b055      
+0040b0b0      uint32_t rax_465 = rax_464 >> 1;
+0040b0b0      
+0040b0bd      if (rax_464 & 1)
+0040b0bd          rax_465 ^= 0xedb88320;
+0040b0bd      
+0040b0fe      uint32_t rax_466 = rax_465 >> 1;
+0040b0fe      
+0040b10b      if ((rax_465 & 1) == 1)
+0040b10b          rax_466 ^= 0xedb88320;
+0040b10b      
+0040b15b      uint32_t rax_467 = rax_466 >> 1;
+0040b15b      
+0040b168      if ((rax_466 & 1) == 1)
+0040b168          rax_467 ^= 0xedb88320;
+0040b168      
+0040b1ab      uint32_t rax_468 = rax_467 >> 1;
+0040b1ab      
+0040b1b8      if ((rax_467 & 1) == 1)
+0040b1b8          rax_468 ^= 0xedb88320;
+0040b1b8      
+0040b1fc      uint32_t rax_469 = rax_468 >> 1;
+0040b1fc      
+0040b208      if (rax_468 & 1)
+0040b208          rax_469 ^= 0xedb88320;
+0040b208      
+0040b265      uint32_t rax_470 = rax_469 >> 1;
+0040b265      
+0040b272      if ((rax_469 & 1) == 1)
+0040b272          rax_470 ^= 0xedb88320;
+0040b272      
+0040b2bb      uint32_t rax_471 = rax_470 ^ (uint32_t)(r10_52 >> 8);
+0040b2c6      uint32_t rax_472 = rax_471 >> 1;
+0040b2c6      
+0040b2d3      if (rax_471 & 1)
+0040b2d3          rax_472 ^= 0xedb88320;
+0040b2d3      
+0040b311      uint32_t rax_473 = rax_472 >> 1;
+0040b311      
+0040b31d      if (rax_472 & 1)
+0040b31d          rax_473 ^= 0xedb88320;
+0040b31d      
+0040b361      uint32_t rax_474 = rax_473 >> 1;
+0040b361      
+0040b36e      if ((rax_473 & 1) == 1)
+0040b36e          rax_474 ^= 0xedb88320;
+0040b36e      
+0040b3b8      uint32_t rax_475 = rax_474 >> 1;
+0040b3b8      
+0040b3c4      if (rax_474 & 1)
+0040b3c4          rax_475 ^= 0xedb88320;
+0040b3c4      
+0040b41f      uint32_t rax_476 = rax_475 >> 1;
+0040b41f      
+0040b42c      if ((rax_475 & 1) == 1)
+0040b42c          rax_476 ^= 0xedb88320;
+0040b42c      
+0040b48d      uint32_t rax_477 = rax_476 >> 1;
+0040b48d      
+0040b49a      if (rax_476 & 1)
+0040b49a          rax_477 ^= 0xedb88320;
+0040b49a      
+0040b4e5      uint32_t rax_478 = rax_477 >> 1;
+0040b4e5      
+0040b4f2      if (rax_477 & 1)
+0040b4f2          rax_478 ^= 0xedb88320;
+0040b4f2      
+0040b53b      uint32_t rax_479 = rax_478 >> 1;
+0040b53b      
+0040b547      if (rax_478 & 1)
+0040b547          rax_479 ^= 0xedb88320;
+0040b547      
+0040b831      int32_t rax_488 = rax_479 ^ 0x7d1f9b1a;
+0040b888      int32_t rax_489 = 0xffffffff ^ (uint32_t)(uint8_t)rax_488;
+0040b88a      uint32_t r10_56 = rax_488 >> 8;
+0040b893      uint32_t rax_490 = rax_489 >> 1;
+0040b893      
+0040b8a0      if ((rax_489 & 1) == 1)
+0040b8a0          rax_490 ^= 0xedb88320;
+0040b8a0      
+0040b8ec      uint32_t rax_491 = rax_490 >> 1;
+0040b8ec      
+0040b8f9      if ((rax_490 & 1) == 1)
+0040b8f9          rax_491 ^= 0xedb88320;
+0040b8f9      
+0040b93e      uint32_t rax_492 = rax_491 >> 1;
+0040b93e      
+0040b94b      if (rax_491 & 1)
+0040b94b          rax_492 ^= 0xedb88320;
+0040b94b      
+0040b9a6      uint32_t rax_493 = rax_492 >> 1;
+0040b9a6      
+0040b9b3      if (rax_492 & 1)
+0040b9b3          rax_493 ^= 0xedb88320;
+0040b9b3      
+0040b9fb      uint32_t rax_494 = rax_493 >> 1;
+0040b9fb      
+0040ba08      if (rax_493 & 1)
+0040ba08          rax_494 ^= 0xedb88320;
+0040ba08      
+0040ba64      uint32_t rax_495 = rax_494 >> 1;
+0040ba64      
+0040ba70      if (rax_494 & 1)
+0040ba70          rax_495 ^= 0xedb88320;
+0040ba70      
+0040bacc      uint32_t rax_496 = rax_495 >> 1;
+0040bacc      
+0040bad9      if ((rax_495 & 1) == 1)
+0040bad9          rax_496 ^= 0xedb88320;
+0040bad9      
+0040bb21      uint32_t rax_497 = rax_496 >> 1;
+0040bb21      
+0040bb2e      if (rax_496 & 1)
+0040bb2e          rax_497 ^= 0xedb88320;
+0040bb2e      
+0040bb79      uint32_t rax_498 = rax_497 ^ (uint32_t)(uint8_t)r10_56;
+0040bb7b      uint32_t r10_57 = r10_56 >> 8;
+0040bb84      uint32_t rax_499 = rax_498 >> 1;
+0040bb84      
+0040bb90      if (rax_498 & 1)
+0040bb90          rax_499 ^= 0xedb88320;
+0040bb90      
+0040bbd4      uint32_t rax_500 = rax_499 >> 1;
+0040bbd4      
+0040bbe1      if ((rax_499 & 1) == 1)
+0040bbe1          rax_500 ^= 0xedb88320;
+0040bbe1      
+0040bc30      uint32_t rax_501 = rax_500 >> 1;
+0040bc30      
+0040bc3d      if ((rax_500 & 1) == 1)
+0040bc3d          rax_501 ^= 0xedb88320;
+0040bc3d      
+0040bc91      uint32_t rax_502 = rax_501 >> 1;
+0040bc91      
+0040bc9e      if ((rax_501 & 1) == 1)
+0040bc9e          rax_502 ^= 0xedb88320;
+0040bc9e      
+0040bcec      uint32_t rax_503 = rax_502 >> 1;
+0040bcec      
+0040bcf9      if ((rax_502 & 1) == 1)
+0040bcf9          rax_503 ^= 0xedb88320;
+0040bcf9      
+0040bd45      uint32_t rax_504 = rax_503 >> 1;
+0040bd45      
+0040bd51      if (rax_503 & 1)
+0040bd51          rax_504 ^= 0xedb88320;
+0040bd51      
+0040bda5      uint32_t rax_505 = rax_504 >> 1;
+0040bda5      
+0040bdb2      if ((rax_504 & 1) == 1)
+0040bdb2          rax_505 ^= 0xedb88320;
+0040bdb2      
+0040bdfd      uint32_t rax_506 = rax_505 >> 1;
+0040bdfd      
+0040be0a      if ((rax_505 & 1) == 1)
+0040be0a          rax_506 ^= 0xedb88320;
+0040be0a      
+0040be62      uint32_t rax_507 = rax_506 ^ (uint32_t)(uint8_t)r10_57;
+0040be6d      uint32_t rax_508 = rax_507 >> 1;
+0040be6d      
+0040be79      if (rax_507 & 1)
+0040be79          rax_508 ^= 0xedb88320;
+0040be79      
+0040bec3      uint32_t rax_509 = rax_508 >> 1;
+0040bec3      
+0040bed0      if ((rax_508 & 1) == 1)
+0040bed0          rax_509 ^= 0xedb88320;
+0040bed0      
+0040bf13      uint32_t rax_510 = rax_509 >> 1;
+0040bf13      
+0040bf20      if (rax_509 & 1)
+0040bf20          rax_510 ^= 0xedb88320;
+0040bf20      
+0040bf7e      uint32_t rax_511 = rax_510 >> 1;
+0040bf7e      
+0040bf8a      if (rax_510 & 1)
+0040bf8a          rax_511 ^= 0xedb88320;
+0040bf8a      
+0040bfe2      uint32_t rax_512 = rax_511 >> 1;
+0040bfe2      
+0040bfef      if (rax_511 & 1)
+0040bfef          rax_512 ^= 0xedb88320;
+0040bfef      
+0040c04a      uint32_t rax_513 = rax_512 >> 1;
+0040c04a      
+0040c056      if (rax_512 & 1)
+0040c056          rax_513 ^= 0xedb88320;
+0040c056      
+0040c099      uint32_t rax_514 = rax_513 >> 1;
+0040c099      
+0040c0a6      if ((rax_513 & 1) == 1)
+0040c0a6          rax_514 ^= 0xedb88320;
+0040c0a6      
+0040c0f4      uint32_t rax_515 = rax_514 >> 1;
+0040c0f4      
+0040c101      if ((rax_514 & 1) == 1)
+0040c101          rax_515 ^= 0xedb88320;
+0040c101      
+0040c156      uint32_t rax_516 = rax_515 ^ (uint32_t)(r10_57 >> 8);
+0040c161      uint32_t rax_517 = rax_516 >> 1;
+0040c161      
+0040c16d      if (rax_516 & 1)
+0040c16d          rax_517 ^= 0xedb88320;
+0040c16d      
+0040c1ba      uint32_t rax_518 = rax_517 >> 1;
+0040c1ba      
+0040c1c7      if ((rax_517 & 1) == 1)
+0040c1c7          rax_518 ^= 0xedb88320;
+0040c1c7      
+0040c224      uint32_t rax_519 = rax_518 >> 1;
+0040c224      
+0040c231      if (rax_518 & 1)
+0040c231          rax_519 ^= 0xedb88320;
+0040c231      
+0040c273      uint32_t rax_520 = rax_519 >> 1;
+0040c273      
+0040c280      if ((rax_519 & 1) == 1)
+0040c280          rax_520 ^= 0xedb88320;
+0040c280      
+0040c2dc      uint32_t rax_521 = rax_520 >> 1;
+0040c2dc      
+0040c2e9      if (rax_520 & 1)
+0040c2e9          rax_521 ^= 0xedb88320;
+0040c2e9      
+0040c33f      uint32_t rax_522 = rax_521 >> 1;
+0040c33f      
+0040c34c      if (rax_521 & 1)
+0040c34c          rax_522 ^= 0xedb88320;
+0040c34c      
+0040c393      uint32_t rax_523 = rax_522 >> 1;
+0040c393      
+0040c39f      if (rax_522 & 1)
+0040c39f          rax_523 ^= 0xedb88320;
+0040c39f      
+0040c3e9      uint32_t rax_524 = rax_523 >> 1;
+0040c3e9      
+0040c3f5      if (rax_523 & 1)
+0040c3f5          rax_524 ^= 0xedb88320;
+0040c3f5      
+0040c5a7      int32_t r8_36 = 0;
+0040c5a7      
+0040c5b8      if ((rax_524 ^ 0x25d9f744) == 0x284c1f25)
+0040c5b8          r8_36 = 1;
+0040c5b8      
+0040c5c0      if (r8_30 != 1)
+0040c5c0          r8_36 = 0;
+0040c5c0      
+0040c74a      int32_t rax_533 = data_41e048 ^ 0x4479bb51;
+0040c7a1      int32_t rax_534 = 0xffffffff ^ (uint32_t)(uint8_t)rax_533;
+0040c7a3      uint32_t r10_61 = rax_533 >> 8;
+0040c7ac      uint32_t rax_535 = rax_534 >> 1;
+0040c7ac      
+0040c7b9      if ((rax_534 & 1) == 1)
+0040c7b9          rax_535 ^= 0xedb88320;
+0040c7b9      
+0040c810      uint32_t rax_536 = rax_535 >> 1;
+0040c810      
+0040c81d      if ((rax_535 & 1) == 1)
+0040c81d          rax_536 ^= 0xedb88320;
+0040c81d      
+0040c869      uint32_t rax_537 = rax_536 >> 1;
+0040c869      
+0040c876      if (rax_536 & 1)
+0040c876          rax_537 ^= 0xedb88320;
+0040c876      
+0040c8d5      uint32_t rax_538 = rax_537 >> 1;
+0040c8d5      
+0040c8e2      if (rax_537 & 1)
+0040c8e2          rax_538 ^= 0xedb88320;
+0040c8e2      
+0040c939      uint32_t rax_539 = rax_538 >> 1;
+0040c939      
+0040c946      if ((rax_538 & 1) == 1)
+0040c946          rax_539 ^= 0xedb88320;
+0040c946      
+0040c98c      uint32_t rax_540 = rax_539 >> 1;
+0040c98c      
+0040c999      if ((rax_539 & 1) == 1)
+0040c999          rax_540 ^= 0xedb88320;
+0040c999      
+0040c9db      uint32_t rax_541 = rax_540 >> 1;
+0040c9db      
+0040c9e8      if ((rax_540 & 1) == 1)
+0040c9e8          rax_541 ^= 0xedb88320;
+0040c9e8      
+0040ca39      uint32_t rax_542 = rax_541 >> 1;
+0040ca39      
+0040ca46      if ((rax_541 & 1) == 1)
+0040ca46          rax_542 ^= 0xedb88320;
+0040ca46      
+0040ca8f      uint32_t rax_543 = rax_542 ^ (uint32_t)(uint8_t)r10_61;
+0040ca91      uint32_t r10_62 = r10_61 >> 8;
+0040ca9a      uint32_t rax_544 = rax_543 >> 1;
+0040ca9a      
+0040caa7      if ((rax_543 & 1) == 1)
+0040caa7          rax_544 ^= 0xedb88320;
+0040caa7      
+0040caea      uint32_t rax_545 = rax_544 >> 1;
+0040caea      
+0040caf7      if ((rax_544 & 1) == 1)
+0040caf7          rax_545 ^= 0xedb88320;
+0040caf7      
+0040cb41      uint32_t rax_546 = rax_545 >> 1;
+0040cb41      
+0040cb4e      if (rax_545 & 1)
+0040cb4e          rax_546 ^= 0xedb88320;
+0040cb4e      
+0040cb90      uint32_t rax_547 = rax_546 >> 1;
+0040cb90      
+0040cb9c      if (rax_546 & 1)
+0040cb9c          rax_547 ^= 0xedb88320;
+0040cb9c      
+0040cbf3      uint32_t rax_548 = rax_547 >> 1;
+0040cbf3      
+0040cc00      if (rax_547 & 1)
+0040cc00          rax_548 ^= 0xedb88320;
+0040cc00      
+0040cc50      uint32_t rax_549 = rax_548 >> 1;
+0040cc50      
+0040cc5c      if (rax_548 & 1)
+0040cc5c          rax_549 ^= 0xedb88320;
+0040cc5c      
+0040ccab      uint32_t rax_550 = rax_549 >> 1;
+0040ccab      
+0040ccb8      if ((rax_549 & 1) == 1)
+0040ccb8          rax_550 ^= 0xedb88320;
+0040ccb8      
+0040cd15      uint32_t rax_551 = rax_550 >> 1;
+0040cd15      
+0040cd21      if (rax_550 & 1)
+0040cd21          rax_551 ^= 0xedb88320;
+0040cd21      
+0040cd66      uint32_t rax_552 = rax_551 ^ (uint32_t)(uint8_t)r10_62;
+0040cd71      uint32_t rax_553 = rax_552 >> 1;
+0040cd71      
+0040cd7e      if (rax_552 & 1)
+0040cd7e          rax_553 ^= 0xedb88320;
+0040cd7e      
+0040cdbd      uint32_t rax_554 = rax_553 >> 1;
+0040cdbd      
+0040cdc9      if (rax_553 & 1)
+0040cdc9          rax_554 ^= 0xedb88320;
+0040cdc9      
+0040ce0c      uint32_t rax_555 = rax_554 >> 1;
+0040ce0c      
+0040ce19      if ((rax_554 & 1) == 1)
+0040ce19          rax_555 ^= 0xedb88320;
+0040ce19      
+0040ce69      uint32_t rax_556 = rax_555 >> 1;
+0040ce69      
+0040ce76      if (rax_555 & 1)
+0040ce76          rax_556 ^= 0xedb88320;
+0040ce76      
+0040cec6      uint32_t rax_557 = rax_556 >> 1;
+0040cec6      
+0040ced3      if (rax_556 & 1)
+0040ced3          rax_557 ^= 0xedb88320;
+0040ced3      
+0040cf15      uint32_t rax_558 = rax_557 >> 1;
+0040cf15      
+0040cf22      if (rax_557 & 1)
+0040cf22          rax_558 ^= 0xedb88320;
+0040cf22      
+0040cf6f      uint32_t rax_559 = rax_558 >> 1;
+0040cf6f      
+0040cf7c      if ((rax_558 & 1) == 1)
+0040cf7c          rax_559 ^= 0xedb88320;
+0040cf7c      
+0040cfc1      uint32_t rax_560 = rax_559 >> 1;
+0040cfc1      
+0040cfcd      if (rax_559 & 1)
+0040cfcd          rax_560 ^= 0xedb88320;
+0040cfcd      
+0040d00f      uint32_t rax_561 = rax_560 ^ (uint32_t)(r10_62 >> 8);
+0040d01a      uint32_t rax_562 = rax_561 >> 1;
+0040d01a      
+0040d026      if (rax_561 & 1)
+0040d026          rax_562 ^= 0xedb88320;
+0040d026      
+0040d07b      uint32_t rax_563 = rax_562 >> 1;
+0040d07b      
+0040d088      if ((rax_562 & 1) == 1)
+0040d088          rax_563 ^= 0xedb88320;
+0040d088      
+0040d0c9      uint32_t rax_564 = rax_563 >> 1;
+0040d0c9      
+0040d0d6      if ((rax_563 & 1) == 1)
+0040d0d6          rax_564 ^= 0xedb88320;
+0040d0d6      
+0040d134      uint32_t rax_565 = rax_564 >> 1;
+0040d134      
+0040d141      if (rax_564 & 1)
+0040d141          rax_565 ^= 0xedb88320;
+0040d141      
+0040d185      uint32_t rax_566 = rax_565 >> 1;
+0040d185      
+0040d191      if (rax_565 & 1)
+0040d191          rax_566 ^= 0xedb88320;
+0040d191      
+0040d1ec      uint32_t rax_567 = rax_566 >> 1;
+0040d1ec      
+0040d1f9      if ((rax_566 & 1) == 1)
+0040d1f9          rax_567 ^= 0xedb88320;
+0040d1f9      
+0040d24d      uint32_t rax_568 = rax_567 >> 1;
+0040d24d      
+0040d259      if (rax_567 & 1)
+0040d259          rax_568 ^= 0xedb88320;
+0040d259      
+0040d2b7      uint32_t rax_569 = rax_568 >> 1;
+0040d2b7      
+0040d2c4      if (rax_568 & 1)
+0040d2c4          rax_569 ^= 0xedb88320;
+0040d2c4      
+0040d5dd      int32_t rax_574 = rax_569 ^ 0xc09ea126;
+0040d632      int32_t rax_575 = 0xffffffff ^ (uint32_t)(uint8_t)rax_574;
+0040d634      uint32_t r10_66 = rax_574 >> 8;
+0040d63d      uint32_t rax_576 = rax_575 >> 1;
+0040d63d      
+0040d64a      if ((rax_575 & 1) == 1)
+0040d64a          rax_576 ^= 0xedb88320;
+0040d64a      
+0040d6a1      uint32_t rax_577 = rax_576 >> 1;
+0040d6a1      
+0040d6ae      if ((rax_576 & 1) == 1)
+0040d6ae          rax_577 ^= 0xedb88320;
+0040d6ae      
+0040d6f4      uint32_t rax_578 = rax_577 >> 1;
+0040d6f4      
+0040d700      if (rax_577 & 1)
+0040d700          rax_578 ^= 0xedb88320;
+0040d700      
+0040d75a      uint32_t rax_579 = rax_578 >> 1;
+0040d75a      
+0040d766      if (rax_578 & 1)
+0040d766          rax_579 ^= 0xedb88320;
+0040d766      
+0040d7b8      uint32_t rax_580 = rax_579 >> 1;
+0040d7b8      
+0040d7c4      if (rax_579 & 1)
+0040d7c4          rax_580 ^= 0xedb88320;
+0040d7c4      
+0040d813      uint32_t rax_581 = rax_580 >> 1;
+0040d813      
+0040d81f      if (rax_580 & 1)
+0040d81f          rax_581 ^= 0xedb88320;
+0040d81f      
+0040d866      uint32_t rax_582 = rax_581 >> 1;
+0040d866      
+0040d873      if ((rax_581 & 1) == 1)
+0040d873          rax_582 ^= 0xedb88320;
+0040d873      
+0040d8ba      uint32_t rax_583 = rax_582 >> 1;
+0040d8ba      
+0040d8c6      if (rax_582 & 1)
+0040d8c6          rax_583 ^= 0xedb88320;
+0040d8c6      
+0040d923      uint32_t rax_584 = rax_583 ^ (uint32_t)(uint8_t)r10_66;
+0040d925      uint32_t r10_67 = r10_66 >> 8;
+0040d92e      uint32_t rax_585 = rax_584 >> 1;
+0040d92e      
+0040d93b      if ((rax_584 & 1) == 1)
+0040d93b          rax_585 ^= 0xedb88320;
+0040d93b      
+0040d995      uint32_t rax_586 = rax_585 >> 1;
+0040d995      
+0040d9a2      if ((rax_585 & 1) == 1)
+0040d9a2          rax_586 ^= 0xedb88320;
+0040d9a2      
+0040da01      uint32_t rax_587 = rax_586 >> 1;
+0040da01      
+0040da0e      if (rax_586 & 1)
+0040da0e          rax_587 ^= 0xedb88320;
+0040da0e      
+0040da55      uint32_t rax_588 = rax_587 >> 1;
+0040da55      
+0040da61      if (rax_587 & 1)
+0040da61          rax_588 ^= 0xedb88320;
+0040da61      
+0040dab3      uint32_t rax_589 = rax_588 >> 1;
+0040dab3      
+0040dac0      if ((rax_588 & 1) == 1)
+0040dac0          rax_589 ^= 0xedb88320;
+0040dac0      
+0040db0f      uint32_t rax_590 = rax_589 >> 1;
+0040db0f      
+0040db1c      if (rax_589 & 1)
+0040db1c          rax_590 ^= 0xedb88320;
+0040db1c      
+0040db6e      uint32_t rax_591 = rax_590 >> 1;
+0040db6e      
+0040db7b      if ((rax_590 & 1) == 1)
+0040db7b          rax_591 ^= 0xedb88320;
+0040db7b      
+0040dbca      uint32_t rax_592 = rax_591 >> 1;
+0040dbca      
+0040dbd6      if (rax_591 & 1)
+0040dbd6          rax_592 ^= 0xedb88320;
+0040dbd6      
+0040dc2b      uint32_t rax_593 = rax_592 ^ (uint32_t)(uint8_t)r10_67;
+0040dc36      uint32_t rax_594 = rax_593 >> 1;
+0040dc36      
+0040dc43      if ((rax_593 & 1) == 1)
+0040dc43          rax_594 ^= 0xedb88320;
+0040dc43      
+0040dc89      uint32_t rax_595 = rax_594 >> 1;
+0040dc89      
+0040dc96      if (rax_594 & 1)
+0040dc96          rax_595 ^= 0xedb88320;
+0040dc96      
+0040dcd8      uint32_t rax_596 = rax_595 >> 1;
+0040dcd8      
+0040dce4      if (rax_595 & 1)
+0040dce4          rax_596 ^= 0xedb88320;
+0040dce4      
+0040dd30      uint32_t rax_597 = rax_596 >> 1;
+0040dd30      
+0040dd3c      if (rax_596 & 1)
+0040dd3c          rax_597 ^= 0xedb88320;
+0040dd3c      
+0040dd7e      uint32_t rax_598 = rax_597 >> 1;
+0040dd7e      
+0040dd8b      if ((rax_597 & 1) == 1)
+0040dd8b          rax_598 ^= 0xedb88320;
+0040dd8b      
+0040ddd7      uint32_t rax_599 = rax_598 >> 1;
+0040ddd7      
+0040dde3      if (rax_598 & 1)
+0040dde3          rax_599 ^= 0xedb88320;
+0040dde3      
+0040de2d      uint32_t rax_600 = rax_599 >> 1;
+0040de2d      
+0040de3a      if (rax_599 & 1)
+0040de3a          rax_600 ^= 0xedb88320;
+0040de3a      
+0040de90      uint32_t rax_601 = rax_600 >> 1;
+0040de90      
+0040de9d      if ((rax_600 & 1) == 1)
+0040de9d          rax_601 ^= 0xedb88320;
+0040de9d      
+0040dedf      uint32_t rax_602 = rax_601 ^ (uint32_t)(r10_67 >> 8);
+0040deea      uint32_t rax_603 = rax_602 >> 1;
+0040deea      
+0040def7      if ((rax_602 & 1) == 1)
+0040def7          rax_603 ^= 0xedb88320;
+0040def7      
+0040df4c      uint32_t rax_604 = rax_603 >> 1;
+0040df4c      
+0040df59      if (rax_603 & 1)
+0040df59          rax_604 ^= 0xedb88320;
+0040df59      
+0040dfa9      uint32_t rax_605 = rax_604 >> 1;
+0040dfa9      
+0040dfb6      if ((rax_604 & 1) == 1)
+0040dfb6          rax_605 ^= 0xedb88320;
+0040dfb6      
+0040e010      uint32_t rax_606 = rax_605 >> 1;
+0040e010      
+0040e01c      if (rax_605 & 1)
+0040e01c          rax_606 ^= 0xedb88320;
+0040e01c      
+0040e065      uint32_t rax_607 = rax_606 >> 1;
+0040e065      
+0040e071      if (rax_606 & 1)
+0040e071          rax_607 ^= 0xedb88320;
+0040e071      
+0040e0af      uint32_t rax_608 = rax_607 >> 1;
+0040e0af      
+0040e0bc      if (rax_607 & 1)
+0040e0bc          rax_608 ^= 0xedb88320;
+0040e0bc      
+0040e102      uint32_t rax_609 = rax_608 >> 1;
+0040e102      
+0040e10f      if (rax_608 & 1)
+0040e10f          rax_609 ^= 0xedb88320;
+0040e10f      
+0040e161      uint32_t rax_610 = rax_609 >> 1;
+0040e161      
+0040e16d      if (rax_609 & 1)
+0040e16d          rax_610 ^= 0xedb88320;
+0040e16d      
+0040e3bb      int32_t r8_44 = 0;
+0040e3bb      
+0040e3cc      if ((rax_610 ^ 0x920916d3) == 0x6b35615e)
+0040e3cc          r8_44 = 1;
+0040e3cc      
+0040e3d4      if (r8_36 != 1)
+0040e3d4          r8_44 = 0;
+0040e3d4      
+0040e54f      int32_t rax_621 = data_41e04c ^ 0x419a1788;
+0040e5ac      int32_t rax_622 = 0xffffffff ^ (uint32_t)(uint8_t)rax_621;
+0040e5ae      uint32_t r10_71 = rax_621 >> 8;
+0040e5b7      uint32_t rax_623 = rax_622 >> 1;
+0040e5b7      
+0040e5c3      if (rax_622 & 1)
+0040e5c3          rax_623 ^= 0xedb88320;
+0040e5c3      
+0040e615      uint32_t rax_624 = rax_623 >> 1;
+0040e615      
+0040e622      if (rax_623 & 1)
+0040e622          rax_624 ^= 0xedb88320;
+0040e622      
+0040e666      uint32_t rax_625 = rax_624 >> 1;
+0040e666      
+0040e673      if ((rax_624 & 1) == 1)
+0040e673          rax_625 ^= 0xedb88320;
+0040e673      
+0040e6b8      uint32_t rax_626 = rax_625 >> 1;
+0040e6b8      
+0040e6c5      if ((rax_625 & 1) == 1)
+0040e6c5          rax_626 ^= 0xedb88320;
+0040e6c5      
+0040e71b      uint32_t rax_627 = rax_626 >> 1;
+0040e71b      
+0040e728      if (rax_626 & 1)
+0040e728          rax_627 ^= 0xedb88320;
+0040e728      
+0040e76b      uint32_t rax_628 = rax_627 >> 1;
+0040e76b      
+0040e778      if (rax_627 & 1)
+0040e778          rax_628 ^= 0xedb88320;
+0040e778      
+0040e7b5      uint32_t rax_629 = rax_628 >> 1;
+0040e7b5      
+0040e7c2      if (rax_628 & 1)
+0040e7c2          rax_629 ^= 0xedb88320;
+0040e7c2      
+0040e805      uint32_t rax_630 = rax_629 >> 1;
+0040e805      
+0040e812      if (rax_629 & 1)
+0040e812          rax_630 ^= 0xedb88320;
+0040e812      
+0040e858      uint32_t rax_631 = rax_630 ^ (uint32_t)(uint8_t)r10_71;
+0040e85a      uint32_t r10_72 = r10_71 >> 8;
+0040e863      uint32_t rax_632 = rax_631 >> 1;
+0040e863      
+0040e870      if (rax_631 & 1)
+0040e870          rax_632 ^= 0xedb88320;
+0040e870      
+0040e8b8      uint32_t rax_633 = rax_632 >> 1;
+0040e8b8      
+0040e8c5      if ((rax_632 & 1) == 1)
+0040e8c5          rax_633 ^= 0xedb88320;
+0040e8c5      
+0040e91c      uint32_t rax_634 = rax_633 >> 1;
+0040e91c      
+0040e929      if (rax_633 & 1)
+0040e929          rax_634 ^= 0xedb88320;
+0040e929      
+0040e965      uint32_t rax_635 = rax_634 >> 1;
+0040e965      
+0040e972      if ((rax_634 & 1) == 1)
+0040e972          rax_635 ^= 0xedb88320;
+0040e972      
+0040e9b2      uint32_t rax_636 = rax_635 >> 1;
+0040e9b2      
+0040e9bf      if ((rax_635 & 1) == 1)
+0040e9bf          rax_636 ^= 0xedb88320;
+0040e9bf      
+0040ea06      uint32_t rax_637 = rax_636 >> 1;
+0040ea06      
+0040ea12      if (rax_636 & 1)
+0040ea12          rax_637 ^= 0xedb88320;
+0040ea12      
+0040ea5c      uint32_t rax_638 = rax_637 >> 1;
+0040ea5c      
+0040ea68      if (rax_637 & 1)
+0040ea68          rax_638 ^= 0xedb88320;
+0040ea68      
+0040eaa7      uint32_t rax_639 = rax_638 >> 1;
+0040eaa7      
+0040eab4      if ((rax_638 & 1) == 1)
+0040eab4          rax_639 ^= 0xedb88320;
+0040eab4      
+0040eb01      uint32_t rax_640 = rax_639 ^ (uint32_t)(uint8_t)r10_72;
+0040eb0c      uint32_t rax_641 = rax_640 >> 1;
+0040eb0c      
+0040eb19      if (rax_640 & 1)
+0040eb19          rax_641 ^= 0xedb88320;
+0040eb19      
+0040eb5b      uint32_t rax_642 = rax_641 >> 1;
+0040eb5b      
+0040eb67      if (rax_641 & 1)
+0040eb67          rax_642 ^= 0xedb88320;
+0040eb67      
+0040ebc2      uint32_t rax_643 = rax_642 >> 1;
+0040ebc2      
+0040ebcf      if (rax_642 & 1)
+0040ebcf          rax_643 ^= 0xedb88320;
+0040ebcf      
+0040ec15      uint32_t rax_644 = rax_643 >> 1;
+0040ec15      
+0040ec21      if (rax_643 & 1)
+0040ec21          rax_644 ^= 0xedb88320;
+0040ec21      
+0040ec7b      uint32_t rax_645 = rax_644 >> 1;
+0040ec7b      
+0040ec88      if (rax_644 & 1)
+0040ec88          rax_645 ^= 0xedb88320;
+0040ec88      
+0040ecdf      uint32_t rax_646 = rax_645 >> 1;
+0040ecdf      
+0040ecec      if ((rax_645 & 1) == 1)
+0040ecec          rax_646 ^= 0xedb88320;
+0040ecec      
+0040ed3e      uint32_t rax_647 = rax_646 >> 1;
+0040ed3e      
+0040ed4b      if (rax_646 & 1)
+0040ed4b          rax_647 ^= 0xedb88320;
+0040ed4b      
+0040ed93      uint32_t rax_648 = rax_647 >> 1;
+0040ed93      
+0040ed9f      if (rax_647 & 1)
+0040ed9f          rax_648 ^= 0xedb88320;
+0040ed9f      
+0040edfd      uint32_t rax_649 = rax_648 ^ (uint32_t)(r10_72 >> 8);
+0040ee08      uint32_t rax_650 = rax_649 >> 1;
+0040ee08      
+0040ee15      if ((rax_649 & 1) == 1)
+0040ee15          rax_650 ^= 0xedb88320;
+0040ee15      
+0040ee75      uint32_t rax_651 = rax_650 >> 1;
+0040ee75      
+0040ee82      if ((rax_650 & 1) == 1)
+0040ee82          rax_651 ^= 0xedb88320;
+0040ee82      
+0040eedb      uint32_t rax_652 = rax_651 >> 1;
+0040eedb      
+0040eee8      if (rax_651 & 1)
+0040eee8          rax_652 ^= 0xedb88320;
+0040eee8      
+0040ef37      uint32_t rax_653 = rax_652 >> 1;
+0040ef37      
+0040ef44      if (rax_652 & 1)
+0040ef44          rax_653 ^= 0xedb88320;
+0040ef44      
+0040ef8f      uint32_t rax_654 = rax_653 >> 1;
+0040ef8f      
+0040ef9b      if (rax_653 & 1)
+0040ef9b          rax_654 ^= 0xedb88320;
+0040ef9b      
+0040efdf      uint32_t rax_655 = rax_654 >> 1;
+0040efdf      
+0040efec      if (rax_654 & 1)
+0040efec          rax_655 ^= 0xedb88320;
+0040efec      
+0040f035      uint32_t rax_656 = rax_655 >> 1;
+0040f035      
+0040f042      if (rax_655 & 1)
+0040f042          rax_656 ^= 0xedb88320;
+0040f042      
+0040f08d      uint32_t rax_657 = rax_656 >> 1;
+0040f08d      
+0040f09a      if (rax_656 & 1)
+0040f09a          rax_657 ^= 0xedb88320;
+0040f09a      
+0040f2b9      int32_t rax_665 = rax_657 ^ 0x2639ef82;
+0040f309      int32_t rax_666 = 0xffffffff ^ (uint32_t)(uint8_t)rax_665;
+0040f30b      uint32_t r10_76 = rax_665 >> 8;
+0040f314      uint32_t rax_667 = rax_666 >> 1;
+0040f314      
+0040f321      if (rax_666 & 1)
+0040f321          rax_667 ^= 0xedb88320;
+0040f321      
+0040f366      uint32_t rax_668 = rax_667 >> 1;
+0040f366      
+0040f373      if (rax_667 & 1)
+0040f373          rax_668 ^= 0xedb88320;
+0040f373      
+0040f3c3      uint32_t rax_669 = rax_668 >> 1;
+0040f3c3      
+0040f3cf      if (rax_668 & 1)
+0040f3cf          rax_669 ^= 0xedb88320;
+0040f3cf      
+0040f427      uint32_t rax_670 = rax_669 >> 1;
+0040f427      
+0040f434      if (rax_669 & 1)
+0040f434          rax_670 ^= 0xedb88320;
+0040f434      
+0040f478      uint32_t rax_671 = rax_670 >> 1;
+0040f478      
+0040f485      if (rax_670 & 1)
+0040f485          rax_671 ^= 0xedb88320;
+0040f485      
+0040f4e3      uint32_t rax_672 = rax_671 >> 1;
+0040f4e3      
+0040f4f0      if (rax_671 & 1)
+0040f4f0          rax_672 ^= 0xedb88320;
+0040f4f0      
+0040f546      uint32_t rax_673 = rax_672 >> 1;
+0040f546      
+0040f552      if (rax_672 & 1)
+0040f552          rax_673 ^= 0xedb88320;
+0040f552      
+0040f5b0      uint32_t rax_674 = rax_673 >> 1;
+0040f5b0      
+0040f5bc      if (rax_673 & 1)
+0040f5bc          rax_674 ^= 0xedb88320;
+0040f5bc      
+0040f61e      uint32_t rax_675 = rax_674 ^ (uint32_t)(uint8_t)r10_76;
+0040f620      uint32_t r10_77 = r10_76 >> 8;
+0040f629      uint32_t rax_676 = rax_675 >> 1;
+0040f629      
+0040f635      if (rax_675 & 1)
+0040f635          rax_676 ^= 0xedb88320;
+0040f635      
+0040f673      uint32_t rax_677 = rax_676 >> 1;
+0040f673      
+0040f680      if (rax_676 & 1)
+0040f680          rax_677 ^= 0xedb88320;
+0040f680      
+0040f6c0      uint32_t rax_678 = rax_677 >> 1;
+0040f6c0      
+0040f6cd      if (rax_677 & 1)
+0040f6cd          rax_678 ^= 0xedb88320;
+0040f6cd      
+0040f71d      uint32_t rax_679 = rax_678 >> 1;
+0040f71d      
+0040f72a      if (rax_678 & 1)
+0040f72a          rax_679 ^= 0xedb88320;
+0040f72a      
+0040f788      uint32_t rax_680 = rax_679 >> 1;
+0040f788      
+0040f795      if ((rax_679 & 1) == 1)
+0040f795          rax_680 ^= 0xedb88320;
+0040f795      
+0040f7da      uint32_t rax_681 = rax_680 >> 1;
+0040f7da      
+0040f7e7      if ((rax_680 & 1) == 1)
+0040f7e7          rax_681 ^= 0xedb88320;
+0040f7e7      
+0040f82b      uint32_t rax_682 = rax_681 >> 1;
+0040f82b      
+0040f838      if ((rax_681 & 1) == 1)
+0040f838          rax_682 ^= 0xedb88320;
+0040f838      
+0040f887      uint32_t rax_683 = rax_682 >> 1;
+0040f887      
+0040f893      if (rax_682 & 1)
+0040f893          rax_683 ^= 0xedb88320;
+0040f893      
+0040f8ee      uint32_t rax_684 = rax_683 ^ (uint32_t)(uint8_t)r10_77;
+0040f8f9      uint32_t rax_685 = rax_684 >> 1;
+0040f8f9      
+0040f905      if (rax_684 & 1)
+0040f905          rax_685 ^= 0xedb88320;
+0040f905      
+0040f95e      uint32_t rax_686 = rax_685 >> 1;
+0040f95e      
+0040f96b      if ((rax_685 & 1) == 1)
+0040f96b          rax_686 ^= 0xedb88320;
+0040f96b      
+0040f9b2      uint32_t rax_687 = rax_686 >> 1;
+0040f9b2      
+0040f9bf      if (rax_686 & 1)
+0040f9bf          rax_687 ^= 0xedb88320;
+0040f9bf      
+0040fa1b      uint32_t rax_688 = rax_687 >> 1;
+0040fa1b      
+0040fa28      if (rax_687 & 1)
+0040fa28          rax_688 ^= 0xedb88320;
+0040fa28      
+0040fa80      uint32_t rax_689 = rax_688 >> 1;
+0040fa80      
+0040fa8d      if (rax_688 & 1)
+0040fa8d          rax_689 ^= 0xedb88320;
+0040fa8d      
+0040fadb      uint32_t rax_690 = rax_689 >> 1;
+0040fadb      
+0040fae7      if (rax_689 & 1)
+0040fae7          rax_690 ^= 0xedb88320;
+0040fae7      
+0040fb39      uint32_t rax_691 = rax_690 >> 1;
+0040fb39      
+0040fb46      if (rax_690 & 1)
+0040fb46          rax_691 ^= 0xedb88320;
+0040fb46      
+0040fb9e      uint32_t rax_692 = rax_691 >> 1;
+0040fb9e      
+0040fbab      if ((rax_691 & 1) == 1)
+0040fbab          rax_692 ^= 0xedb88320;
+0040fbab      
+0040fc0d      uint32_t rax_693 = rax_692 ^ (uint32_t)(r10_77 >> 8);
+0040fc18      uint32_t rax_694 = rax_693 >> 1;
+0040fc18      
+0040fc25      if ((rax_693 & 1) == 1)
+0040fc25          rax_694 ^= 0xedb88320;
+0040fc25      
+0040fc6b      uint32_t rax_695 = rax_694 >> 1;
+0040fc6b      
+0040fc78      if (rax_694 & 1)
+0040fc78          rax_695 ^= 0xedb88320;
+0040fc78      
+0040fcb6      uint32_t rax_696 = rax_695 >> 1;
+0040fcb6      
+0040fcc3      if ((rax_695 & 1) == 1)
+0040fcc3          rax_696 ^= 0xedb88320;
+0040fcc3      
+0040fd17      uint32_t rax_697 = rax_696 >> 1;
+0040fd17      
+0040fd23      if (rax_696 & 1)
+0040fd23          rax_697 ^= 0xedb88320;
+0040fd23      
+0040fd6b      uint32_t rax_698 = rax_697 >> 1;
+0040fd6b      
+0040fd78      if (rax_697 & 1)
+0040fd78          rax_698 ^= 0xedb88320;
+0040fd78      
+0040fdc0      uint32_t rax_699 = rax_698 >> 1;
+0040fdc0      
+0040fdcc      if (rax_698 & 1)
+0040fdcc          rax_699 ^= 0xedb88320;
+0040fdcc      
+0040fe18      uint32_t rax_700 = rax_699 >> 1;
+0040fe18      
+0040fe24      if (rax_699 & 1)
+0040fe24          rax_700 ^= 0xedb88320;
+0040fe24      
+0040fe76      uint32_t rax_701 = rax_700 >> 1;
+0040fe76      
+0040fe82      if (rax_700 & 1)
+0040fe82          rax_701 ^= 0xedb88320;
+0040fe82      
+00410155      int32_t r8_49 = 0;
+00410155      
+00410166      if ((rax_701 ^ 0xd8dbf0b2) == 0xb9cc2e00)
+00410166          r8_49 = 1;
+00410166      
+0041016e      if (r8_44 != 1)
+0041016e          r8_49 = 0;
+0041016e      
+00410387      int32_t rax_711 = data_41e050 ^ 0xc06c247d;
+004103e4      int32_t rax_712 = 0xffffffff ^ (uint32_t)(uint8_t)rax_711;
+004103e6      uint32_t r10_81 = rax_711 >> 8;
+004103ef      uint32_t rax_713 = rax_712 >> 1;
+004103ef      
+004103fb      if (rax_712 & 1)
+004103fb          rax_713 ^= 0xedb88320;
+004103fb      
+00410452      uint32_t rax_714 = rax_713 >> 1;
+00410452      
+0041045f      if (rax_713 & 1)
+0041045f          rax_714 ^= 0xedb88320;
+0041045f      
+004104b5      uint32_t rax_715 = rax_714 >> 1;
+004104b5      
+004104c1      if (rax_714 & 1)
+004104c1          rax_715 ^= 0xedb88320;
+004104c1      
+00410509      uint32_t rax_716 = rax_715 >> 1;
+00410509      
+00410516      if ((rax_715 & 1) == 1)
+00410516          rax_716 ^= 0xedb88320;
+00410516      
+0041055a      uint32_t rax_717 = rax_716 >> 1;
+0041055a      
+00410567      if (rax_716 & 1)
+00410567          rax_717 ^= 0xedb88320;
+00410567      
+004105c2      uint32_t rax_718 = rax_717 >> 1;
+004105c2      
+004105ce      if (rax_717 & 1)
+004105ce          rax_718 ^= 0xedb88320;
+004105ce      
+0041062e      uint32_t rax_719 = rax_718 >> 1;
+0041062e      
+0041063b      if ((rax_718 & 1) == 1)
+0041063b          rax_719 ^= 0xedb88320;
+0041063b      
+00410696      uint32_t rax_720 = rax_719 >> 1;
+00410696      
+004106a2      if (rax_719 & 1)
+004106a2          rax_720 ^= 0xedb88320;
+004106a2      
+004106f3      uint32_t rax_721 = rax_720 ^ (uint32_t)(uint8_t)r10_81;
+004106f5      uint32_t r10_82 = r10_81 >> 8;
+004106fe      uint32_t rax_722 = rax_721 >> 1;
+004106fe      
+0041070b      if (rax_721 & 1)
+0041070b          rax_722 ^= 0xedb88320;
+0041070b      
+0041075e      uint32_t rax_723 = rax_722 >> 1;
+0041075e      
+0041076a      if (rax_722 & 1)
+0041076a          rax_723 ^= 0xedb88320;
+0041076a      
+004107ad      uint32_t rax_724 = rax_723 >> 1;
+004107ad      
+004107b9      if (rax_723 & 1)
+004107b9          rax_724 ^= 0xedb88320;
+004107b9      
+00410810      uint32_t rax_725 = rax_724 >> 1;
+00410810      
+0041081d      if ((rax_724 & 1) == 1)
+0041081d          rax_725 ^= 0xedb88320;
+0041081d      
+00410860      uint32_t rax_726 = rax_725 >> 1;
+00410860      
+0041086c      if (rax_725 & 1)
+0041086c          rax_726 ^= 0xedb88320;
+0041086c      
+004108c2      uint32_t rax_727 = rax_726 >> 1;
+004108c2      
+004108cf      if ((rax_726 & 1) == 1)
+004108cf          rax_727 ^= 0xedb88320;
+004108cf      
+00410927      uint32_t rax_728 = rax_727 >> 1;
+00410927      
+00410934      if (rax_727 & 1)
+00410934          rax_728 ^= 0xedb88320;
+00410934      
+0041097d      uint32_t rax_729 = rax_728 >> 1;
+0041097d      
+0041098a      if ((rax_728 & 1) == 1)
+0041098a          rax_729 ^= 0xedb88320;
+0041098a      
+004109d0      uint32_t rax_730 = rax_729 ^ (uint32_t)(uint8_t)r10_82;
+004109db      uint32_t rax_731 = rax_730 >> 1;
+004109db      
+004109e8      if ((rax_730 & 1) == 1)
+004109e8          rax_731 ^= 0xedb88320;
+004109e8      
+00410a3f      uint32_t rax_732 = rax_731 >> 1;
+00410a3f      
+00410a4c      if (rax_731 & 1)
+00410a4c          rax_732 ^= 0xedb88320;
+00410a4c      
+00410aa2      uint32_t rax_733 = rax_732 >> 1;
+00410aa2      
+00410aaf      if ((rax_732 & 1) == 1)
+00410aaf          rax_733 ^= 0xedb88320;
+00410aaf      
+00410b0f      uint32_t rax_734 = rax_733 >> 1;
+00410b0f      
+00410b1c      if ((rax_733 & 1) == 1)
+00410b1c          rax_734 ^= 0xedb88320;
+00410b1c      
+00410b69      uint32_t rax_735 = rax_734 >> 1;
+00410b69      
+00410b75      if (rax_734 & 1)
+00410b75          rax_735 ^= 0xedb88320;
+00410b75      
+00410bd2      uint32_t rax_736 = rax_735 >> 1;
+00410bd2      
+00410bdf      if ((rax_735 & 1) == 1)
+00410bdf          rax_736 ^= 0xedb88320;
+00410bdf      
+00410c20      uint32_t rax_737 = rax_736 >> 1;
+00410c20      
+00410c2d      if ((rax_736 & 1) == 1)
+00410c2d          rax_737 ^= 0xedb88320;
+00410c2d      
+00410c7c      uint32_t rax_738 = rax_737 >> 1;
+00410c7c      
+00410c89      if ((rax_737 & 1) == 1)
+00410c89          rax_738 ^= 0xedb88320;
+00410c89      
+00410ce9      uint32_t rax_739 = rax_738 ^ (uint32_t)(r10_82 >> 8);
+00410cf4      uint32_t rax_740 = rax_739 >> 1;
+00410cf4      
+00410d00      if (rax_739 & 1)
+00410d00          rax_740 ^= 0xedb88320;
+00410d00      
+00410d4a      uint32_t rax_741 = rax_740 >> 1;
+00410d4a      
+00410d56      if (rax_740 & 1)
+00410d56          rax_741 ^= 0xedb88320;
+00410d56      
+00410da1      uint32_t rax_742 = rax_741 >> 1;
+00410da1      
+00410dad      if (rax_741 & 1)
+00410dad          rax_742 ^= 0xedb88320;
+00410dad      
+00410e05      uint32_t rax_743 = rax_742 >> 1;
+00410e05      
+00410e12      if (rax_742 & 1)
+00410e12          rax_743 ^= 0xedb88320;
+00410e12      
+00410e62      uint32_t rax_744 = rax_743 >> 1;
+00410e62      
+00410e6f      if (rax_743 & 1)
+00410e6f          rax_744 ^= 0xedb88320;
+00410e6f      
+00410eca      uint32_t rax_745 = rax_744 >> 1;
+00410eca      
+00410ed6      if (rax_744 & 1)
+00410ed6          rax_745 ^= 0xedb88320;
+00410ed6      
+00410f16      uint32_t rax_746 = rax_745 >> 1;
+00410f16      
+00410f23      if ((rax_745 & 1) == 1)
+00410f23          rax_746 ^= 0xedb88320;
+00410f23      
+00410f76      uint32_t rax_747 = rax_746 >> 1;
+00410f76      
+00410f82      if (rax_746 & 1)
+00410f82          rax_747 ^= 0xedb88320;
+00410f82      
+00411257      int32_t rax_754 = rax_747 ^ 0x59f1292f;
+004112b6      int32_t rax_755 = 0xffffffff ^ (uint32_t)(uint8_t)rax_754;
+004112b8      uint32_t r10_86 = rax_754 >> 8;
+004112c1      uint32_t rax_756 = rax_755 >> 1;
+004112c1      
+004112ce      if ((rax_755 & 1) == 1)
+004112ce          rax_756 ^= 0xedb88320;
+004112ce      
+00411322      uint32_t rax_757 = rax_756 >> 1;
+00411322      
+0041132f      if ((rax_756 & 1) == 1)
+0041132f          rax_757 ^= 0xedb88320;
+0041132f      
+00411372      uint32_t rax_758 = rax_757 >> 1;
+00411372      
+0041137e      if (rax_757 & 1)
+0041137e          rax_758 ^= 0xedb88320;
+0041137e      
+004113d0      uint32_t rax_759 = rax_758 >> 1;
+004113d0      
+004113dd      if (rax_758 & 1)
+004113dd          rax_759 ^= 0xedb88320;
+004113dd      
+00411423      uint32_t rax_760 = rax_759 >> 1;
+00411423      
+00411430      if ((rax_759 & 1) == 1)
+00411430          rax_760 ^= 0xedb88320;
+00411430      
+0041147d      uint32_t rax_761 = rax_760 >> 1;
+0041147d      
+00411489      if (rax_760 & 1)
+00411489          rax_761 ^= 0xedb88320;
+00411489      
+004114da      uint32_t rax_762 = rax_761 >> 1;
+004114da      
+004114e6      if (rax_761 & 1)
+004114e6          rax_762 ^= 0xedb88320;
+004114e6      
+0041152c      uint32_t rax_763 = rax_762 >> 1;
+0041152c      
+00411538      if (rax_762 & 1)
+00411538          rax_763 ^= 0xedb88320;
+00411538      
+00411595      uint32_t rax_764 = rax_763 ^ (uint32_t)(uint8_t)r10_86;
+00411597      uint32_t r10_87 = r10_86 >> 8;
+004115a0      uint32_t rax_765 = rax_764 >> 1;
+004115a0      
+004115ad      if ((rax_764 & 1) == 1)
+004115ad          rax_765 ^= 0xedb88320;
+004115ad      
+004115f8      uint32_t rax_766 = rax_765 >> 1;
+004115f8      
+00411605      if ((rax_765 & 1) == 1)
+00411605          rax_766 ^= 0xedb88320;
+00411605      
+00411644      uint32_t rax_767 = rax_766 >> 1;
+00411644      
+00411650      if (rax_766 & 1)
+00411650          rax_767 ^= 0xedb88320;
+00411650      
+0041169f      uint32_t rax_768 = rax_767 >> 1;
+0041169f      
+004116ac      if ((rax_767 & 1) == 1)
+004116ac          rax_768 ^= 0xedb88320;
+004116ac      
+00411702      uint32_t rax_769 = rax_768 >> 1;
+00411702      
+0041170f      if ((rax_768 & 1) == 1)
+0041170f          rax_769 ^= 0xedb88320;
+0041170f      
+00411758      uint32_t rax_770 = rax_769 >> 1;
+00411758      
+00411764      if (rax_769 & 1)
+00411764          rax_770 ^= 0xedb88320;
+00411764      
+004117b0      uint32_t rax_771 = rax_770 >> 1;
+004117b0      
+004117bd      if (rax_770 & 1)
+004117bd          rax_771 ^= 0xedb88320;
+004117bd      
+0041180f      uint32_t rax_772 = rax_771 >> 1;
+0041180f      
+0041181b      if (rax_771 & 1)
+0041181b          rax_772 ^= 0xedb88320;
+0041181b      
+00411879      uint32_t rax_773 = rax_772 ^ (uint32_t)(uint8_t)r10_87;
+00411884      uint32_t rax_774 = rax_773 >> 1;
+00411884      
+00411890      if (rax_773 & 1)
+00411890          rax_774 ^= 0xedb88320;
+00411890      
+004118e9      uint32_t rax_775 = rax_774 >> 1;
+004118e9      
+004118f5      if (rax_774 & 1)
+004118f5          rax_775 ^= 0xedb88320;
+004118f5      
+00411946      uint32_t rax_776 = rax_775 >> 1;
+00411946      
+00411952      if (rax_775 & 1)
+00411952          rax_776 ^= 0xedb88320;
+00411952      
+00411999      uint32_t rax_777 = rax_776 >> 1;
+00411999      
+004119a5      if (rax_776 & 1)
+004119a5          rax_777 ^= 0xedb88320;
+004119a5      
+004119e6      uint32_t rax_778 = rax_777 >> 1;
+004119e6      
+004119f3      if (rax_777 & 1)
+004119f3          rax_778 ^= 0xedb88320;
+004119f3      
+00411a45      uint32_t rax_779 = rax_778 >> 1;
+00411a45      
+00411a52      if (rax_778 & 1)
+00411a52          rax_779 ^= 0xedb88320;
+00411a52      
+00411ab1      uint32_t rax_780 = rax_779 >> 1;
+00411ab1      
+00411abe      if (rax_779 & 1)
+00411abe          rax_780 ^= 0xedb88320;
+00411abe      
+00411aff      uint32_t rax_781 = rax_780 >> 1;
+00411aff      
+00411b0c      if ((rax_780 & 1) == 1)
+00411b0c          rax_781 ^= 0xedb88320;
+00411b0c      
+00411b65      uint32_t rax_782 = rax_781 ^ (uint32_t)(r10_87 >> 8);
+00411b70      uint32_t rax_783 = rax_782 >> 1;
+00411b70      
+00411b7c      if (rax_782 & 1)
+00411b7c          rax_783 ^= 0xedb88320;
+00411b7c      
+00411bc7      uint32_t rax_784 = rax_783 >> 1;
+00411bc7      
+00411bd4      if ((rax_783 & 1) == 1)
+00411bd4          rax_784 ^= 0xedb88320;
+00411bd4      
+00411c18      uint32_t rax_785 = rax_784 >> 1;
+00411c18      
+00411c25      if ((rax_784 & 1) == 1)
+00411c25          rax_785 ^= 0xedb88320;
+00411c25      
+00411c70      uint32_t rax_786 = rax_785 >> 1;
+00411c70      
+00411c7d      if (rax_785 & 1)
+00411c7d          rax_786 ^= 0xedb88320;
+00411c7d      
+00411cc0      uint32_t rax_787 = rax_786 >> 1;
+00411cc0      
+00411ccd      if (rax_786 & 1)
+00411ccd          rax_787 ^= 0xedb88320;
+00411ccd      
+00411d14      uint32_t rax_788 = rax_787 >> 1;
+00411d14      
+00411d21      if (rax_787 & 1)
+00411d21          rax_788 ^= 0xedb88320;
+00411d21      
+00411d69      uint32_t rax_789 = rax_788 >> 1;
+00411d69      
+00411d75      if (rax_788 & 1)
+00411d75          rax_789 ^= 0xedb88320;
+00411d75      
+00411dce      uint32_t rax_790 = rax_789 >> 1;
+00411dce      
+00411ddb      if (rax_789 & 1)
+00411ddb          rax_790 ^= 0xedb88320;
+00411ddb      
+00412044      int32_t r8_57 = 0;
+00412044      
+00412055      if ((rax_790 ^ 0xfbd635ca) == 0xf18ab873)
+00412055          r8_57 = 1;
+00412055      
+0041205d      if (r8_49 != 1)
+0041205d          r8_57 = 0;
+0041205d      
+0041228b      int32_t rax_800 = data_41e054 ^ 0x25da8545;
+004122eb      int32_t rax_801 = 0xffffffff ^ (uint32_t)(uint8_t)rax_800;
+004122ed      uint32_t r10_91 = rax_800 >> 8;
+004122f6      uint32_t rax_802 = rax_801 >> 1;
+004122f6      
+00412302      if (rax_801 & 1)
+00412302          rax_802 ^= 0xedb88320;
+00412302      
+0041234e      uint32_t rax_803 = rax_802 >> 1;
+0041234e      
+0041235b      if (rax_802 & 1)
+0041235b          rax_803 ^= 0xedb88320;
+0041235b      
+004123a0      uint32_t rax_804 = rax_803 >> 1;
+004123a0      
+004123ac      if (rax_803 & 1)
+004123ac          rax_804 ^= 0xedb88320;
+004123ac      
+00412403      uint32_t rax_805 = rax_804 >> 1;
+00412403      
+00412410      if (rax_804 & 1)
+00412410          rax_805 ^= 0xedb88320;
+00412410      
+00412450      uint32_t rax_806 = rax_805 >> 1;
+00412450      
+0041245d      if ((rax_805 & 1) == 1)
+0041245d          rax_806 ^= 0xedb88320;
+0041245d      
+0041249e      uint32_t rax_807 = rax_806 >> 1;
+0041249e      
+004124ab      if (rax_806 & 1)
+004124ab          rax_807 ^= 0xedb88320;
+004124ab      
+00412505      uint32_t rax_808 = rax_807 >> 1;
+00412505      
+00412512      if (rax_807 & 1)
+00412512          rax_808 ^= 0xedb88320;
+00412512      
+00412555      uint32_t rax_809 = rax_808 >> 1;
+00412555      
+00412561      if (rax_808 & 1)
+00412561          rax_809 ^= 0xedb88320;
+00412561      
+004125b3      uint32_t rax_810 = rax_809 ^ (uint32_t)(uint8_t)r10_91;
+004125b5      uint32_t r10_92 = r10_91 >> 8;
+004125be      uint32_t rax_811 = rax_810 >> 1;
+004125be      
+004125cb      if (rax_810 & 1)
+004125cb          rax_811 ^= 0xedb88320;
+004125cb      
+00412617      uint32_t rax_812 = rax_811 >> 1;
+00412617      
+00412624      if (rax_811 & 1)
+00412624          rax_812 ^= 0xedb88320;
+00412624      
+0041266d      uint32_t rax_813 = rax_812 >> 1;
+0041266d      
+0041267a      if ((rax_812 & 1) == 1)
+0041267a          rax_813 ^= 0xedb88320;
+0041267a      
+004126c3      uint32_t rax_814 = rax_813 >> 1;
+004126c3      
+004126cf      if (rax_813 & 1)
+004126cf          rax_814 ^= 0xedb88320;
+004126cf      
+00412720      uint32_t rax_815 = rax_814 >> 1;
+00412720      
+0041272d      if ((rax_814 & 1) == 1)
+0041272d          rax_815 ^= 0xedb88320;
+0041272d      
+0041277e      uint32_t rax_816 = rax_815 >> 1;
+0041277e      
+0041278b      if (rax_815 & 1)
+0041278b          rax_816 ^= 0xedb88320;
+0041278b      
+004127e8      uint32_t rax_817 = rax_816 >> 1;
+004127e8      
+004127f5      if (rax_816 & 1)
+004127f5          rax_817 ^= 0xedb88320;
+004127f5      
+0041284c      uint32_t rax_818 = rax_817 >> 1;
+0041284c      
+00412859      if (rax_817 & 1)
+00412859          rax_818 ^= 0xedb88320;
+00412859      
+004128a1      uint32_t rax_819 = rax_818 ^ (uint32_t)(uint8_t)r10_92;
+004128ac      uint32_t rax_820 = rax_819 >> 1;
+004128ac      
+004128b9      if (rax_819 & 1)
+004128b9          rax_820 ^= 0xedb88320;
+004128b9      
+00412911      uint32_t rax_821 = rax_820 >> 1;
+00412911      
+0041291d      if (rax_820 & 1)
+0041291d          rax_821 ^= 0xedb88320;
+0041291d      
+0041296d      uint32_t rax_822 = rax_821 >> 1;
+0041296d      
+00412979      if (rax_821 & 1)
+00412979          rax_822 ^= 0xedb88320;
+00412979      
+004129c5      uint32_t rax_823 = rax_822 >> 1;
+004129c5      
+004129d2      if ((rax_822 & 1) == 1)
+004129d2          rax_823 ^= 0xedb88320;
+004129d2      
+00412a14      uint32_t rax_824 = rax_823 >> 1;
+00412a14      
+00412a21      if ((rax_823 & 1) == 1)
+00412a21          rax_824 ^= 0xedb88320;
+00412a21      
+00412a66      uint32_t rax_825 = rax_824 >> 1;
+00412a66      
+00412a73      if (rax_824 & 1)
+00412a73          rax_825 ^= 0xedb88320;
+00412a73      
+00412aca      uint32_t rax_826 = rax_825 >> 1;
+00412aca      
+00412ad7      if (rax_825 & 1)
+00412ad7          rax_826 ^= 0xedb88320;
+00412ad7      
+00412b30      uint32_t rax_827 = rax_826 >> 1;
+00412b30      
+00412b3c      if (rax_826 & 1)
+00412b3c          rax_827 ^= 0xedb88320;
+00412b3c      
+00412b7e      uint32_t rax_828 = rax_827 ^ (uint32_t)(r10_92 >> 8);
+00412b89      uint32_t rax_829 = rax_828 >> 1;
+00412b89      
+00412b96      if ((rax_828 & 1) == 1)
+00412b96          rax_829 ^= 0xedb88320;
+00412b96      
+00412bec      uint32_t rax_830 = rax_829 >> 1;
+00412bec      
+00412bf8      if (rax_829 & 1)
+00412bf8          rax_830 ^= 0xedb88320;
+00412bf8      
+00412c38      uint32_t rax_831 = rax_830 >> 1;
+00412c38      
+00412c45      if (rax_830 & 1)
+00412c45          rax_831 ^= 0xedb88320;
+00412c45      
+00412c94      uint32_t rax_832 = rax_831 >> 1;
+00412c94      
+00412ca0      if (rax_831 & 1)
+00412ca0          rax_832 ^= 0xedb88320;
+00412ca0      
+00412cf1      uint32_t rax_833 = rax_832 >> 1;
+00412cf1      
+00412cfe      if (rax_832 & 1)
+00412cfe          rax_833 ^= 0xedb88320;
+00412cfe      
+00412d3e      uint32_t rax_834 = rax_833 >> 1;
+00412d3e      
+00412d4b      if (rax_833 & 1)
+00412d4b          rax_834 ^= 0xedb88320;
+00412d4b      
+00412d8a      uint32_t rax_835 = rax_834 >> 1;
+00412d8a      
+00412d97      if ((rax_834 & 1) == 1)
+00412d97          rax_835 ^= 0xedb88320;
+00412d97      
+00412de5      uint32_t rax_836 = rax_835 >> 1;
+00412de5      
+00412df1      if (rax_835 & 1)
+00412df1          rax_836 ^= 0xedb88320;
+00412df1      
+0041310b      int32_t rax_843 = rax_836 ^ 0x3e9a8cc3;
+00413168      int32_t rax_844 = 0xffffffff ^ (uint32_t)(uint8_t)rax_843;
+0041316a      uint32_t r10_96 = rax_843 >> 8;
+00413173      uint32_t rax_845 = rax_844 >> 1;
+00413173      
+00413180      if (rax_844 & 1)
+00413180          rax_845 ^= 0xedb88320;
+00413180      
+004131d9      uint32_t rax_846 = rax_845 >> 1;
+004131d9      
+004131e6      if ((rax_845 & 1) == 1)
+004131e6          rax_846 ^= 0xedb88320;
+004131e6      
+00413237      uint32_t rax_847 = rax_846 >> 1;
+00413237      
+00413243      if (rax_846 & 1)
+00413243          rax_847 ^= 0xedb88320;
+00413243      
+00413299      uint32_t rax_848 = rax_847 >> 1;
+00413299      
+004132a6      if ((rax_847 & 1) == 1)
+004132a6          rax_848 ^= 0xedb88320;
+004132a6      
+004132f9      uint32_t rax_849 = rax_848 >> 1;
+004132f9      
+00413305      if (rax_848 & 1)
+00413305          rax_849 ^= 0xedb88320;
+00413305      
+0041335d      uint32_t rax_850 = rax_849 >> 1;
+0041335d      
+0041336a      if ((rax_849 & 1) == 1)
+0041336a          rax_850 ^= 0xedb88320;
+0041336a      
+004133ae      uint32_t rax_851 = rax_850 >> 1;
+004133ae      
+004133bb      if ((rax_850 & 1) == 1)
+004133bb          rax_851 ^= 0xedb88320;
+004133bb      
+00413413      uint32_t rax_852 = rax_851 >> 1;
+00413413      
+00413420      if ((rax_851 & 1) == 1)
+00413420          rax_852 ^= 0xedb88320;
+00413420      
+00413472      uint32_t rax_853 = rax_852 ^ (uint32_t)(uint8_t)r10_96;
+00413474      uint32_t r10_97 = r10_96 >> 8;
+0041347d      uint32_t rax_854 = rax_853 >> 1;
+0041347d      
+0041348a      if ((rax_853 & 1) == 1)
+0041348a          rax_854 ^= 0xedb88320;
+0041348a      
+004134e6      uint32_t rax_855 = rax_854 >> 1;
+004134e6      
+004134f3      if ((rax_854 & 1) == 1)
+004134f3          rax_855 ^= 0xedb88320;
+004134f3      
+00413545      uint32_t rax_856 = rax_855 >> 1;
+00413545      
+00413552      if ((rax_855 & 1) == 1)
+00413552          rax_856 ^= 0xedb88320;
+00413552      
+00413592      uint32_t rax_857 = rax_856 >> 1;
+00413592      
+0041359f      if (rax_856 & 1)
+0041359f          rax_857 ^= 0xedb88320;
+0041359f      
+004135f8      uint32_t rax_858 = rax_857 >> 1;
+004135f8      
+00413605      if (rax_857 & 1)
+00413605          rax_858 ^= 0xedb88320;
+00413605      
+00413662      uint32_t rax_859 = rax_858 >> 1;
+00413662      
+0041366e      if (rax_858 & 1)
+0041366e          rax_859 ^= 0xedb88320;
+0041366e      
+004136bf      uint32_t rax_860 = rax_859 >> 1;
+004136bf      
+004136cb      if (rax_859 & 1)
+004136cb          rax_860 ^= 0xedb88320;
+004136cb      
+0041371c      uint32_t rax_861 = rax_860 >> 1;
+0041371c      
+00413729      if ((rax_860 & 1) == 1)
+00413729          rax_861 ^= 0xedb88320;
+00413729      
+0041378b      uint32_t rax_862 = rax_861 ^ (uint32_t)(uint8_t)r10_97;
+00413796      uint32_t rax_863 = rax_862 >> 1;
+00413796      
+004137a3      if (rax_862 & 1)
+004137a3          rax_863 ^= 0xedb88320;
+004137a3      
+004137fc      uint32_t rax_864 = rax_863 >> 1;
+004137fc      
+00413808      if (rax_863 & 1)
+00413808          rax_864 ^= 0xedb88320;
+00413808      
+0041385c      uint32_t rax_865 = rax_864 >> 1;
+0041385c      
+00413869      if (rax_864 & 1)
+00413869          rax_865 ^= 0xedb88320;
+00413869      
+004138ae      uint32_t rax_866 = rax_865 >> 1;
+004138ae      
+004138bb      if ((rax_865 & 1) == 1)
+004138bb          rax_866 ^= 0xedb88320;
+004138bb      
+004138fc      uint32_t rax_867 = rax_866 >> 1;
+004138fc      
+00413908      if (rax_866 & 1)
+00413908          rax_867 ^= 0xedb88320;
+00413908      
+00413955      uint32_t rax_868 = rax_867 >> 1;
+00413955      
+00413961      if (rax_867 & 1)
+00413961          rax_868 ^= 0xedb88320;
+00413961      
+004139ac      uint32_t rax_869 = rax_868 >> 1;
+004139ac      
+004139b9      if ((rax_868 & 1) == 1)
+004139b9          rax_869 ^= 0xedb88320;
+004139b9      
+00413a06      uint32_t rax_870 = rax_869 >> 1;
+00413a06      
+00413a13      if (rax_869 & 1)
+00413a13          rax_870 ^= 0xedb88320;
+00413a13      
+00413a60      uint32_t rax_871 = rax_870 ^ (uint32_t)(r10_97 >> 8);
+00413a6b      uint32_t rax_872 = rax_871 >> 1;
+00413a6b      
+00413a78      if (rax_871 & 1)
+00413a78          rax_872 ^= 0xedb88320;
+00413a78      
+00413ab9      uint32_t rax_873 = rax_872 >> 1;
+00413ab9      
+00413ac6      if ((rax_872 & 1) == 1)
+00413ac6          rax_873 ^= 0xedb88320;
+00413ac6      
+00413b1c      uint32_t rax_874 = rax_873 >> 1;
+00413b1c      
+00413b29      if (rax_873 & 1)
+00413b29          rax_874 ^= 0xedb88320;
+00413b29      
+00413b75      uint32_t rax_875 = rax_874 >> 1;
+00413b75      
+00413b82      if (rax_874 & 1)
+00413b82          rax_875 ^= 0xedb88320;
+00413b82      
+00413be0      uint32_t rax_876 = rax_875 >> 1;
+00413be0      
+00413bed      if (rax_875 & 1)
+00413bed          rax_876 ^= 0xedb88320;
+00413bed      
+00413c49      uint32_t rax_877 = rax_876 >> 1;
+00413c49      
+00413c55      if (rax_876 & 1)
+00413c55          rax_877 ^= 0xedb88320;
+00413c55      
+00413ca4      uint32_t rax_878 = rax_877 >> 1;
+00413ca4      
+00413cb1      if ((rax_877 & 1) == 1)
+00413cb1          rax_878 ^= 0xedb88320;
+00413cb1      
+00413d01      uint32_t rax_879 = rax_878 >> 1;
+00413d01      
+00413d0d      if (rax_878 & 1)
+00413d0d          rax_879 ^= 0xedb88320;
+00413d0d      
+00413fd8      int32_t r8_63 = 0;
+00413fd8      
+00413fe9      if ((rax_879 ^ 0x849f9a11) == 0xdac14c3)
+00413fe9          r8_63 = 1;
+00413fe9      
+00413ff1      if (r8_57 != 1)
+00413ff1          r8_63 = 0;
+00413ff1      
+004141d2      int32_t rax_891 = data_41e058 ^ 0xa7cd4388;
+00414220      int32_t rax_892 = 0xffffffff ^ (uint32_t)(uint8_t)rax_891;
+00414222      uint32_t r10_101 = rax_891 >> 8;
+0041422b      uint32_t rax_893 = rax_892 >> 1;
+0041422b      
+00414238      if ((rax_892 & 1) == 1)
+00414238          rax_893 ^= 0xedb88320;
+00414238      
+0041427f      uint32_t rax_894 = rax_893 >> 1;
+0041427f      
+0041428b      if (rax_893 & 1)
+0041428b          rax_894 ^= 0xedb88320;
+0041428b      
+004142e7      uint32_t rax_895 = rax_894 >> 1;
+004142e7      
+004142f3      if (rax_894 & 1)
+004142f3          rax_895 ^= 0xedb88320;
+004142f3      
+0041434a      uint32_t rax_896 = rax_895 >> 1;
+0041434a      
+00414357      if ((rax_895 & 1) == 1)
+00414357          rax_896 ^= 0xedb88320;
+00414357      
+004143a6      uint32_t rax_897 = rax_896 >> 1;
+004143a6      
+004143b2      if (rax_896 & 1)
+004143b2          rax_897 ^= 0xedb88320;
+004143b2      
+004143f1      uint32_t rax_898 = rax_897 >> 1;
+004143f1      
+004143fe      if (rax_897 & 1)
+004143fe          rax_898 ^= 0xedb88320;
+004143fe      
+00414442      uint32_t rax_899 = rax_898 >> 1;
+00414442      
+0041444f      if (rax_898 & 1)
+0041444f          rax_899 ^= 0xedb88320;
+0041444f      
+004144a7      uint32_t rax_900 = rax_899 >> 1;
+004144a7      
+004144b4      if ((rax_899 & 1) == 1)
+004144b4          rax_900 ^= 0xedb88320;
+004144b4      
+00414514      uint32_t rax_901 = rax_900 ^ (uint32_t)(uint8_t)r10_101;
+00414516      uint32_t r10_102 = r10_101 >> 8;
+0041451f      uint32_t rax_902 = rax_901 >> 1;
+0041451f      
+0041452c      if ((rax_901 & 1) == 1)
+0041452c          rax_902 ^= 0xedb88320;
+0041452c      
+0041457f      uint32_t rax_903 = rax_902 >> 1;
+0041457f      
+0041458c      if ((rax_902 & 1) == 1)
+0041458c          rax_903 ^= 0xedb88320;
+0041458c      
+004145e3      uint32_t rax_904 = rax_903 >> 1;
+004145e3      
+004145f0      if ((rax_903 & 1) == 1)
+004145f0          rax_904 ^= 0xedb88320;
+004145f0      
+00414643      uint32_t rax_905 = rax_904 >> 1;
+00414643      
+00414650      if ((rax_904 & 1) == 1)
+00414650          rax_905 ^= 0xedb88320;
+00414650      
+0041469b      uint32_t rax_906 = rax_905 >> 1;
+0041469b      
+004146a8      if ((rax_905 & 1) == 1)
+004146a8          rax_906 ^= 0xedb88320;
+004146a8      
+00414708      uint32_t rax_907 = rax_906 >> 1;
+00414708      
+00414714      if (rax_906 & 1)
+00414714          rax_907 ^= 0xedb88320;
+00414714      
+0041475f      uint32_t rax_908 = rax_907 >> 1;
+0041475f      
+0041476c      if ((rax_907 & 1) == 1)
+0041476c          rax_908 ^= 0xedb88320;
+0041476c      
+004147bd      uint32_t rax_909 = rax_908 >> 1;
+004147bd      
+004147ca      if ((rax_908 & 1) == 1)
+004147ca          rax_909 ^= 0xedb88320;
+004147ca      
+0041481d      uint32_t rax_910 = rax_909 ^ (uint32_t)(uint8_t)r10_102;
+00414828      uint32_t rax_911 = rax_910 >> 1;
+00414828      
+00414835      if (rax_910 & 1)
+00414835          rax_911 ^= 0xedb88320;
+00414835      
+00414883      uint32_t rax_912 = rax_911 >> 1;
+00414883      
+00414890      if (rax_911 & 1)
+00414890          rax_912 ^= 0xedb88320;
+00414890      
+004148ea      uint32_t rax_913 = rax_912 >> 1;
+004148ea      
+004148f7      if ((rax_912 & 1) == 1)
+004148f7          rax_913 ^= 0xedb88320;
+004148f7      
+0041493b      uint32_t rax_914 = rax_913 >> 1;
+0041493b      
+00414947      if (rax_913 & 1)
+00414947          rax_914 ^= 0xedb88320;
+00414947      
+004149a4      uint32_t rax_915 = rax_914 >> 1;
+004149a4      
+004149b1      if (rax_914 & 1)
+004149b1          rax_915 ^= 0xedb88320;
+004149b1      
+004149f6      uint32_t rax_916 = rax_915 >> 1;
+004149f6      
+00414a03      if ((rax_915 & 1) == 1)
+00414a03          rax_916 ^= 0xedb88320;
+00414a03      
+00414a48      uint32_t rax_917 = rax_916 >> 1;
+00414a48      
+00414a55      if ((rax_916 & 1) == 1)
+00414a55          rax_917 ^= 0xedb88320;
+00414a55      
+00414a9d      uint32_t rax_918 = rax_917 >> 1;
+00414a9d      
+00414aaa      if ((rax_917 & 1) == 1)
+00414aaa          rax_918 ^= 0xedb88320;
+00414aaa      
+00414afd      uint32_t rax_919 = rax_918 ^ (uint32_t)(r10_102 >> 8);
+00414b08      uint32_t rax_920 = rax_919 >> 1;
+00414b08      
+00414b14      if (rax_919 & 1)
+00414b14          rax_920 ^= 0xedb88320;
+00414b14      
+00414b73      uint32_t rax_921 = rax_920 >> 1;
+00414b73      
+00414b80      if (rax_920 & 1)
+00414b80          rax_921 ^= 0xedb88320;
+00414b80      
+00414bcf      uint32_t rax_922 = rax_921 >> 1;
+00414bcf      
+00414bdc      if (rax_921 & 1)
+00414bdc          rax_922 ^= 0xedb88320;
+00414bdc      
+00414c38      uint32_t rax_923 = rax_922 >> 1;
+00414c38      
+00414c45      if ((rax_922 & 1) == 1)
+00414c45          rax_923 ^= 0xedb88320;
+00414c45      
+00414c84      uint32_t rax_924 = rax_923 >> 1;
+00414c84      
+00414c91      if (rax_923 & 1)
+00414c91          rax_924 ^= 0xedb88320;
+00414c91      
+00414cd8      uint32_t rax_925 = rax_924 >> 1;
+00414cd8      
+00414ce5      if ((rax_924 & 1) == 1)
+00414ce5          rax_925 ^= 0xedb88320;
+00414ce5      
+00414d21      uint32_t rax_926 = rax_925 >> 1;
+00414d21      
+00414d2e      if ((rax_925 & 1) == 1)
+00414d2e          rax_926 ^= 0xedb88320;
+00414d2e      
+00414d82      uint32_t rax_927 = rax_926 >> 1;
+00414d82      
+00414d8f      if ((rax_926 & 1) == 1)
+00414d8f          rax_927 ^= 0xedb88320;
+00414d8f      
+0041508e      int32_t rax_933 = rax_927 ^ 0xd6819632;
+004150f2      int32_t rax_934 = 0xffffffff ^ (uint32_t)(uint8_t)rax_933;
+004150f4      uint32_t r10_106 = rax_933 >> 8;
+004150fd      uint32_t rax_935 = rax_934 >> 1;
+004150fd      
+0041510a      if (rax_934 & 1)
+0041510a          rax_935 ^= 0xedb88320;
+0041510a      
+0041515d      uint32_t rax_936 = rax_935 >> 1;
+0041515d      
+0041516a      if ((rax_935 & 1) == 1)
+0041516a          rax_936 ^= 0xedb88320;
+0041516a      
+004151bb      uint32_t rax_937 = rax_936 >> 1;
+004151bb      
+004151c8      if ((rax_936 & 1) == 1)
+004151c8          rax_937 ^= 0xedb88320;
+004151c8      
+00415224      uint32_t rax_938 = rax_937 >> 1;
+00415224      
+00415230      if (rax_937 & 1)
+00415230          rax_938 ^= 0xedb88320;
+00415230      
+0041528a      uint32_t rax_939 = rax_938 >> 1;
+0041528a      
+00415297      if (rax_938 & 1)
+00415297          rax_939 ^= 0xedb88320;
+00415297      
+004152e7      uint32_t rax_940 = rax_939 >> 1;
+004152e7      
+004152f4      if (rax_939 & 1)
+004152f4          rax_940 ^= 0xedb88320;
+004152f4      
+00415340      uint32_t rax_941 = rax_940 >> 1;
+00415340      
+0041534d      if (rax_940 & 1)
+0041534d          rax_941 ^= 0xedb88320;
+0041534d      
+004153a4      uint32_t rax_942 = rax_941 >> 1;
+004153a4      
+004153b1      if (rax_941 & 1)
+004153b1          rax_942 ^= 0xedb88320;
+004153b1      
+004153fd      uint32_t rax_943 = rax_942 ^ (uint32_t)(uint8_t)r10_106;
+004153ff      uint32_t r10_107 = r10_106 >> 8;
+00415408      uint32_t rax_944 = rax_943 >> 1;
+00415408      
+00415415      if ((rax_943 & 1) == 1)
+00415415          rax_944 ^= 0xedb88320;
+00415415      
+00415461      uint32_t rax_945 = rax_944 >> 1;
+00415461      
+0041546e      if (rax_944 & 1)
+0041546e          rax_945 ^= 0xedb88320;
+0041546e      
+004154ab      uint32_t rax_946 = rax_945 >> 1;
+004154ab      
+004154b8      if ((rax_945 & 1) == 1)
+004154b8          rax_946 ^= 0xedb88320;
+004154b8      
+004154ff      uint32_t rax_947 = rax_946 >> 1;
+004154ff      
+0041550b      if (rax_946 & 1)
+0041550b          rax_947 ^= 0xedb88320;
+0041550b      
+00415566      uint32_t rax_948 = rax_947 >> 1;
+00415566      
+00415572      if (rax_947 & 1)
+00415572          rax_948 ^= 0xedb88320;
+00415572      
+004155c7      uint32_t rax_949 = rax_948 >> 1;
+004155c7      
+004155d3      if (rax_948 & 1)
+004155d3          rax_949 ^= 0xedb88320;
+004155d3      
+0041562d      uint32_t rax_950 = rax_949 >> 1;
+0041562d      
+0041563a      if ((rax_949 & 1) == 1)
+0041563a          rax_950 ^= 0xedb88320;
+0041563a      
+0041568d      uint32_t rax_951 = rax_950 >> 1;
+0041568d      
+0041569a      if ((rax_950 & 1) == 1)
+0041569a          rax_951 ^= 0xedb88320;
+0041569a      
+004156e8      uint32_t rax_952 = rax_951 ^ (uint32_t)(uint8_t)r10_107;
+004156f3      uint32_t rax_953 = rax_952 >> 1;
+004156f3      
+004156ff      if (rax_952 & 1)
+004156ff          rax_953 ^= 0xedb88320;
+004156ff      
+00415759      uint32_t rax_954 = rax_953 >> 1;
+00415759      
+00415766      if (rax_953 & 1)
+00415766          rax_954 ^= 0xedb88320;
+00415766      
+004157bf      uint32_t rax_955 = rax_954 >> 1;
+004157bf      
+004157cc      if ((rax_954 & 1) == 1)
+004157cc          rax_955 ^= 0xedb88320;
+004157cc      
+0041581d      uint32_t rax_956 = rax_955 >> 1;
+0041581d      
+00415829      if (rax_955 & 1)
+00415829          rax_956 ^= 0xedb88320;
+00415829      
+00415875      uint32_t rax_957 = rax_956 >> 1;
+00415875      
+00415881      if (rax_956 & 1)
+00415881          rax_957 ^= 0xedb88320;
+00415881      
+004158de      uint32_t rax_958 = rax_957 >> 1;
+004158de      
+004158eb      if ((rax_957 & 1) == 1)
+004158eb          rax_958 ^= 0xedb88320;
+004158eb      
+00415948      uint32_t rax_959 = rax_958 >> 1;
+00415948      
+00415954      if (rax_958 & 1)
+00415954          rax_959 ^= 0xedb88320;
+00415954      
+004159b5      uint32_t rax_960 = rax_959 >> 1;
+004159b5      
+004159c2      if (rax_959 & 1)
+004159c2          rax_960 ^= 0xedb88320;
+004159c2      
+00415a10      uint32_t rax_961 = rax_960 ^ (uint32_t)(r10_107 >> 8);
+00415a1b      uint32_t rax_962 = rax_961 >> 1;
+00415a1b      
+00415a27      if (rax_961 & 1)
+00415a27          rax_962 ^= 0xedb88320;
+00415a27      
+00415a79      uint32_t rax_963 = rax_962 >> 1;
+00415a79      
+00415a85      if (rax_962 & 1)
+00415a85          rax_963 ^= 0xedb88320;
+00415a85      
+00415ad4      uint32_t rax_964 = rax_963 >> 1;
+00415ad4      
+00415ae1      if ((rax_963 & 1) == 1)
+00415ae1          rax_964 ^= 0xedb88320;
+00415ae1      
+00415b30      uint32_t rax_965 = rax_964 >> 1;
+00415b30      
+00415b3d      if ((rax_964 & 1) == 1)
+00415b3d          rax_965 ^= 0xedb88320;
+00415b3d      
+00415b82      uint32_t rax_966 = rax_965 >> 1;
+00415b82      
+00415b8f      if (rax_965 & 1)
+00415b8f          rax_966 ^= 0xedb88320;
+00415b8f      
+00415be0      uint32_t rax_967 = rax_966 >> 1;
+00415be0      
+00415bec      if (rax_966 & 1)
+00415bec          rax_967 ^= 0xedb88320;
+00415bec      
+00415c3b      uint32_t rax_968 = rax_967 >> 1;
+00415c3b      
+00415c48      if ((rax_967 & 1) == 1)
+00415c48          rax_968 ^= 0xedb88320;
+00415c48      
+00415ca8      uint32_t rax_969 = rax_968 >> 1;
+00415ca8      
+00415cb4      if (rax_968 & 1)
+00415cb4          rax_969 ^= 0xedb88320;
+00415cb4      
+00415e4a      int32_t r8_66 = 0;
+00415e4a      
+00415e5b      if ((rax_969 ^ 0x9e1b7c84) == 0xaf18e91)
+00415e5b          r8_66 = 1;
+00415e5b      
+00415e63      if (r8_63 != 1)
+00415e63          r8_66 = 0;
+00415e63      
+0041602a      int32_t rax_977 = data_41e05c ^ 0x2d12a8df;
+00416083      int32_t rax_978 = 0xffffffff ^ (uint32_t)(uint8_t)rax_977;
+00416085      uint32_t r10_111 = rax_977 >> 8;
+0041608e      uint32_t rax_979 = rax_978 >> 1;
+0041608e      
+0041609b      if ((rax_978 & 1) == 1)
+0041609b          rax_979 ^= 0xedb88320;
+0041609b      
+004160e9      uint32_t rax_980 = rax_979 >> 1;
+004160e9      
+004160f5      if (rax_979 & 1)
+004160f5          rax_980 ^= 0xedb88320;
+004160f5      
+00416152      uint32_t rax_981 = rax_980 >> 1;
+00416152      
+0041615f      if (rax_980 & 1)
+0041615f          rax_981 ^= 0xedb88320;
+0041615f      
+004161a9      uint32_t rax_982 = rax_981 >> 1;
+004161a9      
+004161b6      if ((rax_981 & 1) == 1)
+004161b6          rax_982 ^= 0xedb88320;
+004161b6      
+00416205      uint32_t rax_983 = rax_982 >> 1;
+00416205      
+00416211      if (rax_982 & 1)
+00416211          rax_983 ^= 0xedb88320;
+00416211      
+00416261      uint32_t rax_984 = rax_983 >> 1;
+00416261      
+0041626e      if ((rax_983 & 1) == 1)
+0041626e          rax_984 ^= 0xedb88320;
+0041626e      
+004162b1      uint32_t rax_985 = rax_984 >> 1;
+004162b1      
+004162be      if ((rax_984 & 1) == 1)
+004162be          rax_985 ^= 0xedb88320;
+004162be      
+00416317      uint32_t rax_986 = rax_985 >> 1;
+00416317      
+00416323      if (rax_985 & 1)
+00416323          rax_986 ^= 0xedb88320;
+00416323      
+00416370      uint32_t rax_987 = rax_986 ^ (uint32_t)(uint8_t)r10_111;
+00416372      uint32_t r10_112 = r10_111 >> 8;
+0041637b      uint32_t rax_988 = rax_987 >> 1;
+0041637b      
+00416387      if (rax_987 & 1)
+00416387          rax_988 ^= 0xedb88320;
+00416387      
+004163e1      uint32_t rax_989 = rax_988 >> 1;
+004163e1      
+004163ee      if ((rax_988 & 1) == 1)
+004163ee          rax_989 ^= 0xedb88320;
+004163ee      
+0041642e      uint32_t rax_990 = rax_989 >> 1;
+0041642e      
+0041643b      if (rax_989 & 1)
+0041643b          rax_990 ^= 0xedb88320;
+0041643b      
+0041648e      uint32_t rax_991 = rax_990 >> 1;
+0041648e      
+0041649b      if (rax_990 & 1)
+0041649b          rax_991 ^= 0xedb88320;
+0041649b      
+004164e2      uint32_t rax_992 = rax_991 >> 1;
+004164e2      
+004164ef      if ((rax_991 & 1) == 1)
+004164ef          rax_992 ^= 0xedb88320;
+004164ef      
+00416548      uint32_t rax_993 = rax_992 >> 1;
+00416548      
+00416554      if (rax_992 & 1)
+00416554          rax_993 ^= 0xedb88320;
+00416554      
+004165a5      uint32_t rax_994 = rax_993 >> 1;
+004165a5      
+004165b2      if ((rax_993 & 1) == 1)
+004165b2          rax_994 ^= 0xedb88320;
+004165b2      
+00416604      uint32_t rax_995 = rax_994 >> 1;
+00416604      
+00416610      if (rax_994 & 1)
+00416610          rax_995 ^= 0xedb88320;
+00416610      
+00416665      uint32_t rax_996 = rax_995 ^ (uint32_t)(uint8_t)r10_112;
+00416670      uint32_t rax_997 = rax_996 >> 1;
+00416670      
+0041667c      if (rax_996 & 1)
+0041667c          rax_997 ^= 0xedb88320;
+0041667c      
+004166ba      uint32_t rax_998 = rax_997 >> 1;
+004166ba      
+004166c7      if (rax_997 & 1)
+004166c7          rax_998 ^= 0xedb88320;
+004166c7      
+00416711      uint32_t rax_999 = rax_998 >> 1;
+00416711      
+0041671d      if (rax_998 & 1)
+0041671d          rax_999 ^= 0xedb88320;
+0041671d      
+00416762      uint32_t rax_1000 = rax_999 >> 1;
+00416762      
+0041676f      if (rax_999 & 1)
+0041676f          rax_1000 ^= 0xedb88320;
+0041676f      
+004167ae      uint32_t rax_1001 = rax_1000 >> 1;
+004167ae      
+004167ba      if (rax_1000 & 1)
+004167ba          rax_1001 ^= 0xedb88320;
+004167ba      
+004167f8      uint32_t rax_1002 = rax_1001 >> 1;
+004167f8      
+00416805      if (rax_1001 & 1)
+00416805          rax_1002 ^= 0xedb88320;
+00416805      
+0041684e      uint32_t rax_1003 = rax_1002 >> 1;
+0041684e      
+0041685b      if ((rax_1002 & 1) == 1)
+0041685b          rax_1003 ^= 0xedb88320;
+0041685b      
+004168ba      uint32_t rax_1004 = rax_1003 >> 1;
+004168ba      
+004168c7      if ((rax_1003 & 1) == 1)
+004168c7          rax_1004 ^= 0xedb88320;
+004168c7      
+0041691f      uint32_t rax_1005 = rax_1004 ^ (uint32_t)(r10_112 >> 8);
+0041692a      uint32_t rax_1006 = rax_1005 >> 1;
+0041692a      
+00416937      if ((rax_1005 & 1) == 1)
+00416937          rax_1006 ^= 0xedb88320;
+00416937      
+00416993      uint32_t rax_1007 = rax_1006 >> 1;
+00416993      
+004169a0      if (rax_1006 & 1)
+004169a0          rax_1007 ^= 0xedb88320;
+004169a0      
+004169e8      uint32_t rax_1008 = rax_1007 >> 1;
+004169e8      
+004169f4      if (rax_1007 & 1)
+004169f4          rax_1008 ^= 0xedb88320;
+004169f4      
+00416a38      uint32_t rax_1009 = rax_1008 >> 1;
+00416a38      
+00416a44      if (rax_1008 & 1)
+00416a44          rax_1009 ^= 0xedb88320;
+00416a44      
+00416a9a      uint32_t rax_1010 = rax_1009 >> 1;
+00416a9a      
+00416aa6      if (rax_1009 & 1)
+00416aa6          rax_1010 ^= 0xedb88320;
+00416aa6      
+00416ae4      uint32_t rax_1011 = rax_1010 >> 1;
+00416ae4      
+00416af1      if ((rax_1010 & 1) == 1)
+00416af1          rax_1011 ^= 0xedb88320;
+00416af1      
+00416b42      uint32_t rax_1012 = rax_1011 >> 1;
+00416b42      
+00416b4f      if (rax_1011 & 1)
+00416b4f          rax_1012 ^= 0xedb88320;
+00416b4f      
+00416b8e      uint32_t rax_1013 = rax_1012 >> 1;
+00416b8e      
+00416b9b      if ((rax_1012 & 1) == 1)
+00416b9b          rax_1013 ^= 0xedb88320;
+00416b9b      
+00416def      int32_t rax_1021 = rax_1013 ^ 0x81df0b13;
+00416e3e      int32_t rax_1022 = 0xffffffff ^ (uint32_t)(uint8_t)rax_1021;
+00416e40      uint32_t r10_116 = rax_1021 >> 8;
+00416e49      uint32_t rax_1023 = rax_1022 >> 1;
+00416e49      
+00416e56      if (rax_1022 & 1)
+00416e56          rax_1023 ^= 0xedb88320;
+00416e56      
+00416eb2      uint32_t rax_1024 = rax_1023 >> 1;
+00416eb2      
+00416ebe      if (rax_1023 & 1)
+00416ebe          rax_1024 ^= 0xedb88320;
+00416ebe      
+00416f06      uint32_t rax_1025 = rax_1024 >> 1;
+00416f06      
+00416f13      if (rax_1024 & 1)
+00416f13          rax_1025 ^= 0xedb88320;
+00416f13      
+00416f67      uint32_t rax_1026 = rax_1025 >> 1;
+00416f67      
+00416f74      if (rax_1025 & 1)
+00416f74          rax_1026 ^= 0xedb88320;
+00416f74      
+00416fd2      uint32_t rax_1027 = rax_1026 >> 1;
+00416fd2      
+00416fdf      if ((rax_1026 & 1) == 1)
+00416fdf          rax_1027 ^= 0xedb88320;
+00416fdf      
+0041703a      uint32_t rax_1028 = rax_1027 >> 1;
+0041703a      
+00417047      if (rax_1027 & 1)
+00417047          rax_1028 ^= 0xedb88320;
+00417047      
+00417087      uint32_t rax_1029 = rax_1028 >> 1;
+00417087      
+00417094      if ((rax_1028 & 1) == 1)
+00417094          rax_1029 ^= 0xedb88320;
+00417094      
+004170ec      uint32_t rax_1030 = rax_1029 >> 1;
+004170ec      
+004170f9      if ((rax_1029 & 1) == 1)
+004170f9          rax_1030 ^= 0xedb88320;
+004170f9      
+00417154      uint32_t rax_1031 = rax_1030 ^ (uint32_t)(uint8_t)r10_116;
+00417156      uint32_t r10_117 = r10_116 >> 8;
+0041715f      uint32_t rax_1032 = rax_1031 >> 1;
+0041715f      
+0041716b      if (rax_1031 & 1)
+0041716b          rax_1032 ^= 0xedb88320;
+0041716b      
+004171b2      uint32_t rax_1033 = rax_1032 >> 1;
+004171b2      
+004171bf      if ((rax_1032 & 1) == 1)
+004171bf          rax_1033 ^= 0xedb88320;
+004171bf      
+00417216      uint32_t rax_1034 = rax_1033 >> 1;
+00417216      
+00417222      if (rax_1033 & 1)
+00417222          rax_1034 ^= 0xedb88320;
+00417222      
+00417269      uint32_t rax_1035 = rax_1034 >> 1;
+00417269      
+00417276      if (rax_1034 & 1)
+00417276          rax_1035 ^= 0xedb88320;
+00417276      
+004172cb      uint32_t rax_1036 = rax_1035 >> 1;
+004172cb      
+004172d8      if ((rax_1035 & 1) == 1)
+004172d8          rax_1036 ^= 0xedb88320;
+004172d8      
+0041731f      uint32_t rax_1037 = rax_1036 >> 1;
+0041731f      
+0041732b      if (rax_1036 & 1)
+0041732b          rax_1037 ^= 0xedb88320;
+0041732b      
+00417371      uint32_t rax_1038 = rax_1037 >> 1;
+00417371      
+0041737d      if (rax_1037 & 1)
+0041737d          rax_1038 ^= 0xedb88320;
+0041737d      
+004173d5      uint32_t rax_1039 = rax_1038 >> 1;
+004173d5      
+004173e1      if (rax_1038 & 1)
+004173e1          rax_1039 ^= 0xedb88320;
+004173e1      
+00417442      uint32_t rax_1040 = rax_1039 ^ (uint32_t)(uint8_t)r10_117;
+0041744d      uint32_t rax_1041 = rax_1040 >> 1;
+0041744d      
+0041745a      if (rax_1040 & 1)
+0041745a          rax_1041 ^= 0xedb88320;
+0041745a      
+004174b5      uint32_t rax_1042 = rax_1041 >> 1;
+004174b5      
+004174c2      if ((rax_1041 & 1) == 1)
+004174c2          rax_1042 ^= 0xedb88320;
+004174c2      
+00417508      uint32_t rax_1043 = rax_1042 >> 1;
+00417508      
+00417515      if (rax_1042 & 1)
+00417515          rax_1043 ^= 0xedb88320;
+00417515      
+00417560      uint32_t rax_1044 = rax_1043 >> 1;
+00417560      
+0041756d      if (rax_1043 & 1)
+0041756d          rax_1044 ^= 0xedb88320;
+0041756d      
+004175c3      uint32_t rax_1045 = rax_1044 >> 1;
+004175c3      
+004175d0      if ((rax_1044 & 1) == 1)
+004175d0          rax_1045 ^= 0xedb88320;
+004175d0      
+00417620      uint32_t rax_1046 = rax_1045 >> 1;
+00417620      
+0041762d      if (rax_1045 & 1)
+0041762d          rax_1046 ^= 0xedb88320;
+0041762d      
+0041767e      uint32_t rax_1047 = rax_1046 >> 1;
+0041767e      
+0041768b      if (rax_1046 & 1)
+0041768b          rax_1047 ^= 0xedb88320;
+0041768b      
+004176e1      uint32_t rax_1048 = rax_1047 >> 1;
+004176e1      
+004176ee      if ((rax_1047 & 1) == 1)
+004176ee          rax_1048 ^= 0xedb88320;
+004176ee      
+0041773a      uint32_t rax_1049 = rax_1048 ^ (uint32_t)(r10_117 >> 8);
+00417745      uint32_t rax_1050 = rax_1049 >> 1;
+00417745      
+00417752      if (rax_1049 & 1)
+00417752          rax_1050 ^= 0xedb88320;
+00417752      
+0041779e      uint32_t rax_1051 = rax_1050 >> 1;
+0041779e      
+004177ab      if (rax_1050 & 1)
+004177ab          rax_1051 ^= 0xedb88320;
+004177ab      
+004177f3      uint32_t rax_1052 = rax_1051 >> 1;
+004177f3      
+00417800      if ((rax_1051 & 1) == 1)
+00417800          rax_1052 ^= 0xedb88320;
+00417800      
+00417858      uint32_t rax_1053 = rax_1052 >> 1;
+00417858      
+00417865      if ((rax_1052 & 1) == 1)
+00417865          rax_1053 ^= 0xedb88320;
+00417865      
+004178ba      uint32_t rax_1054 = rax_1053 >> 1;
+004178ba      
+004178c7      if (rax_1053 & 1)
+004178c7          rax_1054 ^= 0xedb88320;
+004178c7      
+00417917      uint32_t rax_1055 = rax_1054 >> 1;
+00417917      
+00417924      if (rax_1054 & 1)
+00417924          rax_1055 ^= 0xedb88320;
+00417924      
+00417968      uint32_t rax_1056 = rax_1055 >> 1;
+00417968      
+00417975      if ((rax_1055 & 1) == 1)
+00417975          rax_1056 ^= 0xedb88320;
+00417975      
+004179b4      uint32_t rax_1057 = rax_1056 >> 1;
+004179b4      
+004179c1      if ((rax_1056 & 1) == 1)
+004179c1          rax_1057 ^= 0xedb88320;
+004179c1      
+00417bdc      int32_t r8_72 = 0;
+00417bdc      
+00417bed      if ((rax_1057 ^ 0x8de93022) == 0x36ad92a9)
+00417bed          r8_72 = 1;
+00417bed      
+00417bf5      if (r8_66 != 1)
+00417bf5          r8_72 = 0;
+00417bf5      
+00417deb      int32_t rax_1064 = data_41e060 ^ 0xbcf87545;
+00417e3c      int32_t rax_1065 = 0xffffffff ^ (uint32_t)(uint8_t)rax_1064;
+00417e3e      uint32_t r10_121 = rax_1064 >> 8;
+00417e47      uint32_t rax_1066 = rax_1065 >> 1;
+00417e47      
+00417e53      if (rax_1065 & 1)
+00417e53          rax_1066 ^= 0xedb88320;
+00417e53      
+00417ead      uint32_t rax_1067 = rax_1066 >> 1;
+00417ead      
+00417eba      if ((rax_1066 & 1) == 1)
+00417eba          rax_1067 ^= 0xedb88320;
+00417eba      
+00417f12      uint32_t rax_1068 = rax_1067 >> 1;
+00417f12      
+00417f1f      if ((rax_1067 & 1) == 1)
+00417f1f          rax_1068 ^= 0xedb88320;
+00417f1f      
+00417f71      uint32_t rax_1069 = rax_1068 >> 1;
+00417f71      
+00417f7d      if (rax_1068 & 1)
+00417f7d          rax_1069 ^= 0xedb88320;
+00417f7d      
+00417fce      uint32_t rax_1070 = rax_1069 >> 1;
+00417fce      
+00417fda      if (rax_1069 & 1)
+00417fda          rax_1070 ^= 0xedb88320;
+00417fda      
+00418032      uint32_t rax_1071 = rax_1070 >> 1;
+00418032      
+0041803e      if (rax_1070 & 1)
+0041803e          rax_1071 ^= 0xedb88320;
+0041803e      
+0041808a      uint32_t rax_1072 = rax_1071 >> 1;
+0041808a      
+00418097      if (rax_1071 & 1)
+00418097          rax_1072 ^= 0xedb88320;
+00418097      
+004180e7      uint32_t rax_1073 = rax_1072 >> 1;
+004180e7      
+004180f4      if ((rax_1072 & 1) == 1)
+004180f4          rax_1073 ^= 0xedb88320;
+004180f4      
+00418144      uint32_t rax_1074 = rax_1073 ^ (uint32_t)(uint8_t)r10_121;
+00418146      uint32_t r10_122 = r10_121 >> 8;
+0041814f      uint32_t rax_1075 = rax_1074 >> 1;
+0041814f      
+0041815c      if (rax_1074 & 1)
+0041815c          rax_1075 ^= 0xedb88320;
+0041815c      
+0041819f      uint32_t rax_1076 = rax_1075 >> 1;
+0041819f      
+004181ac      if ((rax_1075 & 1) == 1)
+004181ac          rax_1076 ^= 0xedb88320;
+004181ac      
+004181f4      uint32_t rax_1077 = rax_1076 >> 1;
+004181f4      
+00418200      if (rax_1076 & 1)
+00418200          rax_1077 ^= 0xedb88320;
+00418200      
+00418250      uint32_t rax_1078 = rax_1077 >> 1;
+00418250      
+0041825d      if (rax_1077 & 1)
+0041825d          rax_1078 ^= 0xedb88320;
+0041825d      
+004182a7      uint32_t rax_1079 = rax_1078 >> 1;
+004182a7      
+004182b4      if ((rax_1078 & 1) == 1)
+004182b4          rax_1079 ^= 0xedb88320;
+004182b4      
+00418310      uint32_t rax_1080 = rax_1079 >> 1;
+00418310      
+0041831d      if ((rax_1079 & 1) == 1)
+0041831d          rax_1080 ^= 0xedb88320;
+0041831d      
+0041836a      uint32_t rax_1081 = rax_1080 >> 1;
+0041836a      
+00418377      if (rax_1080 & 1)
+00418377          rax_1081 ^= 0xedb88320;
+00418377      
+004183ba      uint32_t rax_1082 = rax_1081 >> 1;
+004183ba      
+004183c7      if (rax_1081 & 1)
+004183c7          rax_1082 ^= 0xedb88320;
+004183c7      
+0041840c      uint32_t rax_1083 = rax_1082 ^ (uint32_t)(uint8_t)r10_122;
+00418417      uint32_t rax_1084 = rax_1083 >> 1;
+00418417      
+00418424      if ((rax_1083 & 1) == 1)
+00418424          rax_1084 ^= 0xedb88320;
+00418424      
+00418480      uint32_t rax_1085 = rax_1084 >> 1;
+00418480      
+0041848d      if ((rax_1084 & 1) == 1)
+0041848d          rax_1085 ^= 0xedb88320;
+0041848d      
+004184e4      uint32_t rax_1086 = rax_1085 >> 1;
+004184e4      
+004184f0      if (rax_1085 & 1)
+004184f0          rax_1086 ^= 0xedb88320;
+004184f0      
+00418544      uint32_t rax_1087 = rax_1086 >> 1;
+00418544      
+00418551      if ((rax_1086 & 1) == 1)
+00418551          rax_1087 ^= 0xedb88320;
+00418551      
+004185ac      uint32_t rax_1088 = rax_1087 >> 1;
+004185ac      
+004185b9      if ((rax_1087 & 1) == 1)
+004185b9          rax_1088 ^= 0xedb88320;
+004185b9      
+00418611      uint32_t rax_1089 = rax_1088 >> 1;
+00418611      
+0041861e      if (rax_1088 & 1)
+0041861e          rax_1089 ^= 0xedb88320;
+0041861e      
+0041865f      uint32_t rax_1090 = rax_1089 >> 1;
+0041865f      
+0041866c      if ((rax_1089 & 1) == 1)
+0041866c          rax_1090 ^= 0xedb88320;
+0041866c      
+004186bd      uint32_t rax_1091 = rax_1090 >> 1;
+004186bd      
+004186ca      if ((rax_1090 & 1) == 1)
+004186ca          rax_1091 ^= 0xedb88320;
+004186ca      
+0041872a      uint32_t rax_1092 = rax_1091 ^ (uint32_t)(r10_122 >> 8);
+00418735      uint32_t rax_1093 = rax_1092 >> 1;
+00418735      
+00418742      if ((rax_1092 & 1) == 1)
+00418742          rax_1093 ^= 0xedb88320;
+00418742      
+00418784      uint32_t rax_1094 = rax_1093 >> 1;
+00418784      
+00418790      if (rax_1093 & 1)
+00418790          rax_1094 ^= 0xedb88320;
+00418790      
+004187d5      uint32_t rax_1095 = rax_1094 >> 1;
+004187d5      
+004187e1      if (rax_1094 & 1)
+004187e1          rax_1095 ^= 0xedb88320;
+004187e1      
+00418839      uint32_t rax_1096 = rax_1095 >> 1;
+00418839      
+00418845      if (rax_1095 & 1)
+00418845          rax_1096 ^= 0xedb88320;
+00418845      
+00418888      uint32_t rax_1097 = rax_1096 >> 1;
+00418888      
+00418895      if (rax_1096 & 1)
+00418895          rax_1097 ^= 0xedb88320;
+00418895      
+004188ec      uint32_t rax_1098 = rax_1097 >> 1;
+004188ec      
+004188f9      if ((rax_1097 & 1) == 1)
+004188f9          rax_1098 ^= 0xedb88320;
+004188f9      
+00418945      uint32_t rax_1099 = rax_1098 >> 1;
+00418945      
+00418952      if (rax_1098 & 1)
+00418952          rax_1099 ^= 0xedb88320;
+00418952      
+004189af      uint32_t rax_1100 = rax_1099 >> 1;
+004189af      
+004189bb      if (rax_1099 & 1)
+004189bb          rax_1100 ^= 0xedb88320;
+004189bb      
+00418c0f      int32_t rax_1108 = rax_1100 ^ 0x3911e351;
+00418c74      int32_t rax_1109 = 0xffffffff ^ (uint32_t)(uint8_t)rax_1108;
+00418c76      uint32_t r10_126 = rax_1108 >> 8;
+00418c7f      uint32_t rax_1110 = rax_1109 >> 1;
+00418c7f      
+00418c8c      if (rax_1109 & 1)
+00418c8c          rax_1110 ^= 0xedb88320;
+00418c8c      
+00418ce3      uint32_t rax_1111 = rax_1110 >> 1;
+00418ce3      
+00418cf0      if ((rax_1110 & 1) == 1)
+00418cf0          rax_1111 ^= 0xedb88320;
+00418cf0      
+00418d4a      uint32_t rax_1112 = rax_1111 >> 1;
+00418d4a      
+00418d57      if (rax_1111 & 1)
+00418d57          rax_1112 ^= 0xedb88320;
+00418d57      
+00418da2      uint32_t rax_1113 = rax_1112 >> 1;
+00418da2      
+00418daf      if ((rax_1112 & 1) == 1)
+00418daf          rax_1113 ^= 0xedb88320;
+00418daf      
+00418df3      uint32_t rax_1114 = rax_1113 >> 1;
+00418df3      
+00418dff      if (rax_1113 & 1)
+00418dff          rax_1114 ^= 0xedb88320;
+00418dff      
+00418e54      uint32_t rax_1115 = rax_1114 >> 1;
+00418e54      
+00418e61      if (rax_1114 & 1)
+00418e61          rax_1115 ^= 0xedb88320;
+00418e61      
+00418eb4      uint32_t rax_1116 = rax_1115 >> 1;
+00418eb4      
+00418ec1      if (rax_1115 & 1)
+00418ec1          rax_1116 ^= 0xedb88320;
+00418ec1      
+00418f0f      uint32_t rax_1117 = rax_1116 >> 1;
+00418f0f      
+00418f1c      if ((rax_1116 & 1) == 1)
+00418f1c          rax_1117 ^= 0xedb88320;
+00418f1c      
+00418f76      uint32_t rax_1118 = rax_1117 ^ (uint32_t)(uint8_t)r10_126;
+00418f78      uint32_t r10_127 = r10_126 >> 8;
+00418f81      uint32_t rax_1119 = rax_1118 >> 1;
+00418f81      
+00418f8e      if ((rax_1118 & 1) == 1)
+00418f8e          rax_1119 ^= 0xedb88320;
+00418f8e      
+00418fd6      uint32_t rax_1120 = rax_1119 >> 1;
+00418fd6      
+00418fe2      if (rax_1119 & 1)
+00418fe2          rax_1120 ^= 0xedb88320;
+00418fe2      
+0041903e      uint32_t rax_1121 = rax_1120 >> 1;
+0041903e      
+0041904a      if (rax_1120 & 1)
+0041904a          rax_1121 ^= 0xedb88320;
+0041904a      
+004190a6      uint32_t rax_1122 = rax_1121 >> 1;
+004190a6      
+004190b2      if (rax_1121 & 1)
+004190b2          rax_1122 ^= 0xedb88320;
+004190b2      
+004190f3      uint32_t rax_1123 = rax_1122 >> 1;
+004190f3      
+00419100      if (rax_1122 & 1)
+00419100          rax_1123 ^= 0xedb88320;
+00419100      
+0041915e      uint32_t rax_1124 = rax_1123 >> 1;
+0041915e      
+0041916b      if (rax_1123 & 1)
+0041916b          rax_1124 ^= 0xedb88320;
+0041916b      
+004191be      uint32_t rax_1125 = rax_1124 >> 1;
+004191be      
+004191cb      if (rax_1124 & 1)
+004191cb          rax_1125 ^= 0xedb88320;
+004191cb      
+0041921a      uint32_t rax_1126 = rax_1125 >> 1;
+0041921a      
+00419227      if (rax_1125 & 1)
+00419227          rax_1126 ^= 0xedb88320;
+00419227      
+0041926b      uint32_t rax_1127 = rax_1126 ^ (uint32_t)(uint8_t)r10_127;
+00419276      uint32_t rax_1128 = rax_1127 >> 1;
+00419276      
+00419283      if ((rax_1127 & 1) == 1)
+00419283          rax_1128 ^= 0xedb88320;
+00419283      
+004192e0      uint32_t rax_1129 = rax_1128 >> 1;
+004192e0      
+004192ec      if (rax_1128 & 1)
+004192ec          rax_1129 ^= 0xedb88320;
+004192ec      
+00419343      uint32_t rax_1130 = rax_1129 >> 1;
+00419343      
+00419350      if ((rax_1129 & 1) == 1)
+00419350          rax_1130 ^= 0xedb88320;
+00419350      
+00419390      uint32_t rax_1131 = rax_1130 >> 1;
+00419390      
+0041939c      if (rax_1130 & 1)
+0041939c          rax_1131 ^= 0xedb88320;
+0041939c      
+004193ee      uint32_t rax_1132 = rax_1131 >> 1;
+004193ee      
+004193fb      if (rax_1131 & 1)
+004193fb          rax_1132 ^= 0xedb88320;
+004193fb      
+0041944d      uint32_t rax_1133 = rax_1132 >> 1;
+0041944d      
+0041945a      if ((rax_1132 & 1) == 1)
+0041945a          rax_1133 ^= 0xedb88320;
+0041945a      
+004194ba      uint32_t rax_1134 = rax_1133 >> 1;
+004194ba      
+004194c7      if ((rax_1133 & 1) == 1)
+004194c7          rax_1134 ^= 0xedb88320;
+004194c7      
+00419509      uint32_t rax_1135 = rax_1134 >> 1;
+00419509      
+00419516      if (rax_1134 & 1)
+00419516          rax_1135 ^= 0xedb88320;
+00419516      
+00419565      uint32_t rax_1136 = rax_1135 ^ (uint32_t)(r10_127 >> 8);
+00419570      uint32_t rax_1137 = rax_1136 >> 1;
+00419570      
+0041957d      if ((rax_1136 & 1) == 1)
+0041957d          rax_1137 ^= 0xedb88320;
+0041957d      
+004195bf      uint32_t rax_1138 = rax_1137 >> 1;
+004195bf      
+004195cb      if (rax_1137 & 1)
+004195cb          rax_1138 ^= 0xedb88320;
+004195cb      
+00419616      uint32_t rax_1139 = rax_1138 >> 1;
+00419616      
+00419623      if ((rax_1138 & 1) == 1)
+00419623          rax_1139 ^= 0xedb88320;
+00419623      
+00419665      uint32_t rax_1140 = rax_1139 >> 1;
+00419665      
+00419671      if (rax_1139 & 1)
+00419671          rax_1140 ^= 0xedb88320;
+00419671      
+004196c6      uint32_t rax_1141 = rax_1140 >> 1;
+004196c6      
+004196d3      if (rax_1140 & 1)
+004196d3          rax_1141 ^= 0xedb88320;
+004196d3      
+0041971a      uint32_t rax_1142 = rax_1141 >> 1;
+0041971a      
+00419727      if ((rax_1141 & 1) == 1)
+00419727          rax_1142 ^= 0xedb88320;
+00419727      
+0041976e      uint32_t rax_1143 = rax_1142 >> 1;
+0041976e      
+0041977b      if (rax_1142 & 1)
+0041977b          rax_1143 ^= 0xedb88320;
+0041977b      
+004197c7      uint32_t rax_1144 = rax_1143 >> 1;
+004197c7      
+004197d3      if (rax_1143 & 1)
+004197d3          rax_1144 ^= 0xedb88320;
+004197d3      
+00419ad1      int32_t r8_77 = 0;
+00419ad1      
+00419ae2      if ((rax_1144 ^ 0x641f09b9) == 0x70cc2cbf)
+00419ae2          r8_77 = 1;
+00419ae2      
+00419aea      if (r8_72 != 1)
+00419aea          r8_77 = 0;
+00419aea      
+00419caf      int32_t rax_1150 = data_41e064 ^ 0x42a44b01;
+00419d08      int32_t rax_1151 = 0xffffffff ^ (uint32_t)(uint8_t)rax_1150;
+00419d0a      uint32_t r10_131 = rax_1150 >> 8;
+00419d13      uint32_t rax_1152 = rax_1151 >> 1;
+00419d13      
+00419d20      if ((rax_1151 & 1) == 1)
+00419d20          rax_1152 ^= 0xedb88320;
+00419d20      
+00419d7c      uint32_t rax_1153 = rax_1152 >> 1;
+00419d7c      
+00419d89      if (rax_1152 & 1)
+00419d89          rax_1153 ^= 0xedb88320;
+00419d89      
+00419de8      uint32_t rax_1154 = rax_1153 >> 1;
+00419de8      
+00419df4      if (rax_1153 & 1)
+00419df4          rax_1154 ^= 0xedb88320;
+00419df4      
+00419e33      uint32_t rax_1155 = rax_1154 >> 1;
+00419e33      
+00419e40      if (rax_1154 & 1)
+00419e40          rax_1155 ^= 0xedb88320;
+00419e40      
+00419e98      uint32_t rax_1156 = rax_1155 >> 1;
+00419e98      
+00419ea4      if (rax_1155 & 1)
+00419ea4          rax_1156 ^= 0xedb88320;
+00419ea4      
+00419f02      uint32_t rax_1157 = rax_1156 >> 1;
+00419f02      
+00419f0f      if ((rax_1156 & 1) == 1)
+00419f0f          rax_1157 ^= 0xedb88320;
+00419f0f      
+00419f69      uint32_t rax_1158 = rax_1157 >> 1;
+00419f69      
+00419f76      if ((rax_1157 & 1) == 1)
+00419f76          rax_1158 ^= 0xedb88320;
+00419f76      
+00419fcd      uint32_t rax_1159 = rax_1158 >> 1;
+00419fcd      
+00419fd9      if (rax_1158 & 1)
+00419fd9          rax_1159 ^= 0xedb88320;
+00419fd9      
+0041a023      uint32_t rax_1160 = rax_1159 ^ (uint32_t)(uint8_t)r10_131;
+0041a025      uint32_t r10_132 = r10_131 >> 8;
+0041a02e      uint32_t rax_1161 = rax_1160 >> 1;
+0041a02e      
+0041a03a      if (rax_1160 & 1)
+0041a03a          rax_1161 ^= 0xedb88320;
+0041a03a      
+0041a08b      uint32_t rax_1162 = rax_1161 >> 1;
+0041a08b      
+0041a097      if (rax_1161 & 1)
+0041a097          rax_1162 ^= 0xedb88320;
+0041a097      
+0041a0ec      uint32_t rax_1163 = rax_1162 >> 1;
+0041a0ec      
+0041a0f9      if (rax_1162 & 1)
+0041a0f9          rax_1163 ^= 0xedb88320;
+0041a0f9      
+0041a153      uint32_t rax_1164 = rax_1163 >> 1;
+0041a153      
+0041a160      if ((rax_1163 & 1) == 1)
+0041a160          rax_1164 ^= 0xedb88320;
+0041a160      
+0041a1a4      uint32_t rax_1165 = rax_1164 >> 1;
+0041a1a4      
+0041a1b1      if ((rax_1164 & 1) == 1)
+0041a1b1          rax_1165 ^= 0xedb88320;
+0041a1b1      
+0041a1f9      uint32_t rax_1166 = rax_1165 >> 1;
+0041a1f9      
+0041a206      if (rax_1165 & 1)
+0041a206          rax_1166 ^= 0xedb88320;
+0041a206      
+0041a25c      uint32_t rax_1167 = rax_1166 >> 1;
+0041a25c      
+0041a268      if (rax_1166 & 1)
+0041a268          rax_1167 ^= 0xedb88320;
+0041a268      
+0041a2c1      uint32_t rax_1168 = rax_1167 >> 1;
+0041a2c1      
+0041a2cd      if (rax_1167 & 1)
+0041a2cd          rax_1168 ^= 0xedb88320;
+0041a2cd      
+0041a30e      uint32_t rax_1169 = rax_1168 ^ (uint32_t)(uint8_t)r10_132;
+0041a319      uint32_t rax_1170 = rax_1169 >> 1;
+0041a319      
+0041a325      if (rax_1169 & 1)
+0041a325          rax_1170 ^= 0xedb88320;
+0041a325      
+0041a37c      uint32_t rax_1171 = rax_1170 >> 1;
+0041a37c      
+0041a388      if (rax_1170 & 1)
+0041a388          rax_1171 ^= 0xedb88320;
+0041a388      
+0041a3ca      uint32_t rax_1172 = rax_1171 >> 1;
+0041a3ca      
+0041a3d7      if (rax_1171 & 1)
+0041a3d7          rax_1172 ^= 0xedb88320;
+0041a3d7      
+0041a420      uint32_t rax_1173 = rax_1172 >> 1;
+0041a420      
+0041a42d      if (rax_1172 & 1)
+0041a42d          rax_1173 ^= 0xedb88320;
+0041a42d      
+0041a476      uint32_t rax_1174 = rax_1173 >> 1;
+0041a476      
+0041a482      if (rax_1173 & 1)
+0041a482          rax_1174 ^= 0xedb88320;
+0041a482      
+0041a4df      uint32_t rax_1175 = rax_1174 >> 1;
+0041a4df      
+0041a4ec      if (rax_1174 & 1)
+0041a4ec          rax_1175 ^= 0xedb88320;
+0041a4ec      
+0041a543      uint32_t rax_1176 = rax_1175 >> 1;
+0041a543      
+0041a54f      if (rax_1175 & 1)
+0041a54f          rax_1176 ^= 0xedb88320;
+0041a54f      
+0041a593      uint32_t rax_1177 = rax_1176 >> 1;
+0041a593      
+0041a59f      if (rax_1176 & 1)
+0041a59f          rax_1177 ^= 0xedb88320;
+0041a59f      
+0041a601      uint32_t rax_1178 = rax_1177 ^ (uint32_t)(r10_132 >> 8);
+0041a60c      uint32_t rax_1179 = rax_1178 >> 1;
+0041a60c      
+0041a619      if ((rax_1178 & 1) == 1)
+0041a619          rax_1179 ^= 0xedb88320;
+0041a619      
+0041a660      uint32_t rax_1180 = rax_1179 >> 1;
+0041a660      
+0041a66d      if (rax_1179 & 1)
+0041a66d          rax_1180 ^= 0xedb88320;
+0041a66d      
+0041a6b8      uint32_t rax_1181 = rax_1180 >> 1;
+0041a6b8      
+0041a6c4      if (rax_1180 & 1)
+0041a6c4          rax_1181 ^= 0xedb88320;
+0041a6c4      
+0041a703      uint32_t rax_1182 = rax_1181 >> 1;
+0041a703      
+0041a70f      if (rax_1181 & 1)
+0041a70f          rax_1182 ^= 0xedb88320;
+0041a70f      
+0041a763      uint32_t rax_1183 = rax_1182 >> 1;
+0041a763      
+0041a770      if ((rax_1182 & 1) == 1)
+0041a770          rax_1183 ^= 0xedb88320;
+0041a770      
+0041a7b0      uint32_t rax_1184 = rax_1183 >> 1;
+0041a7b0      
+0041a7bd      if (rax_1183 & 1)
+0041a7bd          rax_1184 ^= 0xedb88320;
+0041a7bd      
+0041a805      uint32_t rax_1185 = rax_1184 >> 1;
+0041a805      
+0041a811      if (rax_1184 & 1)
+0041a811          rax_1185 ^= 0xedb88320;
+0041a811      
+0041a852      uint32_t rax_1186 = rax_1185 >> 1;
+0041a852      
+0041a85f      if ((rax_1185 & 1) == 1)
+0041a85f          rax_1186 ^= 0xedb88320;
+0041a85f      
+0041ab37      int32_t rax_1194 = rax_1186 ^ 0xb77b554c;
+0041ab8a      int32_t rax_1195 = 0xffffffff ^ (uint32_t)(uint8_t)rax_1194;
+0041ab8c      uint32_t r10_136 = rax_1194 >> 8;
+0041ab95      uint32_t rax_1196 = rax_1195 >> 1;
+0041ab95      
+0041aba1      if (rax_1195 & 1)
+0041aba1          rax_1196 ^= 0xedb88320;
+0041aba1      
+0041abf2      uint32_t rax_1197 = rax_1196 >> 1;
+0041abf2      
+0041abfe      if (rax_1196 & 1)
+0041abfe          rax_1197 ^= 0xedb88320;
+0041abfe      
+0041ac4f      uint32_t rax_1198 = rax_1197 >> 1;
+0041ac4f      
+0041ac5c      if (rax_1197 & 1)
+0041ac5c          rax_1198 ^= 0xedb88320;
+0041ac5c      
+0041acb6      uint32_t rax_1199 = rax_1198 >> 1;
+0041acb6      
+0041acc3      if (rax_1198 & 1)
+0041acc3          rax_1199 ^= 0xedb88320;
+0041acc3      
+0041ad1d      uint32_t rax_1200 = rax_1199 >> 1;
+0041ad1d      
+0041ad29      if (rax_1199 & 1)
+0041ad29          rax_1200 ^= 0xedb88320;
+0041ad29      
+0041ad83      uint32_t rax_1201 = rax_1200 >> 1;
+0041ad83      
+0041ad90      if (rax_1200 & 1)
+0041ad90          rax_1201 ^= 0xedb88320;
+0041ad90      
+0041add4      uint32_t rax_1202 = rax_1201 >> 1;
+0041add4      
+0041ade0      if (rax_1201 & 1)
+0041ade0          rax_1202 ^= 0xedb88320;
+0041ade0      
+0041ae30      uint32_t rax_1203 = rax_1202 >> 1;
+0041ae30      
+0041ae3d      if ((rax_1202 & 1) == 1)
+0041ae3d          rax_1203 ^= 0xedb88320;
+0041ae3d      
+0041ae99      uint32_t rax_1204 = rax_1203 ^ (uint32_t)(uint8_t)r10_136;
+0041ae9b      uint32_t r10_137 = r10_136 >> 8;
+0041aea4      uint32_t rax_1205 = rax_1204 >> 1;
+0041aea4      
+0041aeb0      if (rax_1204 & 1)
+0041aeb0          rax_1205 ^= 0xedb88320;
+0041aeb0      
+0041af07      uint32_t rax_1206 = rax_1205 >> 1;
+0041af07      
+0041af13      if (rax_1205 & 1)
+0041af13          rax_1206 ^= 0xedb88320;
+0041af13      
+0041af59      uint32_t rax_1207 = rax_1206 >> 1;
+0041af59      
+0041af66      if (rax_1206 & 1)
+0041af66          rax_1207 ^= 0xedb88320;
+0041af66      
+0041afa9      uint32_t rax_1208 = rax_1207 >> 1;
+0041afa9      
+0041afb5      if (rax_1207 & 1)
+0041afb5          rax_1208 ^= 0xedb88320;
+0041afb5      
+0041b004      uint32_t rax_1209 = rax_1208 >> 1;
+0041b004      
+0041b010      if (rax_1208 & 1)
+0041b010          rax_1209 ^= 0xedb88320;
+0041b010      
+0041b06b      uint32_t rax_1210 = rax_1209 >> 1;
+0041b06b      
+0041b077      if (rax_1209 & 1)
+0041b077          rax_1210 ^= 0xedb88320;
+0041b077      
+0041b0d5      uint32_t rax_1211 = rax_1210 >> 1;
+0041b0d5      
+0041b0e2      if ((rax_1210 & 1) == 1)
+0041b0e2          rax_1211 ^= 0xedb88320;
+0041b0e2      
+0041b139      uint32_t rax_1212 = rax_1211 >> 1;
+0041b139      
+0041b146      if (rax_1211 & 1)
+0041b146          rax_1212 ^= 0xedb88320;
+0041b146      
+0041b1a3      uint32_t rax_1213 = rax_1212 ^ (uint32_t)(uint8_t)r10_137;
+0041b1ae      uint32_t rax_1214 = rax_1213 >> 1;
+0041b1ae      
+0041b1ba      if (rax_1213 & 1)
+0041b1ba          rax_1214 ^= 0xedb88320;
+0041b1ba      
+0041b210      uint32_t rax_1215 = rax_1214 >> 1;
+0041b210      
+0041b21d      if ((rax_1214 & 1) == 1)
+0041b21d          rax_1215 ^= 0xedb88320;
+0041b21d      
+0041b270      uint32_t rax_1216 = rax_1215 >> 1;
+0041b270      
+0041b27d      if ((rax_1215 & 1) == 1)
+0041b27d          rax_1216 ^= 0xedb88320;
+0041b27d      
+0041b2bd      uint32_t rax_1217 = rax_1216 >> 1;
+0041b2bd      
+0041b2ca      if ((rax_1216 & 1) == 1)
+0041b2ca          rax_1217 ^= 0xedb88320;
+0041b2ca      
+0041b311      uint32_t rax_1218 = rax_1217 >> 1;
+0041b311      
+0041b31d      if (rax_1217 & 1)
+0041b31d          rax_1218 ^= 0xedb88320;
+0041b31d      
+0041b366      uint32_t rax_1219 = rax_1218 >> 1;
+0041b366      
+0041b372      if (rax_1218 & 1)
+0041b372          rax_1219 ^= 0xedb88320;
+0041b372      
+0041b3cb      uint32_t rax_1220 = rax_1219 >> 1;
+0041b3cb      
+0041b3d8      if (rax_1219 & 1)
+0041b3d8          rax_1220 ^= 0xedb88320;
+0041b3d8      
+0041b428      uint32_t rax_1221 = rax_1220 >> 1;
+0041b428      
+0041b435      if (rax_1220 & 1)
+0041b435          rax_1221 ^= 0xedb88320;
+0041b435      
+0041b47f      uint32_t rax_1222 = rax_1221 ^ (uint32_t)(r10_137 >> 8);
+0041b48a      uint32_t rax_1223 = rax_1222 >> 1;
+0041b48a      
+0041b497      if (rax_1222 & 1)
+0041b497          rax_1223 ^= 0xedb88320;
+0041b497      
+0041b4d5      uint32_t rax_1224 = rax_1223 >> 1;
+0041b4d5      
+0041b4e1      if (rax_1223 & 1)
+0041b4e1          rax_1224 ^= 0xedb88320;
+0041b4e1      
+0041b531      uint32_t rax_1225 = rax_1224 >> 1;
+0041b531      
+0041b53d      if (rax_1224 & 1)
+0041b53d          rax_1225 ^= 0xedb88320;
+0041b53d      
+0041b594      uint32_t rax_1226 = rax_1225 >> 1;
+0041b594      
+0041b5a1      if ((rax_1225 & 1) == 1)
+0041b5a1          rax_1226 ^= 0xedb88320;
+0041b5a1      
+0041b5ee      uint32_t rax_1227 = rax_1226 >> 1;
+0041b5ee      
+0041b5fb      if (rax_1226 & 1)
+0041b5fb          rax_1227 ^= 0xedb88320;
+0041b5fb      
+0041b648      uint32_t rax_1228 = rax_1227 >> 1;
+0041b648      
+0041b655      if ((rax_1227 & 1) == 1)
+0041b655          rax_1228 ^= 0xedb88320;
+0041b655      
+0041b6af      uint32_t rax_1229 = rax_1228 >> 1;
+0041b6af      
+0041b6bc      if ((rax_1228 & 1) == 1)
+0041b6bc          rax_1229 ^= 0xedb88320;
+0041b6bc      
+0041b719      uint32_t rax_1230 = rax_1229 >> 1;
+0041b719      
+0041b726      if ((rax_1229 & 1) == 1)
+0041b726          rax_1230 ^= 0xedb88320;
+0041b726      
+0041b96f      int32_t r8_82 = 0;
+0041b96f      
+0041b980      if ((rax_1230 ^ 0xf94bfcce) == 0x2501c822)
+0041b980          r8_82 = 1;
+0041b980      
+0041b988      if (r8_77 != 1)
+0041b988          r8_82 = 0;
+0041b988      
+0041b9af      int32_t r8_84 = 0;
+0041b9af      
+0041b9be      if (!(uint32_t)data_41e068)
+0041b9be          r8_84 = 1;
+0041b9be      
+0041b9c6      if (r8_82 != 1)
+0041b9c6          r8_84 = 0;
+0041b9c6      
+0041b9cd      char* format = "bad\n";
+0041b9cd      
+0041b9df      if (r8_84 == 1)
+0041b9df          format = "good!\n";
+0041b9df      
+0041b9e5      printf(format);
+0041b9f5      return 0;
+00401136  }
+
+.text (PROGBITS) section ended  {0x401050-0x41b9f6}
+
+0041b9f6                                                                    00 00                                                ..
+
+.fini (PROGBITS) section started  {0x41b9f8-0x41ba05}
+
+0041b9f8    int64_t _fini() __pure
+
+0041b9f8  {
+0041ba04      return;
+0041b9f8  }
+
+.fini (PROGBITS) section ended  {0x41b9f8-0x41ba05}
+
+.rodata (PROGBITS) section started  {0x41c000-0x41c016}
+0041c000  uint32_t _IO_stdin_used = 0x20001
+0041c004  char const fmt_in[0x6] = "%127s", 0
+0041c00a  char const good_msg[0x7] = "good!\n", 0
+0041c011  char const bad_msg[0x5] = "bad\n", 0
+.rodata (PROGBITS) section ended  {0x41c000-0x41c016}
+
+0041c016                                                                    00 00                                                ..
+
+.eh_frame_hdr (PROGBITS) section started  {0x41c018-0x41c03c}
+0041c018  __GNU_EH_FRAME_HDR:
+0041c018                                                                          01 1b 03 3b 24 00 00 00                          ...;$...
+0041c020  03 00 00 00 08 50 fe ff 68 00 00 00 38 50 fe ff 40 00 00 00 68 50 fe ff 54 00 00 00              .....P..h...8P..@...hP..T...
+.eh_frame_hdr (PROGBITS) section ended  {0x41c018-0x41c03c}
+
+0041c03c                                                                                      00 00 00 00                              ....
+
+.eh_frame (PROGBITS) section started  {0x41c040-0x41c0a8}
+0041c040  14 00 00 00 00 00 00 00 01 7a 52 00 01 78 10 01 1b 0c 07 08 90 01 00 00 10 00 00 00 1c 00 00 00  .........zR..x..................
+0041c060  f0 4f fe ff 26 00 00 00 00 44 07 10 10 00 00 00 30 00 00 00 0c 50 fe ff 05 00 00 00 00 00 00 00  .O..&....D......0....P..........
+0041c080  20 00 00 00 44 00 00 00 98 4f fe ff 30 00 00 00 00 0e 10 46 0e 18 4a 0f 0b 77 08 80 00 3f 1a 3b   ...D....O..0......F..J..w...?.;
+0041c0a0  2a 33 24 22                                                                                      *3$"
+0041c0a4  __FRAME_END__:
+0041c0a4              00 00 00 00                                                                              ....
+.eh_frame (PROGBITS) section ended  {0x41c040-0x41c0a8}
+
+.sframe section started  {0x41c0a8-0x41c12c}
+0041c0a8                          e2 de 03 05 03 00 f8 00 04 00 00 00 07 00 00 00 28 00 00 00 00 00 00 00          ................(.......
+0041c0c0  40 00 00 00 5c 4f fe ff ff ff ff ff 10 00 00 00 12 00 00 00 5c 4f fe ff ff ff ff ff 20 00 00 00  @...\O..............\O...... ...
+0041c0e0  1d 00 00 00 6c 4f fe ff ff ff ff ff 26 00 00 00 00 00 00 00 8c 4f fe ff ff ff ff ff 05 00 00 00  ....lO......&........O..........
+0041c100  0a 00 00 00 02 00 00 00 00 00 03 08 04 00 01 00 00 00 00 00 03 08 02 00 00 00 00 00 03 10 06 03  ................................
+0041c120  18 02 00 10 00 10 00 03 08 0b 03 10                                                              ............
+.sframe section ended  {0x41c0a8-0x41c12c}
+
+0041c12c                                      00 00 0b 00 00 00 02 00 00 00 00 00 03 10 06 03 18 02 00 10              ....................
+0041c140  00 10 00 03 08 0b 03 10 04 00 00 00 30 00 00 00 05 00 00 00 47 4e 55 00 02 80 00 c0 04 00 00 00  ............0.......GNU.........
+0041c160  01 00 00 00 00 00 00 00 01 00 01 c0 04 00 00 00 01 00 00 00 00 00 00 00 02 00 01 c0 04 00 00 00  ................................
+0041c180  01 00 00 00 00 00 00 00                                                                          ........
+0041c188  __abi_tag:
+0041c188                          04 00 00 00 10 00 00 00 01 00 00 00 47 4e 55 00 00 00 00 00 04 00 00 00          ............GNU.........
+0041c1a0  04 00 00 00 00 00 00 00                                                                          ........
+
+.init_array section started  {0x41dde8-0x41ddf0}
+0041dde8  void (* __frame_dummy_init_array_entry[0x1])() = 
+0041dde8  {
+0041dde8      [0x0] = frame_dummy
+0041ddf0  }
+.init_array section ended  {0x41dde8-0x41ddf0}
+
+.fini_array section started  {0x41ddf0-0x41ddf8}
+0041ddf0  void (* __do_global_dtors_aux_fini_array_entry[0x1])() = 
+0041ddf0  {
+0041ddf0      [0x0] = __do_global_dtors_aux
+0041ddf8  }
+.fini_array section ended  {0x41ddf0-0x41ddf8}
+
+.dynamic (DYNAMIC) section started  {0x41ddf8-0x41dfc8}
+0041ddf8  struct Elf64_Dyn _DYNAMIC[0x18] = 
+0041ddf8  {
+0041ddf8      [0x00] = 
+0041ddf8      {
+0041ddf8          enum e_dyn_tag d_tag = DT_NEEDED
+0041de00          uint64_t d_val = 0x20
+0041de08      }
+0041de08      [0x01] = 
+0041de08      {
+0041de08          enum e_dyn_tag d_tag = DT_INIT
+0041de10          uint64_t d_val = 0x401000
+0041de18      }
+0041de18      [0x02] = 
+0041de18      {
+0041de18          enum e_dyn_tag d_tag = DT_FINI
+0041de20          uint64_t d_val = 0x41b9f8
+0041de28      }
+0041de28      [0x03] = 
+0041de28      {
+0041de28          enum e_dyn_tag d_tag = DT_INIT_ARRAY
+0041de30          uint64_t d_val = 0x41dde8
+0041de38      }
+0041de38      [0x04] = 
+0041de38      {
+0041de38          enum e_dyn_tag d_tag = DT_INIT_ARRAYSZ
+0041de40          uint64_t d_val = 0x8
+0041de48      }
+0041de48      [0x05] = 
+0041de48      {
+0041de48          enum e_dyn_tag d_tag = DT_FINI_ARRAY
+0041de50          uint64_t d_val = 0x41ddf0
+0041de58      }
+0041de58      [0x06] = 
+0041de58      {
+0041de58          enum e_dyn_tag d_tag = DT_FINI_ARRAYSZ
+0041de60          uint64_t d_val = 0x8
+0041de68      }
+0041de68      [0x07] = 
+0041de68      {
+0041de68          enum e_dyn_tag d_tag = DT_GNU_HASH
+0041de70          uint64_t d_val = 0x4003c8
+0041de78      }
+0041de78      [0x08] = 
+0041de78      {
+0041de78          enum e_dyn_tag d_tag = DT_STRTAB
+0041de80          uint64_t d_val = 0x400490
+0041de88      }
+0041de88      [0x09] = 
+0041de88      {
+0041de88          enum e_dyn_tag d_tag = DT_SYMTAB
+0041de90          uint64_t d_val = 0x4003e8
+0041de98      }
+0041de98      [0x0a] = 
+0041de98      {
+0041de98          enum e_dyn_tag d_tag = DT_STRSZ
+0041dea0          uint64_t d_val = 0x86
+0041dea8      }
+0041dea8      [0x0b] = 
+0041dea8      {
+0041dea8          enum e_dyn_tag d_tag = DT_SYMENT
+0041deb0          uint64_t d_val = 0x18
+0041deb8      }
+0041deb8      [0x0c] = 
+0041deb8      {
+0041deb8          enum e_dyn_tag d_tag = DT_DEBUG
+0041dec0          uint64_t d_val = 0x0
+0041dec8      }
+0041dec8      [0x0d] = 
+0041dec8      {
+0041dec8          enum e_dyn_tag d_tag = DT_PLTGOT
+0041ded0          uint64_t d_val = 0x41dfe8
+0041ded8      }
+0041ded8      [0x0e] = 
+0041ded8      {
+0041ded8          enum e_dyn_tag d_tag = DT_PLTRELSZ
+0041dee0          uint64_t d_val = 0x30
+0041dee8      }
+0041dee8      [0x0f] = 
+0041dee8      {
+0041dee8          enum e_dyn_tag d_tag = DT_PLTREL
+0041def0          uint64_t d_val = 0x7
+0041def8      }
+0041def8      [0x10] = 
+0041def8      {
+0041def8          enum e_dyn_tag d_tag = DT_JMPREL
+0041df00          uint64_t d_val = 0x4005b8
+0041df08      }
+0041df08      [0x11] = 
+0041df08      {
+0041df08          enum e_dyn_tag d_tag = DT_RELA
+0041df10          uint64_t d_val = 0x400558
+0041df18      }
+0041df18      [0x12] = 
+0041df18      {
+0041df18          enum e_dyn_tag d_tag = DT_RELASZ
+0041df20          uint64_t d_val = 0x60
+0041df28      }
+0041df28      [0x13] = 
+0041df28      {
+0041df28          enum e_dyn_tag d_tag = DT_RELAENT
+0041df30          uint64_t d_val = 0x18
+0041df38      }
+0041df38      [0x14] = 
+0041df38      {
+0041df38          enum e_dyn_tag d_tag = DT_VERNEED
+0041df40          uint64_t d_val = 0x400528
+0041df48      }
+0041df48      [0x15] = 
+0041df48      {
+0041df48          enum e_dyn_tag d_tag = DT_VERNEEDNUM
+0041df50          uint64_t d_val = 0x1
+0041df58      }
+0041df58      [0x16] = 
+0041df58      {
+0041df58          enum e_dyn_tag d_tag = DT_VERSYM
+0041df60          uint64_t d_val = 0x400516
+0041df68      }
+0041df68      [0x17] = 
+0041df68      {
+0041df68          enum e_dyn_tag d_tag = DT_NULL
+0041df70          uint64_t d_val = 0x0
+0041df78      }
+0041df78  }
+
+0041df78                                                                          00 00 00 00 00 00 00 00                          ........
+0041df80  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+0041dfa0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+0041dfc0  00 00 00 00 00 00 00 00                                                                          ........
+.dynamic (DYNAMIC) section ended  {0x41ddf8-0x41dfc8}
+
+.got (PROGBITS) section started  {0x41dfc8-0x41dfe8}
+0041dfc8  void (* const __libc_start_main)(int32_t (* main)(int32_t argc, char** argv, char** envp), int32_t argc, char** ubp_av, void (* init)(), void (* fini)(), void (* rtld_fini)(), void* stack_end) __noreturn = __libc_start_main
+0041dfd0  int64_t (* const _ITM_deregisterTMCloneTable)() = _ITM_deregisterTMCloneTable
+0041dfd8  int64_t (* const __gmon_start__)() = __gmon_start__
+0041dfe0  int64_t (* const _ITM_registerTMCloneTable)() = _ITM_registerTMCloneTable
+.got (PROGBITS) section ended  {0x41dfc8-0x41dfe8}
+
+.got.plt (PROGBITS) section started  {0x41dfe8-0x41e010}
+0041dfe8  void* _GLOBAL_OFFSET_TABLE_ = _DYNAMIC
+0041dff0  int64_t data_41dff0 = 0x0
+0041dff8  int64_t data_41dff8 = 0x0
+0041e000  int32_t (* const printf)(char const* format, ...) = printf
+0041e008  int32_t (* const scanf)(char const* format, ...) = scanf
+.got.plt (PROGBITS) section ended  {0x41dfe8-0x41e010}
+
+.data (PROGBITS) section started  {0x41e010-0x41e020}
+0041e010  __data_start:
+0041e010                                                  00 00 00 00 00 00 00 00                                          ........
+0041e018  __dso_handle:
+0041e018                                                                          00 00 00 00 00 00 00 00                          ........
+.data (PROGBITS) section ended  {0x41e010-0x41e020}
+
+.bss (NOBITS) section started  {0x41e020-0x41e0b0}
+0041e020  char __TMC_END__ = 0x0
+
+0041e021     00 00 00 00 00 00 00 00 00 00 00 00 00 00 00                                                   ...............
+
+0041e030  int32_t input_buf = 0x0
+0041e034  int32_t data_41e034 = 0x0
+0041e038  int32_t data_41e038 = 0x0
+0041e03c  int32_t data_41e03c = 0x0
+0041e040  int32_t data_41e040 = 0x0
+0041e044  int32_t data_41e044 = 0x0
+0041e048  int32_t data_41e048 = 0x0
+0041e04c  int32_t data_41e04c = 0x0
+0041e050  int32_t data_41e050 = 0x0
+0041e054  int32_t data_41e054 = 0x0
+0041e058  int32_t data_41e058 = 0x0
+0041e05c  int32_t data_41e05c = 0x0
+0041e060  int32_t data_41e060 = 0x0
+0041e064  int32_t data_41e064 = 0x0
+0041e068  char data_41e068 = 0x0
+
+0041e069                             00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00           .......................
+0041e080  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+0041e0a0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00                                                  ................
+.bss (NOBITS) section ended  {0x41e020-0x41e0b0}
+
+.extern section started  {0x41e0b0-0x41e0e0}
+0041e0b0  extern _ITM_deregisterTMCloneTable
+0041e0b8  extern _ITM_registerTMCloneTable
+0041e0c0  extern __gmon_start__
+0041e0c8  extern void __libc_start_main(int32_t (* main)(int32_t argc, char** argv, char** envp), int32_t argc, char** ubp_av, void (* init)(), void (* fini)(), void (* rtld_fini)(), void* stack_end) __noreturn
+0041e0d0  extern int32_t printf(char const* format, ...)
+0041e0d8  extern int32_t scanf(char const* format, ...)
+.extern section ended  {0x41e0b0-0x41e0e0}
+
+.synthetic_builtins section started  {0x41e0e0-0x41e110}
+0041e0e0  extern void* __builtin_memcpy(void* dest, void const* src, uint64_t count)
+0041e0e8  extern void* __builtin_memset(void* dest, int32_t ch, uint64_t count)
+0041e0f0  extern char* __builtin_strcpy(char* dest, char const* src)
+0041e0f8  extern char* __builtin_strncpy(char* dest, char const* src, uint64_t count)
+0041e100  extern wchar32* __builtin_wcscpy(wchar32* dest, wchar32 const* src)
+0041e108  extern wchar32* __builtin_wmemcpy(wchar32* dest, wchar32 const* src, uint64_t count)
+.synthetic_builtins section ended  {0x41e0e0-0x41e110}
+

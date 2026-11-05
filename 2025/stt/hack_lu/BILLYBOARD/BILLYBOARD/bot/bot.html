@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 500px;
+            min-height: 300px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Bot</h1>
+        <p>Enter a URL to visit:</p>
+        <input type="text" id="url" value="https://apache"><br>
+        <p>Enter an IP address for the URL:</p>
+        <input type="text" id="ip" placeholder="172.16.238.10" value="172.16.238.10"><br>
+        <button id="submit">Submit</button>
+        <span id="result"></span>
+    </div>
+    <script>
+        const submit = document.getElementById('submit');
+        const result = document.getElementById('result');
+        const urlInput = document.getElementById('url');
+        const ipInput = document.getElementById('ip');
+
+
+        // send to server
+        submit.onclick = () => {
+            submit.disabled = true;
+            result.innerText = 'Processing...';
+            setTimeout(() => {
+                submit.disabled = false;
+            }, 10000);
+            fetch('/report', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    url: urlInput.value,
+                    ip: ipInput.value
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                result.innerText = data.error ? data.error : 'Success';
+                result.style.color = data.error ? 'red' : 'green';
+            })
+            .catch(err => {
+                result.innerText = 'An error occurred!';
+                result.style.color = 'red';
+            });
+        };
+    </script>
+</body>
+</html>

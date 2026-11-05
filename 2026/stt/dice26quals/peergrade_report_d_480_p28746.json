@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-03-12T22:45:36.901216+00:00",
+  "forum_url": "https://pcm.rnl.tecnico.ulisboa.pt/moodle/mod/peerforum/discuss.php?d=480#p28746",
+  "target_key": "d=480#p28746",
+  "awards_page_id": 726,
+  "match_window_seconds": 21600,
+  "expected_delay_minutes": 20.0,
+  "peergrade_reviews": [
+    {
+      "grader_id": 36732,
+      "raw_time": "Thursday, 12 March 2026, 10:06 PM",
+      "timestamp": 1773353160,
+      "peer_grade": 3,
+      "feedback": "I liked the overall concept and idea of the game. However, it feels like it is very complex and hard to play. It's not a very intuitive game, specially if you are not from the Computer Security area. The verbs are very specific and there is not a big vocabulary to play with. I tried a lot of different verbs that should/could have worked and I just kept being stuck. The setting is ok, not that special but does its job. I feel like I tried playing without searching for the answers in the post but couldn't even enter the first door. It's impossible to play it without previous and clear instructions about what to do in every case scenario. I think the main points to improve are the vocabulary and the way that the game describes the situation. I don't think a game should only have Software Engineers specialized in CyberSecurity as the target audience. I tried giving my honest and complete idea as a Game Developer and Designer because I do feel like the game can be a lot of fun and intersting but some parts are too confusing and hard. Don't take it personally, obviously it's just my opinion. Good concept, bad execution. Concept & Story: 4 Quality Writing: 3 Player Agency: 3 Rich world and vocabulary: 2 Adequate Complexity: 2 Maximum rating: - Permalink Show parent Reply \u25c4 Movie Poster First-Person Narrator \u25ba \u25c4 Labs Forum Jump to... Jump to... GameCourse Social forum Questions Labs Forum Participation Forum Bugs Forum Office Hours Objectives Game Rules Lectures Lab Classes Elder Scrolls Hall of Fame Player Characterization Learning Process Inventory Student engagement (evolution questionnaire) Dry Run Quiz 1 Quiz 2 Quiz 3 Multimedia Presentation Multimedia Presentation FAQ Attendance Player's Handbook Lecture 1 Slides - Intro Lecture 1 Slides - Text Lecture 2 slides - Bitmapped Image (lossless) Lecture 3 Slides - Bitmapped Image (Lossy) Lecture 3 Slides - Bitmapped Image (Pro&Vis) Lecture 4 Slides - Audio Lecture 4 Slides - Audio Processing Lecture 5 Slides - Color Lecture 4 - Audio Samples Lecture 6 Slides - Graphic Design Principles Lecture 7 Slides - Vector Images Lecture 7 Slides - Animation and Synchronisation Lecture 8 Slides - Presentations I Lecture 8 Slides - Presentations II Lecture 9 Slides - Video Compression Lecture 10 Slides - Video & Audio Recording Lecture 11 Slides - Photo Techniques Lecture 12 - Copyright & DRM MSc Proposals PCM2026-Labs-Inkscape&GIMP PCM2026-Labs-Inkscape&GIMP-Materials PCM2026-Labs-Inkscape&GIMP-Exercise PCM2026-Labs-Inkscape&GIMP PCM2026-Labs-Audacity&Kdenlive PCM2026-Labs-Audacity&Kdenlive-Materials PCM2026-Labs-Audacity&Kdenlive-Exercise PCM2026-Labs-Audacity&Kdenlive PCM2026-Labs-Pixels-Tutorial PCM2026-Labs-Pixels-Materials PCM2026-Labs-Pixels-Tutorial-Exercise PCM2026-Pixels-Exercise PCM2026-Pixels-Exercise-Materials PCM2026-Pixels-Tutorial-Exercise-Solved PCM2026-Labs-Pixels-Exercise PCM2026-Labs-Binning-Tutorial PCM2026-Labs-Binning-Materials PCM2025-Binning-Tutorial-Solved PCM2026-Binning-Exercise-Materials PCM2025-Binning-Exercise PCM2026-Labs-Binning-Tutorial-Exercise PCM2026-Labs-Binning-Exercise PCM2026-Audio-Tutorial PCM2025-Audio-Tutorial-Solved PCM2026-Audio-Materials PCM2026-Audio-Tutorial PCM2026-Audio-Exercise PCM2025-Audio-Exercise PCM2025-Audio-Exercise-Materials PCM2025-Transitions-Tutorial PCM2025-Transitions-Tutorial-Complete PCM2025-Transitions-Tutorial-Materials PCM2025-Transitions-Tutorial-Exercise PCM2025-Transitions-Exercise PCM2024-Segmentation-Tutorial PCM2024-Segmentation-Tutorial-Materials PCM2024-Segmentation-Tutorial-Exercise PCM2024-Segmentation-Exercise PCM2025-Transitions-Exercise PCM2025-Transitions-Exercise-Materials PCM2025-Segmention-Tutorial-Complete PCM2025-Segmentation-Exercise PCM2025-Segmentation-Exercise-Materials Participation Forum \u25ba INFO Moodle community Moodle free support Moodle Docs Moodle.com"
+    }
+  ],
+  "time_based_resolution": {
+    "36732": [
+      {
+        "user_id": 1821,
+        "name": "Guilherme Correia Cal\u00e7adas",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1821",
+        "delta_seconds": 855,
+        "delta_minutes": 14.25,
+        "delta_from_expected_minutes": 5.75,
+        "review_timestamp": 1773353160,
+        "awards_timestamp": 1773354015
+      }
+    ]
+  },
+  "fallback_candidates": {},
+  "time_match_window_seconds_effective": 21600
+}

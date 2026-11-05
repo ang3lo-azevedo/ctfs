@@ -1,0 +1,2603 @@
+/*
+Type: ELF
+Platform: linux-x86_64
+Architecture: x86_64
+
+Libraries: 
+  ./libopenctm.so
+  ./libfastobj.so
+  ./libc.so.6
+
+Segments:
+r--  0x00400000-0x00400f50 
+r-x  0x00401000-0x0040227d 
+r--  0x00403000-0x00403330 
+rw-  0x00404c68-0x00405010 
+rw-  0x00405010-0x00405030 
+rw-  0x00406000-0x00406508 
+rw-  0x00407000-0x00407238 
+rw-  0x00408000-0x00408018 
+rw-  0x00409000-0x00409458 
+---  0x00409460-0x004095c0 
+---  0x004095c0-0x004095f0 
+
+Sections:
+0x00400a2e-0x00400a8a  .gnu.version  {Read-only data}
+0x00400a90-0x00400ad0  .gnu.version_r  {Read-only data}
+0x00400ad0-0x00400ba8  .dynamic_rela  {Read-only data}
+0x00400ad0-0x00400ba8  .rela.dyn (RELA)  {Read-only data}
+0x00400ba8-0x00400f50  .rela.plt (RELA)  {Read-only data}
+0x00401000-0x0040101b  .init (PROGBITS)  {Code}
+0x00401020-0x004012a0  .plt (PROGBITS)  {Code}
+0x004012a0-0x004012b0  .plt.got (PROGBITS)  {Code}
+0x004012b0-0x00401520  .plt.sec (PROGBITS)  {Code}
+0x00401520-0x0040226d  .text (PROGBITS)  {Code}
+0x00402270-0x0040227d  .fini (PROGBITS)  {Code}
+0x00403000-0x00403135  .rodata (PROGBITS)  {Read-only data}
+0x00403138-0x004031a4  .eh_frame_hdr (PROGBITS)  {Read-only data}
+0x004031a8-0x00403330  .eh_frame (PROGBITS)  {Read-only data}
+0x00404c68-0x00404c70  .init_array  {Writable data}
+0x00404c70-0x00404c78  .fini_array  {Writable data}
+0x00404e88-0x00405000  .got (PROGBITS)  {Read-only data}
+0x00405000-0x00405010  .data (PROGBITS)  {Writable data}
+0x00405020-0x00405030  .bss (NOBITS)  {Writable data}
+0x00406090-0x004060b8  .gnu.hash  {Read-only data}
+0x004060b8-0x00406508  .dynsym (DYNSYM)  {Read-only data}
+0x00408000-0x00408017  .interp (PROGBITS)  {Read-only data}
+0x00409000-0x00409220  .dynamic (DYNAMIC)  {Read-only data}
+0x00409220-0x00409454  .dynstr (STRTAB)  {Read-only data}
+0x00409460-0x004095c0  .extern  {External}
+0x004095c0-0x004095f0  .synthetic_builtins  {External}
+*/
+00400000  struct Elf64_Header __elf_header = 
+00400000  {
+00400000      struct Elf64_Ident ident = 
+00400000      {
+00400000          char signature[0x4] = "\x7fELF"
+00400004          uint8_t file_class = 0x2
+00400005          uint8_t encoding = 0x1
+00400006          uint8_t version = 0x1
+00400007          uint8_t os = 0x0
+00400008          uint8_t abi_version = 0x0
+00400009          char pad[0x7] = "\x00\x00\x00\x00\x00\x00", 0
+00400010      }
+00400010      enum e_type type = ET_DYN
+00400012      enum e_machine machine = EM_X86_64
+00400014      uint32_t version = 0x1
+00400018      void (* entry)() = 0x1520
+00400020      uint64_t program_header_offset = 0x40
+00400028      uint64_t section_header_offset = 0x4db8
+00400030      uint32_t flags = 0x0
+00400034      uint16_t header_size = 0x40
+00400036      uint16_t program_header_size = 0x38
+00400038      uint16_t program_header_count = 0x12
+0040003a      uint16_t section_header_size = 0x40
+0040003c      uint16_t section_header_count = 0x1f
+0040003e      uint16_t string_table = 0x16
+00400040  }
+00400040  struct Elf64_ProgramHeader __elf_program_headers[0x12] = 
+00400040  {
+00400040      [0x00] = 
+00400040      {
+00400040          enum p_type type = PT_PHDR
+00400044          enum p_flags flags = PF_R
+00400048          uint64_t offset = 0x40
+00400050          uint64_t virtual_address = 0x40
+00400058          uint64_t physical_address = 0x40
+00400060          uint64_t file_size = 0x3f0
+00400068          uint64_t memory_size = 0x3f0
+00400070          uint64_t align = 0x8
+00400078      }
+00400078      [0x01] = 
+00400078      {
+00400078          enum p_type type = PT_LOAD
+0040007c          enum p_flags flags = PF_R
+00400080          uint64_t offset = 0x0
+00400088          uint64_t virtual_address = 0x0
+00400090          uint64_t physical_address = 0x0
+00400098          uint64_t file_size = 0xf50
+004000a0          uint64_t memory_size = 0xf50
+004000a8          uint64_t align = 0x1000
+004000b0      }
+004000b0      [0x02] = 
+004000b0      {
+004000b0          enum p_type type = PT_GNU_STACK
+004000b4          enum p_flags flags = PF_W | PF_R
+004000b8          uint64_t offset = 0x0
+004000c0          uint64_t virtual_address = 0x0
+004000c8          uint64_t physical_address = 0x0
+004000d0          uint64_t file_size = 0x0
+004000d8          uint64_t memory_size = 0x0
+004000e0          uint64_t align = 0x10
+004000e8      }
+004000e8      [0x03] = 
+004000e8      {
+004000e8          enum p_type type = PT_LOAD
+004000ec          enum p_flags flags = PF_X | PF_R
+004000f0          uint64_t offset = 0x1000
+004000f8          uint64_t virtual_address = 0x1000
+00400100          uint64_t physical_address = 0x1000
+00400108          uint64_t file_size = 0x127d
+00400110          uint64_t memory_size = 0x127d
+00400118          uint64_t align = 0x1000
+00400120      }
+00400120      [0x04] = 
+00400120      {
+00400120          enum p_type type = PT_LOAD
+00400124          enum p_flags flags = PF_R
+00400128          uint64_t offset = 0x3000
+00400130          uint64_t virtual_address = 0x3000
+00400138          uint64_t physical_address = 0x3000
+00400140          uint64_t file_size = 0x330
+00400148          uint64_t memory_size = 0x330
+00400150          uint64_t align = 0x1000
+00400158      }
+00400158      [0x05] = 
+00400158      {
+00400158          enum p_type type = PT_GNU_EH_FRAME
+0040015c          enum p_flags flags = PF_R
+00400160          uint64_t offset = 0x3138
+00400168          uint64_t virtual_address = 0x3138
+00400170          uint64_t physical_address = 0x3138
+00400178          uint64_t file_size = 0x6c
+00400180          uint64_t memory_size = 0x6c
+00400188          uint64_t align = 0x4
+00400190      }
+00400190      [0x06] = 
+00400190      {
+00400190          enum p_type type = PT_LOAD
+00400194          enum p_flags flags = PF_W | PF_R
+00400198          uint64_t offset = 0x3c68
+004001a0          uint64_t virtual_address = 0x4c68
+004001a8          uint64_t physical_address = 0x4c68
+004001b0          uint64_t file_size = 0x3a8
+004001b8          uint64_t memory_size = 0x3c8
+004001c0          uint64_t align = 0x1000
+004001c8      }
+004001c8      [0x07] = 
+004001c8      {
+004001c8          enum p_type type = PT_GNU_RELRO
+004001cc          enum p_flags flags = PF_R
+004001d0          uint64_t offset = 0x3c68
+004001d8          uint64_t virtual_address = 0x4c68
+004001e0          uint64_t physical_address = 0x4c68
+004001e8          uint64_t file_size = 0x398
+004001f0          uint64_t memory_size = 0x398
+004001f8          uint64_t align = 0x1
+00400200      }
+00400200      [0x08] = 
+00400200      {
+00400200          enum p_type type = PT_LOAD
+00400204          enum p_flags flags = PF_W | PF_R
+00400208          uint64_t offset = 0x6000
+00400210          uint64_t virtual_address = 0x6000
+00400218          uint64_t physical_address = 0x6000
+00400220          uint64_t file_size = 0x508
+00400228          uint64_t memory_size = 0x508
+00400230          uint64_t align = 0x1000
+00400238      }
+00400238      [0x09] = 
+00400238      {
+00400238          enum p_type type = PT_NOTE
+0040023c          enum p_flags flags = PF_R
+00400240          uint64_t offset = 0x6018
+00400248          uint64_t virtual_address = 0x6018
+00400250          uint64_t physical_address = 0x6018
+00400258          uint64_t file_size = 0x30
+00400260          uint64_t memory_size = 0x30
+00400268          uint64_t align = 0x8
+00400270      }
+00400270      [0x0a] = 
+00400270      {
+00400270          enum p_type type = PT_GNU_PROPERTY
+00400274          enum p_flags flags = PF_R
+00400278          uint64_t offset = 0x6018
+00400280          uint64_t virtual_address = 0x6018
+00400288          uint64_t physical_address = 0x6018
+00400290          uint64_t file_size = 0x30
+00400298          uint64_t memory_size = 0x30
+004002a0          uint64_t align = 0x8
+004002a8      }
+004002a8      [0x0b] = 
+004002a8      {
+004002a8          enum p_type type = PT_NOTE
+004002ac          enum p_flags flags = PF_R
+004002b0          uint64_t offset = 0x6048
+004002b8          uint64_t virtual_address = 0x6048
+004002c0          uint64_t physical_address = 0x6048
+004002c8          uint64_t file_size = 0x24
+004002d0          uint64_t memory_size = 0x24
+004002d8          uint64_t align = 0x4
+004002e0      }
+004002e0      [0x0c] = 
+004002e0      {
+004002e0          enum p_type type = PT_NOTE
+004002e4          enum p_flags flags = PF_R
+004002e8          uint64_t offset = 0x6070
+004002f0          uint64_t virtual_address = 0x6070
+004002f8          uint64_t physical_address = 0x6070
+00400300          uint64_t file_size = 0x20
+00400308          uint64_t memory_size = 0x20
+00400310          uint64_t align = 0x4
+00400318      }
+00400318      [0x0d] = 
+00400318      {
+00400318          enum p_type type = PT_LOAD
+0040031c          enum p_flags flags = PF_W | PF_R
+00400320          uint64_t offset = 0x7000
+00400328          uint64_t virtual_address = 0x7000
+00400330          uint64_t physical_address = 0x7000
+00400338          uint64_t file_size = 0x238
+00400340          uint64_t memory_size = 0x238
+00400348          uint64_t align = 0x1000
+00400350      }
+00400350      [0x0e] = 
+00400350      {
+00400350          enum p_type type = PT_INTERP
+00400354          enum p_flags flags = PF_R
+00400358          uint64_t offset = 0x8000
+00400360          uint64_t virtual_address = 0x8000
+00400368          uint64_t physical_address = 0x8000
+00400370          uint64_t file_size = 0x17
+00400378          uint64_t memory_size = 0x17
+00400380          uint64_t align = 0x1
+00400388      }
+00400388      [0x0f] = 
+00400388      {
+00400388          enum p_type type = PT_LOAD
+0040038c          enum p_flags flags = PF_W | PF_R
+00400390          uint64_t offset = 0x8000
+00400398          uint64_t virtual_address = 0x8000
+004003a0          uint64_t physical_address = 0x8000
+004003a8          uint64_t file_size = 0x18
+004003b0          uint64_t memory_size = 0x18
+004003b8          uint64_t align = 0x1000
+004003c0      }
+004003c0      [0x10] = 
+004003c0      {
+004003c0          enum p_type type = PT_DYNAMIC
+004003c4          enum p_flags flags = PF_W | PF_R
+004003c8          uint64_t offset = 0x9000
+004003d0          uint64_t virtual_address = 0x9000
+004003d8          uint64_t physical_address = 0x9000
+004003e0          uint64_t file_size = 0x220
+004003e8          uint64_t memory_size = 0x220
+004003f0          uint64_t align = 0x8
+004003f8      }
+004003f8      [0x11] = 
+004003f8      {
+004003f8          enum p_type type = PT_LOAD
+004003fc          enum p_flags flags = PF_W | PF_R
+00400400          uint64_t offset = 0x9000
+00400408          uint64_t virtual_address = 0x9000
+00400410          uint64_t physical_address = 0x9000
+00400418          uint64_t file_size = 0x458
+00400420          uint64_t memory_size = 0x458
+00400428          uint64_t align = 0x1000
+00400430      }
+00400430  }
+
+00400430                                                  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a                  ZZZZZZZZZZZZZZZZ
+00400440  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400460  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400480  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004004a0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004004c0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004004e0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400500  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400520  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400540  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400560  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400580  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004005a0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004005c0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004005e0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400600  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400620  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400640  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400660  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400680  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004006a0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004006c0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004006e0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400700  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400720  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400740  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400760  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400780  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004007a0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004007c0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004007e0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400800  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400820  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400840  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400860  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400880  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004008a0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004008c0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004008e0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400900  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400920  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400940  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400960  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400980  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004009a0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004009c0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+004009e0  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400a00  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a  ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+00400a20  5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a 5a                                                        ZZZZZZZZZZZZZZ
+
+.gnu.version section started  {0x400a2e-0x400a8a}
+00400a2e                                            00 00 01 00 02 00 03 00 01 00 03 00 03 00 03 00 03 00                ..................
+00400a40  01 00 03 00 03 00 04 00 03 00 03 00 03 00 03 00 03 00 03 00 03 00 03 00 03 00 03 00 03 00 01 00  ................................
+00400a60  01 00 01 00 03 00 03 00 01 00 03 00 03 00 03 00 01 00 03 00 01 00 03 00 03 00 01 00 03 00 01 00  ................................
+00400a80  01 00 03 00 03 00 03 00 03 00                                                                    ..........
+.gnu.version section ended  {0x400a2e-0x400a8a}
+
+00400a8a                                00 00 00 00 00 00                                                            ......
+
+.gnu.version_r section started  {0x400a90-0x400ad0}
+00400a90                                                  01 00 03 00 26 02 00 00 10 00 00 00 00 00 00 00                  ....&...........
+00400aa0  14 69 69 0d 00 00 04 00 e5 01 00 00 10 00 00 00 75 1a 69 09 00 00 03 00 ef 01 00 00 10 00 00 00  .ii.............u.i.............
+00400ac0  b4 91 96 06 00 00 02 00 fb 01 00 00 00 00 00 00                                                  ................
+.gnu.version_r section ended  {0x400a90-0x400ad0}
+
+.dynamic_rela section started  {0x400ad0-0x400ba8}
+.rela.dyn (RELA) section started  {0x400ad0-0x400ba8}
+00400ad0  struct Elf64_Rela __elf_rela_table[0x9] = 
+00400ad0  {
+00400ad0      [0x0] = 
+00400ad0      {
+00400ad0          uint64_t r_offset = 0x4c68
+00400ad8          uint64_t r_info = 0x8
+00400ae0          int64_t r_addend = 0x1600
+00400ae8      }
+00400ae8      [0x1] = 
+00400ae8      {
+00400ae8          uint64_t r_offset = 0x4c70
+00400af0          uint64_t r_info = 0x8
+00400af8          int64_t r_addend = 0x15c0
+00400b00      }
+00400b00      [0x2] = 
+00400b00      {
+00400b00          uint64_t r_offset = 0x5008
+00400b08          uint64_t r_info = 0x8
+00400b10          int64_t r_addend = 0x5008
+00400b18      }
+00400b18      [0x3] = 
+00400b18      {
+00400b18          uint64_t r_offset = 0x4fd8
+00400b20          uint64_t r_info = 0x200000006
+00400b28          int64_t r_addend = 0x0
+00400b30      }
+00400b30      [0x4] = 
+00400b30      {
+00400b30          uint64_t r_offset = 0x4fe0
+00400b38          uint64_t r_info = 0x400000006
+00400b40          int64_t r_addend = 0x0
+00400b48      }
+00400b48      [0x5] = 
+00400b48      {
+00400b48          uint64_t r_offset = 0x4fe8
+00400b50          uint64_t r_info = 0x1800000006
+00400b58          int64_t r_addend = 0x0
+00400b60      }
+00400b60      [0x6] = 
+00400b60      {
+00400b60          uint64_t r_offset = 0x4ff0
+00400b68          uint64_t r_info = 0x2900000006
+00400b70          int64_t r_addend = 0x0
+00400b78      }
+00400b78      [0x7] = 
+00400b78      {
+00400b78          uint64_t r_offset = 0x4ff8
+00400b80          uint64_t r_info = 0x2c00000006
+00400b88          int64_t r_addend = 0x0
+00400b90      }
+00400b90      [0x8] = 
+00400b90      {
+00400b90          uint64_t r_offset = 0x5020
+00400b98          uint64_t r_info = 0x2d00000005
+00400ba0          int64_t r_addend = 0x0
+00400ba8      }
+00400ba8  }
+.dynamic_rela section ended  {0x400ad0-0x400ba8}
+.rela.dyn (RELA) section ended  {0x400ad0-0x400ba8}
+
+.rela.plt (RELA) section started  {0x400ba8-0x400f50}
+00400ba8                          a0 4e 00 00 00 00 00 00 07 00 00 00 01 00 00 00 00 00 00 00 00 00 00 00          .N......................
+00400bc0  a8 4e 00 00 00 00 00 00 07 00 00 00 03 00 00 00 00 00 00 00 00 00 00 00 b0 4e 00 00 00 00 00 00  .N.......................N......
+00400be0  07 00 00 00 05 00 00 00 00 00 00 00 00 00 00 00 b8 4e 00 00 00 00 00 00 07 00 00 00 06 00 00 00  .................N..............
+00400c00  00 00 00 00 00 00 00 00 c0 4e 00 00 00 00 00 00 07 00 00 00 07 00 00 00 00 00 00 00 00 00 00 00  .........N......................
+00400c20  c8 4e 00 00 00 00 00 00 07 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 d0 4e 00 00 00 00 00 00  .N.......................N......
+00400c40  07 00 00 00 09 00 00 00 00 00 00 00 00 00 00 00 d8 4e 00 00 00 00 00 00 07 00 00 00 0a 00 00 00  .................N..............
+00400c60  00 00 00 00 00 00 00 00 e0 4e 00 00 00 00 00 00 07 00 00 00 0b 00 00 00 00 00 00 00 00 00 00 00  .........N......................
+00400c80  e8 4e 00 00 00 00 00 00 07 00 00 00 0c 00 00 00 00 00 00 00 00 00 00 00 f0 4e 00 00 00 00 00 00  .N.......................N......
+00400ca0  07 00 00 00 0d 00 00 00 00 00 00 00 00 00 00 00 f8 4e 00 00 00 00 00 00 07 00 00 00 0e 00 00 00  .................N..............
+00400cc0  00 00 00 00 00 00 00 00 00 4f 00 00 00 00 00 00 07 00 00 00 0f 00 00 00 00 00 00 00 00 00 00 00  .........O......................
+00400ce0  08 4f 00 00 00 00 00 00 07 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00 10 4f 00 00 00 00 00 00  .O.......................O......
+00400d00  07 00 00 00 11 00 00 00 00 00 00 00 00 00 00 00 18 4f 00 00 00 00 00 00 07 00 00 00 12 00 00 00  .................O..............
+00400d20  00 00 00 00 00 00 00 00 20 4f 00 00 00 00 00 00 07 00 00 00 13 00 00 00 00 00 00 00 00 00 00 00  ........ O......................
+00400d40  28 4f 00 00 00 00 00 00 07 00 00 00 14 00 00 00 00 00 00 00 00 00 00 00 30 4f 00 00 00 00 00 00  (O......................0O......
+00400d60  07 00 00 00 15 00 00 00 00 00 00 00 00 00 00 00 38 4f 00 00 00 00 00 00 07 00 00 00 16 00 00 00  ................8O..............
+00400d80  00 00 00 00 00 00 00 00 40 4f 00 00 00 00 00 00 07 00 00 00 17 00 00 00 00 00 00 00 00 00 00 00  ........@O......................
+00400da0  48 4f 00 00 00 00 00 00 07 00 00 00 19 00 00 00 00 00 00 00 00 00 00 00 50 4f 00 00 00 00 00 00  HO......................PO......
+00400dc0  07 00 00 00 1a 00 00 00 00 00 00 00 00 00 00 00 58 4f 00 00 00 00 00 00 07 00 00 00 1b 00 00 00  ................XO..............
+00400de0  00 00 00 00 00 00 00 00 60 4f 00 00 00 00 00 00 07 00 00 00 1c 00 00 00 00 00 00 00 00 00 00 00  ........`O......................
+00400e00  68 4f 00 00 00 00 00 00 07 00 00 00 1d 00 00 00 00 00 00 00 00 00 00 00 70 4f 00 00 00 00 00 00  hO......................pO......
+00400e20  07 00 00 00 1e 00 00 00 00 00 00 00 00 00 00 00 78 4f 00 00 00 00 00 00 07 00 00 00 1f 00 00 00  ................xO..............
+00400e40  00 00 00 00 00 00 00 00 80 4f 00 00 00 00 00 00 07 00 00 00 20 00 00 00 00 00 00 00 00 00 00 00  .........O.......... ...........
+00400e60  88 4f 00 00 00 00 00 00 07 00 00 00 21 00 00 00 00 00 00 00 00 00 00 00 90 4f 00 00 00 00 00 00  .O..........!............O......
+00400e80  07 00 00 00 22 00 00 00 00 00 00 00 00 00 00 00 98 4f 00 00 00 00 00 00 07 00 00 00 23 00 00 00  ...."............O..........#...
+00400ea0  00 00 00 00 00 00 00 00 a0 4f 00 00 00 00 00 00 07 00 00 00 24 00 00 00 00 00 00 00 00 00 00 00  .........O..........$...........
+00400ec0  a8 4f 00 00 00 00 00 00 07 00 00 00 25 00 00 00 00 00 00 00 00 00 00 00 b0 4f 00 00 00 00 00 00  .O..........%............O......
+00400ee0  07 00 00 00 26 00 00 00 00 00 00 00 00 00 00 00 b8 4f 00 00 00 00 00 00 07 00 00 00 27 00 00 00  ....&............O..........'...
+00400f00  00 00 00 00 00 00 00 00 c0 4f 00 00 00 00 00 00 07 00 00 00 28 00 00 00 00 00 00 00 00 00 00 00  .........O..........(...........
+00400f20  c8 4f 00 00 00 00 00 00 07 00 00 00 2a 00 00 00 00 00 00 00 00 00 00 00 d0 4f 00 00 00 00 00 00  .O..........*............O......
+00400f40  07 00 00 00 2b 00 00 00 00 00 00 00 00 00 00 00                                                  ....+...........
+.rela.plt (RELA) section ended  {0x400ba8-0x400f50}
+
+.init (PROGBITS) section started  {0x401000-0x40101b}
+
+00401000    int64_t (* const)() _init()
+
+00401000  {
+00401012      if (!__gmon_start__)
+0040101a          return __gmon_start__;
+0040101a      
+00401014      return __gmon_start__();
+00401000  }
+
+.init (PROGBITS) section ended  {0x401000-0x40101b}
+
+0040101b                                                                                   00 00 00 00 00                             .....
+
+.plt (PROGBITS) section started  {0x401020-0x4012a0}
+
+00401020    int64_t sub_401020()
+
+00401020  {
+00401020      int64_t var_8 = 0;
+00401026      /* jump -> nullptr */
+00401020  }
+
+0040102c                                      0f 1f 40 00                                                              ..@.
+
+00401030    int64_t sub_401030()
+
+00401030  {
+00401034      int64_t var_8 = 0;
+00401039      /* tailcall */
+00401039      return sub_401020();
+00401030  }
+
+0040103e                                                                                            66 90                                f.
+
+00401040    int64_t sub_401040()
+
+00401040  {
+00401044      int64_t var_8 = 1;
+00401049      /* tailcall */
+00401049      return sub_401020();
+00401040  }
+
+0040104e                                            66 90                                                                f.
+
+00401050    int64_t sub_401050()
+
+00401050  {
+00401054      int64_t var_8 = 2;
+00401059      /* tailcall */
+00401059      return sub_401020();
+00401050  }
+
+0040105e                                                                                            66 90                                f.
+
+00401060    int64_t sub_401060()
+
+00401060  {
+00401064      int64_t var_8 = 3;
+00401069      /* tailcall */
+00401069      return sub_401020();
+00401060  }
+
+0040106e                                            66 90                                                                f.
+
+00401070    int64_t sub_401070()
+
+00401070  {
+00401074      int64_t var_8 = 4;
+00401079      /* tailcall */
+00401079      return sub_401020();
+00401070  }
+
+0040107e                                                                                            66 90                                f.
+
+00401080    int64_t sub_401080()
+
+00401080  {
+00401084      int64_t var_8 = 5;
+00401089      /* tailcall */
+00401089      return sub_401020();
+00401080  }
+
+0040108e                                            66 90                                                                f.
+
+00401090    int64_t sub_401090()
+
+00401090  {
+00401094      int64_t var_8 = 6;
+00401099      /* tailcall */
+00401099      return sub_401020();
+00401090  }
+
+0040109e                                                                                            66 90                                f.
+
+004010a0    int64_t sub_4010a0()
+
+004010a0  {
+004010a4      int64_t var_8 = 7;
+004010a9      /* tailcall */
+004010a9      return sub_401020();
+004010a0  }
+
+004010ae                                            66 90                                                                f.
+
+004010b0    int64_t sub_4010b0()
+
+004010b0  {
+004010b4      int64_t var_8 = 8;
+004010b9      /* tailcall */
+004010b9      return sub_401020();
+004010b0  }
+
+004010be                                                                                            66 90                                f.
+
+004010c0    int64_t sub_4010c0()
+
+004010c0  {
+004010c4      int64_t var_8 = 9;
+004010c9      /* tailcall */
+004010c9      return sub_401020();
+004010c0  }
+
+004010ce                                            66 90                                                                f.
+
+004010d0    int64_t sub_4010d0()
+
+004010d0  {
+004010d4      int64_t var_8 = 0xa;
+004010d9      /* tailcall */
+004010d9      return sub_401020();
+004010d0  }
+
+004010de                                                                                            66 90                                f.
+
+004010e0    int64_t sub_4010e0()
+
+004010e0  {
+004010e4      int64_t var_8 = 0xb;
+004010e9      /* tailcall */
+004010e9      return sub_401020();
+004010e0  }
+
+004010ee                                            66 90                                                                f.
+
+004010f0    int64_t sub_4010f0()
+
+004010f0  {
+004010f4      int64_t var_8 = 0xc;
+004010f9      /* tailcall */
+004010f9      return sub_401020();
+004010f0  }
+
+004010fe                                                                                            66 90                                f.
+
+00401100    int64_t sub_401100()
+
+00401100  {
+00401104      int64_t var_8 = 0xd;
+00401109      /* tailcall */
+00401109      return sub_401020();
+00401100  }
+
+0040110e                                            66 90                                                                f.
+
+00401110    int64_t sub_401110()
+
+00401110  {
+00401114      int64_t var_8 = 0xe;
+00401119      /* tailcall */
+00401119      return sub_401020();
+00401110  }
+
+0040111e                                                                                            66 90                                f.
+
+00401120    int64_t sub_401120()
+
+00401120  {
+00401124      int64_t var_8 = 0xf;
+00401129      /* tailcall */
+00401129      return sub_401020();
+00401120  }
+
+0040112e                                            66 90                                                                f.
+
+00401130    int64_t sub_401130()
+
+00401130  {
+00401134      int64_t var_8 = 0x10;
+00401139      /* tailcall */
+00401139      return sub_401020();
+00401130  }
+
+0040113e                                                                                            66 90                                f.
+
+00401140    int64_t sub_401140()
+
+00401140  {
+00401144      int64_t var_8 = 0x11;
+00401149      /* tailcall */
+00401149      return sub_401020();
+00401140  }
+
+0040114e                                            66 90                                                                f.
+
+00401150    int64_t sub_401150()
+
+00401150  {
+00401154      int64_t var_8 = 0x12;
+00401159      /* tailcall */
+00401159      return sub_401020();
+00401150  }
+
+0040115e                                                                                            66 90                                f.
+
+00401160    int64_t sub_401160()
+
+00401160  {
+00401164      int64_t var_8 = 0x13;
+00401169      /* tailcall */
+00401169      return sub_401020();
+00401160  }
+
+0040116e                                            66 90                                                                f.
+
+00401170    int64_t sub_401170()
+
+00401170  {
+00401174      int64_t var_8 = 0x14;
+00401179      /* tailcall */
+00401179      return sub_401020();
+00401170  }
+
+0040117e                                                                                            66 90                                f.
+
+00401180    int64_t sub_401180()
+
+00401180  {
+00401184      int64_t var_8 = 0x15;
+00401189      /* tailcall */
+00401189      return sub_401020();
+00401180  }
+
+0040118e                                            66 90                                                                f.
+
+00401190    int64_t sub_401190()
+
+00401190  {
+00401194      int64_t var_8 = 0x16;
+00401199      /* tailcall */
+00401199      return sub_401020();
+00401190  }
+
+0040119e                                                                                            66 90                                f.
+
+004011a0    int64_t sub_4011a0()
+
+004011a0  {
+004011a4      int64_t var_8 = 0x17;
+004011a9      /* tailcall */
+004011a9      return sub_401020();
+004011a0  }
+
+004011ae                                            66 90                                                                f.
+
+004011b0    int64_t sub_4011b0()
+
+004011b0  {
+004011b4      int64_t var_8 = 0x18;
+004011b9      /* tailcall */
+004011b9      return sub_401020();
+004011b0  }
+
+004011be                                                                                            66 90                                f.
+
+004011c0    int64_t sub_4011c0()
+
+004011c0  {
+004011c4      int64_t var_8 = 0x19;
+004011c9      /* tailcall */
+004011c9      return sub_401020();
+004011c0  }
+
+004011ce                                            66 90                                                                f.
+
+004011d0    int64_t sub_4011d0()
+
+004011d0  {
+004011d4      int64_t var_8 = 0x1a;
+004011d9      /* tailcall */
+004011d9      return sub_401020();
+004011d0  }
+
+004011de                                                                                            66 90                                f.
+
+004011e0    int64_t sub_4011e0()
+
+004011e0  {
+004011e4      int64_t var_8 = 0x1b;
+004011e9      /* tailcall */
+004011e9      return sub_401020();
+004011e0  }
+
+004011ee                                            66 90                                                                f.
+
+004011f0    int64_t sub_4011f0()
+
+004011f0  {
+004011f4      int64_t var_8 = 0x1c;
+004011f9      /* tailcall */
+004011f9      return sub_401020();
+004011f0  }
+
+004011fe                                                                                            66 90                                f.
+
+00401200    int64_t sub_401200()
+
+00401200  {
+00401204      int64_t var_8 = 0x1d;
+00401209      /* tailcall */
+00401209      return sub_401020();
+00401200  }
+
+0040120e                                            66 90                                                                f.
+
+00401210    int64_t sub_401210()
+
+00401210  {
+00401214      int64_t var_8 = 0x1e;
+00401219      /* tailcall */
+00401219      return sub_401020();
+00401210  }
+
+0040121e                                                                                            66 90                                f.
+
+00401220    int64_t sub_401220()
+
+00401220  {
+00401224      int64_t var_8 = 0x1f;
+00401229      /* tailcall */
+00401229      return sub_401020();
+00401220  }
+
+0040122e                                            66 90                                                                f.
+
+00401230    int64_t sub_401230()
+
+00401230  {
+00401234      int64_t var_8 = 0x20;
+00401239      /* tailcall */
+00401239      return sub_401020();
+00401230  }
+
+0040123e                                                                                            66 90                                f.
+
+00401240    int64_t sub_401240()
+
+00401240  {
+00401244      int64_t var_8 = 0x21;
+00401249      /* tailcall */
+00401249      return sub_401020();
+00401240  }
+
+0040124e                                            66 90                                                                f.
+
+00401250    int64_t sub_401250()
+
+00401250  {
+00401254      int64_t var_8 = 0x22;
+00401259      /* tailcall */
+00401259      return sub_401020();
+00401250  }
+
+0040125e                                                                                            66 90                                f.
+
+00401260    int64_t sub_401260()
+
+00401260  {
+00401264      int64_t var_8 = 0x23;
+00401269      /* tailcall */
+00401269      return sub_401020();
+00401260  }
+
+0040126e                                            66 90                                                                f.
+
+00401270    int64_t sub_401270()
+
+00401270  {
+00401274      int64_t var_8 = 0x24;
+00401279      /* tailcall */
+00401279      return sub_401020();
+00401270  }
+
+0040127e                                                                                            66 90                                f.
+
+00401280    int64_t sub_401280()
+
+00401280  {
+00401284      int64_t var_8 = 0x25;
+00401289      /* tailcall */
+00401289      return sub_401020();
+00401280  }
+
+0040128e                                            66 90                                                                f.
+
+00401290    int64_t sub_401290()
+
+00401290  {
+00401294      int64_t var_8 = 0x26;
+00401299      /* tailcall */
+00401299      return sub_401020();
+00401290  }
+
+0040129e                                                                                            66 90                                f.
+.plt (PROGBITS) section ended  {0x401020-0x4012a0}
+
+.plt.got (PROGBITS) section started  {0x4012a0-0x4012b0}
+
+004012a0    int64_t __cxa_finalize()
+
+004012a0  {
+004012a4      /* tailcall */
+004012a4      return __cxa_finalize();
+004012a0  }
+
+004012aa                                66 0f 1f 44 00 00                                                            f..D..
+.plt.got (PROGBITS) section ended  {0x4012a0-0x4012b0}
+
+.plt.sec (PROGBITS) section started  {0x4012b0-0x401520}
+
+004012b0    int64_t fast_obj_destroy()
+
+004012b0  {
+004012b4      /* tailcall */
+004012b4      return fast_obj_destroy();
+004012b0  }
+
+004012ba                                                                                66 0f 1f 44 00 00                            f..D..
+
+004012c0    int64_t unlink()
+
+004012c0  {
+004012c4      /* tailcall */
+004012c4      return unlink();
+004012c0  }
+
+004012ca                                66 0f 1f 44 00 00                                                            f..D..
+
+004012d0    void _exit(int32_t status) __noreturn
+
+004012d0  {
+004012d4      /* tailcall */
+004012d4      return _exit(status);
+004012d0  }
+
+004012da                                                                                66 0f 1f 44 00 00                            f..D..
+
+004012e0    int64_t fread()
+
+004012e0  {
+004012e4      /* tailcall */
+004012e4      return fread();
+004012e0  }
+
+004012ea                                66 0f 1f 44 00 00                                                            f..D..
+
+004012f0    int64_t setsockopt()
+
+004012f0  {
+004012f4      /* tailcall */
+004012f4      return setsockopt();
+004012f0  }
+
+004012fa                                                                                66 0f 1f 44 00 00                            f..D..
+
+00401300    int64_t write()
+
+00401300  {
+00401304      /* tailcall */
+00401304      return write();
+00401300  }
+
+0040130a                                66 0f 1f 44 00 00                                                            f..D..
+
+00401310    int64_t _ctmStreamWriteSTRING()
+
+00401310  {
+00401314      /* tailcall */
+00401314      return _ctmStreamWriteSTRING();
+00401310  }
+
+0040131a                                                                                66 0f 1f 44 00 00                            f..D..
+
+00401320    int64_t getpid()
+
+00401320  {
+00401324      /* tailcall */
+00401324      return getpid();
+00401320  }
+
+0040132a                                66 0f 1f 44 00 00                                                            f..D..
+
+00401330    int64_t fclose()
+
+00401330  {
+00401334      /* tailcall */
+00401334      return fclose();
+00401330  }
+
+0040133a                                                                                66 0f 1f 44 00 00                            f..D..
+
+00401340    void __stack_chk_fail() __noreturn
+
+00401340  {
+00401344      /* tailcall */
+00401344      return __stack_chk_fail();
+00401340  }
+
+0040134a                                66 0f 1f 44 00 00                                                            f..D..
+
+00401350    int64_t htons()
+
+00401350  {
+00401354      /* tailcall */
+00401354      return htons();
+00401350  }
+
+0040135a                                                                                66 0f 1f 44 00 00                            f..D..
+
+00401360    int64_t dup2()
+
+00401360  {
+00401364      /* tailcall */
+00401364      return dup2();
+00401360  }
+
+0040136a                                66 0f 1f 44 00 00                                                            f..D..
+
+00401370    int64_t snprintf()
+
+00401370  {
+00401374      /* tailcall */
+00401374      return snprintf();
+00401370  }
+
+0040137a                                                                                66 0f 1f 44 00 00                            f..D..
+
+00401380    int64_t htonl()
+
+00401380  {
+00401384      /* tailcall */
+00401384      return htonl();
+00401380  }
+
+0040138a                                66 0f 1f 44 00 00                                                            f..D..
+
+00401390    int64_t memset()
+
+00401390  {
+00401394      /* tailcall */
+00401394      return memset();
+00401390  }
+
+0040139a                                                                                66 0f 1f 44 00 00                            f..D..
+
+004013a0    int64_t close()
+
+004013a0  {
+004013a4      /* tailcall */
+004013a4      return close();
+004013a0  }
+
+004013aa                                66 0f 1f 44 00 00                                                            f..D..
+
+004013b0    int64_t read()
+
+004013b0  {
+004013b4      /* tailcall */
+004013b4      return read();
+004013b0  }
+
+004013ba                                                                                66 0f 1f 44 00 00                            f..D..
+
+004013c0    int64_t calloc()
+
+004013c0  {
+004013c4      /* tailcall */
+004013c4      return calloc();
+004013c0  }
+
+004013ca                                66 0f 1f 44 00 00                                                            f..D..
+
+004013d0    int64_t strcmp()
+
+004013d0  {
+004013d4      /* tailcall */
+004013d4      return strcmp();
+004013d0  }
+
+004013da                                                                                66 0f 1f 44 00 00                            f..D..
+
+004013e0    int64_t signal()
+
+004013e0  {
+004013e4      /* tailcall */
+004013e4      return signal();
+004013e0  }
+
+004013ea                                66 0f 1f 44 00 00                                                            f..D..
+
+004013f0    int64_t fprintf()
+
+004013f0  {
+004013f4      /* tailcall */
+004013f4      return fprintf();
+004013f0  }
+
+004013fa                                                                                66 0f 1f 44 00 00                            f..D..
+
+00401400    int64_t ctmNewContext()
+
+00401400  {
+00401404      /* tailcall */
+00401404      return ctmNewContext();
+00401400  }
+
+0040140a                                66 0f 1f 44 00 00                                                            f..D..
+
+00401410    int64_t _ctmCompressMesh_RAW()
+
+00401410  {
+00401414      /* tailcall */
+00401414      return _ctmCompressMesh_RAW();
+00401410  }
+
+0040141a                                                                                66 0f 1f 44 00 00                            f..D..
+
+00401420    int64_t malloc()
+
+00401420  {
+00401424      /* tailcall */
+00401424      return malloc();
+00401420  }
+
+0040142a                                66 0f 1f 44 00 00                                                            f..D..
+
+00401430    int64_t listen()
+
+00401430  {
+00401434      /* tailcall */
+00401434      return listen();
+00401430  }
+
+0040143a                                                                                66 0f 1f 44 00 00                            f..D..
+
+00401440    int64_t ctmFreeContext()
+
+00401440  {
+00401444      /* tailcall */
+00401444      return ctmFreeContext();
+00401440  }
+
+0040144a                                66 0f 1f 44 00 00                                                            f..D..
+
+00401450    int64_t bind()
+
+00401450  {
+00401454      /* tailcall */
+00401454      return bind();
+00401450  }
+
+0040145a                                                                                66 0f 1f 44 00 00                            f..D..
+
+00401460    int64_t open()
+
+00401460  {
+00401464      /* tailcall */
+00401464      return open();
+00401460  }
+
+0040146a                                66 0f 1f 44 00 00                                                            f..D..
+
+00401470    int64_t fopen()
+
+00401470  {
+00401474      /* tailcall */
+00401474      return fopen();
+00401470  }
+
+0040147a                                                                                66 0f 1f 44 00 00                            f..D..
+
+00401480    int64_t _ctmStreamWrite()
+
+00401480  {
+00401484      /* tailcall */
+00401484      return _ctmStreamWrite();
+00401480  }
+
+0040148a                                66 0f 1f 44 00 00                                                            f..D..
+
+00401490    int64_t perror()
+
+00401490  {
+00401494      /* tailcall */
+00401494      return perror();
+00401490  }
+
+0040149a                                                                                66 0f 1f 44 00 00                            f..D..
+
+004014a0    int64_t ctmAddUVMap()
+
+004014a0  {
+004014a4      /* tailcall */
+004014a4      return ctmAddUVMap();
+004014a0  }
+
+004014aa                                66 0f 1f 44 00 00                                                            f..D..
+
+004014b0    int64_t accept()
+
+004014b0  {
+004014b4      /* tailcall */
+004014b4      return accept();
+004014b0  }
+
+004014ba                                                                                66 0f 1f 44 00 00                            f..D..
+
+004014c0    int64_t atoi()
+
+004014c0  {
+004014c4      /* tailcall */
+004014c4      return atoi();
+004014c0  }
+
+004014ca                                66 0f 1f 44 00 00                                                            f..D..
+
+004014d0    int64_t _ctmStreamWriteUINT()
+
+004014d0  {
+004014d4      /* tailcall */
+004014d4      return _ctmStreamWriteUINT();
+004014d0  }
+
+004014da                                                                                66 0f 1f 44 00 00                            f..D..
+
+004014e0    int64_t fwrite()
+
+004014e0  {
+004014e4      /* tailcall */
+004014e4      return fwrite();
+004014e0  }
+
+004014ea                                66 0f 1f 44 00 00                                                            f..D..
+
+004014f0    int64_t fast_obj_read()
+
+004014f0  {
+004014f4      /* tailcall */
+004014f4      return fast_obj_read();
+004014f0  }
+
+004014fa                                                                                66 0f 1f 44 00 00                            f..D..
+
+00401500    int64_t fork()
+
+00401500  {
+00401504      /* tailcall */
+00401504      return fork();
+00401500  }
+
+0040150a                                66 0f 1f 44 00 00                                                            f..D..
+
+00401510    int64_t socket()
+
+00401510  {
+00401514      /* tailcall */
+00401514      return socket();
+00401510  }
+
+0040151a                                                                                66 0f 1f 44 00 00                            f..D..
+.plt.sec (PROGBITS) section ended  {0x4012b0-0x401520}
+
+.text (PROGBITS) section started  {0x401520-0x40226d}
+
+00401520    void _start(int64_t arg1, int64_t arg2, void (* arg3)()) __noreturn
+
+00401520  {
+00401531      int64_t stack_end_1;
+00401531      int64_t stack_end = stack_end_1;
+0040153f      void ubp_av;
+0040153f      __libc_start_main(main, (uint32_t)__return_addr, &ubp_av, nullptr, nullptr, arg3, 
+0040153f          &stack_end);
+0040153f      /* no return */
+00401520  }
+
+00401545                 f4 66 2e 0f 1f 84 00 00 00 00 00                                                       .f.........
+
+00401550    int64_t (* const)() deregister_tm_clones()
+
+00401550  {
+00401557      return &__TMC_END__;
+00401550  }
+
+00401571                                                     0f 1f 80 00 00 00 00                                           .......
+00401579                                                                             0f 1f 80 00 00 00 00                           .......
+
+00401580    int64_t (* const)() register_tm_clones()
+
+00401580  {
+00401598      return nullptr;
+00401580  }
+
+004015b2                                                        66 0f 1f 44 00 00                                            f..D..
+004015b9                                                                             0f 1f 80 00 00 00 00                           .......
+
+004015c0    void __do_global_dtors_aux()
+
+004015c0  {
+004015cb      if (completed.0)
+004015f8          return;
+004015f8      
+004015d9      if (__cxa_finalize)
+004015e2          __cxa_finalize(__dso_handle);
+004015e2      
+004015e7      deregister_tm_clones();
+004015ec      completed.0 = 1;
+004015c0  }
+
+004015f5                                                                 0f 1f 00                                               ...
+004015f9                                                                             0f 1f 80 00 00 00 00                           .......
+
+00401600    int64_t (* const)() frame_dummy()
+
+00401600  {
+00401604      /* tailcall */
+00401604      return register_tm_clones();
+00401600  }
+
+
+00401609    int64_t file_write(int64_t arg1, int32_t arg2, int64_t arg3)
+
+00401609  {
+00401620      void* fsbase;
+00401620      int64_t rax = *(uint64_t*)((char*)fsbase + 0x28);
+00401642      int64_t result = fwrite(arg1, 1, (uint64_t)arg2, arg3);
+0040164b      *(uint64_t*)((char*)fsbase + 0x28);
+0040164b      
+00401654      if (rax == *(uint64_t*)((char*)fsbase + 0x28))
+0040165c          return result;
+0040165c      
+00401656      __stack_chk_fail();
+00401656      /* no return */
+00401609  }
+
+
+0040165d    int64_t stream_raw(void* arg1)
+
+0040165d  {
+0040166d      void* fsbase;
+0040166d      int64_t rax = *(uint64_t*)((char*)fsbase + 0x28);
+0040167c      int32_t var_14 = 0;
+0040167c      
+0040168e      if (*(uint64_t*)((char*)arg1 + 0x28))
+00401690          var_14 = 1;
+00401690      
+004016aa      _ctmStreamWrite(arg1, "OCTM", 4, "OCTM");
+004016bb      _ctmStreamWriteUINT(arg1, 5);
+004016d6      _ctmStreamWrite(arg1, &data_40300d, 4, &data_40300d);
+004016eb      _ctmStreamWriteUINT(arg1, (uint64_t)*(uint32_t*)((char*)arg1 + 0x10));
+00401700      _ctmStreamWriteUINT(arg1, (uint64_t)*(uint32_t*)((char*)arg1 + 0x20));
+00401715      _ctmStreamWriteUINT(arg1, (uint64_t)*(uint32_t*)((char*)arg1 + 0x30));
+0040172a      _ctmStreamWriteUINT(arg1, (uint64_t)*(uint32_t*)((char*)arg1 + 0x40));
+0040173b      _ctmStreamWriteUINT(arg1, (uint64_t)var_14);
+00401752      _ctmStreamWriteSTRING(arg1, *(uint64_t*)((char*)arg1 + 0x68));
+0040175e      _ctmCompressMesh_RAW(arg1);
+0040175e      
+00401771      if (rax == *(uint64_t*)((char*)fsbase + 0x28))
+00401779          return rax - *(uint64_t*)((char*)fsbase + 0x28);
+00401779      
+00401773      __stack_chk_fail();
+00401773      /* no return */
+0040165d  }
+
+
+0040177a    int64_t convert(int64_t arg1, int64_t arg2)
+
+0040177a  {
+0040178e      void* fsbase;
+0040178e      int64_t rax = *(uint64_t*)((char*)fsbase + 0x28);
+004017a4      int32_t* rax_2 = fast_obj_read(arg1);
+004017b2      int64_t result;
+004017b2      
+004017b2      if (rax_2)
+004017b2      {
+004017e4          int32_t rax_5 = *(uint32_t*)rax_2;
+00401802          int64_t rax_12 = malloc((uint64_t)rax_2[0x18] * 0xc);
+0040180b          int32_t var_74_1 = 0;
+00401812          int32_t var_70_1 = 0;
+00401812          
+00401937          for (int32_t i = 0; i < rax_2[0x10]; i += 1)
+00401937          {
+00401837              int32_t j =
+00401837                  *(uint32_t*)(*(uint64_t*)((char*)rax_2 + 0x48) + ((uint64_t)i << 2));
+0040183c              int32_t var_68_1 = 1;
+0040183c              
+0040191d              while (var_68_1 + 1 < j)
+0040191d              {
+0040187f                  *(uint32_t*)(((uint64_t)(var_74_1 * 3) << 2) + rax_12) = *(uint32_t*)(
+0040187f                      *(uint64_t*)((char*)rax_2 + 0x68) + (uint64_t)var_70_1 * 0xc);
+004018c3                  *(uint32_t*)(((uint64_t)(var_74_1 * 3 + 1) << 2) + rax_12) = *(uint32_t*)(
+004018c3                      *(uint64_t*)((char*)rax_2 + 0x68)
+004018c3                      + (uint64_t)(var_68_1 + var_70_1) * 0xc);
+0040190a                  *(uint32_t*)(((uint64_t)(var_74_1 * 3 + 2) << 2) + rax_12) = *(uint32_t*)(
+0040190a                      *(uint64_t*)((char*)rax_2 + 0x68)
+0040190a                      + (uint64_t)(var_68_1 + var_70_1 + 1) * 0xc);
+0040190c                  var_74_1 += 1;
+00401910                  var_68_1 += 1;
+0040191d              }
+0040191d              
+00401926              var_70_1 += j;
+00401937          }
+00401937          
+0040194b          int64_t rax_63 = calloc((uint64_t)rax_5 * 2, 4);
+0040194b          
+00401959          if (rax_63)
+00401959          {
+0040198d              void* rax_64 = ctmNewContext(0x102);
+004019aa              *(uint64_t*)((char*)rax_64 + 8) = *(uint64_t*)((char*)rax_2 + 8);
+004019b5              *(uint32_t*)((char*)rax_64 + 0x10) = rax_5;
+004019c0              *(uint64_t*)((char*)rax_64 + 0x18) = rax_12;
+004019cb              *(uint32_t*)((char*)rax_64 + 0x20) = var_74_1;
+004019d2              *(uint32_t*)((char*)rax_64 + 0x54) = 0x201;
+004019f0              ctmAddUVMap(rax_64, rax_63, &data_403048, 0);
+00401a06              int64_t rax_74 = fopen(arg2, &data_40304c, &data_40304c);
+00401a06              
+00401a14              if (rax_74)
+00401a14              {
+00401a4d                  *(uint64_t*)((char*)rax_64 + 0x78) = file_write;
+00401a59                  *(uint64_t*)((char*)rax_64 + 0x80) = rax_74;
+00401a64                  int64_t rax_79 = *(uint64_t*)((char*)rax_2 + 0x18);
+00401a64                  
+00401b1c                  for (int32_t i_1 = 0; i_1 < rax_2[0x18]; i_1 += 1)
+00401b1c                  {
+00401a90                      int64_t* rax_85 =
+00401a90                          (uint64_t)i_1 * 0xc + *(uint64_t*)((char*)rax_2 + 0x68);
+00401a93                      int64_t rdx_23 = *(uint64_t*)rax_85;
+00401a9d                      int32_t var_14_1 = rax_85[1];
+00401ad0                      *(uint32_t*)(rax_63 + ((uint64_t)((uint32_t)rdx_23 * 2) << 2)) = *(
+00401ad0                          uint32_t*)(((uint64_t)(*(uint32_t*)((char*)&rdx_23 + 4) * 2) << 2)
+00401ad0                          + rax_79);
+00401b0a                      *(uint32_t*)(rax_63 + ((uint64_t)((uint32_t)rdx_23 * 2 + 1) << 2)) = *
+00401b0a                          (uint32_t*)(((uint64_t)(*(uint32_t*)((char*)&rdx_23 + 4) * 2 + 1)
+00401b0a                          << 2) + rax_79);
+00401b1c                  }
+00401b1c                  
+00401b29                  stream_raw(rax_64);
+00401b35                  fclose(rax_74);
+00401b35                  
+00401b43                  if (!*(uint32_t*)((char*)rax_64 + 0x50))
+00401b43                  {
+00401b9c                      fprintf(__bss_start, 
+00401b9c                          "obj2ctm: wrote %u vertices / %u triangles to %s\n", 
+00401b9c                          (uint64_t)*(uint32_t*)((char*)rax_64 + 0x10), 
+00401b9c                          (uint64_t)*(uint32_t*)((char*)rax_64 + 0x20), arg2);
+00401ba8                      ctmFreeContext(rax_64);
+00401bb4                      fast_obj_destroy(rax_2);
+00401bb9                      result = 0;
+00401b43                  }
+00401b43                  else
+00401b43                  {
+00401b65                      fprintf(__bss_start, "obj2ctm: export error %d\n", 
+00401b65                          (uint64_t)*(uint32_t*)((char*)rax_64 + 0x50), 
+00401b65                          "obj2ctm: export error %d\n");
+00401b6a                      result = 1;
+00401b43                  }
+00401a14              }
+00401a14              else
+00401a14              {
+00401a33                  fprintf(__bss_start, "obj2ctm: cannot open '%s'\n", arg2, 
+00401a33                      "obj2ctm: cannot open '%s'\n");
+00401a38                  result = 1;
+00401a14              }
+00401959          }
+00401959          else
+00401959          {
+00401979              fwrite("obj2ctm: out of memory\n", 1, 0x17, __bss_start);
+0040197e              result = 1;
+00401959          }
+004017b2      }
+004017b2      else
+004017b2      {
+004017d1          fprintf(__bss_start, "obj2ctm: failed to read '%s'\n", arg1, 
+004017d1              "obj2ctm: failed to read '%s'\n");
+004017d6          result = 1;
+004017b2      }
+004017b2      
+00401bc2      *(uint64_t*)((char*)fsbase + 0x28);
+00401bc2      
+00401bcb      if (rax == *(uint64_t*)((char*)fsbase + 0x28))
+00401bd3          return result;
+00401bd3      
+00401bcd      __stack_chk_fail();
+00401bcd      /* no return */
+0040177a  }
+
+
+00401bd4    int64_t send_all(int32_t arg1, int64_t arg2, int64_t arg3)
+
+00401bd4  {
+00401beb      void* fsbase;
+00401beb      int64_t rax = *(uint64_t*)((char*)fsbase + 0x28);
+00401c42      int64_t rax_6;
+00401c42      
+00401c42      for (int64_t i = 0; i < arg3; i += rax_6)
+00401c42      {
+00401c22          rax_6 = write((uint64_t)arg1, arg2 + i, arg3 - i);
+00401c22          
+00401c30          if (rax_6 <= 0)
+00401c30              break;
+00401c42      }
+00401c42      
+00401c55      if (rax == *(uint64_t*)((char*)fsbase + 0x28))
+00401c5d          return rax - *(uint64_t*)((char*)fsbase + 0x28);
+00401c5d      
+00401c57      __stack_chk_fail();
+00401c57      /* no return */
+00401bd4  }
+
+
+00401c5e    int64_t read_exact(int32_t arg1, int64_t arg2, int64_t arg3)
+
+00401c5e  {
+00401c75      void* fsbase;
+00401c75      int64_t rax = *(uint64_t*)((char*)fsbase + 0x28);
+00401c8c      int64_t var_28 = 0;
+00401cdb      int64_t result;
+00401cdb      
+00401cdb      while (true)
+00401cdb      {
+00401cdb          if (var_28 >= arg3)
+00401cdb          {
+00401cdd              result = 0;
+00401cdd              break;
+00401cdb          }
+00401cdb          
+00401cb4          int64_t rax_6 = read((uint64_t)arg1, arg2 + var_28, arg3 - var_28);
+00401cb4          
+00401cc2          if (rax_6 <= 0)
+00401cc2          {
+00401cc4              result = 0xffffffff;
+00401cc9              break;
+00401cc2          }
+00401cc2          
+00401ccf          var_28 += rax_6;
+00401cdb      }
+00401cdb      
+00401ce6      *(uint64_t*)((char*)fsbase + 0x28);
+00401ce6      
+00401cef      if (rax == *(uint64_t*)((char*)fsbase + 0x28))
+00401cf7          return result;
+00401cf7      
+00401cf1      __stack_chk_fail();
+00401cf1      /* no return */
+00401c5e  }
+
+
+00401cf8    void handle_conn(int32_t arg1) __noreturn
+
+00401cf8  {
+00401d07      int64_t var_1008;
+00401d07      int64_t var_1008_1 = var_1008;
+00401d22      void* fsbase;
+00401d22      int64_t var_10 = *(uint64_t*)((char*)fsbase + 0x28);
+00401d4c      void var_1098;
+00401d4c      snprintf(&var_1098, 0x40, "/tmp/obj2ctm.%d.obj", (uint64_t)getpid());
+00401d75      void var_1058;
+00401d75      snprintf(&var_1058, 0x40, "/tmp/obj2ctm.%d.ctm", (uint64_t)getpid());
+00401d98      char var_109c;
+00401d98      
+00401d98      if (read_exact(arg1, &var_109c, 4))
+00401d98      {
+00401d9f          _exit(1);
+00401d9f          /* no return */
+00401d98      }
+00401d98      
+00401dde      char var_109b;
+00401dde      char var_109a;
+00401dde      char var_1099;
+00401dde      uint64_t rax_16 = (uint64_t)var_1099 << 0x18 | (uint64_t)var_109b << 8
+00401dde          | (uint64_t)var_109c | (uint64_t)var_109a << 0x10;
+00401dde      
+00401df3      if (rax_16 > 0x1000000)
+00401df3      {
+00401dfa          _exit(1);
+00401dfa          /* no return */
+00401df3      }
+00401df3      
+00401e13      int64_t rax_17 = fopen(&var_1098, &data_40304c, &data_40304c);
+00401e13      
+00401e27      if (!rax_17)
+00401e27      {
+00401e2e          _exit(1);
+00401e2e          /* no return */
+00401e27      }
+00401e27      
+00401edd      void var_1018;
+00401edd      int64_t rax_21;
+00401edd      
+00401edd      for (int64_t i = 0; i < rax_16; i += rax_21)
+00401edd      {
+00401e51          int64_t var_10d0_1 = rax_16 - i;
+00401e51          
+00401e63          if (var_10d0_1 > 0x1000)
+00401e65              var_10d0_1 = 0x1000;
+00401e65          
+00401e89          rax_21 = read((uint64_t)arg1, &var_1018, var_10d0_1, &var_1018);
+00401e89          
+00401e9d          if (rax_21 <= 0)
+00401e9d              break;
+00401e9d          
+00401ebc          fwrite(&var_1018, 1, rax_21, rax_17);
+00401edd      }
+00401edd      
+00401ef0      fclose(rax_17);
+00401f02      dup2((uint64_t)arg1, 0);
+00401f14      dup2((uint64_t)arg1, 1);
+00401f2d      int32_t rax_28 = open("/dev/null", 1);
+00401f2d      
+00401f3f      if (rax_28 >= 0)
+00401f4e          dup2((uint64_t)rax_28, 2);
+00401f4e      
+00401f67      int32_t status = convert(&var_1098, &var_1058);
+00401f67      
+00401f79      if (!status)
+00401f79      {
+00401f93          int64_t rax_30 = fopen(&var_1058, &data_4030eb, &data_4030eb);
+00401f93          
+00401fa7          if (rax_30)
+00401fa7          {
+00401fe7              while (true)
+00401fe7              {
+00401fe7                  int64_t rax_32 = fread(&var_1018, 1, 0x1000, rax_30);
+00401fe7                  
+00401ffb                  if (!rax_32)
+00401ffb                      break;
+00401ffb                  
+00401fc4                  send_all(arg1, &var_1018, rax_32);
+00401fe7              }
+00401fe7              
+00402007              fclose(rax_30);
+00401fa7          }
+00401f79      }
+00401f79      
+00402016      unlink(&var_1098);
+00402025      unlink(&var_1058);
+00402032      _exit(status);
+00402032      /* no return */
+00401cf8  }
+
+
+00402037    int64_t serve(int32_t arg1)
+
+00402037  {
+00402046      void* fsbase;
+00402046      int64_t rax = *(uint64_t*)((char*)fsbase + 0x28);
+0040205f      signal(0x11, 1);
+00402073      int32_t rax_2 = socket(2, 1, 0);
+0040207b      int32_t var_38 = 1;
+0040209e      setsockopt((uint64_t)rax_2, 1, 2, &var_38, 4);
+004020b4      int16_t var_28;
+004020b4      memset(&var_28, 0, 0x10);
+004020b9      var_28 = 2;
+004020c9      int32_t var_24 = htonl(0);
+004020d9      int16_t var_26 = htons((uint64_t)(uint16_t)arg1);
+004020d9      
+004020f5      if (!bind((uint64_t)rax_2, &var_28, 0x10, &var_28))
+004020f5      {
+00402121          if (!listen((uint64_t)rax_2, 0x10))
+00402121          {
+00402155              fprintf(__bss_start, "obj2ctm: serving on port %d\n", (uint64_t)arg1, 
+00402155                  "obj2ctm: serving on port %d\n");
+00402169              int32_t rax_16;
+00402169              
+00402169              while (true)
+00402169              {
+00402169                  rax_16 = accept((uint64_t)rax_2, 0, 0);
+00402169                  
+00402175                  if (rax_16 >= 0)
+00402175                  {
+00402183                      if (!fork())
+00402183                          break;
+00402183                      
+004021a8                      close((uint64_t)rax_16);
+00402175                  }
+00402169              }
+00402169              
+0040218a              close((uint64_t)rax_2);
+00402194              handle_conn(rax_16);
+00402194              /* no return */
+00402121          }
+00402121          
+0040212d          perror("listen");
+004020f5      }
+004020f5      else
+00402101          perror("bind");
+00402101      
+004021b6      *(uint64_t*)((char*)fsbase + 0x28);
+004021b6      
+004021bf      if (rax == *(uint64_t*)((char*)fsbase + 0x28))
+004021c7          return 1;
+004021c7      
+004021c1      __stack_chk_fail();
+004021c1      /* no return */
+00402037  }
+
+00402199                                                                             bf 00 00 00 00 e8 2d                           ......-
+004021a0  f1 ff ff                                                                                         ...
+
+004021c8    int32_t main(int32_t argc, char** argv, char** envp)
+
+004021c8  {
+004021db      void* fsbase;
+004021db      int64_t rax = *(uint64_t*)((char*)fsbase + 0x28);
+004021ee      int32_t rax_5;
+004021ee      
+004021ee      if (argc == 3)
+00402208          rax_5 = strcmp(argv[1], "serve", "serve");
+00402208      
+0040220f      int32_t result;
+0040220f      
+0040220f      if (argc != 3 || rax_5)
+0040220f      {
+0040224d          fprintf(__bss_start, "usage: %s serve <port>\n", *(uint64_t*)argv, 
+0040224d              "usage: %s serve <port>\n");
+00402252          result = 2;
+0040220f      }
+0040220f      else
+00402226          result = serve(atoi(argv[2]));
+00402226      
+0040225b      *(uint64_t*)((char*)fsbase + 0x28);
+0040225b      
+00402264      if (rax == *(uint64_t*)((char*)fsbase + 0x28))
+0040226c          return result;
+0040226c      
+00402266      __stack_chk_fail();
+00402266      /* no return */
+004021c8  }
+
+.text (PROGBITS) section ended  {0x401520-0x40226d}
+
+0040226d                                         00 00 00                                                               ...
+
+.fini (PROGBITS) section started  {0x402270-0x40227d}
+
+00402270    int64_t _fini() __pure
+
+00402270  {
+0040227c      return;
+00402270  }
+
+.fini (PROGBITS) section ended  {0x402270-0x40227d}
+
+.rodata (PROGBITS) section started  {0x403000-0x403135}
+00403000  uint32_t _IO_stdin_used = 0x20001
+
+00403004              00 00 00 00                                                                              ....
+
+00403008  char const data_403008[0x5] = "OCTM", 0
+
+0040300d  data_40300d:
+0040300d                                         52 41 57 00 00                                                         RAW..
+
+00403012  char const data_403012[0x1e] = "obj2ctm: failed to read \'%s\'\n", 0
+00403030  char const data_403030[0x18] = "obj2ctm: out of memory\n", 0
+
+00403048  data_403048:
+00403048                          75 76 30 00                                                                      uv0.
+0040304c  data_40304c:
+0040304c                                      77 62 00                                                                 wb.
+
+0040304f  char const data_40304f[0x1b] = "obj2ctm: cannot open \'%s\'\n", 0
+0040306a  char const data_40306a[0x1a] = "obj2ctm: export error %d\n", 0
+
+00403084              00 00 00 00                                                                              ....
+
+00403088  char const data_403088[0x31] = "obj2ctm: wrote %u vertices / %u triangles to %s\n", 0
+004030b9  char const data_4030b9[0x14] = "/tmp/obj2ctm.%d.obj", 0
+004030cd  char const data_4030cd[0x14] = "/tmp/obj2ctm.%d.ctm", 0
+004030e1  char const data_4030e1[0xa] = "/dev/null", 0
+
+004030eb  data_4030eb:
+004030eb                                   72 62 00                                                                   rb.
+
+004030ee  char const data_4030ee[0x5] = "bind", 0
+004030f3  char const data_4030f3[0x7] = "listen", 0
+004030fa  char const data_4030fa[0x1d] = "obj2ctm: serving on port %d\n", 0
+00403117  char const data_403117[0x6] = "serve", 0
+0040311d  char const data_40311d[0x18] = "usage: %s serve <port>\n", 0
+.rodata (PROGBITS) section ended  {0x403000-0x403135}
+
+00403135                                                                 00 00 00                                               ...
+
+.eh_frame_hdr (PROGBITS) section started  {0x403138-0x4031a4}
+00403138  __GNU_EH_FRAME_HDR:
+00403138                                                                          01 1b 03 3b 6c 00 00 00                          ...;l...
+00403140  0c 00 00 00 e8 de ff ff a0 00 00 00 68 e1 ff ff c8 00 00 00 78 e1 ff ff e0 00 00 00 e8 e3 ff ff  ............h.......x...........
+00403160  88 00 00 00 d1 e4 ff ff f8 00 00 00 25 e5 ff ff 18 01 00 00 42 e6 ff ff 38 01 00 00 9c ea ff ff  ............%.......B...8.......
+00403180  58 01 00 00 26 eb ff ff 78 01 00 00 c0 eb ff ff 98 01 00 00 ff ee ff ff b4 01 00 00 90 f0 ff ff  X...&...x.......................
+004031a0  d4 01 00 00                                                                                      ....
+.eh_frame_hdr (PROGBITS) section ended  {0x403138-0x4031a4}
+
+004031a4              00 00 00 00                                                                              ....
+
+.eh_frame (PROGBITS) section started  {0x4031a8-0x403330}
+004031a8                          14 00 00 00 00 00 00 00 01 7a 52 00 01 78 10 01 1b 0c 07 08 90 01 00 00          .........zR..x..........
+004031c0  14 00 00 00 1c 00 00 00 58 e3 ff ff 26 00 00 00 00 44 07 10 00 00 00 00 24 00 00 00 34 00 00 00  ........X...&....D......$...4...
+004031e0  40 de ff ff 80 02 00 00 00 0e 10 46 0e 18 4a 0f 0b 77 08 80 00 3f 1a 39 2a 33 24 22 00 00 00 00  @..........F..J..w...?.9*3$"....
+00403200  14 00 00 00 5c 00 00 00 98 e0 ff ff 10 00 00 00 00 00 00 00 00 00 00 00 14 00 00 00 74 00 00 00  ....\.......................t...
+00403220  90 e0 ff ff 70 02 00 00 00 00 00 00 00 00 00 00 1c 00 00 00 8c 00 00 00 d1 e3 ff ff 54 00 00 00  ....p.......................T...
+00403240  00 45 0e 10 86 02 43 0d 06 02 4b 0c 07 08 00 00 1c 00 00 00 ac 00 00 00 05 e4 ff ff 1d 01 00 00  .E....C...K.....................
+00403260  00 45 0e 10 86 02 43 0d 06 03 14 01 0c 07 08 00 1c 00 00 00 cc 00 00 00 02 e5 ff ff 5a 04 00 00  .E....C.....................Z...
+00403280  00 45 0e 10 86 02 43 0d 06 03 51 04 0c 07 08 00 1c 00 00 00 ec 00 00 00 3c e9 ff ff 8a 00 00 00  .E....C...Q.............<.......
+004032a0  00 45 0e 10 86 02 43 0d 06 02 81 0c 07 08 00 00 1c 00 00 00 0c 01 00 00 a6 e9 ff ff 9a 00 00 00  .E....C.........................
+004032c0  00 45 0e 10 86 02 43 0d 06 02 91 0c 07 08 00 00 18 00 00 00 2c 01 00 00 20 ea ff ff 3f 03 00 00  .E....C.............,... ...?...
+004032e0  00 45 0e 10 86 02 43 0d 06 00 00 00 1c 00 00 00 48 01 00 00 43 ed ff ff 91 01 00 00 00 45 0e 10  .E....C.........H...C........E..
+00403300  86 02 43 0d 06 03 88 01 0c 07 08 00 1c 00 00 00 68 01 00 00 b4 ee ff ff a5 00 00 00 00 45 0e 10  ..C.............h............E..
+00403320  86 02 43 0d 06 02 9c 0c 07 08 00 00                                                              ..C.........
+0040332c  __FRAME_END__:
+0040332c                                      00 00 00 00                                                              ....
+.eh_frame (PROGBITS) section ended  {0x4031a8-0x403330}
+
+.init_array section started  {0x404c68-0x404c70}
+00404c68  void (* __frame_dummy_init_array_entry[0x1])() = 
+00404c68  {
+00404c68      [0x0] = frame_dummy
+00404c70  }
+.init_array section ended  {0x404c68-0x404c70}
+
+.fini_array section started  {0x404c70-0x404c78}
+00404c70  void (* __do_global_dtors_aux_fini_array_entry[0x1])() = 
+00404c70  {
+00404c70      [0x0] = __do_global_dtors_aux
+00404c78  }
+.fini_array section ended  {0x404c70-0x404c78}
+
+00404c78  _DYNAMIC:
+00404c78                                                                          58 58 58 58 58 58 58 58                          XXXXXXXX
+00404c80  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404ca0  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404cc0  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404ce0  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404d00  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404d20  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404d40  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404d60  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404d80  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404da0  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404dc0  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404de0  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404e00  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404e20  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404e40  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404e60  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00404e80  58 58 58 58 58 58 58 58                                                                          XXXXXXXX
+
+.got (PROGBITS) section started  {0x404e88-0x405000}
+00404e88  _GLOBAL_OFFSET_TABLE_:
+00404e88                          78 4c 00 00 00 00 00 00                                                          xL......
+
+00404e90  int64_t data_404e90 = 0x0
+00404e98  int64_t data_404e98 = 0x0
+00404ea0  int64_t (* const fast_obj_destroy)() = fast_obj_destroy
+00404ea8  int64_t (* const unlink)() = unlink
+00404eb0  void (* const _exit)(int32_t status) __noreturn = _exit
+00404eb8  int64_t (* const fread)() = fread
+00404ec0  int64_t (* const setsockopt)() = setsockopt
+00404ec8  int64_t (* const write)() = write
+00404ed0  int64_t (* const _ctmStreamWriteSTRING)() = _ctmStreamWriteSTRING
+00404ed8  int64_t (* const getpid)() = getpid
+00404ee0  int64_t (* const fclose)() = fclose
+00404ee8  void (* const __stack_chk_fail)() __noreturn = __stack_chk_fail
+00404ef0  int64_t (* const htons)() = htons
+00404ef8  int64_t (* const dup2)() = dup2
+00404f00  int64_t (* const snprintf)() = snprintf
+00404f08  int64_t (* const htonl)() = htonl
+00404f10  int64_t (* const memset)() = memset
+00404f18  int64_t (* const close)() = close
+00404f20  int64_t (* const read)() = read
+00404f28  int64_t (* const calloc)() = calloc
+00404f30  int64_t (* const strcmp)() = strcmp
+00404f38  int64_t (* const signal)() = signal
+00404f40  int64_t (* const fprintf)() = fprintf
+00404f48  int64_t (* const ctmNewContext)() = ctmNewContext
+00404f50  int64_t (* const _ctmCompressMesh_RAW)() = _ctmCompressMesh_RAW
+00404f58  int64_t (* const malloc)() = malloc
+00404f60  int64_t (* const listen)() = listen
+00404f68  int64_t (* const ctmFreeContext)() = ctmFreeContext
+00404f70  int64_t (* const bind)() = bind
+00404f78  int64_t (* const open)() = open
+00404f80  int64_t (* const fopen)() = fopen
+00404f88  int64_t (* const _ctmStreamWrite)() = _ctmStreamWrite
+00404f90  int64_t (* const perror)() = perror
+00404f98  int64_t (* const ctmAddUVMap)() = ctmAddUVMap
+00404fa0  int64_t (* const accept)() = accept
+00404fa8  int64_t (* const atoi)() = atoi
+00404fb0  int64_t (* const _ctmStreamWriteUINT)() = _ctmStreamWriteUINT
+00404fb8  int64_t (* const fwrite)() = fwrite
+00404fc0  int64_t (* const fast_obj_read)() = fast_obj_read
+00404fc8  int64_t (* const fork)() = fork
+00404fd0  int64_t (* const socket)() = socket
+00404fd8  void (* const __libc_start_main)(int32_t (* main)(int32_t argc, char** argv, char** envp), int32_t argc, char** ubp_av, void (* init)(), void (* fini)(), void (* rtld_fini)(), void* stack_end) __noreturn = __libc_start_main
+00404fe0  int64_t (* const _ITM_deregisterTMCloneTable)() = _ITM_deregisterTMCloneTable
+00404fe8  int64_t (* const __gmon_start__)() = __gmon_start__
+00404ff0  int64_t (* const _ITM_registerTMCloneTable)() = _ITM_registerTMCloneTable
+00404ff8  int64_t (* const __cxa_finalize)() = __cxa_finalize
+.got (PROGBITS) section ended  {0x404e88-0x405000}
+
+.data (PROGBITS) section started  {0x405000-0x405010}
+00405000  __data_start:
+00405000  00 00 00 00 00 00 00 00                                                                          ........
+
+00405008  void* __dso_handle = __dso_handle
+.data (PROGBITS) section ended  {0x405000-0x405010}
+
+00405010  __TMC_END__:
+00405010                                                  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00                  ................
+
+.bss (NOBITS) section started  {0x405020-0x405030}
+00405020  uint64_t* const __bss_start = 0x0
+00405028  uint8_t completed.0 = 0x0
+
+00405029                             00 00 00 00 00 00 00                                                           .......
+.bss (NOBITS) section ended  {0x405020-0x405030}
+
+00406000  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 00 04 00 00 00 20 00 00 00  XXXXXXXXXXXXXXXXXXXXXXX..... ...
+00406020  05 00 00 00 47 4e 55 00 02 00 00 c0 04 00 00 00 03 00 00 00 00 00 00 00 02 80 00 c0 04 00 00 00  ....GNU.........................
+00406040  01 00 00 00 00 00 00 00 04 00 00 00 14 00 00 00 03 00 00 00 47 4e 55 00 d2 9b 43 7c 70 57 f3 f1  ....................GNU...C|pW..
+00406060  0f 08 fe 5d 4c 4b 81 9e fd 07 5a 5b 00 00 00 00 04 00 00 00 10 00 00 00 01 00 00 00 47 4e 55 00  ...]LK....Z[................GNU.
+00406080  00 00 00 00 03 00 00 00 02 00 00 00 00 00 00 00                                                  ................
+
+.gnu.hash section started  {0x406090-0x4060b8}
+00406090                                                  02 00 00 00 2c 00 00 00 01 00 00 00 06 00 00 00                  ....,...........
+004060a0  00 01 81 00 00 00 00 02 2c 00 00 00 2d 00 00 00 d1 65 ce 6d 39 f2 8b 1c                          ........,...-....e.m9...
+.gnu.hash section ended  {0x406090-0x4060b8}
+
+.dynsym (DYNSYM) section started  {0x4060b8-0x406508}
+004060b8  struct Elf64_Sym __elf_symbol_table[0x2e] = 
+004060b8  {
+004060b8      [0x00] = 
+004060b8      {
+004060b8          uint32_t st_name = 0x0
+004060bc          uint8_t st_info = 0x0
+004060bd          uint8_t st_other = 0x0
+004060be          uint16_t st_shndx = 0x0
+004060c0          uint64_t st_value = 0x0
+004060c8          uint64_t st_size = 0x0
+004060d0      }
+004060d0      [0x01] = 
+004060d0      {
+004060d0          uint32_t st_name = 0xcc
+004060d4          uint8_t st_info = 0x12
+004060d5          uint8_t st_other = 0x0
+004060d6          uint16_t st_shndx = 0x0
+004060d8          uint64_t st_value = 0x0
+004060e0          uint64_t st_size = 0x0
+004060e8      }
+004060e8      [0x02] = 
+004060e8      {
+004060e8          uint32_t st_name = 0x157
+004060ec          uint8_t st_info = 0x12
+004060ed          uint8_t st_other = 0x0
+004060ee          uint16_t st_shndx = 0x0
+004060f0          uint64_t st_value = 0x0
+004060f8          uint64_t st_size = 0x0
+00406100      }
+00406100      [0x03] = 
+00406100      {
+00406100          uint32_t st_name = 0x114
+00406104          uint8_t st_info = 0x12
+00406105          uint8_t st_other = 0x0
+00406106          uint16_t st_shndx = 0x0
+00406108          uint64_t st_value = 0x0
+00406110          uint64_t st_size = 0x0
+00406118      }
+00406118      [0x04] = 
+00406118      {
+00406118          uint32_t st_name = 0x1
+0040611c          uint8_t st_info = 0x20
+0040611d          uint8_t st_other = 0x0
+0040611e          uint16_t st_shndx = 0x0
+00406120          uint64_t st_value = 0x0
+00406128          uint64_t st_size = 0x0
+00406130      }
+00406130      [0x05] = 
+00406130      {
+00406130          uint32_t st_name = 0x145
+00406134          uint8_t st_info = 0x12
+00406135          uint8_t st_other = 0x0
+00406136          uint16_t st_shndx = 0x0
+00406138          uint64_t st_value = 0x0
+00406140          uint64_t st_size = 0x0
+00406148      }
+00406148      [0x06] = 
+00406148      {
+00406148          uint32_t st_name = 0x109
+0040614c          uint8_t st_info = 0x12
+0040614d          uint8_t st_other = 0x0
+0040614e          uint16_t st_shndx = 0x0
+00406150          uint64_t st_value = 0x0
+00406158          uint64_t st_size = 0x0
+00406160      }
+00406160      [0x07] = 
+00406160      {
+00406160          uint32_t st_name = 0xe6
+00406164          uint8_t st_info = 0x12
+00406165          uint8_t st_other = 0x0
+00406166          uint16_t st_shndx = 0x0
+00406168          uint64_t st_value = 0x0
+00406170          uint64_t st_size = 0x0
+00406178      }
+00406178      [0x08] = 
+00406178      {
+00406178          uint32_t st_name = 0x1b2
+0040617c          uint8_t st_info = 0x12
+0040617d          uint8_t st_other = 0x0
+0040617e          uint16_t st_shndx = 0x0
+00406180          uint64_t st_value = 0x0
+00406188          uint64_t st_size = 0x0
+00406190      }
+00406190      [0x09] = 
+00406190      {
+00406190          uint32_t st_name = 0x55
+00406194          uint8_t st_info = 0x12
+00406195          uint8_t st_other = 0x0
+00406196          uint16_t st_shndx = 0x0
+00406198          uint64_t st_value = 0x0
+004061a0          uint64_t st_size = 0x0
+004061a8      }
+004061a8      [0x0a] = 
+004061a8      {
+004061a8          uint32_t st_name = 0x13e
+004061ac          uint8_t st_info = 0x12
+004061ad          uint8_t st_other = 0x0
+004061ae          uint16_t st_shndx = 0x0
+004061b0          uint64_t st_value = 0x0
+004061b8          uint64_t st_size = 0x0
+004061c0      }
+004061c0      [0x0b] = 
+004061c0      {
+004061c0          uint32_t st_name = 0x19c
+004061c4          uint8_t st_info = 0x12
+004061c5          uint8_t st_other = 0x0
+004061c6          uint16_t st_shndx = 0x0
+004061c8          uint64_t st_value = 0x0
+004061d0          uint64_t st_size = 0x0
+004061d8      }
+004061d8      [0x0c] = 
+004061d8      {
+004061d8          uint32_t st_name = 0xf8
+004061dc          uint8_t st_info = 0x12
+004061dd          uint8_t st_other = 0x0
+004061de          uint16_t st_shndx = 0x0
+004061e0          uint64_t st_value = 0x0
+004061e8          uint64_t st_size = 0x0
+004061f0      }
+004061f0      [0x0d] = 
+004061f0      {
+004061f0          uint32_t st_name = 0x121
+004061f4          uint8_t st_info = 0x12
+004061f5          uint8_t st_other = 0x0
+004061f6          uint16_t st_shndx = 0x0
+004061f8          uint64_t st_value = 0x0
+00406200          uint64_t st_size = 0x0
+00406208      }
+00406208      [0x0e] = 
+00406208      {
+00406208          uint32_t st_name = 0x139
+0040620c          uint8_t st_info = 0x12
+0040620d          uint8_t st_other = 0x0
+0040620e          uint16_t st_shndx = 0x0
+00406210          uint64_t st_value = 0x0
+00406218          uint64_t st_size = 0x0
+00406220      }
+00406220      [0x0f] = 
+00406220      {
+00406220          uint32_t st_name = 0xdd
+00406224          uint8_t st_info = 0x12
+00406225          uint8_t st_other = 0x0
+00406226          uint16_t st_shndx = 0x0
+00406228          uint64_t st_value = 0x0
+00406230          uint64_t st_size = 0x0
+00406238      }
+00406238      [0x10] = 
+00406238      {
+00406238          uint32_t st_name = 0x11b
+0040623c          uint8_t st_info = 0x12
+0040623d          uint8_t st_other = 0x0
+0040623e          uint16_t st_shndx = 0x0
+00406240          uint64_t st_value = 0x0
+00406248          uint64_t st_size = 0x0
+00406250      }
+00406250      [0x11] = 
+00406250      {
+00406250          uint32_t st_name = 0x1a3
+00406254          uint8_t st_info = 0x12
+00406255          uint8_t st_other = 0x0
+00406256          uint16_t st_shndx = 0x0
+00406258          uint64_t st_value = 0x0
+00406260          uint64_t st_size = 0x0
+00406268      }
+00406268      [0x12] = 
+00406268      {
+00406268          uint32_t st_name = 0x19d
+0040626c          uint8_t st_info = 0x12
+0040626d          uint8_t st_other = 0x0
+0040626e          uint16_t st_shndx = 0x0
+00406270          uint64_t st_value = 0x0
+00406278          uint64_t st_size = 0x0
+00406280      }
+00406280      [0x13] = 
+00406280      {
+00406280          uint32_t st_name = 0xc7
+00406284          uint8_t st_info = 0x12
+00406285          uint8_t st_other = 0x0
+00406286          uint16_t st_shndx = 0x0
+00406288          uint64_t st_value = 0x0
+00406290          uint64_t st_size = 0x0
+00406298      }
+00406298      [0x14] = 
+00406298      {
+00406298          uint32_t st_name = 0x18e
+0040629c          uint8_t st_info = 0x12
+0040629d          uint8_t st_other = 0x0
+0040629e          uint16_t st_shndx = 0x0
+004062a0          uint64_t st_value = 0x0
+004062a8          uint64_t st_size = 0x0
+004062b0      }
+004062b0      [0x15] = 
+004062b0      {
+004062b0          uint32_t st_name = 0x1b8
+004062b4          uint8_t st_info = 0x12
+004062b5          uint8_t st_other = 0x0
+004062b6          uint16_t st_shndx = 0x0
+004062b8          uint64_t st_value = 0x0
+004062c0          uint64_t st_size = 0x0
+004062c8      }
+004062c8      [0x16] = 
+004062c8      {
+004062c8          uint32_t st_name = 0x1aa
+004062cc          uint8_t st_info = 0x12
+004062cd          uint8_t st_other = 0x0
+004062ce          uint16_t st_shndx = 0x0
+004062d0          uint64_t st_value = 0x0
+004062d8          uint64_t st_size = 0x0
+004062e0      }
+004062e0      [0x17] = 
+004062e0      {
+004062e0          uint32_t st_name = 0x170
+004062e4          uint8_t st_info = 0x12
+004062e5          uint8_t st_other = 0x0
+004062e6          uint16_t st_shndx = 0x0
+004062e8          uint64_t st_value = 0x0
+004062f0          uint64_t st_size = 0x0
+004062f8      }
+004062f8      [0x18] = 
+004062f8      {
+004062f8          uint32_t st_name = 0x1d
+004062fc          uint8_t st_info = 0x20
+004062fd          uint8_t st_other = 0x0
+004062fe          uint16_t st_shndx = 0x0
+00406300          uint64_t st_value = 0x0
+00406308          uint64_t st_size = 0x0
+00406310      }
+00406310      [0x19] = 
+00406310      {
+00406310          uint32_t st_name = 0x80
+00406314          uint8_t st_info = 0x12
+00406315          uint8_t st_other = 0x0
+00406316          uint16_t st_shndx = 0x0
+00406318          uint64_t st_value = 0x0
+00406320          uint64_t st_size = 0x0
+00406328      }
+00406328      [0x1a] = 
+00406328      {
+00406328          uint32_t st_name = 0x6b
+0040632c          uint8_t st_info = 0x12
+0040632d          uint8_t st_other = 0x0
+0040632e          uint16_t st_shndx = 0x0
+00406330          uint64_t st_value = 0x0
+00406338          uint64_t st_size = 0x0
+00406340      }
+00406340      [0x1b] = 
+00406340      {
+00406340          uint32_t st_name = 0x150
+00406344          uint8_t st_info = 0x12
+00406345          uint8_t st_other = 0x0
+00406346          uint16_t st_shndx = 0x0
+00406348          uint64_t st_value = 0x0
+00406350          uint64_t st_size = 0x0
+00406358      }
+00406358      [0x1c] = 
+00406358      {
+00406358          uint32_t st_name = 0x178
+0040635c          uint8_t st_info = 0x12
+0040635d          uint8_t st_other = 0x0
+0040635e          uint16_t st_shndx = 0x0
+00406360          uint64_t st_value = 0x0
+00406368          uint64_t st_size = 0x0
+00406370      }
+00406370      [0x1d] = 
+00406370      {
+00406370          uint32_t st_name = 0x46
+00406374          uint8_t st_info = 0x12
+00406375          uint8_t st_other = 0x0
+00406376          uint16_t st_shndx = 0x0
+00406378          uint64_t st_value = 0x0
+00406380          uint64_t st_size = 0x0
+00406388      }
+00406388      [0x1e] = 
+00406388      {
+00406388          uint32_t st_name = 0x10f
+0040638c          uint8_t st_info = 0x12
+0040638d          uint8_t st_other = 0x0
+0040638e          uint16_t st_shndx = 0x0
+00406390          uint64_t st_value = 0x0
+00406398          uint64_t st_size = 0x0
+004063a0      }
+004063a0      [0x1f] = 
+004063a0      {
+004063a0          uint32_t st_name = 0x128
+004063a4          uint8_t st_info = 0x12
+004063a5          uint8_t st_other = 0x0
+004063a6          uint16_t st_shndx = 0x0
+004063a8          uint64_t st_value = 0x0
+004063b0          uint64_t st_size = 0x0
+004063b8      }
+004063b8      [0x20] = 
+004063b8      {
+004063b8          uint32_t st_name = 0x127
+004063bc          uint8_t st_info = 0x12
+004063bd          uint8_t st_other = 0x0
+004063be          uint16_t st_shndx = 0x0
+004063c0          uint64_t st_value = 0x0
+004063c8          uint64_t st_size = 0x0
+004063d0      }
+004063d0      [0x21] = 
+004063d0      {
+004063d0          uint32_t st_name = 0xa2
+004063d4          uint8_t st_info = 0x12
+004063d5          uint8_t st_other = 0x0
+004063d6          uint16_t st_shndx = 0x0
+004063d8          uint64_t st_value = 0x0
+004063e0          uint64_t st_size = 0x0
+004063e8      }
+004063e8      [0x22] = 
+004063e8      {
+004063e8          uint32_t st_name = 0xf1
+004063ec          uint8_t st_info = 0x12
+004063ed          uint8_t st_other = 0x0
+004063ee          uint16_t st_shndx = 0x0
+004063f0          uint64_t st_value = 0x0
+004063f8          uint64_t st_size = 0x0
+00406400      }
+00406400      [0x23] = 
+00406400      {
+00406400          uint32_t st_name = 0xb2
+00406404          uint8_t st_info = 0x12
+00406405          uint8_t st_other = 0x0
+00406406          uint16_t st_shndx = 0x0
+00406408          uint64_t st_value = 0x0
+00406410          uint64_t st_size = 0x0
+00406418      }
+00406418      [0x24] = 
+00406418      {
+00406418          uint32_t st_name = 0x195
+0040641c          uint8_t st_info = 0x12
+0040641d          uint8_t st_other = 0x0
+0040641e          uint16_t st_shndx = 0x0
+00406420          uint64_t st_value = 0x0
+00406428          uint64_t st_size = 0x0
+00406430      }
+00406430      [0x25] = 
+00406430      {
+00406430          uint32_t st_name = 0x14b
+00406434          uint8_t st_info = 0x12
+00406435          uint8_t st_other = 0x0
+00406436          uint16_t st_shndx = 0x0
+00406438          uint64_t st_value = 0x0
+00406440          uint64_t st_size = 0x0
+00406448      }
+00406448      [0x26] = 
+00406448      {
+00406448          uint32_t st_name = 0x8e
+0040644c          uint8_t st_info = 0x12
+0040644d          uint8_t st_other = 0x0
+0040644e          uint16_t st_shndx = 0x0
+00406450          uint64_t st_value = 0x0
+00406458          uint64_t st_size = 0x0
+00406460      }
+00406460      [0x27] = 
+00406460      {
+00406460          uint32_t st_name = 0x1b1
+00406464          uint8_t st_info = 0x12
+00406465          uint8_t st_other = 0x0
+00406466          uint16_t st_shndx = 0x0
+00406468          uint64_t st_value = 0x0
+00406470          uint64_t st_size = 0x0
+00406478      }
+00406478      [0x28] = 
+00406478      {
+00406478          uint32_t st_name = 0xbe
+0040647c          uint8_t st_info = 0x12
+0040647d          uint8_t st_other = 0x0
+0040647e          uint16_t st_shndx = 0x0
+00406480          uint64_t st_value = 0x0
+00406488          uint64_t st_size = 0x0
+00406490      }
+00406490      [0x29] = 
+00406490      {
+00406490          uint32_t st_name = 0x2c
+00406494          uint8_t st_info = 0x20
+00406495          uint8_t st_other = 0x0
+00406496          uint16_t st_shndx = 0x0
+00406498          uint64_t st_value = 0x0
+004064a0          uint64_t st_size = 0x0
+004064a8      }
+004064a8      [0x2a] = 
+004064a8      {
+004064a8          uint32_t st_name = 0x134
+004064ac          uint8_t st_info = 0x12
+004064ad          uint8_t st_other = 0x0
+004064ae          uint16_t st_shndx = 0x0
+004064b0          uint64_t st_value = 0x0
+004064b8          uint64_t st_size = 0x0
+004064c0      }
+004064c0      [0x2b] = 
+004064c0      {
+004064c0          uint32_t st_name = 0x12d
+004064c4          uint8_t st_info = 0x12
+004064c5          uint8_t st_other = 0x0
+004064c6          uint16_t st_shndx = 0x0
+004064c8          uint64_t st_value = 0x0
+004064d0          uint64_t st_size = 0x0
+004064d8      }
+004064d8      [0x2c] = 
+004064d8      {
+004064d8          uint32_t st_name = 0x17f
+004064dc          uint8_t st_info = 0x22
+004064dd          uint8_t st_other = 0x0
+004064de          uint16_t st_shndx = 0x0
+004064e0          uint64_t st_value = 0x0
+004064e8          uint64_t st_size = 0x0
+004064f0      }
+004064f0      [0x2d] = 
+004064f0      {
+004064f0          uint32_t st_name = 0x169
+004064f4          uint8_t st_info = 0x11
+004064f5          uint8_t st_other = 0x0
+004064f6          uint16_t st_shndx = 0xd
+004064f8          uint64_t st_value = 0x5020
+00406500          uint64_t st_size = 0x8
+00406508      }
+00406508  }
+.dynsym (DYNSYM) section ended  {0x4060b8-0x406508}
+
+00407000  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00407020  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00407040  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00407060  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00407080  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+004070a0  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+004070c0  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+004070e0  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00407100  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00407120  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00407140  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00407160  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00407180  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+004071a0  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+004071c0  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+004071e0  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00407200  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+00407220  58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 00 00 00 00 00 00                          XXXXXXXXXXXXXXXXXX......
+
+.interp (PROGBITS) section started  {0x408000-0x408017}
+00408000  char __elf_interp[0x17] = "./ld-linux-x86-64.so.2", 0
+.interp (PROGBITS) section ended  {0x408000-0x408017}
+
+00408017                                                                       00                                                 .
+
+.dynamic (DYNAMIC) section started  {0x409000-0x409220}
+00409000  struct Elf64_Dyn __elf_dynamic_table[0x1e] = 
+00409000  {
+00409000      [0x00] = 
+00409000      {
+00409000          enum e_dyn_tag d_tag = DT_RUNPATH
+00409008          uint64_t d_val = 0x232
+00409010      }
+00409010      [0x01] = 
+00409010      {
+00409010          enum e_dyn_tag d_tag = DT_NEEDED
+00409018          uint64_t d_val = 0x206
+00409020      }
+00409020      [0x02] = 
+00409020      {
+00409020          enum e_dyn_tag d_tag = DT_NEEDED
+00409028          uint64_t d_val = 0x216
+00409030      }
+00409030      [0x03] = 
+00409030      {
+00409030          enum e_dyn_tag d_tag = DT_NEEDED
+00409038          uint64_t d_val = 0x226
+00409040      }
+00409040      [0x04] = 
+00409040      {
+00409040          enum e_dyn_tag d_tag = DT_INIT
+00409048          uint64_t d_val = 0x1000
+00409050      }
+00409050      [0x05] = 
+00409050      {
+00409050          enum e_dyn_tag d_tag = DT_FINI
+00409058          uint64_t d_val = 0x2270
+00409060      }
+00409060      [0x06] = 
+00409060      {
+00409060          enum e_dyn_tag d_tag = DT_INIT_ARRAY
+00409068          uint64_t d_val = 0x4c68
+00409070      }
+00409070      [0x07] = 
+00409070      {
+00409070          enum e_dyn_tag d_tag = DT_INIT_ARRAYSZ
+00409078          uint64_t d_val = 0x8
+00409080      }
+00409080      [0x08] = 
+00409080      {
+00409080          enum e_dyn_tag d_tag = DT_FINI_ARRAY
+00409088          uint64_t d_val = 0x4c70
+00409090      }
+00409090      [0x09] = 
+00409090      {
+00409090          enum e_dyn_tag d_tag = DT_FINI_ARRAYSZ
+00409098          uint64_t d_val = 0x8
+004090a0      }
+004090a0      [0x0a] = 
+004090a0      {
+004090a0          enum e_dyn_tag d_tag = DT_GNU_HASH
+004090a8          uint64_t d_val = 0x6090
+004090b0      }
+004090b0      [0x0b] = 
+004090b0      {
+004090b0          enum e_dyn_tag d_tag = DT_STRTAB
+004090b8          uint64_t d_val = 0x9220
+004090c0      }
+004090c0      [0x0c] = 
+004090c0      {
+004090c0          enum e_dyn_tag d_tag = DT_SYMTAB
+004090c8          uint64_t d_val = 0x60b8
+004090d0      }
+004090d0      [0x0d] = 
+004090d0      {
+004090d0          enum e_dyn_tag d_tag = DT_STRSZ
+004090d8          uint64_t d_val = 0x234
+004090e0      }
+004090e0      [0x0e] = 
+004090e0      {
+004090e0          enum e_dyn_tag d_tag = DT_SYMENT
+004090e8          uint64_t d_val = 0x18
+004090f0      }
+004090f0      [0x0f] = 
+004090f0      {
+004090f0          enum e_dyn_tag d_tag = DT_DEBUG
+004090f8          uint64_t d_val = 0x0
+00409100      }
+00409100      [0x10] = 
+00409100      {
+00409100          enum e_dyn_tag d_tag = DT_PLTGOT
+00409108          uint64_t d_val = 0x4e88
+00409110      }
+00409110      [0x11] = 
+00409110      {
+00409110          enum e_dyn_tag d_tag = DT_PLTRELSZ
+00409118          uint64_t d_val = 0x3a8
+00409120      }
+00409120      [0x12] = 
+00409120      {
+00409120          enum e_dyn_tag d_tag = DT_PLTREL
+00409128          uint64_t d_val = 0x7
+00409130      }
+00409130      [0x13] = 
+00409130      {
+00409130          enum e_dyn_tag d_tag = DT_JMPREL
+00409138          uint64_t d_val = 0xba8
+00409140      }
+00409140      [0x14] = 
+00409140      {
+00409140          enum e_dyn_tag d_tag = DT_RELA
+00409148          uint64_t d_val = 0xad0
+00409150      }
+00409150      [0x15] = 
+00409150      {
+00409150          enum e_dyn_tag d_tag = DT_RELASZ
+00409158          uint64_t d_val = 0xd8
+00409160      }
+00409160      [0x16] = 
+00409160      {
+00409160          enum e_dyn_tag d_tag = DT_RELAENT
+00409168          uint64_t d_val = 0x18
+00409170      }
+00409170      [0x17] = 
+00409170      {
+00409170          enum e_dyn_tag d_tag = DT_FLAGS
+00409178          uint64_t d_val = 0x8
+00409180      }
+00409180      [0x18] = 
+00409180      {
+00409180          enum e_dyn_tag d_tag = DT_FLAGS_1
+00409188          uint64_t d_val = 0x8000001
+00409190      }
+00409190      [0x19] = 
+00409190      {
+00409190          enum e_dyn_tag d_tag = DT_VERNEED
+00409198          uint64_t d_val = 0xa90
+004091a0      }
+004091a0      [0x1a] = 
+004091a0      {
+004091a0          enum e_dyn_tag d_tag = DT_VERNEEDNUM
+004091a8          uint64_t d_val = 0x1
+004091b0      }
+004091b0      [0x1b] = 
+004091b0      {
+004091b0          enum e_dyn_tag d_tag = DT_VERSYM
+004091b8          uint64_t d_val = 0xa2e
+004091c0      }
+004091c0      [0x1c] = 
+004091c0      {
+004091c0          enum e_dyn_tag d_tag = DT_RELACOUNT
+004091c8          uint64_t d_val = 0x3
+004091d0      }
+004091d0      [0x1d] = 
+004091d0      {
+004091d0          enum e_dyn_tag d_tag = DT_NULL
+004091d8          uint64_t d_val = 0x0
+004091e0      }
+004091e0  }
+
+004091e0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+00409200  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+.dynamic (DYNAMIC) section ended  {0x409000-0x409220}
+
+.dynstr (STRTAB) section started  {0x409220-0x409454}
+00409220  00                                                                                               .
+
+00409221  char data_409221[0x1c] = "_ITM_deregisterTMCloneTable", 0
+0040923d  char data_40923d[0xf] = "__gmon_start__", 0
+0040924c  char data_40924c[0x1a] = "_ITM_registerTMCloneTable", 0
+00409266  char data_409266[0xf] = "ctmFreeContext", 0
+00409275  char data_409275[0x16] = "_ctmStreamWriteSTRING", 0
+0040928b  char data_40928b[0x15] = "_ctmCompressMesh_RAW", 0
+004092a0  char data_4092a0[0xe] = "ctmNewContext", 0
+004092ae  char data_4092ae[0x14] = "_ctmStreamWriteUINT", 0
+004092c2  char data_4092c2[0x10] = "_ctmStreamWrite", 0
+004092d2  char data_4092d2[0xc] = "ctmAddUVMap", 0
+004092de  char data_4092de[0xe] = "fast_obj_read", 0
+004092ec  char data_4092ec[0x11] = "fast_obj_destroy", 0
+004092fd  char data_4092fd[0x9] = "snprintf", 0
+00409306  char data_409306[0xb] = "setsockopt", 0
+00409311  char data_409311[0x7] = "perror", 0
+00409318  char data_409318[0x11] = "__stack_chk_fail", 0
+00409329  char data_409329[0x6] = "fread", 0
+0040932f  char data_40932f[0x5] = "bind", 0
+00409334  char data_409334[0x7] = "unlink", 0
+0040933b  char data_40933b[0x6] = "htonl", 0
+00409341  char data_409341[0x6] = "htons", 0
+00409347  char data_409347[0x6] = "fopen", 0
+0040934d  char data_40934d[0x7] = "socket", 0
+00409354  char data_409354[0x5] = "fork", 0
+00409359  char data_409359[0x5] = "dup2", 0
+0040935e  char data_40935e[0x7] = "getpid", 0
+00409365  char data_409365[0x6] = "_exit", 0
+0040936b  char data_40936b[0x5] = "atoi", 0
+00409370  char data_409370[0x7] = "malloc", 0
+00409377  char data_409377[0x12] = "__libc_start_main", 0
+00409389  char data_409389[0x7] = "stderr", 0
+00409390  char data_409390[0x8] = "fprintf", 0
+00409398  char data_409398[0x7] = "listen", 0
+0040939f  char data_40939f[0xf] = "__cxa_finalize", 0
+004093ae  char data_4093ae[0x7] = "calloc", 0
+004093b5  char data_4093b5[0x7] = "accept", 0
+004093bc  char data_4093bc[0x7] = "fclose", 0
+004093c3  char data_4093c3[0x7] = "memset", 0
+004093ca  char data_4093ca[0x7] = "signal", 0
+004093d1  char data_4093d1[0x7] = "fwrite", 0
+004093d8  char data_4093d8[0x7] = "strcmp", 0
+004093df  char data_4093df[0xe] = "libopenctm.so", 0
+004093ed  char data_4093ed[0xe] = "libfastobj.so", 0
+004093fb  char data_4093fb[0xa] = "libc.so.6", 0
+00409405  char data_409405[0xa] = "GLIBC_2.4", 0
+0040940f  char data_40940f[0xc] = "GLIBC_2.2.5", 0
+0040941b  char data_40941b[0xb] = "GLIBC_2.34", 0
+00409426  char data_409426[0x10] = "./libopenctm.so", 0
+00409436  char data_409436[0x10] = "./libfastobj.so", 0
+00409446  char data_409446[0xc] = "./libc.so.6", 0
+00409452  char data_409452[0x2] = ".", 0
+.dynstr (STRTAB) section ended  {0x409220-0x409454}
+
+00409454                                                              00 00 00 00                                              ....
+
+.extern section started  {0x409460-0x4095c0}
+00409460  extern _ITM_deregisterTMCloneTable
+00409468  extern _ITM_registerTMCloneTable
+00409470  extern __cxa_finalize
+00409478  extern __gmon_start__
+00409480  extern void __libc_start_main(int32_t (* main)(int32_t argc, char** argv, char** envp), int32_t argc, char** ubp_av, void (* init)(), void (* fini)(), void (* rtld_fini)(), void* stack_end) __noreturn
+00409488  extern void __stack_chk_fail() __noreturn
+00409490  extern _ctmCompressMesh_RAW
+00409498  extern _ctmStreamWrite
+004094a0  extern _ctmStreamWriteSTRING
+004094a8  extern _ctmStreamWriteUINT
+004094b0  extern void _exit(int32_t status) __noreturn
+004094b8  extern accept
+004094c0  extern atoi
+004094c8  extern bind
+004094d0  extern calloc
+004094d8  extern close
+004094e0  extern ctmAddUVMap
+004094e8  extern ctmFreeContext
+004094f0  extern ctmNewContext
+004094f8  extern dup2
+00409500  extern fast_obj_destroy
+00409508  extern fast_obj_read
+00409510  extern fclose
+00409518  extern fopen
+00409520  extern fork
+00409528  extern fprintf
+00409530  extern fread
+00409538  extern fwrite
+00409540  extern getpid
+00409548  extern htonl
+00409550  extern htons
+00409558  extern listen
+00409560  extern malloc
+00409568  extern memset
+00409570  extern open
+00409578  extern perror
+00409580  extern read
+00409588  extern setsockopt
+00409590  extern signal
+00409598  extern snprintf
+004095a0  extern socket
+004095a8  extern strcmp
+004095b0  extern unlink
+004095b8  extern write
+.extern section ended  {0x409460-0x4095c0}
+
+.synthetic_builtins section started  {0x4095c0-0x4095f0}
+004095c0  extern void* __builtin_memcpy(void* dest, void const* src, uint64_t count)
+004095c8  extern void* __builtin_memset(void* dest, int32_t ch, uint64_t count)
+004095d0  extern char* __builtin_strcpy(char* dest, char const* src)
+004095d8  extern char* __builtin_strncpy(char* dest, char const* src, uint64_t count)
+004095e0  extern wchar32* __builtin_wcscpy(wchar32* dest, wchar32 const* src)
+004095e8  extern wchar32* __builtin_wmemcpy(wchar32* dest, wchar32 const* src, uint64_t count)
+.synthetic_builtins section ended  {0x4095c0-0x4095f0}
+

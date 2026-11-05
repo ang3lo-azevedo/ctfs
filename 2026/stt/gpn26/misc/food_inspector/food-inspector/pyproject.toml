@@ -1,0 +1,11 @@
+[project]
+name = "food-inspector"
+version = "0.1.0"
+description = "Let's have some fun with frida"
+requires-python = ">=3.13"
+dependencies = [
+    "frida>=17.5.1",
+    "frida-tools>=14.5.0",
+    "monkeyhex>=1.7.4",
+    "pwntools>=4.15.0",
+]

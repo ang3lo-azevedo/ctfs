@@ -1,0 +1,27 @@
+Return-Path: <mmelo@cosmetics-corp.local>
+X-Original-To: vfonseca@cosmetics-corp.local
+Delivered-To: vfonseca@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=mmelo@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id 04374260656
+	for <vfonseca@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:13 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:13 +0000
+To: vfonseca@cosmetics-corp.local
+From: mmelo@cosmetics-corp.local
+Subject: Projeto de sustentabilidade: descarte correto de resíduos
+Message-Id: <20260224150513.005799@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados,
+
+Como parte do nosso programa de sustentabilidade, novos coletores seletivos foram instalados em todos os andares.
+
+Por favor, utilizem corretamente as lixeiras de acordo com a categoria: papel, plástico, orgânico e eletrônico.
+
+Juntos fazemos a diferença!
+
+Comitê de Sustentabilidade.
+

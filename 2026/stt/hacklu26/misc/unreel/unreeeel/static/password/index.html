@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Change password · UNRㅌㅌL</title>
+  <link rel="icon" href="/logo.svg">
+  <link rel="stylesheet" href="/theme.css">
+  <link rel="stylesheet" href="/account.css">
+  <style>
+    #notice { text-align: center; }
+    .token-error { color: var(--danger); font-size: 12px; line-height: 16px; margin: 0; }
+  </style>
+</head>
+<body class="auth-page">
+  <main class="card">
+    <a class="brand" href="/"><img src="/logo.svg" alt="">UNRㅌㅌL</a>
+    <form id="change">
+      <h1>Change password</h1>
+      <p class="token-error" role="alert" hidden></p>
+      <label>Reset token
+        <input name="token" required autocomplete="off" title="the 32 hex digits you got when registering">
+      </label>
+      <label>New password
+        <input name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="72">
+      </label>
+      <p class="error" role="alert"></p>
+      <button type="submit">Set password</button>
+    </form>
+
+    <div id="notice" role="alert" hidden>
+      <h1></h1>
+      <p class="alt">This page will close soon</p>
+    </div>
+  </main>
+
+  <script src="/account.js"></script>
+  <script>
+    const CLOSE_DELAY = 2000;
+
+    const form = document.getElementById('change');
+    const tokenError = form.querySelector('.token-error');
+
+    // Replaces the form with message, then closes. Outside a popup there
+    // is no window to close
+    function finish(message) {
+      const notice = document.getElementById('notice');
+      notice.querySelector('h1').textContent = message;
+      form.hidden = true;
+      notice.hidden = false;
+      setTimeout(() => {
+        if (window.opener) window.close();
+        else location.href = '/login/';
+      }, CLOSE_DELAY);
+    }
+
+    account.bindForm(form, async ({ token, password }) => {
+      tokenError.hidden = true;
+      try {
+        await account.post('/api/password', { token: token.trim(), password });
+      } catch (err) {
+        // keep the popup open so the user can finish the token
+        if (err.status === 422) {
+          tokenError.textContent = 'Token incomplete - Did you enter the entire content?';
+          tokenError.hidden = false;
+          return;
+        }
+        // anything else, like a malformed field, stays open in .error
+        if (err.status !== 403) throw err;
+        finish('This code is invalid');
+        return;
+      }
+      finish('Password changed');
+    });
+
+    // With token and password in the query, fill the form and submit at once
+    (async () => {
+      if (!await account.me()) {
+        location.href = '/login/';
+        return;
+      }
+      const params = new URLSearchParams(location.search);
+      const token = params.get('token');
+      const password = params.get('password');
+      if (token !== null) form.token.value = token;
+      if (password !== null) form.password.value = password;
+      if (token !== null && password !== null) form.requestSubmit();
+    })();
+  </script>
+</body>
+</html>

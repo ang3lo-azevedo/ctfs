@@ -1,0 +1,508 @@
+From - Sat Apr 05 17:44:51 2025
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Delivered-To: ammar55221133@gmail.com
+Received: by 2002:a05:6000:124e:b0:38f:64da:99dc with SMTP id j14csp3994644wrx;
+        Fri, 4 Apr 2025 15:32:00 -0700 (PDT)
+X-Received: by 2002:ac8:7d16:0:b0:477:6ee2:18ce with SMTP id d75a77b69052e-47924911b60mr78245901cf.3.1743805919964;
+        Fri, 04 Apr 2025 15:31:59 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1743805919; cv=none;
+        d=google.com; s=arc-20240605;
+        b=X36gTj1B8jAlr7z6oMMvNkTmMhQNvUJ/crPdThnmdYPbaQNoBxC+NvXNX92O4QnnZC
+         hUVfrMLbUJqTGA2KbaMoAiyCjqOEeucUwobJXhWBLilcXxdeHHH+XoLof61k0yTYTAK0
+         9D2xSJi7vucjQrpcjeqIYhSAfB67cky/lSsbU6mGRNYkWlrxhldBTZ1pPzfEtEfb562d
+         aMQtvHRAv7ORyXUOxgAakRbppD5545rI5GcE/9NJGtjW4ny+Rmkm2hvKn8K3IS0u0FmY
+         S65jrZPE6rw/bz7TxPOAtQXbUOqm7JvEM8OzMSVQsqtSqqyvQ2OUp6VV+HjSVtVUdgWw
+         HHEQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=EH43D2lRHGGOnK3krG/6M1QF6JHQPUAnL2ZJhVrEu0Y=;
+        fh=WsrbrrGLPLMUuiKBhXGpDN0tVtTalBgQcJUAh88xCbM=;
+        b=QErehSUqSTNHOmpTa1VcdrB5WmCZ53+8RQ/P33V2RH1vcakko76E/6+iDzsuE+XCNd
+         V3IPDXlSkLj46p1lEo0i1DFld5zqSv71NhU8eyM6XKpv40ZnQXaNHnDC6HvLPBuLgbiF
+         UYpmMr0AMsjbd8htuV6n5YP8bP6jqjTGeHUcSmxxWCkFTaEEZUTOxzAwy4yZPHs+1wT0
+         zBArlsi7kch9EMhmbPBKKQne6bw8NthZx0EGyRMcZuA4L7u7zlE4uraMQnurRBSb8rOd
+         3ZTHEVurwQ+vQ7wNPqDZPT/iiVbxG/FSu3HzQVU2Ps2wY72IrWUy5ZIrX6qUuABb/eou
+         LNPg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=FkAntwy3;
+       spf=pass (google.com: domain of masmoudim522@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=masmoudim522@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <masmoudim522@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d75a77b69052e-4791b8f039asor49458411cf.2.2025.04.04.15.31.59
+        for <ammar55221133@gmail.com>
+        (Google Transport Security);
+        Fri, 04 Apr 2025 15:31:59 -0700 (PDT)
+Received-SPF: pass (google.com: domain of masmoudim522@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=FkAntwy3;
+       spf=pass (google.com: domain of masmoudim522@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=masmoudim522@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1743805919; x=1744410719; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=EH43D2lRHGGOnK3krG/6M1QF6JHQPUAnL2ZJhVrEu0Y=;
+        b=FkAntwy3GSCDNZA1eIHpw2Ae8ibsF4VQHUz19mnJw/RO2QwGAEwBGyoNnj+ijHKLFb
+         I9J/lqrp3fF2Tk9gRObrLFJpUyLPL9+TRAJUVqh3QOWHXnV8QZaARMlgQJYh1t0v/Xil
+         p8/xk5ebbas41h3OSojdXPgWCq7oXN+/haa+2JVNEYugmRdmZ+LeoWCCyvd2K1Z/q+Kh
+         ihM5ZRuBgl8jDI7dFx3jQqFXg+cS7L+cpIaVcdFTaLB2ulOG66OR5TiSq2nggNpvZeQr
+         JxeqdPMtl2T/UpeguWWQK+S1XajoXmIRNPKbMw72HCP01LmYTYmI9fqB9OhvxQle50u6
+         TiNQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1743805919; x=1744410719;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=EH43D2lRHGGOnK3krG/6M1QF6JHQPUAnL2ZJhVrEu0Y=;
+        b=TIt1yjZFZkjVQI9w9IhYYr964Tina6Tr1CK+sixZJtrODT80lnPzwx2f6u1zSksThz
+         0zMBV1QUSP6WP+U3iP5fKH+RGygGsaI+VX5uBoa2CdVxeh4udeLytJgZlvGs/d3O4Jwn
+         yuIILr8x/rytlfI8rFSl7eCaKE7T6QXY8/Ij9nvab849ZHFm/7s9j4yfNjlMo3YN18ce
+         vGjTt1Mz1Fgto4mWXmGJq4nJHY06+uy5aaQZXmAsm8wZNJVy2FcM0HWz9dkmjx5HIlR3
+         gxEd+khHMpstA4veQA4RihBXU6ji3noUz0lcgpu1F6P3SJ+rTh3grS3rbCJb0no0xajb
+         +xCg==
+X-Gm-Message-State: AOJu0YzyogqaDpHC7UrJnKyLdWIrcsfssh3F3BlEgOMuEE9TZSR6jG8G
+	5gWtM7M+1efTvAAUNnxxFOWY7dR88P4GiQ2xoqkyf+bWsrvGT4FU+J4nAydBFFiIQzWcA72faHn
+	WKVLf+fO/WhWjUqGelxMYf0JlD/ic5tuo
+X-Gm-Gg: ASbGncupoc+jIwZeqJXG55FysUpAJs7vu6teVNIy86nvNUqcWUdP8B7tZhu0ADs2Afl
+	PnlKtbDUjqG4bS/XhF3lDACf6epMi8XG2DjH6/BxlwK5afTKJdGvPrIIbiHD556/ifaGq3mT6Ub
+	j9ddzh1m6lQ/T5XZ6yAz2Wvzh+VYpK
+X-Google-Smtp-Source: AGHT+IFi9zmLvMfTbRQyZD4d6RWxFvHJOWrLGjwFDs0kDvx++ftcRW1pwdaERK98wQlkMKR0UuDmmwt2FfmPKbUl1OM=
+X-Received: by 2002:a05:622a:292:b0:476:b2d2:ece7 with SMTP id
+ d75a77b69052e-479249b5cd7mr89075781cf.34.1743805919429; Fri, 04 Apr 2025
+ 15:31:59 -0700 (PDT)
+MIME-Version: 1.0
+From: mohamed Masmoudi <masmoudim522@gmail.com>
+Date: Fri, 4 Apr 2025 23:31:48 +0100
+X-Gm-Features: ATxdqUGrSb2KHaXRPnvS52RpHHr0xrIsvrBKxAbzDBnBHhqmvxEveuoGhdQTMWQ
+Message-ID: <CAJwm=751GYmE-TX1Mh+Gs=yWfBkxJHG-iWb8Kzd+n-QmkR+Ymg@mail.gmail.com>
+Subject: Project idea
+To: ammar55221133@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000006289530631fb74be"
+
+--0000000000006289530631fb74be
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hope your week=E2=80=99s going okay :)
+
+So I was thinking for the class project, maybe we could build a small
+Node.js API =E2=80=94 something super basic, like a course registration thi=
+ng or a
+little student dashboard.
+
+I already played around with some boilerplate code to get us started. I=E2=
+=80=99ll
+clean it up a bit and share it with you.
+
+Let me know what you think!ro
+
+--0000000000006289530631fb74be
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><p class=3D"gmail-">Hope your week=E2=80=99s going okay :)=
+</p>
+<p class=3D"gmail-">So I was thinking for the class project, maybe we could=
+ build a small Node.js API =E2=80=94 something super basic, like a course r=
+egistration thing or a little student dashboard.</p>
+<p class=3D"gmail-">I already played around with some boilerplate code to g=
+et us started. I=E2=80=99ll clean it up a bit and share it with you.</p>
+<p class=3D"gmail-">Let me know what you think!ro</p><br></div>
+
+--0000000000006289530631fb74be--
+
+From - Sat Apr 05 17:44:51 2025
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Delivered-To: ammar55221133@gmail.com
+Received: by 2002:a05:6000:124e:b0:38f:64da:99dc with SMTP id j14csp4270190wrx;
+        Sat, 5 Apr 2025 08:38:14 -0700 (PDT)
+X-Received: by 2002:a6b:d20f:0:b0:861:1cd9:6588 with SMTP id ca18e2360f4ac-8611cd99136mr620446339f.0.1743867493818;
+        Sat, 05 Apr 2025 08:38:13 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1743867493; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Ey2lE0hZKpn2PaoeLYFN93bgYO5EjgkOnS79j0fsPmLfWPriPwz0TQ5hm924ePTe9I
+         yWTgJsJtkmeFK1TP4UfCfoOXJvb5mUvMcAaPhyy4N7FnoHrZgYJvpFIkuJRC57254W4k
+         zJ1kBbbe3wTfxQ0w9IGup3CU3hJpnagbbm9nHQqdw7M4lZjc1THS5XnCUmjSImUMQ4cd
+         opJtUA/zcvPLqPKe8mLppFnFkdVIqHhKin13pSOhOgJVLAVjALxTcDoSSM2qP5MtEINq
+         DZ5SPrJMxUFutuHS5STVjwfc/uBCNlvUL9y7u6OOz/Er2knydWF+7ApcFjV7lgA4OU+t
+         nOMQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:from:subject:message-id:feedback-id:date:mime-version
+         :dkim-signature;
+        bh=LKJ0JPIvk0BqSox5j6v5F7Sx+KRCPMWVN1UmPPIi45M=;
+        fh=WsrbrrGLPLMUuiKBhXGpDN0tVtTalBgQcJUAh88xCbM=;
+        b=ldapgCOedJ60LWKDQQsJeoH5tUG+gy7wjmNE3ucV6u50kULDxnOqjlmz82XMcqFxeF
+         szfT1pp9UAtggEEAMdkKNc+xGhwBpzgEQHV5hM5nzck6wNUDKsaS78e1R1ddrYaxgJIj
+         luJAsKKSe780XNV3V5qg2YvAkxD+xAC/pBUUNAyj5YrgU4tgE9J9s52WAb8qs7TyNfbh
+         PNHvU5ipqIcL26tuG1C3ytSI5IYdIVvQOKgNVCOOS+nmGVs6oF6/R0DGPyrb0yn0lUF4
+         4jHgAAd7hOYMto4OUCkZqA+rh2ZBhPAaBaCLw5/uanMohgDieZhaQsN8tRWC9ZweHXBo
+         KwWA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@accounts.google.com header.s=20230601 header.b=WRXDP5av;
+       spf=pass (google.com: domain of 3zu7xzwgtdq412-5s3zcoqq28176.u22uzs.q20o00o5jjggffhhu0owz.q20@gaia.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=3ZU7xZwgTDQ412-5s3zCoqq28176.u22uzs.q20o00o5JJGGFFHHu0owz.q20@gaia.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=accounts.google.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <3ZU7xZwgTDQ412-5s3zCoqq28176.u22uzs.q20o00o5JJGGFFHHu0owz.q20@gaia.bounces.google.com>
+Received: from mail-sor-f73.google.com (mail-sor-f73.google.com. [209.85.220.73])
+        by mx.google.com with SMTPS id ca18e2360f4ac-86111bc6dabsor314741539f.6.2025.04.05.08.38.13
+        for <ammar55221133@gmail.com>
+        (Google Transport Security);
+        Sat, 05 Apr 2025 08:38:13 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3zu7xzwgtdq412-5s3zcoqq28176.u22uzs.q20o00o5jjggffhhu0owz.q20@gaia.bounces.google.com designates 209.85.220.73 as permitted sender) client-ip=209.85.220.73;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@accounts.google.com header.s=20230601 header.b=WRXDP5av;
+       spf=pass (google.com: domain of 3zu7xzwgtdq412-5s3zcoqq28176.u22uzs.q20o00o5jjggffhhu0owz.q20@gaia.bounces.google.com designates 209.85.220.73 as permitted sender) smtp.mailfrom=3ZU7xZwgTDQ412-5s3zCoqq28176.u22uzs.q20o00o5JJGGFFHHu0owz.q20@gaia.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=accounts.google.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=accounts.google.com; s=20230601; t=1743867493; x=1744472293; dara=google.com;
+        h=to:from:subject:message-id:feedback-id:date:mime-version:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=LKJ0JPIvk0BqSox5j6v5F7Sx+KRCPMWVN1UmPPIi45M=;
+        b=WRXDP5avap8SYBcxjVEqoDpUv1TyDaipiZEi80aWo1IiMdRCMDb1Ihi6ofn4mZVB12
+         kTPDjaDWMTQpoTUxj7DLduZDMO7BRt8N7r9aGlh2tvXYK8TnDejuRAruPdYalYF8P0cJ
+         Hi/b2/wSNKfiaLb2Fj3AiBC6KqkXVc1CzrD9JOef4ynqaxjbhT28RoqdcrDoPDsuHgrc
+         fOxwT5aKW4NsYsvVj0h0NEzvrI7K0sLrHF1fj4kBDk0YFwG1zvFs7SNCjT7wFe+S+/Av
+         hlWnbI22j3SvL8ft5pAte9FRWwo2oE2R1slbO/gRsQBjhh1qcmtJ1YSeuC0H1wGB+1EH
+         6Z6g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1743867493; x=1744472293;
+        h=to:from:subject:message-id:feedback-id:date:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=LKJ0JPIvk0BqSox5j6v5F7Sx+KRCPMWVN1UmPPIi45M=;
+        b=QyoluNzXMKEzhQC8U1atRKp4bNz1YfLVNppjgXb7u2h4uwl3MA3yPvgeHmYRgO5q1B
+         aiwu8OQtGy3NGO9WGBDEHT8LOeMnMbMCVl5wCMxsGLdPbuPiu5s8d3Id/A3cOZInaUFo
+         R7ROhCaKA+w/LhVpzWpFFYg+z2mvhdJNk3KPaKB6waxt6QXtiOPs3nepTbJyITvi/jsv
+         U1rwKsmhexo3jTlu65iLh5pocEeNi5tVxIwJejTDcj3EOgyduKCt0yVDOaqPypcadlEl
+         krjbRr51he2Anxv03xM3t9q9FSqA1oalPNMUTx+0LLOWxSEu6rsak74n3u6PpEfmKKnY
+         K55Q==
+X-Gm-Message-State: AOJu0Yxd1IsXbiObzlOSEXlMqWcRwhkzJg00C+oC/MOTgcogH/gEc+P7
+	abSWd/YoMkMV7DbtdPJAVGvy2OuhOqRSqnUqt25/8WkgTvzHOOkxDK7lzVr+6EaRloLD3mhIXo1
+	UPJZCd/WcVZIDOq4aO2acEY9+jgPdPZJIW/M=
+X-Google-Smtp-Source: AGHT+IF1D/a/FF7oqqO4OVzdYi+CDSQVodi9WSmBqFklw7rRqxpXQHMao222hlTdh1tcG0X9apjDMPFrb0s6MOmStecMOg==
+MIME-Version: 1.0
+X-Received: by 2002:a05:6602:3811:b0:85b:4484:182c with SMTP id
+ ca18e2360f4ac-8611c394fe4mr684480339f.11.1743867493454; Sat, 05 Apr 2025
+ 08:38:13 -0700 (PDT)
+Date: Sat, 05 Apr 2025 15:38:12 GMT
+X-Account-Notification-Type: 127
+Feedback-ID: 127:account-notifier
+X-Notifications: 073f6d5e5a720000
+X-Notifications-Bounce-Info: Ab2lIHXMkadqyw3s4DAOAystt82fRAeZ_1TETYItw5OHGUW6gu2YGUBYRG8pPz1HoZLt5QjaSLrJB-rI0X_4FbxnbDfH8l8tj3ueDDP9qk4VjtbHn61cMq52aSq7r-z3PGM3QgijTEG1wODmIF6xSN8zLsrDQmsJPBnmI3D612ae9e-BiM2QkPy5j34_hvN66x2A0AEf1768d40j0cl2mQNjAwNjA0MDQxNTM1NTk2OTMzMg
+Message-ID: <7e8qlVCu5WC35T3JAOcPNA@notifications.google.com>
+Subject: Security alert
+From: Google <no-reply@accounts.google.com>
+To: ammar55221133@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000007b9248063209ca48"
+
+--0000000000007b9248063209ca48
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+W2ltYWdlOiBHb29nbGVdDQpNb3ppbGxhIFRodW5kZXJiaXJkIEVtYWlsIHdhcyBncmFudGVkIGFj
+Y2VzcyB0byB5b3VyIEdvb2dsZSBBY2NvdW50DQoNCg0KYW1tYXI1NTIyMTEzM0BnbWFpbC5jb20N
+Cg0KSWYgeW91IGRpZCBub3QgZ3JhbnQgYWNjZXNzLCB5b3Ugc2hvdWxkIGNoZWNrIHRoaXMgYWN0
+aXZpdHkgYW5kIHNlY3VyZSB5b3VyDQphY2NvdW50Lg0KQ2hlY2sgYWN0aXZpdHkNCjxodHRwczov
+L2FjY291bnRzLmdvb2dsZS5jb20vQWNjb3VudENob29zZXI/RW1haWw9YW1tYXI1NTIyMTEzM0Bn
+bWFpbC5jb20mY29udGludWU9aHR0cHM6Ly9teWFjY291bnQuZ29vZ2xlLmNvbS9hbGVydC9udC8x
+NzQzODY3NDkyMDAwP3JmbiUzRDEyNyUyNnJmbmMlM0QxJTI2ZWlkJTNEMjkyMTQzMDc4OTYyNTg0
+NjQwMiUyNmV0JTNEMD4NCllvdSBjYW4gYWxzbyBzZWUgc2VjdXJpdHkgYWN0aXZpdHkgYXQNCmh0
+dHBzOi8vbXlhY2NvdW50Lmdvb2dsZS5jb20vbm90aWZpY2F0aW9ucw0KWW91IHJlY2VpdmVkIHRo
+aXMgZW1haWwgdG8gbGV0IHlvdSBrbm93IGFib3V0IGltcG9ydGFudCBjaGFuZ2VzIHRvIHlvdXIN
+Ckdvb2dsZSBBY2NvdW50IGFuZCBzZXJ2aWNlcy4NCsKpIDIwMjUgR29vZ2xlIExMQywgMTYwMCBB
+bXBoaXRoZWF0cmUgUGFya3dheSwgTW91bnRhaW4gVmlldywgQ0EgOTQwNDMsIFVTQQ0K
+--0000000000007b9248063209ca48
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html lang=3D"en"><head><meta name=3D"format-detection" cont=
+ent=3D"email=3Dno"/><meta name=3D"format-detection" content=3D"date=3Dno"/>=
+<style nonce=3D"JjxP6oTOXfskXr4RNjsMag">.awl a {color: #FFFFFF; text-decora=
+tion: none;} .abml a {color: #000000; font-family: Roboto-Medium,Helvetica,=
+Arial,sans-serif; font-weight: bold; text-decoration: none;} .adgl a {color=
+: rgba(0, 0, 0, 0.87); text-decoration: none;} .afal a {color: #b0b0b0; tex=
+t-decoration: none;} @media screen and (min-width: 600px) {.v2sp {padding: =
+6px 30px 0px;} .v2rsp {padding: 0px 10px;}} @media screen and (min-width: 6=
+00px) {.mdv2rw {padding: 40px 40px;}} </style><link href=3D"//fonts.googlea=
+pis.com/css?family=3DGoogle+Sans" rel=3D"stylesheet" type=3D"text/css" nonc=
+e=3D"JjxP6oTOXfskXr4RNjsMag"/></head><body style=3D"margin: 0; padding: 0;"=
+ bgcolor=3D"#FFFFFF"><table width=3D"100%" height=3D"100%" style=3D"min-wid=
+th: 348px;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" lang=3D"en"><t=
+r height=3D"32" style=3D"height: 32px;"><td></td></tr><tr align=3D"center">=
+<td><div itemscope itemtype=3D"//schema.org/EmailMessage"><div itemprop=3D"=
+action" itemscope itemtype=3D"//schema.org/ViewAction"><link itemprop=3D"ur=
+l" href=3D"https://accounts.google.com/AccountChooser?Email=3Dammar55221133=
+@gmail.com&amp;continue=3Dhttps://myaccount.google.com/alert/nt/17438674920=
+00?rfn%3D127%26rfnc%3D1%26eid%3D2921430789625846402%26et%3D0"/><meta itempr=
+op=3D"name" content=3D"Review Activity"/></div></div><table border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" style=3D"padding-bottom: 20px; max-width:=
+ 516px; min-width: 220px;"><tr><td width=3D"8" style=3D"width: 8px;"></td><=
+td><div style=3D"border-style: solid; border-width: thin; border-color:#dad=
+ce0; border-radius: 8px; padding: 40px 20px;" align=3D"center" class=3D"mdv=
+2rw"><img src=3D"https://www.gstatic.com/images/branding/googlelogo/2x/goog=
+lelogo_color_74x24dp.png" width=3D"74" height=3D"24" aria-hidden=3D"true" s=
+tyle=3D"margin-bottom: 16px;" alt=3D"Google"><div style=3D"font-family: &#3=
+9;Google Sans&#39;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;border-bot=
+tom: thin solid #dadce0; color: rgba(0,0,0,0.87); line-height: 32px; paddin=
+g-bottom: 24px;text-align: center; word-break: break-word;"><div style=3D"f=
+ont-size: 24px;"><a>Mozilla Thunderbird Email</a> was granted access to you=
+r Google&nbsp;Account </div><table align=3D"center" style=3D"margin-top:8px=
+;"><tr style=3D"line-height: normal;"><td align=3D"right" style=3D"padding-=
+right:8px;"><img width=3D"20" height=3D"20" style=3D"width: 20px; height: 2=
+0px; vertical-align: sub; border-radius: 50%;;" src=3D"https://lh3.googleus=
+ercontent.com/a/ACg8ocLAP2zoINhiKteCBkHBb7mo_bK1y_kgOI95wesHZN0uuozzHw=3Ds9=
+6-c" alt=3D""></td><td><a style=3D"font-family: &#39;Google Sans&#39;,Robot=
+o,RobotoDraft,Helvetica,Arial,sans-serif;color: rgba(0,0,0,0.87); font-size=
+: 14px; line-height: 20px;">ammar55221133@gmail.com</a></td></tr></table> <=
+/div><div style=3D"font-family: Roboto-Regular,Helvetica,Arial,sans-serif; =
+font-size: 14px; color: rgba(0,0,0,0.87); line-height: 20px;padding-top: 20=
+px; text-align: left;"><br>If you did not grant access, you should check th=
+is activity and secure your account.<div style=3D"padding-top: 32px; text-a=
+lign: center;"><a href=3D"https://accounts.google.com/AccountChooser?Email=
+=3Dammar55221133@gmail.com&amp;continue=3Dhttps://myaccount.google.com/aler=
+t/nt/1743867492000?rfn%3D127%26rfnc%3D1%26eid%3D2921430789625846402%26et%3D=
+0" target=3D"_blank" link-id=3D"main-button-link" style=3D"font-family: &#3=
+9;Google Sans&#39;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif; line-heig=
+ht: 16px; color: #ffffff; font-weight: 400; text-decoration: none;font-size=
+: 14px;display:inline-block;padding: 10px 24px;background-color: #4184F3; b=
+order-radius: 5px; min-width: 90px;">Check activity</a></div></div><div sty=
+le=3D"padding-top: 20px; font-size: 12px; line-height: 16px; color: #5f6368=
+; letter-spacing: 0.3px; text-align: center">You can also see security acti=
+vity at<br><a style=3D"color: rgba(0, 0, 0, 0.87);text-decoration: inherit;=
+">https://myaccount.google.com/notifications</a></div></div><div style=3D"t=
+ext-align: left;"><div style=3D"font-family: Roboto-Regular,Helvetica,Arial=
+,sans-serif;color: rgba(0,0,0,0.54); font-size: 11px; line-height: 18px; pa=
+dding-top: 12px; text-align: center;"><div>You received this email to let y=
+ou know about important changes to your Google Account and services.</div><=
+div style=3D"direction: ltr;">&copy; 2025 Google LLC, <a class=3D"afal" sty=
+le=3D"font-family: Roboto-Regular,Helvetica,Arial,sans-serif;color: rgba(0,=
+0,0,0.54); font-size: 11px; line-height: 18px; padding-top: 12px; text-alig=
+n: center;">1600 Amphitheatre Parkway, Mountain View, CA 94043, USA</a></di=
+v></div></div></td><td width=3D"8" style=3D"width: 8px;"></td></tr></table>=
+</td></tr><tr height=3D"32" style=3D"height: 32px;"><td></td></tr></table><=
+/body></html>
+--0000000000007b9248063209ca48--
+
+From - Sat Apr 05 17:44:51 2025
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Delivered-To: ammar55221133@gmail.com
+Received: by 2002:a05:6000:124e:b0:38f:64da:99dc with SMTP id j14csp4272016wrx;
+        Sat, 5 Apr 2025 08:44:54 -0700 (PDT)
+X-Received: by 2002:ac8:5fc5:0:b0:477:64dd:5765 with SMTP id d75a77b69052e-479249bccddmr93757901cf.44.1743867894436;
+        Sat, 05 Apr 2025 08:44:54 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1743867894; cv=none;
+        d=google.com; s=arc-20240605;
+        b=GLjN7OH0aV7edaKyZnv3kjOOE6isrWsVLTEt/TxJp65dC/n5ujqNUu9Jpqph9e9p3/
+         +WRFFJwEtamIz3hs4JxcUPDpOGpGAz/el1FbHN3SJKKwjenNrO9V/qk/974QVBhXFo3s
+         U/+FsUxBTyYQfcdyEPiVEtPe83ENBagaq8hiD9gmOEjUnjyBswxf2CiSCMglQMTaJbxb
+         KmTni1eKIaxL6d4gLMmtxEJCqsuaa6HmTA3PxqcbZEJyR6g5P34ZqRe/B9jxkcJWKUZd
+         dfjFqI/aeS2X/o61IAf6WyPUZHPMdm/bENKXOPq53mkGqoLWVHXfNW1OWGxTzzekYqbp
+         pYyQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=+z7zzxtGERfGpICrfIO2xchbpbY7uqHXFyJ3/zgB7LQ=;
+        fh=WsrbrrGLPLMUuiKBhXGpDN0tVtTalBgQcJUAh88xCbM=;
+        b=dPeOtmA0UA85j5S2TSqdbYe7+KiUZL04sQpsKJanXJKuUBFYrhY6mPFpT0NSHsgze2
+         tZmtZTO0NbyHHqsq4wDQeH5/D6BHzlOnk2TRLy2MtU1MsWys0CHNaWiofDf9jP8VOCnt
+         tHvx84ne40f9QzCeAuFOFTz6Z1gYpeID48Wy7Lc2PdYZg2lAAGW34mckVq7PPLHJek7+
+         TWXTaNtromFwPYiOl+fQMfaVjGJqngfjBCnmKlXFPVujsvI3NoPbWJA7ANZ1z7kSOU4y
+         3l8QaOe94V0err7wILudhb3DXeZ8hecFb7dYSJcMYS9cNe3niKqZVIuR2XNXpaZQSYdH
+         7iZA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=XCbedTNO;
+       spf=pass (google.com: domain of masmoudim522@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=masmoudim522@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <masmoudim522@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d75a77b69052e-4791b04eed4sor93987341cf.1.2025.04.05.08.44.54
+        for <ammar55221133@gmail.com>
+        (Google Transport Security);
+        Sat, 05 Apr 2025 08:44:54 -0700 (PDT)
+Received-SPF: pass (google.com: domain of masmoudim522@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=XCbedTNO;
+       spf=pass (google.com: domain of masmoudim522@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=masmoudim522@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1743867894; x=1744472694; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=+z7zzxtGERfGpICrfIO2xchbpbY7uqHXFyJ3/zgB7LQ=;
+        b=XCbedTNOsTUXkODTWcu4tiG3Oxh7D7NNALRnC2lDWz/MnhzFOFgZ0K63NklcGsj4Rl
+         +2hGIGqvlVeTWqdXZ2KItIE5AOF4RyYCheFQqliXo/Qd1/ikMsv1YGEKkOZ51f0YLcDj
+         P7kApQZ4IJhtjJpw5Q9EUUD+fAANVjQBdwZ7csYM3f4rd1DF7Fv8sVF3buPpu8sCtGyB
+         7AAweUjmpaNkthyPN+CepahHQ+LlGwHBtNUNi0kMhbwPuzFa7eHb4SkYdlz0g/VXOcBT
+         N21Do09EyRD4BWy1EOTTsXqhJH1T3nDbPDKkRR1EzShSo1j7fz6aCBsmDkYBa97Otg3w
+         4Jbg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1743867894; x=1744472694;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=+z7zzxtGERfGpICrfIO2xchbpbY7uqHXFyJ3/zgB7LQ=;
+        b=UDQiBldtjMvzi+ITAyymHc8+hPNs0U5LqWcdFX5fiB308UsKMhlGlB+6QGlPeMfJ+g
+         DPynRQ2vDvEJBoUIVfvpCgdiM3a0XY6VGQt5wC944Eo9WOxRmr3UA/osxCzwqgPZP1Fu
+         ICW18ZrL1pFQOUqjUPFWk3kPSccLItQWPC+Bisa6xvzTt4Y7btQecZQkcc4ItGCjBUyh
+         9RZduhL7QFIauAQcwodpwNlc8PB8DX0FthRlMIok7IdqJPvNtsTg5CIneNtvmwBd4F/R
+         ZeXT2MJDYvt+JdctYMtd0QpbYU7z29900L96vXnxVPMB71AlUYFgPwqegv9/YjzTG8eV
+         V3LA==
+X-Gm-Message-State: AOJu0YwOKTp+gr9yvS/isJmKRHmzgTfVZ7sGjnZbLCQbNsqTzKo/NMy/
+	jrYP0CbV/8RARJHTi5zCIWR1e3MVFGFHvcSBDCeIG3HdKl7pAfVRoxdezETCOVKrNhrH+XhTOto
+	2m/WeoN5reLekp+GuVm0Dmh/YyqGV2Zgj
+X-Gm-Gg: ASbGncvsNJ6fQ2QcTRUWu9raw8xSFecVvICozkMwGO2Y/PRJR7hBjXJlRrwXZtmW+jB
+	prbnw8n1i5VKM28KEgfatsKYrISbPc0eh5ECu3LxrMYGl19z2EopFXOF7t/0l7dh7d2wKKwJM5+
+	Yic3nujqudwDA2FvsIKFK9zQjRcQ==
+X-Google-Smtp-Source: AGHT+IHvv/wHqAgoMrvNmp2VaUHO7UViNrOKwfipQ08YMsKluub2Rg9/j8OctF3zqbFGPkhjLpdKWhl52tMhdAo77CQ=
+X-Received: by 2002:ac8:7d44:0:b0:476:8f90:b5b5 with SMTP id
+ d75a77b69052e-4792494555emr122447791cf.27.1743867893795; Sat, 05 Apr 2025
+ 08:44:53 -0700 (PDT)
+MIME-Version: 1.0
+From: mohamed Masmoudi <masmoudim522@gmail.com>
+Date: Sat, 5 Apr 2025 16:44:43 +0100
+X-Gm-Features: ATxdqUGlTxHBoctjapTkbhZFCt6GSzpFeQniEJ2vngCwJ0yIpuCaoNoB4aADUSE
+Message-ID: <CAJwm=77ngOVR=zxaYaB78WHQ=NebedFi1stLmNCYp-biF+Qm5g@mail.gmail.com>
+Subject: run this
+To: ammar55221133@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000584e4d063209e2fb"
+
+--000000000000584e4d063209e2fb
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hey hey!
+
+Just pushed up the starter code here:
+=F0=9F=91=89 https://github.com/lmdr7977/student-api
+
+You can just clone it and run npm install, then npm run dev to get it
+going. Should open on port 3000.
+
+I set up a couple of helpful scripts in there too, so feel free to tweak
+whatever.
+
+Lmk if anything=E2=80=99s broken =F0=9F=98=85
+
+--000000000000584e4d063209e2fb
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><p class=3D"gmail-">Hey hey!</p>
+<p class=3D"gmail-">Just pushed up the starter code here:<br>
+=F0=9F=91=89 <a href=3D"https://github.com/lmdr7977/student-api">https://gi=
+thub.com/lmdr7977/student-api</a></p>
+<p class=3D"gmail-">You can just clone it and run <code>npm install</code>,=
+ then <code>npm run dev</code> to get it going. Should open on port 3000.</=
+p>
+<p class=3D"gmail-">I set up a couple of helpful scripts in there too, so f=
+eel free to tweak whatever.</p>
+<p class=3D"gmail-">Lmk if anything=E2=80=99s broken =F0=9F=98=85</p><br></=
+div>
+
+--000000000000584e4d063209e2fb--
+
+From - Sat Apr 05 17:44:51 2025
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Delivered-To: ammar55221133@gmail.com
+Received: by 2002:a05:6000:124e:b0:38f:64da:99dc with SMTP id j14csp4274519wrx;
+        Sat, 5 Apr 2025 08:54:23 -0700 (PDT)
+X-Received: by 2002:ac8:5783:0:b0:476:7c7b:5dce with SMTP id d75a77b69052e-47930f6f3d2mr37734131cf.9.1743868462796;
+        Sat, 05 Apr 2025 08:54:22 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1743868462; cv=none;
+        d=google.com; s=arc-20240605;
+        b=jAlHk/q6KOhm8LvXp4OJxaf0GjkXCSoV1b5c2+67QP2U76bSxfBLc07H0yTNCabpw9
+         idN2I36qttLJ/nuCKlmPrYNvPFWXh+YkF5j5aXwJvR9sHmd68KpjSeLMMnrORcmjtmU8
+         gZhJdrVGhKZzjtgkI7x4y1we+IBL4gtCISm7xmHCbTGJREyfhjUxYoTDdqm+lSoUjOsc
+         oTyYf7cUvksFOHAQrdRRxTYYgI9fGjv9Bj0iSLkIvY8virpxpYwHrb632KkBOVvG6N0t
+         nIIzrAdQ2wrBT+AmziBWEWwIqx0JbzRpjPCrue69AWHJ18fP1p1MoL4M5GjXzfiHbC8g
+         m88Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=HAioW5kgq7O0INgXYlpqoZsSWtlN+PNznmCoBM/lEVE=;
+        fh=WsrbrrGLPLMUuiKBhXGpDN0tVtTalBgQcJUAh88xCbM=;
+        b=F5mZcaSj6fzFoqdiwxWjVeGx8IEMDFpCUnYdo2Vjhw/ulxhGkLdOAADvMNzyxBNlHj
+         GnIx5k9uD+SsyTG8CEKLSLgzTZGz7ATyHpPMgfENWR/ENKhmIqiUf+CK3dYdkY+k7ic8
+         Jl3T6f7m2POCDziTGLGEX4NVn2L8VRgFnHGpTYl58EDD/N17B/uILbO7B6LeOmRmF0kx
+         EgnMkEAhYwmruVPFAI/d6JTA+LuVjuWHLSYaeTS2IKud8yghyYKIfGcPB04JRbTxQ1bf
+         Of2fyWes3tCmqMBBI75yZA4xMBBGtZ+nIpOokRPqy5Wxg6lg3LV4JWZB2YgWnsHNksCC
+         kYpQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=d04Ow47g;
+       spf=pass (google.com: domain of masmoudim522@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=masmoudim522@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <masmoudim522@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id d75a77b69052e-4791aeeeeb5sor55564831cf.0.2025.04.05.08.54.22
+        for <ammar55221133@gmail.com>
+        (Google Transport Security);
+        Sat, 05 Apr 2025 08:54:22 -0700 (PDT)
+Received-SPF: pass (google.com: domain of masmoudim522@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=d04Ow47g;
+       spf=pass (google.com: domain of masmoudim522@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=masmoudim522@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1743868462; x=1744473262; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=HAioW5kgq7O0INgXYlpqoZsSWtlN+PNznmCoBM/lEVE=;
+        b=d04Ow47g1AqeJxuM5/J6BepQWAi/PyCv2nBj7D3Tz2LjfjpU62Xrv7TIMbIMN+VZzH
+         SrdicZOmIWmCH8JTSLpSRV5Tvh04Dy7N0YtEc9B3XOqSWW6Od3F2PjWlZrHtbldlXRJI
+         7CKzPG4AmQu7oHxrN76K+Ovmp+0vzu0ZTic+rcsVSSr928imsiOb0x9bzOsiPad46Wpr
+         2vo1Odhri1akxBX4mFICeVvYsRZPt9X6MIT76fhxnCMGB/fAwczYrQI/WNTxZOmEMkG4
+         PeYuELf7V42lg1a6TPBc9Dy+LMDx2+mR32jKWWjL1/E3982TydAJ0W8klE0H8uhH6gcG
+         anqQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1743868462; x=1744473262;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=HAioW5kgq7O0INgXYlpqoZsSWtlN+PNznmCoBM/lEVE=;
+        b=c2+t9b9ILbN5FCOtL7Esoyy8C/hUtk0e0zfjR8MN9OiLks5a6AaYvdhXJ5AGP9EJx0
+         CtbDu2Xi957/Y5r8qK3VqTTBngZyT9roOwkwYMis5307N3TOcAkodNZN9VvJCiSqeQ0H
+         M8+4d/KxttswJdfZgIVM6uWHVDBW1H36JOb8aC9SsUIFW0tXVhQg1a4jZj+lO+6GmtyV
+         2bj5+vlE8fLLJ3vfZxNd0EnxvaQmsudwLqblqoI76FR9xjDZAJKKYVWFwwei6u64syaL
+         HGwv32yrOCdCYRutuQpydIGQaxIEkgwLJX7DPLVYwMKj3+T/H0t/W5D100tTtrkbIczu
+         9YLQ==
+X-Gm-Message-State: AOJu0Yz8HpBQTLd8xxqyxzrEfAStVOfCpzkLg1cCfvW7JcsHUgXgAnL8
+	OfrvmkPCr2O6P3mwwL3u4c1txjTnfUD7xxi7cSXEAbcTaqW71vKdzDFubposwKj6V8KkIUjknXn
+	ygdsvO5UIrWLnt5md9qXzhr0ITlYiZA==
+X-Gm-Gg: ASbGncv/1DaNVwra1mqK+UV0EpmapC1qnuvX6rmZoLzYY/5dRbFamL2axx+lrglAnuK
+	fTEyLulPh75cLrBNM+M+fOSxs9OVCjhKDg0Q+JVlG75NjrKiMQd+9v9sX6MNjrcE4p39YX1V3KS
+	Hh2asrjPTqKaEJ1g4wCmzA9h+y4Q==
+X-Google-Smtp-Source: AGHT+IHSQScVWw5aAnbppTw6Q5MjzBEROL06ohfAxlt0xce8XWSR6botg50VU48xXJHK6Mo2o9rTY03Lb3UNFRoeMHY=
+X-Received: by 2002:ac8:570f:0:b0:476:fdaf:2177 with SMTP id
+ d75a77b69052e-4793100ce9emr50204621cf.28.1743868462306; Sat, 05 Apr 2025
+ 08:54:22 -0700 (PDT)
+MIME-Version: 1.0
+From: mohamed Masmoudi <masmoudim522@gmail.com>
+Date: Sat, 5 Apr 2025 16:54:11 +0100
+X-Gm-Features: ATxdqUFJIPlLhAb8Ab5HVYPb7UZl5xlD0BEnEiAY3k6WPRxfGyqZ8f8Om0aiT4o
+Message-ID: <CAJwm=766hPa2o6_hQy0GHRnHvApr47ULUPOTpxwWsmTaiVxOLA@mail.gmail.com>
+Subject: note
+To: ammar55221133@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000003b1a4c06320a04d0"
+
+--0000000000003b1a4c06320a04d0
+Content-Type: text/plain; charset="UTF-8"
+
+just run in as admin
+
+--0000000000003b1a4c06320a04d0
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr"><div>just run in as admin</div><div><br></div><div><br></div></div>
+
+--0000000000003b1a4c06320a04d0--
+

@@ -1,0 +1,27 @@
+Return-Path: <hbatista@cosmetics-corp.local>
+X-Original-To: bmarques@cosmetics-corp.local
+Delivered-To: bmarques@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=hbatista@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id 6DC6C260656
+	for <bmarques@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:12 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:12 +0000
+To: bmarques@cosmetics-corp.local
+From: hbatista@cosmetics-corp.local
+Subject: Novo canal de comunicação interno: intranet renovada
+Message-Id: <20260224150512.005680@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Pessoal,
+
+É com prazer que anunciamos o lançamento da nova intranet corporativa!
+
+A plataforma está mais moderna, intuitiva e conta com novos recursos como mural de avisos, agenda de eventos e base de conhecimento.
+
+Acesse pelo link interno e explore as novidades.
+
+Equipe de Comunicação Interna.
+

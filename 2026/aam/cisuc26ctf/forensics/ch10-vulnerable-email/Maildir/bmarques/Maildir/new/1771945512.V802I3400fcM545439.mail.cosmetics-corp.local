@@ -1,0 +1,27 @@
+Return-Path: <kcosta@cosmetics-corp.local>
+X-Original-To: bmarques@cosmetics-corp.local
+Delivered-To: bmarques@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=kcosta@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id 813A3260656
+	for <bmarques@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:12 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:12 +0000
+To: bmarques@cosmetics-corp.local
+From: kcosta@cosmetics-corp.local
+Subject: Alerta: uso responsável dos recursos de TI
+Message-Id: <20260224150512.005697@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados,
+
+Reforçamos a política de uso responsável dos recursos de tecnologia da empresa.
+
+É proibido o uso de equipamentos corporativos para fins pessoais, instalação de softwares não autorizados e acesso a sites inadequados.
+
+O descumprimento pode acarretar medidas disciplinares.
+
+TI - Segurança da Informação.
+

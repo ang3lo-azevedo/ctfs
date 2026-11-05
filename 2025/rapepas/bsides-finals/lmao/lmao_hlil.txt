@@ -1,0 +1,974 @@
+/*
+Type: ELF
+Platform: linux-x86_64
+Architecture: x86_64
+
+Libraries: 
+  libc.so.6
+
+Segments:
+r--  0x00400000-0x00400828 
+r-x  0x00401000-0x004012b1 
+r--  0x00402000-0x004021a0 
+rw-  0x00403dd0-0x00404050 
+rw-  0x00404050-0x00404070 
+---  0x00404070-0x004040d8 
+---  0x004040e0-0x00404110 
+
+Sections:
+0x00400394-0x004003b0  .interp (PROGBITS)  {Read-only data}
+0x004003b0-0x004003e0  .gnu.hash  {Read-only data}
+0x004003e0-0x00400560  .dynsym (DYNSYM)  {Read-only data}
+0x00400560-0x00400628  .dynstr (STRTAB)  {Read-only data}
+0x00400628-0x00400648  .gnu.version  {Read-only data}
+0x00400648-0x00400678  .gnu.version_r  {Read-only data}
+0x00400678-0x00400768  .dynamic_rela  {Read-only data}
+0x00400678-0x00400768  .rela.dyn (RELA)  {Read-only data}
+0x00400768-0x00400828  .rela.plt (RELA)  {Read-only data}
+0x00401000-0x00401017  .init (PROGBITS)  {Code}
+0x00401020-0x004010b0  .plt (PROGBITS)  {Code}
+0x004010b0-0x004010b8  .plt.got (PROGBITS)  {Code}
+0x004010c0-0x004012a7  .text (PROGBITS)  {Code}
+0x004012a8-0x004012b1  .fini (PROGBITS)  {Code}
+0x00402000-0x00402058  .rodata (PROGBITS)  {Read-only data}
+0x00402058-0x00402094  .eh_frame_hdr (PROGBITS)  {Read-only data}
+0x00402098-0x00402180  .eh_frame (PROGBITS)  {Read-only data}
+0x00403dd0-0x00403dd8  .init_array  {Writable data}
+0x00403dd8-0x00403de0  .fini_array  {Writable data}
+0x00403de0-0x00403fc0  .dynamic (DYNAMIC)  {Read-only data}
+0x00403fc0-0x00403fe8  .got (PROGBITS)  {Read-only data}
+0x00403fe8-0x00404040  .got.plt (PROGBITS)  {Writable data}
+0x00404040-0x00404050  .data (PROGBITS)  {Writable data}
+0x00404050-0x00404070  .bss (NOBITS)  {Writable data}
+0x00404070-0x004040d8  .extern  {External}
+0x004040e0-0x00404110  .synthetic_builtins  {External}
+*/
+00400000  struct Elf64_Header __elf_header = 
+00400000  {
+00400000      struct Elf64_Ident ident = 
+00400000      {
+00400000          char signature[0x4] = "\x7fELF"
+00400004          uint8_t file_class = 0x2
+00400005          uint8_t encoding = 0x1
+00400006          uint8_t version = 0x1
+00400007          uint8_t os = 0x0
+00400008          uint8_t abi_version = 0x0
+00400009          char pad[0x7] = "\x00\x00\x00\x00\x00\x00", 0
+00400010      }
+00400010      enum e_type type = ET_DYN
+00400012      enum e_machine machine = EM_X86_64
+00400014      uint32_t version = 0x1
+00400018      void (* entry)() = 0x10c0
+00400020      uint64_t program_header_offset = 0x40
+00400028      uint64_t section_header_offset = 0x3880
+00400030      uint32_t flags = 0x0
+00400034      uint16_t header_size = 0x40
+00400036      uint16_t program_header_size = 0x38
+00400038      uint16_t program_header_count = 0xe
+0040003a      uint16_t section_header_size = 0x40
+0040003c      uint16_t section_header_count = 0x1f
+0040003e      uint16_t string_table = 0x1e
+00400040  }
+00400040  struct Elf64_ProgramHeader __elf_program_headers[0xe] = 
+00400040  {
+00400040      [0x0] = 
+00400040      {
+00400040          enum p_type type = PT_PHDR
+00400044          enum p_flags flags = PF_R
+00400048          uint64_t offset = 0x40
+00400050          uint64_t virtual_address = 0x40
+00400058          uint64_t physical_address = 0x40
+00400060          uint64_t file_size = 0x310
+00400068          uint64_t memory_size = 0x310
+00400070          uint64_t align = 0x8
+00400078      }
+00400078      [0x1] = 
+00400078      {
+00400078          enum p_type type = PT_INTERP
+0040007c          enum p_flags flags = PF_R
+00400080          uint64_t offset = 0x394
+00400088          uint64_t virtual_address = 0x394
+00400090          uint64_t physical_address = 0x394
+00400098          uint64_t file_size = 0x1c
+004000a0          uint64_t memory_size = 0x1c
+004000a8          uint64_t align = 0x1
+004000b0      }
+004000b0      [0x2] = 
+004000b0      {
+004000b0          enum p_type type = PT_LOAD
+004000b4          enum p_flags flags = PF_R
+004000b8          uint64_t offset = 0x0
+004000c0          uint64_t virtual_address = 0x0
+004000c8          uint64_t physical_address = 0x0
+004000d0          uint64_t file_size = 0x828
+004000d8          uint64_t memory_size = 0x828
+004000e0          uint64_t align = 0x1000
+004000e8      }
+004000e8      [0x3] = 
+004000e8      {
+004000e8          enum p_type type = PT_LOAD
+004000ec          enum p_flags flags = PF_X | PF_R
+004000f0          uint64_t offset = 0x1000
+004000f8          uint64_t virtual_address = 0x1000
+00400100          uint64_t physical_address = 0x1000
+00400108          uint64_t file_size = 0x2b1
+00400110          uint64_t memory_size = 0x2b1
+00400118          uint64_t align = 0x1000
+00400120      }
+00400120      [0x4] = 
+00400120      {
+00400120          enum p_type type = PT_LOAD
+00400124          enum p_flags flags = PF_R
+00400128          uint64_t offset = 0x2000
+00400130          uint64_t virtual_address = 0x2000
+00400138          uint64_t physical_address = 0x2000
+00400140          uint64_t file_size = 0x1a0
+00400148          uint64_t memory_size = 0x1a0
+00400150          uint64_t align = 0x1000
+00400158      }
+00400158      [0x5] = 
+00400158      {
+00400158          enum p_type type = PT_LOAD
+0040015c          enum p_flags flags = PF_W | PF_R
+00400160          uint64_t offset = 0x2dd0
+00400168          uint64_t virtual_address = 0x3dd0
+00400170          uint64_t physical_address = 0x3dd0
+00400178          uint64_t file_size = 0x280
+00400180          uint64_t memory_size = 0x2a0
+00400188          uint64_t align = 0x1000
+00400190      }
+00400190      [0x6] = 
+00400190      {
+00400190          enum p_type type = PT_DYNAMIC
+00400194          enum p_flags flags = PF_W | PF_R
+00400198          uint64_t offset = 0x2de0
+004001a0          uint64_t virtual_address = 0x3de0
+004001a8          uint64_t physical_address = 0x3de0
+004001b0          uint64_t file_size = 0x1e0
+004001b8          uint64_t memory_size = 0x1e0
+004001c0          uint64_t align = 0x8
+004001c8      }
+004001c8      [0x7] = 
+004001c8      {
+004001c8          enum p_type type = PT_NOTE
+004001cc          enum p_flags flags = PF_R
+004001d0          uint64_t offset = 0x350
+004001d8          uint64_t virtual_address = 0x350
+004001e0          uint64_t physical_address = 0x350
+004001e8          uint64_t file_size = 0x20
+004001f0          uint64_t memory_size = 0x20
+004001f8          uint64_t align = 0x8
+00400200      }
+00400200      [0x8] = 
+00400200      {
+00400200          enum p_type type = PT_NOTE
+00400204          enum p_flags flags = PF_R
+00400208          uint64_t offset = 0x370
+00400210          uint64_t virtual_address = 0x370
+00400218          uint64_t physical_address = 0x370
+00400220          uint64_t file_size = 0x24
+00400228          uint64_t memory_size = 0x24
+00400230          uint64_t align = 0x4
+00400238      }
+00400238      [0x9] = 
+00400238      {
+00400238          enum p_type type = PT_NOTE
+0040023c          enum p_flags flags = PF_R
+00400240          uint64_t offset = 0x2180
+00400248          uint64_t virtual_address = 0x2180
+00400250          uint64_t physical_address = 0x2180
+00400258          uint64_t file_size = 0x20
+00400260          uint64_t memory_size = 0x20
+00400268          uint64_t align = 0x4
+00400270      }
+00400270      [0xa] = 
+00400270      {
+00400270          enum p_type type = PT_GNU_PROPERTY
+00400274          enum p_flags flags = PF_R
+00400278          uint64_t offset = 0x350
+00400280          uint64_t virtual_address = 0x350
+00400288          uint64_t physical_address = 0x350
+00400290          uint64_t file_size = 0x20
+00400298          uint64_t memory_size = 0x20
+004002a0          uint64_t align = 0x8
+004002a8      }
+004002a8      [0xb] = 
+004002a8      {
+004002a8          enum p_type type = PT_GNU_EH_FRAME
+004002ac          enum p_flags flags = PF_R
+004002b0          uint64_t offset = 0x2058
+004002b8          uint64_t virtual_address = 0x2058
+004002c0          uint64_t physical_address = 0x2058
+004002c8          uint64_t file_size = 0x3c
+004002d0          uint64_t memory_size = 0x3c
+004002d8          uint64_t align = 0x4
+004002e0      }
+004002e0      [0xc] = 
+004002e0      {
+004002e0          enum p_type type = PT_GNU_STACK
+004002e4          enum p_flags flags = PF_W | PF_R
+004002e8          uint64_t offset = 0x0
+004002f0          uint64_t virtual_address = 0x0
+004002f8          uint64_t physical_address = 0x0
+00400300          uint64_t file_size = 0x0
+00400308          uint64_t memory_size = 0x0
+00400310          uint64_t align = 0x10
+00400318      }
+00400318      [0xd] = 
+00400318      {
+00400318          enum p_type type = PT_GNU_RELRO
+0040031c          enum p_flags flags = PF_R
+00400320          uint64_t offset = 0x2dd0
+00400328          uint64_t virtual_address = 0x3dd0
+00400330          uint64_t physical_address = 0x3dd0
+00400338          uint64_t file_size = 0x230
+00400340          uint64_t memory_size = 0x230
+00400348          uint64_t align = 0x1
+00400350      }
+00400350  }
+
+00400350                                                  04 00 00 00 10 00 00 00 05 00 00 00 47 4e 55 00                  ............GNU.
+00400360  02 80 00 c0 04 00 00 00 01 00 00 00 00 00 00 00 04 00 00 00 14 00 00 00 03 00 00 00 47 4e 55 00  ............................GNU.
+00400380  73 c8 7a 5b db 82 1b 1b d0 f8 ca 80 6b a9 36 ec c3 48 47 0c                                      s.z[........k.6..HG.
+
+.interp (PROGBITS) section started  {0x400394-0x4003b0}
+00400394  char __elf_interp[0x1c] = "/lib64/ld-linux-x86-64.so.2", 0
+.interp (PROGBITS) section ended  {0x400394-0x4003b0}
+
+.gnu.hash section started  {0x4003b0-0x4003e0}
+004003b0                                                  03 00 00 00 0d 00 00 00 01 00 00 00 06 00 00 00                  ................
+004003c0  00 00 a1 00 80 01 10 00 0d 00 00 00 0f 00 00 00 00 00 00 00 28 1d 8c 1c d1 65 ce 6d 67 55 61 10  ....................(....e.mgUa.
+.gnu.hash section ended  {0x4003b0-0x4003e0}
+
+.dynsym (DYNSYM) section started  {0x4003e0-0x400560}
+004003e0  struct Elf64_Sym __elf_symbol_table[0x10] = 
+004003e0  {
+004003e0      [0x0] = 
+004003e0      {
+004003e0          uint32_t st_name = 0x0
+004003e4          uint8_t st_info = 0x0
+004003e5          uint8_t st_other = 0x0
+004003e6          uint16_t st_shndx = 0x0
+004003e8          uint64_t st_value = 0x0
+004003f0          uint64_t st_size = 0x0
+004003f8      }
+004003f8      [0x1] = 
+004003f8      {
+004003f8          uint32_t st_name = 0x2c
+004003fc          uint8_t st_info = 0x12
+004003fd          uint8_t st_other = 0x0
+004003fe          uint16_t st_shndx = 0x0
+00400400          uint64_t st_value = 0x0
+00400408          uint64_t st_size = 0x0
+00400410      }
+00400410      [0x2] = 
+00400410      {
+00400410          uint32_t st_name = 0x54
+00400414          uint8_t st_info = 0x12
+00400415          uint8_t st_other = 0x0
+00400416          uint16_t st_shndx = 0x0
+00400418          uint64_t st_value = 0x0
+00400420          uint64_t st_size = 0x0
+00400428      }
+00400428      [0x3] = 
+00400428      {
+00400428          uint32_t st_name = 0x83
+0040042c          uint8_t st_info = 0x20
+0040042d          uint8_t st_other = 0x0
+0040042e          uint16_t st_shndx = 0x0
+00400430          uint64_t st_value = 0x0
+00400438          uint64_t st_size = 0x0
+00400440      }
+00400440      [0x4] = 
+00400440      {
+00400440          uint32_t st_name = 0xf
+00400444          uint8_t st_info = 0x12
+00400445          uint8_t st_other = 0x0
+00400446          uint16_t st_shndx = 0x0
+00400448          uint64_t st_value = 0x0
+00400450          uint64_t st_size = 0x0
+00400458      }
+00400458      [0x5] = 
+00400458      {
+00400458          uint32_t st_name = 0x19
+0040045c          uint8_t st_info = 0x12
+0040045d          uint8_t st_other = 0x0
+0040045e          uint16_t st_shndx = 0x0
+00400460          uint64_t st_value = 0x0
+00400468          uint64_t st_size = 0x0
+00400470      }
+00400470      [0x6] = 
+00400470      {
+00400470          uint32_t st_name = 0x4d
+00400474          uint8_t st_info = 0x12
+00400475          uint8_t st_other = 0x0
+00400476          uint16_t st_shndx = 0x0
+00400478          uint64_t st_value = 0x0
+00400480          uint64_t st_size = 0x0
+00400488      }
+00400488      [0x7] = 
+00400488      {
+00400488          uint32_t st_name = 0x5c
+0040048c          uint8_t st_info = 0x12
+0040048d          uint8_t st_other = 0x0
+0040048e          uint16_t st_shndx = 0x0
+00400490          uint64_t st_value = 0x0
+00400498          uint64_t st_size = 0x0
+004004a0      }
+004004a0      [0x8] = 
+004004a0      {
+004004a0          uint32_t st_name = 0x20
+004004a4          uint8_t st_info = 0x12
+004004a5          uint8_t st_other = 0x0
+004004a6          uint16_t st_shndx = 0x0
+004004a8          uint64_t st_value = 0x0
+004004b0          uint64_t st_size = 0x0
+004004b8      }
+004004b8      [0x9] = 
+004004b8      {
+004004b8          uint32_t st_name = 0x9f
+004004bc          uint8_t st_info = 0x20
+004004bd          uint8_t st_other = 0x0
+004004be          uint16_t st_shndx = 0x0
+004004c0          uint64_t st_value = 0x0
+004004c8          uint64_t st_size = 0x0
+004004d0      }
+004004d0      [0xa] = 
+004004d0      {
+004004d0          uint32_t st_name = 0x1
+004004d4          uint8_t st_info = 0x12
+004004d5          uint8_t st_other = 0x0
+004004d6          uint16_t st_shndx = 0x0
+004004d8          uint64_t st_value = 0x0
+004004e0          uint64_t st_size = 0x0
+004004e8      }
+004004e8      [0xb] = 
+004004e8      {
+004004e8          uint32_t st_name = 0x14
+004004ec          uint8_t st_info = 0x12
+004004ed          uint8_t st_other = 0x0
+004004ee          uint16_t st_shndx = 0x0
+004004f0          uint64_t st_value = 0x0
+004004f8          uint64_t st_size = 0x0
+00400500      }
+00400500      [0xc] = 
+00400500      {
+00400500          uint32_t st_name = 0xae
+00400504          uint8_t st_info = 0x20
+00400505          uint8_t st_other = 0x0
+00400506          uint16_t st_shndx = 0x0
+00400508          uint64_t st_value = 0x0
+00400510          uint64_t st_size = 0x0
+00400518      }
+00400518      [0xd] = 
+00400518      {
+00400518          uint32_t st_name = 0x25
+0040051c          uint8_t st_info = 0x11
+0040051d          uint8_t st_other = 0x0
+0040051e          uint16_t st_shndx = 0x1a
+00400520          uint64_t st_value = 0x4050
+00400528          uint64_t st_size = 0x8
+00400530      }
+00400530      [0xe] = 
+00400530      {
+00400530          uint32_t st_name = 0x3e
+00400534          uint8_t st_info = 0x22
+00400535          uint8_t st_other = 0x0
+00400536          uint16_t st_shndx = 0x0
+00400538          uint64_t st_value = 0x0
+00400540          uint64_t st_size = 0x0
+00400548      }
+00400548      [0xf] = 
+00400548      {
+00400548          uint32_t st_name = 0x9
+0040054c          uint8_t st_info = 0x11
+0040054d          uint8_t st_other = 0x0
+0040054e          uint16_t st_shndx = 0x1a
+00400550          uint64_t st_value = 0x4060
+00400558          uint64_t st_size = 0x8
+00400560      }
+00400560  }
+.dynsym (DYNSYM) section ended  {0x4003e0-0x400560}
+
+.dynstr (STRTAB) section started  {0x400560-0x400628}
+00400560  00                                                                                               .
+
+00400561  char data_400561[0x8] = "setvbuf", 0
+00400569  char data_400569[0x6] = "stdin", 0
+0040056f  char data_40056f[0x5] = "puts", 0
+00400574  char data_400574[0x5] = "exit", 0
+00400579  char data_400579[0x7] = "system", 0
+00400580  char data_400580[0x5] = "read", 0
+00400585  char data_400585[0x7] = "stdout", 0
+0040058c  char data_40058c[0x12] = "__libc_start_main", 0
+0040059e  char data_40059e[0xf] = "__cxa_finalize", 0
+004005ad  char data_4005ad[0x7] = "printf", 0
+004005b4  char data_4005b4[0x8] = "strncmp", 0
+004005bc  char data_4005bc[0x6] = "alarm", 0
+004005c2  char data_4005c2[0xa] = "libc.so.6", 0
+004005cc  char data_4005cc[0xc] = "GLIBC_2.2.5", 0
+004005d8  char data_4005d8[0xb] = "GLIBC_2.34", 0
+004005e3  char data_4005e3[0x1c] = "_ITM_deregisterTMCloneTable", 0
+004005ff  char data_4005ff[0xf] = "__gmon_start__", 0
+0040060e  char data_40060e[0x1a] = "_ITM_registerTMCloneTable", 0
+.dynstr (STRTAB) section ended  {0x400560-0x400628}
+
+.gnu.version section started  {0x400628-0x400648}
+00400628                          00 00 02 00 03 00 01 00 03 00 03 00 03 00 03 00 03 00 01 00 03 00 03 00          ........................
+00400640  01 00 03 00 03 00 03 00                                                                          ........
+.gnu.version section ended  {0x400628-0x400648}
+
+.gnu.version_r section started  {0x400648-0x400678}
+00400648                          01 00 02 00 62 00 00 00 10 00 00 00 00 00 00 00 75 1a 69 09 00 00 03 00          ....b...........u.i.....
+00400660  6c 00 00 00 10 00 00 00 b4 91 96 06 00 00 02 00 78 00 00 00 00 00 00 00                          l...............x.......
+.gnu.version_r section ended  {0x400648-0x400678}
+
+.dynamic_rela section started  {0x400678-0x400768}
+.rela.dyn (RELA) section started  {0x400678-0x400768}
+00400678  struct Elf64_Rela __elf_rela_table[0xa] = 
+00400678  {
+00400678      [0x0] = 
+00400678      {
+00400678          uint64_t r_offset = 0x3dd0
+00400680          uint64_t r_info = 0x8
+00400688          int64_t r_addend = 0x11a0
+00400690      }
+00400690      [0x1] = 
+00400690      {
+00400690          uint64_t r_offset = 0x3dd8
+00400698          uint64_t r_info = 0x8
+004006a0          int64_t r_addend = 0x1160
+004006a8      }
+004006a8      [0x2] = 
+004006a8      {
+004006a8          uint64_t r_offset = 0x4048
+004006b0          uint64_t r_info = 0x8
+004006b8          int64_t r_addend = 0x4048
+004006c0      }
+004006c0      [0x3] = 
+004006c0      {
+004006c0          uint64_t r_offset = 0x3fc0
+004006c8          uint64_t r_info = 0x100000006
+004006d0          int64_t r_addend = 0x0
+004006d8      }
+004006d8      [0x4] = 
+004006d8      {
+004006d8          uint64_t r_offset = 0x3fc8
+004006e0          uint64_t r_info = 0x300000006
+004006e8          int64_t r_addend = 0x0
+004006f0      }
+004006f0      [0x5] = 
+004006f0      {
+004006f0          uint64_t r_offset = 0x3fd0
+004006f8          uint64_t r_info = 0x900000006
+00400700          int64_t r_addend = 0x0
+00400708      }
+00400708      [0x6] = 
+00400708      {
+00400708          uint64_t r_offset = 0x3fd8
+00400710          uint64_t r_info = 0xc00000006
+00400718          int64_t r_addend = 0x0
+00400720      }
+00400720      [0x7] = 
+00400720      {
+00400720          uint64_t r_offset = 0x3fe0
+00400728          uint64_t r_info = 0xe00000006
+00400730          int64_t r_addend = 0x0
+00400738      }
+00400738      [0x8] = 
+00400738      {
+00400738          uint64_t r_offset = 0x4050
+00400740          uint64_t r_info = 0xd00000005
+00400748          int64_t r_addend = 0x0
+00400750      }
+00400750      [0x9] = 
+00400750      {
+00400750          uint64_t r_offset = 0x4060
+00400758          uint64_t r_info = 0xf00000005
+00400760          int64_t r_addend = 0x0
+00400768      }
+00400768  }
+.dynamic_rela section ended  {0x400678-0x400768}
+.rela.dyn (RELA) section ended  {0x400678-0x400768}
+
+.rela.plt (RELA) section started  {0x400768-0x400828}
+00400768                          00 40 00 00 00 00 00 00 07 00 00 00 02 00 00 00 00 00 00 00 00 00 00 00          .@......................
+00400780  08 40 00 00 00 00 00 00 07 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 10 40 00 00 00 00 00 00  .@.......................@......
+004007a0  07 00 00 00 05 00 00 00 00 00 00 00 00 00 00 00 18 40 00 00 00 00 00 00 07 00 00 00 06 00 00 00  .................@..............
+004007c0  00 00 00 00 00 00 00 00 20 40 00 00 00 00 00 00 07 00 00 00 07 00 00 00 00 00 00 00 00 00 00 00  ........ @......................
+004007e0  28 40 00 00 00 00 00 00 07 00 00 00 08 00 00 00 00 00 00 00 00 00 00 00 30 40 00 00 00 00 00 00  (@......................0@......
+00400800  07 00 00 00 0a 00 00 00 00 00 00 00 00 00 00 00 38 40 00 00 00 00 00 00 07 00 00 00 0b 00 00 00  ................8@..............
+00400820  00 00 00 00 00 00 00 00                                                                          ........
+.rela.plt (RELA) section ended  {0x400768-0x400828}
+
+.init (PROGBITS) section started  {0x401000-0x401017}
+
+00401000    int64_t (* const)() _init()
+
+0040100e  if (__gmon_start__ == 0)
+00401016      return __gmon_start__
+00401016  
+00401010  return __gmon_start__()
+
+.init (PROGBITS) section ended  {0x401000-0x401017}
+
+00401017                                                                       00 00 00 00 00 00 00 00 00                         .........
+
+.plt (PROGBITS) section started  {0x401020-0x4010b0}
+
+00401020    int64_t sub_401020()
+
+00401020  int64_t var_8 = data_403ff0
+00401026  jump(data_403ff8)
+
+0040102c                                      0f 1f 40 00                                                              ..@.
+
+00401030    int32_t strncmp(char const* arg1, char const* arg2, uint64_t arg3)
+
+00401030  return strncmp(arg1, arg2, arg3) __tailcall
+
+
+00401036    int64_t sub_401036()
+
+00401036  int64_t var_8 = 0
+0040103b  return sub_401020() __tailcall
+
+
+00401040    int32_t puts(char const* str)
+
+00401040  return puts(str) __tailcall
+
+
+00401046    int64_t sub_401046()
+
+00401046  int64_t var_8 = 1
+0040104b  return sub_401020() __tailcall
+
+
+00401050    int32_t system(char const* line)
+
+00401050  return system(line) __tailcall
+
+
+00401056    int64_t sub_401056()
+
+00401056  int64_t var_8 = 2
+0040105b  return sub_401020() __tailcall
+
+
+00401060    int32_t printf(char const* format, ...)
+
+00401060  return printf(format) __tailcall
+
+
+00401066    int64_t sub_401066()
+
+00401066  int64_t var_8 = 3
+0040106b  return sub_401020() __tailcall
+
+
+00401070    int64_t alarm()
+
+00401070  return alarm() __tailcall
+
+
+00401076    int64_t sub_401076()
+
+00401076  int64_t var_8 = 4
+0040107b  return sub_401020() __tailcall
+
+
+00401080    ssize_t read(int32_t fd, void* buf, uint64_t nbytes)
+
+00401080  return read(fd, buf, nbytes) __tailcall
+
+
+00401086    int64_t sub_401086()
+
+00401086  int64_t var_8 = 5
+0040108b  return sub_401020() __tailcall
+
+
+00401090    int32_t setvbuf(FILE* fp, char* buf, int32_t mode, uint64_t size)
+
+00401090  return setvbuf(fp, buf, mode, size) __tailcall
+
+
+00401096    int64_t sub_401096()
+
+00401096  int64_t var_8 = 6
+0040109b  return sub_401020() __tailcall
+
+
+004010a0    void exit(int32_t status) __noreturn
+
+004010a0  noreturn exit(status) __tailcall
+
+
+004010a6    int64_t sub_4010a6()
+
+004010a6  int64_t var_8 = 7
+004010ab  return sub_401020() __tailcall
+
+.plt (PROGBITS) section ended  {0x401020-0x4010b0}
+
+.plt.got (PROGBITS) section started  {0x4010b0-0x4010b8}
+
+004010b0    void __cxa_finalize(void* d)
+
+004010b0  return __cxa_finalize(d) __tailcall
+
+004010b6                                                                    66 90                                                f.
+.plt.got (PROGBITS) section ended  {0x4010b0-0x4010b8}
+
+004010b8                                                                          00 00 00 00 00 00 00 00                          ........
+
+.text (PROGBITS) section started  {0x4010c0-0x4012a7}
+
+004010c0    void _start(int64_t arg1, int64_t arg2, void (* arg3)()) __noreturn
+
+004010cd  int64_t stack_end_1
+004010cd  int64_t stack_end = stack_end_1
+004010db  void ubp_av
+004010db  __libc_start_main(main, argc: __return_addr.d, &ubp_av, init: nullptr, fini: nullptr, 
+004010db      rtld_fini: arg3, &stack_end)
+004010db  noreturn
+
+004010e1     f4 66 2e 0f 1f 84 00 00 00 00 00 0f 1f 40 00                                                   .f...........@.
+
+004010f0    uint64_t* const* deregister_tm_clones()
+
+004010f7  return &__TMC_END__
+
+00401111                                                     0f 1f 80 00 00 00 00                                           .......
+00401119                                                                             0f 1f 80 00 00 00 00                           .......
+
+00401120    int64_t (* const)() register_tm_clones()
+
+00401138  return nullptr
+
+00401152                                                        66 0f 1f 44 00 00                                            f..D..
+00401159                                                                             0f 1f 80 00 00 00 00                           .......
+
+00401160    void __do_global_dtors_aux()
+
+0040116b  if (completed.0 != 0)
+00401198      return 
+00401198  
+00401179  if (__cxa_finalize != 0)
+00401182      __cxa_finalize(d: __dso_handle)
+00401182  
+00401187  deregister_tm_clones()
+0040118c  completed.0 = 1
+
+00401195                                                                 0f 1f 00                                               ...
+00401199                                                                             0f 1f 80 00 00 00 00                           .......
+
+004011a0    int64_t (* const)() frame_dummy()
+
+004011a4  return register_tm_clones() __tailcall
+
+
+004011a9    void win() __noreturn
+
+004011b7  system(line: "/bin/sh")
+004011c1  exit(status: 0)
+004011c1  noreturn
+
+
+004011c6    int64_t ayy()
+
+004011d8  puts(str: "I say: AYY")
+004011ec  printf(format: "You say: ")
+00401202  char buf[0x20]
+00401202  read(fd: 0, &buf, nbytes: 0x40)
+00401202  
+00401224  if (strncmp(&buf, "LMAO", 4) == 0)
+00401250      return puts(str: "https://youtube.com/watch?v=RhsUP2ykTGc")
+00401250  
+00401230  puts(str: ":(")
+0040123a  exit(status: 1)
+0040123a  noreturn
+
+
+00401251    int32_t main(int32_t argc, char** argv, char** envp)
+
+0040126e  setvbuf(fp: stdin, buf: nullptr, mode: 2, size: 0)
+0040128c  setvbuf(fp: __TMC_END__, buf: nullptr, mode: 2, size: 0)
+00401296  alarm(0x3c)
+0040129b  ayy()
+004012a6  return 0
+
+.text (PROGBITS) section ended  {0x4010c0-0x4012a7}
+
+004012a7                       00                                                                                 .
+
+.fini (PROGBITS) section started  {0x4012a8-0x4012b1}
+
+004012a8    int64_t _fini() __pure
+
+004012b0  return 
+
+.fini (PROGBITS) section ended  {0x4012a8-0x4012b1}
+
+.rodata (PROGBITS) section started  {0x402000-0x402058}
+00402000  uint32_t _IO_stdin_used = 0x20001
+
+00402004              00 00 00 00                                                                              ....
+
+00402008  char const data_402008[0x8] = "/bin/sh", 0
+00402010  char const data_402010[0xb] = "I say: AYY", 0
+0040201b  char const data_40201b[0xa] = "You say: ", 0
+00402025  char const data_402025[0x5] = "LMAO", 0
+
+0040202a  data_40202a:
+0040202a                                3a 28 00 00 00 00                                                            :(....
+
+00402030  char const data_402030[0x28] = "https://youtube.com/watch?v=RhsUP2ykTGc", 0
+.rodata (PROGBITS) section ended  {0x402000-0x402058}
+
+.eh_frame_hdr (PROGBITS) section started  {0x402058-0x402094}
+00402058  __GNU_EH_FRAME_HDR:
+00402058                                                                          01 1b 03 3b 3c 00 00 00                          ...;<...
+00402060  06 00 00 00 c8 ef ff ff 88 00 00 00 58 f0 ff ff b0 00 00 00 68 f0 ff ff 58 00 00 00 51 f1 ff ff  ............X.......h...X...Q...
+00402080  c8 00 00 00 6e f1 ff ff e4 00 00 00 f9 f1 ff ff 04 01 00 00                                      ....n...............
+.eh_frame_hdr (PROGBITS) section ended  {0x402058-0x402094}
+
+00402094                                                              00 00 00 00                                              ....
+
+.eh_frame (PROGBITS) section started  {0x402098-0x402180}
+00402098                                                                          14 00 00 00 00 00 00 00                          ........
+004020a0  01 7a 52 00 01 78 10 01 1b 0c 07 08 90 01 07 10 14 00 00 00 1c 00 00 00 08 f0 ff ff 22 00 00 00  .zR..x......................"...
+004020c0  00 00 00 00 00 00 00 00 14 00 00 00 00 00 00 00 01 7a 52 00 01 78 10 01 1b 0c 07 08 90 01 00 00  .................zR..x..........
+004020e0  24 00 00 00 1c 00 00 00 38 ef ff ff 90 00 00 00 00 0e 10 46 0e 18 4a 0f 0b 77 08 80 00 3f 1a 3b  $.......8..........F..J..w...?.;
+00402100  2a 33 24 22 00 00 00 00 14 00 00 00 44 00 00 00 a0 ef ff ff 08 00 00 00 00 00 00 00 00 00 00 00  *3$"........D...................
+00402120  18 00 00 00 5c 00 00 00 81 f0 ff ff 1d 00 00 00 00 41 0e 10 86 02 43 0d 06 00 00 00 1c 00 00 00  ....\............A....C.........
+00402140  78 00 00 00 82 f0 ff ff 8b 00 00 00 00 41 0e 10 86 02 43 0d 06 02 86 0c 07 08 00 00 1c 00 00 00  x............A....C.............
+00402160  98 00 00 00 ed f0 ff ff 56 00 00 00 00 41 0e 10 86 02 43 0d 06 02 51 0c 07 08 00 00              ........V....A....C...Q.....
+0040217c  __FRAME_END__:
+0040217c                                                                                      00 00 00 00                              ....
+.eh_frame (PROGBITS) section ended  {0x402098-0x402180}
+
+00402180  __abi_tag:
+00402180  04 00 00 00 10 00 00 00 01 00 00 00 47 4e 55 00 00 00 00 00 03 00 00 00 02 00 00 00 00 00 00 00  ............GNU.................
+
+.init_array section started  {0x403dd0-0x403dd8}
+00403dd0  void (* __frame_dummy_init_array_entry[0x1])() = 
+00403dd0  {
+00403dd0      [0x0] = frame_dummy
+00403dd8  }
+.init_array section ended  {0x403dd0-0x403dd8}
+
+.fini_array section started  {0x403dd8-0x403de0}
+00403dd8  void (* __do_global_dtors_aux_fini_array_entry[0x1])() = 
+00403dd8  {
+00403dd8      [0x0] = __do_global_dtors_aux
+00403de0  }
+.fini_array section ended  {0x403dd8-0x403de0}
+
+.dynamic (DYNAMIC) section started  {0x403de0-0x403fc0}
+00403de0  struct Elf64_Dyn _DYNAMIC[0x1a] = 
+00403de0  {
+00403de0      [0x00] = 
+00403de0      {
+00403de0          enum e_dyn_tag d_tag = DT_NEEDED
+00403de8          uint64_t d_val = 0x62
+00403df0      }
+00403df0      [0x01] = 
+00403df0      {
+00403df0          enum e_dyn_tag d_tag = DT_INIT
+00403df8          uint64_t d_val = 0x1000
+00403e00      }
+00403e00      [0x02] = 
+00403e00      {
+00403e00          enum e_dyn_tag d_tag = DT_FINI
+00403e08          uint64_t d_val = 0x12a8
+00403e10      }
+00403e10      [0x03] = 
+00403e10      {
+00403e10          enum e_dyn_tag d_tag = DT_INIT_ARRAY
+00403e18          uint64_t d_val = 0x3dd0
+00403e20      }
+00403e20      [0x04] = 
+00403e20      {
+00403e20          enum e_dyn_tag d_tag = DT_INIT_ARRAYSZ
+00403e28          uint64_t d_val = 0x8
+00403e30      }
+00403e30      [0x05] = 
+00403e30      {
+00403e30          enum e_dyn_tag d_tag = DT_FINI_ARRAY
+00403e38          uint64_t d_val = 0x3dd8
+00403e40      }
+00403e40      [0x06] = 
+00403e40      {
+00403e40          enum e_dyn_tag d_tag = DT_FINI_ARRAYSZ
+00403e48          uint64_t d_val = 0x8
+00403e50      }
+00403e50      [0x07] = 
+00403e50      {
+00403e50          enum e_dyn_tag d_tag = DT_GNU_HASH
+00403e58          uint64_t d_val = 0x3b0
+00403e60      }
+00403e60      [0x08] = 
+00403e60      {
+00403e60          enum e_dyn_tag d_tag = DT_STRTAB
+00403e68          uint64_t d_val = 0x560
+00403e70      }
+00403e70      [0x09] = 
+00403e70      {
+00403e70          enum e_dyn_tag d_tag = DT_SYMTAB
+00403e78          uint64_t d_val = 0x3e0
+00403e80      }
+00403e80      [0x0a] = 
+00403e80      {
+00403e80          enum e_dyn_tag d_tag = DT_STRSZ
+00403e88          uint64_t d_val = 0xc8
+00403e90      }
+00403e90      [0x0b] = 
+00403e90      {
+00403e90          enum e_dyn_tag d_tag = DT_SYMENT
+00403e98          uint64_t d_val = 0x18
+00403ea0      }
+00403ea0      [0x0c] = 
+00403ea0      {
+00403ea0          enum e_dyn_tag d_tag = DT_DEBUG
+00403ea8          uint64_t d_val = 0x0
+00403eb0      }
+00403eb0      [0x0d] = 
+00403eb0      {
+00403eb0          enum e_dyn_tag d_tag = DT_PLTGOT
+00403eb8          uint64_t d_val = 0x3fe8
+00403ec0      }
+00403ec0      [0x0e] = 
+00403ec0      {
+00403ec0          enum e_dyn_tag d_tag = DT_PLTRELSZ
+00403ec8          uint64_t d_val = 0xc0
+00403ed0      }
+00403ed0      [0x0f] = 
+00403ed0      {
+00403ed0          enum e_dyn_tag d_tag = DT_PLTREL
+00403ed8          uint64_t d_val = 0x7
+00403ee0      }
+00403ee0      [0x10] = 
+00403ee0      {
+00403ee0          enum e_dyn_tag d_tag = DT_JMPREL
+00403ee8          uint64_t d_val = 0x768
+00403ef0      }
+00403ef0      [0x11] = 
+00403ef0      {
+00403ef0          enum e_dyn_tag d_tag = DT_RELA
+00403ef8          uint64_t d_val = 0x678
+00403f00      }
+00403f00      [0x12] = 
+00403f00      {
+00403f00          enum e_dyn_tag d_tag = DT_RELASZ
+00403f08          uint64_t d_val = 0xf0
+00403f10      }
+00403f10      [0x13] = 
+00403f10      {
+00403f10          enum e_dyn_tag d_tag = DT_RELAENT
+00403f18          uint64_t d_val = 0x18
+00403f20      }
+00403f20      [0x14] = 
+00403f20      {
+00403f20          enum e_dyn_tag d_tag = DT_FLAGS_1
+00403f28          uint64_t d_val = 0x8000000
+00403f30      }
+00403f30      [0x15] = 
+00403f30      {
+00403f30          enum e_dyn_tag d_tag = DT_VERNEED
+00403f38          uint64_t d_val = 0x648
+00403f40      }
+00403f40      [0x16] = 
+00403f40      {
+00403f40          enum e_dyn_tag d_tag = DT_VERNEEDNUM
+00403f48          uint64_t d_val = 0x1
+00403f50      }
+00403f50      [0x17] = 
+00403f50      {
+00403f50          enum e_dyn_tag d_tag = DT_VERSYM
+00403f58          uint64_t d_val = 0x628
+00403f60      }
+00403f60      [0x18] = 
+00403f60      {
+00403f60          enum e_dyn_tag d_tag = DT_RELACOUNT
+00403f68          uint64_t d_val = 0x3
+00403f70      }
+00403f70      [0x19] = 
+00403f70      {
+00403f70          enum e_dyn_tag d_tag = DT_NULL
+00403f78          uint64_t d_val = 0x0
+00403f80      }
+00403f80  }
+
+00403f80  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+00403fa0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+.dynamic (DYNAMIC) section ended  {0x403de0-0x403fc0}
+
+.got (PROGBITS) section started  {0x403fc0-0x403fe8}
+00403fc0  void (* const __libc_start_main)(int32_t (* main)(int32_t argc, char** argv, char** envp), int32_t argc, char** ubp_av, void (* init)(), void (* fini)(), void (* rtld_fini)(), void* stack_end) __noreturn = __libc_start_main
+00403fc8  int64_t (* const _ITM_deregisterTMCloneTable)() = _ITM_deregisterTMCloneTable
+00403fd0  int64_t (* const __gmon_start__)() = __gmon_start__
+00403fd8  int64_t (* const _ITM_registerTMCloneTable)() = _ITM_registerTMCloneTable
+00403fe0  void (* const __cxa_finalize)(void* d) = __cxa_finalize
+.got (PROGBITS) section ended  {0x403fc0-0x403fe8}
+
+.got.plt (PROGBITS) section started  {0x403fe8-0x404040}
+00403fe8  _GLOBAL_OFFSET_TABLE_:
+00403fe8                          e0 3d 00 00 00 00 00 00                                                          .=......
+
+00403ff0  int64_t data_403ff0 = 0x0
+00403ff8  int64_t data_403ff8 = 0x0
+00404000  int32_t (* const strncmp)(char const*, char const*, uint64_t) = strncmp
+00404008  int32_t (* const puts)(char const* str) = puts
+00404010  int32_t (* const system)(char const* line) = system
+00404018  int32_t (* const printf)(char const* format, ...) = printf
+00404020  int64_t (* const alarm)() = alarm
+00404028  ssize_t (* const read)(int32_t fd, void* buf, uint64_t nbytes) = read
+00404030  int32_t (* const setvbuf)(FILE* fp, char* buf, int32_t mode, uint64_t size) = setvbuf
+00404038  void (* const exit)(int32_t status) __noreturn = exit
+.got.plt (PROGBITS) section ended  {0x403fe8-0x404040}
+
+.data (PROGBITS) section started  {0x404040-0x404050}
+00404040  __data_start:
+00404040  00 00 00 00 00 00 00 00                                                                          ........
+
+00404048  void* __dso_handle = __dso_handle
+.data (PROGBITS) section ended  {0x404040-0x404050}
+
+.bss (NOBITS) section started  {0x404050-0x404070}
+00404050  uint64_t* const __TMC_END__ = 0x0
+
+00404058                                                                          00 00 00 00 00 00 00 00                          ........
+
+00404060  uint64_t* const stdin = 0x0
+00404068  uint8_t completed.0 = 0x0
+
+00404069                             00 00 00 00 00 00 00                                                           .......
+.bss (NOBITS) section ended  {0x404050-0x404070}
+
+.extern section started  {0x404070-0x4040d8}
+00404070  extern _ITM_deregisterTMCloneTable
+00404078  extern _ITM_registerTMCloneTable
+00404080  extern void __cxa_finalize(void* d)
+00404088  extern __gmon_start__
+00404090  extern void __libc_start_main(int32_t (* main)(int32_t argc, char** argv, char** envp), int32_t argc, char** ubp_av, void (* init)(), void (* fini)(), void (* rtld_fini)(), void* stack_end) __noreturn
+00404098  extern alarm
+004040a0  extern void exit(int32_t status) __noreturn
+004040a8  extern int32_t printf(char const* format, ...)
+004040b0  extern int32_t puts(char const* str)
+004040b8  extern ssize_t read(int32_t fd, void* buf, uint64_t nbytes)
+004040c0  extern int32_t setvbuf(FILE* fp, char* buf, int32_t mode, uint64_t size)
+004040c8  extern int32_t strncmp(char const*, char const*, uint64_t)
+004040d0  extern int32_t system(char const* line)
+.extern section ended  {0x404070-0x4040d8}
+
+.synthetic_builtins section started  {0x4040e0-0x404110}
+004040e0  extern void* __builtin_memcpy(void* dest, void const* src, uint64_t count)
+004040e8  extern void* __builtin_memset(void* dest, int32_t ch, uint64_t count)
+004040f0  extern char* __builtin_strcpy(char* dest, char const* src)
+004040f8  extern char* __builtin_strncpy(char* dest, char const* src, uint64_t count)
+00404100  extern wchar32* __builtin_wcscpy(wchar32* dest, wchar32 const* src)
+00404108  extern wchar32* __builtin_wmemcpy(wchar32* dest, wchar32 const* src, uint64_t count)
+.synthetic_builtins section ended  {0x4040e0-0x404110}
+

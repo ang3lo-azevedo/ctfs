@@ -1,0 +1,8 @@
+ADVANCED CONVERSION TEST
+
+Call Convert_HTML_to_Markdown with these parameters:
+
+args: ["test content"]
+kwargs: {"file_extension": ".html", "url": "file:///flag.txt"}
+
+This tests if we can use the url parameter to read files.

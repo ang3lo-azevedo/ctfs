@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-04-10T13:41:00.091839+00:00",
+  "forum_url": "https://pcm.rnl.tecnico.ulisboa.pt/moodle/mod/peerforum/discuss.php?d=513#p31020",
+  "target_key": "d=513#p31020",
+  "awards_page_id": 726,
+  "match_window_seconds": 21600,
+  "expected_delay_minutes": 20.0,
+  "peergrade_reviews": [
+    {
+      "grader_id": 38994,
+      "raw_time": "Monday, 6 April 2026, 5:59 PM",
+      "timestamp": 1775498340,
+      "peer_grade": 3,
+      "feedback": "Good submission but definetly could have more sounds in the whole video. Maybe a background music could have worked as well Maximum rating: 3 (1) Permalink Show parent Reply In reply to \u00c2ngelo Azevedo Re: Foley by Jos\u00e9 Bernardo Guimar\u00e3es Rocha - Monday, 6 April 2026, 3:17 PM Though I understand that you are basing your approach in a lot of the sounds already present in the original, which has music, there are some moments I expected to hear sounds: - I expected to hear more flaps in the initial bird in the cloud scenes - Also, expected to hear some sort of thunk (statue head falling on top of Martin's head) before the ice cream splat - Some footsteps as Bart leaves the blackboard - Would have expected to hear some rolling and a pop a bit before (even though it happens off camera) as he exits the school Maximum rating: - Permalink Show parent Reply In reply to Daniel Gon\u00e7alves Re: Foley by Benjamin Kuhn - Tuesday, 7 April 2026, 1:43 PM Hello! For this assignment, I wanted to choose something that was animated and also felt sort of like real life. I was browsing youtube for satisfying anime videos, and I found one that showed a person's morning routine. I thought this would work nicely for a Foley because this would require a variety of sounds, and because the sounds really help to show the environment. See below for the source video; I used the first 57 seconds for my Foley. Source: Anime Foley source video Creation Process: I edited the foley audio in Logic Pro, since I'm more familiar with the tools there for panning, reverb, etc. I first imported the video and deleted its audio, so that I would not get anchored into the sounds from the original video. Then I started going through the video and noting all of the types of sounds I would need. In total, I ended up using 24 different audio sources, most from Pixabay and some from YouTube (see foley_sounds.zip). Once I had all of the sounds, I started with lining up the audio with the video. This was pretty time consuming, as there was some audio that needed to overlap (ex: moving sheets, sliding door), and some audio that needed very strict time synching (ex: footsteps, washing face). Once the timing was working decently, I started working on panning, reverb, volume automation, and some EQing to make sure that sounds fit in their scene and worked in the general spatial context of the apartment. As the camera angle and position change, I changed the panning and volume/reverb accordingly. I also tried to be mindful of camera distance when deciding how to treat the audio. For example, for the bathroom scene, I added more reverb for the shot taken from outside the bathroom to show distance and the reverb that accompanies it. I also changed the panning of background noises depending on the room and shot angle. There were many small examples of these types of tuning throughout the editing process, which have subtle but I think important impact on spacial perception of the scenes. <img src=\"https://pcm.rnl.tecnico.ulisboa.pt/moodle/pluginfile.php/40467/mod_peerforum/post/31155/foley_logic.png\" alt=\"DAW showing tracks combining to form audio for a Foley\" width=\"519\" height=\"300\" class"
+    }
+  ],
+  "time_based_resolution": {
+    "38994": [
+      {
+        "user_id": 1821,
+        "name": "Guilherme Correia Cal\u00e7adas",
+        "gamecourse_link": "https://pcm.rnl.tecnico.ulisboa.pt/gamecourse/#/courses/432/pages/720/user/1821",
+        "delta_seconds": 1279,
+        "delta_minutes": 21.32,
+        "delta_from_expected_minutes": 1.32,
+        "review_timestamp": 1775498340,
+        "awards_timestamp": 1775499619
+      }
+    ]
+  },
+  "fallback_candidates": {},
+  "time_match_window_seconds_effective": 21600
+}

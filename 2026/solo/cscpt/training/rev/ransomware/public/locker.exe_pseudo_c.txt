@@ -1,0 +1,878 @@
+/*
+Type: PE
+Platform: windows-x86_64
+Architecture: x86_64
+
+Segments:
+r--  0x140000000-0x140000200 
+r-x  0x140002000-0x140004114  {Code}
+r--  0x140006000-0x1400065d4  {Data}
+---  0x1400065e0-0x140006610 
+
+Sections:
+0x140002000-0x140004114  .text  {Code}
+0x140006000-0x1400065d4  .rsrc  {Read-only data}
+0x1400065e0-0x140006610  .synthetic_builtins  {External}
+*/
+140000000  struct DOS_Header __dos_header = 
+140000000  {
+140000000      char e_magic[0x2] = "MZ"
+140000002      uint16_t e_cblp = 0x90
+140000004      uint16_t e_cp = 0x3
+140000006      uint16_t e_crlc = 0x0
+140000008      uint16_t e_cparhdr = 0x4
+14000000a      uint16_t e_minalloc = 0x0
+14000000c      uint16_t e_maxalloc = 0xffff
+14000000e      uint16_t e_ss = 0x0
+140000010      uint16_t e_sp = 0xb8
+140000012      uint16_t e_csum = 0x0
+140000014      uint16_t e_ip = 0x0
+140000016      uint16_t e_cs = 0x0
+140000018      uint16_t e_lfarlc = 0x40
+14000001a      uint16_t e_ovno = 0x0
+14000001c      char e_res1[0x8] = "\x00\x00\x00\x00\x00\x00\x00", 0
+140000024      uint16_t e_oemid = 0x0
+140000026      uint16_t e_oeminfo = 0x0
+140000028      char e_res2[0x14] = "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", 0
+14000003c      uint32_t e_lfanew = 0x80
+140000040  }
+
+140000040  __dos_stub:
+140000040  0e 1f ba 0e 00 b4 09 cd 21 b8 01 4c cd 21 54 68 69 73 20 70 72 6f 67 72 61 6d 20 63 61 6e 6e 6f  ........!..L.!This program canno
+140000060  74 20 62 65 20 72 75 6e 20 69 6e 20 44 4f 53 20 6d 6f 64 65 2e 0d 0d 0a 24 00 00 00 00 00 00 00  t be run in DOS mode....$.......
+
+140000080  struct COFF_Header __coff_header = 
+140000080  {
+140000080      char magic[0x4] = "PE\x00", 0
+140000084      enum coff_machine machine = IMAGE_FILE_MACHINE_AMD64
+140000086      uint16_t numberOfSections = 0x2
+140000088      uint32_t timeDateStamp = 0xe4589700
+14000008c      uint32_t pointerToSymbolTable = 0x0
+140000090      uint32_t numberOfSymbols = 0x0
+140000094      uint16_t sizeOfOptionalHeader = 0xf0
+140000096      enum coff_characteristics characteristics = IMAGE_FILE_EXECUTABLE_IMAGE | IMAGE_FILE_LARGE_ADDRESS_AWARE
+140000098  }
+140000098  struct PE64_Optional_Header __pe64_optional_header = 
+140000098  {
+140000098      enum pe_magic magic = PE_64BIT
+14000009a      uint8_t majorLinkerVersion = 0x30
+14000009b      uint8_t minorLinkerVersion = 0x0
+14000009c      uint32_t sizeOfCode = 0x2200
+1400000a0      uint32_t sizeOfInitializedData = 0x600
+1400000a4      uint32_t sizeOfUninitializedData = 0x0
+1400000a8      uint32_t addressOfEntryPoint = 0x0
+1400000ac      uint32_t baseOfCode = 0x2000
+1400000b0      uint64_t imageBase = 0x140000000
+1400000b8      uint32_t sectionAlignment = 0x2000
+1400000bc      uint32_t fileAlignment = 0x200
+1400000c0      uint16_t majorOperatingSystemVersion = 0x4
+1400000c2      uint16_t minorOperatingSystemVersion = 0x0
+1400000c4      uint16_t majorImageVersion = 0x0
+1400000c6      uint16_t minorImageVersion = 0x0
+1400000c8      uint16_t majorSubsystemVersion = 0x6
+1400000ca      uint16_t minorSubsystemVersion = 0x0
+1400000cc      uint32_t win32VersionValue = 0x0
+1400000d0      uint32_t sizeOfImage = 0x8000
+1400000d4      uint32_t sizeOfHeaders = 0x200
+1400000d8      uint32_t checkSum = 0x0
+1400000dc      enum pe_subsystem subsystem = IMAGE_SUBSYSTEM_WINDOWS_CUI
+1400000de      enum pe_dll_characteristics dllCharacteristics = IMAGE_DLLCHARACTERISTICS_HIGH_ENTROPY_VA | IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE | IMAGE_DLLCHARACTERISTICS_NX_COMPAT | IMAGE_DLLCHARACTERISTICS_NO_SEH | IMAGE_DLLCHARACTERISTICS_TERMINAL_SERVER_AWARE
+1400000e0      uint64_t sizeOfStackReserve = 0x400000
+1400000e8      uint64_t sizeOfStackCommit = 0x4000
+1400000f0      uint64_t sizeOfHeapReserve = 0x100000
+1400000f8      uint64_t sizeOfHeapCommit = 0x2000
+140000100      uint32_t loaderFlags = 0x0
+140000104      uint32_t numberOfRvaAndSizes = 0x10
+140000108      struct PE_Data_Directory_Entry exportTableEntry = 
+140000108      {
+140000108          uint32_t virtualAddress = 0x0
+14000010c          uint32_t size = 0x0
+140000110      }
+140000110      struct PE_Data_Directory_Entry importTableEntry = 
+140000110      {
+140000110          uint32_t virtualAddress = 0x0
+140000114          uint32_t size = 0x0
+140000118      }
+140000118      struct PE_Data_Directory_Entry resourceTableEntry = 
+140000118      {
+140000118          uint32_t virtualAddress = 0x6000
+14000011c          uint32_t size = 0x5d4
+140000120      }
+140000120      struct PE_Data_Directory_Entry exceptionTableEntry = 
+140000120      {
+140000120          uint32_t virtualAddress = 0x0
+140000124          uint32_t size = 0x0
+140000128      }
+140000128      struct PE_Data_Directory_Entry certificateTableEntry = 
+140000128      {
+140000128          uint32_t virtualAddress = 0x0
+14000012c          uint32_t size = 0x0
+140000130      }
+140000130      struct PE_Data_Directory_Entry baseRelocationTableEntry = 
+140000130      {
+140000130          uint32_t virtualAddress = 0x0
+140000134          uint32_t size = 0x0
+140000138      }
+140000138      struct PE_Data_Directory_Entry debugEntry = 
+140000138      {
+140000138          uint32_t virtualAddress = 0x2a78
+14000013c          uint32_t size = 0x38
+140000140      }
+140000140      struct PE_Data_Directory_Entry architectureEntry = 
+140000140      {
+140000140          uint32_t virtualAddress = 0x0
+140000144          uint32_t size = 0x0
+140000148      }
+140000148      struct PE_Data_Directory_Entry globalPtrEntry = 
+140000148      {
+140000148          uint32_t virtualAddress = 0x0
+14000014c          uint32_t size = 0x0
+140000150      }
+140000150      struct PE_Data_Directory_Entry tlsTableEntry = 
+140000150      {
+140000150          uint32_t virtualAddress = 0x0
+140000154          uint32_t size = 0x0
+140000158      }
+140000158      struct PE_Data_Directory_Entry loadConfigTableEntry = 
+140000158      {
+140000158          uint32_t virtualAddress = 0x0
+14000015c          uint32_t size = 0x0
+140000160      }
+140000160      struct PE_Data_Directory_Entry boundImportEntry = 
+140000160      {
+140000160          uint32_t virtualAddress = 0x0
+140000164          uint32_t size = 0x0
+140000168      }
+140000168      struct PE_Data_Directory_Entry iatEntry = 
+140000168      {
+140000168          uint32_t virtualAddress = 0x0
+14000016c          uint32_t size = 0x0
+140000170      }
+140000170      struct PE_Data_Directory_Entry delayImportDescriptorEntry = 
+140000170      {
+140000170          uint32_t virtualAddress = 0x0
+140000174          uint32_t size = 0x0
+140000178      }
+140000178      struct PE_Data_Directory_Entry clrRuntimeHeaderEntry = 
+140000178      {
+140000178          uint32_t virtualAddress = 0x2000
+14000017c          uint32_t size = 0x48
+140000180      }
+140000180      struct PE_Data_Directory_Entry reservedEntry = 
+140000180      {
+140000180          uint32_t virtualAddress = 0x0
+140000184          uint32_t size = 0x0
+140000188      }
+140000188  }
+140000188  struct Section_Header __section_headers[0x2] = 
+140000188  {
+140000188      [0x0] = 
+140000188      {
+140000188          char name[0x8] = ".text\x00\x00", 0
+140000190          uint32_t virtualSize = 0x2114
+140000194          uint32_t virtualAddress = 0x2000
+140000198          uint32_t sizeOfRawData = 0x2200
+14000019c          uint32_t pointerToRawData = 0x200
+1400001a0          uint32_t pointerToRelocations = 0x0
+1400001a4          uint32_t pointerToLineNumbers = 0x0
+1400001a8          uint16_t numberOfRelocations = 0x0
+1400001aa          uint16_t numberOfLineNumbers = 0x0
+1400001ac          enum pe_section_flags characteristics = IMAGE_SCN_CNT_CODE | IMAGE_SCN_MEM_EXECUTE | IMAGE_SCN_MEM_READ
+1400001b0      }
+1400001b0      [0x1] = 
+1400001b0      {
+1400001b0          char name[0x8] = ".rsrc\x00\x00", 0
+1400001b8          uint32_t virtualSize = 0x5d4
+1400001bc          uint32_t virtualAddress = 0x6000
+1400001c0          uint32_t sizeOfRawData = 0x600
+1400001c4          uint32_t pointerToRawData = 0x2400
+1400001c8          uint32_t pointerToRelocations = 0x0
+1400001cc          uint32_t pointerToLineNumbers = 0x0
+1400001d0          uint16_t numberOfRelocations = 0x0
+1400001d2          uint16_t numberOfLineNumbers = 0x0
+1400001d4          enum pe_section_flags characteristics = IMAGE_SCN_CNT_INITIALIZED_DATA | IMAGE_SCN_MEM_READ
+1400001d8      }
+1400001d8  }
+
+1400001d8                                                                          00 00 00 00 00 00 00 00                          ........
+1400001e0  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+
+.text section started  {0x140002000-0x140004114}
+140002000  48 00 00 00 02 00 05 00 2c 21 00 00 4c 09 00 00 01 00 00 00 04 00 00 06 00 00 00 00 00 00 00 00  H.......,!..L...................
+140002020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................................
+140002040  00 00 00 00 00 00 00 00 13 30 06 00 49 00 00 00 01 00 00 11 02 8e 69 8d 15 00 00 01 0a 16 0b 02  .........0..I.........i.........
+140002060  0c 16 0d 2b 30 08 09 91 13 04 06 07 11 04 28 10 00 00 0a 7e 01 00 00 04 6f 11 00 00 0a 07 7e 01  ...+0.........(....~....o.....~.
+140002080  00 00 04 6f 12 00 00 0a 5d 91 61 d2 9c 07 17 58 0b 09 17 58 0d 09 08 8e 69 32 ca 06 2a 1e 02 28  ...o....].a....X...X....i2..*..(
+1400020a0  13 00 00 0a 2a 2e 72 01 00 00 70 80 01 00 00 04 2a 00 00 00 13 30 03 00 42 00 00 00 02 00 00 11  ....*.r...p.....*....0..B.......
+1400020c0  28 06 00 00 06 28 01 00 00 06 28 14 00 00 0a 72 27 00 00 70 6f 15 00 00 0a 0a 06 14 28 16 00 00  (....(....(....r'..po.......(...
+1400020e0  0a 2c 1e 06 72 51 00 00 70 6f 17 00 00 0a 0b 07 14 28 18 00 00 0a 2c 09 07 14 14 6f 19 00 00 0a  .,..rQ..po.......(....,....o....
+140002100  26 2a 1e 02 28 13 00 00 0a 2a 5a 20 00 16 00 00 8d 15 00 00 01 25 d0 02 00 00 04 28 1a 00 00 0a  &*..(....*Z .........%.....(....
+140002120  2a 1e 02 28 13 00 00 0a 2a 00 00 00 42 53 4a 42 01 00 01 00 00 00 00 00 0c 00 00 00 76 34 2e 30  *..(....*...BSJB............v4.0
+140002140  2e 33 30 33 31 39 00 00 00 00 05 00 6c 00 00 00 08 03 00 00 23 7e 00 00 74 03 00 00 e4 03 00 00  .30319......l.......#~..t.......
+140002160  23 53 74 72 69 6e 67 73 00 00 00 00 58 07 00 00 5c 00 00 00 23 55 53 00 b4 07 00 00 10 00 00 00  #Strings....X...\...#US.........
+140002180  23 47 55 49 44 00 00 00 c4 07 00 00 88 01 00 00 23 42 6c 6f 62 00 00 00 00 00 00 00 02 00 00 01  #GUID...........#Blob...........
+1400021a0  57 95 02 20 09 02 00 00 00 fa 01 33 00 16 00 00 01 00 00 00 1c 00 00 00 06 00 00 00 02 00 00 00  W.. .......3....................
+1400021c0  07 00 00 00 02 00 00 00 1a 00 00 00 0f 00 00 00 01 00 00 00 02 00 00 00 01 00 00 00 01 00 00 00  ................................
+1400021e0  01 00 00 00 01 00 00 00 00 00 7d 02 01 00 00 00 00 00 06 00 ed 01 32 03 06 00 5a 02 32 03 06 00  ..........}...........2...Z.2...
+140002200  21 01 00 03 0f 00 52 03 00 00 06 00 49 01 d6 02 06 00 d0 01 d6 02 06 00 b1 01 d6 02 06 00 41 02  !.....R.....I.................A.
+140002220  d6 02 06 00 0d 02 d6 02 06 00 26 02 d6 02 06 00 60 01 d6                                         ..........&.....`..
+
+140002233    int64_t sub_140002233(int64_t arg1, int32_t arg2, int32_t arg3 @ rax, char* arg4 @ rbx, char* arg5 @ rsi)
+
+140002233  {
+140002233      (uint8_t)arg3 += *(uint8_t*)arg5;
+140002235      *(uint8_t*)0x14603353c += *(uint8_t*)((char*)&arg2 + 1);
+14000223b      *(uint8_t*)arg4 += (uint8_t)arg2;
+14000223d      *(uint32_t*)arg4 += arg2;
+14000223f      uint64_t rax = (uint64_t)(arg3 + *(uint32_t*)arg5);
+140002241      *(uint8_t*)(arg1 + rax + 0x602d6);
+140002241      *(uint8_t*)(arg1 + rax + 0x602d6) += (uint8_t)arg2;
+140002241      bool p = /* bool p = unimplemented  {add byte [rcx+rax+0x602d6], dl} */;
+140002241      
+140002248      if (p)
+140002248      {
+14000224a          int32_t temp0_1 = (uint32_t)arg5;
+14000224a          arg5 = (uint64_t)(uint32_t)rax;
+14000224a          rax = (uint64_t)temp0_1;
+140002248      }
+140002248      
+14000224b      (uint8_t)rax += *(uint8_t*)arg5;
+14000224d      arg5[3] += *(uint8_t*)((char*)&arg4 + 1);
+140002250      /* undefined */
+140002233  }
+
+
+140002253    int64_t sub_140002253(int16_t arg1, char* arg2, int32_t arg3 @ rax, int16_t arg4 @ rbx, char* arg5 @ rsi)
+
+140002253  {
+140002253      (uint8_t)arg3 += *(uint8_t*)((char*)&arg1 + 1);
+140002255      (uint8_t)arg2 += (uint8_t)arg1;
+140002257      (uint8_t)arg3 += *(uint8_t*)arg5;
+140002259      (uint8_t)arg3 += *(uint8_t*)((char*)&arg1 + 1);
+14000225b      (uint8_t)arg2 += *(uint8_t*)((char*)&arg2 + 1);
+14000225d      (uint8_t)arg3 += *(uint8_t*)arg5;
+14000225f      (uint8_t)arg3 += *(uint8_t*)((char*)&arg4 + 1);
+140002261      *(uint8_t*)arg2 += *(uint8_t*)((char*)&arg2 + 1);
+140002265      (uint8_t)arg4 *= 2;
+140002267      (uint8_t)arg2 += (uint8_t)arg1;
+140002269      uint64_t rax;
+140002269      (uint8_t)rax = (arg3 + *(uint32_t*)arg5) + *(uint8_t*)arg5;
+14000226b      *(uint8_t*)(rax + 2) += *(uint8_t*)((char*)&arg4 + 1);
+14000226e      /* undefined */
+140002253  }
+
+140002271                                                     00 8d 02 85 03 06 00 b0 02 ca 02 06 00 cb 03                   ...............
+140002280  d6 02 06 00 ed 00 d6 02 06 00 6f 03 32 03 06 00 9b 03 ca 02 06 00 c8 00 ca 02 00 00 00 00 76 00  ..........o.2.................v.
+1400022a0  00 00 00 00 01 00 01 00 00 00 10 00 a1 03 01 00 41 00 01 00 01 00 00 00 10 00 c2 02 01 00 41 00  ................A.............A.
+1400022c0  02 00 04 00 00 00 10 00 bc 03 01 00 41 00 02 00 06 00 00 01 00 00 7f 00 00 00 41 00 02 00 08 00  ............A.............A.....
+1400022e0  13 01 00 00 0d 00 00 00 51 00 03 00 08 00 31 00 9e 00 75 00 33 01 35 00 78 00 48 20 00 00 00 00  ........Q.....1...u.3.5.x.H ....
+140002300  96 00 ba 00 7c 00 01 00 9d 20 00 00 00 00 86 18 f3 02 06 00 02 00 a5 20 00 00 00 00 91 18 f9 02  ....|.... ............. ........
+140002320  83 00 02 00 b4 20 00 00 00 00 91 00 d1 02 87 00 02 00 02 21 00 00 00 00 86 18 f3 02 06 00 03 00  ..... .............!............
+140002340  0a 21 00 00 00 00 96 00 b0 03 8d 00 03 00 21 21 00 00 00 00 86 18 f3 02 06 00 03 00 00 00 01 00  .!............!!................
+140002360  c8 03 00 00 01 00 6a 03 09 00 f3 02 01 00 11 00 f3 02 06 00 19 00 f3 02 0a 00 29 00 f3 02 10 00  ......j...................).....
+140002380  31 00 f3 02 10 00 39 00 f3 02 10 00 41 00 f3 02 10 00 49 00 f3 02 10 00 51 00 f3 02 10 00 59 00  1.....9.....A.....I.....Q.....Y.
+1400023a0  f3 02 10 00 61 00 f3 02 15 00 69 00 f3 02 10 00 71 00 f3 02 10 00 79 00 f3 02 10 00 99 00 f3 02  ....a.....i.....q.....y.........
+1400023c0  06 00 b1 00 2c 00 24 00 b1 00 61 03 29 00 b9 00 b7 02 2f 00 81 00 f3 02 06 00 c1 00 ab 00 3a 00  ....,.$...a.)...../...........:.
+1400023e0  c1 00 e5 00 41 00 89 00 d4                                                                       ....A....
+
+1400023e9    uint64_t sub_1400023e9(int32_t arg1, void* arg2, int64_t, void* arg4, int32_t arg5 @ rax, char* arg6 @ rbx, char* arg7 @ rbp, char* arg8 @ rsi, int32_t* arg9 @ rdi, char arg10 @ r10)
+
+1400023e9  {
+1400023e9      uint64_t rax = (uint64_t)(arg5 + *(uint32_t*)arg9);
+1400023ec      *(uint32_t*)rax = (uint32_t)rax;
+1400023ee      (uint8_t)rax = 0;
+1400023f0      *(uint8_t*)((char*)arg4 + 0x5503d400) += arg10;
+1400023f7      (uint8_t)arg1 *= 2;
+1400023f9      (uint8_t)arg1 = (uint8_t)arg1;
+1400023fb      *(uint8_t*)arg7 += (uint8_t)arg6;
+1400023fe      *(uint32_t*)rax = ROLD(*(uint32_t*)rax, 1);
+140002400      int16_t rcx = (uint16_t)rax;
+140002400      uint64_t result = (uint64_t)arg1;
+140002405      *(uint8_t*)arg6 += (uint8_t)rcx;
+140002407      *(uint8_t*)((char*)arg2 + 0x13002e00) += (uint8_t)arg2;
+14000240d      arg6[0x1b002e00] += (uint8_t)arg6;
+140002413      *(uint8_t*)((char*)arg2 + 0x23002e00) += *(uint8_t*)((char*)&arg6 + 1);
+140002419      (uint8_t)arg6 += (uint8_t)result;
+14000241b      *(uint8_t*)arg8 += *(uint8_t*)((char*)&rcx + 1);
+14000241d      *(uint8_t*)arg6 += *(uint8_t*)((char*)&rcx + 1);
+14000241f      *(uint8_t*)((char*)&result + 1) += (uint8_t)arg2;
+140002421      *(uint8_t*)arg8 += *(uint8_t*)((char*)&rcx + 1);
+140002423      *(uint8_t*)arg6 += *(uint8_t*)((char*)&arg2 + 1);
+140002425      *(uint8_t*)((char*)&result + 1) += (uint8_t)arg2;
+140002427      *(uint8_t*)arg8 += *(uint8_t*)((char*)&rcx + 1);
+140002429      *(uint8_t*)arg6 += *(uint8_t*)((char*)&arg6 + 1);
+14000242b      *(uint8_t*)((char*)&result + 1) += (uint8_t)arg2;
+14000242d      *(uint8_t*)arg8 += *(uint8_t*)((char*)&rcx + 1);
+14000242f      *(uint8_t*)arg6 += (uint8_t)result;
+140002432      return result;
+1400023e9  }
+
+140002433                                                           00 2e 00 4b 00 da 00 2e 00 53 00 d4 00                     ...K.....S...
+140002440  2e 00 5b 00 d4 00 2e 00 63 00 fe 00 2e 00 6b 00 28 01 2e 00 73 00 35 01 a3 00 7b 00 83 01 01 00  ..[.....c.....k.(...s.5...{.....
+140002460  00 16 00 00 06 00 1a 00 33 00 14 2b 00 00 02 00 04 80 00 00 01 00 00 00 00 00 00 00 00 00 00 00  ........3..+....................
+140002480  00 00 01 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 6c 00 a2 00 00 00 00 00 06 00 05 00 00 00  ..................l.............
+1400024a0  00 43 6f 6e 73 6f 6c 65 41 70 70 31 00 5f 5f 53 74 61 74 69 63 41 72 72 61 79 49 6e 69 74 54 79  .ConsoleApp1.__StaticArrayInitTy
+1400024c0  70 65 53 69 7a 65 3d 35 36 33 32 00 67 65 74 5f 55 54 46 38 00 44 31 42 41 35 39 41 46 35 43 44  peSize=5632.get_UTF8.D1BA59AF5CD
+1400024e0  44 35 36 35 39 41 32 45 41 44 31 46 38 37 37 30 34 32 41 34 37 42 39 33 46 33 30 39 42 42 31 30  D5659A2EAD1F877042A47B93F309BB10
+140002500  44 31 36 37 46 34 46 36 39 37 35 35 42 46 32 34 34 46 33 43 39 00 3c 4d 6f 64 75 6c 65 3e 00 3c  D167F4F69755BF244F3C9.<Module>.<
+140002520  50 72 69 76 61 74 65 49 6d 70 6c 65 6d 65 6e 74 61 74 69 6f 6e 44 65 74 61 69 6c 73 3e 00 4b 45  PrivateImplementationDetails>.KE
+140002540  59 00 6d 73 63 6f 72 6c 69 62 00 4c 6f 61 64 00 47 65 74 4d 65 74 68 6f 64 00 64 65 63 6f 64 65  Y.mscorlib.Load.GetMethod.decode
+140002560  00 49 6e 76 6f 6b 65 00 52 75 6e 74 69 6d 65 46 69 65 6c 64 48 61 6e 64 6c 65 00 56 61 6c 75 65  .Invoke.RuntimeFieldHandle.Value
+140002580  54 79 70 65 00 47 65 74 54 79 70 65 00 4d 65 74 68 6f 64 42 61 73 65 00 43 6f 6d 70 69 6c 65 72  Type.GetType.MethodBase.Compiler
+1400025a0  47 65 6e 65 72 61 74 65 64 41 74 74 72 69 62 75 74 65 00 47 75 69 64 41 74 74 72 69 62 75 74 65  GeneratedAttribute.GuidAttribute
+1400025c0  00 44 65 62 75 67 67 61 62 6c 65 41 74 74 72 69 62 75 74 65 00 43 6f 6d 56 69 73 69 62 6c 65 41  .DebuggableAttribute.ComVisibleA
+1400025e0  74 74 72 69 62 75 74 65 00 41 73 73 65 6d 62 6c 79 54 69 74 6c 65 41 74 74 72 69 62 75 74 65 00  ttribute.AssemblyTitleAttribute.
+140002600  41 73 73 65 6d 62 6c 79 54 72 61 64 65 6d 61 72 6b 41 74 74 72 69 62 75 74 65 00 54 61 72 67 65  AssemblyTrademarkAttribute.Targe
+140002620  74 46 72 61 6d 65 77 6f 72 6b 41 74 74 72 69 62 75 74 65 00 41 73 73 65 6d 62 6c 79 46 69 6c 65  tFrameworkAttribute.AssemblyFile
+140002640  56 65 72 73 69 6f 6e 41 74 74 72 69 62 75 74 65 00 41 73 73 65 6d 62 6c 79 43 6f 6e 66 69 67 75  VersionAttribute.AssemblyConfigu
+140002660  72 61 74 69 6f 6e 41 74 74 72 69 62 75 74 65 00 41 73 73 65 6d 62 6c 79 44 65 73 63 72 69 70 74  rationAttribute.AssemblyDescript
+140002680  69 6f 6e 41 74 74 72 69 62 75 74 65 00 43 6f 6d 70 69 6c 61 74 69 6f 6e 52 65 6c 61 78 61 74 69  ionAttribute.CompilationRelaxati
+1400026a0  6f 6e 73 41 74 74 72 69 62 75 74 65 00 41 73 73 65 6d 62 6c 79 50 72 6f 64 75 63 74 41 74 74 72  onsAttribute.AssemblyProductAttr
+1400026c0  69 62 75 74 65 00 41 73 73 65 6d 62 6c 79 43 6f 70 79 72 69 67 68 74 41 74 74 72 69 62 75 74 65  ibute.AssemblyCopyrightAttribute
+1400026e0  00 41 73 73 65 6d 62 6c 79 43 6f 6d 70 61 6e 79 41 74 74 72 69 62 75 74 65 00 52 75 6e 74 69 6d  .AssemblyCompanyAttribute.Runtim
+140002700  65 43 6f 6d 70 61 74 69 62 69 6c 69 74 79 41 74 74 72 69 62 75 74 65 00 42 79 74 65 00 43 6f 6e  eCompatibilityAttribute.Byte.Con
+140002720  73 6f 6c 65 41 70 70 31 2e 65 78 65 00 45 6e 63 6f 64 69 6e 67 00 53 79 73 74 65 6d 2e 52 75 6e  soleApp1.exe.Encoding.System.Run
+140002740  74 69 6d 65 2e 56 65 72 73 69 6f 6e 69 6e 67 00 53 74 72 69 6e 67 00 67 65 74 5f 4c 65 6e 67 74  time.Versioning.String.get_Lengt
+140002760  68 00 50 72 6f 67 72 61 6d 00 53 79 73 74 65 6d 00 4d 61 69 6e 00 53 79 73 74 65 6d 2e 52 65 66  h.Program.System.Main.System.Ref
+140002780  6c 65 63 74 69 6f 6e 00 4d 65 74 68 6f 64 49 6e 66 6f 00 2e 63 74 6f 72 00 2e 63 63 74 6f 72 00  lection.MethodInfo..ctor..cctor.
+1400027a0  53 79 73 74 65 6d 2e 44 69 61 67 6e 6f 73 74 69 63 73 00 53 79 73 74 65 6d 2e 52 75 6e 74 69 6d  System.Diagnostics.System.Runtim
+1400027c0  65 2e 49 6e 74 65 72 6f 70 53 65 72 76 69 63 65 73 00 53 79 73 74 65 6d 2e 52 75 6e 74 69 6d 65  e.InteropServices.System.Runtime
+1400027e0  2e 43 6f 6d 70 69 6c 65 72 53 65 72 76 69 63 65 73 00 44 65 62 75 67 67 69 6e 67 4d 6f 64 65 73  .CompilerServices.DebuggingModes
+140002800  00 47 65 74 42 79 74 65 73 00 61 72 67 73 00 52 75 6e 74 69 6d 65 48 65 6c 70 65 72 73 00 4f 62  .GetBytes.args.RuntimeHelpers.Ob
+140002820  6a 65 63 74 00 53 79 73 74 65 6d 2e 54 65 78 74 00 49 6e 69 74 69 61 6c 69 7a 65 41 72 72 61 79  ject.System.Text.InitializeArray
+140002840  00 44 65 63 6f 64 65 41 73 73 65 6d 62 6c 79 00 67 65 74 41 73 73 65 6d 62 6c 79 00 52 61 77 41  .DecodeAssembly.getAssembly.RawA
+140002860  73 73 65 6d 62 6c 79 00 72 61 77 41 73 73 65 6d 62 6c 79 00 6f 70 5f 49 6e 65 71 75 61 6c 69 74  ssembly.rawAssembly.op_Inequalit
+140002880  79 00 00 00 00 25 43 00 53 00 43 00 50 00 54 00 7b 00 37 00 72 00 59 00 5f 00 68 00 34 00 72 00  y....%C.S.C.P.T.{.7.r.Y._.h.4.r.
+1400028a0  64 00 33 00 72 00 21 00 7d 00 00 29 43 00 6c 00 61 00 73 00 73 00 4c 00 69 00 62 00 72 00 61 00  d.3.r.!.}..)C.l.a.s.s.L.i.b.r.a.
+1400028c0  72 00 79 00 31 00 2e 00 43 00 6c 00 61 00 73 00 73 00 31 00 00 07 72 00 75 00 6e 00 00 00 00 00  r.y.1...C.l.a.s.s.1...r.u.n.....
+1400028e0  6f f0 29 1a 2c 80 e4 4a b2 a2 e7 b2 d8 cb 51 82 00 04 20 01 01 08 03 20 00 01 05 20 01 01 11 11  o.).,..J......Q... .... ... ....
+140002900  04 20 01 01 0e 04 20 01 01 02 09 07 05 1d 05 08 1d 05 08 05 04 00 00 12 59 05 20 01 1d 05 0e 03  . .... .................Y. .....
+140002920  20 00 08 06 07 02 12 45 12 49 06 00 01 12 61 1d 05 05 20 01 12 45 0e 07 00 02 02 12 45 12 45 05   ......E.I....a... ..E......E.E.
+140002940  20 01 12 49 0e 07 00 02 02 12 49 12 49 06 20 02 1c 1c 1d 1c 07 00 02 01 12 6d 11 71 08 b7 7a 5c   ..I......I.I. ..........m.q..z\
+140002960  56 19 34 e0 89 02 06 0e 03 06 11 18 06 00 01 1d 05 1d 05 03 00 00 01 05 00 01 01 1d 0e 04 00 00  V.4.............................
+140002980  1d 05 08 01 00 08 00 00 00 00 00 1e 01 00 01 00 54 02 16 57 72 61 70 4e 6f 6e 45 78 63 65 70 74  ................T..WrapNonExcept
+1400029a0  69 6f 6e 54 68 72 6f 77 73 01 08 01 00 02 00 00 00 00 00 10 01 00 0b 43 6f 6e 73 6f 6c 65 41 70  ionThrows..............ConsoleAp
+1400029c0  70 31 00 00 05 01 00 00 00 00 23 01 00 1e                                                        p1........#...
+
+1400029ce    void sub_1400029ce(char* arg1, void* arg2, int64_t arg3, int32_t arg4 @ rax, int64_t arg5 @ rbx, void* arg6 @ rbp, char* arg7 @ rsi, char* arg8 @ rdi)
+// This function is in Guided Analysis mode. Disable Guided Analysis for this function to resume standard analysis.
+
+1400029ce  {
+1400029ce      int64_t r11;
+1400029ce      int64_t var_8 = r11;
+1400029d0      int64_t var_10 = arg3;
+1400029d2      int64_t* var_18 = &var_10;
+1400029d3      char temp1 = *(uint8_t*)0x1036f73f9 & *(uint8_t*)((char*)&arg1 + 1);
+1400029d3      *(uint8_t*)0x1036f73f9 = temp1;
+1400029d9      *(uint32_t*)0x616c65726156206f = arg4;
+1400029d9      
+1400029e2      if (temp1 < 0)
+1400029e4          return;
+1400029e4      
+140002a09      uint64_t rax_1 = (uint64_t)(arg4 + 0x379c946e);
+140002a0e      *(uint8_t*)((char*)arg2 + 0x39);
+140002a11      *(uint8_t*)arg1 ^= *(uint8_t*)((char*)&arg5 + 1);
+140002a13      *(uint8_t*)rax_1 ^= *(uint8_t*)((char*)&arg2 + 1);
+140002a15      *(uint32_t*)rax_1;
+140002a17      arg1[rax_1] += (uint8_t)arg1;
+140002a1a      *(uint8_t*)arg8 += (uint8_t)rax_1;
+140002a1c      *(uint32_t*)arg7 ^= (uint32_t)arg6;
+140002a1e      *(uint8_t*)arg7 ^= *(uint8_t*)((char*)&arg1 + 1);
+140002a20      *(uint8_t*)arg7 ^= *(uint8_t*)((char*)&arg1 + 1);
+140002a22      *(uint8_t*)rax_1 ^= (uint8_t)rax_1;
+140002a24      *(uint8_t*)((char*)arg6 + 1) += (uint8_t)arg1;
+140002a27      char temp2 = *(uint8_t*)(arg7 + arg6);
+140002a27      *(uint8_t*)(arg7 + arg6) += (uint8_t)arg5;
+140002a2a      int64_t r12;
+140002a2a      int64_t var_20 = r12;
+140002a2a      
+140002a2d      if (temp2 + (uint8_t)arg5 >= temp2)
+140002a2d          /* jump -> "mework,Version=v4.7" */
+140002a2d      
+140002a91      (uint8_t)rax_1 = (uint8_t)rax_1;
+140002a93      *(uint8_t*)rax_1 += (uint8_t)rax_1;
+140002a95      *(uint8_t*)rax_1 += (uint8_t)rax_1;
+140002a97      *(uint8_t*)rax_1 += (uint8_t)rax_1;
+140002a99      *(uint8_t*)rax_1 += (uint8_t)rax_1;
+140002a9b      *(uint8_t*)rax_1 += (uint8_t)rax_1;
+140002a9d      *(uint8_t*)rax_1 += (uint8_t)rax_1;
+140002a9f      *(uint8_t*)rax_1 += (uint8_t)arg2;
+140002aa1      *(uint8_t*)rax_1 += (uint8_t)rax_1;
+140002aa3      *(uint8_t*)rax_1 += (uint8_t)rax_1;
+140002aa5      *(uint8_t*)rax_1 += (uint8_t)rax_1;
+140002aa7      *(uint8_t*)rax_1 += (uint8_t)rax_1;
+140002aa9      *(uint8_t*)rax_1 += (uint8_t)rax_1;
+140002aab      *(uint8_t*)rax_1 += (uint8_t)rax_1;
+140002aad      *(uint8_t*)rax_1 += (uint8_t)rax_1;
+140002aaf      *(uint8_t*)((char*)arg2 + 0x53) += (uint8_t)arg2;
+140002ab2      int64_t var_28 = arg5;
+140002aba      (uint8_t)rax_1 &= 0x4e;
+140002abc      /* undefined */
+1400029ce  }
+
+1400029e7                       20 32 30 32 32 00 00 29 01 00 24 31 65 32 66 36 66 32 63 2d 39 31 64 38 2d          2022..)..$1e2f6f2c-91d8-
+140002a00  34 63 34 36                                                                                      4c46
+140002a30                                                  6d 65 77 6f 72 6b 2c 56 65 72 73 69 6f 6e 3d 76                  mework,Version=v
+140002a40  34 2e 37 2e 32 01 00 54 0e 14 46 72 61 6d 65 77 6f 72 6b 44 69 73 70 6c 61 79 4e 61 6d 65 14 2e  4.7.2..T..FrameworkDisplayName..
+140002a60  4e 45 54 20 46 72 61 6d 65 77 6f 72 6b 20 34 2e 37 2e 32 04 01 00 00 00                          NET Framework 4.7.2.....
+140002a78  struct Debug_Directory_Table __debug_directory_entries[0x2] = 
+140002a78  {
+140002a78      [0x0] = 
+140002a78      {
+140002a78          uint32_t characteristics = 0x0
+140002a7c          uint32_t timeDateStamp = 0x8d331fca
+140002a80          uint16_t majorVersion = 0x0
+140002a82          uint16_t minorVersion = 0x0
+140002a84          enum type = IMAGE_DEBUG_TYPE_CODEVIEW
+140002a88          uint32_t sizeOfData = 0x64
+140002a8c          uint32_t addressOfRawData = 0x2ab0
+140002a90          uint32_t pointerToRawData = 0xcb0
+140002a94      }
+140002a94      [0x1] = 
+140002a94      {
+140002a94          uint32_t characteristics = 0x0
+140002a98          uint32_t timeDateStamp = 0x0
+140002a9c          uint16_t majorVersion = 0x0
+140002a9e          uint16_t minorVersion = 0x0
+140002aa0          enum type = 0x10
+140002aa4          uint32_t sizeOfData = 0x0
+140002aa8          uint32_t addressOfRawData = 0x0
+140002aac          uint32_t pointerToRawData = 0x0
+140002ab0      }
+140002ab0  }
+
+140002abd                                                                                         f8 5f 09                               ._.
+140002ac0  b8 98 5e c9                                                                                      ..^.
+140002ac4  uint32_t PDBAge = 0x1
+140002ac8  char PDBFileName[0x4c] = "C:\\Users\\user\\Desktop\\CSCPT2022\\ConsoleApp1\\obj\\x64\\Release\\ConsoleApp1.pdb", 0
+
+140002b14                                                              0e 09 d3 50 57 7b 37 72 5d 5f 68 34                      ...PW{7r]_h4
+140002b20  8d 9b 33 72 99 7d 43 53 43 50 54 7b 77 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72  ..3r.}CSCPT{wrY_h4rd3r!}CSCPT{7r
+140002b40  59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b b7 72 59 5f 66 2b c8 6a 33 c6 28 b0 62 eb 42 1c  Y_h4rd3r!}CSCPT{.rY_f+.j3.(.b.B.
+140002b60  99 5a 63 1a 30 2c 48 44 00 0b 54 00 40 10 63 30 22 3e 3a 14 43 52 3b 3a 48 46 07 0a 13 1b 4f 5d  .Zc.0,HD..T.@.c0">:.CR;:HF....O]
+140002b80  07 1c 10 70 39 14 53 17 77 52 65 3e 56 64 33 72 21 7d 43 53 13 15 54 7b 53 f4 5b 5f 03 bc 76 cb  ...p9.S.wRe>Vd3r!}CS..T{S.[_..v.
+140002ba0  33 72 21 7d 43 53 43 50 a4 7b 15 52 52 5d 58 34 72 74 33 72 21 79 43 53 43 50 54 7b 37 72 59 5f  3r!}CSCP.{.RR]X4rt3r!yCSCPT{7rY_
+140002bc0  68 14 72 64 33 72 21 fd 42 53 43 50 54 5b 37 72 59 5d 68 34 76 64 33 72 21 7d 43 53 45 50 54 7b  h.rd3r!.BSCPT[7rY]h4vd3r!}CSEPT{
+140002be0  37 72 59 5f 68 54 72 64 33 70 21 7d 43 53 43 50 57 7b 57 f7 59 5f 28 34 72 64 33 72 21 3d 43 53  7rY_hTrd3p!}CSCPW{W.Y_(4rd3r!=CS
+140002c00  43 50 54 7b 37 72 49 5f 68 34 72 64 33 52 21 7d 43 53 43 50 54 7b 37 72 49 5f 68 34 72 64 33 72  CPT{7rI_h4rd3R!}CSCPT{7rI_h4rd3r
+140002c20  21 7d 43 53 43 50 54 7b 37 72 59 5f 68 74 72 64 ab 71 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34  !}CSCPT{7rY_htrd.q!}CSCPT{7rY_h4
+140002c40  72 64 33 72 21 7d 43 53 43 50 54 7b d7 5f 59 5f 50 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72  rd3r!}CSCPT{._Y_P4rd3r!}CSCPT{7r
+140002c60  59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50  Y_h4rd3r!}CSCPT{7rY_h4rd3r!}CSCP
+140002c80  54 7b 37 72 59 5f 68 34 72 64 33 72 21 5d 43 53 0b 50 54 7b 37 72 59 5f 68 34 72 64 1d 06 44 05  T{7rY_h4rd3r!]CS.PT{7rY_h4rd..D.
+140002ca0  37 53 43 50 c4 75 37 72 59 7f 68 34 72 74 33 72 21 7f 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64  7SCP.u7rY.h4rt3r!.CSCPT{7rY_h4rd
+140002cc0  13 72 21 1d 6d 21 30 22 37 7b 37 72 c1 5c 68 34 72 24 33 72 21 79 43 53 43 42 54 7b 37 72 59 5f  .r!.m!0"7{7r.\h4r$3r!yCSCBT{7rY_
+140002ce0  68 34 72 64 33 72 21 7d 03 53 43 10 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b  h4rd3r!}.SC.T{7rY_h4rd3r!}CSCPT{
+140002d00  37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 11 5f 68 34 70 64 36 72 b1 5c 43 53  7rY_h4rd3r!}CSCPT{7r._h4pd6r.\CS
+140002d20  13 5c 54 7b 36 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72  .\T{6rY_h4rd3r!}CSCPT{7rY_h4rd3r
+140002d40  21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 77 77 78 34  !}CSCPT{7rY_h4rd3r!}CSCPT{7rwwx4
+140002d60  72 6e 1b 70 21 7d 45 79 50 60 51 7b 45 72 59 5f 69 34 72 75 31 5a 30 7d 43 59 49 46 5f 50 74 74  rn.p!}EyP`Q{ErY_i4ru1Z0}CYIF_Ptt
+140002d80  5e c5 64 3c 65 e9 24 72 21 7c 66 45 5c 7e c9 14 25 72 59 55 40 35 72 64 18 7f 5f 7c 43 53 47 59  ^.d<e.$r!|fE\~..%rYU@5rd.._|CSGY
+140002da0  3b 6f 37 72 53 73 7f 3c 5a 61 33 72 27 75 4b 21 42 50 54 0b 1f 67 59 5f 62 1c 64 64 33 78 26 6a  ;o7rSs.<Za3r'uK!BPT..gY_b.dd3x&j
+140002dc0  1b 58 44 56 da 12 05 c5 5b 77 7f 34 72 6e 39 64 2a 56 4f 55 44 ca 7c 79 37 72 5f 58 7f 6c 79 63  .XDV....[w.4rn9d*VOUD.|y7r_X.lyc
+140002de0  35 fc 48 4f ad 79 5d 52 7c 63 37 72 53 75 36 47 6b 64 33 78 04 0f 54 53 43 20 43 14 2d 72 59 55  5.HO.y]R|c7rSu6Gkd3x..TSC C.-rYU
+140002e00  e8 35 72 64 37 58 21 7d 50 63 47 50 2e 7b 37 72 5b 5f 68 25 70 4c 28 72 21 77 49 20 5f 50 54 71  .5rd7X!}PcGP.{7r[_h%pL(r!wI _PTq
+140002e20  44 6f 59 5f 62 47 6c 64 33 78 2a 55 5c 53 43 5a 2a 79 37 72 5d 30 48 34 72 6e 40 53 21 7d 49 4c  DoY_bGld3x*U\SCZ*y7r]0H4rn@S!}IL
+140002e40  53 dd 75 7b 37 73 7c 8f 6b 34 72 60 1b 50 21 7d 49 45 5c 40 27 58 37 72 53 53 6f 23 7a 0b 17 72  S.u{7s|.k4r`.P!}IE\@'X7rSSo#z..r
+140002e60  21 77 44 55 cd 39 3b 5e 37 72 53 d2 49 34 72 65 3e 75 27 74 55 3c 65 50 54 71 24 76 5e 56 79 30  !wDU.9;^7rS.I4re>u'tU<ePTq$v^Vy0
+140002e80  1d 43 33 72 2b 5b 41 5a 6b 78 54 7b 3d 58 47 5d 40 2c 72 64 39 58 0f 0f 60 53 43 20 d4 79 37 72  .C3r+[AZkxT{=XG]@,rd9X..`SC .y7r
+140002ea0  5d 75 68 34 30 37 79 30 20 7d 42 53 43 50 54 7b 3b 72 59 5f 1e 00 5c 54 1d 41 11 4e 72 6a 43 50  ]uh407y0 }BSCPT{;rY_..\T.A.NrjCP
+140002ec0  54 7b 32 72 35 5f 68 34 ba 67 33 72 02 03 43 53 77 54 54 7b ff 77 59 5f 4b 67 06 16 5a 1c 46 0e  T{2r5_h4.g3r..CSwTT{.wY_Kg..Z.F.
+140002ee0  43 53 43 50 a8 72 37 72 31 5f 68 34 51 31 60 72 45 77 43 53 53 50 54 7b 14 35 0c 16 2c 34 72 64  CSCP.r7r1_h4Q1`rEwCSSPT{.5..,4rd
+140002f00  47 78 21 7d 9f 52 43 50 77 39 5b 1d 3b 5f 68 34 72 64 33 72 23 7d 43 52 14 c5 56 53 3e 78 59 5f  Gx!}.RCPw9[.;_h4rd3r#}CR..VS>xY_
+140002f20  68 ce 73 57 33 64 21 7d 42 53 43 50 72 7b 37 72 5c 5f 68 34 71 64 33 72 26 7d 43 53 41 50 54 7b  h.sW3d!}BSCPr{7r\_h4qd3r&}CSAPT{
+140002f40  1f 72 59 5f 67 34 72 64 32 72 21 7d 41 53 43 50 55 7b 37 72 58 5f 68 34 73 64 33 72 22 7d 43 53  .rY_g4rd2r!}ASCPU{7rX_h4sd3r"}CS
+140002f60  42 50 54 7b 36 72 59 5f 68 34 19 67 32 72 21 7d 43 53 45 50 3a 79 67 76 5f 5f b3 36 22 60 35 72  BPT{6rY_h4.g2r!}CSEP:ygv__.6"`5r
+140002f80  83 7c 5d 57 4c 50 da 7f 37 72 5f 5f a2 35 f6 67 35 72 70 7f c7 50 45 50 66 79 b3 71 5f 5f aa 36  .|]WLP..7r__.5.g5rp..PEPfy.q__.6
+140002fa0  f6 67 35 72 af 7f c7 50 45 50 f3 79 b3 71 5f 5f 89 35 f6 67 35 72 97 7c 72 57 45 50 c0 7a 06 76  .g5r...PEP.y.q__.5.g5r.|rWEP.z.v
+140002fc0  5f 5f 7d 36 f6 67 35 72 dd 7c 73 50 45 50 26 7e 4a 71 5f 5f 0d 34 8f 64 39 72 cb 7e 45 56 49 50  __}6.g5r.|sPEP&~Jq__.4.d9r.~EVIP
+140002fe0  b7 7b 01 77 5f 5f 11 35 22 60 35 72 71 7c 3e 50 45 50 ef 7e f0 72 5f 5f a1 37 0f 67 35 72 6b 7e  .{.w__.5"`5rq|>PEP.~.r__.7.g5rk~
+140003000  3e 50 4d 50 48 7a 8a 71 5f 5f 2a 34 8f 64 35 72 60 7c 84 53 49 50 12 7a 82 76 53 5f b3 37 02 60  >PMPHz.q__*4.d5r`|.SIP.z.vS_.7.`
+140003020  39 72 ef 7e e6 50 45 50 73 78 be 77 53 5f 6c 30 44 61 35 72 d8 7f 3e 50 45 50 73 7e 67 76 5f 5f  9r.~.PEPsx.wS_l0Da5r..>PEPs~gv__
+140003040  f7 31 0f 67 35 72 06 7c 3e 50 49 50 0d 7e 92 71 53 5f 0e 35 d7 67 33 72 21 7d dc 53 43 50 54 7b  .1.g5r.|>PIP.~.qS_.5.g3r!}.SCPT{
+140003060  36 72 58 5f 69 34 62 64 63 72 76 7d 02 53 42 50 55 7b 37 72 49 5f fe 37 25 64 72 72 23 7d 46 53  6rX_i4bdcrv}.SBPU{7rI_.7%drr#}FS
+140003080  43 51 54 7b 9f 72 59 5f 29 34 71 64 3b 72 32 7c 43 53 31 50 54 7b 62 72 5d 5f 60 34 63 64 e2 72  CQT{.rY_)4qd;r2|CS1PT{br]_`4cd.r
+1400030a0  f9 7d 72 53 cc 50 b4 7b 04 73 58 5f 8b 34 3a 44 33 72 21 7d d5 53 e2 53 b3 7b 36 72 0d 7f 68 34  .}rS.P.{.sX_.4:D3r!}.S.S.{6r..h4
+1400030c0  72 64 a2 72 df 7f a8 53 42 50 86 5b 37 72 59 5f ee 2c 63 60 35 72 23 7d 99 73 43 50 54 7b a6 6a  rd.r...SBP.[7rY_.,c`5r#}.sCPT{.j
+1400030e0  4e 5b 8f 34 70 64 c7 52 21 7d 43 53 d5 50 6e 7a dc 72 5b 5f 12 15 72 64 33 72 a7 65 52 57 45 50  N[.4pd.R!}CS.Pnz.r[_..rd3r.eRWEP
+140003100  57 7b b5 53 59 5f 68 34 e3 7c 24 76 c6 7d 40 53 43 50 55 7b 6d 71 59 5f 69 34 23 67 3a 72 30 79  W{.SY_h4.|$v.}@SCPU{mqY_i4#g:r0y
+140003120  42 53 52 50 45 7f 31 72 40 5f 79 30 78 64 1a 72 30 79 53 53 72 50 45 7f 27 72 60 5f 79 30 62 64  BSRPE.1r@_y0xd.r0ySSrPE.'r`_y0bd
+140003140  72 72 30 79 53 53 0a 50 45 7f 27 72 08 5f 79 30 62 64 6a 72 30 79 53 53 22 50 45 7f 22 72 30 5f  rr0ySS.PE.'r._y0bdjr0ySS"PE."r0_
+140003160  79 30 62 64 42 72 30 79 53 53 3a 50 45 7f 27 72 f8 5f 79 30 74 64 82 72 90 78 59 53 f2 50 f8 7f  y0bdBr0ySS:PE.'r._y0td.r.xYS.P..
+140003180  11 72 98 5f 11 31 5e 64 fa 72 a5 78 70 53 4f 50 f1 7e 7d 72 98 5f 03 31 22 64 ea 72 35 7e 15 53  .r._.1^d.r.xpSOP.~}r._.1"d.r5~.S
+1400031a0  f2 50 c9 7f 11 72 d8 5f 79 30 74 64 3f 72 30 79 45 53 4f 50 4c 7a 6b 72 80 5f bd 30 02 64 d2 72  .P...r._y0td?r0yESOPLzkr._.0.d.r
+1400031c0  30 79 45 53 aa 50 45 7f 41 72 c8 5f 79 30 04 64 ca 72 b7 7d 3f 53 ba 50 a9 7f b6 72 58 5e 79 30  0yES.PE.Ar._y0.d.r.}?S.P...rX^y0
+1400031e0  f5 64 22 73 b4 78 ce 53 da 50 45 7f a0 72 68 5e 17 31 d0 64 02 73 38 7e e9 53 72 51 a4 7f 98 72  .d"s.x.S.PE..rh^.1.d.s8~.SrQ...r
+140003200  68 5e 0b 37 ca 64 ea 72 c3 79 fc 53 6d 50 5f 7b c7 72 77 5f 7b 34 8b 64 1d 72 3a 7d 5b 52 6d 50  h^.7.d.r.y.SmP_{.rw_{4.d.r:}[RmP
+140003220  77 7b 16 73 77 5f 43 34 46 65 1d 72 12 7d 77 52 6d 50 6f 7b 03 73 77 5f 2b 34 53 65 1d 72 6a 7d  w{.sw_C4Fe.r.}wRmPo{.sw_+4Se.rj}
+140003240  79 52 6d 50 07 7b 03 73 77 5f 33 34 46 65 1d 72 42 7d 11 52 6d 50 3f 7b 4b 73 77 5f 1b 34 fb 65  yRmP.{.sw_34Fe.rB}.RmP?{Ksw_.4.e
+140003260  b0 72 5a 7d 94 52 42 50 44 7b 37 72 5c 5f 76 34 16 64 70 72 a1 53 43 53 40 50 50 fb 37 72 58 5f  .rZ}.RBPD{7r\_v4.dpr.SCS@PP.7rX_
+140003280  68 34 72 64 33 72 21 7d 43 53 43 50 03 7b 37 72 5d 5f 68 34 72 64 33 72 21 7d 43 53 85 50 a0 7b  h4rd3r!}CSCP.{7r]_h4rd3r!}CS.P.{
+1400032a0  37 72 59 5f 69 34 7a 64 3a 72 21 7d 43 53 43 50 9b 7b 9e 71 59 5f 68 34 76 64 33 72 21 7d 43 53  7rY_i4zd:r!}CSCP.{.qY_h4vd3r!}CS
+1400032c0  43 50 54 7b f1 72 03 5e 68 34 72 64 36 72 25 7d 64 53 7c 50 54 7b 37 72 59 1d 2d 00 47 27 71 40  CPT{.r.^h4rd6r%}dS|PT{7rY.-.G'q@
+1400032e0  17 4d 76 11 05 63 62 39 72 30 1d 1a 5e 0c 46 5c 07 43 60 4f 7b 15 73 16 10 4f 04 31 6f 66 50 01  .Mv..cb9r0..^.F\.C`O{.s..O.1ofP.
+140003300  42 25 00 36 62 38 76 15 06 14 16 3a 01 4b 60 6d 50 71 37 57 72 4a 18 44 72 53 0a 15 3a 0e 5a 17  B%.6b8v....:.K`mPq7WrJ.DrS..:.Z.
+140003320  2b 3e 0a 58 17 04 02 72 62 11 22 20 30 61 54 38 5b 13 2a 2c 24 5d 10 16 52 00 58 4c 43 17 2a 33  +>.X...rb." 0aT8[.*,$]..R.XLC.*3
+140003340  20 12 58 1c 38 2d 11 54 40 64 6c 2d 72 09 22 27 2a 33 15 09 45 13 20 16 06 5d 06 30 4a 02 44 2e   .X.8-.T@dl-r."'*3..E. ..].0J.D.
+140003360  2a 29 26 6d 65 4d 37 39 1c 06 5a 01 44 64 54 17 55 22 16 07 05 68 54 47 7a 1d 3d 2a 04 51 4c 64  *)&meM79..Z.DdT.U"...hTGz.=*.QLd
+140003380  0f 22 53 14 35 32 37 35 1d 16 47 1e 3c 32 0d 5a 06 05 47 1b 4e 13 07 36 37 31 3d 17 44 4c 59 0c  ."S.5275..G.<2.Z..G.N..671=.DLY.
+1400033a0  11 47 06 01 5e 5c 68 32 43 07 02 02 13 3e 63 2d 1c 07 3c 71 3c 37 7a 3d 6f 2e 43 03 22 22 35 16  .G..^\h2C....>c-..<q<7z=o.C.""5.
+1400033c0  52 06 3c 2d 1b 63 1b 10 5b 3b 77 7d 2e 20 20 3f 26 17 5e 10 59 0c 11 47 06 01 5e 5c 62 12 2f 3f  R.<-.c..[;w}.  ?&.^.Y..G..^\b./?
+1400033e0  26 33 20 12 58 1c 2a 71 2f 51 1c 01 41 1b 42 7d 02 37 27 50 11 15 42 1f 3c 2d 09 56 1e 01 33 20  &3 .X.*q/Q..A.B}.7'P..B.<-.V..3 
+140003400  54 13 37 3a 2e 35 12 12 52 1e 3d 17 09 5a 16 08 56 72 44 13 20 21 3a 20 20 3d 5e 1e 3c 5f 29 51  T.7:.5..R.=..Z..VrD. !:  =^.<_)Q
+140003420  01 21 5d 15 48 13 26 53 15 31 38 0e 52 26 20 2f 0d 34 21 1d 40 06 44 10 6d 10 2c 22 31 7b 75 07  .!].H.&S.18.R& /.4!.@.D.m.,"1{u.
+140003440  3f 39 0d 46 17 00 70 1b 51 15 26 21 01 31 27 1e 37 31 36 32 18 5d 1e 01 41 35 44 13 26 21 22 24  ?9.F..p.Q.&!.1'.7162.]..A5D.&!"$
+140003460  31 1f 76 06 2d 2d 01 56 07 10 56 72 66 08 2a 37 02 24 20 09 5e 10 2c 2b 0d 34 36 01 51 07 46 1a  1.v.--.V..Vrf.*7.$ .^.,+.46.Q.F.
+140003480  22 31 2f 35 15 0f 43 00 30 3d 1d 40 17 64 70 1d 4c 2b 2a 20 2a 32 38 1e 76 06 2d 2d 01 56 07 10  "1/5..C.0=.@.dp.L+* *28.v.--.V..
+1400034a0  56 72 60 0e 30 36 2e 32 38 02 63 1b 2d 33 0d 75 06 10 41 1b 43 08 37 36 43 11 27 08 52 1f 3b 33  Vr`.06.28.c.-3.u..A.C.76C.'.R.;3
+1400034c0  11 60 00 05 57 17 4c 1c 31 38 02 24 20 09 5e 10 2c 2b 0d 34 26 05 41 15 44 09 05 21 22 3d 31 0c  .`..W.L.18.$ .^.,+.4&.A.D..!"=1.
+1400034e0  58 00 32 1e 1c 40 00 0d 51 07 55 18 43 12 30 23 31 16 55 1e 20 19 01 58 17 32 56 00 52 14 2c 3d  X.2..@..Q.U.C.0#1.U. ..X.2V.R.,=
+140003500  02 24 20 09 5e 10 2c 2b 0d 34 33 17 40 17 4c 1f 2f 2a 00 3f 3a 1d 5e 15 2c 2d 09 40 1b 0b 5d 33  .$ .^.,+.43.@.L./*.?:.^.,-.@..]3
+140003520  55 09 31 3a 21 25 20 1e 37 33 2a 2c 0d 59 10 08 4a 36 44 0e 20 21 2a 20 20 12 58 1c 18 2b 1c 46  U.1:!% .73*,.Y..J6D. !*  .X..+.F
+140003540  1b 06 46 06 44 7d 00 3c 2e 20 3d 17 56 06 30 30 06 66 17 08 52 0a 40 09 2a 3c 2d 23 15 0f 43 00  ..F.D}.<. =.V.00.f..R.@.*<-#..C.
+140003560  30 3d 1d 40 17 64 72 01 52 18 2e 31 2f 29 04 09 58 16 2c 3c 1c 75 06 10 41 1b 43 08 37 36 43 11  0=.@.dr.R..1/)..X.,<.u..A.C.76C.
+140003580  27 08 52 1f 3b 33 11 77 1d 14 4a 00 48 1a 2b 27 02 24 20 09 5e 10 2c 2b 0d 34 33 17 40 17 4c 1f  '.R.;3.w..J.H.+'.$ .^.,+.43.@.L.
+1400035a0  2f 2a 00 3f 39 0b 56 1c 20 1e 1c 40 00 0d 51 07 55 18 43 01 36 3e 20 12 5a 17 1a 30 05 44 13 10  /*.?9.V. ..@..Q.U.C.6> .Z..0.D..
+1400035c0  5a 10 48 11 2a 27 3a 11 20 0f 45 1b 3b 2a 1c 51 72 26 4a 06 44 7d 26 3d 20 22 2d 0b 43 34 30 33  Z.H.*':. .E.;*.Qr&J.D}&= "-.C403
+1400035e0  0d 47 20 01 50 07 53 0e 2a 25 26 50 19 14 41 17 59 18 0d 40 3d 11 47 02 54 09 10 3a 39 35 54 3e  .G .P.S.*%&P..A.Y..@=.G.T..:95T>
+140003600  59 11 36 3b 01 5a 15 64 60 0b 52 09 26 3e 6d 02 21 15 43 1b 34 3a 46 62 17 16 40 1b 4e 13 2a 3d  Y.6;.Z.d`.R.&>m.!.C.4:Fb..@.N.*=
+140003620  24 50 07 0f 45 1b 37 38 68 52 1b 08 56 22 40 09 2b 53 31 3f 3b 0f 67 13 2d 37 68 70 1d 22 5a 1c  $P..E.78hR..V"@.+S1?;.g.-7hp."Z.
+140003640  40 11 43 10 2f 31 27 08 7b 1b 3b 2d 09 46 0b 55 1d 16 4d 11 43 00 3a 23 20 1e 5a 72 0a 26 1b 40  @.C./1'.{.;-.F.U..M.C.:# .Zr.&.@
+140003660  17 09 1d 20 44 1b 2f 36 20 24 3d 14 59 72 1c 31 0b 46 0b 14 47 1b 4e 13 43 21 36 3e 54 34 45 15  ... D./6 $=.Yr.1.F..G.N.C!6>T4E.
+140003680  77 1d 07 41 1c 07 4a 31 40 0e 37 3f 26 7e 17 09 4e 02 2d 30 68 67 0b 17 47 17 4c 53 0f 3a 2d 21  w..A..J1@.7?&~..N.-0hg..G.LS.:-!
+1400036a0  54 38 5f 13 2b 5f 21 76 1e 0b 50 19 62 14 33 3b 26 22 54 38 55 11 1b 33 07 57 19 27 5a 02 49 18  T8_.+_!v..P.b.3;&"T8U..3.W.'Z.I.
+1400036c0  31 53 13 31 30 1f 52 16 1b 2a 0e 52 17 16 56 16 63 11 2c 30 28 13 3d 0b 5f 17 2b 5f 23 51 0b 34  1S.10.R..*.R..V.c.,0(.=._.+_#Q.4
+1400036e0  52 00 40 10 26 27 26 22 54 55 54 06 36 2d 68 1a 11 07 47 1d 53 7d 10 2a 30 24 31 16 19 36 30 3e  R.@.&'&"TUT.6-h...G.S}.*0$1..60>
+140003700  0f 5a 1d 17 47 1b 42 0e 43 00 3a 23 20 1e 5a 5c 0b 2a 06 40 1b 09 56 5c 68 13 37 36 31 3f 24 28  .Z..G.B.C.:# .Z\.*.@..V\h.761?$(
+140003720  52 00 2f 36 0b 51 01 64 60 0b 52 09 26 3e 6d 02 21 15 43 1b 34 3a 46 77 1d 09 43 1b 4d 18 31 00  R./6.Q.d`.R.&>m.!.C.4:Fw..C.M.1.
+140003740  26 22 22 12 54 17 2a 5f 27 46 15 4a 71 1d 54 13 20 2a 00 31 27 0f 5b 17 77 1c 1a 4d 02 10 5c 5c  &"".T.*_'F.Jq.T. *.1'.[.w..M..\\
+140003760  6c 12 27 36 30 50 10 1e 55 07 3e 38 01 5a 15 29 5c 16 44 0e 43 14 26 24 10 12 45 17 3a 2b 07 46  l.'60P..U.>8.Z.)\.D.C.&$..E.:+.F
+140003780  1b 01 40 72 66 18 37 15 2a 3c 31 08 37 3d 2b 38 46 76 1d 11 5d 11 58 3e 22 20 37 3c 31 55 74 00  ..@rf.7.*<1.7=+8Fv..].X>" 7<1Ut.
+1400037a0  20 2f 1c 5b 5c 21 5d 15 48 13 26 20 43 02 31 1a 53 33 35 33 2a 4d 06 01 40 72 76 0f 2a 27 26 11   /.[\!].H.& C.1.S353*M..@rv.*'&.
+1400037c0  38 17 75 0b 2d 3a 1b 34 22 16 5c 11 44 0e 30 11 3a 24 31 08 37 35 3c 2b 2a 4d 06 01 40 72 6e 0f  8.u.-:.4".\.D.0.:$1.75<+*M..@rn.
+1400037e0  24 7d 01 3f 21 15 54 0b 1a 3e 1b 40 1e 01 1d 31 53 04 33 27 2c 7e 04 1a 53 16 30 31 0f 47 72 36  $}.?!.T..>.@...1S.3',~..S.01.Gr6
+140003800  46 1c 55 14 2e 36 0b 35 38 0b 52 00 2a 5f 27 46 15 4a 71 1d 54 13 20 2a 00 31 27 0f 5b 17 77 1c  F.U..6.58.R.*_'F.Jq.T. *.1'.[.w.
+140003820  1a 4d 02 10 5c 5c 71 1c 31 32 2e 35 20 1e 45 01 59 16 2b 5d 02 0c 56 00 71 1c 31 32 2e 35 20 1e  .M..\\q.12.5 .E.Y.+]..V.q.12.5 .
+140003840  45 01 59 1c 07 5a 11 05 47 72 6e 1f 29 36 20 24 54 28 47 1e 30 2b 68 7d 1c 0d 47 72 6d 1c 30 27  E.Y..Z..Grn.)6 $T(G.0+h}..Grm.0'
+140003860  43 03 2d 08 43 17 34 71 3c 51 0a 10 33 3b 4f 14 37 3a 22 3c 3d 01 52 33 2b 2d 09 4d 72 27 5c 1c  C.-.C.4q<Q..3;O.7:"<=.R3+-.Mr'\.
+140003880  55 1c 2a 3d 30 1b 31 02 37 35 3c 2b 2b 41 00 16 56 1c 55 39 2a 21 26 33 20 14 45 0b 59 5f 68 34  U.*=0.1.75<++A..V.U9*!&3 .E.Y_h4
+1400038a0  72 71 1d 72 44 7d 2d 53 20 50 26 7b 4e 72 29 5f 1c 34 17 64 57 72 21 76 00 53 10 50 17 7b 67 72  rq.rD}-S P&{Nr)_.4.dWr!v.S.P.{gr
+1400038c0  0d 5f 68 75 31 64 60 72 62 7d 13 53 17 50 2f 7b 5c 72 6a 5f 5b 34 02 64 6c 72 46 7d 73 53 72 50  ._hu1d`rb}.S.P/{\rj_[4.dlrF}sSrP
+1400038e0  3a 7b 70 72 06 5f 1d 34 46 64 41 72 12 7d 1c 53 27 50 64 7b 06 72 37 5f 2f 34 2d 64 74 72 53 7d  :{pr._.4FdAr.}.S'Pd{.r7_/4-dtrS}
+140003900  7b 53 3e 50 54 7b 37 72 3a a3 f7 58 65 e0 1b 31 bb 36 23 bf 4e 77 66 67 37 76 79 5e 69 3c 71 44  {S>PT{7r:..Xe..1.6#.Nwfg7vy^i<qD
+140003920  33 73 24 5d 42 52 52 41 50 5b 36 73 57 5b 48 35 73 66 30 72 21 73 44 54 47 4d 5a 73 39 7c 5c 5f  3s$]BRRAP[6sW[H5sf0r!sDTGMZs9|\_
+140003940  69 29 7c 6a 35 52 20 60 4d 4e 40 5b 44 7a 36 6c 59 4a 7a 5d 73 7a 33 71 2b 7c 4d 55 56 42 11 79  i)|j5R `MN@[Dz6lYJz]sz3q+|MUVB.y
+140003960  39 70 5c 7f 69 36 61 64 36 72 23 73 4d 5d 46 50 56 7a 39 7c 5e 7f 6a 35 61 64 20 73 2a 7a 46 4e  9p\.i6ad6r#sM]FPVz9|^.j5ad s*zFN
+140003980  46 42 1d 69 7a 6f 5c 57 6d 34 73 79 36 7c 24 5d 42 52 51 29 50 7b 37 60 24 5a 48 35 6f 61 3d 77  FB.izo\Wm4sy6|$]BRQ)P{7`$ZH5oa=w
+1400039a0  01 7c 42 4e 46 59 54 79 36 60 d9                                                                 .|BNFYTy6`.
+
+1400039ab    int64_t sub_1400039ab(void* arg1, int16_t arg2, int64_t arg3, int32_t* arg4 @ rax, int64_t* arg5 @ rsi)
+
+1400039ab  {
+1400039ab      *(uint8_t*)((char*)arg1 - 0x4c);
+1400039ab      *(uint8_t*)((char*)arg1 - 0x4c) s>>= (uint8_t)arg1;
+1400039ab      /* unimplemented  {sar byte [rcx-0x4c], cl} */
+1400039ab      
+1400039ae      if (arg1)
+1400039ae          /* tailcall */
+1400039ae          return sub_1400039b0(arg1, arg2, arg5);
+1400039ae      
+140003a1e      *(uint64_t*)arg5;
+140003a21      *(uint32_t*)arg4;
+140003a28      /* undefined */
+1400039ab  }
+
+
+1400039b0    int64_t sub_1400039b0(int64_t, int16_t arg2, void* arg3 @ rsi)
+
+1400039b0  {
+1400039b0      bool c;
+1400039b0      uint64_t rsi_1 = (uint64_t)((uint32_t)arg3 + *(uint32_t*)((char*)arg3 + 0x20));
+1400039b3      uint64_t rflags;
+1400039b3      __outsd(arg2, *(uint32_t*)rsi_1, rsi_1, rflags);
+1400039b0  }
+
+1400039b5                                                                 c6 5e 55 5c 73 30 52 5b 5e 6a 26                       .^U\s0R[^j&
+1400039c0  f2 f1 37 52 20 75 4b 5b 63 53 5c 66 32 6f 5c 57 6e 14 70 6c 2e 77 29 7b 43 51 42 5e 49 7e 3f c5  ..7R uK[cS\f2o\Wn.pl.w){CQB^I~?.
+1400039e0  23 03 3e 2d 46 84 ba 7a 2f e4 74 0d 17 26 cd 39 30 74 4c 4d 2d 36 7c 66 31 74 2f 7e 45 42 57 53  #.>-F..z/.t..&.90tLM-6|f1t/~EBWS
+140003a00  54 7b 36 76 59 5e 69 3a 7a 65 33 7a 21 7d 43 53 43 4e 55 7b 36 72 0d 5d 7e 63 00 05 43 3c        T{6vY^i:ze3z!}CSCNU{6r.]~c..C<
+
+140003a29    int64_t sub_140003a29(int64_t arg1, int64_t arg2, int64_t arg3, int32_t* arg4 @ rax)
+
+140003a29  {
+140003a29      *(uint32_t*)arg4;
+140003a2b      bool o = /* bool o = unimplemented  {sbb eax, 0x29734013} */;
+140003a2b      
+140003a31      if (((uint32_t)arg4 | *(uint32_t*)arg4) - 0x29734013 < 0 != o)
+140003a76          /* undefined */
+140003a76      
+140003a31      void* rbx;
+140003a31      /* tailcall */
+140003a31      return sub_140003a33(arg1, arg2, arg3, rbx);
+140003a29  }
+
+
+140003a33    int64_t sub_140003a33(int64_t arg1, int64_t arg2, int64_t arg3, void* arg4 @ rbx)
+// This function is in Guided Analysis mode. Disable Guided Analysis for this function to resume standard analysis.
+
+140003a33  {
+140003a33      int64_t var_8 = arg1;
+140003a34      int64_t var_10 = arg3;
+140003a36      int64_t* var_18 = &var_10;
+140003a37      bool p;
+140003a37      
+140003a37      if (p)
+140003a37          /* jump -> 0x140003a39 */
+140003a37      
+140003a73      (uint8_t)arg1 += *(uint8_t*)((char*)arg4 + 0x50);
+140003a76      /* undefined */
+140003a33  }
+
+140003a39                                                                             60                                             `
+
+140003a3a    int64_t sub_140003a3a(int16_t arg1, void* arg2, int32_t arg3, void* arg4 @ rbx, float arg5[0x4] @ zmm5, int64_t arg6)
+// This function is in Guided Analysis mode. Disable Guided Analysis for this function to resume standard analysis.
+
+140003a3a  {
+140003a3c      bool c;
+140003a3c      bool z;
+140003a3c      
+140003a3c      if (z || c)
+140003a3c          /* jump -> 0x140003a3f */
+140003a3c      
+140003a5d      *(uint8_t*)((char*)&arg1 + 1) =
+140003a5d          *(uint8_t*)((char*)&arg1 + 1) - *(uint8_t*)0x1929de4e2;
+140003a63      *(uint32_t*)((char*)arg2 + 0x13) += arg3;
+140003a6a      __return_addr = 0x51;
+140003a6c      void* const* var_8 = &__return_addr;
+140003a6e      __unpcklps_xmmps_memdq(arg5, *(uint128_t*)((char*)arg2 + 0x67));
+140003a73      (uint8_t)arg1 += *(uint8_t*)((char*)arg4 + 0x50);
+140003a76      /* undefined */
+140003a3a  }
+
+140003a3f                                                                                               05                                 .
+140003a40  40 01 6d 14 21 21 22 22 2d 4a 37 72 5c 5e 68 34 72 64 24 73 21 6f 00 3c 33 29 26 12 50           @.m.!!""-J7r\^h4rd$s!o.<3)&.P
+140003a77                                                                       4b 15 4f 74 7e 77 31 60 4e                         K.Ot~w1`N
+140003a80  1a                                                                                               .
+140003a8a                                16 4e 27 36 76 65 60 48 37 72 55 5e 68 33 43 4a 03 5c 11 53 73 53            .N'6ve`H7rU^h3CJ.\.SsS
+140003aa0  43 1d 55 7b 2b 5c 17 1a 3c 72 00 05 5e 17 56 12 31 38 6f 06 31 09 44 1b 36 31 55 42 46 4a 04 5c  C.U{+\..<r..^.V.18o.1.D.61UBFJ.\
+140003ac0  13 7c 43 07 4d 44 12 09 56 1f 3c 28 07 46 19 20 5a 01 51 11 22 2a 0d 31 39 1e 23 5c 17 1a 3c 14  .|C.MD..V.<(.F. Z.Q."*.19.#\..<.
+140003ae0  34 16 52 1f                                                                                      4.R.
+
+140003ae4    int64_t sub_140003ae4(int64_t arg1, char* arg2, void* arg3 @ rax, int64_t arg4 @ rbx, int64_t arg5 @ rbp, int64_t arg6 @ rsi, char arg7 @ r13)
+// This function is in Guided Analysis mode. Disable Guided Analysis for this function to resume standard analysis.
+
+140003ae4  {
+140003ae4      *(uint8_t*)arg1;
+140003ae8      *(uint8_t*)((char*)arg3 + 0x60) -= *(uint8_t*)((char*)&arg2 + 1);
+140003aeb      int64_t var_8 = arg5;
+140003aec      char temp0 = *(uint8_t*)(arg4 + (arg5 << 1) + 0x5b);
+140003aec      *(uint8_t*)(arg4 + (arg5 << 1) + 0x5b) += (uint8_t)arg4;
+140003af0      *(uint32_t*)(arg2 + (arg6 << 1));
+140003af0      *(uint32_t*)(arg2 + (arg6 << 1));
+140003af0      bool o = /* bool o = unimplemented  {imul esi, dword [rdx+rsi*2], 0x21723364} */;
+140003af0      
+140003af7      if (temp0 + (uint8_t)arg4 < 0 != o)
+140003af7          /* jump -> 0x140003af9 */
+140003af7      
+140003a87      *(uint8_t*)arg2 += (uint8_t)arg1;
+140003a89      /* undefined */
+140003ae4  }
+
+140003af9                                                                             cc                                             .
+
+140003afa    int64_t sub_140003afa(void* arg1 @ rax, void* arg2 @ rsi, int64_t arg3 @ rdi)
+// This function is in Guided Analysis mode. Disable Guided Analysis for this function to resume standard analysis.
+
+140003afa  {
+140003afb      /* unimplemented  {enter 0x7b54, 0x37} */
+140003afb      
+140003aff      if ((uint32_t)arg1 >= *(uint32_t*)arg3)
+140003aff          /* jump -> 0x140003b01 */
+140003aff      
+140003b5c      *(uint32_t*)((char*)arg2 + 0x56);
+140003b60      uint64_t rax = (uint64_t)((uint32_t)arg1 + *(uint32_t*)((char*)arg1 + 0x13));
+140003b63      *(uint32_t*)rax &= (uint32_t)rax;
+140003b65      /* undefined */
+140003afa  }
+
+140003b01     5f 68 34 1a 64 33 72 39 53 43 53 5b 40 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 53 53 43 50   _h4.d3r9SCS[@T{7rY_h4rd3r!}SSCP
+140003b20  54 7b 37 72 59 5f 68 34 72 64 33 72 73 2e 07 00 3f a4 3a 39 bf a3 48 14 cd ab b4 dc 19 1a ed 93  T{7rY_h4rd3rs...?.:9..H.........
+140003b40  42 53 43 50 17 41 6b 27 2a 3a 1a 47 2e 11 40 17 53 21 07 36 30 3b 20 14 47 2e 1a 0c              BSCP.Ak'*:.G..@.S!.60; .G...
+140003b66                    22 23 27 37 5e 10 2b 3e 1a 4d 43 38 5c 10 4b 21 3b 65 77 0c 06 1e 5b 17 38 2c        "#'7^.+>.MC8\.K!;ew...[.8,
+140003b80  0d 68 31 08 52 01 52 31 2a 31 31 31 26 02 06 5c 29 3b 0a 34 72 65 31 71 25 78 45 54 4b 59 5e 70  .h1.R.R1*111&..\);.4re1q%xETKY^p
+140003ba0  3b 7f 57 50 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53  ;.WPh4rd3r!}CSCPT{7rY_h4rd3r!}CS
+140003bc0  43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72  CPT{7rY_h4rd3r!}CSCPT{7rY_h4rd3r
+140003be0  21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34  !}CSCPT{7rY_h4rd3r!}CSCPT{7rY_h4
+140003c00  72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72  rd3r!}CSCPT{7rY_h4rd3r!}CSCPT{7r
+140003c20  59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50  Y_h4rd3r!}CSCPT{7rY_h4rd3r!}CSCP
+140003c40  54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d  T{7rY_h4rd3r!}CSCPT{7rY_h4rd3r!}
+140003c60  43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64  CSCPT{7rY_h4rd3r!}CSCPT{7rY_h4rd
+140003c80  33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f  3r!}CSCPT{7rY_h4rd3r!}CSCPT{7rY_
+140003ca0  68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b  h4rd3r!}CSCPT{7rY_h4rd3r!}CSCPT{
+140003cc0  37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53  7rY_h4rd3r!}CSCPT{7rY_h4rd3r!}CS
+140003ce0  43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72  CPT{7rY_h4rd3r!}CSCPT{7rY_h4rd3r
+140003d00  21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34  !}CSCPT{7rY_h4rd3r!}CSCPT{7rY_h4
+140003d20  72 64 32 72 31 7d 43 53 5b 50 54 fb 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 42 50 55 7b 37 72  rd2r1}CS[PT.7rY_h4rd3r!}CSBPU{7r
+140003d40  69 5f 68 b4 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 58 5f 68 34 72 64 7b 72 21 7d 1b 13 43 50  i_h.rd3r!}CSCPT{7rX_h4rd{r!}..CP
+140003d60  68 78 37 72 59 5f 68 34 72 64 33 72 1d 7e 77 53 43 50 02 7b 64 72 06 5f 3e 34 37 64 61 72 72 7d  hx7rY_h4rd3r.~wSCP.{dr._>47darr}
+140003d80  0a 53 0c 50 1a 7b 68 72 10 5f 26 34 34 64 7c 72 21 7d 43 53 fe 54 bb 85 37 72 58 5f 68 34 73 64  .S.P.{hr._&44d|r!}CS.T..7rX_h4sd
+140003da0  33 72 21 7d 43 53 42 50 54 7b 37 72 66 5f 68 34 72 64 33 72 25 7d 43 53 41 50 54 7b 37 72 59 5f  3r!}CSBPT{7rf_h4rd3r%}CSAPT{7rY_
+140003dc0  68 34 72 64 33 72 21 7d 07 53 43 50 55 7b 61 72 38 5f 1a 34 34 64 5a 72 4d 7d 26 53 0a 50 3a 7b  h4rd3r!}.SCPU{ar8_.44dZrM}&S.P:{
+140003de0  51 72 36 5f 68 34 72 64 17 72 25 7d 43 53 17 50 26 7b 56 72 37 5f 1b 34 1e 64 52 72 55 7d 2a 53  Qr6_h4rd.r%}CS.P&{Vr7_.4.dRrU}*S
+140003e00  2c 50 3a 7b 37 72 59 5f 68 34 c2 60 af 70 21 7d 42 53 10 50 20 7b 45 72 30 5f 06 34 15 64 75 72  ,P:{7rY_h4.`.p!}BS.P {Er0_.4.dur
+140003e20  48 7d 2f 53 26 50 1d 7b 59 72 3f 5f 07 34 72 64 4b 70 21 7d 42 53 73 50 64 7b 07 72 69 5f 58 34  H}/S&P.{Yr?_.4rdKp!}BSsPd{.ri_X4
+140003e40  46 64 51 72 11 7d 43 53 59 50 55 7b 36 72 1a 5f 07 34 1f 64 5e 72 44 7d 2d 53 37 50 27 7b 37 72  FdQr.}CSYPU{6r._.4.d^rD}-S7P'{7r
+140003e60  59 5f 68 34 50 64 32 72 20 7d 00 53 2c 50 39 7b 47 72 38 5f 06 34 0b 64 7d 72 40 7d 2e 53 26 50  Y_h4Pd2r }.S,P9{Gr8_.4.d}r@}.S&P
+140003e80  54 7b 37 72 59 5f 68 34 36 64 3d 72 20 7d 05 53 2a 50 38 7b 52 72 1d 5f 0d 34 01 64 50 72 53 7d  T{7rY_h46d=r }.S*P8{Rr._.4.dPrS}
+140003ea0  2a 53 33 50 20 7b 5e 72 36 5f 06 34 72 64 33 72 62 7d 2f 53 22 50 27 7b 44 72 15 5f 01 34 10 64  *S3P {^r6_.4rd3rb}/S"P'{Dr._.4.d
+140003ec0  41 72 40 7d 31 53 3a 50 65 7b 37 72 69 5f 60 34 73 64 75 72 48 7d 2f 53 26 50 02 7b 52 72 2b 5f  Ar@}1S:Pe{7ri_`4sdurH}/S&P.{Rr+_
+140003ee0  1b 34 1b 64 5c 72 4f 7d 43 53 43 50 65 7b 19 72 69 5f 46 34 42 64 1d 72 11 7d 43 53 07 50 46 7b  .4.d\rO}CSCPe{.ri_F4Bd.r.}CS.PF{
+140003f00  36 72 10 5f 06 34 06 64 56 72 53 7d 2d 53 22 50 38 7b 79 72 38 5f 05 34 17 64 33 72 62 7d 2f 53  6r._.4.dVrS}-S"P8{yr8_.4.d3rb}/S
+140003f20  22 50 27 7b 44 72 15 5f 01 34 10 64 41 72 40 7d 31 53 3a 50 65 7b 19 72 3d 5f 04 34 1e 64 33 72  "P'{Dr._.4.dAr@}1S:Pe{.r=_.4.d3r
+140003f40  69 7d 51 53 42 50 18 7b 52 72 3e 5f 09 34 1e 64 70 72 4e 7d 33 53 3a 50 26 7b 5e 72 3e 5f 00 34  i}QSBP.{Rr>_.4.dprN}3S:P&{^r>_.4
+140003f60  06 64 33 72 62 7d 2c 53 33 50 2d 7b 45 72 30 5f 0f 34 1a 64 47 72 01 7d ea 53 63 50 74 7b 05 72  .d3rb},S3P-{Er0_.4.dGr.}.ScPt{.r
+140003f80  69 5f 5a 34 40 64 33 72 0b 7d 42 53 42 50 18 7b 52 72 3e 5f 09 34 1e 64 67 72 53 7d 22 53 27 50  i_Z4@d3r.}BSBP.{Rr>_.4.dgrS}"S'P
+140003fa0  31 7b 5a 72 38 5f 1a 34 19 64 40 72 21 7d 43 53 43 50 54 7b 7b 72 4b 5f 69 34 3d 64 41 72 48 7d  1{Zr8_.4.d@r!}CSCPT{{rK_i4=dArH}
+140003fc0  24 53 2a 50 3a 7b 56 72 35 5f 2e 34 1b 64 5f 72 44 7d 2d 53 22 50 39 7b 52 72 59 5f 2b 34 1e 64  $S*P:{Vr5_.4.d_rD}-S"P9{RrY_+4.d
+140003fe0  52 72 52 7d 30 53 0f 50 3d 7b 55 72 2b 5f 09 34 00 64 4a 72 10 7d 6d 53 27 50 38 7b 5b 72 59 5f  RrR}0S.P={Ur+_.4.dJr.}mS'P8{[rY_
+140004000  54 34 7c 64 32 72 71 7d 31 53 2c 50 30 7b 42 72 3a 5f 1c 34 3c 64 52 72 4c 7d 26 53 43 50 54 7b  T4|d2rq}1S,P0{Br:_.4<dRrL}&SCPT{
+140004020  74 72 35 5f 09 34 01 64 40 72 6d 7d 2a 53 21 50 26 7b 56 72 2b 5f 11 34 43 64 33 72 15 7d 4b 53  tr5_.4.d@rm}*S!P&{Vr+_.4Cd3r.}KS
+140004040  42 50 04 7b 45 72 36 5f 0c 34 07 64 50 72 55 7d 15 53 26 50 26 7b 44 72 30 5f 07 34 1c 64 33 72  BP.{Er6_.4.dPrU}.S&P&{Dr0_.4.d3r
+140004060  10 7d 6d 53 73 50 7a 7b 07 72 77 5f 58 34 72 64 0b 72 29 7d 42 53 02 50 27 7b 44 72 3c 5f 05 34  .}mSsPz{.rw_X4rd.r)}BS.P'{Dr<_.4
+140004080  10 64 5f 72 58 7d 63 53 15 50 31 7b 45 72 2a 5f 01 34 1d 64 5d 72 21 7d 72 53 6d 50 64 7b 19 72  .d_rX}cS.P1{Er*_.4.d]r!}rSmPd{.r
+1400040a0  69 5f 46 34 42 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50  i_F4Bd3r!}CSCPT{7rY_h4rd3r!}CSCP
+1400040c0  54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d  T{7rY_h4rd3r!}CSCPT{7rY_h4rd3r!}
+1400040e0  43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64  CSCPT{7rY_h4rd3r!}CSCPT{7rY_h4rd
+140004100  33 72 21 7d 43 53 43 50 54 7b 37 72 59 5f 68 34 72 64 33 72                                      3r!}CSCPT{7rY_h4rd3r
+.text section ended  {0x140002000-0x140004114}
+
+.rsrc section started  {0x140006000-0x1400065d4}
+140006000  struct Resource_Directory_Table __resource_directory_table_0 = 
+140006000  {
+140006000      uint32_t characteristics = 0x0
+140006004      uint32_t timeDateStamp = 0x0
+140006008      uint16_t majorVersion = 0x0
+14000600a      uint16_t minorVersion = 0x0
+14000600c      uint16_t numNameEntries = 0x0
+14000600e      uint16_t numIdEntries = 0x2
+140006010  }
+140006010  struct Resource_Directory_Table_Entry __resource_directory_table_0_entries[0x2] = 
+140006010  {
+140006010      [0x0] = 
+140006010      {
+140006010          uint32_t id = 0x10
+140006014          uint32_t offset = 0x80000020
+140006018      }
+140006018      [0x1] = 
+140006018      {
+140006018          uint32_t id = 0x18
+14000601c          uint32_t offset = 0x80000050
+140006020      }
+140006020  }
+140006020  struct Resource_Directory_Table __resource_directory_table_1 = 
+140006020  {
+140006020      uint32_t characteristics = 0x0
+140006024      uint32_t timeDateStamp = 0x0
+140006028      uint16_t majorVersion = 0x0
+14000602a      uint16_t minorVersion = 0x0
+14000602c      uint16_t numNameEntries = 0x0
+14000602e      uint16_t numIdEntries = 0x1
+140006030  }
+140006030  struct Resource_Directory_Table_Entry __resource_directory_table_1_entries[0x1] = 
+140006030  {
+140006030      [0x0] = 
+140006030      {
+140006030          uint32_t id = 0x1
+140006034          uint32_t offset = 0x80000038
+140006038      }
+140006038  }
+140006038  struct Resource_Directory_Table __resource_directory_table_3 = 
+140006038  {
+140006038      uint32_t characteristics = 0x0
+14000603c      uint32_t timeDateStamp = 0x0
+140006040      uint16_t majorVersion = 0x0
+140006042      uint16_t minorVersion = 0x0
+140006044      uint16_t numNameEntries = 0x0
+140006046      uint16_t numIdEntries = 0x1
+140006048  }
+140006048  struct Resource_Directory_Table_Entry __resource_directory_table_3_entries[0x1] = 
+140006048  {
+140006048      [0x0] = 
+140006048      {
+140006048          uint32_t id = 0x0
+14000604c          uint32_t offset = 0x80
+140006050      }
+140006050  }
+140006050  struct Resource_Directory_Table __resource_directory_table_2 = 
+140006050  {
+140006050      uint32_t characteristics = 0x0
+140006054      uint32_t timeDateStamp = 0x0
+140006058      uint16_t majorVersion = 0x0
+14000605a      uint16_t minorVersion = 0x0
+14000605c      uint16_t numNameEntries = 0x0
+14000605e      uint16_t numIdEntries = 0x1
+140006060  }
+140006060  struct Resource_Directory_Table_Entry __resource_directory_table_2_entries[0x1] = 
+140006060  {
+140006060      [0x0] = 
+140006060      {
+140006060          uint32_t id = 0x1
+140006064          uint32_t offset = 0x80000068
+140006068      }
+140006068  }
+140006068  struct Resource_Directory_Table __resource_directory_table_4 = 
+140006068  {
+140006068      uint32_t characteristics = 0x0
+14000606c      uint32_t timeDateStamp = 0x0
+140006070      uint16_t majorVersion = 0x0
+140006072      uint16_t minorVersion = 0x0
+140006074      uint16_t numNameEntries = 0x0
+140006076      uint16_t numIdEntries = 0x1
+140006078  }
+140006078  struct Resource_Directory_Table_Entry __resource_directory_table_4_entries[0x1] = 
+140006078  {
+140006078      [0x0] = 
+140006078      {
+140006078          uint32_t id = 0x0
+14000607c          uint32_t offset = 0x3d4
+140006080      }
+140006080  }
+140006080  struct Resource_Data_Entry __resource_directory_table_3_data_entry_0 = 
+140006080  {
+140006080      uint32_t dataRva = 0x6090
+140006084      uint32_t dataSize = 0x344
+140006088      uint32_t codepage = 0x0
+14000608c      uint32_t reserved = 0x0
+140006090  }
+140006090  char data_140006090[0x344] = "D\x034\x00\x00\x00V\x00S\x00_\x00V\x00E\x00R\x00S\x00I\x00O\x00N\x00_\x00I\x00N\x00F\x00O\x00\x00\x00\x00\x00\xbd\x04\xef\xfe\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00?\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00D\x00\x00\x00\x01\x00V\x00a\x00r\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x00\x00$\x00\x04\x00\x00\x00T\x00r\x00a\x00n\x00s\x00l\x00a\x00t\x00i\x00o\x00n\x00\x00\x00\x00\x00\x00\x00\xb0\x04\xa4\x02\x00\x00\x01\x00S\x00t\x00r\x00i\x00n\x00g\x00F\x00i\x00l\x00e\x00I\x00n\x00f\x00o\x00\x00\x00\x80\x02\x00\x00\x01\x000\x000\x000\x000\x000\x004\x00b\x000\x00\x00\x00\x1a\x00\x01\x00\x01\x00C\x00o\x00m\x00m\x00e\x00n\x00t\x00s\x00\x00\x00\x00\x00\x00\x00\"\x00\x01\x00\x01\x00C\x00o\x00m\x00p\x00a\x00n\x00y\x00N\x00a\x00m\x00e\x00\x00\x00\x00\x00\x00\x00\x00\x00@\x00\x0c\x00\x01\x00F\x00i\x00l\x00e\x00D\x00e\x00s\x00c\x00r\x00i\x00p\x00t\x00i\x00o\x00n\x00\x00\x00\x00\x00C\x00o\x00n\x00s\x00o\x00l\x00e\x00A\x00p\x00p\x001\x00\x00\x000\x00\x08\x00\x01\x00F\x00i\x00l\x00e\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x00\x00\x001\x00.\x000\x00.\x000\x00.\x000\x00\x00\x00@\x00\x10\x00\x01\x00I\x00n\x00t\x00e\x00r\x00n\x00a\x00l\x00N\x00a\x00m\x00e\x00\x00\x00C\x00o\x00n\x00s\x00o\x00l\x00e\x00A\x00p\x00p\x001\x00.\x00e\x00x\x00e\x00\x00\x00^\x00\x1d\x00\x01\x00L\x00e\x00g\x00a\x00l\x00C\x00o\x00p\x00y\x00r\x00i\x00g\x00h\x00t\x00\x00\x00C\x00S\x00C\x00P\x00T\x00 \x00-\x00 \x00J\x00o\x00\xe3\x00o\x00 \x00V\x00a\x00r\x00e\x00l\x00a\x00s\x00 \x00\xa9\x00 \x00 \x002\x000\x002\x002\x00\x00\x00\x00\x00*\x00\x01\x00\x01\x00L\x00e\x00g\x00a\x00l\x00T\x00r\x00a\x00d\x00e\x00m\x00a\x00r\x00k\x00s\x00\x00\x00\x00\x00\x00\x00\x00\x00H\x00\x10\x00\x01\x00O\x00r\x00i\x00g\x00i\x00n\x00a\x00l\x00F\x00i\x00l\x00e\x00n\x00a\x00m\x00e\x00\x00\x00C\x00o\x00n\x00s\x00o\x00l\x00e\x00A\x00p\x00p\x001\x00.\x00e\x00x\x00e\x00\x00\x008\x00\x0c\x00\x01\x00P\x00r\x00o\x00d\x00u\x00c\x00t\x00N\x00a\x00m\x00e\x00\x00\x00\x00\x00C\x00o\x00n\x00s\x00o\x00l\x00e\x00A\x00p\x00p\x001\x00\x00\x004\x00\x08\x00\x01\x00P\x00r\x00o\x00d\x00u\x00c\x00t\x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x001\x00.\x000\x00.\x000\x00.\x000\x00\x00\x008\x00\x08\x00\x01\x00A\x00s\x00s\x00e\x00m\x00b\x00l\x00y\x00 \x00V\x00e\x00r\x00s\x00i\x00o\x00n\x00\x00\x001\x00.\x000\x00.\x000\x00.\x000\x00\x00", 0
+1400063d4  struct Resource_Data_Entry __resource_directory_table_4_data_entry_0 = 
+1400063d4  {
+1400063d4      uint32_t dataRva = 0x63e4
+1400063d8      uint32_t dataSize = 0x1ea
+1400063dc      uint32_t codepage = 0x0
+1400063e0      uint32_t reserved = 0x0
+1400063e4  }
+1400063e4  char data_1400063e4[0x1ea] = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r\n\r\n"
+1400063e4      "<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\">\r\n"
+1400063e4      "  <assemblyIdentity version=\"1.0.0.0\" name=\"MyApplication.app\"/>\r\n"
+1400063e4      "  <trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v2\">\r\n"
+1400063e4      "    <security>\r\n"
+1400063e4      "      <requestedPrivileges xmlns=\"urn:schemas-microsoft-com:asm.v3\">\r\n"
+1400063e4      "        <requestedExecutionLevel level=\"asInvoker\" uiAccess=\"false\"/>\r\n"
+1400063e4      "      </requestedPrivileges>\r\n"
+1400063e4      "    </security>\r\n"
+1400063e4      "  </trustInfo>\r\n"
+1400063e4      "</assembly>"
+
+1400065ce                                            00 00 00 00 00 00                                                    ......
+.rsrc section ended  {0x140006000-0x1400065d4}
+
+.synthetic_builtins section started  {0x1400065e0-0x140006610}
+1400065e0  extern void* __builtin_memcpy(void* dest, void const* src, uint64_t count)
+1400065e8  extern void* __builtin_memset(void* dest, int32_t ch, uint64_t count)
+1400065f0  extern char* __builtin_strcpy(char* dest, char const* src)
+1400065f8  extern char* __builtin_strncpy(char* dest, char const* src, uint64_t count)
+140006600  extern wchar16* __builtin_wcscpy(wchar16* dest, wchar16 const* src)
+140006608  extern wchar16* __builtin_wmemcpy(wchar16* dest, wchar16 const* src, uint64_t count)
+.synthetic_builtins section ended  {0x1400065e0-0x140006610}
+

@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UNRㅌㅌL</title>
+  <link rel="icon" href="/logo.svg">
+  <link rel="stylesheet" href="/theme.css">
+  <style>
+    :root {
+      /* how much of the previous and next reel shows */
+      --peek: calc(var(--radius) * 1.5);
+      --gap: 16px;
+      /* text and buttons drawn over the video */
+      --on-video: #fff;
+      --on-video-button: rgba(255, 255, 255, 0.2);
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--surface-sunken);
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      display: block;
+    }
+
+    #account {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #account .name {
+      color: var(--text-subtle);
+      font-weight: 500;
+    }
+
+    #feed {
+      position: fixed;
+      inset: var(--topbar-height) 0 0 0;
+      box-sizing: border-box;
+      padding: calc(var(--peek) + var(--gap)) 0;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scrollbar-width: none;
+    }
+
+    #feed::-webkit-scrollbar {
+      display: none;
+    }
+
+    #feed:focus {
+      outline: none;
+    }
+
+    .short {
+      height: 100%;
+      margin-bottom: var(--gap);
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 16px;
+    }
+
+    .short:last-child {
+      margin-bottom: 0;
+    }
+
+    /* only the video itself of the neighbouring reels peeks in */
+    .short:not(.active) :is(.controls, .info, .progress, .actions) {
+      visibility: hidden;
+    }
+
+    .stage {
+      position: relative;
+      isolation: isolate;
+      height: 100%;
+      aspect-ratio: 9 / 16;
+      max-width: calc(100vw - 112px);
+    }
+
+    /* a few pixels of the current frame, scaled up and blurred */
+    .glow {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      transform: scale(1.2);
+      filter: blur(60px) saturate(1.4);
+      opacity: 0;
+      transition: opacity 0.6s;
+      pointer-events: none;
+    }
+
+    .short.active .glow {
+      opacity: 0.55;
+    }
+
+    .player {
+      position: relative;
+      height: 100%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #000;
+      box-shadow: var(--shadow-overlay);
+      color: var(--on-video);
+    }
+
+    .player video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .controls {
+      position: absolute;
+      inset: 0 0 auto 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 12px;
+      background: linear-gradient(rgba(0, 0, 0, 0.45), transparent);
+    }
+
+    .controls button {
+      width: 32px;
+      height: 32px;
+      border: 0;
+      border-radius: var(--radius-small);
+      background: transparent;
+      display: grid;
+      place-items: center;
+    }
+
+    .controls button:hover {
+      background: var(--on-video-button);
+    }
+
+    .flash {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 64px;
+      height: 64px;
+      margin: -32px 0 0 -32px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.5);
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .flash svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .flash.show {
+      animation: flash 0.6s ease-out;
+    }
+
+    @keyframes flash {
+      from { opacity: 1; transform: scale(0.8); }
+      to { opacity: 0; transform: scale(1.3); }
+    }
+
+    .info {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 48px 12px 20px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      pointer-events: none;
+    }
+
+    .channel {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+
+    .subscribe {
+      pointer-events: auto;
+      margin-left: 4px;
+    }
+
+    .subscribe.on, .subscribe.on:hover {
+      background: var(--on-video-button);
+      color: var(--on-video);
+    }
+
+    /* the reel's key, like an issue's */
+    .info .lozenge {
+      margin-top: 10px;
+      background: var(--on-video-button);
+      color: var(--on-video);
+    }
+
+    .description {
+      margin: 4px 0 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      overflow-wrap: anywhere;
+    }
+
+    .progress {
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .progress div {
+      height: 100%;
+      width: 0;
+      background: var(--brand);
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .action {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--text-subtle);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 16px;
+    }
+
+    .action .button {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+    }
+
+    .action .button.on {
+      background: var(--selected);
+      color: var(--text-selected);
+    }
+
+    #nav {
+      position: fixed;
+      right: 24px;
+      top: calc(50% + var(--topbar-height) / 2);
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 2;
+    }
+
+    #nav .button {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      background: var(--surface-raised);
+      box-shadow: var(--shadow-raised);
+    }
+
+    #nav .button:hover {
+      background: var(--neutral-hover);
+    }
+
+    #nav .button:disabled {
+      visibility: hidden;
+    }
+
+    #bot-link {
+      position: fixed;
+      left: 16px;
+      bottom: 16px;
+      z-index: 2;
+      padding: 4px 8px;
+      border-radius: var(--radius-small);
+      background: var(--surface-raised);
+      box-shadow: var(--shadow-raised);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 16px;
+    }
+
+    .empty {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: var(--text-subtlest);
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    @media (max-width: 600px) {
+      /* it would sit on top of the reel's description */
+      #nav, #bot-link {
+        display: none;
+      }
+
+      /* the logo and the avatar stand in for the names */
+      .topbar .brand span,
+      #account .name {
+        display: none;
+      }
+
+      #account {
+        min-width: 0;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      #account .button {
+        padding: 0 8px;
+      }
+
+      #feed {
+        padding: 0;
+      }
+
+      .short {
+        position: relative;
+        margin-bottom: 0;
+      }
+
+      .stage {
+        width: 100%;
+        max-width: none;
+        aspect-ratio: auto;
+      }
+
+      .glow {
+        display: none;
+      }
+
+      .player {
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .info {
+        padding-right: 72px;
+      }
+
+      .actions {
+        position: absolute;
+        right: 8px;
+        bottom: 24px;
+      }
+
+      .action {
+        color: var(--on-video);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+      }
+
+      .action .button {
+        background: rgba(0, 0, 0, 0.3);
+        color: var(--on-video);
+      }
+
+      .action .button.on {
+        background: var(--on-video);
+        color: #000;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="UNRㅌㅌL"><img src="/logo.svg" alt=""><span>UNRㅌㅌL</span></a>
+    <span class="spacer"></span>
+    <div id="account"></div>
+  </header>
+
+  <main id="feed" tabindex="-1"></main>
+
+  <a id="bot-link" href="/bot/">Admin Bot</a>
+
+  <nav id="nav">
+    <button class="button" id="prev" aria-label="Previous reel" data-icon="up"></button>
+    <button class="button" id="next" aria-label="Next reel" data-icon="down"></button>
+  </nav>
+
+  <template id="short-template">
+    <section class="short">
+      <div class="stage">
+        <canvas class="glow" width="32" height="57"></canvas>
+        <div class="player">
+          <video loop playsinline preload="none"></video>
+          <div class="controls">
+            <button class="play-toggle" aria-label="Play or pause" data-icon="pause"></button>
+            <button class="mute-toggle" aria-label="Mute or unmute" data-icon="muted"></button>
+          </div>
+          <div class="flash"></div>
+          <div class="info">
+            <div class="channel">
+              <span class="avatar"></span>
+              <span class="name"></span>
+              <button class="subscribe button primary">Subscribe</button>
+            </div>
+            <span class="key lozenge"></span>
+            <p class="description"></p>
+          </div>
+          <div class="progress"><div></div></div>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="action">
+          <button class="like button" aria-label="Like" data-icon="like"></button>
+          <span>Like</span>
+        </div>
+        <div class="action">
+          <button class="dislike button" aria-label="Dislike" data-icon="dislike"></button>
+          <span>Dislike</span>
+        </div>
+        <div class="action">
+          <button class="comments button" aria-label="Comments" data-icon="comment"></button>
+          <span>0</span>
+        </div>
+        <div class="action">
+          <button class="share button" aria-label="Share" data-icon="share"></button>
+          <span class="share-label">Share</span>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <script src="/account.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>

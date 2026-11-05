@@ -1,0 +1,11 @@
+[project]
+name = "restaurant-builder"
+version = "1.0.0"
+description = "So you want to build your own restaurant? Well, we obviously can't just let you do that.\nPlease first submit blueprints and exact descriptions for the building, all the furniture and every single item you plan to have in the restaurant."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.136.3",
+    "gunicorn>=26.0.0",
+    "uvicorn[standard]>=0.48.0",
+]

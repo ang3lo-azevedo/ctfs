@@ -1,0 +1,173 @@
+
+=== CHROME ELEVATOR OUTPUT ===
+Directory: C:\Users\clarke\AppData\Local\Temp\\chromelevator_output
+
+
+=== DIRECTORY: Chrome ===
+
+=== DIRECTORY: Chrome\Default ===
+
+--- FILE: Chrome\Default\cookies.json (114716 bytes) ---
+
+--- FILE: Chrome\Default\passwords.json (85 bytes) ---
+[
+{"url":"https://www.instagram.com/","user":"clarke","pass":"v@VboF8EDZWPM5nv7"}
+]
+=== END DIRECTORY: Default ===
+
+--- FILE: Chrome\fingerprint.json (972 bytes) ---
+{
+  "browser": "Chrome",
+  "executable_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "browser_version": "141.0.7390.108",
+  "user_data_path": "C:\\Users\\clarke\\AppData\\Local\\Google\\Chrome\\User Data",
+  "sync_enabled": false,
+  "enterprise_managed": true,
+  "update_channel": "stable",
+  "hardware_acceleration": false,
+  "metrics_enabled": false,
+  "autofill_enabled": true,
+  "password_manager_enabled": false,
+  "safe_browsing_enabled": true,
+  "do_not_track": false,
+  "third_party_cookies_blocked": false,
+  "translate_enabled": true,
+  "installed_extensions_count": 2,
+  "extension_ids": ["ghbmnnjooekpmoecnnnilnnbdlolhkhi", "nmmhkkegccagdldgiimedpiccmgmieda"],
+  "profile_count": 1,
+  "computer_name": "DESKTOP-Q9N84B2",
+  "windows_user": "clarke",
+  "os_version": "10.0.19044",
+  "architecture": "x64",
+  "last_config_update": 1785066675,
+  "extraction_timestamp": 1785066738,
+  "extraction_complete": true
+}
+=== END DIRECTORY: Chrome ===
+
+=== END OF CHROME ELEVATOR OUTPUT ===
+=== SYSTEM INFORMATION ===
+OS Version: Windows 10 Enterprise LTSC 2021
+HWID: 79ef6f3e-52e3-4506-840a-52a759063342
+Local IP: 192.168.59.133
+MAC Address: 00:0C:29:F7:95:1E
+Antivirus: Windows Defender
+
+
+=== RUNNING PROCESSES ===
+
+[1] PID: 0 - [System Process]
+[2] PID: 4 - System
+[3] PID: 92 - Registry
+[4] PID: 300 - smss.exe
+[5] PID: 416 - csrss.exe
+[6] PID: 496 - wininit.exe
+[7] PID: 504 - csrss.exe
+[8] PID: 596 - winlogon.exe
+[9] PID: 640 - services.exe
+[10] PID: 656 - lsass.exe
+[11] PID: 768 - svchost.exe
+[12] PID: 792 - fontdrvhost.exe
+[13] PID: 796 - fontdrvhost.exe
+[14] PID: 888 - svchost.exe
+[15] PID: 976 - dwm.exe
+[16] PID: 360 - svchost.exe
+[17] PID: 724 - svchost.exe
+[18] PID: 740 - svchost.exe
+[19] PID: 1052 - svchost.exe
+[20] PID: 1116 - svchost.exe
+[21] PID: 1260 - svchost.exe
+[22] PID: 1408 - Memory Compression
+[23] PID: 1496 - svchost.exe
+[24] PID: 1656 - svchost.exe
+[25] PID: 1680 - svchost.exe
+[26] PID: 1688 - svchost.exe
+[27] PID: 1824 - spoolsv.exe
+[28] PID: 1904 - svchost.exe
+[29] PID: 1992 - svchost.exe
+[30] PID: 1984 - svchost.exe
+[31] PID: 2152 - vmtoolsd.exe
+[32] PID: 2160 - VGAuthService.exe
+[33] PID: 2168 - vm3dservice.exe
+[34] PID: 2216 - MsMpEng.exe
+[35] PID: 2300 - vm3dservice.exe
+[36] PID: 2716 - dllhost.exe
+[37] PID: 2900 - WmiPrvSE.exe
+[38] PID: 2936 - msdtc.exe
+[39] PID: 3040 - sihost.exe
+[40] PID: 2208 - svchost.exe
+[41] PID: 2632 - taskhostw.exe
+[42] PID: 3244 - ctfmon.exe
+[43] PID: 3624 - explorer.exe
+[44] PID: 4072 - svchost.exe
+[45] PID: 4432 - StartMenuExperienceHost.exe
+[46] PID: 4560 - RuntimeBroker.exe
+[47] PID: 4784 - SearchApp.exe
+[48] PID: 4956 - RuntimeBroker.exe
+[49] PID: 1672 - svchost.exe
+[50] PID: 5256 - RuntimeBroker.exe
+[51] PID: 5648 - TextInputHost.exe
+[52] PID: 5796 - dllhost.exe
+[53] PID: 5984 - SecurityHealthSystray.exe
+[54] PID: 6020 - SecurityHealthService.exe
+[55] PID: 6092 - vmtoolsd.exe
+[56] PID: 6920 - svchost.exe
+[57] PID: 4760 - SgrmBroker.exe
+[58] PID: 4652 - svchost.exe
+[59] PID: 1536 - ApplicationFrameHost.exe
+[60] PID: 5000 - dllhost.exe
+[61] PID: 384 - svchost.exe
+[62] PID: 4396 - ShellExperienceHost.exe
+[63] PID: 2040 - RuntimeBroker.exe
+[64] PID: 6564 - svchost.exe
+[65] PID: 7192 - taskhostw.exe
+[66] PID: 3372 - chrome.exe
+[67] PID: 7912 - chrome.exe
+[68] PID: 1880 - chrome.exe
+[69] PID: 2964 - chrome.exe
+[70] PID: 428 - chrome.exe
+[71] PID: 6828 - chrome.exe
+[72] PID: 7372 - chrome.exe
+[73] PID: 3500 - chrome.exe
+[74] PID: 6332 - OfficeClickToRun.exe
+[75] PID: 4152 - AppVShNotify.exe
+[76] PID: 3112 - SearchIndexer.exe
+[77] PID: 4740 - smartscreen.exe
+[78] PID: 7256 - audiodg.exe
+[79] PID: 3948 - chrome.exe
+[80] PID: 8100 - chrome.exe
+[81] PID: 2872 - notepad.exe
+[82] PID: 3056 - msedge.exe
+[83] PID: 7776 - msedge.exe
+[84] PID: 5076 - msedge.exe
+[85] PID: 1800 - msedge.exe
+[86] PID: 4484 - msedge.exe
+[87] PID: 5464 - msedge.exe
+[88] PID: 3204 - msedge.exe
+[89] PID: 1840 - msedge.exe
+[90] PID: 2104 - msedge.exe
+[91] PID: 5820 - msedge.exe
+[92] PID: 7080 - svchost.exe
+[93] PID: 3840 - msedge.exe
+
+[+] Total processes: 93
+
+
+=== DISCORD DATA ===
+
+[-] No Discord data found
+
+=== CRYPTO WALLETS ===
+
+[-] No crypto wallets found
+
+
+
+=== BROWSER DATA ===
+
+
+
+=== EXTRACTION SUMMARY ===
+Time: 22:23:46
+Status: Complete
+Target: DESKTOP-Q9N84B2

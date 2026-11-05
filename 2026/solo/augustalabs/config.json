@@ -1,0 +1,72 @@
+{
+  "config": {
+    "tokenizer": {
+      "bytes_per_token": 1.0,
+      "dtype": "uint16_le",
+      "kind": "byte",
+      "scheme": "utf8_bytes_with_greedy_special_tokens",
+      "source_bytes_per_full_token": 1.0,
+      "source_encoding": "utf-8",
+      "splits": {
+        "test": {
+          "bytes_per_token": 1.0,
+          "original_bytes": 2384167,
+          "padded_bytes": 2384167,
+          "tokens": 2384167
+        },
+        "train": {
+          "bytes_per_token": 1.0,
+          "original_bytes": 18042104,
+          "padded_bytes": 18042104,
+          "tokens": 18042104
+        },
+        "val": {
+          "bytes_per_token": 1.0,
+          "original_bytes": 2412168,
+          "padded_bytes": 2412168,
+          "tokens": 2412168
+        }
+      },
+      "total_original_bytes": 22838439,
+      "total_tokens": 22838439,
+      "vocab_size": 262,
+      "special_tokens": [
+        {
+          "token": "<|fernando_pessoa|>",
+          "id": 256
+        },
+        {
+          "token": "<|alberto_caeiro|>",
+          "id": 257
+        },
+        {
+          "token": "<|ricardo_reis|>",
+          "id": 258
+        },
+        {
+          "token": "<|bernardo_soares|>",
+          "id": 259
+        },
+        {
+          "token": "_",
+          "id": 260
+        },
+        {
+          "token": "{",
+          "id": 261
+        }
+      ]
+    },
+    "artifact": "luso_lit_lm_player_v2"
+  },
+  "model_config": {
+    "vocab_size": 262,
+    "block_size": 1024,
+    "n_layer": 10,
+    "n_head": 8,
+    "n_embd": 640,
+    "dropout": 0.1,
+    "bias": false,
+    "input_only_token_ids": []
+  }
+}

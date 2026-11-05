@@ -1,0 +1,195 @@
+MinecraftMaps.com
+Adventure▼
+Parkour▼
+Survival▼
+Puzzle▼
+Horror▼
+Mini-Games▼
+Builds▼
+Tools
+Sign In
+Level.dat Inspector - See Inside Your World
+
+Drop your world's level.dat below to read its seed, version, spawn, weather, game rules, and data packs. Nothing is changed and nothing is uploaded; it all runs in your browser.
+Loaded: level.dat
+Shibuya (sort of...)1.20.2
+Seed7508193899827885743Paste this into the Seed box on the Create New World screen to generate the same terrain.
+Version1.20.2Data version 3578, NBT format 19133.
+World modeCreative
+DifficultyPeaceful
+CheatsAllowedWhether commands and the cheat menu are allowed in this single-player world.
+World spawn
+0, -60, 0
+in Overworld
+Time and weather
+Noon (~12:00)
+Age: 20d 1h 23m (34660246 ticks)
+Weather: Clear
+World border
+Diameter59999968 blocks
+Center0, 0
+Game rules (2 changed of 46)
+doDaylightCyclefalsedefault true
+doWeatherCyclefalsedefault true
+announceAdvancementstrue
+blockExplosionDropDecaytrue
+commandBlockOutputtrue
+commandModificationBlockLimit32768
+disableElytraMovementCheckfalse
+disableRaidsfalse
+doEntityDropstrue
+doFireTicktrue
+doImmediateRespawnfalse
+doInsomniatrue
+doLimitedCraftingfalse
+doMobLoottrue
+doMobSpawningtrue
+doPatrolSpawningtrue
+doTileDropstrue
+doTraderSpawningtrue
+doVinesSpreadtrue
+doWardenSpawningtrue
+drowningDamagetrue
+enderPearlsVanishOnDeathtrue
+fallDamagetrue
+fireDamagetrue
+forgiveDeadPlayerstrue
+freezeDamagetrue
+globalSoundEventstrue
+keepInventoryfalse
+lavaSourceConversionfalse
+logAdminCommandstrue
+maxCommandChainLength65536
+maxEntityCramming24
+mobExplosionDropDecaytrue
+mobGriefingtrue
+naturalRegenerationtrue
+playersSleepingPercentage100
+randomTickSpeed3
+reducedDebugInfofalse
+sendCommandFeedbacktrue
+showDeathMessagestrue
+snowAccumulationHeight1
+spawnRadius10
+spectatorsGenerateChunkstrue
+tntExplosionDropDecayfalse
+universalAngerfalse
+waterSourceConversiontrue
+Data packs (1 on, 2 off)
+Enabled
+vanilla
+Disabled
+bundletrade_rebalance
+Need to change something? This inspector is read only. To flip the hardcore flag or get back into a world after a hardcore death, use the Hardcore World Reviver.
+100% local, 100% private
+
+Your file never leaves your computer. The whole inspection runs in your browser, and this page makes no network request that contains your file. This tool reads only; it never writes your world.
+What level.dat is and what it stores
+
+    level.dat is the small gzip-compressed NBT file at the root of every Minecraft world folder. It holds the world's identity: its seed, the version that wrote it, the spawn point, the time of day, the weather, the difficulty and hardcore flags, every game rule, and the list of data packs. This inspector reads all of that and shows it in plain language without touching the file.
+
+When Minecraft saves a world it writes the chunks into region files, the player into either level.dat or a playerdata file, and everything that describes the world as a whole into level.dat. Because it is a single small file, it is the fastest place to look up a fact about a world without loading the world itself. The most common reason people open it is to recover the seed, but it also answers questions like which version made this save, where the world spawn is, and which game rules were changed from default.
+
+The file is stored as NBT, a binary tag format, wrapped in gzip. That is why a text editor shows only garbled bytes. The inspector above decompresses it and walks the tag tree in your browser, so you get a readable view in a second without installing an NBT editor.
+What the inspector reads
+
+These are the fields the inspector pulls out of the Data compound. Minecraft has moved several of them across versions, so the tool tries the modern location first and falls back to the classic one.
+NBT fieldWhat it tells youWorldGenSettings.seedThe world seed, the number that decides terrain generation. Copy it to recreate the same world.Version.Name, DataVersionThe Minecraft version that last saved the world, plus the numeric data version used for format upgrades.spawn / SpawnX, SpawnY, SpawnZThe world spawn coordinates and dimension. Newer saves keep this in a spawn compound; older ones use three top-level values.DayTime, Time, raining, thunderingThe current in-game time of day, the world's total age in ticks, and whether it is raining or storming.hardcore, Difficulty, GameTypeThe hardcore flag, the difficulty, and the default gamemode. Since 26.x these live in a difficulty_settings compound.GameRulesEvery game rule and its value, diffed against the vanilla default so the changed ones stand out.DataPacks.Enabled, DataPacks.DisabledThe data packs switched on and off for the world, including built-in feature packs and any you added.
+
+If a field is missing, the inspector says so instead of inventing a value. That keeps the read honest: what you see is exactly what is in your file.
+How to find your world seed from level.dat
+
+Recovering a seed you forgot is the most common use. The whole job takes under a minute:
+
+1. Open your saves folder and find the world. On Windows, press Win and R, type %appdata%\.minecraft\saves and open the world's folder.
+
+2. Drop the file named level.dat onto the inspector above, or click to browse for it.
+
+3. Read the Seed row and use the copy button to grab it.
+
+4. To regenerate the terrain, start a new world, open More World Options, and paste the number into the Seed field. The same seed and version produce the same terrain.
+
+You can also read the seed in game with the /seed command if cheats are on, but level.dat works even when you cannot open the world, for example on a save copied from a friend or pulled off a dead server.
+
+Once you have the number, you can do more with it than regenerate the terrain. Paste it into a Minecraft seed map to see every biome and structure in your world on one map, so you know where the nearest village, stronghold, or mushroom island is without scouting a single chunk.
+Frequently Asked Questions
+How do I find my world seed from level.dat?
+
+Drop the level.dat into the inspector above. The seed is stored under Data.WorldGenSettings.seed in the file, and the tool reads it out and shows it with a copy button. Paste that number into the Seed box on the Create New World screen to generate the same terrain again.
+Where is the level.dat file for my Minecraft world?
+
+It sits in the world's save folder. On Windows that is %appdata%\.minecraft\saves\<world name>\level.dat, on macOS it is ~/Library/Application Support/minecraft/saves/<world name>/level.dat, and on Linux it is ~/.minecraft/saves/<world name>/level.dat. Pick the file named level.dat, not level.dat_old or the session.lock file.
+Does this tool upload or change my world?
+
+No. The level.dat is read, gunzipped, and parsed entirely in your browser, and this page makes no network request that contains your file. The inspector is read only, so it never writes anything back to your world. To edit the file, use a dedicated editor instead.
+Why does it say no seed is stored in this file?
+
+A few worlds do not keep the seed in level.dat: very old saves stored it elsewhere, and some superflat or custom worlds omit it. The inspector says so rather than guessing. Every other field it can read is still shown.
+What does the changed badge on a game rule mean?
+
+The inspector compares each rule stored in your world against the vanilla default. A rule shown as changed has a value different from the default, and the default is listed next to it. Use the Only changed filter to see at a glance what was tweaked, for example keepInventory turned on or doDaylightCycle turned off.
+Can I read a level.dat from an old version of Minecraft?
+
+Yes. The inspector handles both the classic layout, where the spawn lives in SpawnX, SpawnY, and SpawnZ and difficulty is a single value, and the newer layout used since 1.21 and 26.x, where the spawn and difficulty moved into their own compounds. The version name and data version from the file are shown so you know which release wrote it.
+
+Want to change a flag instead of just reading it? Or browse more Minecraft tools:
+Hardcore World Reviver
+Browse All Tools
+Related tools
+Coordinate ToolboxConvert blocks, chunks, regions, and nether coords
+Stronghold TriangulatorFind a stronghold from two ender eye throws
+Playerdata InspectorView a player inventory from a .dat file
+Map Art ExtractorTurn a map.dat into a PNG image
+Map Art StudioTurn any image into Minecraft map art
+Give Command GeneratorCustom items with NBT, enchantments, and components
+MinecraftMaps.com
+
+The largest collection of Minecraft maps. Download adventure, parkour, survival, puzzle, and more maps for free.
+Discord
+Twitter
+Categories
+Adventure Maps
+Parkour Maps
+Survival Maps
+Puzzle Maps
+Horror Maps
+Creation Maps
+Resources
+Latest Maps
+Popular Maps
+Hall of Fame
+Search Maps
+Minecraft Tools
+Submit a Map
+Minecraft Seeds
+Information
+How to Install Maps
+FAQ
+About Us
+Contact
+Privacy Policy
+Terms of Service
+Game Databases
+Palworld Database
+Valheim Wiki
+Persona Compendium
+Solarpunk Tools
+Gothic 1 Remake Wiki
+Fatekeeper Tools
+Romestead Database
+Stardew Valley Database
+7 Days to Die Database
+Terraria Seed Viewer
+AFK Arena
+|
+Game Guides
+|
+Co-op Games
+|
+Pokemon Tools
+|
+Anime Filler List
+|
+Naruto
+Copyright © MinecraftMaps.com 2011-2026. All rights reserved.Built for the community♥·Not affiliated with Mojang or Microsoft
+

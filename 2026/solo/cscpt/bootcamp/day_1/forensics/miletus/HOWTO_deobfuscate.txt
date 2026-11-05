@@ -1,0 +1,196 @@
+================================================================================
+ HOW TO BUILD A PYTHON DEOBFUSCATOR FOR THIS POWERSHELL STAGER
+ (static analysis only — the sample is never executed)
+================================================================================
+
+GOAL
+----
+The script hides everything behind runtime .NET string math
+(.Insert / .Remove / .Replace / -f / -join / [string]::Concat) and a
+control-flow "state machine". All of that string math is PURE (no side effects),
+so we can just RE-COMPUTE it in Python and print the readable code. We never run
+PowerShell, never touch the network, never invoke the payload.
+
+The build is 4 phases:
+  Phase A - fold the $( ... ) string expressions
+  Phase B - fold the [string]::Concat / '+' / .Replace chains
+  Phase C - cosmetic cleanup
+  Phase D - decode the embedded payload (base64 -> XOR -> base64 -> gzip)
+
+Work in a scratch folder. Keep the original file read-only.
+
+--------------------------------------------------------------------------------
+ STEP 0 - RECON (understand the shape before coding)
+--------------------------------------------------------------------------------
+Run these to learn what you're dealing with:
+
+  # what methods/operators appear?
+  grep -oE '\.[A-Za-z]+\(' virus_ps1.txt | sort | uniq -c | sort -rn
+  grep -oE '\-[a-z]+'      virus_ps1.txt | sort | uniq -c | sort -rn | head
+
+  # the state variable and its transitions
+  grep -oE '\$[A-Za-z0-9_]+=[0-9]+' virus_ps1.txt | sort -u
+
+You should see ONLY three string methods (Insert, Remove, Replace) and a small
+set of real operators (-f, -join, -as, -bxor, -ne, -eq). That's the whole grammar
+you need to support. The rest is noise.
+
+Key facts about the .NET String methods you must reproduce exactly:
+  s.Insert(i, "x")     -> s[:i] + "x" + s[i:]
+  s.Remove(i)          -> s[:i]
+  s.Remove(i, n)       -> s[:i] + s[i+n:]
+  s.Replace("a","b")   -> s.replace("a","b")   (replace ALL occurrences)
+  "{0}" -f a           -> substitute {0},{1}... with args
+  -join @("a","b")     -> "".join(parts)
+PowerShell single-quoted strings escape a quote by doubling it: '' means '.
+
+--------------------------------------------------------------------------------
+ STEP 1 - PHASE A: fold the $( ... ) expressions  (file: fold.py)
+--------------------------------------------------------------------------------
+Idea: repeatedly find the INNERMOST $( ... ) (one that contains no nested $(),
+evaluate it as a pure string expression, and replace it with the resulting
+'literal'. Repeat until nothing changes (a fixed point). Because we always fold
+the innermost first, arguments are already plain literals by the time an outer
+expression is evaluated.
+
+Implement three pieces:
+
+1a. A tokenizer for the pure sub-language:
+    tokens = STRING, NUM, '$(' , '@(' , '(' , ')' , ',' , '.' ,
+             IDENT (method names), OP (-f/-join/-as/...), VAR ($x), [Type], EOF
+
+1b. A tiny recursive-descent parser + evaluator ("eval_pure"):
+    - parse a string literal or grouped ( ... )
+    - loop over .Method( args ) applying Insert/Remove/Replace
+    - handle  LEFT -f ARG1,ARG2,...   (format)
+    - handle  -join @( ... )          (concat array)
+    - if you ever hit a VAR, [Type], -as, -bxor, $null, or an unknown method:
+      raise NotPure  --> the caller leaves that $(...) untouched.
+    This is what keeps the DANGEROUS parts (type loads, invocations) symbolic:
+    we only fold things that are provably just string building.
+
+1c. A STRING-AWARE scanner "find_innermost_spans(text)":
+    Walk char by char tracking whether you're inside a '...' literal (respect the
+    '' escape). Track a stack of $( opens and normal ( depth. A $( whose body has
+    no nested $( is "innermost" -> record its (start,end). Never treat ( ) or $(
+    that appear INSIDE a string literal as syntax.
+
+Fold loop:
+    while True:
+        spans = find_innermost_spans(text)
+        for (s,e) in spans sorted right-to-left:      # right-to-left keeps indices valid
+            body = text[s+2 : e-1]
+            try: val = eval_pure(body)
+            except NotPure: continue
+            text = text[:s] + quote(val) + text[e:]    # quote() re-escapes ' as ''
+        stop when a full pass changes nothing
+
+Run it:   python3 fold.py virus_ps1.txt folded1.txt
+Result: ~205 KB collapses to ~12 KB of readable-ish PowerShell.
+
+--------------------------------------------------------------------------------
+ STEP 2 - PHASE B: fold Concat / '+' / Replace chains  (file: fold2.py)
+--------------------------------------------------------------------------------
+Phase A leaves patterns like:
+    [string]::Concat('a','b',...).Replace('x','y')...
+    ('p'+'q'+...).Replace('x','y')...
+These are still pure. Extend the parser with:
+    - '+'  binary string concatenation
+    - a  [string]::Concat( args )  atom  -> "".join(args)
+Then scan for candidate start positions (every "[string]::Concat" and every "('"),
+try to parse the longest pure expression from there, and substitute the literal.
+Loop to a fixed point.
+
+Run it:   python3 fold2.py folded1.txt folded2.txt
+Result: ~5 KB. Now type names, method names, URLs, aliases are all visible.
+
+--------------------------------------------------------------------------------
+ STEP 3 - PHASE C: cosmetic cleanup (a few regex passes)
+--------------------------------------------------------------------------------
+A couple of harmless leftovers remain, e.g.  $([string]::Concat'GetType')  which
+just means 'GetType'. Clean them:
+
+    text = re.sub(r"\[string\]::Concat('(?:[^']|'')*')", r"\1", text)  # ...Concat'X' -> 'X'
+    text = re.sub(r"\$\('([^']*)'\)", r"'\1'", text)                   # $('X')       -> 'X'
+
+Write folded3.txt. Read it. You can now see the full logic:
+  * ETW bypass  (EventProvider m_enabled = 0)
+  * AMSI bypass (AmsiUtils.amsiInitFailed = $true)
+  * Set-Alias ... = Invoke-Expression
+  * a base64+XOR helper function
+  * the final IEX( GZip( base64( helper(BLOB,'d',offset,KEY) ) ) )
+
+--------------------------------------------------------------------------------
+ STEP 4 - PHASE D: decode the embedded payload
+--------------------------------------------------------------------------------
+Read the helper function you deobfuscated and reproduce it EXACTLY in Python.
+For this sample the algorithm is:
+
+    offset = 1                         # = [int]$amsiInitFailed after the bypass
+    KEY    = b'kzWYKApomHlfUdaDPTOe'
+    key    = offset.to_bytes(4,'little') + KEY      # note the 4 prefix bytes -> len 24
+
+    data   = base64_decode(BLOB)                    # mode 'd' path
+    xored  = bytes(data[i] ^ key[(i % len(key)) * offset] for i in range(len(data)))
+    stage2 = xored.decode('utf-8')                  # this is ANOTHER base64 string
+
+    inner  = base64_decode(stage2)
+    final  = gzip.decompress(inner).decode('utf-8') # <-- readable stage-2 PowerShell
+
+IMPORTANT: mirror the exact index math from the deobfuscated code
+(here: (i % keylen) * offset ) and the exact key construction (the 4 prefix bytes
+from BitConverter.GetBytes(offset) come BEFORE the ascii key). Get either wrong and
+you get garbage.
+
+Extract BLOB with a regex from folded3.txt:
+    m = re.search(r"<helperName> '([A-Za-z0-9+/=]+)'", src)
+Write the result to stage2_payload.ps1 and read it.
+
+--------------------------------------------------------------------------------
+ STEP 5 - VERIFY (optional but recommended)
+--------------------------------------------------------------------------------
+Sanity checks that you decoded correctly, not just produced bytes:
+  * stage2 (after XOR) should start with "H4sIA" — that's base64 of the gzip magic
+    bytes 1F 8B 08 (a GZip member). If it doesn't, your XOR key/offset is wrong.
+  * final text should be valid PowerShell (function defs, http(s):// URLs, etc).
+
+--------------------------------------------------------------------------------
+ SAFETY NOTES
+--------------------------------------------------------------------------------
+  * This whole approach is STATIC. You are re-computing pure string math, not
+    executing the sample. Do NOT pipe any of this to PowerShell / iex.
+  * Do NOT fetch the C2 URLs or feed a live envelope to the decryptor.
+  * If a $(...) contains a variable, -as, [Type], $null, or a method call your
+    evaluator doesn't know, LEAVE IT SYMBOLIC. Never guess what an invocation
+    returns — that's exactly the line between "reading" the malware and "running" it.
+
+--------------------------------------------------------------------------------
+ FILE CHECKLIST
+--------------------------------------------------------------------------------
+  fold.py            Phase A  ($(...) folder)
+  fold2.py           Phase B  (Concat/+/Replace folder)
+  cleanup+decode     Phase C+D (small script or notebook cell)
+  folded3.txt        deobfuscated outer stager (human-readable)
+  stage2_payload.ps1 decrypted second-stage loader
+
+================================================================================
+ APPENDIX - MINIMAL PHASE-D DECODER (self-contained, no PowerShell needed)
+================================================================================
+
+    import re, base64, gzip
+
+    src  = open('folded3.txt').read()
+    blob = re.search(r"Ft2R '([A-Za-z0-9+/=]+)'", src).group(1)  # helper name = wKHbqsr1Ft2R
+
+    offset = 1
+    key    = offset.to_bytes(4, 'little') + b'kzWYKApomHlfUdaDPTOe'   # len 24
+
+    data   = base64.b64decode(blob)
+    xored  = bytes(data[i] ^ key[(i % len(key)) * offset] for i in range(len(data)))
+    stage2 = xored.decode('utf-8')                    # expect it to start with 'H4sIA'
+
+    final  = gzip.decompress(base64.b64decode(stage2)).decode('utf-8')
+    open('stage2_payload.ps1', 'w').write(final)
+    print(final)
+
+================================================================================

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -euo pipefail
+
+echo "Welcome to the Repo Viewer!"
+echo "Submit a git bundle to view its README"
+echo "Sample command: git clone <repo_url> . && git bundle create repo.bundle --all && (cat repo.bundle | base64; echo @) | wl-copy"
+echo "Confirm with extra newline after base64 data."
+echo "Input base64-encoded git bundle:"
+read -d @ bundledata
+printf %s "${bundledata}" | base64 -d > /tmp/repo.bundle
+git clone /tmp/repo.bundle .
+
+# lock down less
+eval $(lesspipe)
+cp  /data/.lesskey .lesskey
+
+if [ -L README.md ]; then
+    echo "No funny business!"
+    exit 1
+fi 
+
+less README.md

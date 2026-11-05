@@ -1,0 +1,6 @@
+{"timestamp":0,"category":"jsonfile","name":"load_logins","extra":{"value":"","glean_timestamp":"1743875027682"}}
+{"timestamp":0,"category":"media.playback","name":"first_frame_loaded","extra":{"is_hdr":"false","metadata_loaded_time":"4","is_hardware_decoding":"false","first_frame_loaded_time":"289","glean_timestamp":"1743875028442","total_waiting_data_time":"0","buffering_time":"0","decoder_name":"wmf H264 codec software video decoder - no DXVA, yv12 (RDD remote)","resolution":"V,0<h<=240","playback_type":"Non-MSE playback","video_codec":"video/avc"}}
+{"timestamp":47033,"category":"mail","name":"oauth2_authentication","extra":{"issuer":"accounts.google.com","reason":"no refresh token","result":"succeeded","glean_timestamp":"1743875074715"}}
+{"timestamp":394467,"category":"mail","name":"ui_interaction","extra":{"id":"hdrReplyButton","source":"message-display","glean_timestamp":"1743875422149"}}
+{"timestamp":400874,"category":"mail","name":"ui_interaction","extra":{"glean_timestamp":"1743875428556","source":"message-compose","id":"button-send"}}
+{"timestamp":464214,"category":"mail","name":"ui_interaction","extra":{"source":"toolbox","glean_timestamp":"1743875491896","id":"messenger-window-close-button"}}

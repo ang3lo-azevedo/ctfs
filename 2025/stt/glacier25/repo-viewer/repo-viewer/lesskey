@@ -1,0 +1,13 @@
+#command
+E          noaction
+:e         noaction
+^X^V       noaction
+:x         noaction
+:d         noaction
+-          noaction
+:t         noaction
+s          noaction
+_          noaction
+|          noaction
+v          noaction
+!          noaction

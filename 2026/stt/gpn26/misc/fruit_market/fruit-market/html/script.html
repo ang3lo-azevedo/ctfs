@@ -1,0 +1,28 @@
+<html>
+    <head></head>
+    <body>
+        <pre>
+import socketio
+import requests
+import eth_account
+
+PLATFORM = 'http://localhost:5000/'
+
+sio = socketio.Client()
+account = eth_account.Account.create()
+
+print("Address:", account.address)
+
+requests.post(f'{PLATFORM}/fruit-basket', data={'address': account.address})
+requests.get(f'{PLATFORM}/open')
+
+@sio.on('new_trade')
+def on_msg(data):
+    requests.post(f'{PLATFORM}/submit', data={'rawtx': data['approve']})
+    requests.post(f'{PLATFORM}/submit', data={'rawtx': data['swap']})
+
+sio.connect(f'{PLATFORM}')
+sio.wait()
+        </pre>
+    </body>
+</html>

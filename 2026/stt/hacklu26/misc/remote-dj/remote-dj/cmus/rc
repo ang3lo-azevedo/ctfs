@@ -1,0 +1,10 @@
+set passwd=correct-horse-battery-staple
+
+set mpris=false
+set output_plugin=ao
+set dsp.ao.driver=null
+
+set repeat=true
+set resume=true
+set play_library=false
+set start_view=playlist

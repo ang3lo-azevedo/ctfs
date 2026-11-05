@@ -1,0 +1,40 @@
+Return-Path: <foliveira@hr-system.lab>
+X-Original-To: hbatista@cosmetics-corp.local
+Delivered-To: hbatista@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=hr-system.lab
+Authentication-Results: mail.cosmetics-corp.local;
+	dkim=pass (2048-bit key; unprotected) header.d=hr-system.lab header.i=@hr-system.lab header.a=rsa-sha256 header.s=mail header.b=R3gHbVqR;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=foliveira@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id 3741E260656
+	for <hbatista@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=hr-system.lab;
+	s=mail; t=1771942746;
+	bh=rnT7GR+bEtimtR4efLcARQNXGLT4ZrbK/FlYa62DgCQ=;
+	h=Date:To:From:Subject:From;
+	b=R3gHbVqRiSoKrHKos7/6kZTE4yl7EoWsX+TjxIRVF5vo0XGKqU8abQ7vR8rkT3dzX
+	 LtVXcdUIMqixTO/vjPcRjxp8MmvSpOa7TDIgeWagTXtioKiE75NVeFoC804zLBIg6j
+	 cNCKT/1PNo29aVCfHqtacfFSKQw92w0jTkRaE5WUifse1z48HFNVfIc4wSRAaSUsuX
+	 aEiH1GqMIS0trEkPikPjVquM080REc/mjqVsQuNR6Tjcw8D6UaqzxG7BEqSQ7c7wg5
+	 m1lJDk4g8Ap7DkHbjBuB/bPKpwj4NCD3xGaUv1LwY47zi3umK+JXIorWnPEMz7W7Pq
+	 4l9Mvf0wnD+IQ==
+X-Comment: SPF check N/A for local connections - client-ip=127.0.0.1; helo=mail.hr-system.local; envelope-from=foliveira@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.local (localhost [127.0.0.1])
+	by mail.hr-system.lab (Postfix) with ESMTP id 26F70260719
+	for <hbatista@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:19:06 +0000
+To: hbatista@cosmetics-corp.local
+From: foliveira@hr-system.lab
+Subject: Pendência contratual - Cláusula de SLA
+Message-Id: <20260224141906.005879@mail.hr-system.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados,
+
+Com base nos relatórios do último trimestre, identificamos que o nível de serviço acordado (SLA de 99,5%) não foi atingido em dois meses consecutivos.
+
+Solicitamos uma reunião para discutir as causas e as medidas corretivas previstas em contrato.
+
+Jurídico / Gestão de Contratos.
+

@@ -1,0 +1,14 @@
+{
+  "name": "unreel-admin-bot",
+  "private": true,
+  "version": "1.0.0",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "4.21.2",
+    "puppeteer-core": "22.15.0"
+  }
+}

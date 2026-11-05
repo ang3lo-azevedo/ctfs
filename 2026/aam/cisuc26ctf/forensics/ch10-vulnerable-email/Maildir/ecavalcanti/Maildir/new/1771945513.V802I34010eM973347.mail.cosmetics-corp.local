@@ -1,0 +1,25 @@
+Return-Path: <sguimaraes@cosmetics-corp.local>
+X-Original-To: ecavalcanti@cosmetics-corp.local
+Delivered-To: ecavalcanti@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=sguimaraes@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id E9942260656
+	for <ecavalcanti@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:13 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:13 +0000
+To: ecavalcanti@cosmetics-corp.local
+From: sguimaraes@cosmetics-corp.local
+Subject: Benefício: convênio com academia parceira
+Message-Id: <20260224150513.006003@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados colaboradores,
+
+Ampliamos nosso convênio de academia. Agora são 12 unidades parceiras disponíveis na cidade com desconto de até 40% para colaboradores e dependentes.
+
+Consulte a lista atualizada no portal de benefícios e apresente seu crachá corporativo na academia escolhida.
+
+Departamento de Pessoas.
+

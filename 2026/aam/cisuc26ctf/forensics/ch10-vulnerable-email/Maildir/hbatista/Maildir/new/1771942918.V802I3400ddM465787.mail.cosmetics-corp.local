@@ -1,0 +1,31 @@
+Return-Path: <mmelo@cosmetics-corp.local>
+X-Original-To: hbatista@cosmetics-corp.local
+Delivered-To: hbatista@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=mmelo@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id 5C1C7260656
+	for <hbatista@cosmetics-corp.local>; Tue, 24 Feb 2026 14:21:58 +0000 (UTC)
+Authentication-Results: mail.hr-system.lab; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.hr-system.lab; dkim=none; dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=mmelo@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (unknown [192.168.80.21])
+	by mail.hr-system.lab (Postfix) with ESMTP id 0C501260719
+	for <hbatista@cosmetics-corp.local>; Tue, 24 Feb 2026 14:21:58 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:21:57 +0000
+To: hbatista@cosmetics-corp.local
+From: mmelo@cosmetics-corp.local
+Subject: Reunião de alinhamento semanal
+Message-Id: <20260224142157.005092@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Olá equipe,
+
+Lembro a todos que nossa reunião semanal de alinhamento acontecerá nesta sexta-feira às 10h, na sala de reuniões 2.
+
+Por favor, venham preparados com os updates das suas respectivas áreas.
+
+Atenciosamente.
+

@@ -1,0 +1,21 @@
+Title: Miletus
+
+This archive contains a real malware sample. Do not execute it outside a
+properly isolated malware-analysis environment.
+
+Questions:
+1. What is the URL where the scripts are invoked, including the password present in the script?
+2. What is the unusual hexadecimal number appended to the URL?
+3. What standard padding syntax is used for the encrypted data?
+4. What are the names of the two manually implemented functions used by the main cryptographic function? Use First_Second or Second_First.
+5. How many variables does the function involved in question 2 use, counting repeated variables?
+6. What malware family is involved?
+
+Submit the final flag through rCTF.
+
+1. https://gloason.com/white/lrau20bdzx/16k3g6c0pwnj
+2. HWID
+3. PKCS7
+4. PBKDF2SHA256_ConstEq
+5. 8
+6. WLDR C2

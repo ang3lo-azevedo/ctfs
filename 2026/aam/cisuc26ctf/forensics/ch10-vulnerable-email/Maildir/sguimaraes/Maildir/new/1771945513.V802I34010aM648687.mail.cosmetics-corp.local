@@ -1,0 +1,27 @@
+Return-Path: <kcosta@cosmetics-corp.local>
+X-Original-To: sguimaraes@cosmetics-corp.local
+Delivered-To: sguimaraes@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=kcosta@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id 9BDEA260656
+	for <sguimaraes@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:13 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:13 +0000
+To: sguimaraes@cosmetics-corp.local
+From: kcosta@cosmetics-corp.local
+Subject: Treinamento de integração: novos colaboradores
+Message-Id: <20260224150513.005935@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Olá,
+
+Os colaboradores admitidos neste mês devem comparecer ao treinamento de integração na próxima segunda-feira, das 09h às 17h, na sala de treinamentos – 3º andar.
+
+Almoço será fornecido pela empresa.
+
+Certifiquem-se de levar documento de identificação e crachá provisório.
+
+RH – Integração.
+

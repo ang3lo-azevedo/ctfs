@@ -1,0 +1,27 @@
+Return-Path: <nrocha@cosmetics-corp.local>
+X-Original-To: ecavalcanti@cosmetics-corp.local
+Delivered-To: ecavalcanti@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dkim=none;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.21; helo=mail.cosmetics-corp.local; envelope-from=nrocha@cosmetics-corp.local; receiver=cosmetics-corp.local 
+Received: from mail.cosmetics-corp.local (mail.cosmetics-corp.local [192.168.80.21])
+	by mail.cosmetics-corp.local (Postfix) with ESMTP id 761D3260656
+	for <ecavalcanti@cosmetics-corp.local>; Tue, 24 Feb 2026 15:05:13 +0000 (UTC)
+Date: Tue, 24 Feb 2026 15:05:13 +0000
+To: ecavalcanti@cosmetics-corp.local
+From: nrocha@cosmetics-corp.local
+Subject: Comunicado: revisão do organograma da empresa
+Message-Id: <20260224150513.005901@mail.cosmetics-corp.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Olá equipe,
+
+Informamos que o organograma corporativo foi atualizado após reestruturação de algumas áreas.
+
+O documento revisado está disponível na intranet, seção Institucional > Estrutura Organizacional.
+
+Qualquer dúvida sobre as mudanças, fale com seu gestor ou com o RH.
+
+Diretoria Administrativa.
+

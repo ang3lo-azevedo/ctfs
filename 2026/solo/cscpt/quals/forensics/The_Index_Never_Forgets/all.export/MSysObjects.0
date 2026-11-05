@@ -1,0 +1,807 @@
+ObjidTable	Type	Id	ColtypOrPgnoFDP	SpaceUsage	Flags	PagesOrLocale	RootFlag	RecordOffset	LCMapFlags	KeyMost	LVChunkMax	Name	Stats	TemplateTable	DefaultValue	KeyFldIDs	VarSegMac	ConditionalColumns	TupleLimits	Version	SortID	CallbackData	CallbackDependencies	SeparateLV	SpaceHints	SpaceDeferredLVHints	LocaleName
+2	1	2	4	80	-1073741824	20	true					MSysObjects															
+2	2	1	4	4	1	1252	true	4				ObjidTable															
+2	2	2	3	2	1	1252	true	4				Type															
+2	2	3	4	4	1	1252	true	4				Id															
+2	2	4	4	4	1	1252	true	4				ColtypOrPgnoFDP															
+2	2	5	4	4	1	1252	true	4				SpaceUsage															
+2	2	6	4	4	1	1252	true	4				Flags															
+2	2	7	4	4	1	1252	true	4				PagesOrLocale															
+2	2	8	1	1	0	1252	true	4				RootFlag															
+2	2	9	3	2	0	1252	true	4				RecordOffset															
+2	2	10	4	4	0	1252	true	4				LCMapFlags															
+2	2	11	17	2	0	1252	true	4				KeyMost															
+2	2	12	4	4	0	1252	true	4				LVChunkMax															
+2	2	128	10	255	1	1252						Name															
+2	2	129	9	255	0	1252						Stats															
+2	2	130	10	255	0	1252						TemplateTable															
+2	2	131	9	255	0	1252						DefaultValue															
+2	2	132	9	255	0	1252						KeyFldIDs															
+2	2	133	9	255	0	1252						VarSegMac															
+2	2	134	9	255	0	1252						ConditionalColumns															
+2	2	135	9	255	0	1252						TupleLimits															
+2	2	136	9	255	0	1252						Version															
+2	2	137	9	255	0	1252						SortID															
+2	2	256	11	0	0	1252						CallbackData															
+2	2	257	11	0	0	1252						CallbackDependencies															
+2	2	258	11	0	0	1252						SeparateLV															
+2	2	259	11	0	0	1252						SpaceHints															
+2	2	260	11	0	0	1252						SpaceDeferredLVHints															
+2	2	261	11	0	0	1252						LocaleName															
+2	3	2	4	80	65585	0	true	10794	197633			Id				000001000000020000000300											65006e002d0055005300
+2	3	4	7	80	65553	0	true	10794	197633			Name				000001000000020000008000											65006e002d0055005300
+2	3	5	10	80	65545	0	true	10794	197633			RootObjects				0000080000008000											65006e002d0055005300
+3	1	3	24	80	-1073741824	5	true					MSysObjectsShadow															
+3	2	1	4	4	1	1252	true	4				ObjidTable															
+3	2	2	3	2	1	1252	true	4				Type															
+3	2	3	4	4	1	1252	true	4				Id															
+3	2	4	4	4	1	1252	true	4				ColtypOrPgnoFDP															
+3	2	5	4	4	1	1252	true	4				SpaceUsage															
+3	2	6	4	4	1	1252	true	4				Flags															
+3	2	7	4	4	1	1252	true	4				PagesOrLocale															
+3	2	8	1	1	0	1252	true	4				RootFlag															
+3	2	9	3	2	0	1252	true	4				RecordOffset															
+3	2	10	4	4	0	1252	true	4				LCMapFlags															
+3	2	11	17	2	0	1252	true	4				KeyMost															
+3	2	12	4	4	0	1252	true	4				LVChunkMax															
+3	2	128	10	255	1	1252						Name															
+3	2	129	9	255	0	1252						Stats															
+3	2	130	10	255	0	1252						TemplateTable															
+3	2	131	9	255	0	1252						DefaultValue															
+3	2	132	9	255	0	1252						KeyFldIDs															
+3	2	133	9	255	0	1252						VarSegMac															
+3	2	134	9	255	0	1252						ConditionalColumns															
+3	2	135	9	255	0	1252						TupleLimits															
+3	2	136	9	255	0	1252						Version															
+3	2	137	9	255	0	1252						SortID															
+3	2	256	11	0	0	1252						CallbackData															
+3	2	257	11	0	0	1252						CallbackDependencies															
+3	2	258	11	0	0	1252						SeparateLV															
+3	2	259	11	0	0	1252						SpaceHints															
+3	2	260	11	0	0	1252						SpaceDeferredLVHints															
+3	2	261	11	0	0	1252						LocaleName															
+3	3	3	24	80	65585	0	true	10794	197633			Id				000001000000020000000300											65006e002d0055005300
+6	1	6	29	100	-939524096	0	true					MSysObjids															
+6	2	256	4	4	0	0						objid															
+6	2	257	4	4	0	0						objidTable															
+6	2	258	3	2	0	0						type															
+6	3	6	29	100	65583	0	true	10794	197633			primary				00000001											65006e002d0055005300
+7	1	7	30	92	-2013265920	0	true					MSysLocales															
+7	2	1	2	1	1	0	true	4				Type															
+7	2	2	4	4	48	0	true	5				iValue			00000000												
+7	2	128	9	255	0	0						Key															
+7	3	7	30	92	81967	0	true	10794	197633			KeyPrimary				00008000											65006e002d0055005300
+8	1	8	31	100	0	0	true					CatalogManager_Properties															
+8	2	1	4	4	0	0	true	4				IndexID															
+8	2	2	4	4	0	0	true	8				PropertyID															
+8	2	256	11	2147483647	0	0						Property															
+8	3	8	31	100	65583	0	true	10794	197633			IDX_PropertyTable_Primary				0000010000000200											65006e002d0055005300
+9	1	9	32	100	0	0	true					CatalogStorageManager															
+9	2	1	4	4	4	0	true	4				CatalogID															
+9	2	2	4	4	16	0	true	8				IsDeleted			00000000												
+9	2	256	10	255	0	1252						CatalogName															
+9	3	9	32	100	65583	0	true	10794	197633			CatalogManagerIdx				0000000100000100											65006e002d0055005300
+10	1	10	33	100	0	0	true					SystemIndex_Gthr															
+10	2	1	14	4	1	0	true	4				ScopeID															
+10	2	2	14	4	1	0	true	8				DocumentID															
+10	2	3	14	4	0	0	true	12				SDID															
+10	2	4	9	8	0	0	true	16				LastModified															
+10	2	5	4	4	0	0	true	24				TransactionFlags															
+10	2	6	4	4	0	0	true	28				TransactionExtendedFlags															
+10	2	7	4	4	0	0	true	32				CrawlNumberCrawled															
+10	2	8	17	2	0	0	true	36				StartAddressIdentifier															
+10	2	9	2	1	0	0	true	38				Priority															
+10	2	256	12	1024	4096	1200						FileName															
+10	2	257	11	26214400	4096	0						UserData															
+10	2	258	14	4	0	0						AppOwnerId															
+10	2	259	9	68	8	0						RequiredSIDs															
+10	2	260	4	4	0	0						DeletedCount															
+10	2	261	14	4	0	0						RunTime															
+10	2	262	2	1	0	0						FailureUpdateAttempts															
+10	2	263	14	4	0	0						ClientID															
+10	2	264	14	4	0	0						LastRequestedRunTime															
+10	2	265	12	260	4096	1200						StorageProviderId															
+10	2	266	14	4	0	0						CalculatedPropertyFlags															
+10	3	10	33	80	83055	0	true	10794	1040	2000		indexUrl				0000010000000001				0503060005030600	01000000ee575c1e00b4d0000bb1e11e						65006e002d0055005300
+10	3	11	37	80	65614	0	true	10794	197633	2000		indexDocID				00000200											65006e002d0055005300
+10	3	12	38	80	65728	0	true	10794	197633	2000		indexRecovery				00000301		00000900									65006e002d0055005300
+10	4	68	197	100	0	1						LV															
+13	1	13	39	100	0	0	true					SystemIndex_GthrPth															
+13	2	1	14	4	0	0	true	4				Scope															
+13	2	2	14	4	0	0	true	8				Parent															
+13	2	256	12	2000	4096	1200						Name															
+13	3	13	39	80	65647	0	true	10794	1040	5		IndexScope				00000100											65006e002d0055005300
+14	1	14	40	100	0	0	true					SystemIndex_GthrAppOwner															
+14	2	1	14	4	1	0	true	4				OwnerId															
+14	2	128	10	128	1	1200						UserSid															
+14	2	256	12	260	4097	1200						AppUserModelId															
+14	3	14	40	80	65647	0	true	10794	1040	5		IndexOwnerId				00000100											65006e002d0055005300
+15	1	15	41	100	0	0	true					SystemIndex_1_Properties															
+15	2	1	4	4	0	0	true	4				IndexID															
+15	2	2	4	4	0	0	true	8				PropertyID															
+15	2	256	11	2147483647	0	0						Property															
+15	3	15	41	100	65583	0	true	10794	197633			IDX_PropertyTable_Primary				0000010000000200											65006e002d0055005300
+15	4	18	52	100	0	1						LV															
+16	1	16	42	100	0	0	true					SystemIndex_1															
+16	2	1	4	4	4	0	true	4				IndexID															
+16	2	256	11	5104	0	0						IndexDescription															
+16	3	16	42	100	65583	0	true	10794	197633			IDX_IndexManagerTable_Primary				00000100											65006e002d0055005300
+16	4	19	70	100	0	1						LV															
+17	1	17	43	80	0	0	true					SystemIndex_PropertyStore															
+17	2	1	14	4	1	0	true	4				WorkID															
+17	2	2	4	4	0	0	true	8				27F-System_Search_Rank															
+17	2	3	9	8	0	0	true	12				4631F-System_Search_GatherTime															
+17	2	4	9	8	0	0	true	20				13F-System_Size															
+17	2	5	14	4	0	0	true	28				14F-System_FileAttributes															
+17	2	6	9	8	0	0	true	32				15F-System_DateModified															
+17	2	7	9	8	0	0	true	40				16F-System_DateCreated															
+17	2	8	9	8	0	0	true	48				17F-System_DateAccessed															
+17	2	9	9	16	0	0	true	56				0F-InvertedOnlyMD5															
+17	2	256	11	512	4096	0						4703-System_Null															
+17	2	257	12	512	4096	1200						4583-System_Photo_GainControlText															
+17	2	258	12	512	4096	1200						4224-System_Contact_BusinessHomePage															
+17	2	259	1	1	0	0						4435-System_IsIncomplete															
+17	2	260	12	512	4096	1200						4449-System_ItemSubType															
+17	2	261	14	4	0	0						4412-System_History_SelectionCount															
+17	2	262	12	512	4096	1200						4413-System_History_TargetUrlHostName															
+17	2	263	14	4	0	0						4622-System_SDID															
+17	2	264	1	1	0	0						4359-System_DRM_IsProtected															
+17	2	265	12	256	4096	1200						4345-System_Contact_SpouseName															
+17	2	266	1	1	0	0						4358-System_DRM_IsDisabled															
+17	2	267	9	8	0	0						4361-System_DateAcquired															
+17	2	268	1	1	0	0						4434-System_IsFolder															
+17	2	269	11	5120	4096	0						4513-System_Message_BccAddress															
+17	2	270	12	512	4096	1200						4472-System_MIMEType															
+17	2	271	1	1	0	0						4430-System_IsDeleted															
+17	2	272	14	4	0	0						4397-System_FilePlaceholderStatus															
+17	2	273	12	512	4096	1200						4660-System_StorageProviderFileIdentifier															
+17	2	274	11	5120	4096	0						4514-System_Message_BccName															
+17	2	275	12	512	4096	1200						4661-System_StorageProviderFileVersion															
+17	2	276	11	5120	4096	0						4515-System_Message_CcAddress															
+17	2	277	12	512	4096	1200						4407-System_GPS_LatitudeRef															
+17	2	278	11	10240	4096	0						4370-System_Document_Contributor															
+17	2	279	4	4	0	0						28-System_Search_HitCount															
+17	2	280	11	5120	4096	0						4516-System_Message_CcName															
+17	2	281	12	2048	4096	1200						4256-System_Contact_HomeAddress1Street															
+17	2	282	14	4	0	0						4624-System_Search_AccessCount															
+17	2	283	12	65536	4096	1200						4440-System_ItemFolderPathDisplay															
+17	2	284	12	2048	4096	1200						4253-System_Contact_HomeAddress1Locality															
+17	2	285	12	256	4096	1200						4241-System_Contact_EmailAddress2															
+17	2	286	12	65536	4096	1200						4447-System_ItemPathDisplay															
+17	2	287	12	2048	4096	1200						4255-System_Contact_HomeAddress1Region															
+17	2	288	7	8	0	0						4633-System_Search_LastIndexedTotalTime															
+17	2	289	12	2048	4096	1200						4252-System_Contact_HomeAddress1Country															
+17	2	290	12	2048	4096	1200						4254-System_Contact_HomeAddress1PostalCode															
+17	2	291	12	512	4096	1200						4174-System_Communication_AccountName															
+17	2	292	12	65536	4096	1200						33-System_ItemUrl															
+17	2	293	1	1	0	0						4436-System_IsRead															
+17	2	294	12	2048	4096	1200						4261-System_Contact_HomeAddress2Street															
+17	2	295	11	10240	4096	0						4237-System_Contact_DisplayHomePhoneNumbers															
+17	2	296	4	4	0	0						4426-System_Importance															
+17	2	297	12	65536	4096	1200						34-System_ContentUrl															
+17	2	298	12	512	4096	1200						4301-System_Contact_JobTitle															
+17	2	299	12	2048	4096	1200						4258-System_Contact_HomeAddress2Locality															
+17	2	300	11	5120	4096	0						4446-System_ItemParticipants															
+17	2	301	4	4	0	0						4400-System_FlagStatus															
+17	2	302	12	512	4096	1200						4308-System_Contact_OfficeLocation															
+17	2	303	12	2048	4096	1200						4260-System_Contact_HomeAddress2Region															
+17	2	304	11	5120	4096	0						4522-System_Message_FromAddress															
+17	2	305	12	2048	4096	1200						4257-System_Contact_HomeAddress2Country															
+17	2	306	11	5120	4096	0						4523-System_Message_FromName															
+17	2	307	12	2048	4096	1200						4259-System_Contact_HomeAddress2PostalCode															
+17	2	308	12	2048	4096	1200						4539-System_Music_AlbumID															
+17	2	309	12	512	4096	1200						4531-System_Message_Store															
+17	2	310	12	2048	4096	1200						4266-System_Contact_HomeAddress3Street															
+17	2	311	11	5120	4096	0						4532-System_Message_ToAddress															
+17	2	312	12	2048	4096	1200						4263-System_Contact_HomeAddress3Locality															
+17	2	313	12	512	4096	1200						4580-System_Photo_FlashText															
+17	2	314	11	5120	4096	0						4535-System_Message_ToName															
+17	2	315	12	2048	4096	1200						4265-System_Contact_HomeAddress3Region															
+17	2	316	12	65536	4096	1200						4349-System_Contact_WebPage															
+17	2	317	12	512	4096	1200						4337-System_Contact_PrimaryAddressCountry															
+17	2	318	12	2048	4096	1200						4262-System_Contact_HomeAddress3Country															
+17	2	319	9	8	0	0						4520-System_Message_DateSent															
+17	2	320	12	2048	4096	1200						4264-System_Contact_HomeAddress3PostalCode															
+17	2	321	12	512	4096	1200						4676-System_Task_CompletionStatus															
+17	2	322	9	8	0	0						4519-System_Message_DateReceived															
+17	2	323	12	512	4096	1200						4226-System_Contact_CallbackTelephone															
+17	2	324	12	2048	4096	1200						4205-System_Contact_BusinessAddress1Street															
+17	2	325	11	10240	4096	0						4512-System_Message_AttachmentNames															
+17	2	326	12	2048	4096	1200						4202-System_Contact_BusinessAddress1Locality															
+17	2	327	11	10240	4096	0						45-System_Search_QueryPropertyHits															
+17	2	328	7	8	0	0						4576-System_Photo_ExposureTime															
+17	2	329	12	512	4096	1200						4286-System_Contact_JobInfo1YomiCompanyName															
+17	2	330	12	2048	4096	1200						4204-System_Contact_BusinessAddress1Region															
+17	2	331	12	4096	4096	1200						4188-System_ConnectedSearch_JumpList															
+17	2	332	12	512	4096	1200						46-System_Search_Completion															
+17	2	333	12	512	4096	1200						4340-System_Contact_PrimaryAddressState															
+17	2	334	12	512	4096	1200						4281-System_Contact_JobInfo1CompanyName															
+17	2	335	12	2048	4096	1200						4201-System_Contact_BusinessAddress1Country															
+17	2	336	12	4096	4096	1200						4192-System_ConnectedSearch_VoiceCommandExamples															
+17	2	337	12	2048	4096	1200						4285-System_Contact_JobInfo1Title															
+17	2	338	12	2048	4096	1200						4203-System_Contact_BusinessAddress1PostalCode															
+17	2	339	7	8	0	0						4577-System_Photo_FNumber															
+17	2	340	12	512	4096	1200						4284-System_Contact_JobInfo1OfficeLocation															
+17	2	341	12	512	4096	1200						4275-System_Contact_HomeTelephone															
+17	2	342	12	2048	4096	1200						4210-System_Contact_BusinessAddress2Street															
+17	2	343	12	2048	4096	1200						4283-System_Contact_JobInfo1Manager															
+17	2	344	12	2048	4096	1200						4207-System_Contact_BusinessAddress2Locality															
+17	2	345	12	512	4096	1200						4282-System_Contact_JobInfo1Department															
+17	2	346	12	2048	4096	1200						4209-System_Contact_BusinessAddress2Region															
+17	2	347	12	256	4096	1200						4396-System_FileOwner															
+17	2	348	12	512	4096	1200						4293-System_Contact_JobInfo2YomiCompanyName															
+17	2	349	12	2048	4096	1200						4206-System_Contact_BusinessAddress2Country															
+17	2	350	12	256	4096	1200						4530-System_Message_SenderName															
+17	2	351	12	512	4096	1200						4288-System_Contact_JobInfo2CompanyName															
+17	2	352	12	2048	4096	1200						4208-System_Contact_BusinessAddress2PostalCode															
+17	2	353	12	512	4096	1200						4170-System_Calendar_ShowTimeAsText															
+17	2	354	12	512	4096	1200						4343-System_Contact_PrimaryTelephone															
+17	2	355	12	512	4096	1200						4304-System_Contact_MailingAddress															
+17	2	356	12	2048	4096	1200						4292-System_Contact_JobInfo2Title															
+17	2	357	12	2048	4096	1200						4215-System_Contact_BusinessAddress3Street															
+17	2	358	12	512	4096	1200						4291-System_Contact_JobInfo2OfficeLocation															
+17	2	359	12	2048	4096	1200						4212-System_Contact_BusinessAddress3Locality															
+17	2	360	12	2048	4096	1200						4214-System_Contact_BusinessAddress3Region															
+17	2	361	12	512	4096	1200						4347-System_Contact_TTYTDDTelephone															
+17	2	362	12	2048	4096	1200						4290-System_Contact_JobInfo2Manager															
+17	2	363	12	2048	4096	1200						4211-System_Contact_BusinessAddress3Country															
+17	2	364	14	4	0	0						4422-System_Image_HorizontalSize															
+17	2	365	12	512	4096	1200						4289-System_Contact_JobInfo2Department															
+17	2	366	12	2048	4096	1200						4213-System_Contact_BusinessAddress3PostalCode															
+17	2	367	12	512	4096	1200						4604-System_ProviderItemID															
+17	2	368	12	512	4096	1200						4588-System_Photo_MeteringModeText															
+17	2	369	12	256	4096	1200						4463-System_Link_FeedItemLocalId															
+17	2	370	14	4	0	0						4424-System_Image_VerticalSize															
+17	2	371	12	2048	4096	1200						4314-System_Contact_OtherAddress1Street															
+17	2	372	12	512	4096	1200						4300-System_Contact_JobInfo3YomiCompanyName															
+17	2	373	12	512	4096	1200						4647-System_Shell_OmitFromView															
+17	2	374	12	512	4096	1200						4484-System_Media_DateReleased															
+17	2	375	12	512	4096	1200						4427-System_ImportanceText															
+17	2	376	7	8	0	0						4421-System_Image_HorizontalResolution															
+17	2	377	12	2048	4096	1200						4311-System_Contact_OtherAddress1Locality															
+17	2	378	12	512	4096	1200						4295-System_Contact_JobInfo3CompanyName															
+17	2	379	16	16	0	0						4171-System_CameraRollDeduplicationId															
+17	2	380	7	8	0	0						4423-System_Image_VerticalResolution															
+17	2	381	12	2048	4096	1200						4313-System_Contact_OtherAddress1Region															
+17	2	382	12	2048	4096	1200						4299-System_Contact_JobInfo3Title															
+17	2	383	12	512	4096	1200						4469-System_Link_TargetUrlHostName															
+17	2	384	14	4	0	0						4417-System_Image_BitDepth															
+17	2	385	12	2048	4096	1200						4310-System_Contact_OtherAddress1Country															
+17	2	386	12	512	4096	1200						4298-System_Contact_JobInfo3OfficeLocation															
+17	2	387	14	4	0	0						4549-System_Music_DiscNumber															
+17	2	388	12	4168	4096	1200						4470-System_Link_TargetUrlPath															
+17	2	389	12	2048	4096	1200						4312-System_Contact_OtherAddress1PostalCode															
+17	2	390	12	2048	4096	1200						4297-System_Contact_JobInfo3Manager															
+17	2	391	12	512	4096	1200						4269-System_Contact_HomeAddressPostOfficeBox															
+17	2	392	9	8	0	0						4362-System_DateArchived															
+17	2	393	12	512	4096	1200						4336-System_Contact_PrimaryAddressCity															
+17	2	394	12	2048	4096	1200						4319-System_Contact_OtherAddress2Street															
+17	2	395	12	512	4096	1200						4306-System_Contact_MobileTelephone															
+17	2	396	12	512	4096	1200						4296-System_Contact_JobInfo3Department															
+17	2	397	14	4	0	0						4599-System_Photo_WhiteBalance															
+17	2	398	12	2048	4096	1200						4316-System_Contact_OtherAddress2Locality															
+17	2	399	12	512	4096	1200						4280-System_Contact_JobInfo1CompanyAddress															
+17	2	400	12	512	4096	1200						4401-System_FlagStatusText															
+17	2	401	12	2048	4096	1200						4318-System_Contact_OtherAddress2Region															
+17	2	402	12	512	4096	1200						4287-System_Contact_JobInfo2CompanyAddress															
+17	2	403	12	512	4096	1200						4151-System_Audio_Format															
+17	2	404	14	4	0	0						4489-System_Media_FrameCount															
+17	2	405	9	8	0	0						4486-System_Media_Duration															
+17	2	406	12	2048	4096	1200						4315-System_Contact_OtherAddress2Country															
+17	2	407	12	512	4096	1200						4420-System_Image_Dimensions															
+17	2	408	12	2048	4096	1200						4317-System_Contact_OtherAddress2PostalCode															
+17	2	409	12	512	4096	1200						4294-System_Contact_JobInfo3CompanyAddress															
+17	2	410	14	4	0	0						4150-System_Audio_EncodingBitrate															
+17	2	411	4	4	0	0						4533-System_Message_ToDoFlags															
+17	2	412	12	512	4096	1200						4350-System_Contact_Webpage2															
+17	2	413	12	2048	4096	1200						4324-System_Contact_OtherAddress3Street															
+17	2	414	14	4	0	0						4153-System_Audio_SampleRate															
+17	2	415	12	512	4096	1200						4351-System_Contact_Webpage3															
+17	2	416	12	2048	4096	1200						4321-System_Contact_OtherAddress3Locality															
+17	2	417	14	4	0	0						4154-System_Audio_SampleSize															
+17	2	418	12	2048	4096	1200						4323-System_Contact_OtherAddress3Region															
+17	2	419	14	4	0	0						4149-System_Audio_ChannelCount															
+17	2	420	12	2048	4096	1200						4320-System_Contact_OtherAddress3Country															
+17	2	421	12	2048	4096	1200						4322-System_Contact_OtherAddress3PostalCode															
+17	2	422	9	8	0	0						4389-System_EndDate															
+17	2	423	12	512	4096	1200						4699-System_Video_StreamName															
+17	2	424	14	4	0	0						4693-System_Video_FrameWidth															
+17	2	425	11	10240	4096	0						4572-System_Photo_Event															
+17	2	426	9	8	0	0						4404-System_GPS_Date															
+17	2	427	9	8	0	0						4199-System_Contact_Birthday															
+17	2	428	14	4	0	0						4691-System_Video_FrameHeight															
+17	2	429	12	256	4096	1200						4342-System_Contact_PrimaryEmailAddress															
+17	2	430	12	512	4096	1200						4274-System_Contact_HomeFaxNumber															
+17	2	431	14	4	0	0						4692-System_Video_FrameRate															
+17	2	432	14	4	0	0						4689-System_Video_EncodingBitrate															
+17	2	433	12	512	4096	1200						4270-System_Contact_HomeAddressPostalCode															
+17	2	434	12	256	4096	1200						4247-System_Contact_FullName															
+17	2	435	14	4	0	0						4698-System_Video_SampleSize															
+17	2	436	12	512	4096	1200						4218-System_Contact_BusinessAddressPostOfficeBox															
+17	2	437	12	512	4096	1200						4687-System_Video_Compression															
+17	2	438	1	1	0	0						4157-System_Calendar_IsOnline															
+17	2	439	12	512	4096	1200						4410-System_GPS_LongitudeRef															
+17	2	440	17	2	0	0						4601-System_Priority															
+17	2	441	12	512	4096	1200						4564-System_ParentalRatingReason															
+17	2	442	9	8	0	0						4365-System_DateImported															
+17	2	443	12	512	4096	1200						4232-System_Contact_ConnectedServiceName															
+17	2	444	12	512	4096	1200						4658-System_Status															
+17	2	445	11	10240	4096	0						4668-System_Supplemental_AlbumID															
+17	2	446	1	1	0	0						4524-System_Message_HasAttachments															
+17	2	447	1	1	0	0						4178-System_Communication_HeaderItem															
+17	2	448	12	512	4096	1200						4671-System_Supplemental_ResourceId															
+17	2	449	11	10240	4096	0						4672-System_Supplemental_Tag															
+17	2	450	14	4	0	0						4605-System_Rating															
+17	2	451	12	512	4096	1200						4428-System_InvalidPathValue															
+17	2	452	11	10240	4096	0						4669-System_Supplemental_Location															
+17	2	453	4	4	0	0						4177-System_Communication_FollowupIconIndex															
+17	2	454	11	10240	4096	0						4667-System_Supplemental_Album															
+17	2	455	12	512	4096	1200						4355-System_Copyright															
+17	2	456	11	10240	4096	0						4670-System_Supplemental_Person															
+17	2	457	12	512	4096	1200						4267-System_Contact_HomeAddressCity															
+17	2	458	12	512	4096	1200						4474-System_Media_ClassPrimaryID															
+17	2	459	12	512	4096	1200						4223-System_Contact_BusinessFaxNumber															
+17	2	460	12	512	4096	1200						4475-System_Media_ClassSecondaryID															
+17	2	461	9	8	0	0						4483-System_Media_DateEncoded															
+17	2	462	12	512	4096	1200						4482-System_Media_DVDID															
+17	2	463	12	512	4096	1200						4461-System_Link_Arguments															
+17	2	464	12	512	4096	1200						4330-System_Contact_OtherAddressStreet															
+17	2	465	12	512	4096	1200						4490-System_Media_MCDI															
+17	2	466	12	512	4096	1200						4333-System_Contact_PersonalTitle															
+17	2	467	12	512	4096	1200						4491-System_Media_MetadataContentProvider															
+17	2	468	12	512	4096	1200						4478-System_Media_ContentDistributor															
+17	2	469	12	256	4096	1200						4305-System_Contact_MiddleName															
+17	2	470	11	5120	4096	0						4545-System_Music_Composer															
+17	2	471	11	5120	4096	0						4688-System_Video_Director															
+17	2	472	12	512	4096	1200						4346-System_Contact_Suffix															
+17	2	473	12	512	4096	1200						4563-System_ParentalRating															
+17	2	474	17	2	0	0						4398-System_FlagColor															
+17	2	475	12	256	4096	1200						4307-System_Contact_NickName															
+17	2	476	17	2	0	0						4181-System_Communication_TaskStatus															
+17	2	477	11	5120	4096	0						4492-System_Media_Producer															
+17	2	478	12	512	4096	1200						4335-System_Contact_Prefix															
+17	2	479	11	5120	4096	0						4508-System_Media_Writer															
+17	2	480	9	8	0	0						4617-System_RecordedTV_OriginalBroadcastDate															
+17	2	481	12	512	4096	1200						4476-System_Media_CollectionGroupID															
+17	2	482	14	4	0	0						4152-System_Audio_PeakValue															
+17	2	483	12	512	4096	1200						4477-System_Media_CollectionID															
+17	2	484	12	512	4096	1200						4561-System_Note_ColorText															
+17	2	485	12	512	4096	1200						4479-System_Media_ContentID															
+17	2	486	12	512	4096	1200						4621-System_RecordedTV_StationName															
+17	2	487	12	512	4096	1200						4480-System_Media_CreatorApplication															
+17	2	488	12	512	4096	1200						4481-System_Media_CreatorApplicationVersion															
+17	2	489	1	1	0	0						4433-System_IsFlaggedComplete															
+17	2	490	12	512	4096	1200						4496-System_Media_Publisher															
+17	2	491	12	512	4096	1200						4557-System_Music_Period															
+17	2	492	12	65536	4096	1200						4465-System_Link_TargetParsingPath															
+17	2	493	14	4	0	0						4694-System_Video_HorizontalAspectRatio															
+17	2	494	12	256	4096	1200						4197-System_Contact_AssistantName															
+17	2	495	14	4	0	0						4700-System_Video_TotalBitrate															
+17	2	496	12	65536	4096	1200						4507-System_Media_UserWebUrl															
+17	2	497	14	4	0	0						4690-System_Video_FourCC															
+17	2	498	12	512	4096	1200						4505-System_Media_UniqueFileIdentifier															
+17	2	499	14	4	0	0						4701-System_Video_VerticalAspectRatio															
+17	2	500	12	512	4096	1200						4487-System_Media_EncodedBy															
+17	2	501	12	512	4096	1200						4332-System_Contact_PagerTelephone															
+17	2	502	16	16	0	0						4644-System_Setting_HostID															
+17	2	503	12	512	4096	1200						4493-System_Media_ProtectionType															
+17	2	504	14	4	0	0						4466-System_Link_TargetSFGAOFlags															
+17	2	505	12	512	4096	1200						4230-System_Contact_ConnectedServiceDisplayName															
+17	2	506	12	512	4096	1200						4646-System_Setting_SettingID															
+17	2	507	12	512	4096	1200						4494-System_Media_ProviderRating															
+17	2	508	12	512	4096	1200						4645-System_Setting_PageID															
+17	2	509	12	512	4096	1200						4495-System_Media_ProviderStyle															
+17	2	510	12	512	4096	1200						4643-System_Setting_GroupID															
+17	2	511	12	512	4096	1200						4506-System_Media_UserNoAutoInfo															
+17	2	512	12	512	4096	1200						4642-System_Setting_Condition															
+17	2	513	12	512	4096	1200						4498-System_Media_SeriesName															
+17	2	514	12	512	4096	1200						4229-System_Contact_CompanyMainTelephone															
+17	2	515	1	1	0	0						4432-System_IsFlagged															
+17	2	516	12	512	4096	1200						4501-System_Media_ThumbnailLargePath															
+17	2	517	4	4	0	0						4180-System_Communication_SecurityFlags															
+17	2	518	12	512	4096	1200						4502-System_Media_ThumbnailLargeUri															
+17	2	519	11	5120	4096	0						4243-System_Contact_EmailAddresses															
+17	2	520	12	512	4096	1200						4503-System_Media_ThumbnailSmallPath															
+17	2	521	12	512	4096	1200						4504-System_Media_ThumbnailSmallUri															
+17	2	522	12	256	4096	1200						4162-System_Calendar_OrganizerAddress															
+17	2	523	11	10240	4096	0						4485-System_Media_DlnaProfileID															
+17	2	524	4	4	0	0						4525-System_Message_IsFwdOrReply															
+17	2	525	11	10240	4096	0						4334-System_Contact_PhoneNumbersCanonical															
+17	2	526	12	512	4096	1200						4235-System_Contact_Department															
+17	2	527	11	40960	4096	0						4331-System_Contact_OtherEmailAddresses															
+17	2	528	12	512	4096	1200						4681-System_Tile_SmallLogoPath															
+17	2	529	9	8	0	0						4175-System_Communication_DateItemExpires															
+17	2	530	9	8	0	0						4388-System_DueDate															
+17	2	531	14	4	0	0						4679-System_Tile_Background															
+17	2	532	1	1	0	0						4559-System_NotUserContent															
+17	2	533	12	512	4096	1200						4221-System_Contact_BusinessAddressStreet															
+17	2	534	12	512	4096	1200						4339-System_Contact_PrimaryAddressPostalCode															
+17	2	535	12	512	4096	1200						4329-System_Contact_OtherAddressState															
+17	2	536	12	256	4096	1200						4303-System_Contact_LastName															
+17	2	537	17	2	0	0						4176-System_Communication_Direction															
+17	2	538	9	8	0	0						4657-System_StartDate															
+17	2	539	12	512	4096	1200						4159-System_Calendar_Location															
+17	2	540	17	2	0	0						4582-System_Photo_FocalLengthInFilm															
+17	2	541	1	1	0	0						4158-System_Calendar_IsRecurring															
+17	2	542	17	2	0	0						4418-System_Image_Compression															
+17	2	543	12	512	4096	1200						4590-System_Photo_OrientationText															
+17	2	544	12	512	4096	1200						4680-System_Tile_EncodedTargetPath															
+17	2	545	12	512	4096	1200						4454-System_Journal_EntryType															
+17	2	546	9	8	0	0						4196-System_Contact_Anniversary															
+17	2	547	11	5120	4096	0						4437-System_ItemAuthors															
+17	2	548	1	1	0	0						4429-System_IsAttachment															
+17	2	549	12	512	4096	1200						4271-System_Contact_HomeAddressState															
+17	2	550	12	512	4096	1200						4105-System_Activity_AppDisplayName															
+17	2	551	12	256	4096	1200						4529-System_Message_SenderAddress															
+17	2	552	12	256	4096	1200						4246-System_Contact_FirstName															
+17	2	553	17	2	0	0						4169-System_Calendar_ShowTimeAs															
+17	2	554	9	8	0	0						4164-System_Calendar_ReminderTime															
+17	2	555	12	512	4096	1200						4108-System_Activity_AppImageUri															
+17	2	556	12	2048	4096	1200						4625-System_Search_AutoSummary															
+17	2	557	12	512	4096	1200						4603-System_Project															
+17	2	558	14	4	0	0						4110-System_Activity_BackgroundColor															
+17	2	559	1	1	0	0						4431-System_IsEncrypted															
+17	2	560	12	2048	4096	1200						4111-System_Activity_ContentImageUri															
+17	2	561	9	8	0	0						4438-System_ItemDate															
+17	2	562	12	512	4096	1200						4375-System_Document_DocumentID															
+17	2	563	12	512	4096	1200						4225-System_Contact_BusinessTelephone															
+17	2	564	12	2048	4096	1200						4112-System_Activity_ContentUri															
+17	2	565	12	512	4096	1200						4114-System_Activity_Description															
+17	2	566	12	512	4096	1200						4567-System_Photo_CameraManufacturer															
+17	2	567	12	512	4096	1200						4182-System_Communication_TaskStatusText															
+17	2	568	12	512	4096	1200						4115-System_Activity_DisplayText															
+17	2	569	12	512	4096	1200						4568-System_Photo_CameraModel															
+17	2	570	12	102400	4096	1200						4100-Microsoft_Visio_MastersKeywords															
+17	2	571	12	65536	4096	1200						4468-System_Link_TargetUrl															
+17	2	572	11	10240	4096	0						4120-System_ActivityHistory_ActiveDays															
+17	2	573	12	102400	4096	1200						4099-Microsoft_Visio_MastersDetails															
+17	2	574	1	1	0	0						4696-System_Video_IsStereo															
+17	2	575	17	2	0	0						4589-System_Photo_Orientation															
+17	2	576	12	512	4096	1200						4216-System_Contact_BusinessAddressCity															
+17	2	577	9	8	0	0						4121-System_ActivityHistory_ActiveDuration															
+17	2	578	14	4	0	0						4697-System_Video_Orientation															
+17	2	579	1	1	0	0						4695-System_Video_IsSpherical															
+17	2	580	12	512	4096	1200						4219-System_Contact_BusinessAddressPostalCode															
+17	2	581	12	2048	4096	1200						4122-System_ActivityHistory_AppActivityId															
+17	2	582	11	512	4096	0						4193-System_Contact_AccountPictureDynamicVideo															
+17	2	583	12	512	4096	1200						4189-System_ConnectedSearch_LocalWeights															
+17	2	584	12	2048	4096	1200						4123-System_ActivityHistory_AppId															
+17	2	585	11	5120	4096	0						4546-System_Music_ComposerSortOverride															
+17	2	586	12	520	4096	1200						4445-System_ItemNamePrefix															
+17	2	587	4	4	0	0						4414-System_History_VisitCount															
+17	2	588	12	512	4096	1200						4344-System_Contact_Profession															
+17	2	589	11	512	4096	0						4194-System_Contact_AccountPictureLarge															
+17	2	590	12	512	4096	1200						4128-System_ActivityHistory_DeviceName															
+17	2	591	11	512	4096	0						4195-System_Contact_AccountPictureSmall															
+17	2	592	12	512	4096	1200						4125-System_ActivityHistory_DeviceId															
+17	2	593	12	512	4096	1200						4309-System_Contact_OtherAddress															
+17	2	594	9	8	0	0						4130-System_ActivityHistory_EndTime															
+17	2	595	11	10240	4096	0						4456-System_Kind															
+17	2	596	16	16	0	0						4132-System_ActivityHistory_Id															
+17	2	597	1	1	0	0						4528-System_Message_ProofInProgress															
+17	2	598	11	5120	4096	0						4160-System_Calendar_OptionalAttendeeAddresses															
+17	2	599	9	8	0	0						4139-System_ActivityHistory_StartTime															
+17	2	600	12	512	4096	1200						4328-System_Contact_OtherAddressPostalCode															
+17	2	601	14	4	0	0						4106-System_Activity_AppIdKind															
+17	2	602	9	8	0	0						4678-System_ThumbnailCacheId															
+17	2	603	14	4	0	0						4488-System_Media_EpisodeNumber															
+17	2	604	16	16	0	0						4104-System_Activity_ActivityId															
+17	2	605	14	4	0	0						4497-System_Media_SeasonNumber															
+17	2	606	9	8	0	0						4137-System_ActivityHistory_LocalStartTime															
+17	2	607	11	10240	4096	0						4172-System_Category															
+17	2	608	9	8	0	0						4136-System_ActivityHistory_LocalEndTime															
+17	2	609	7	8	0	0						4596-System_Photo_ShutterSpeed															
+17	2	610	12	512	4096	1200						4536-System_MileageInformation															
+17	2	611	12	512	4096	1200						4382-System_Document_PresentationFormat															
+17	2	612	12	512	4096	1200						4109-System_Activity_AttributionName															
+17	2	613	16	16	0	0						4702-System_VolumeId															
+17	2	614	7	8	0	0						4566-System_Photo_Aperture															
+17	2	615	4	4	0	0						4367-System_Document_ByteCount															
+17	2	616	9	8	0	0						4113-System_Activity_ContentVisualPropertiesHash															
+17	2	617	4	4	0	0						4378-System_Document_LineCount															
+17	2	618	1	1	0	0						4117-System_Activity_HasAdaptiveContent															
+17	2	619	7	8	0	0						4573-System_Photo_ExposureBias															
+17	2	620	4	4	0	0						4381-System_Document_ParagraphCount															
+17	2	621	12	512	4096	1200						4227-System_Contact_CarTelephone															
+17	2	622	12	512	4096	1200						4102-System_Activity_AccountId															
+17	2	623	7	8	0	0						4406-System_GPS_LatitudeDecimal															
+17	2	624	4	4	0	0						4384-System_Document_SlideCount															
+17	2	625	12	512	4096	1200						4251-System_Contact_HomeAddress															
+17	2	626	11	10240	4096	0						4124-System_ActivityHistory_DaysActive															
+17	2	627	7	8	0	0						4597-System_Photo_SubjectDistance															
+17	2	628	11	10240	4096	0						4131-System_ActivityHistory_HoursActive															
+17	2	629	12	512	4096	1200						4637-System_Search_Store															
+17	2	630	17	2	0	0						4587-System_Photo_MeteringMode															
+17	2	631	9	8	0	0						4462-System_Link_DateVisited															
+17	2	632	4	4	0	0						4376-System_Document_HiddenSlideCount															
+17	2	633	11	10240	4096	0						4167-System_Calendar_Resources															
+17	2	634	16	16	0	0						4138-System_ActivityHistory_LocationActivityId															
+17	2	635	14	4	0	0						4585-System_Photo_LightSource															
+17	2	636	1	1	0	0						4135-System_ActivityHistory_IsLocal															
+17	2	637	2	1	0	0						4578-System_Photo_Flash															
+17	2	638	12	512	4096	1200						4129-System_ActivityHistory_DeviceType															
+17	2	639	7	8	0	0						4581-System_Photo_FocalLength															
+17	2	640	14	4	0	0						4574-System_Photo_ExposureProgram															
+17	2	641	4	4	0	0						4415-System_IconIndex															
+17	2	642	12	512	4096	1200						4126-System_ActivityHistory_DeviceMake															
+17	2	643	12	512	4096	1200						4127-System_ActivityHistory_DeviceModel															
+17	2	644	12	512	4096	1200						4379-System_Document_Manager															
+17	2	645	12	512	4096	1200						4119-System_Activity_SetId															
+17	2	646	12	512	4096	1200						4183-System_Company															
+17	2	647	11	40960	4096	0						4107-System_Activity_AppIdList															
+17	2	648	11	10240	4096	0						4639-System_Security_EncryptionOwnersDisplay															
+17	2	649	17	2	0	0						4584-System_Photo_ISOSpeed															
+17	2	650	12	512	4096	1200						4326-System_Contact_OtherAddressCountry															
+17	2	651	9	8	0	0						4133-System_ActivityHistory_Importance															
+17	2	652	1	1	0	0						4134-System_ActivityHistory_IsHistoryAttributedToSetAnchor															
+17	2	653	12	512	4096	1200						4118-System_Activity_SetCategory															
+17	2	654	12	512	4096	1200						4655-System_SoftwareUsed															
+17	2	655	12	2048	4096	1200						4103-System_Activity_ActivationUri															
+17	2	656	4	4	0	0						4521-System_Message_Flags															
+17	2	657	12	512	4096	1200						4302-System_Contact_Label															
+17	2	658	12	2048	4096	1200						4116-System_Activity_FallbackUri															
+17	2	659	12	512	4096	1200						4602-System_PriorityText															
+17	2	660	12	512	4096	1200						4353-System_ContentType															
+17	2	661	12	512	4096	1200						4656-System_SourceItem															
+17	2	662	12	520	4096	1200						4562-System_OriginalFileName															
+17	2	663	12	512	4096	1200						4352-System_ContentStatus															
+17	2	664	12	512	4096	1200						4458-System_Language															
+17	2	665	12	512	4096	1200						4653-System_Software_ProductVersion															
+17	2	666	12	512	4096	1200						4386-System_Document_Version															
+17	2	667	12	512	4096	1200						3-System_ItemFolderNameDisplay															
+17	2	668	12	1048576	4096	1200						4097-Microsoft_OneNote_PageEditHistory															
+17	2	669	12	512	4096	1200						4374-System_Document_Division															
+17	2	670	14	4	0	0						4191-System_ConnectedSearch_Type															
+17	2	671	12	1048576	4096	1200						4098-Microsoft_OneNote_TaggedNotes															
+17	2	672	12	512	4096	1200						4500-System_Media_SubscriptionContentId															
+17	2	673	12	512	4096	1200						5-System_ItemTypeText															
+17	2	674	12	256	4096	1200						4240-System_Contact_EmailAddress															
+17	2	675	12	520	4096	1200						4190-System_ConnectedSearch_RenderingTemplate															
+17	2	676	12	1048576	4096	1200						4096-Microsoft_OneNote_LinkedNoteUri															
+17	2	677	12	520	4096	1200						4682-System_Title															
+17	2	678	12	520	4096	1200						4186-System_ConnectedSearch_FallbackTemplate															
+17	2	679	12	520	4096	1200						4683-System_TitleSortOverride															
+17	2	680	12	520	4096	1200						4666-System_Subject															
+17	2	681	11	10240	4096	0						4425-System_ImageParsingName															
+17	2	682	11	5120	4096	0						4155-System_Author															
+17	2	683	11	10240	4096	0						4455-System_Keywords															
+17	2	684	12	2048	4096	1200						4173-System_Comment															
+17	2	685	12	520	4096	1200						4443-System_ItemNameDisplay															
+17	2	686	14	4	0	0						4185-System_ConnectedSearch_ApplicationSearchScope															
+17	2	687	12	512	4096	1200						4392-System_FileExtension															
+17	2	688	12	256	4096	1200						4377-System_Document_LastAuthor															
+17	2	689	12	512	4096	1200						4383-System_Document_RevisionNumber															
+17	2	690	9	8	0	0						4385-System_Document_TotalEditingTime															
+17	2	691	9	8	0	0						4372-System_Document_DatePrinted															
+17	2	692	12	512	4096	1200						4517-System_Message_ConversationID															
+17	2	693	12	512	4096	1200						4416-System_Identity															
+17	2	694	9	8	0	0						4371-System_Document_DateCreated															
+17	2	695	12	512	4096	1200						4220-System_Contact_BusinessAddressState															
+17	2	696	11	1032	4096	0						4518-System_Message_ConversationIndex															
+17	2	697	9	8	0	0						4373-System_Document_DateSaved															
+17	2	698	1	1	0	0						4553-System_Music_IsCompilation															
+17	2	699	4	4	0	0						4380-System_Document_PageCount															
+17	2	700	4	4	0	0						4387-System_Document_WordCount															
+17	2	701	14	4	0	0						4187-System_ConnectedSearch_ItemSource															
+17	2	702	4	4	0	0						4368-System_Document_CharacterCount															
+17	2	703	12	256	4096	1200						4244-System_Contact_EmailName															
+17	2	704	11	40960	4096	0						4273-System_Contact_HomeEmailAddresses															
+17	2	705	14	4	0	0						4233-System_Contact_ConnectedServiceSupportedActions															
+17	2	706	17	2	0	0						4168-System_Calendar_ResponseStatus															
+17	2	707	12	512	4096	1200						4593-System_Photo_ProgramModeText															
+17	2	708	9	8	0	0						22-System_FileFRN															
+17	2	709	12	512	4096	1200						4148-System_ApplicationName															
+17	2	710	12	520	4096	1200						4442-System_ItemName															
+17	2	711	12	512	4096	1200						4457-System_KindText															
+17	2	712	12	65536	4096	1200						4441-System_ItemFolderPathDisplayNarrow															
+17	2	713	12	256	4096	1200						4245-System_Contact_FileAsName															
+17	2	714	12	520	4096	1200						4444-System_ItemNameDisplayWithoutExtension															
+17	2	715	11	10240	4096	0						4239-System_Contact_DisplayOtherPhoneNumbers															
+17	2	716	17	2	0	0						4640-System_Sensitivity															
+17	2	717	7	8	0	0						4409-System_GPS_LongitudeDecimal															
+17	2	718	12	520	4096	1200						4403-System_FolderNameDisplay															
+17	2	719	12	512	4096	1200						4419-System_Image_CompressionText															
+17	2	720	11	10240	4096	0						4411-System_HighKeywords															
+17	2	721	12	256	4096	1200						4677-System_Task_Owner															
+17	2	722	11	10240	4096	0						4471-System_LowKeywords															
+17	2	723	12	512	4096	1200						4200-System_Contact_BusinessAddress															
+17	2	724	11	10240	4096	0						4510-System_MediumKeywords															
+17	2	725	11	10240	4096	0						4405-System_GPS_Latitude															
+17	2	726	7	8	0	0						4586-System_Photo_MaxAperture															
+17	2	727	12	512	4096	1200						4369-System_Document_ClientID															
+17	2	728	12	512	4096	1200						4198-System_Contact_AssistantTelephone															
+17	2	729	12	256	4096	1200						4550-System_Music_DisplayArtist															
+17	2	730	11	10240	4096	0						4408-System_GPS_Longitude															
+17	2	731	11	10240	4096	0						4598-System_Photo_TagViewAggregate															
+17	2	732	11	10240	4096	0						4591-System_Photo_PeopleNames															
+17	2	733	11	5120	4096	0						4527-System_Message_Participants															
+17	2	734	12	512	4096	1200						4399-System_FlagColorText															
+17	2	735	12	512	4096	1200						4338-System_Contact_PrimaryAddressPostOfficeBox															
+17	2	736	12	512	4096	1200						4217-System_Contact_BusinessAddressCountry															
+17	2	737	12	512	4096	1200						4147-System_AppUserModel_RelaunchIconResource															
+17	2	738	12	512	4096	1200						4179-System_Communication_PolicyTag															
+17	2	739	12	512	4096	1200						4575-System_Photo_ExposureProgramText															
+17	2	740	11	5120	4096	0						4542-System_Music_Artist															
+17	2	741	12	512	4096	1200						4594-System_Photo_SaturationText															
+17	2	742	12	512	4096	1200						4540-System_Music_AlbumTitle															
+17	2	743	12	2048	4096	1200						4140-System_Address_Country															
+17	2	744	14	4	0	0						4509-System_Media_Year															
+17	2	745	12	512	4096	1200						4141-System_Address_CountryCode															
+17	2	746	12	2048	4096	1200						4142-System_Address_Region															
+17	2	747	14	4	0	0						4558-System_Music_TrackNumber															
+17	2	748	12	512	4096	1200						4268-System_Contact_HomeAddressCountry															
+17	2	749	12	512	4096	1200						4143-System_Address_RegionCode															
+17	2	750	12	2048	4096	1200						4144-System_Address_Town															
+17	2	751	11	10240	4096	0						4551-System_Music_Genre															
+17	2	752	14	4	0	0						4473-System_Media_AverageLevel															
+17	2	753	11	10240	4096	0						4453-System_Journal_Contacts															
+17	2	754	12	512	4096	1200						4146-System_AppUserModel_PackageFamilyName															
+17	2	755	12	256	4096	1200						4537-System_Music_AlbumArtist															
+17	2	756	12	512	4096	1200						4145-System_AppUserModel_ActivationContext															
+17	2	757	12	512	4096	1200						4356-System_CreatorAppId															
+17	2	758	14	4	0	0						4357-System_CreatorOpenWithUIOptions															
+17	2	759	12	512	4096	1200						4609-System_RecordedTV_EpisodeName															
+17	2	760	12	2048	4096	1200						4618-System_RecordedTV_ProgramDescription															
+17	2	761	12	512	4096	1200						4620-System_RecordedTV_StationCallSign															
+17	2	762	12	512	4096	1200						4526-System_Message_MessageClass															
+17	2	763	11	10240	4096	0						4238-System_Contact_DisplayMobilePhoneNumbers															
+17	2	764	12	512	4096	1200						4641-System_SensitivityText															
+17	2	765	11	5120	4096	0						4276-System_Contact_IMAddress															
+17	2	766	11	10240	4096	0						4234-System_Contact_DataSuppliers															
+17	2	767	14	4	0	0						4607-System_RecordedTV_ChannelNumber															
+17	2	768	12	512	4096	1200						4600-System_Photo_WhiteBalanceText															
+17	2	769	14	4	0	0						4395-System_FileOfflineAvailabilityStatus															
+17	2	770	11	10240	4096	0						4402-System_FolderKind															
+17	2	771	12	256	4096	1200						4163-System_Calendar_OrganizerName															
+17	2	772	4	4	0	0						4101-System_AcquisitionID															
+17	2	773	14	4	0	0						4673-System_SyncTransferStatus															
+17	2	774	9	8	0	0						4685-System_TransferPosition															
+17	2	775	1	1	0	0						4611-System_RecordedTV_IsClosedCaptioningAvailable															
+17	2	776	12	512	4096	1200						4592-System_Photo_PhotometricInterpretationText															
+17	2	777	9	8	0	0						4686-System_TransferSize															
+17	2	778	1	1	0	0						4614-System_RecordedTV_IsRepeatBroadcast															
+17	2	779	9	8	0	0						4684-System_TransferOrder															
+17	2	780	1	1	0	0						4615-System_RecordedTV_IsSAP															
+17	2	781	9	8	0	0						4608-System_RecordedTV_DateContentExpires															
+17	2	782	12	512	4096	1200						4534-System_Message_ToDoTitle															
+17	2	783	14	4	0	0						4459-System_LastSyncError															
+17	2	784	9	8	0	0						4363-System_DateCompleted															
+17	2	785	12	512	4096	1200						4663-System_StorageProviderId															
+17	2	786	1	1	0	0						4610-System_RecordedTV_IsATSCContent															
+17	2	787	14	4	0	0						4659-System_StorageProviderError															
+17	2	788	1	1	0	0						4612-System_RecordedTV_IsDTVContent															
+17	2	789	9	8	0	0						4665-System_StorageProviderStatus															
+17	2	790	1	1	0	0						4613-System_RecordedTV_IsHDContent															
+17	2	791	12	512	4096	1200						4548-System_Music_ContentGroupDescription															
+17	2	792	11	10240	4096	0						4664-System_StorageProviderShareStatuses															
+17	2	793	12	512	4096	1200						4552-System_Music_InitialKey															
+17	2	794	11	10240	4096	0						4236-System_Contact_DisplayBusinessPhoneNumbers															
+17	2	795	12	512	4096	1200						4544-System_Music_BeatsPerMinute															
+17	2	796	11	5120	4096	0						4547-System_Music_Conductor															
+17	2	797	11	5120	4096	0						4165-System_Calendar_RequiredAttendeeAddresses															
+17	2	798	12	512	4096	1200						4556-System_Music_PartOfSet															
+17	2	799	12	512	4096	1200						4499-System_Media_SubTitle															
+17	2	800	12	512	4096	1200						4555-System_Music_Mood															
+17	2	801	12	512	4096	1200						4541-System_Music_AlbumTitleSortOverride															
+17	2	802	17	2	0	0						4560-System_Note_Color															
+17	2	803	11	5120	4096	0						4543-System_Music_ArtistSortOverride															
+17	2	804	12	256	4096	1200						4277-System_Contact_JA_CompanyNamePhonetic															
+17	2	805	12	512	4096	1200						4184-System_ComputerName															
+17	2	806	11	5120	4096	0						4161-System_Calendar_OptionalAttendeeNames															
+17	2	807	12	512	4096	1200						4662-System_StorageProviderFullyQualifiedId															
+17	2	808	12	512	4096	1200						4278-System_Contact_JA_FirstNamePhonetic															
+17	2	809	11	10240	4096	0						4250-System_Contact_Hobbies															
+17	2	810	12	512	4096	1200						4327-System_Contact_OtherAddressPostOfficeBox															
+17	2	811	12	256	4096	1200						4279-System_Contact_JA_LastNamePhonetic															
+17	2	812	12	65536	4096	1200						4448-System_ItemPathDisplayNarrow															
+17	2	813	12	512	4096	1200						4616-System_RecordedTV_NetworkAffiliation															
+17	2	814	12	512	4096	1200						4348-System_Contact_TelexNumber															
+17	2	815	12	512	4096	1200						4450-System_ItemType															
+17	2	816	12	512	4096	1200						4325-System_Contact_OtherAddressCity															
+17	2	817	12	512	4096	1200						4248-System_Contact_Gender															
+17	2	818	17	2	0	0						4249-System_Contact_GenderValue															
+17	2	819	16	16	0	0						4650-System_Software_AppId															
+17	2	820	12	512	4096	1200						4595-System_Photo_SharpnessText															
+17	2	821	12	256	4096	1200						4538-System_Music_AlbumArtistSortOverride															
+17	2	822	11	10240	4096	0						4638-System_Security_EncryptionOwners															
+17	2	823	12	512	4096	1200						4606-System_RatingText															
+17	2	824	14	4	0	0						4460-System_LastSyncWarning															
+17	2	825	14	4	0	0						4674-System_SyncTransferStatusFlags															
+17	2	826	1	1	0	0						4579-System_Photo_FlashFired															
+17	2	827	9	8	0	0						4570-System_Photo_DateTaken															
+17	2	828	12	512	4096	1200						4569-System_Photo_ContrastText															
+17	2	829	12	520	4096	1200						11-System_FileName															
+17	2	830	11	40960	4096	0						4222-System_Contact_BusinessEmailAddresses															
+17	2	831	14	4	0	0						4654-System_Software_TimesUsed															
+17	2	832	7	8	0	0						4571-System_Photo_DigitalZoom															
+17	2	833	12	520	4096	1200						4565-System_ParsingName															
+17	2	834	9	8	0	0						4651-System_Software_DateLastUsed															
+17	2	835	14	4	0	0						4623-System_SFGAOFlags															
+17	2	836	12	512	4096	1200						4272-System_Contact_HomeAddressStreet															
+17	2	837	11	40960	4096	0						4231-System_Contact_ConnectedServiceIdentities															
+17	2	838	12	512	4096	1200						4341-System_Contact_PrimaryAddressStreet															
+17	2	839	12	256	4096	1200						4242-System_Contact_EmailAddress3															
+17	2	840	11	5120	4096	0						4166-System_Calendar_RequiredAttendeeNames															
+17	2	841	12	512	4096	1200						4156-System_Calendar_Duration															
+17	2	842	11	10240	4096	0						4228-System_Contact_Children															
+17	2	843	9	8	0	0						4619-System_RecordedTV_RecordingTime															
+17	2	844	11	32768	4096	0						0-InvertedOnlyPids															
+17	3	17	43	80	65585	0	true	10794	197633			IDX_PropertyStore_Primary				00000100											65006e002d0055005300
+17	4	57	261	100	0	1						LV															
+38	1	38	199	80	0	0	true					ChangeTracking															
+38	2	1	17	2	1	0	true	4				Client															
+38	2	2	2	1	1	0	true	6				Batch															
+38	2	256	11	2000	4096	0						Path															
+38	2	257	11	2000	4096	0						CaseMap															
+38	2	258	9	56	0	0						CurrentEntry															
+38	2	259	11	2000	4096	0						MoveSource															
+38	2	260	9	56	0	0						OldEntry															
+38	2	261	11	2000	4096	0						MoveDest															
+38	2	262	11	2147483647	4096	0						RangeInfo															
+38	3	38	199	80	81967	0	true	10794	197633	2000		PrimaryIdx				000001000000020000000001											65006e002d0055005300
+60	1	60	287	100	0	0	true					SystemIndex_1_DATA_32												00800000		0164000000000000000200000064000000c80000000080000000000800	
+60	2	1	14	4	0	0	true	4				Partition															
+60	2	2	17	2	0	0	true	8				PID															
+60	2	3	14	4	0	0	true	10				WidStart															
+60	2	256	11	1664	0	0						szKey															
+60	2	257	11	32686	0	0						Data															
+60	3	60	287	100	65583	0	true	10794	197633	2000		IndexDataIdx				00000100000000010000020000000300											65006e002d0055005300
+61	1	61	288	100	0	0	true					SystemIndex_1_OCC_32															
+61	2	1	14	4	0	0	true	4				OccID															
+61	2	256	11	32650	0	0						OccPage															
+61	3	61	288	100	65583	0	true	10794	197633			IndexOccIdx				00000100											65006e002d0055005300
+62	1	62	71	100	0	0	true					SystemIndex_1_DATA_33												00800000		0164000000000000000200000064000000c80000000080000000000800	
+62	2	1	14	4	0	0	true	4				Partition															
+62	2	2	17	2	0	0	true	8				PID															
+62	2	3	14	4	0	0	true	10				WidStart															
+62	2	256	11	1664	0	0						szKey															
+62	2	257	11	32686	0	0						Data															
+62	3	62	71	100	65583	0	true	10794	197633	2000		IndexDataIdx				00000100000000010000020000000300											65006e002d0055005300
+63	1	63	89	100	0	0	true					SystemIndex_1_OCC_33															
+63	2	1	14	4	0	0	true	4				OccID															
+63	2	256	11	32650	0	0						OccPage															
+63	3	63	89	100	65583	0	true	10794	197633			IndexOccIdx				00000100											65006e002d0055005300
+64	1	64	90	100	0	0	true					SystemIndex_1_DATA_34												00800000		0164000000000000000200000064000000c80000000080000000000800	
+64	2	1	14	4	0	0	true	4				Partition															
+64	2	2	17	2	0	0	true	8				PID															
+64	2	3	14	4	0	0	true	10				WidStart															
+64	2	256	11	1664	0	0						szKey															
+64	2	257	11	32686	0	0						Data															
+64	3	64	90	100	65583	0	true	10794	197633	2000		IndexDataIdx				00000100000000010000020000000300											65006e002d0055005300
+65	1	65	91	100	0	0	true					SystemIndex_1_OCC_34															
+65	2	1	14	4	0	0	true	4				OccID															
+65	2	256	11	32650	0	0						OccPage															
+65	3	65	91	100	65583	0	true	10794	197633			IndexOccIdx				00000100											65006e002d0055005300
+66	1	66	156	100	0	0	true					SystemIndex_1_DATA_37												00800000		0164000000000000000200000064000000c80000000080000000000800	
+66	2	1	14	4	0	0	true	4				Partition															
+66	2	2	17	2	0	0	true	8				PID															
+66	2	3	14	4	0	0	true	10				WidStart															
+66	2	256	11	1664	0	0						szKey															
+66	2	257	11	32686	0	0						Data															
+66	3	66	156	100	65583	0	true	10794	197633	2000		IndexDataIdx				00000100000000010000020000000300											65006e002d0055005300
+67	1	67	157	100	0	0	true					SystemIndex_1_OCC_37															
+67	2	1	14	4	0	0	true	4				OccID															
+67	2	256	11	32650	0	0						OccPage															
+67	3	67	157	100	65583	0	true	10794	197633			IndexOccIdx				00000100											65006e002d0055005300
+69	1	69	200	100	0	0	true					SystemIndex_1_DATA_39												00800000		0164000000000000000200000064000000c80000000080000000000800	
+69	2	1	14	4	0	0	true	4				Partition															
+69	2	2	17	2	0	0	true	8				PID															
+69	2	3	14	4	0	0	true	10				WidStart															
+69	2	256	11	1664	0	0						szKey															
+69	2	257	11	32686	0	0						Data															
+69	3	69	200	100	65583	0	true	10794	197633	2000		IndexDataIdx				00000100000000010000020000000300											65006e002d0055005300
+70	1	70	201	100	0	0	true					SystemIndex_1_OCC_39															
+70	2	1	14	4	0	0	true	4				OccID															
+70	2	256	11	32650	0	0						OccPage															
+70	3	70	201	100	65583	0	true	10794	197633			IndexOccIdx				00000100											65006e002d0055005300
+71	1	71	202	100	0	0	true					SystemIndex_1_DATA_41												00800000		0164000000000000000200000064000000c80000000080000000000800	
+71	2	1	14	4	0	0	true	4				Partition															
+71	2	2	17	2	0	0	true	8				PID															
+71	2	3	14	4	0	0	true	10				WidStart															
+71	2	256	11	1664	0	0						szKey															
+71	2	257	11	32686	0	0						Data															
+71	3	71	202	100	65583	0	true	10794	197633	2000		IndexDataIdx				00000100000000010000020000000300											65006e002d0055005300
+72	1	72	203	100	0	0	true					SystemIndex_1_OCC_41															
+72	2	1	14	4	0	0	true	4				OccID															
+72	2	256	11	32650	0	0						OccPage															
+72	3	72	203	100	65583	0	true	10794	197633			IndexOccIdx				00000100											65006e002d0055005300

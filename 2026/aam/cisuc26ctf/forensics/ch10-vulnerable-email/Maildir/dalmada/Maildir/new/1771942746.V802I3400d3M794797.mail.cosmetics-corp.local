@@ -1,0 +1,41 @@
+Return-Path: <gribeiro@hr-system.lab>
+X-Original-To: dalmada@cosmetics-corp.local
+Delivered-To: dalmada@cosmetics-corp.local
+Authentication-Results: mail.cosmetics-corp.local; dmarc=pass (p=none dis=none) header.from=hr-system.lab
+Authentication-Results: mail.cosmetics-corp.local;
+	dkim=pass (2048-bit key; unprotected) header.d=hr-system.lab header.i=@hr-system.lab header.a=rsa-sha256 header.s=mail header.b=ToETUTsS;
+	dkim-atps=neutral
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=192.168.80.20; helo=mail.hr-system.lab; envelope-from=gribeiro@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.lab (unknown [192.168.80.20])
+	by mail.cosmetics-corp.local (Postfix) with ESMTPS id BE292260656
+	for <dalmada@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=hr-system.lab;
+	s=mail; t=1771942746;
+	bh=rGHqkLmmheSPrjYQzwxHUT01hBeifg98bwW/XwcixoE=;
+	h=Date:To:From:Subject:From;
+	b=ToETUTsSHmH7isTtBZThj23wm6xyL4fgWkEdeNLCCOxo7ir/CBluoANLeDmGTzHGB
+	 lv1yW0/rajffci4Jvk2N/U7w0QzbQIoUccMeEoTg+9/6PYRc56y/uwqPtkyDikWAUh
+	 MvskAcDfVkln4EX0msrO2pHkb3j3fxVtkTPS36ekmDQcNdzlttlgkYEEfZerDcdK0r
+	 SRcLcajwU5FctI8mAiHB/sPkR4PhO0c29fVJ4l7u15Err/D4rmXz6R7S13PBNmtfn/
+	 qmJSQqSlzEZTS8Nv7ZRENbrpGaAp1ZEhMfzqLGfhWp5nEtwi/ib9xVOO879udZtIvw
+	 hzoki+p+4TaCg==
+X-Comment: SPF check N/A for local connections - client-ip=127.0.0.1; helo=mail.hr-system.local; envelope-from=gribeiro@hr-system.lab; receiver=cosmetics-corp.local 
+Received: from mail.hr-system.local (localhost [127.0.0.1])
+	by mail.hr-system.lab (Postfix) with ESMTP id AF9DE260719
+	for <dalmada@cosmetics-corp.local>; Tue, 24 Feb 2026 14:19:06 +0000 (UTC)
+Date: Tue, 24 Feb 2026 14:19:06 +0000
+To: dalmada@cosmetics-corp.local
+From: gribeiro@hr-system.lab
+Subject: RE: Solicitação de documentação para auditoria
+Message-Id: <20260224141906.005998@mail.hr-system.local>
+X-Mailer: swaks v20240103.0 jetmore.org/john/code/swaks/
+
+Prezados,
+
+Recebemos a solicitação e já estamos reunindo a documentação. Alguns documentos precisarão de assinatura da diretoria, o que pode levar até 3 dias úteis.
+
+Enviaremos tudo consolidado em um único pacote até o prazo solicitado.
+
+Atenciosamente,
+Departamento Jurídico.
+

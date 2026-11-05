@@ -1,0 +1,10 @@
+services:
+  gissningslek:
+    build: .
+    ports:
+      - "1024:1024"
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor=unconfined
+    restart: unless-stopped

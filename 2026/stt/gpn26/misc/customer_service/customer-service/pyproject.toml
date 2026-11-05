@@ -1,0 +1,10 @@
+[project]
+name = "customer-service"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "holpy",
+]
+
+[tool.uv.sources]
+holpy = { git = "https://github.com/Mr-Pine/holpy" }
