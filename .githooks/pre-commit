@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# Regenerate README.md and reject staged files over 5 MiB (add those to .gitignore instead).
+# Regenerate NOT_INCLUDED.md notes and README.md, and reject staged files over 5 MiB (add those to .gitignore instead).
 # Writeups are exempt from the size limit.
 REPO_ROOT=$(git rev-parse --show-toplevel)
 cd "$REPO_ROOT"
 
+python3 tools/generate_not_included.py > /dev/null
+git add -A -- ':(glob)**/NOT_INCLUDED.md'
 python3 tools/generate_index.py
 git add README.md
 

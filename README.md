@@ -42,6 +42,9 @@ Team write-ups from r4ph3cks are in the `r4ph3cks` submodule ([r4ph3cks/ctfs](ht
 ### `r4ph3cks`
 - `huntress`
 
+### `sh1ny_hunt3rs`
+- `hackerlab`
+
 ### `solo`
 - `augustalabs`
 - `cscpt`
