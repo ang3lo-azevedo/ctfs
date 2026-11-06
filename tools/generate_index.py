@@ -21,7 +21,7 @@ Write-ups and solve scripts from cybersecurity competitions, organized by year, 
 Categories include digital forensics, reverse engineering, pwn, web and OSINT.
 
 Large challenge artifacts (memory images, disk images, triage collections, extracted
-filesystems) are not included; get them from the original event where they are still available.
+filesystems) are not included, get them from the original event where they are still available.
 
 Team write-ups from r4ph3cks are in the `r4ph3cks` submodule ([r4ph3cks/ctfs](https://github.com/r4ph3cks/ctfs)).
 
@@ -55,27 +55,6 @@ Team write-ups from r4ph3cks are in the `r4ph3cks` submodule ([r4ph3cks/ctfs](ht
                 markdown += f"- `{chal}`\n"
             markdown += "\n"
         markdown += "---\n\n"
-        
-    # Second, parse top level team directories and tools (anything that isn't a year)
-    markdown += "## Teams & Modules\n\n"
-    other_dirs = [d for d in os.listdir(startpath) if os.path.isdir(os.path.join(startpath, d)) and not d.isdigit() and d not in ignore_dirs]
-    other_dirs.sort()
-    
-    for team in other_dirs:
-        markdown += f"### `{team}`\n"
-        team_path = os.path.join(startpath, team)
-        contents = [d for d in os.listdir(team_path) if os.path.isdir(os.path.join(team_path, d)) and d not in ignore_dirs]
-        contents.sort()
-        
-        for content in contents:
-            markdown += f"- **`{content}`**\n"
-            # Go one more level deep for teams (like r4ph3cks/2025/...)
-            sub_path = os.path.join(team_path, content)
-            subcontents = [d for d in os.listdir(sub_path) if os.path.isdir(os.path.join(sub_path, d)) and d not in ignore_dirs]
-            subcontents.sort()
-            for sub in subcontents:
-                markdown += f"  - `{sub}`\n"
-        markdown += "\n"
         
     return markdown
 
