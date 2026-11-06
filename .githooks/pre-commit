@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Regenerate README.md and reject staged files over 5 MiB (add those to .gitignore instead).
+# Writeups are exempt from the size limit.
 REPO_ROOT=$(git rev-parse --show-toplevel)
 cd "$REPO_ROOT"
 
@@ -8,6 +9,7 @@ git add README.md
 
 limit=5242880
 while IFS= read -r -d '' f; do
+  case "${f,,}" in *writeup*|*write-up*) continue ;; esac
   size=$(git cat-file -s ":$f" 2>/dev/null || echo 0)
   if [ "$size" -gt "$limit" ]; then
     echo "pre-commit: $f is $((size / 1048576)) MiB (limit 5 MiB)" >&2

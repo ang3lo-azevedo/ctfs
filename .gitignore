@@ -139,7 +139,6 @@ mame/
 2026/solo/cscpt/bootcamp/day_1/game/shibu/Shibuya (sort of___)/
 
 # Third-party tools and other repositories cloned into challenge folders
-/r4ph3cks/
 /tools/ctf-dl/
 2026/aam/cisuc26ctf/forensics/ch11-star-signal/sstv/
 2026/solo/sinfo/forensics/sstv/
@@ -179,7 +178,6 @@ mame/
 /2026/solo/cscpt/bootcamp/day_2/forensics/say_cheese/7335ccfe3c048b6780a85106279d1437328c1c5a9d97c28fab8681ca8beea5c1/rockyou.txt
 /2026/solo/cscpt/bootcamp/day_2/rockyou.txt
 /2026/solo/cscpt/bootcamp/day_2/rockyou.txt.gz
-/2026/solo/cscpt/bootcamp/day_2/writeup/nos4a2_writeup.pdf
 /2026/solo/cscpt/quals/forensics/Hidden_in_Plain_Stream/4840010456e212cebd111fef50f02c4ec720db7daaf9554044dc7306f1bd665b/cscpt26.dd
 /2026/solo/cscpt/quals/pwn/Galdurs_Bate/libc.so.6
 /2026/solo/cscpt/quals/pwn/Obj2ctm/libc.so.6

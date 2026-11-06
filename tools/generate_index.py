@@ -23,7 +23,7 @@ Categories include digital forensics, reverse engineering, pwn, web and OSINT.
 Large challenge artifacts (memory images, disk images, triage collections, extracted
 filesystems) are not included; get them from the original event where they are still available.
 
-Team write-ups from r4ph3cks are at [r4ph3cks/ctfs](https://github.com/r4ph3cks/ctfs).
+Team write-ups from r4ph3cks are in the `r4ph3cks` submodule ([r4ph3cks/ctfs](https://github.com/r4ph3cks/ctfs)).
 
 ## Repository Index
 
